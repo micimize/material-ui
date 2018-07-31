@@ -1,6 +1,10 @@
 import warning from 'warning';
 import getDisplayName from 'recompose/getDisplayName';
 
+function arrayify(classes) {
+  return Array.isArray(classes) ? classes : [classes];
+}
+
 function mergeClasses(options = {}) {
   const { baseClasses, newClasses, Component, noBase = false } = options;
 
@@ -30,7 +34,7 @@ function mergeClasses(options = {}) {
       );
 
       if (newClasses[key]) {
-        accumulator[key] = `${baseClasses[key]} ${newClasses[key]}`;
+        accumulator[key] = [...arrayify(baseClasses[key]), ...arrayify(newClasses[key])];
       }
 
       return accumulator;

@@ -2,24 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import getDisplayName from 'recompose/getDisplayName';
 import wrapDisplayName from 'recompose/wrapDisplayName';
-import contextTypes from 'react-jss/lib/contextTypes';
-import { create } from 'jss';
-import * as ns from 'react-jss/lib/ns';
-import jssPreset from './jssPreset';
 import mergeClasses from './mergeClasses';
 import createMuiTheme from './createMuiTheme';
 import themeListener from './themeListener';
-import createGenerateClassName from './createGenerateClassName';
 import getStylesCreator from './getStylesCreator';
 import getThemeProps from './getThemeProps';
+import createRenderer from 'fela-native';
+import getClassSheet from './getClassSheet';
 
-// Default JSS instance.
-const jss = create(jssPreset());
-
-// Use a singleton or the provided one by the context.
-const generateClassName = createGenerateClassName();
+// Default fela renderer
+const felaRenderer = createRenderer({});
 
 // Global index counter to preserve source order.
 // We create the style sheet during at the creation of the component,
@@ -53,7 +46,7 @@ function getDefaultTheme() {
 // It does not modify the component passed to it;
 // instead, it returns a new component, with a `classes` property.
 const withStyles = (stylesOrCreator, options = {}) => Component => {
-  const { withTheme = false, flip = null, name, ...styleSheetOptions } = options;
+  const { withTheme = false, name } = options;
   const stylesCreator = getStylesCreator(stylesOrCreator);
   const listenToTheme = stylesCreator.themingEnabled || withTheme || typeof name === 'string';
 
@@ -71,9 +64,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
   class WithStyles extends React.Component {
     disableStylesGeneration = false;
 
-    jss = null;
-
-    sheetOptions = null;
+    felaRenderer = null;
 
     sheetsManager = sheetsManager;
 
@@ -86,7 +77,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
     constructor(props, context) {
       super(props, context);
 
-      this.jss = this.context[ns.jss] || jss;
+      this.felaRenderer = this.context.renderer || felaRenderer;
 
       const { muiThemeProviderOptions } = this.context;
       if (muiThemeProviderOptions) {
@@ -101,10 +92,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       // of react-hot-loader the hooks can be executed in a different closure context:
       // https://github.com/gaearon/react-hot-loader/blob/master/src/patch.dev.js#L107
       this.stylesCreatorSaved = stylesCreator;
-      this.sheetOptions = {
-        generateClassName,
-        ...this.context[ns.sheetOptions],
-      };
+
       // We use || as the function call is lazy evaluated.
       this.theme = listenToTheme ? themeListener.initial(context) || getDefaultTheme() : noopTheme;
 
@@ -116,7 +104,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
         // Cache for the last used classes prop pointer.
         lastProp: null,
         // Cache for the last used rendered classes pointer.
-        lastJSS: {},
+        lastFela: {},
       };
     }
 
@@ -168,8 +156,8 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       if (!this.disableStylesGeneration) {
         const sheetManager = this.sheetsManager.get(this.stylesCreatorSaved);
         const sheetsManagerTheme = sheetManager.get(this.theme);
-        if (sheetsManagerTheme.sheet.classes !== this.cacheClasses.lastJSS) {
-          this.cacheClasses.lastJSS = sheetsManagerTheme.sheet.classes;
+        if (sheetsManagerTheme.classSheet !== this.cacheClasses.lastFela) {
+          this.cacheClasses.lastFela = sheetsManagerTheme.classSheet;
           generate = true;
         }
       }
@@ -181,7 +169,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
       if (generate) {
         this.cacheClasses.value = mergeClasses({
-          baseClasses: this.cacheClasses.lastJSS,
+          baseClasses: this.cacheClasses.lastFela,
           newClasses: this.props.classes,
           Component,
           noBase: this.disableStylesGeneration,
@@ -191,6 +179,8 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       return this.cacheClasses.value;
     }
 
+    // now that withStyles uses fela, attach/detatch might be overkill
+    // same goes for the sheetManager
     attach(theme) {
       if (this.disableStylesGeneration) {
         return;
@@ -209,17 +199,15 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       if (!sheetManagerTheme) {
         sheetManagerTheme = {
           refs: 0,
-          sheet: null,
+          classSheet: null,
         };
         sheetManager.set(theme, sheetManagerTheme);
       }
 
       if (sheetManagerTheme.refs === 0) {
         const styles = stylesCreatorSaved.create(theme, name);
-        let meta = name;
 
-        if (process.env.NODE_ENV !== 'production' && !meta) {
-          meta = getDisplayName(Component);
+        if (process.env.NODE_ENV !== 'production' && !name) {
           warning(
             typeof meta === 'string',
             [
@@ -229,24 +217,9 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
           );
         }
 
-        const sheet = this.jss.createStyleSheet(styles, {
-          meta,
-          classNamePrefix: meta,
-          flip: typeof flip === 'boolean' ? flip : theme.direction === 'rtl',
-          link: false,
-          ...this.sheetOptions,
-          ...stylesCreatorSaved.options,
-          name,
-          ...styleSheetOptions,
-        });
+        const classSheet = getClassSheet(styles, this.felaRenderer);
 
-        sheetManagerTheme.sheet = sheet;
-        sheet.attach();
-
-        const sheetsRegistry = this.context[ns.sheetsRegistry];
-        if (sheetsRegistry) {
-          sheetsRegistry.add(sheet);
-        }
+        sheetManagerTheme.classSheet = classSheet;
       }
 
       sheetManagerTheme.refs += 1;
@@ -265,11 +238,6 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
       if (sheetManagerTheme.refs === 0) {
         sheetManager.delete(theme);
-        this.jss.removeStyleSheet(sheetManagerTheme.sheet);
-        const sheetsRegistry = this.context[ns.sheetsRegistry];
-        if (sheetsRegistry) {
-          sheetsRegistry.remove(sheetManagerTheme.sheet);
-        }
       }
     }
 
@@ -301,7 +269,6 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
   WithStyles.contextTypes = {
     muiThemeProviderOptions: PropTypes.object,
-    ...contextTypes,
     ...(listenToTheme ? themeListener.contextTypes : {}),
   };
 
