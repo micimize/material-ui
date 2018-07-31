@@ -46,6 +46,7 @@ module.exports = {
             alias: {
               '@material-ui/core': './packages/material-ui/src',
               '@material-ui/icons': './packages/material-ui-icons/src',
+              '^react-native$': 'react-native-web'
             },
           },
         ],
