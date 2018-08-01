@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import RadioButtonCheckedIcon from '../internal/svg-icons/RadioButtonChecked';
 import RadioButtonUncheckedIcon from '../internal/svg-icons/RadioButtonUnchecked';

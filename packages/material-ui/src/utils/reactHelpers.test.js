@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import { isMuiComponent, isMuiElement } from './reactHelpers';
 import { Input, ListItemAvatar, ListItemSecondaryAction, SvgIcon } from '..';

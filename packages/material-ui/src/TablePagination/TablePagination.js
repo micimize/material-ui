@@ -1,6 +1,7 @@
 // @inheritedComponent TableCell
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import withStyles from '../styles/withStyles';
 import Input from '../Input';

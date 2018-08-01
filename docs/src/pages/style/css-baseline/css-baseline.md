@@ -10,6 +10,7 @@ You might be familiar with [normalize.css](https://github.com/necolas/normalize.
 
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 function MyApp() {

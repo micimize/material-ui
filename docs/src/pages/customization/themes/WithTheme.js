@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withTheme } from '@material-ui/core/styles';

@@ -1,6 +1,7 @@
 // @inheritedComponent EventListener
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import EventListener from 'react-event-listener';

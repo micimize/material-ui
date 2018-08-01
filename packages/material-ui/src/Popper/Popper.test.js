@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import { spy } from 'sinon';
 import { createShallow, createMount, unwrap } from '../test-utils';

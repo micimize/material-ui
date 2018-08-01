@@ -33,6 +33,7 @@ If you're unfamiliar with Express or middleware, just know that our handleRender
 ```js
 import express from 'express';
 import React from 'react';
+import { View, Text } from 'react-native';
 import App from './App';
 
 // We are going to fill these out in the sections to follow.
@@ -142,6 +143,7 @@ Let's take a look at our client file:
 
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import { hydrate } from 'react-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';

@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
 import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';

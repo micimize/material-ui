@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { MuiThemeProvider } from '@material-ui/core/styles';

@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import MaskedInput from 'react-text-mask';
 import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';

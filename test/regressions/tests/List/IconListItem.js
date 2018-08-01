@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import Icon from '@material-ui/core/Icon';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';

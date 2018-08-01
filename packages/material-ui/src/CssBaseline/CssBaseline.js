@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '../styles';
 import exactProp from '../utils/exactProp';

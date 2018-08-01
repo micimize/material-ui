@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import CancelIcon from '../internal/svg-icons/Cancel';
 import { createShallow, getClasses } from '../test-utils';

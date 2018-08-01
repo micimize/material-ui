@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import Menu from 'packages/material-ui/src/Menu';
 import MenuItem from 'packages/material-ui/src/MenuItem';
 

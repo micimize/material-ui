@@ -1,6 +1,7 @@
 // @flow weak
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';

@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import Switch from '@material-ui/core/Switch';
 
 class Switches extends React.Component {

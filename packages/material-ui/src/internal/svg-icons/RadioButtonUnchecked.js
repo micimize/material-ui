@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import pure from 'recompose/pure';
 import SvgIcon from '../../SvgIcon';
 

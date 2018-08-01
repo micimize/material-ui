@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { spy, useFakeTimers } from 'sinon';
 import { assert } from 'chai';
 import { createMount, createShallow, getClasses } from '@material-ui/core/test-utils';

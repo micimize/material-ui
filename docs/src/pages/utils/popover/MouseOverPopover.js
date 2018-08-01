@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';

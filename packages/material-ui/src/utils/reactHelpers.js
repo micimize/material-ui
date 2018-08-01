@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import classNames from 'classnames';
 
 export function cloneElementWithClassName(child, className) {

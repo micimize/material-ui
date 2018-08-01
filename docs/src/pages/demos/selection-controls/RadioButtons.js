@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';

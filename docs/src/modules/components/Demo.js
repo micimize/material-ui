@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import LZString from 'lz-string';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -40,6 +41,7 @@ function getDemo(props) {
       'demo.js': props.raw,
       'index.js': `
 import React from 'react';
+import { View, Text } from 'react-native';
 import { render } from 'react-dom';
 import Demo from './demo';
 

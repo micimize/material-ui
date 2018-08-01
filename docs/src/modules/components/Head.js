@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import NextHead from 'next/head';
 import PropTypes from 'prop-types';
 

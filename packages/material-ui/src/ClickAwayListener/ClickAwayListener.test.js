@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import ReactDOM from 'react-dom';
 import { assert } from 'chai';
 import { spy } from 'sinon';

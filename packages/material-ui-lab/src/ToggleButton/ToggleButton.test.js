@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import { spy } from 'sinon';
 import { createRender, createShallow, getClasses } from '@material-ui/core/test-utils';

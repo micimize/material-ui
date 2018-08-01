@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import keycode from 'keycode';
 import { assert } from 'chai';
 import { ReactWrapper } from 'enzyme';

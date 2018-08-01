@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import { spy, stub } from 'sinon';
 import keycode from 'keycode';

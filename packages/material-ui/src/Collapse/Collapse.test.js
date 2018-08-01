@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import { ReactWrapper } from 'enzyme';
 import { assert } from 'chai';
 import { spy, stub, useFakeTimers } from 'sinon';

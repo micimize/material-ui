@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import Document, { Head, Main, NextScript } from 'next/document';
 import getPageContext from 'docs/src/modules/styles/getPageContext';
 import config from 'docs/src/config';

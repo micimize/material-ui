@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { withStyles } from '@material-ui/core/styles';
 import { MenuItem } from '@material-ui/core/Menu';
 import MuiTabs, { Tab } from '@material-ui/core/Tabs';

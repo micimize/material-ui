@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import consoleErrorMock from 'test/utils/consoleErrorMock';
 import { createShallow, getClasses } from '../test-utils';

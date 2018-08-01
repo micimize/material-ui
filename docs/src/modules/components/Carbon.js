@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import pure from 'recompose/pure';
 import { withStyles } from '@material-ui/core/styles';

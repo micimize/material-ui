@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import { createMount, createShallow } from '../test-utils';
 import NoSsr from './NoSsr';

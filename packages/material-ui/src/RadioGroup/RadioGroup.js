@@ -1,6 +1,7 @@
 // @inheritedComponent FormGroup
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 import FormGroup from '../FormGroup';

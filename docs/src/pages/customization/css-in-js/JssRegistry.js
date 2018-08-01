@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { SheetsRegistry } from 'jss';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';

@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import MenuItem from 'packages/material-ui/src/MenuItem';
 import Select from 'packages/material-ui/src/Select';
 import Dialog from 'packages/material-ui/src/Dialog';

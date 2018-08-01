@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import App, { Container } from 'next/app';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';

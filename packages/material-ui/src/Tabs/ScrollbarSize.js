@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import EventListener from 'react-event-listener';
 import debounce from 'debounce'; // < 1kb payload overhead when lodash/debounce is > 3kb.

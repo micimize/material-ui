@@ -35,6 +35,7 @@ Nothing fancy, just plain old CSS. Why reinvent the wheel when it has been worki
 **RawCSSButton.js**
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import Button from '@material-ui/core/Button';
 
 function RawCSSButton() {
@@ -79,6 +80,7 @@ prototyping: [`dangerouslyUseGlobalCSS`](/customization/css-in-js#global-css).
 **GlobalCSSButton.js**
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import Button from '@material-ui/core/Button';
 
 function GlobalCSSButton() {
@@ -131,6 +133,7 @@ bundling solution people are using.
 **CSSModulesButton.js**
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 // webpack, parcel or else will inject the CSS into the page
 import styles from './CSSModulesButton.css';
 import Button from '@material-ui/core/Button';
@@ -164,6 +167,7 @@ The `styled()` method works perfectly on all of our components.
 
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 
@@ -206,6 +210,7 @@ An example of this solution:
 
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 
@@ -250,6 +255,7 @@ The following example overrides the `label` style of `Button` in addition to the
 
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 
@@ -291,6 +297,7 @@ A clean way to apply styles to Material-UI components with glamorous is just pas
 
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import glamorous from 'glamorous';
 import Button from '@material-ui/core/Button';
 
@@ -333,6 +340,7 @@ A good way to apply styles with Glamor is using the **css()** function and then 
 
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import glamorous from 'glamorous';
 import { css } from 'glamor';
 import classnames from 'classnames';

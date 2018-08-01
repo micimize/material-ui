@@ -1,6 +1,7 @@
 // @inheritedComponent FormControl
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import warning from 'warning';
 import PropTypes from 'prop-types';
 import Input from '../Input';

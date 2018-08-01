@@ -1,5 +1,6 @@
 import express from 'express';
 import React from 'react';
+import { View, Text } from 'react-native';
 import { renderToString } from 'react-dom/server';
 import { SheetsRegistry } from 'react-jss/lib/jss';
 import JssProvider from 'react-jss/lib/JssProvider';

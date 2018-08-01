@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import config from 'docs/src/config';
 
 class GoogleTag extends React.Component {

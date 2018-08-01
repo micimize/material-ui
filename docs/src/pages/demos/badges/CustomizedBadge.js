@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';

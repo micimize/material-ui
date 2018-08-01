@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';

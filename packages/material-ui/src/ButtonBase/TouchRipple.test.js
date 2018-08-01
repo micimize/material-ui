@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { useFakeTimers } from 'sinon';
 import { assert } from 'chai';
 import { createShallow, createMount, getClasses, unwrap } from '../test-utils';

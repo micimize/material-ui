@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import FormControlLabel from '@material-ui/core/FormControlLabel';

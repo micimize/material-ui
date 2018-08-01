@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 function LightbulbOutline(props) {

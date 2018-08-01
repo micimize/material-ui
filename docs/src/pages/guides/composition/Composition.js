@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
 

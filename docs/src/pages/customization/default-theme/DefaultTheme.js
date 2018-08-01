@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import url from 'url';
 import PropTypes from 'prop-types';
 import Inspector from 'react-inspector';

@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import injectSheet from 'react-jss/lib/injectSheet';
 import Button from '@material-ui/core/Button';

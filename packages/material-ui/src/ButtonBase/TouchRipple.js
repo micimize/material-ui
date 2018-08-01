@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import TransitionGroup from 'react-transition-group/TransitionGroup';

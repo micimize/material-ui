@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import Button from '@material-ui/core/Button';
 
 export default function MaterialV1Buttons() {

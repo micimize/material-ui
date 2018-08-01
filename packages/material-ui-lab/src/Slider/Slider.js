@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';

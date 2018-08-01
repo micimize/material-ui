@@ -380,6 +380,7 @@ You can see the full properties API in [this dedicated page](/api/mui-theme-prov
 
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import { render } from 'react-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Root from './Root';

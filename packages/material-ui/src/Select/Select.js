@@ -1,6 +1,7 @@
 // @inheritedComponent Input
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import SelectInput from './SelectInput';
 import withStyles from '../styles/withStyles';

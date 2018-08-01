@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import WithTheme from './WithTheme';
 

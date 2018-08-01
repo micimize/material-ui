@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-globals */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 import classNames from 'classnames';

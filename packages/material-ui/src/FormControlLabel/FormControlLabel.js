@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import withStyles from '../styles/withStyles';

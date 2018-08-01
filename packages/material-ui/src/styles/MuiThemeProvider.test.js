@@ -3,6 +3,7 @@
 import { spy } from 'sinon';
 import { assert } from 'chai';
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { SheetsRegistry } from 'jss';
 import JssProvider from 'react-jss/lib/JssProvider';

@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import { createShallow, createMount } from '../test-utils';
 import Step from './Step';

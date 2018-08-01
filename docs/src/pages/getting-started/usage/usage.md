@@ -16,6 +16,7 @@ Here's a quick example to get you started, **it's literally all you need**:
 
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
 

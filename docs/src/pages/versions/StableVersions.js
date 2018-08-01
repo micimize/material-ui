@@ -2,6 +2,7 @@
 
 import 'isomorphic-fetch';
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import orderBy from 'lodash/orderBy';
 import sortedUniqBy from 'lodash/sortedUniqBy';

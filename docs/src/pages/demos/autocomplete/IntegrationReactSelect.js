@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Select from 'react-select';

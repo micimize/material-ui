@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import CheckCircle from '../internal/svg-icons/CheckCircle';
 import { createShallow, createMount } from '../test-utils';

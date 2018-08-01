@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import { createMount } from 'packages/material-ui/src/test-utils';
 import SelectAndDialog from './fixtures/select/SelectAndDialog';

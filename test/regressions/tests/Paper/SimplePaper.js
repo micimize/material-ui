@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import Paper from '@material-ui/core/Paper';
 
 const style = {

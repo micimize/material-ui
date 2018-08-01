@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import Checkbox from '@material-ui/core/Checkbox';
 
 class Checkboxes extends React.Component {

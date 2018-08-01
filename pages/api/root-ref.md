@@ -16,6 +16,7 @@ It's highly inspired by https://github.com/facebook/react/issues/11401#issuecomm
 For example:
 ```jsx
 import React from 'react';
+import { View, Text } from 'react-native';
 import RootRef from '@material-ui/core/RootRef';
 
 class MyComponent extends React.Component {

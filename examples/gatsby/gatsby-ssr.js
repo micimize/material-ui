@@ -1,6 +1,7 @@
 /* eslint-disable react/no-danger */
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import { renderToString } from 'react-dom/server';
 import { JssProvider } from 'react-jss';
 import getPageContext from './src/getPageContext';

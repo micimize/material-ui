@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 import { assert } from 'chai';
 import { spy } from 'sinon';
 import { createShallow, createMount, getClasses, unwrap } from '../test-utils';
