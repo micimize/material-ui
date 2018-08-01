@@ -1,3 +1,6 @@
+const moduleAlias = require('module-alias')
+moduleAlias.addAlias('react-native', 'react-native-web')
+
 const ENV = process.env.BABEL_ENV;
 let defaultPresets;
 
@@ -154,11 +157,11 @@ module.exports = {
         [
           'module-resolver',
           {
-            root: ['./', './node_modules/'],
+            root: ['./'],
             alias: {
               '@material-ui/core': './packages/material-ui/src',
               '@material-ui/icons': './packages/material-ui-icons/src',
-              'react-native$': './node_modules/react-native-web/',
+              'react-native$': 'react-native-web',
             },
           },
         ],
