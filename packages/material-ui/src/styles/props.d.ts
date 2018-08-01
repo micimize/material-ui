@@ -15,7 +15,6 @@ import { CheckboxProps } from '../Checkbox';
 import { ChipProps } from '../Chip';
 import { CircularProgressProps } from '../CircularProgress';
 import { CollapseProps } from '../Collapse';
-import { CssBaselineProps } from '../CssBaseline';
 import { DialogActionsProps } from '../DialogActions';
 import { DialogContentProps } from '../DialogContent';
 import { DialogContentTextProps } from '../DialogContentText';
@@ -107,7 +106,6 @@ type ComponentsPropsList = {
   MuiChip: ChipProps;
   MuiCircularProgress: CircularProgressProps;
   MuiCollapse: CollapseProps;
-  MuiCssBaseline: CssBaselineProps;
   MuiDialog: DialogProps;
   MuiDialogActions: DialogActionsProps;
   MuiDialogContent: DialogContentProps;

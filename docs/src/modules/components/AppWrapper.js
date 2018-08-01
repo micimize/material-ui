@@ -5,7 +5,6 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { lightTheme, darkTheme, setPrismTheme } from '@material-ui/docs/MarkdownElement/prism';
 import getPageContext, { updatePageContext } from 'docs/src/modules/styles/getPageContext';
@@ -88,7 +87,6 @@ class AppWrapper extends React.Component {
         generateClassName={pageContext.generateClassName}
       >
         <MuiThemeProvider theme={pageContext.theme} sheetsManager={pageContext.sheetsManager}>
-          <CssBaseline />
           <AppFrame>{children}</AppFrame>
           <GoogleTag />
         </MuiThemeProvider>

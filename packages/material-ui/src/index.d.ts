@@ -98,7 +98,6 @@ export { default as Chip } from './Chip';
 export { default as CircularProgress } from './CircularProgress';
 export { default as ClickAwayListener } from './ClickAwayListener';
 export { default as Collapse } from './Collapse';
-export { default as CssBaseline } from './CssBaseline';
 export { default as Dialog } from './Dialog';
 export { default as DialogActions } from './DialogActions';
 export { default as DialogContent } from './DialogContent';
