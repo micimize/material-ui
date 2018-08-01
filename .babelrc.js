@@ -46,7 +46,6 @@ module.exports = {
             alias: {
               '@material-ui/core': './packages/material-ui/src',
               '@material-ui/icons': './packages/material-ui-icons/src',
-              '^react-native$': 'react-native-web'
             },
           },
         ],
@@ -59,6 +58,7 @@ module.exports = {
           {
             alias: {
               modules: './modules',
+              'react-native$': 'react-native-web',
             },
           },
         ],
@@ -78,6 +78,7 @@ module.exports = {
               docs: './docs',
               modules: './modules',
               pages: './pages',
+              'react-native$': 'react-native-web',
             },
           },
         ],
@@ -153,15 +154,15 @@ module.exports = {
         [
           'module-resolver',
           {
-            root: ['./'],
+            root: ['./', './node_modules/'],
             alias: {
               '@material-ui/core': './packages/material-ui/src',
               '@material-ui/icons': './packages/material-ui-icons/src',
+              'react-native$': './node_modules/react-native-web/',
             },
           },
         ],
       ],
     },
   },
-  ignore: ['scripts/*.js'],
 };

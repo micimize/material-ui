@@ -47,6 +47,11 @@ module.exports = {
           },
         ]),
       }),
+      resolve: Object.assign({}, config.resolve || {}, {
+        alias: {
+          'react-native$': 'react-native-web',
+        },
+      }),
     });
   },
   webpackDevMiddleware: config => config,

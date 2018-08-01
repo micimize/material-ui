@@ -8,7 +8,7 @@ import createMuiTheme from './createMuiTheme';
 import themeListener from './themeListener';
 import getStylesCreator from './getStylesCreator';
 import getThemeProps from './getThemeProps';
-import createRenderer from 'fela-native';
+import { createRenderer } from 'fela-native';
 import getClassSheet from './getClassSheet';
 
 // Default fela renderer

@@ -1592,6 +1592,10 @@ arrify@^1.0.0, arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
+art@^0.10.1:
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/art/-/art-0.10.3.tgz#b01d84a968ccce6208df55a733838c96caeeaea2"
+
 asap@~2.0.3:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
@@ -1965,6 +1969,10 @@ babel-plugin-preval@^2.0.0:
   dependencies:
     babel-plugin-macros "^2.2.2"
     require-from-string "^2.0.2"
+
+babel-plugin-react-native-web@^0.8.9:
+  version "0.8.9"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-native-web/-/babel-plugin-react-native-web-0.8.9.tgz#3c7e94ddc542595b1b3a3d71c8e9c40ef7b05127"
 
 babel-plugin-react-remove-properties@^0.2.5:
   version "0.2.5"
@@ -4326,6 +4334,9 @@ eslint-plugin-jsx-a11y@^6.0.3:
     emoji-regex "^6.5.1"
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
+
+"eslint-plugin-material-ui@file:packages/eslint-plugin-material-ui":
+  version "1.0.0-beta.35"
 
 eslint-plugin-mocha@^5.0.0:
   version "5.1.0"
@@ -7300,7 +7311,7 @@ next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
-next@^6.0.4-canary.8:
+next@^6.1.1-canary.4:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/next/-/next-6.1.1.tgz#b86d6b773871cfeb189b926eb7089d12f291668e"
   dependencies:
@@ -8494,6 +8505,17 @@ react-addons-shallow-compare@^15.6.2:
   dependencies:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
+
+react-art@^16.4.1:
+  version "16.4.1"
+  resolved "https://registry.yarnpkg.com/react-art/-/react-art-16.4.1.tgz#3544c13038d7ddfe8b1cc1170b02d99492c03b50"
+  dependencies:
+    art "^0.10.1"
+    create-react-class "^15.6.2"
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
 react-autosuggest@^9.3.2:
   version "9.3.4"
