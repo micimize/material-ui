@@ -189,7 +189,7 @@ FormControl.propTypes = {
 };
 
 FormControl.defaultProps = {
-  component: 'div',
+  component: View,
   disabled: false,
   error: false,
   fullWidth: false,

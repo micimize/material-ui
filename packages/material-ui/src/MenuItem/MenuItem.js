@@ -72,7 +72,7 @@ MenuItem.propTypes = {
 };
 
 MenuItem.defaultProps = {
-  component: 'li',
+  component: View,
   role: 'menuitem',
   selected: false,
 };

@@ -83,7 +83,7 @@ CardMedia.propTypes = {
 };
 
 CardMedia.defaultProps = {
-  component: 'div',
+  component: View,
 };
 
 export default withStyles(styles, { name: 'MuiCardMedia' })(CardMedia);

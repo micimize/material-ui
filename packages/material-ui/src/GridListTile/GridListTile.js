@@ -148,7 +148,7 @@ GridListTile.propTypes = {
 
 GridListTile.defaultProps = {
   cols: 1,
-  component: 'li',
+  component: View,
   rows: 1,
 };
 

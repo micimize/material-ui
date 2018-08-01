@@ -467,7 +467,7 @@ Tabs.propTypes = {
 
 Tabs.defaultProps = {
   centered: false,
-  component: 'div',
+  component: View,
   fullWidth: false,
   indicatorColor: 'secondary',
   scrollable: false,

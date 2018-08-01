@@ -53,7 +53,7 @@ function SnackbarContent(props) {
     <Paper
       component={Typography}
       headlineMapping={{
-        body1: 'div',
+        body1: View,
       }}
       role="alertdialog"
       square

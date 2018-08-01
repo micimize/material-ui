@@ -538,7 +538,7 @@ Slider.propTypes = {
 Slider.defaultProps = {
   min: 0,
   max: 100,
-  component: 'div',
+  component: View,
 };
 
 export default withStyles(styles, { name: 'MuiSlider', withTheme: true })(Slider);

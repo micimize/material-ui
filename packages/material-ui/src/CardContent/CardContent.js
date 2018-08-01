@@ -39,7 +39,7 @@ CardContent.propTypes = {
 };
 
 CardContent.defaultProps = {
-  component: 'div',
+  component: View,
 };
 
 export default withStyles(styles, { name: 'MuiCardContent' })(CardContent);

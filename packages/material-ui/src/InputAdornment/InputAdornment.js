@@ -84,7 +84,7 @@ InputAdornment.propTypes = {
 };
 
 InputAdornment.defaultProps = {
-  component: 'div',
+  component: View,
   disableTypography: false,
 };
 

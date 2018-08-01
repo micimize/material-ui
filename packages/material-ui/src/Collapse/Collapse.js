@@ -257,7 +257,7 @@ Collapse.propTypes = {
 
 Collapse.defaultProps = {
   collapsedHeight: '0px',
-  component: 'div',
+  component: View,
   timeout: duration.standard,
 };
 

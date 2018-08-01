@@ -145,7 +145,7 @@ CardHeader.propTypes = {
 };
 
 CardHeader.defaultProps = {
-  component: 'div',
+  component: View,
   disableTypography: false,
 };
 

@@ -12,7 +12,7 @@ const components = {
 
 function WithWidth(props) {
   const { width } = props;
-  const Component = components[width] || 'span';
+  const Component = components[width] || View;
 
   return (
     <Typography variant="subheading">

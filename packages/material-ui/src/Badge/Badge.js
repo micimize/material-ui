@@ -107,7 +107,7 @@ Badge.propTypes = {
 
 Badge.defaultProps = {
   color: 'default',
-  component: 'span',
+  component: View,
 };
 
 export default withStyles(styles, { name: 'MuiBadge' })(Badge);

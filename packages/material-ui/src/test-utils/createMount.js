@@ -8,7 +8,7 @@ import { mount as enzymeMount } from 'enzyme';
 export default function createMount(options1: Object = {}) {
   const { mount = enzymeMount, ...other1 } = options1;
 
-  const attachTo = window.document.createElement('div');
+  const attachTo = window.document.createElement(View);
   attachTo.className = 'app';
   attachTo.setAttribute('id', 'app');
   window.document.body.insertBefore(attachTo, window.document.body.firstChild);

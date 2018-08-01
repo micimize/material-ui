@@ -348,7 +348,7 @@ Grid.propTypes = {
 Grid.defaultProps = {
   alignContent: 'stretch',
   alignItems: 'stretch',
-  component: 'div',
+  component: View,
   container: false,
   direction: 'row',
   item: false,

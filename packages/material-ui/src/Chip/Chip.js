@@ -265,7 +265,7 @@ Chip.propTypes = {
 
 Chip.defaultProps = {
   clickable: false,
-  component: 'div',
+  component: View,
 };
 
 export default withStyles(styles, { name: 'MuiChip' })(Chip);

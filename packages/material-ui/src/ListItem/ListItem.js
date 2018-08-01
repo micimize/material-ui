@@ -114,10 +114,10 @@ class ListItem extends React.Component {
     );
 
     const componentProps = { className, disabled, ...other };
-    let Component = componentProp || 'li';
+    let Component = componentProp || View;
 
     if (button) {
-      componentProps.component = componentProp || 'div';
+      componentProps.component = componentProp || View;
       componentProps.focusVisibleClassName = classNames(
         classes.focusVisible,
         focusVisibleClassName,
@@ -127,14 +127,14 @@ class ListItem extends React.Component {
 
     if (hasSecondaryAction) {
       // Use div by default.
-      Component = !componentProps.component && !componentProp ? 'div' : Component;
+      Component = !componentProps.component && !componentProp ? View : Component;
 
       // Avoid nesting of li > li.
-      if (ContainerComponent === 'li') {
-        if (Component === 'li') {
-          Component = 'div';
-        } else if (componentProps.component === 'li') {
-          componentProps.component = 'div';
+      if (ContainerComponent === View) {
+        if (Component === View) {
+          Component = View;
+        } else if (componentProps.component === View) {
+          componentProps.component = View;
         }
       }
 
@@ -210,7 +210,7 @@ ListItem.propTypes = {
 
 ListItem.defaultProps = {
   button: false,
-  ContainerComponent: 'li',
+  ContainerComponent: View,
   dense: false,
   disabled: false,
   disableGutters: false,

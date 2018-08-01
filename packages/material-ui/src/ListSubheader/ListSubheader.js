@@ -91,7 +91,7 @@ ListSubheader.propTypes = {
 
 ListSubheader.defaultProps = {
   color: 'default',
-  component: 'li',
+  component: View,
   disableSticky: false,
   inset: false,
 };
