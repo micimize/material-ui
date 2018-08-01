@@ -165,7 +165,7 @@ class DownshiftMultiple extends React.Component {
           selectedItem: selectedItem2,
           highlightedIndex,
         }) => (
-          <div className={classes.container}>
+          <View className={classes.container}>
             {renderInput({
               fullWidth: true,
               classes,
@@ -197,7 +197,7 @@ class DownshiftMultiple extends React.Component {
                 )}
               </Paper>
             ) : null}
-          </div>
+          </View>
         )}
       </Downshift>
     );
@@ -238,10 +238,10 @@ function IntegrationDownshift(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Downshift id="downshift-simple">
         {({ getInputProps, getItemProps, isOpen, inputValue, selectedItem, highlightedIndex }) => (
-          <div className={classes.container}>
+          <View className={classes.container}>
             {renderInput({
               fullWidth: true,
               classes,
@@ -262,13 +262,13 @@ function IntegrationDownshift(props) {
                 )}
               </Paper>
             ) : null}
-          </div>
+          </View>
         )}
       </Downshift>
       <DownshiftMultiple classes={classes} />
       <Downshift id="downshift-popper">
         {({ getInputProps, getItemProps, isOpen, inputValue, selectedItem, highlightedIndex }) => (
-          <div className={classes.container}>
+          <View className={classes.container}>
             {renderInput({
               fullWidth: true,
               classes,
@@ -292,10 +292,10 @@ function IntegrationDownshift(props) {
                 )}
               </Paper>
             </Popper>
-          </div>
+          </View>
         )}
       </Downshift>
-    </div>
+    </View>
   );
 }
 

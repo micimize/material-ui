@@ -48,7 +48,7 @@ class ScrollableTabsButtonForce extends React.Component {
     const { value } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <AppBar position="static" color="default">
           <Tabs
             value={value}
@@ -74,7 +74,7 @@ class ScrollableTabsButtonForce extends React.Component {
         {value === 4 && <TabContainer>Item Five</TabContainer>}
         {value === 5 && <TabContainer>Item Six</TabContainer>}
         {value === 6 && <TabContainer>Item Seven</TabContainer>}
-      </div>
+      </View>
     );
   }
 }

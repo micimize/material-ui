@@ -41,9 +41,9 @@ class SimpleZoom extends React.Component {
     const { checked } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Switch checked={checked} onChange={this.handleChange} aria-label="Collapse" />
-        <div className={classes.container}>
+        <View className={classes.container}>
           <Zoom in={checked}>
             <Paper elevation={4} className={classes.paper}>
               <svg className={classes.svg}>
@@ -58,8 +58,8 @@ class SimpleZoom extends React.Component {
               </svg>
             </Paper>
           </Zoom>
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

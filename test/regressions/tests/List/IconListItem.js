@@ -9,7 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 export default function IconListItem() {
   return (
-    <div style={{ backgroundColor: '#fff', width: 300 }}>
+    <View style={{ backgroundColor: '#fff', width: 300 }}>
       <ListItem>
         <ListItemIcon>
           <Icon>phone</Icon>
@@ -28,6 +28,6 @@ export default function IconListItem() {
       <ListItem dense>
         <ListItemText inset primary="Inset" secondary="Secondary" />
       </ListItem>
-    </div>
+    </View>
   );
 }

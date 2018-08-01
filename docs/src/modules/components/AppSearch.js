@@ -167,11 +167,11 @@ class AppSearch extends React.Component {
     }
 
     return (
-      <div className={classes.root} style={{ display: isWidthUp('sm', width) ? 'block' : 'none' }}>
+      <View className={classes.root} style={{ display: isWidthUp('sm', width) ? 'block' : 'none' }}>
         <EventListener target="window" onKeyDown={this.handleKeyDown} />
-        <div className={classes.search}>
+        <View className={classes.search}>
           <SearchIcon />
-        </div>
+        </View>
         <Input
           disableUnderline
           placeholder="Search…"
@@ -184,7 +184,7 @@ class AppSearch extends React.Component {
             input: classes.inputInput,
           }}
         />
-      </div>
+      </View>
     );
   }
 }

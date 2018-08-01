@@ -108,7 +108,7 @@ class TablePagination extends React.Component {
     return (
       <Component className={classes.root} colSpan={colSpan} {...other}>
         <Toolbar className={classes.toolbar}>
-          <div className={classes.spacer} />
+          <View className={classes.spacer} />
           {rowsPerPageOptions.length > 1 && (
             <Typography variant="caption" className={classes.caption}>
               {labelRowsPerPage}

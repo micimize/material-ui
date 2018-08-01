@@ -47,7 +47,7 @@ class JssRegistry extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <JssProvider registry={sheetsRegistry}>
           <MuiThemeProvider theme={theme}>
             <CssInJs />
@@ -57,7 +57,7 @@ class JssRegistry extends React.Component {
             {`The size of the registry is ${this.state.length}.`}
           </MuiThemeProvider>
         </JssProvider>
-      </div>
+      </View>
     );
   }
 }

@@ -45,7 +45,7 @@ class FullWidthTabs extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <AppBar position="static" color="default">
           <Tabs
             value={this.state.value}
@@ -68,7 +68,7 @@ class FullWidthTabs extends React.Component {
           <TabContainer dir={theme.direction}>Item Two</TabContainer>
           <TabContainer dir={theme.direction}>Item Three</TabContainer>
         </SwipeableViews>
-      </div>
+      </View>
     );
   }
 }

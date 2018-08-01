@@ -18,7 +18,7 @@ const styles = theme => ({
 function ListDividers(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <List component="nav">
         <ListItem button>
           <ListItemText primary="Inbox" />
@@ -35,7 +35,7 @@ function ListDividers(props) {
           <ListItemText primary="Spam" />
         </ListItem>
       </List>
-    </div>
+    </View>
   );
 }
 

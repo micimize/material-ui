@@ -39,7 +39,7 @@ class PositionedPopper extends React.Component {
     const { anchorEl, open, placement } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Popper open={open} anchorEl={anchorEl} placement={placement} transition>
           {({ TransitionProps }) => (
             <Fade {...TransitionProps} timeout={350}>
@@ -83,7 +83,7 @@ class PositionedPopper extends React.Component {
             <Button onClick={this.handleClick('bottom-end')}>bottom-end</Button>
           </Grid>
         </Grid>
-      </div>
+      </View>
     );
   }
 }

@@ -12,7 +12,7 @@ import Icon from '@material-ui/core/Icon';
 
 export default function PrimaryActionCheckboxListItem() {
   return (
-    <div style={{ backgroundColor: '#fff', width: 300 }}>
+    <View style={{ backgroundColor: '#fff', width: 300 }}>
       <List>
         <ListItem button>
           <Checkbox tabIndex={-1} disableRipple />
@@ -33,6 +33,6 @@ export default function PrimaryActionCheckboxListItem() {
           </ListItemSecondaryAction>
         </ListItem>
       </List>
-    </div>
+    </View>
   );
 }

@@ -97,9 +97,9 @@ function AppDrawer(props, context) {
   const { classes, className, disablePermanent, mobileOpen, onClose, onOpen } = props;
 
   const drawer = (
-    <div className={classes.nav}>
-      <div className={classes.toolbarIe11}>
-        <div className={classes.toolbar}>
+    <View className={classes.nav}>
+      <View className={classes.toolbarIe11}>
+        <View className={classes.toolbar}>
           <Link className={classes.title} href="/" onClick={onClose}>
             <Typography variant="title" color="inherit">
               Material-UI
@@ -110,15 +110,15 @@ function AppDrawer(props, context) {
               <Typography variant="caption">{`v${process.env.LIB_VERSION}`}</Typography>
             </Link>
           ) : null}
-        </div>
-      </div>
+        </View>
+      </View>
       <Divider />
       {renderNavItems({ props, pages: context.pages, activePage: context.activePage, depth: 0 })}
-    </div>
+    </View>
   );
 
   return (
-    <div className={className}>
+    <View className={className}>
       <Hidden lgUp={!disablePermanent} implementation="js">
         <SwipeableDrawer
           classes={{
@@ -149,7 +149,7 @@ function AppDrawer(props, context) {
           </Drawer>
         </Hidden>
       )}
-    </div>
+    </View>
   );
 }
 

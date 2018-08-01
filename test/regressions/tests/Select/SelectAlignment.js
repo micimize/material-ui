@@ -9,7 +9,7 @@ import Select from '@material-ui/core/Select';
 
 function SelectAlignment() {
   return (
-    <div>
+    <View>
       <FormControl>
         <InputLabel htmlFor="age1">Age</InputLabel>
         <Select value="" input={<Input name="age1" id="age1" />}>
@@ -33,7 +33,7 @@ function SelectAlignment() {
         <Input id="name-input" />
         <FormHelperText>Alignment with an input</FormHelperText>
       </FormControl>
-    </div>
+    </View>
   );
 }
 

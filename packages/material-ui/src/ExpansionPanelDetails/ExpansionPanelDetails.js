@@ -16,9 +16,9 @@ function ExpansionPanelDetails(props) {
   const { classes, children, className, ...other } = props;
 
   return (
-    <div className={classNames(classes.root, className)} {...other}>
+    <View className={classNames(classes.root, className)} {...other}>
       {children}
-    </div>
+    </View>
   );
 }
 

@@ -39,7 +39,7 @@ class ControlledExpansionPanels extends React.Component {
     const { expanded } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.heading}>General settings</Typography>
@@ -91,7 +91,7 @@ class ControlledExpansionPanels extends React.Component {
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
-      </div>
+      </View>
     );
   }
 }

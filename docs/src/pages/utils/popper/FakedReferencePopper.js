@@ -53,7 +53,7 @@ class FakedReferencePopper extends React.Component {
     const { anchorEl, open } = this.state;
 
     return (
-      <div onMouseLeave={this.handleClose}>
+      <View onMouseLeave={this.handleClose}>
         <Typography onMouseUp={this.handleMouseUp}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ipsum purus, bibendum sit
           amet vulputate eget, porta semper ligula. Donec bibendum vulputate erat, ac fringilla mi
@@ -72,7 +72,7 @@ class FakedReferencePopper extends React.Component {
             </Fade>
           )}
         </Popper>
-      </div>
+      </View>
     );
   }
 }

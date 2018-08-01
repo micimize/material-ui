@@ -10,7 +10,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 export default function SecondaryActionCheckboxListItem() {
   return (
-    <div style={{ backgroundColor: '#fff', width: 300 }}>
+    <View style={{ backgroundColor: '#fff', width: 300 }}>
       <List>
         <ListItem button>
           <ListItemText primary="Primary" />
@@ -25,6 +25,6 @@ export default function SecondaryActionCheckboxListItem() {
           </ListItemSecondaryAction>
         </ListItem>
       </List>
-    </div>
+    </View>
   );
 }

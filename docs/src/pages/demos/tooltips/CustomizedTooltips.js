@@ -90,7 +90,7 @@ class CustomizedTooltips extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <View>
         <Tooltip title="Add">
           <Button className={classes.button}>Default</Button>
         </Tooltip>
@@ -118,7 +118,7 @@ class CustomizedTooltips extends React.Component {
         >
           <Button className={classes.button}>Arrow</Button>
         </Tooltip>
-      </div>
+      </View>
     );
   }
 }

@@ -52,7 +52,7 @@ function SingleLineGridList(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <GridList className={classes.gridList} cols={2.5}>
         {tileData.map(tile => (
           <GridListTile key={tile.img}>
@@ -72,7 +72,7 @@ function SingleLineGridList(props) {
           </GridListTile>
         ))}
       </GridList>
-    </div>
+    </View>
   );
 }
 

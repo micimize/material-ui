@@ -32,7 +32,7 @@ const styles = {
 function IconAvatars(props) {
   const { classes } = props;
   return (
-    <div className={classes.row}>
+    <View className={classes.row}>
       <Avatar className={classes.avatar}>
         <FolderIcon />
       </Avatar>
@@ -42,7 +42,7 @@ function IconAvatars(props) {
       <Avatar className={classes.greenAvatar}>
         <AssignmentIcon />
       </Avatar>
-    </div>
+    </View>
   );
 }
 

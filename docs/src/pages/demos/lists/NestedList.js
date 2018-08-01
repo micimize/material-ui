@@ -37,7 +37,7 @@ class NestedList extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <List
           component="nav"
           subheader={<ListSubheader component="div">Nested List Items</ListSubheader>}
@@ -72,7 +72,7 @@ class NestedList extends React.Component {
             </List>
           </Collapse>
         </List>
-      </div>
+      </View>
     );
   }
 }

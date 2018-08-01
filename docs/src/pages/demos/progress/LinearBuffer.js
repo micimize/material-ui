@@ -41,11 +41,11 @@ class LinearBuffer extends React.Component {
     const { classes } = this.props;
     const { completed, buffer } = this.state;
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <LinearProgress variant="buffer" value={completed} valueBuffer={buffer} />
         <br />
         <LinearProgress color="secondary" variant="buffer" value={completed} valueBuffer={buffer} />
-      </div>
+      </View>
     );
   }
 }

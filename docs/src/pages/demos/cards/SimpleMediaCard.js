@@ -22,7 +22,7 @@ const styles = {
 function SimpleMediaCard(props) {
   const { classes } = props;
   return (
-    <div>
+    <View>
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
@@ -47,7 +47,7 @@ function SimpleMediaCard(props) {
           </Button>
         </CardActions>
       </Card>
-    </div>
+    </View>
   );
 }
 

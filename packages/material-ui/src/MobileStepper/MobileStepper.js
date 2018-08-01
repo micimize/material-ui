@@ -83,15 +83,15 @@ function MobileStepper(props) {
     <Paper square elevation={0} className={className} {...other}>
       {backButton}
       {variant === 'dots' && (
-        <div className={classes.dots}>
+        <View className={classes.dots}>
           {[...new Array(steps)].map((_, step) => {
             const dotClassName = classNames(classes.dot, {
               [classes.dotActive]: step === activeStep,
             });
             // eslint-disable-next-line react/no-array-index-key
-            return <div key={step} className={dotClassName} />;
+            return <View key={step} className={dotClassName} />;
           })}
-        </div>
+        </View>
       )}
       {variant === 'progress' && (
         <LinearProgress

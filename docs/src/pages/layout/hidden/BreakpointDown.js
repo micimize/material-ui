@@ -28,9 +28,9 @@ function BreakpointDown(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Typography variant="subheading">Current width: {props.width}</Typography>
-      <div className={classes.container}>
+      <View className={classes.container}>
         <Hidden xsDown>
           <Paper className={classes.paper}>xsDown</Paper>
         </Hidden>
@@ -46,8 +46,8 @@ function BreakpointDown(props) {
         <Hidden xlDown>
           <Paper className={classes.paper}>xlDown</Paper>
         </Hidden>
-      </div>
-    </div>
+      </View>
+    </View>
   );
 }
 

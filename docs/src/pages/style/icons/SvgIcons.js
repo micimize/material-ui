@@ -34,7 +34,7 @@ function HomeIcon(props) {
 function SvgIcons(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <HomeIcon className={classes.icon} />
       <HomeIcon className={classes.icon} color="primary" />
       <HomeIcon className={classes.icon} color="secondary" />
@@ -57,7 +57,7 @@ function SvgIcons(props) {
           </svg>
         )}
       />
-    </div>
+    </View>
   );
 }
 

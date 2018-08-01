@@ -54,7 +54,7 @@ if (rootElement) {
 <body>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <div id="root"></div>
+  <View id="root"></View>
 </body>
       `,
     },
@@ -204,10 +204,10 @@ class Demo extends React.Component {
     const { anchorEl, codeOpen } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         {demoOptions.hideHeader ? null : (
-          <div>
-            <div className={classes.header}>
+          <View>
+            <View className={classes.header}>
               <Tooltip title="See the source on GitHub" placement="top">
                 <IconButton href={githubLocation} target="_blank" aria-label="GitHub">
                   <Github />
@@ -256,7 +256,7 @@ class Demo extends React.Component {
                   <MenuItem onClick={this.handleClickStackBlitz}>Edit in StackBlitz</MenuItem>
                 )}
               </Menu>
-            </div>
+            </View>
             <Collapse in={codeOpen} unmountOnExit>
               <MarkdownElement
                 dir="ltr"
@@ -264,16 +264,16 @@ class Demo extends React.Component {
                 text={`\`\`\`jsx\n${raw}\n\`\`\``}
               />
             </Collapse>
-          </div>
+          </View>
         )}
-        <div
+        <View
           className={classNames(classes.demo, {
             [classes.demoHiddenHeader]: demoOptions.hideHeader,
           })}
         >
           <DemoComponent />
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

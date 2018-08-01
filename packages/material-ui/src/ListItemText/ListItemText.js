@@ -87,7 +87,7 @@ function ListItemText(props, context) {
   }
 
   return (
-    <div
+    <View
       className={classNames(
         classes.root,
         {
@@ -100,7 +100,7 @@ function ListItemText(props, context) {
     >
       {primary}
       {secondary}
-    </div>
+    </View>
   );
 }
 

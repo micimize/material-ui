@@ -54,7 +54,7 @@ function StepContent(props) {
   }
 
   return (
-    <div className={classNames(classes.root, { [classes.last]: last }, className)} {...other}>
+    <View className={classNames(classes.root, { [classes.last]: last }, className)} {...other}>
       <TransitionComponent
         in={active}
         className={classes.transition}
@@ -64,7 +64,7 @@ function StepContent(props) {
       >
         {children}
       </TransitionComponent>
-    </div>
+    </View>
   );
 }
 

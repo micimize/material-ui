@@ -22,7 +22,7 @@ class AlertDialog extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <Button onClick={this.handleClickOpen}>Open alert dialog</Button>
         <Dialog
           open={this.state.open}
@@ -46,7 +46,7 @@ class AlertDialog extends React.Component {
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+      </View>
     );
   }
 }

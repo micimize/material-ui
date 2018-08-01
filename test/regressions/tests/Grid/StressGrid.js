@@ -20,7 +20,7 @@ function StressGrid(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Grid container spacing={24} direction="column">
         <Grid container item spacing={8}>
           <Grid item xs={3}>
@@ -55,7 +55,7 @@ function StressGrid(props) {
           </Grid>
         </Grid>
       </Grid>
-    </div>
+    </View>
   );
 }
 

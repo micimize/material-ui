@@ -102,7 +102,7 @@ class HorizontalLinearStepper extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Stepper activeStep={activeStep}>
           {steps.map((label, index) => {
             const props = {};
@@ -120,20 +120,20 @@ class HorizontalLinearStepper extends React.Component {
             );
           })}
         </Stepper>
-        <div>
+        <View>
           {activeStep === steps.length ? (
-            <div>
+            <View>
               <Typography className={classes.instructions}>
                 All steps completed - you&quot;re finished
               </Typography>
               <Button onClick={this.handleReset} className={classes.button}>
                 Reset
               </Button>
-            </div>
+            </View>
           ) : (
-            <div>
+            <View>
               <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-              <div>
+              <View>
                 <Button
                   disabled={activeStep === 0}
                   onClick={this.handleBack}
@@ -159,11 +159,11 @@ class HorizontalLinearStepper extends React.Component {
                 >
                   {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                 </Button>
-              </div>
-            </div>
+              </View>
+            </View>
           )}
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

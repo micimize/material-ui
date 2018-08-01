@@ -171,14 +171,14 @@ class Collapse extends React.Component {
               }}
               {...childProps}
             >
-              <div
+              <View
                 className={classes.wrapper}
                 ref={ref => {
                   this.wrapperRef = ref;
                 }}
               >
-                <div className={classes.wrapperInner}>{children}</div>
-              </div>
+                <View className={classes.wrapperInner}>{children}</View>
+              </View>
             </Component>
           );
         }}

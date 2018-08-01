@@ -26,7 +26,7 @@ class ResponsiveDialog extends React.Component {
     const { fullScreen } = this.props;
 
     return (
-      <div>
+      <View>
         <Button onClick={this.handleClickOpen}>Open responsive dialog</Button>
         <Dialog
           fullScreen={fullScreen}
@@ -50,7 +50,7 @@ class ResponsiveDialog extends React.Component {
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+      </View>
     );
   }
 }

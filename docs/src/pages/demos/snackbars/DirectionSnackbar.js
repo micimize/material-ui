@@ -36,7 +36,7 @@ class DirectionSnackbar extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <Button onClick={this.handleClick(TransitionLeft)}>Right</Button>
         <Button onClick={this.handleClick(TransitionUp)}>Up</Button>
         <Button onClick={this.handleClick(TransitionRight)}>Left</Button>
@@ -50,7 +50,7 @@ class DirectionSnackbar extends React.Component {
           }}
           message={<span id="message-id">I love snacks</span>}
         />
-      </div>
+      </View>
     );
   }
 }

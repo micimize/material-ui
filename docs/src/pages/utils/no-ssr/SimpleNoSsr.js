@@ -16,7 +16,7 @@ function SimpleNoSsr(props) {
   const { classes } = props;
 
   return (
-    <div>
+    <View>
       <Button className={classes.button} variant="contained" color="primary">
         Server & Client
       </Button>
@@ -25,7 +25,7 @@ function SimpleNoSsr(props) {
           Client only
         </Button>
       </NoSsr>
-    </div>
+    </View>
   );
 }
 

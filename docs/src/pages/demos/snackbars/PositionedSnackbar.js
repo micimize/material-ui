@@ -21,7 +21,7 @@ class PositionedSnackbar extends React.Component {
   render() {
     const { vertical, horizontal, open } = this.state;
     return (
-      <div>
+      <View>
         <Button onClick={this.handleClick({ vertical: 'top', horizontal: 'center' })}>
           Top-Center
         </Button>
@@ -49,7 +49,7 @@ class PositionedSnackbar extends React.Component {
           }}
           message={<span id="message-id">I love snacks</span>}
         />
-      </div>
+      </View>
     );
   }
 }

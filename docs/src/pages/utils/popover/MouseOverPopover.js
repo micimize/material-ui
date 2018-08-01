@@ -35,7 +35,7 @@ class MouseOverPopover extends React.Component {
     const open = Boolean(anchorEl);
 
     return (
-      <div>
+      <View>
         <Typography onMouseEnter={this.handlePopoverOpen} onMouseLeave={this.handlePopoverClose}>
           Hover with a Popover.
         </Typography>
@@ -59,7 +59,7 @@ class MouseOverPopover extends React.Component {
         >
           <Typography>I use Popover.</Typography>
         </Popover>
-      </div>
+      </View>
     );
   }
 }

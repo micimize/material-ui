@@ -42,16 +42,16 @@ function MediaControlCard(props) {
   const { classes, theme } = props;
 
   return (
-    <div>
+    <View>
       <Card className={classes.card}>
-        <div className={classes.details}>
+        <View className={classes.details}>
           <CardContent className={classes.content}>
             <Typography variant="headline">Live From Space</Typography>
             <Typography variant="subheading" color="textSecondary">
               Mac Miller
             </Typography>
           </CardContent>
-          <div className={classes.controls}>
+          <View className={classes.controls}>
             <IconButton aria-label="Previous">
               {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
             </IconButton>
@@ -61,15 +61,15 @@ function MediaControlCard(props) {
             <IconButton aria-label="Next">
               {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
             </IconButton>
-          </div>
-        </div>
+          </View>
+        </View>
         <CardMedia
           className={classes.cover}
           image="/static/images/cards/live-from-space.jpg"
           title="Live from space album cover"
         />
       </Card>
-    </div>
+    </View>
   );
 }
 

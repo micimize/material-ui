@@ -29,7 +29,7 @@ function handleClick() {
 function Chips(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Chip label="Basic Chip" className={classes.chip} />
       <Chip
         avatar={<Avatar>MB</Avatar>}
@@ -68,7 +68,7 @@ function Chips(props) {
         href="#chip"
         clickable
       />
-    </div>
+    </View>
   );
 }
 

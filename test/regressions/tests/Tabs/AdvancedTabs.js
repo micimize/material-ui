@@ -23,7 +23,7 @@ function AdvancedTabs(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Paper className={classes.appBar}>
         <Tabs onChange={noop} value={0}>
           <Tab label="New Arrivals in the Longest Text of Nonfiction" />
@@ -64,7 +64,7 @@ function AdvancedTabs(props) {
           <Tab icon={<Icon>thumb_up</Icon>} />
         </Tabs>
       </Paper>
-    </div>
+    </View>
   );
 }
 

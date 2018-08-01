@@ -224,13 +224,13 @@ function LinearProgress(props) {
   }
 
   return (
-    <div className={className} role="progressbar" {...rootProps} {...other}>
-      {variant === 'buffer' ? <div className={dashedClass} /> : null}
-      <div className={bar1ClassName} style={inlineStyles.bar1} />
+    <View className={className} role="progressbar" {...rootProps} {...other}>
+      {variant === 'buffer' ? <View className={dashedClass} /> : null}
+      <View className={bar1ClassName} style={inlineStyles.bar1} />
       {variant === 'determinate' ? null : (
-        <div className={bar2ClassName} style={inlineStyles.bar2} />
+        <View className={bar2ClassName} style={inlineStyles.bar2} />
       )}
-    </div>
+    </View>
   );
 }
 

@@ -452,8 +452,8 @@ class Slider extends React.Component {
         }}
         {...other}
       >
-        <div className={containerClasses}>
-          <div className={trackBeforeClasses} style={inlineTrackBeforeStyles} />
+        <View className={containerClasses}>
+          <View className={trackBeforeClasses} style={inlineTrackBeforeStyles} />
           <ButtonBase
             className={thumbClasses}
             disableRipple
@@ -465,8 +465,8 @@ class Slider extends React.Component {
             onTouchMove={this.handleMouseMove}
             onFocusVisible={this.handleFocus}
           />
-          <div className={trackAfterClasses} style={inlineTrackAfterStyles} />
-        </div>
+          <View className={trackAfterClasses} style={inlineTrackAfterStyles} />
+        </View>
       </Component>
     );
   }

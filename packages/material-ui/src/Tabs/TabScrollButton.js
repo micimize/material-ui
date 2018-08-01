@@ -24,7 +24,7 @@ function TabScrollButton(props) {
   const className = classNames(classes.root, classNameProp);
 
   if (!visible) {
-    return <div className={className} />;
+    return <View className={className} />;
   }
 
   return (

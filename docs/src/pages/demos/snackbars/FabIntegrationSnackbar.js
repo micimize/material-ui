@@ -75,11 +75,11 @@ class FabIntegrationSnackbar extends React.Component {
     const fabClassName = classNames(classes.fab, open ? classes.fabMoveUp : classes.fabMoveDown);
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Button className={classes.button} onClick={this.handleClick}>
           Open snackbar
         </Button>
-        <div className={classes.appFrame}>
+        <View className={classes.appFrame}>
           <AppBar position="static" color="primary">
             <Toolbar>
               <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
@@ -109,8 +109,8 @@ class FabIntegrationSnackbar extends React.Component {
             }
             className={classes.snackbar}
           />
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

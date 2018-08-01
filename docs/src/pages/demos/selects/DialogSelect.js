@@ -46,7 +46,7 @@ class DialogSelect extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <View>
         <Button onClick={this.handleClickOpen}>Open select dialog</Button>
         <Dialog
           disableBackdropClick
@@ -97,7 +97,7 @@ class DialogSelect extends React.Component {
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+      </View>
     );
   }
 }

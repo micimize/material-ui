@@ -6,9 +6,9 @@ import TextField from '@material-ui/core/TextField';
 
 export default function TextFieldError() {
   return (
-    <div>
+    <View>
       <TextField error label="Foo" />
       <TextField error label="Foo" value="Hello world" />
-    </div>
+    </View>
   );
 }

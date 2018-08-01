@@ -484,7 +484,7 @@ class Input extends React.Component {
     }
 
     return (
-      <div className={className} {...other}>
+      <View className={className} {...other}>
         {startAdornment}
         <InputComponent
           aria-invalid={error}
@@ -509,7 +509,7 @@ class Input extends React.Component {
           {...inputProps}
         />
         {endAdornment}
-      </div>
+      </View>
     );
   }
 }

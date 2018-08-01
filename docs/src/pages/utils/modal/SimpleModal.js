@@ -48,7 +48,7 @@ class SimpleModal extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <View>
         <Typography gutterBottom>Click to get the full Modal experience!</Typography>
         <Button onClick={this.handleOpen}>Open Modal</Button>
         <Modal
@@ -57,7 +57,7 @@ class SimpleModal extends React.Component {
           open={this.state.open}
           onClose={this.handleClose}
         >
-          <div style={getModalStyle()} className={classes.paper}>
+          <View style={getModalStyle()} className={classes.paper}>
             <Typography variant="title" id="modal-title">
               Text in a modal
             </Typography>
@@ -65,9 +65,9 @@ class SimpleModal extends React.Component {
               Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
             </Typography>
             <SimpleModalWrapped />
-          </div>
+          </View>
         </Modal>
-      </div>
+      </View>
     );
   }
 }

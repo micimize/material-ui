@@ -116,7 +116,7 @@ function CircularProgress(props) {
   }
 
   return (
-    <div
+    <View
       className={classNames(
         classes.root,
         {
@@ -145,7 +145,7 @@ function CircularProgress(props) {
           strokeWidth={thickness}
         />
       </svg>
-    </div>
+    </View>
   );
 }
 

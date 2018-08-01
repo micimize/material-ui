@@ -5,10 +5,10 @@ import exactProp from '@material-ui/core/utils/exactProp';
 
 NProgress.configure({
   template: `
-    <div class="nprogress-bar" role="bar">
+    <View class="nprogress-bar" role="bar">
       <dt></dt>
       <dd></dd>
-    </div>
+    </View>
   `,
 });
 

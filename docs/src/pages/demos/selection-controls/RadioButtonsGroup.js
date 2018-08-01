@@ -34,7 +34,7 @@ class RadioButtonsGroup extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <FormControl component="fieldset" className={classes.formControl}>
           <FormLabel component="legend">Gender</FormLabel>
           <RadioGroup
@@ -92,7 +92,7 @@ class RadioButtonsGroup extends React.Component {
           </RadioGroup>
           <FormHelperText>labelPlacement start</FormHelperText>
         </FormControl>
-      </div>
+      </View>
     );
   }
 }

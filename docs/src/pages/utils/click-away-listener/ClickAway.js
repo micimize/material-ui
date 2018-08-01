@@ -48,12 +48,12 @@ class ClickAway extends React.Component {
   render() {
     const { classes } = this.props;
     const { open } = this.state;
-    const fake = <div className={classes.fake} />;
+    const fake = <View className={classes.fake} />;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <ClickAwayListener onClickAway={this.handleClickAway}>
-          <div>
+          <View>
             <Button onClick={this.handleClick}>Open menu</Button>
             {open ? (
               <Paper className={classes.paper}>
@@ -64,9 +64,9 @@ class ClickAway extends React.Component {
                 {fake}
               </Paper>
             ) : null}
-          </div>
+          </View>
         </ClickAwayListener>
-      </div>
+      </View>
     );
   }
 }

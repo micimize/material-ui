@@ -37,7 +37,7 @@ class RadioButtons extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <View>
         <Radio
           checked={this.state.selectedValue === 'a'}
           onChange={this.handleChange}
@@ -82,7 +82,7 @@ class RadioButtons extends React.Component {
           icon={<RadioButtonUncheckedIcon className={classes.sizeIcon} />}
           checkedIcon={<RadioButtonCheckedIcon className={classes.sizeIcon} />}
         />
-      </div>
+      </View>
     );
   }
 }

@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 
 export default function MaterialV1Buttons() {
   return (
-    <div>
+    <View>
       <Button variant="flat">Text</Button>
       <Button variant="flat" color="primary">
         Text
@@ -21,6 +21,6 @@ export default function MaterialV1Buttons() {
       <Button variant="raised" color="secondary">
         Raised
       </Button>
-    </div>
+    </View>
   );
 }

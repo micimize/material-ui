@@ -84,12 +84,12 @@ function CardHeader(props) {
 
   return (
     <Component className={classNames(classes.root, classNameProp)} {...other}>
-      {avatar && <div className={classes.avatar}>{avatar}</div>}
-      <div className={classes.content}>
+      {avatar && <View className={classes.avatar}>{avatar}</View>}
+      <View className={classes.content}>
         {title}
         {subheader}
-      </div>
-      {action && <div className={classes.action}>{action}</div>}
+      </View>
+      {action && <View className={classes.action}>{action}</View>}
     </Component>
   );
 }

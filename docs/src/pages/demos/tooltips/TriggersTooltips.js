@@ -20,7 +20,7 @@ class TriggersTooltips extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <Grid container justify="center">
           <Grid item>
             <Tooltip disableFocusListener title="Add">
@@ -39,7 +39,7 @@ class TriggersTooltips extends React.Component {
           </Grid>
           <Grid item>
             <ClickAwayListener onClickAway={this.handleTooltipClose}>
-              <div>
+              <View>
                 <Tooltip
                   PopperProps={{
                     disablePortal: true,
@@ -53,11 +53,11 @@ class TriggersTooltips extends React.Component {
                 >
                   <Button onClick={this.handleTooltipOpen}>Click</Button>
                 </Tooltip>
-              </div>
+              </View>
             </ClickAwayListener>
           </Grid>
         </Grid>
-      </div>
+      </View>
     );
   }
 }

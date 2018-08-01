@@ -21,7 +21,7 @@ class SimpleMenu extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <Menu id="simple-menu" open={this.state.open} onClose={this.handleClose} {...this.props}>
           {options.map((label, index) => {
             return (
@@ -35,7 +35,7 @@ class SimpleMenu extends React.Component {
             );
           })}
         </Menu>
-      </div>
+      </View>
     );
   }
 }

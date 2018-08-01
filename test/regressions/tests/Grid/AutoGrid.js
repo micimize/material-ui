@@ -21,7 +21,7 @@ function AutoGrid(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Grid container spacing={24}>
         <Grid item xs>
           <Paper className={classes.paper}>xs</Paper>
@@ -44,7 +44,7 @@ function AutoGrid(props) {
           <Paper className={classes.paper}>xs</Paper>
         </Grid>
       </Grid>
-    </div>
+    </View>
   );
 }
 

@@ -360,9 +360,9 @@ class Tabs extends React.Component {
       <Component className={className} {...other}>
         <EventListener target="window" onResize={this.handleResize} />
         {conditionalElements.scrollbarSizeListener}
-        <div className={classes.flexContainer}>
+        <View className={classes.flexContainer}>
           {conditionalElements.scrollButtonLeft}
-          <div
+          <View
             className={scrollerClassName}
             style={this.state.scrollerStyle}
             ref={ref => {
@@ -371,11 +371,11 @@ class Tabs extends React.Component {
             role="tablist"
             onScroll={this.handleTabsScroll}
           >
-            <div className={flexContainerClassName}>{children}</div>
+            <View className={flexContainerClassName}>{children}</View>
             {this.state.mounted && indicator}
-          </div>
+          </View>
           {conditionalElements.scrollButtonRight}
-        </div>
+        </View>
       </Component>
     );
   }

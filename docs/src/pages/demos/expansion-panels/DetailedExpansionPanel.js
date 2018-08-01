@@ -51,29 +51,29 @@ const styles = theme => ({
 function DetailedExpansionPanel(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <ExpansionPanel defaultExpanded>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <div className={classes.column}>
+          <View className={classes.column}>
             <Typography className={classes.heading}>Location</Typography>
-          </div>
-          <div className={classes.column}>
+          </View>
+          <View className={classes.column}>
             <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
-          </div>
+          </View>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.details}>
-          <div className={classes.column} />
-          <div className={classes.column}>
+          <View className={classes.column} />
+          <View className={classes.column}>
             <Chip label="Barbados" className={classes.chip} onDelete={() => {}} />
-          </div>
-          <div className={classNames(classes.column, classes.helper)}>
+          </View>
+          <View className={classNames(classes.column, classes.helper)}>
             <Typography variant="caption">
               Select your destination of choice<br />
               <a href="#sub-labels-and-columns" className={classes.link}>
                 Learn more
               </a>
             </Typography>
-          </div>
+          </View>
         </ExpansionPanelDetails>
         <Divider />
         <ExpansionPanelActions>
@@ -83,7 +83,7 @@ function DetailedExpansionPanel(props) {
           </Button>
         </ExpansionPanelActions>
       </ExpansionPanel>
-    </div>
+    </View>
   );
 }
 

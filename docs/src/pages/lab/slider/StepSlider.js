@@ -24,9 +24,9 @@ class StepSlider extends React.Component {
     const { value } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Slider value={value} min={0} max={6} step={1} onChange={this.handleChange} />
-      </div>
+      </View>
     );
   }
 }

@@ -47,7 +47,7 @@ class TablePaginationActions extends React.Component {
     const { classes, count, page, rowsPerPage, theme } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <IconButton
           onClick={this.handleFirstPageButtonClick}
           disabled={page === 0}
@@ -76,7 +76,7 @@ class TablePaginationActions extends React.Component {
         >
           {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
         </IconButton>
-      </div>
+      </View>
     );
   }
 }
@@ -153,7 +153,7 @@ class CustomPaginationActionsTable extends React.Component {
 
     return (
       <Paper className={classes.root}>
-        <div className={classes.tableWrapper}>
+        <View className={classes.tableWrapper}>
           <Table className={classes.table}>
             <TableBody>
               {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(n => {
@@ -187,7 +187,7 @@ class CustomPaginationActionsTable extends React.Component {
               </TableRow>
             </TableFooter>
           </Table>
-        </div>
+        </View>
       </Paper>
     );
   }

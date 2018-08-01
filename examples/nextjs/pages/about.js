@@ -19,7 +19,7 @@ function About(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Typography variant="display1" gutterBottom>
         Material-UI
       </Typography>
@@ -34,7 +34,7 @@ function About(props) {
       <Button variant="contained" color="primary">
         Do nothing button
       </Button>
-    </div>
+    </View>
   );
 }
 

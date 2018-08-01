@@ -35,23 +35,23 @@ class SwipeableTemporaryDrawer extends React.Component {
     const { classes } = this.props;
 
     const sideList = (
-      <div className={classes.list}>
+      <View className={classes.list}>
         <List>{mailFolderListItems}</List>
         <Divider />
         <List>{otherMailFolderListItems}</List>
-      </div>
+      </View>
     );
 
     const fullList = (
-      <div className={classes.fullList}>
+      <View className={classes.fullList}>
         <List>{mailFolderListItems}</List>
         <Divider />
         <List>{otherMailFolderListItems}</List>
-      </div>
+      </View>
     );
 
     return (
-      <div>
+      <View>
         <Button onClick={this.toggleDrawer('left', true)}>Open Left</Button>
         <Button onClick={this.toggleDrawer('right', true)}>Open Right</Button>
         <Button onClick={this.toggleDrawer('top', true)}>Open Top</Button>
@@ -61,14 +61,14 @@ class SwipeableTemporaryDrawer extends React.Component {
           onClose={this.toggleDrawer('left', false)}
           onOpen={this.toggleDrawer('left', true)}
         >
-          <div
+          <View
             tabIndex={0}
             role="button"
             onClick={this.toggleDrawer('left', false)}
             onKeyDown={this.toggleDrawer('left', false)}
           >
             {sideList}
-          </div>
+          </View>
         </SwipeableDrawer>
         <SwipeableDrawer
           anchor="top"
@@ -76,14 +76,14 @@ class SwipeableTemporaryDrawer extends React.Component {
           onClose={this.toggleDrawer('top', false)}
           onOpen={this.toggleDrawer('top', true)}
         >
-          <div
+          <View
             tabIndex={0}
             role="button"
             onClick={this.toggleDrawer('top', false)}
             onKeyDown={this.toggleDrawer('top', false)}
           >
             {fullList}
-          </div>
+          </View>
         </SwipeableDrawer>
         <SwipeableDrawer
           anchor="bottom"
@@ -91,14 +91,14 @@ class SwipeableTemporaryDrawer extends React.Component {
           onClose={this.toggleDrawer('bottom', false)}
           onOpen={this.toggleDrawer('bottom', true)}
         >
-          <div
+          <View
             tabIndex={0}
             role="button"
             onClick={this.toggleDrawer('bottom', false)}
             onKeyDown={this.toggleDrawer('bottom', false)}
           >
             {fullList}
-          </div>
+          </View>
         </SwipeableDrawer>
         <SwipeableDrawer
           anchor="right"
@@ -106,16 +106,16 @@ class SwipeableTemporaryDrawer extends React.Component {
           onClose={this.toggleDrawer('right', false)}
           onOpen={this.toggleDrawer('right', true)}
         >
-          <div
+          <View
             tabIndex={0}
             role="button"
             onClick={this.toggleDrawer('right', false)}
             onKeyDown={this.toggleDrawer('right', false)}
           >
             {sideList}
-          </div>
+          </View>
         </SwipeableDrawer>
-      </div>
+      </View>
     );
   }
 }

@@ -57,15 +57,15 @@ class ScrollbarSize extends React.Component {
     const { onChange } = this.props;
 
     return (
-      <div>
+      <View>
         {onChange ? <EventListener target="window" onResize={this.handleResize} /> : null}
-        <div
+        <View
           style={styles}
           ref={ref => {
             this.nodeRef = ref;
           }}
         />
-      </div>
+      </View>
     );
   }
 }

@@ -38,7 +38,7 @@ class SimpleFade extends React.Component {
     const { checked } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Switch checked={checked} onChange={this.handleChange} aria-label="Collapse" />
         <Fade in={checked}>
           <Paper elevation={4} className={classes.paper}>
@@ -47,7 +47,7 @@ class SimpleFade extends React.Component {
             </svg>
           </Paper>
         </Fade>
-      </div>
+      </View>
     );
   }
 }

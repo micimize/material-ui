@@ -165,7 +165,7 @@ class Textarea extends React.Component {
     } = this.props;
 
     return (
-      <div className={classes.root} style={{ height: this.state.height }}>
+      <View className={classes.root} style={{ height: this.state.height }}>
         <EventListener target="window" onResize={this.handleResize} />
         <textarea
           aria-hidden="true"
@@ -195,7 +195,7 @@ class Textarea extends React.Component {
           ref={this.handleRefInput}
           {...other}
         />
-      </div>
+      </View>
     );
   }
 }

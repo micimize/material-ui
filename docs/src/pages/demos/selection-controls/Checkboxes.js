@@ -15,7 +15,7 @@ class Checkboxes extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <Checkbox
           checked={this.state.checkedA}
           onChange={this.handleChange('checkedA')}
@@ -37,7 +37,7 @@ class Checkboxes extends React.Component {
           indeterminate
         />
         <Checkbox defaultChecked color="default" value="checkedG" />
-      </div>
+      </View>
     );
   }
 }

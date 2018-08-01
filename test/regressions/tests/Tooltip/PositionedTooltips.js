@@ -18,7 +18,7 @@ const styles = {
 function PositionedTooltips(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Grid container justify="center">
         <Grid item>
           <Tooltip open title="Add" placement="top-start">
@@ -77,7 +77,7 @@ function PositionedTooltips(props) {
           </Tooltip>
         </Grid>
       </Grid>
-    </div>
+    </View>
   );
 }
 

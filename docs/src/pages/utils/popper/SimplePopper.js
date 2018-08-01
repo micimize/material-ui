@@ -34,7 +34,7 @@ class SimplePopper extends React.Component {
     const id = open ? 'simple-popper' : null;
 
     return (
-      <div>
+      <View>
         <Button aria-describedby={id} variant="contained" onClick={this.handleClick}>
           Toggle Popper
         </Button>
@@ -47,7 +47,7 @@ class SimplePopper extends React.Component {
             </Fade>
           )}
         </Popper>
-      </div>
+      </View>
     );
   }
 }

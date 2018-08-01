@@ -48,7 +48,7 @@ function TitlebarGridList(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <GridList cellHeight={180} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div">December</ListSubheader>
@@ -68,7 +68,7 @@ function TitlebarGridList(props) {
           </GridListTile>
         ))}
       </GridList>
-    </div>
+    </View>
   );
 }
 

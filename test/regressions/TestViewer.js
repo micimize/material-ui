@@ -31,7 +31,7 @@ const styles = theme => ({
 function TestViewer(props) {
   const { children, classes } = props;
 
-  return <div className={classes.root}>{children}</div>;
+  return <View className={classes.root}>{children}</View>;
 }
 
 TestViewer.propTypes = {

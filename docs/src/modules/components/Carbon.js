@@ -144,9 +144,9 @@ class Carbon extends React.Component {
 
     if (adblock) {
       return (
-        <div className={classes.root}>
-          <div className={classes.ad}>
-            <div className={classes.carbonads}>
+        <View className={classes.root}>
+          <View className={classes.ad}>
+            <View className={classes.carbonads}>
               <Typography gutterBottom>Like Material-UI?</Typography>
               <Typography gutterBottom>
                 {`If you don't mind tech-related ads, and want to support Open Source,
@@ -158,16 +158,16 @@ class Carbon extends React.Component {
                   ❤️
                 </span>
               </Typography>
-            </div>
-          </div>
-        </div>
+            </View>
+          </View>
+        </View>
       );
     }
 
     return (
-      <div className={classes.root}>
-        <div className={classes.ad}>
-          <div id="ad" />
+      <View className={classes.root}>
+        <View className={classes.ad}>
+          <View id="ad" />
           {adblock === false && (
             <Tooltip
               id="ad-info"
@@ -177,8 +177,8 @@ class Carbon extends React.Component {
               <span className={classes.info}>i</span>
             </Tooltip>
           )}
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

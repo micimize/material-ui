@@ -17,7 +17,7 @@ function PaperSheet(props) {
   const { classes } = props;
 
   return (
-    <div>
+    <View>
       <Paper className={classes.root} elevation={1}>
         <Typography variant="headline" component="h3">
           This is a sheet of paper.
@@ -26,7 +26,7 @@ function PaperSheet(props) {
           Paper can be used to build surface or other elements for your application.
         </Typography>
       </Paper>
-    </div>
+    </View>
   );
 }
 

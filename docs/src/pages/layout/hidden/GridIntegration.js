@@ -24,7 +24,7 @@ function GridIntegration(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Typography variant="subheading" gutterBottom>
         Current width: {props.width}
       </Typography>
@@ -55,7 +55,7 @@ function GridIntegration(props) {
           </Grid>
         </Hidden>
       </Grid>
-    </div>
+    </View>
   );
 }
 

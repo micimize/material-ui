@@ -19,7 +19,7 @@ const styles = theme => ({
 function InsetList(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <List component="nav">
         <ListItem button>
           <ListItemIcon>
@@ -31,7 +31,7 @@ function InsetList(props) {
           <ListItemText inset primary="Eric Hoffman" />
         </ListItem>
       </List>
-    </div>
+    </View>
   );
 }
 

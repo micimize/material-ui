@@ -41,7 +41,7 @@ class MenuListComposition extends React.Component {
     const { open } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Paper className={classes.paper}>
           <MenuList>
             <MenuItem>Profile</MenuItem>
@@ -49,7 +49,7 @@ class MenuListComposition extends React.Component {
             <MenuItem>Logout</MenuItem>
           </MenuList>
         </Paper>
-        <div>
+        <View>
           <Button
             buttonRef={node => {
               this.anchorEl = node;
@@ -79,8 +79,8 @@ class MenuListComposition extends React.Component {
               </Grow>
             )}
           </Popper>
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

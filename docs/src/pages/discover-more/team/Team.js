@@ -123,7 +123,7 @@ function Team(props) {
                 />
               </Grid>
               <Grid item>
-                <div className={classes.details}>
+                <View className={classes.details}>
                   <Typography variant="headline">{member.name}</Typography>
                   <Typography variant="subheading" color="textSecondary">
                     {member.flag}
@@ -131,7 +131,7 @@ function Team(props) {
                   <Typography variant="body2" color="textSecondary">
                     {member.city}
                   </Typography>
-                  <div className={classes.controls}>
+                  <View className={classes.controls}>
                     {member.github && (
                       <IconButton
                         aria-label="GitHub"
@@ -152,8 +152,8 @@ function Team(props) {
                         <Twitter />
                       </IconButton>
                     )}
-                  </div>
-                </div>
+                  </View>
+                </View>
               </Grid>
             </Grid>
           </Paper>

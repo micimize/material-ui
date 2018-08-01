@@ -99,7 +99,7 @@ class MiniDrawer extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <AppBar
           position="absolute"
           className={classNames(classes.appBar, this.state.open && classes.appBarShift)}
@@ -125,21 +125,21 @@ class MiniDrawer extends React.Component {
           }}
           open={this.state.open}
         >
-          <div className={classes.toolbar}>
+          <View className={classes.toolbar}>
             <IconButton onClick={this.handleDrawerClose}>
               {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
             </IconButton>
-          </div>
+          </View>
           <Divider />
           <List>{mailFolderListItems}</List>
           <Divider />
           <List>{otherMailFolderListItems}</List>
         </Drawer>
         <main className={classes.content}>
-          <div className={classes.toolbar} />
+          <View className={classes.toolbar} />
           <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
         </main>
-      </div>
+      </View>
     );
   }
 }

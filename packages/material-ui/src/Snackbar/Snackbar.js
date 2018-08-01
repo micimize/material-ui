@@ -238,7 +238,7 @@ class Snackbar extends React.Component {
 
     return (
       <ClickAwayListener onClickAway={this.handleClickAway}>
-        <div
+        <View
           className={classNames(
             classes.root,
             classes[`anchorOrigin${capitalize(vertical)}${capitalize(horizontal)}`],
@@ -268,7 +268,7 @@ class Snackbar extends React.Component {
           >
             {children || <SnackbarContent message={message} action={action} {...ContentProps} />}
           </TransitionComponent>
-        </div>
+        </View>
       </ClickAwayListener>
     );
   }

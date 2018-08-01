@@ -22,7 +22,7 @@ const styles = theme => ({
 function SimpleTooltips(props) {
   const { classes } = props;
   return (
-    <div>
+    <View>
       <Tooltip title="Delete">
         <IconButton aria-label="Delete">
           <DeleteIcon />
@@ -38,7 +38,7 @@ function SimpleTooltips(props) {
           <AddIcon />
         </Button>
       </Tooltip>
-    </div>
+    </View>
   );
 }
 

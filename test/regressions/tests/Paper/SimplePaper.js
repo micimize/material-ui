@@ -11,10 +11,10 @@ const style = {
 
 export default function SimplePaper() {
   return (
-    <div>
+    <View>
       <Paper style={style} />
       <Paper style={style} square />
       <Paper style={style} elevation={6} />
-    </div>
+    </View>
   );
 }

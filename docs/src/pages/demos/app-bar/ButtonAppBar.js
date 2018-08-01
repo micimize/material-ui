@@ -25,7 +25,7 @@ const styles = {
 function ButtonAppBar(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <AppBar position="static">
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
@@ -37,7 +37,7 @@ function ButtonAppBar(props) {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-    </div>
+    </View>
   );
 }
 

@@ -40,7 +40,7 @@ function SwipeArea(props) {
   const { anchor, classes, width, ...other } = props;
 
   return (
-    <div
+    <View
       className={classNames(classes.root, classes[`anchor${capitalize(anchor)}`])}
       style={{
         [isHorizontal(props) ? 'width' : 'height']: width,

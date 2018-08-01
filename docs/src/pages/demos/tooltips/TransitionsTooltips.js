@@ -7,7 +7,7 @@ import Zoom from '@material-ui/core/Zoom';
 
 function TransitionsTooltips() {
   return (
-    <div>
+    <View>
       <Tooltip title="Add">
         <Button>Grow</Button>
       </Tooltip>
@@ -17,7 +17,7 @@ function TransitionsTooltips() {
       <Tooltip TransitionComponent={Zoom} title="Add">
         <Button>Zoom</Button>
       </Tooltip>
-    </div>
+    </View>
   );
 }
 

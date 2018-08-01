@@ -88,7 +88,7 @@ class HomePage extends React.Component {
     const classes = this.props.classes;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
@@ -109,14 +109,14 @@ class HomePage extends React.Component {
         />
         <Head />
         <Tidelift />
-        <div className={classes.hero}>
-          <div className={classes.content}>
+        <View className={classes.hero}>
+          <View className={classes.content}>
             <img
               src="/static/images/material-ui-logo.svg"
               alt="Material-UI Logo"
               className={classes.logo}
             />
-            <div className={classes.text}>
+            <View className={classes.text}>
               <Typography
                 variant="display2"
                 align="center"
@@ -151,13 +151,13 @@ class HomePage extends React.Component {
               >
                 {'Get Started'}
               </Button>
-            </div>
-          </div>
-        </div>
+            </View>
+          </View>
+        </View>
         <HomeSteps />
         <HomeBackers />
         <HomeFooter />
-      </div>
+      </View>
     );
   }
 }

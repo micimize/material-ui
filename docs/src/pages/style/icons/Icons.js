@@ -26,7 +26,7 @@ function Icons(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Icon className={classes.icon}>add_circle</Icon>
       <Icon className={classes.icon} color="primary">
         add_circle
@@ -43,7 +43,7 @@ function Icons(props) {
       <Icon className={classes.icon} color="disabled" style={{ fontSize: 36 }}>
         add_circle
       </Icon>
-    </div>
+    </View>
   );
 }
 

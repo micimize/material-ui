@@ -58,7 +58,7 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <View>
         <Card className={classes.card}>
           <CardHeader
             avatar={
@@ -133,7 +133,7 @@ class RecipeReviewCard extends React.Component {
             </CardContent>
           </Collapse>
         </Card>
-      </div>
+      </View>
     );
   }
 }

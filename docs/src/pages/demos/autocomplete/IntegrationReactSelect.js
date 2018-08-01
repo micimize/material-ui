@@ -103,7 +103,7 @@ function NoOptionsMessage(props) {
 }
 
 function inputComponent({ inputRef, ...props }) {
-  return <div ref={inputRef} {...props} />;
+  return <View ref={inputRef} {...props} />;
 }
 
 function Control(props) {
@@ -160,7 +160,7 @@ function SingleValue(props) {
 }
 
 function ValueContainer(props) {
-  return <div className={props.selectProps.classes.valueContainer}>{props.children}</div>;
+  return <View className={props.selectProps.classes.valueContainer}>{props.children}</View>;
 }
 
 function MultiValue(props) {
@@ -205,7 +205,7 @@ class IntegrationReactSelect extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <NoSsr>
           <Select
             classes={classes}
@@ -225,7 +225,7 @@ class IntegrationReactSelect extends React.Component {
             isMulti
           />
         </NoSsr>
-      </div>
+      </View>
     );
   }
 }

@@ -67,9 +67,9 @@ function ColorDemo(props) {
   theme.palette.augmentColor(secondary);
 
   return (
-    <div className={classes.root}>
-      <div className={classes.appFrame}>
-        <div className={classes.statusBar} style={{ backgroundColor: primary.dark }} />
+    <View className={classes.root}>
+      <View className={classes.appFrame}>
+        <View className={classes.statusBar} style={{ backgroundColor: primary.dark }} />
         <AppBar position="static" style={{ backgroundColor: primary.main }}>
           <Toolbar style={{ color: primary.contrastText }}>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
@@ -95,8 +95,8 @@ function ColorDemo(props) {
         <Button variant="fab" className={classes.fab} style={{ backgroundColor: secondary.main }}>
           <AddIcon nativeColor={secondary.contrastText} />
         </Button>
-      </div>
-    </div>
+      </View>
+    </View>
   );
 }
 

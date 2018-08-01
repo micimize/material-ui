@@ -27,8 +27,8 @@ function AutoGridNoWrap(props) {
                     as this is a much longer line than what the container can support. `;
 
   return (
-    <div className={classes.root}>
-      <div className={classes.wrapper}>
+    <View className={classes.root}>
+      <View className={classes.wrapper}>
         <Paper className={classes.paper}>
           <Grid container wrap="nowrap" spacing={16}>
             <Grid item>
@@ -59,8 +59,8 @@ function AutoGridNoWrap(props) {
             </Grid>
           </Grid>
         </Paper>
-      </div>
-    </div>
+      </View>
+    </View>
   );
 }
 

@@ -81,7 +81,7 @@ class FormattedInputs extends React.Component {
     const { textmask, numberformat } = this.state;
 
     return (
-      <div className={classes.container}>
+      <View className={classes.container}>
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="formatted-text-mask-input">react-text-mask</InputLabel>
           <Input
@@ -101,7 +101,7 @@ class FormattedInputs extends React.Component {
             inputComponent: NumberFormatCustom,
           }}
         />
-      </div>
+      </View>
     );
   }
 }

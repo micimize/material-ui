@@ -50,7 +50,7 @@ class InteractiveList extends React.Component {
     const { dense, secondary } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <FormGroup row>
           <FormControlLabel
             control={
@@ -78,7 +78,7 @@ class InteractiveList extends React.Component {
             <Typography variant="title" className={classes.title}>
               Text only
             </Typography>
-            <div className={classes.demo}>
+            <View className={classes.demo}>
               <List dense={dense}>
                 {generate(
                   <ListItem>
@@ -89,13 +89,13 @@ class InteractiveList extends React.Component {
                   </ListItem>,
                 )}
               </List>
-            </div>
+            </View>
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="title" className={classes.title}>
               Icon with text
             </Typography>
-            <div className={classes.demo}>
+            <View className={classes.demo}>
               <List dense={dense}>
                 {generate(
                   <ListItem>
@@ -109,7 +109,7 @@ class InteractiveList extends React.Component {
                   </ListItem>,
                 )}
               </List>
-            </div>
+            </View>
           </Grid>
         </Grid>
         <Grid container spacing={16}>
@@ -117,7 +117,7 @@ class InteractiveList extends React.Component {
             <Typography variant="title" className={classes.title}>
               Avatar with text
             </Typography>
-            <div className={classes.demo}>
+            <View className={classes.demo}>
               <List dense={dense}>
                 {generate(
                   <ListItem>
@@ -133,13 +133,13 @@ class InteractiveList extends React.Component {
                   </ListItem>,
                 )}
               </List>
-            </div>
+            </View>
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="title" className={classes.title}>
               Avatar with text and icon
             </Typography>
-            <div className={classes.demo}>
+            <View className={classes.demo}>
               <List dense={dense}>
                 {generate(
                   <ListItem>
@@ -160,10 +160,10 @@ class InteractiveList extends React.Component {
                   </ListItem>,
                 )}
               </List>
-            </div>
+            </View>
           </Grid>
         </Grid>
-      </div>
+      </View>
     );
   }
 }

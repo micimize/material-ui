@@ -19,7 +19,7 @@ class FadeSnackbar extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <Button onClick={this.handleClick}>Open with Fade Transition</Button>
         <Snackbar
           open={this.state.open}
@@ -30,7 +30,7 @@ class FadeSnackbar extends React.Component {
           }}
           message={<span id="message-id">I love snacks</span>}
         />
-      </div>
+      </View>
     );
   }
 }

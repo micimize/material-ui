@@ -25,10 +25,10 @@ class SimpleSlider extends React.Component {
     const { value } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Typography id="label">Slider label</Typography>
         <Slider value={value} aria-labelledby="label" onChange={this.handleChange} />
-      </div>
+      </View>
     );
   }
 }

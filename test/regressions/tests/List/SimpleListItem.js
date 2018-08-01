@@ -7,7 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 export default function SimpleListItem() {
   return (
-    <div style={{ backgroundColor: '#fff', width: 300 }}>
+    <View style={{ backgroundColor: '#fff', width: 300 }}>
       <ListItem>
         <ListItemText primary="Primary" />
       </ListItem>
@@ -20,6 +20,6 @@ export default function SimpleListItem() {
       <ListItem dense>
         <ListItemText primary="Primary" secondary="Secondary" />
       </ListItem>
-    </div>
+    </View>
   );
 }

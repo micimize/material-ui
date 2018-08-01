@@ -14,8 +14,8 @@ const styles = theme => ({
 function ButtonSizes(props) {
   const { classes } = props;
   return (
-    <div>
-      <div>
+    <View>
+      <View>
         <Button size="small" className={classes.button}>
           Small
         </Button>
@@ -25,8 +25,8 @@ function ButtonSizes(props) {
         <Button size="large" className={classes.button}>
           Large
         </Button>
-      </div>
-      <div>
+      </View>
+      <View>
         <Button variant="outlined" size="small" color="primary" className={classes.button}>
           Small
         </Button>
@@ -36,8 +36,8 @@ function ButtonSizes(props) {
         <Button variant="outlined" size="large" color="primary" className={classes.button}>
           Large
         </Button>
-      </div>
-      <div>
+      </View>
+      <View>
         <Button variant="contained" size="small" color="primary" className={classes.button}>
           Small
         </Button>
@@ -47,16 +47,16 @@ function ButtonSizes(props) {
         <Button variant="contained" size="large" color="primary" className={classes.button}>
           Large
         </Button>
-      </div>
-      <div>
+      </View>
+      <View>
         <Button variant="fab" mini color="secondary" aria-label="Add" className={classes.button}>
           <AddIcon />
         </Button>
         <Button variant="fab" color="secondary" aria-label="Add" className={classes.button}>
           <AddIcon />
         </Button>
-      </div>
-    </div>
+      </View>
+    </View>
   );
 }
 

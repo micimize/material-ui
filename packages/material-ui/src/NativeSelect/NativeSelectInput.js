@@ -21,7 +21,7 @@ function NativeSelectInput(props) {
   } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <select
         className={classNames(
           classes.select,
@@ -40,7 +40,7 @@ function NativeSelectInput(props) {
         {children}
       </select>
       <IconComponent className={classes.icon} />
-    </div>
+    </View>
   );
 }
 

@@ -17,7 +17,7 @@ const styles = theme => ({
 function Inputs(props) {
   const { classes } = props;
   return (
-    <div className={classes.container}>
+    <View className={classes.container}>
       <Input
         defaultValue="Hello world"
         className={classes.input}
@@ -48,7 +48,7 @@ function Inputs(props) {
           'aria-label': 'Description',
         }}
       />
-    </div>
+    </View>
   );
 }
 

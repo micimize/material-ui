@@ -161,7 +161,7 @@ class HorizontalNonLinearAlternativeLabelStepper extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Stepper alternativeLabel nonLinear activeStep={activeStep}>
           {steps.map((label, index) => {
             const props = {};
@@ -185,18 +185,18 @@ class HorizontalNonLinearAlternativeLabelStepper extends React.Component {
             );
           })}
         </Stepper>
-        <div>
+        <View>
           {this.allStepsCompleted() ? (
-            <div>
+            <View>
               <Typography className={classes.instructions}>
                 All steps completed - you&quot;re finished
               </Typography>
               <Button onClick={this.handleReset}>Reset</Button>
-            </div>
+            </View>
           ) : (
-            <div>
+            <View>
               <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-              <div>
+              <View>
                 <Button
                   disabled={activeStep === 0}
                   onClick={this.handleBack}
@@ -233,11 +233,11 @@ class HorizontalNonLinearAlternativeLabelStepper extends React.Component {
                       {this.completedSteps() === this.totalSteps() - 1 ? 'Finish' : 'Complete Step'}
                     </Button>
                   ))}
-              </div>
-            </div>
+              </View>
+            </View>
           )}
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

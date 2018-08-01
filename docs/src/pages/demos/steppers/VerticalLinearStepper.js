@@ -77,7 +77,7 @@ class VerticalLinearStepper extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((label, index) => {
             return (
@@ -85,8 +85,8 @@ class VerticalLinearStepper extends React.Component {
                 <StepLabel>{label}</StepLabel>
                 <StepContent>
                   <Typography>{getStepContent(index)}</Typography>
-                  <div className={classes.actionsContainer}>
-                    <div>
+                  <View className={classes.actionsContainer}>
+                    <View>
                       <Button
                         disabled={activeStep === 0}
                         onClick={this.handleBack}
@@ -102,8 +102,8 @@ class VerticalLinearStepper extends React.Component {
                       >
                         {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                       </Button>
-                    </div>
-                  </div>
+                    </View>
+                  </View>
                 </StepContent>
               </Step>
             );
@@ -117,7 +117,7 @@ class VerticalLinearStepper extends React.Component {
             </Button>
           </Paper>
         )}
-      </div>
+      </View>
     );
   }
 }

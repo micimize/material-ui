@@ -30,7 +30,7 @@ class ComposedTextField extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.container}>
+      <View className={classes.container}>
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="name-simple">Name</InputLabel>
           <Input id="name-simple" value={this.state.name} onChange={this.handleChange} />
@@ -50,7 +50,7 @@ class ComposedTextField extends React.Component {
           <Input id="name-error" value={this.state.name} onChange={this.handleChange} />
           <FormHelperText id="name-error-text">Error</FormHelperText>
         </FormControl>
-      </div>
+      </View>
     );
   }
 }

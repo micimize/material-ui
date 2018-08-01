@@ -93,7 +93,7 @@ class GridListTile extends React.Component {
     return (
       <Component className={classNames(classes.root, className)} {...other}>
         <EventListener target="window" onResize={this.handleResize} />
-        <div className={classes.tile}>
+        <View className={classes.tile}>
           {React.Children.map(children, child => {
             if (!React.isValidElement(child)) {
               return null;
@@ -109,7 +109,7 @@ class GridListTile extends React.Component {
 
             return child;
           })}
-        </div>
+        </View>
       </Component>
     );
   }

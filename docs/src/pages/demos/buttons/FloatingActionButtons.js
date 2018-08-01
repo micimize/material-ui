@@ -20,7 +20,7 @@ const styles = theme => ({
 function FloatingActionButtons(props) {
   const { classes } = props;
   return (
-    <div>
+    <View>
       <Button variant="fab" color="primary" aria-label="Add" className={classes.button}>
         <AddIcon />
       </Button>
@@ -34,7 +34,7 @@ function FloatingActionButtons(props) {
       <Button variant="fab" disabled aria-label="Delete" className={classes.button}>
         <DeleteIcon />
       </Button>
-    </div>
+    </View>
   );
 }
 

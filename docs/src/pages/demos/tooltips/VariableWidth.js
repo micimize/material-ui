@@ -25,7 +25,7 @@ Nullam eget est sed sem iaculis gravida eget vitae justo.
 
 function VariableWidth({ classes }) {
   return (
-    <div>
+    <View>
       <Tooltip title={longText}>
         <Button className={classes.button}>Default Width [300px]</Button>
       </Tooltip>
@@ -35,7 +35,7 @@ function VariableWidth({ classes }) {
       <Tooltip title={longText} classes={{ tooltip: classes.noMaxWidth }}>
         <Button className={classes.button}>No wrapping</Button>
       </Tooltip>
-    </div>
+    </View>
   );
 }
 

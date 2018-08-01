@@ -43,7 +43,7 @@ class CheckboxList extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <List>
           {[0, 1, 2, 3].map(value => (
             <ListItem
@@ -68,7 +68,7 @@ class CheckboxList extends React.Component {
             </ListItem>
           ))}
         </List>
-      </div>
+      </View>
     );
   }
 }

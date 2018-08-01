@@ -22,7 +22,7 @@ function renderFullPage(html, css) {
       </head>
       <body>
         <script async src="build/bundle.js"></script>
-        <div id="root">${html}</div>
+        <View id="root">${html}</View>
         <style id="jss-server-side">${css}</style>
       </body>
     </html>

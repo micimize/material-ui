@@ -133,9 +133,9 @@ class ExpansionPanelSummary extends React.Component {
         onBlur={this.handleBlur}
         onClick={this.handleChange}
       >
-        <div className={classNames(classes.content, { [classes.expanded]: expanded })}>
+        <View className={classNames(classes.content, { [classes.expanded]: expanded })}>
           {children}
-        </div>
+        </View>
         {expandIcon && (
           <IconButton
             disabled={disabled}

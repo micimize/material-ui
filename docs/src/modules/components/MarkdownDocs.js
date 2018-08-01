@@ -63,11 +63,11 @@ function MarkdownDocs(props, context) {
         title={`${headers.title || getTitle(markdown)} - Material-UI`}
         description={getDescription(markdown)}
       />
-      <div className={classes.header}>
+      <View className={classes.header}>
         <Button component="a" href={`${SOURCE_CODE_ROOT_URL}${markdownLocation}`}>
           {'Edit this page'}
         </Button>
-      </div>
+      </View>
       {disableCarbon ? null : <Carbon key={markdownLocation} />}
       {contents.map((content, index) => {
         const match = content.match(demoRegexp);

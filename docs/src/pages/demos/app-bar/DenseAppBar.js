@@ -21,7 +21,7 @@ const styles = {
 function DenseAppBar(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <AppBar position="static">
         <Toolbar variant="dense">
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
@@ -32,7 +32,7 @@ function DenseAppBar(props) {
           </Typography>
         </Toolbar>
       </AppBar>
-    </div>
+    </View>
   );
 }
 

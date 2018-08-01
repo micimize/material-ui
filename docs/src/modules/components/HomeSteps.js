@@ -86,11 +86,11 @@ function HomeSteps(props) {
   return (
     <Grid container>
       <Grid item xs={12} md={4} className={classNames(classes.step, classes.leftStep)}>
-        <div className={classes.stepTitle}>
+        <View className={classes.stepTitle}>
           <FileDownloadIcon className={classes.stepIcon} />
           <Typography variant="title">Installation</Typography>
-        </div>
-        <div className={classes.stepBody}>
+        </View>
+        <View className={classes.stepBody}>
           <Typography variant="subheading" gutterBottom>
             {`
             Install Material-UI's source files via npm.
@@ -127,7 +127,7 @@ function HomeSteps(props) {
   \`\`\`
                 `}
           />
-        </div>
+        </View>
         <Divider className={classes.divider} />
         <Button
           component={buttonProps => (
@@ -138,11 +138,11 @@ function HomeSteps(props) {
         </Button>
       </Grid>
       <Grid item xs={12} md={4} className={classes.step}>
-        <div className={classes.stepTitle}>
+        <View className={classes.stepTitle}>
           <BuildIcon className={classes.stepIcon} />
           <Typography variant="title">Usage</Typography>
-        </div>
-        <div className={classes.stepBody}>
+        </View>
+        <View className={classes.stepBody}>
           <Typography variant="subheading" gutterBottom>
             {'Material-UI components work in isolation. They are self-supporting.'}
           </Typography>
@@ -161,7 +161,7 @@ function HomeSteps(props) {
   \`\`\`
                 `}
           />
-        </div>
+        </View>
         <Divider className={classes.divider} />
         <Button
           component={buttonProps => (
@@ -172,11 +172,11 @@ function HomeSteps(props) {
         </Button>
       </Grid>
       <Grid item xs={12} md={4} className={classNames(classes.step, classes.rightStep)}>
-        <div className={classes.stepTitle}>
+        <View className={classes.stepTitle}>
           <WhatshotIcon className={classes.stepIcon} />
           <Typography variant="title">Premium Themes</Typography>
-        </div>
-        <div className={classes.stepBody}>
+        </View>
+        <View className={classes.stepBody}>
           <Typography variant="subheading" gutterBottom>
             {`Take Material-UI to the next level with premium themes from
               our official marketplace—all built on Material-UI.`}
@@ -186,7 +186,7 @@ function HomeSteps(props) {
               <img className={classes.img} alt="themes" src="/static/images/themes.jpg" />
             </NoSsr>
           </Link>
-        </div>
+        </View>
         <Divider className={classes.divider} />
         <Button
           component={buttonProps => (

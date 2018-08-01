@@ -21,7 +21,7 @@ function HomeBackers(props) {
   const classes = props.classes;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <NoSsr>
         <MarkdownElement
           className={classes.markdownElement}
@@ -86,7 +86,7 @@ ${[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 `}
         />
       </NoSsr>
-    </div>
+    </View>
   );
 }
 

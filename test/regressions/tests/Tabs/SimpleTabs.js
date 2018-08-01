@@ -23,7 +23,7 @@ function SimpleTabs(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Paper className={classes.appBar}>
         <Tabs onChange={noop} value={0}>
           <Tab label="Item One" />
@@ -59,7 +59,7 @@ function SimpleTabs(props) {
           <Tab icon={<Icon>person_pin</Icon>} label="NEARBY" disabled />
         </Tabs>
       </Paper>
-    </div>
+    </View>
   );
 }
 

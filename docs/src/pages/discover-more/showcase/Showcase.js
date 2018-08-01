@@ -224,9 +224,9 @@ const appList = [
 function Showcase(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       {appList.map(app => (
-        <div key={app.image}>
+        <View key={app.image}>
           <Typography variant="display1" gutterBottom>
             <span>{app.title}</span>
             {app.source ? (
@@ -243,9 +243,9 @@ function Showcase(props) {
               <CardMedia className={classes.cardMedia} image={app.image} title={app.title} />
             </Link>
           </Card>
-        </div>
+        </View>
       ))}
-    </div>
+    </View>
   );
 }
 

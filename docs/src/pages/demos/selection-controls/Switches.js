@@ -14,7 +14,7 @@ class Switches extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <Switch
           checked={this.state.checkedA}
           onChange={this.handleChange('checkedA')}
@@ -30,7 +30,7 @@ class Switches extends React.Component {
         <Switch disabled value="checkedD" />
         <Switch disabled checked value="checkedE" />
         <Switch defaultChecked value="checkedF" color="default" />
-      </div>
+      </View>
     );
   }
 }

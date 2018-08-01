@@ -138,7 +138,7 @@ class ColorTool extends React.Component {
       return (
         <Grid container className={classes.colorBar}>
           {['dark', 'main', 'light'].map(key => (
-            <div
+            <View
               className={classes.colorSquare}
               style={{ backgroundColor: background[key] }}
               key={key}
@@ -149,7 +149,7 @@ class ColorTool extends React.Component {
               >
                 {rgbToHex(background[key])}
               </Typography>
-            </div>
+            </View>
           ))}
         </Grid>
       );
@@ -174,7 +174,7 @@ class ColorTool extends React.Component {
             }}
             fullWidth
           />
-          <div className={classes.sliderContainer}>
+          <View className={classes.sliderContainer}>
             <Typography id={`${intent}ShadeSliderLabel`}>Shade:</Typography>
             <Slider
               className={classes.slider}
@@ -186,8 +186,8 @@ class ColorTool extends React.Component {
               aria-labelledby={`${intent}ShadeSliderLabel`}
             />
             <Typography>{shades[intentShade]}</Typography>
-          </div>
-          <div className={classes.swatch}>
+          </View>
+          <View className={classes.swatch}>
             {hues.map(hue => {
               const shade = intent === 'primary' ? shades[primaryShade] : shades[secondaryShade];
               const backgroundColor = colors[hue][shade];
@@ -201,17 +201,17 @@ class ColorTool extends React.Component {
                     value={hue}
                     name={intent}
                     aria-labelledby={`tooltip-${intent}-${hue}`}
-                    icon={<div className={classes.radio} style={{ backgroundColor }} />}
+                    icon={<View className={classes.radio} style={{ backgroundColor }} />}
                     checkedIcon={
-                      <div className={classes.radioSelected} style={{ backgroundColor }}>
+                      <View className={classes.radioSelected} style={{ backgroundColor }}>
                         <CheckIcon style={{ fontSize: 30 }} />
-                      </div>
+                      </View>
                     }
                   />
                 </Tooltip>
               );
             })}
-          </div>
+          </View>
           {colorBar(color)}
         </Grid>
       );

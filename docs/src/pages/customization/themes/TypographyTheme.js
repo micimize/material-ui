@@ -43,18 +43,18 @@ function TypographyTheme(props) {
   const { classes } = props;
 
   const children = (
-    <div>
+    <View>
       <Typography>body1</Typography>
       <Typography variant="subheading">subheading</Typography>
       <Button>Button</Button>
-    </div>
+    </View>
   );
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       {children}
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
-    </div>
+    </View>
   );
 }
 

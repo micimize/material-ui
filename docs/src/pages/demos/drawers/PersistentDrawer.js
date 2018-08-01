@@ -131,11 +131,11 @@ class PersistentDrawer extends React.Component {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
+        <View className={classes.drawerHeader}>
           <IconButton onClick={this.handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
-        </div>
+        </View>
         <Divider />
         <List>{mailFolderListItems}</List>
         <Divider />
@@ -153,7 +153,7 @@ class PersistentDrawer extends React.Component {
     }
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <TextField
           id="persistent-anchor"
           select
@@ -165,7 +165,7 @@ class PersistentDrawer extends React.Component {
           <MenuItem value="left">left</MenuItem>
           <MenuItem value="right">right</MenuItem>
         </TextField>
-        <div className={classes.appFrame}>
+        <View className={classes.appFrame}>
           <AppBar
             className={classNames(classes.appBar, {
               [classes.appBarShift]: open,
@@ -193,12 +193,12 @@ class PersistentDrawer extends React.Component {
               [classes[`contentShift-${anchor}`]]: open,
             })}
           >
-            <div className={classes.drawerHeader} />
+            <View className={classes.drawerHeader} />
             <Typography>{'You think water moves fast? You should see ice.'}</Typography>
           </main>
           {after}
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

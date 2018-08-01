@@ -24,11 +24,11 @@ function MediaQuery(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Typography variant="subheading">{'down(sm): red'}</Typography>
       <Typography variant="subheading">{'up(md): blue'}</Typography>
       <Typography variant="subheading">{'up(lg): green'}</Typography>
-    </div>
+    </View>
   );
 }
 

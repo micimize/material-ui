@@ -28,9 +28,9 @@ function BreakpointUp(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Typography variant="subheading">Current width: {props.width}</Typography>
-      <div className={classes.container}>
+      <View className={classes.container}>
         <Hidden xsUp>
           <Paper className={classes.paper}>xsUp</Paper>
         </Hidden>
@@ -46,8 +46,8 @@ function BreakpointUp(props) {
         <Hidden xlUp>
           <Paper className={classes.paper}>xlUp</Paper>
         </Hidden>
-      </div>
-    </div>
+      </View>
+    </View>
   );
 }
 

@@ -43,8 +43,8 @@ class SimpleSlide extends React.Component {
     const { checked } = this.state;
 
     return (
-      <div className={classes.root}>
-        <div className={classes.wrapper}>
+      <View className={classes.root}>
+        <View className={classes.wrapper}>
           <Switch checked={checked} onChange={this.handleChange} aria-label="Collapse" />
           <Slide direction="up" in={checked} mountOnEnter unmountOnExit>
             <Paper elevation={4} className={classes.paper}>
@@ -53,8 +53,8 @@ class SimpleSlide extends React.Component {
               </svg>
             </Paper>
           </Slide>
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }

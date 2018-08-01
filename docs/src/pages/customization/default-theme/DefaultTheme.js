@@ -57,7 +57,7 @@ class ThemeDefault extends React.Component {
     });
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <FormControlLabel
           className={classes.switch}
           control={
@@ -75,7 +75,7 @@ class ThemeDefault extends React.Component {
           expandLevel={checked ? 100 : 1}
           key={`${checked}-${theme.palette.type}`} // Remount
         />
-      </div>
+      </View>
     );
   }
 }

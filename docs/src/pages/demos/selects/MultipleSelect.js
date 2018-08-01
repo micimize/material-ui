@@ -67,7 +67,7 @@ class MultipleSelect extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="select-multiple">Name</InputLabel>
           <Select
@@ -119,9 +119,9 @@ class MultipleSelect extends React.Component {
             onChange={this.handleChange}
             input={<Input id="select-multiple-chip" />}
             renderValue={selected => (
-              <div className={classes.chips}>
+              <View className={classes.chips}>
                 {selected.map(value => <Chip key={value} label={value} className={classes.chip} />)}
-              </div>
+              </View>
             )}
             MenuProps={MenuProps}
           >
@@ -141,7 +141,7 @@ class MultipleSelect extends React.Component {
             ))}
           </Select>
         </FormControl>
-      </div>
+      </View>
     );
   }
 }

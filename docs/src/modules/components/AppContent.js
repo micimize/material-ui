@@ -21,7 +21,7 @@ const styles = theme => ({
 function AppContent(props) {
   const { className, classes, children } = props;
 
-  return <div className={classNames(classes.root, className)}>{children}</div>;
+  return <View className={classNames(classes.root, className)}>{children}</View>;
 }
 
 AppContent.propTypes = {

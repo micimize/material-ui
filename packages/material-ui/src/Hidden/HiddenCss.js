@@ -82,7 +82,7 @@ function HiddenCss(props) {
     });
   }
 
-  return <div className={classNames.join(' ')}>{children}</div>;
+  return <View className={classNames.join(' ')}>{children}</View>;
 }
 
 HiddenCss.propTypes = {

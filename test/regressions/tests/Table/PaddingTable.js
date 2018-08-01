@@ -41,7 +41,7 @@ MyTable.propTypes = {
 
 function PaddingTable() {
   return (
-    <div>
+    <View>
       <Grid container spacing={16}>
         <Grid item xs={6}>
           <MyTable padding="default" />
@@ -56,7 +56,7 @@ function PaddingTable() {
           <MyTable padding="checkbox" />
         </Grid>
       </Grid>
-    </div>
+    </View>
   );
 }
 

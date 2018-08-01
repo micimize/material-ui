@@ -115,7 +115,7 @@ class CustomizedSnackbars extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <View>
         <Button className={classes.margin} onClick={this.handleClick}>
           Open success snackbar
         </Button>
@@ -154,7 +154,7 @@ class CustomizedSnackbars extends React.Component {
           className={classes.margin}
           message="This is a success message!"
         />
-      </div>
+      </View>
     );
   }
 }

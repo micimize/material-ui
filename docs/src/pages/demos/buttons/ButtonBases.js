@@ -100,7 +100,7 @@ function ButtonBases(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       {images.map(image => (
         <ButtonBase
           focusRipple
@@ -131,7 +131,7 @@ function ButtonBases(props) {
           </span>
         </ButtonBase>
       ))}
-    </div>
+    </View>
   );
 }
 

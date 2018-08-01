@@ -34,7 +34,7 @@ class SimpleSnackbar extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <View>
         <Button onClick={this.handleClick}>Open simple snackbar</Button>
         <Snackbar
           anchorOrigin={{
@@ -63,7 +63,7 @@ class SimpleSnackbar extends React.Component {
             </IconButton>,
           ]}
         />
-      </div>
+      </View>
     );
   }
 }

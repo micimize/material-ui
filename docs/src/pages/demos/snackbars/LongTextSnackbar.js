@@ -21,7 +21,7 @@ function LongTextSnackbar(props) {
   const { classes } = props;
 
   return (
-    <div>
+    <View>
       <SnackbarContent className={classes.snackbar} message="I love snacks." action={action} />
       <SnackbarContent
         className={classes.snackbar}
@@ -43,7 +43,7 @@ function LongTextSnackbar(props) {
         }
         action={action}
       />
-    </div>
+    </View>
   );
 }
 

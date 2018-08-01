@@ -20,7 +20,7 @@ const styles = theme => ({
 function IconButtons(props) {
   const { classes } = props;
   return (
-    <div>
+    <View>
       <IconButton className={classes.button} aria-label="Delete">
         <DeleteIcon />
       </IconButton>
@@ -39,7 +39,7 @@ function IconButtons(props) {
           <PhotoCamera />
         </IconButton>
       </label>
-    </div>
+    </View>
   );
 }
 

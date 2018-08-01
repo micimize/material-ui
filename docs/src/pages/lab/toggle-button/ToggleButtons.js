@@ -44,7 +44,7 @@ class ToggleButtons extends React.Component {
     return (
       <Grid container spacing={16}>
         <Grid item xs={12} sm={6}>
-          <div className={classes.toggleContainer}>
+          <View className={classes.toggleContainer}>
             <ToggleButtonGroup value={alignment} exclusive onChange={this.handleAlignment}>
               <ToggleButton value="left">
                 <FormatAlignLeftIcon />
@@ -59,7 +59,7 @@ class ToggleButtons extends React.Component {
                 <FormatAlignJustifyIcon />
               </ToggleButton>
             </ToggleButtonGroup>
-          </div>
+          </View>
           <Typography type="caption" gutterBottom>
             Exclusive Selection
           </Typography>
@@ -70,7 +70,7 @@ class ToggleButtons extends React.Component {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <div className={classes.toggleContainer}>
+          <View className={classes.toggleContainer}>
             <ToggleButtonGroup value={formats} onChange={this.handleFormat}>
               <ToggleButton value="bold">
                 <FormatBoldIcon />
@@ -86,7 +86,7 @@ class ToggleButtons extends React.Component {
                 <ArrowDropDownIcon />
               </ToggleButton>
             </ToggleButtonGroup>
-          </div>
+          </View>
           <Typography type="caption" gutterBottom>
             Multiple Selection
           </Typography>

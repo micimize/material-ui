@@ -22,7 +22,7 @@ class FadeMenu extends React.Component {
     const { anchorEl } = this.state;
 
     return (
-      <div>
+      <View>
         <Button
           aria-owns={anchorEl ? 'fade-menu' : null}
           aria-haspopup="true"
@@ -41,7 +41,7 @@ class FadeMenu extends React.Component {
           <MenuItem onClick={this.handleClose}>My account</MenuItem>
           <MenuItem onClick={this.handleClose}>Logout</MenuItem>
         </Menu>
-      </div>
+      </View>
     );
   }
 }

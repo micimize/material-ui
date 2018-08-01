@@ -33,7 +33,7 @@ class CircularDeterminate extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <View>
         <CircularProgress
           className={classes.progress}
           variant="determinate"
@@ -58,7 +58,7 @@ class CircularDeterminate extends React.Component {
           size={50}
           value={this.state.completed}
         />
-      </div>
+      </View>
     );
   }
 }

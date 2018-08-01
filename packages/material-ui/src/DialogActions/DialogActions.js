@@ -25,9 +25,9 @@ function DialogActions(props) {
   const { disableActionSpacing, children, classes, className, ...other } = props;
 
   return (
-    <div className={classNames(classes.root, className)} {...other}>
+    <View className={classNames(classes.root, className)} {...other}>
       {disableActionSpacing ? children : cloneChildrenWithClassName(children, classes.action)}
-    </div>
+    </View>
   );
 }
 

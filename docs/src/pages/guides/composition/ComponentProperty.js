@@ -67,7 +67,7 @@ function ComponentProperty(props) {
   const { classes } = props;
   return (
     <MemoryRouter initialEntries={['/drafts']} initialIndex={0}>
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Route>
           {({ location }) => (
             <Typography gutterBottom type="title">
@@ -75,7 +75,7 @@ function ComponentProperty(props) {
             </Typography>
           )}
         </Route>
-        <div className={classes.lists}>
+        <View className={classes.lists}>
           <List component="nav">
             <ListItemLink1 to="/inbox" primary="Inbox" icon={<InboxIcon />} />
             <ListItemLink1 to="/drafts" primary="Drafts" icon={<DraftsIcon />} />
@@ -85,8 +85,8 @@ function ComponentProperty(props) {
             <ListItemLink2 to="/trash" primary="Trash" />
             <ListItemLink2 to="/spam" primary="Spam" />
           </List>
-        </div>
-      </div>
+        </View>
+      </View>
     </MemoryRouter>
   );
 }

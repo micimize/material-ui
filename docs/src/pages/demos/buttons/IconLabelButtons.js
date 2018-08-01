@@ -28,7 +28,7 @@ const styles = theme => ({
 function IconLabelButtons(props) {
   const { classes } = props;
   return (
-    <div>
+    <View>
       <Button variant="contained" color="secondary" className={classes.button}>
         Delete
         <DeleteIcon className={classes.rightIcon} />
@@ -49,7 +49,7 @@ function IconLabelButtons(props) {
         <SaveIcon className={classNames(classes.leftIcon, classes.iconSmall)} />
         Save
       </Button>
-    </div>
+    </View>
   );
 }
 

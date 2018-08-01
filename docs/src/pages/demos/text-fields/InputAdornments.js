@@ -70,7 +70,7 @@ class InputAdornments extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <TextField
           label="With normal TextField"
           id="simple-start-adornment"
@@ -139,7 +139,7 @@ class InputAdornments extends React.Component {
             }
           />
         </FormControl>
-      </div>
+      </View>
     );
   }
 }

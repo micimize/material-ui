@@ -41,7 +41,7 @@ class LongMenu extends React.Component {
     const { anchorEl } = this.state;
 
     return (
-      <div>
+      <View>
         <IconButton
           aria-label="More"
           aria-owns={anchorEl ? 'long-menu' : null}
@@ -68,7 +68,7 @@ class LongMenu extends React.Component {
             </MenuItem>
           ))}
         </Menu>
-      </div>
+      </View>
     );
   }
 }

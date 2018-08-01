@@ -39,7 +39,7 @@ class App extends React.Component {
     const { open } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Dialog open={open} onClose={this.handleClose}>
           <DialogTitle>Super Secret Password</DialogTitle>
           <DialogContent>
@@ -60,7 +60,7 @@ class App extends React.Component {
         <Button variant="contained" color="secondary" onClick={this.handleClick}>
           Super Secret Password
         </Button>
-      </div>
+      </View>
     );
   }
 }

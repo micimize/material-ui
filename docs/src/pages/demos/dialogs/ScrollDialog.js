@@ -23,7 +23,7 @@ class ScrollDialog extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <Button onClick={this.handleClickOpen('paper')}>scroll=paper</Button>
         <Button onClick={this.handleClickOpen('body')}>scroll=body</Button>
         <Dialog
@@ -82,7 +82,7 @@ class ScrollDialog extends React.Component {
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+      </View>
     );
   }
 }

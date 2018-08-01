@@ -144,7 +144,7 @@ class ConfirmationDialog extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <List>
           <ListItem button divider disabled>
             <ListItemText primary="Interruptions" />
@@ -171,7 +171,7 @@ class ConfirmationDialog extends React.Component {
             value={this.state.value}
           />
         </List>
-      </div>
+      </View>
     );
   }
 }

@@ -29,7 +29,7 @@ function CSSGrid(props) {
   const { classes } = props;
 
   return (
-    <div>
+    <View>
       <Typography variant="subheading" gutterBottom>
         Material-UI Grid:
       </Typography>
@@ -57,27 +57,27 @@ function CSSGrid(props) {
       <Typography variant="subheading" gutterBottom>
         CSS Grid Layout:
       </Typography>
-      <div className={classes.container}>
-        <div style={{ gridColumnEnd: 'span 3' }}>
+      <View className={classes.container}>
+        <View style={{ gridColumnEnd: 'span 3' }}>
           <Paper className={classes.paper}>xs=3</Paper>
-        </div>
-        <div style={{ gridColumnEnd: 'span 3' }}>
+        </View>
+        <View style={{ gridColumnEnd: 'span 3' }}>
           <Paper className={classes.paper}>xs=3</Paper>
-        </div>
-        <div style={{ gridColumnEnd: 'span 3' }}>
+        </View>
+        <View style={{ gridColumnEnd: 'span 3' }}>
           <Paper className={classes.paper}>xs=3</Paper>
-        </div>
-        <div style={{ gridColumnEnd: 'span 3' }}>
+        </View>
+        <View style={{ gridColumnEnd: 'span 3' }}>
           <Paper className={classes.paper}>xs=3</Paper>
-        </div>
-        <div style={{ gridColumnEnd: 'span 8' }}>
+        </View>
+        <View style={{ gridColumnEnd: 'span 8' }}>
           <Paper className={classes.paper}>xs=8</Paper>
-        </div>
-        <div style={{ gridColumnEnd: 'span 4' }}>
+        </View>
+        <View style={{ gridColumnEnd: 'span 4' }}>
           <Paper className={classes.paper}>xs=4</Paper>
-        </div>
-      </div>
-    </div>
+        </View>
+      </View>
+    </View>
   );
 }
 

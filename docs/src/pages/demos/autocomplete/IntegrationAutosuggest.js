@@ -73,7 +73,7 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
 
   return (
     <MenuItem selected={isHighlighted} component="div">
-      <div>
+      <View>
         {parts.map((part, index) => {
           return part.highlight ? (
             <span key={String(index)} style={{ fontWeight: 500 }}>
@@ -85,7 +85,7 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
             </strong>
           );
         })}
-      </div>
+      </View>
     </MenuItem>
   );
 }
@@ -178,7 +178,7 @@ class IntegrationAutosuggest extends React.Component {
     };
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Autosuggest
           {...autosuggestProps}
           inputProps={{
@@ -226,7 +226,7 @@ class IntegrationAutosuggest extends React.Component {
             </Popper>
           )}
         />
-      </div>
+      </View>
     );
   }
 }

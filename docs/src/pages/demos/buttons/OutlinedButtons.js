@@ -16,7 +16,7 @@ const styles = theme => ({
 function OutlinedButtons(props) {
   const { classes } = props;
   return (
-    <div>
+    <View>
       <Button variant="outlined" className={classes.button}>
         Default
       </Button>
@@ -44,7 +44,7 @@ function OutlinedButtons(props) {
           Upload
         </Button>
       </label>
-    </div>
+    </View>
   );
 }
 

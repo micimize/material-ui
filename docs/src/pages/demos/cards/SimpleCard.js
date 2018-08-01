@@ -31,7 +31,7 @@ function SimpleCard(props) {
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <div>
+    <View>
       <Card className={classes.card}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary">
@@ -52,7 +52,7 @@ function SimpleCard(props) {
           <Button size="small">Learn More</Button>
         </CardActions>
       </Card>
-    </div>
+    </View>
   );
 }
 

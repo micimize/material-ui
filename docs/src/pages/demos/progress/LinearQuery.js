@@ -13,11 +13,11 @@ const styles = {
 function LinearQuery(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <LinearProgress variant="query" />
       <br />
       <LinearProgress color="secondary" variant="query" />
-    </div>
+    </View>
   );
 }
 

@@ -32,7 +32,7 @@ class NoTransitionPopper extends React.Component {
     const id = open ? 'no-transition-popper' : null;
 
     return (
-      <div>
+      <View>
         <Button aria-describedby={id} variant="contained" onClick={this.handleClick}>
           Toggle Popper
         </Button>
@@ -41,7 +41,7 @@ class NoTransitionPopper extends React.Component {
             <Typography className={classes.typography}>The content of the Popper.</Typography>
           </Paper>
         </Popper>
-      </div>
+      </View>
     );
   }
 }

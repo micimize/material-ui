@@ -40,7 +40,7 @@ class TabsWrappedLabel extends React.Component {
     const { value } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <AppBar position="static">
           <Tabs value={value} onChange={this.handleChange}>
             <Tab value="one" label="New Arrivals in the Longest Text of Nonfiction" />
@@ -51,7 +51,7 @@ class TabsWrappedLabel extends React.Component {
         {value === 'one' && <TabContainer>Item One</TabContainer>}
         {value === 'two' && <TabContainer>Item Two</TabContainer>}
         {value === 'three' && <TabContainer>Item Three</TabContainer>}
-      </div>
+      </View>
     );
   }
 }

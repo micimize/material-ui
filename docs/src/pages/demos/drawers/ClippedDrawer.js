@@ -41,7 +41,7 @@ function ClippedDrawer(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <AppBar position="absolute" className={classes.appBar}>
         <Toolbar>
           <Typography variant="title" color="inherit" noWrap>
@@ -55,16 +55,16 @@ function ClippedDrawer(props) {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.toolbar} />
+        <View className={classes.toolbar} />
         <List>{mailFolderListItems}</List>
         <Divider />
         <List>{otherMailFolderListItems}</List>
       </Drawer>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
+        <View className={classes.toolbar} />
         <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
       </main>
-    </div>
+    </View>
   );
 }
 

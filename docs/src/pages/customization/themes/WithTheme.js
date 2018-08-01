@@ -23,10 +23,10 @@ function WithTheme(props) {
   };
 
   return (
-    <div style={{ width: 300 }}>
+    <View style={{ width: 300 }}>
       <Typography style={styles.primaryColor}>{`Primary color ${primaryColor}`}</Typography>
       <Typography style={styles.primaryText}>{`Primary text ${primaryText}`}</Typography>
-    </div>
+    </View>
   );
 }
 

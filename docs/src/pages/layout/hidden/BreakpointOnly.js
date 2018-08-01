@@ -28,9 +28,9 @@ function BreakpointOnly(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <Typography variant="subheading">Current width: {props.width}</Typography>
-      <div className={classes.container}>
+      <View className={classes.container}>
         <Hidden only="lg">
           <Paper className={classes.paper}>Hidden on lg</Paper>
         </Hidden>
@@ -40,8 +40,8 @@ function BreakpointOnly(props) {
         <Hidden only={['sm', 'lg']}>
           <Paper className={classes.paper}>Hidden on sm and lg</Paper>
         </Hidden>
-      </div>
-    </div>
+      </View>
+    </View>
   );
 }
 

@@ -8,13 +8,13 @@ WrappedIcon.muiName = 'Icon';
 
 export default function Composition() {
   return (
-    <div>
+    <View>
       <IconButton>
         <Icon>alarm</Icon>
       </IconButton>
       <IconButton>
         <WrappedIcon>alarm</WrappedIcon>
       </IconButton>
-    </div>
+    </View>
   );
 }

@@ -144,9 +144,9 @@ class Drawer extends React.Component {
 
     if (variant === 'permanent') {
       return (
-        <div className={classNames(classes.docked, className)} {...other}>
+        <View className={classNames(classes.docked, className)} {...other}>
           {drawer}
-        </div>
+        </View>
       );
     }
 
@@ -164,9 +164,9 @@ class Drawer extends React.Component {
 
     if (variant === 'persistent') {
       return (
-        <div className={classNames(classes.docked, className)} {...other}>
+        <View className={classNames(classes.docked, className)} {...other}>
           {slidingDrawer}
-        </div>
+        </View>
       );
     }
 

@@ -18,10 +18,10 @@ const styles = {
 
 function ReactJss(props) {
   return (
-    <div>
+    <View>
       <Button>Material-UI</Button>
       <Button className={props.classes.button}>react-jss</Button>
-    </div>
+    </View>
   );
 }
 

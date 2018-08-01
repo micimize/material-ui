@@ -23,8 +23,8 @@ const styles = theme => ({
 function SimpleBadge(props) {
   const { classes } = props;
   return (
-    <div>
-      <div>
+    <View>
+      <View>
         <Badge className={classes.margin} badgeContent={4} color="primary">
           <MailIcon />
         </Badge>
@@ -36,7 +36,7 @@ function SimpleBadge(props) {
             <MailIcon />
           </Badge>
         </IconButton>
-      </div>
+      </View>
       <AppBar position="static" className={classes.margin}>
         <Tabs value={0}>
           <Tab
@@ -56,7 +56,7 @@ function SimpleBadge(props) {
       <Badge color="primary" badgeContent={4} className={classes.margin}>
         <Button variant="contained">Button</Button>
       </Badge>
-    </div>
+    </View>
   );
 }
 

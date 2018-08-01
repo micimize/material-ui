@@ -61,8 +61,8 @@ function SnackbarContent(props) {
       className={classNames(classes.root, className)}
       {...other}
     >
-      <div className={classes.message}>{message}</div>
-      {action ? <div className={classes.action}>{action}</div> : null}
+      <View className={classes.message}>{message}</View>
+      {action ? <View className={classes.action}>{action}</View> : null}
     </Paper>
   );
 }

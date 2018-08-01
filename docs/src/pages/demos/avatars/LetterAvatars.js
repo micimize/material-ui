@@ -29,11 +29,11 @@ const styles = {
 function LetterAvatars(props) {
   const { classes } = props;
   return (
-    <div className={classes.row}>
+    <View className={classes.row}>
       <Avatar className={classes.avatar}>H</Avatar>
       <Avatar className={classes.orangeAvatar}>N</Avatar>
       <Avatar className={classes.purpleAvatar}>OP</Avatar>
-    </div>
+    </View>
   );
 }
 

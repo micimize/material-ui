@@ -142,7 +142,7 @@ class AnchorPlayground extends React.Component {
     const radioAnchorClasses = { root: classes.radioAnchor, checked: classes.checked };
 
     return (
-      <div>
+      <View>
         <Grid container justify="center" spacing={0}>
           <Grid item className={classes.buttonWrapper}>
             <Button
@@ -155,7 +155,7 @@ class AnchorPlayground extends React.Component {
               Open Popover
             </Button>
             {anchorReference === 'anchorEl' && (
-              <div
+              <View
                 className={classes.anchor}
                 style={{
                   ...inlineStyles.anchorVertical[anchorOriginVertical],
@@ -323,7 +323,7 @@ class AnchorPlayground extends React.Component {
           </Grid>
         </Grid>
         <MarkdownElement text={code} />
-      </div>
+      </View>
     );
   }
 }

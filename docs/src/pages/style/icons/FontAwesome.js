@@ -36,7 +36,7 @@ class FontAwesome extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} />
         <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} color="primary" />
         <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} color="secondary" />
@@ -51,7 +51,7 @@ class FontAwesome extends React.Component {
           color="disabled"
           style={{ fontSize: 36 }}
         />
-      </div>
+      </View>
     );
   }
 }

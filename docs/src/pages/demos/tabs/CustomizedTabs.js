@@ -66,7 +66,7 @@ class CustomizedTabs extends React.Component {
     const { value } = this.state;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <Tabs
           value={value}
           onChange={this.handleChange}
@@ -89,7 +89,7 @@ class CustomizedTabs extends React.Component {
           />
         </Tabs>
         <Typography className={classes.typography}>Ant Design UI powered by Material-UI</Typography>
-      </div>
+      </View>
     );
   }
 }

@@ -74,7 +74,7 @@ function CustomizedInputs(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.container}>
+    <View className={classes.container}>
       <FormControl className={classes.margin}>
         <InputLabel
           FormLabelClasses={{
@@ -115,7 +115,7 @@ function CustomizedInputs(props) {
           className: classes.bootstrapFormLabel,
         }}
       />
-    </div>
+    </View>
   );
 }
 

@@ -30,23 +30,23 @@ class SimplePortal extends React.Component {
     const { classes } = this.props;
     const { show } = this.state;
     return (
-      <div>
+      <View>
         <Button onClick={this.handleClick}>{show ? 'Unmount children' : 'Mount children'}</Button>
-        <div className={classes.alert}>
+        <View className={classes.alert}>
           <Typography>It looks like I will render here.</Typography>
           {show ? (
             <Portal container={this.container}>
               <Typography>But I actually render here!</Typography>
             </Portal>
           ) : null}
-        </div>
-        <div
+        </View>
+        <View
           className={classes.alert}
           ref={ref => {
             this.container = ref;
           }}
         />
-      </div>
+      </View>
     );
   }
 }

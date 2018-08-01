@@ -16,7 +16,7 @@ const styles = theme => ({
 function ContainedButtons(props) {
   const { classes } = props;
   return (
-    <div>
+    <View>
       <Button variant="contained" className={classes.button}>
         Default
       </Button>
@@ -44,7 +44,7 @@ function ContainedButtons(props) {
           Upload
         </Button>
       </label>
-    </div>
+    </View>
   );
 }
 

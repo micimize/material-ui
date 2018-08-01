@@ -20,7 +20,7 @@ const TextFieldMargins = props => {
   const { classes } = props;
 
   return (
-    <div className={classes.container}>
+    <View className={classes.container}>
       <TextField
         label="None"
         id="margin-none"
@@ -44,7 +44,7 @@ const TextFieldMargins = props => {
         helperText="Some important text"
         margin="normal"
       />
-    </div>
+    </View>
   );
 };
 

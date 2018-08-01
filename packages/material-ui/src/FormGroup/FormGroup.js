@@ -26,7 +26,7 @@ function FormGroup(props) {
   const { classes, className, children, row, ...other } = props;
 
   return (
-    <div
+    <View
       className={classNames(
         classes.root,
         {
@@ -37,7 +37,7 @@ function FormGroup(props) {
       {...other}
     >
       {children}
-    </div>
+    </View>
   );
 }
 

@@ -257,7 +257,7 @@ function MarkdownElement(props) {
 
   /* eslint-disable react/no-danger */
   return (
-    <div
+    <View
       className={classNames(classes.root, 'markdown-body', className)}
       dangerouslySetInnerHTML={{ __html: marked(text) }}
       {...other}

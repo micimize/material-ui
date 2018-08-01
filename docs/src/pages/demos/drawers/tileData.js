@@ -14,7 +14,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import ReportIcon from '@material-ui/icons/Report';
 
 export const mailFolderListItems = (
-  <div>
+  <View>
     <ListItem button>
       <ListItemIcon>
         <InboxIcon />
@@ -39,11 +39,11 @@ export const mailFolderListItems = (
       </ListItemIcon>
       <ListItemText primary="Drafts" />
     </ListItem>
-  </div>
+  </View>
 );
 
 export const otherMailFolderListItems = (
-  <div>
+  <View>
     <ListItem button>
       <ListItemIcon>
         <MailIcon />
@@ -62,5 +62,5 @@ export const otherMailFolderListItems = (
       </ListItemIcon>
       <ListItemText primary="Spam" />
     </ListItem>
-  </div>
+  </View>
 );

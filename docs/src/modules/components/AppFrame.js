@@ -130,7 +130,7 @@ class AppFrame extends React.Component {
     }
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <NProgressBar />
         <AppBar className={appBarClassName}>
           <Toolbar>
@@ -147,7 +147,7 @@ class AppFrame extends React.Component {
                 {title}
               </Typography>
             )}
-            <div className={classes.grow} />
+            <View className={classes.grow} />
             <AppSearch />
             <Tooltip title="Edit docs colors" enterDelay={300}>
               <IconButton
@@ -202,7 +202,7 @@ class AppFrame extends React.Component {
           mobileOpen={this.state.mobileOpen}
         />
         {children}
-      </div>
+      </View>
     );
   }
 }

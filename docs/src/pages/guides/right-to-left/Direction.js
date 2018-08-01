@@ -10,10 +10,10 @@ const theme = createMuiTheme({
 function Direction() {
   return (
     <MuiThemeProvider theme={theme}>
-      <div dir="rtl">
+      <View dir="rtl">
         <TextField label="Name" />
         <input type="text" placeholder="Name" />
-      </div>
+      </View>
     </MuiThemeProvider>
   );
 }

@@ -261,8 +261,8 @@ class SelectInput extends React.Component {
     }
 
     return (
-      <div className={classes.root}>
-        <div
+      <View className={classes.root}>
+        <View
           className={classNames(
             classes.select,
             classes.selectMenu,
@@ -287,7 +287,7 @@ class SelectInput extends React.Component {
           {/* So the vertical align positioning algorithm quicks in. */}
           {/* eslint-disable-next-line react/no-danger */}
           {display || <span dangerouslySetInnerHTML={{ __html: '&#8203;' }} />}
-        </div>
+        </View>
         <input
           value={Array.isArray(value) ? value.join(',') : value}
           name={name}
@@ -316,7 +316,7 @@ class SelectInput extends React.Component {
         >
           {items}
         </Menu>
-      </div>
+      </View>
     );
   }
 }

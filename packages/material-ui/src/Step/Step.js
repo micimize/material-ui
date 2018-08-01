@@ -57,7 +57,7 @@ function Step(props) {
   );
 
   return (
-    <div className={className} {...other}>
+    <View className={className} {...other}>
       {React.Children.map(children, child => {
         if (!React.isValidElement(child)) {
           return null;
@@ -86,7 +86,7 @@ function Step(props) {
         alternativeLabel &&
         !last &&
         React.cloneElement(connector, { orientation, alternativeLabel })}
-    </div>
+    </View>
   );
 }
 

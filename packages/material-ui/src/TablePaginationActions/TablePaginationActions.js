@@ -31,7 +31,7 @@ class TablePaginationActions extends React.Component {
     } = this.props;
 
     return (
-      <div {...other}>
+      <View {...other}>
         <IconButton
           onClick={this.handleBackButtonClick}
           disabled={page === 0}
@@ -46,7 +46,7 @@ class TablePaginationActions extends React.Component {
         >
           {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
         </IconButton>
-      </div>
+      </View>
     );
   }
 }

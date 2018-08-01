@@ -14,12 +14,12 @@ const styles = theme => ({
 function CircularIndeterminate(props) {
   const { classes } = props;
   return (
-    <div>
+    <View>
       <CircularProgress className={classes.progress} />
       <CircularProgress className={classes.progress} size={50} />
       <CircularProgress className={classes.progress} color="secondary" />
       <CircularProgress className={classes.progress} style={{ color: purple[500] }} thickness={7} />
-    </div>
+    </View>
   );
 }
 

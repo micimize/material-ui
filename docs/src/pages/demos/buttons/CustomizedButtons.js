@@ -67,7 +67,7 @@ function CustomizedInputs(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.container}>
+    <View className={classes.container}>
       <Button
         variant="contained"
         color="primary"
@@ -88,7 +88,7 @@ function CustomizedInputs(props) {
       >
         Bootstrap
       </Button>
-    </div>
+    </View>
   );
 }
 

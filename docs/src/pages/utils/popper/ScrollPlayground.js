@@ -178,11 +178,11 @@ class AnchorPlayground extends React.Component {
 `;
 
     return (
-      <div className={classes.root}>
-        <div className={classes.scrollContainer}>
+      <View className={classes.root}>
+        <View className={classes.scrollContainer}>
           <RootRef rootRef={this.centerScroll}>
             <Grid className={classes.scroll} container alignItems="center" justify="center">
-              <div>
+              <View>
                 <Button
                   buttonRef={node => {
                     this.anchorEl = node;
@@ -235,16 +235,16 @@ class AnchorPlayground extends React.Component {
                     </DialogActions>
                   </Paper>
                 </Popper>
-              </div>
+              </View>
             </Grid>
           </RootRef>
-        </div>
+        </View>
         <Grid container spacing={16}>
           <Grid item xs={12} sm={6}>
             <Typography gutterBottom variant="title">
               Appearance
             </Typography>
-            <div>
+            <View>
               <TextField
                 margin="normal"
                 className={classes.select}
@@ -267,7 +267,7 @@ class AnchorPlayground extends React.Component {
                 <option value="bottom">bottom</option>
                 <option value="bottom-end">bottom-end</option>
               </TextField>
-            </div>
+            </View>
             <FormControlLabel
               control={
                 <Switch
@@ -283,7 +283,7 @@ class AnchorPlayground extends React.Component {
             <Typography gutterBottom variant="title">
               Modifiers (options from Popper.js)
             </Typography>
-            <div>
+            <View>
               <TextField
                 margin="normal"
                 className={classes.select}
@@ -298,7 +298,7 @@ class AnchorPlayground extends React.Component {
                 <option value="viewport">viewport</option>
                 <option value="window">window</option>
               </TextField>
-            </div>
+            </View>
             <FormControlLabel
               control={<Switch checked={flip} onChange={this.handleChange('flip')} value="flip" />}
               label={[
@@ -315,7 +315,7 @@ class AnchorPlayground extends React.Component {
           </Grid>
         </Grid>
         <MarkdownElement text={code} />
-      </div>
+      </View>
     );
   }
 }

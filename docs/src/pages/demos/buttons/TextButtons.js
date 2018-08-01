@@ -16,7 +16,7 @@ const styles = theme => ({
 function TextButtons(props) {
   const { classes } = props;
   return (
-    <div>
+    <View>
       <Button className={classes.button}>Default</Button>
       <Button color="primary" className={classes.button}>
         Primary
@@ -42,7 +42,7 @@ function TextButtons(props) {
           Upload
         </Button>
       </label>
-    </div>
+    </View>
   );
 }
 

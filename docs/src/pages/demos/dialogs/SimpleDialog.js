@@ -40,7 +40,7 @@ class SimpleDialog extends React.Component {
     return (
       <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
         <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
-        <div>
+        <View>
           <List>
             {emails.map(email => (
               <ListItem button onClick={() => this.handleListItemClick(email)} key={email}>
@@ -61,7 +61,7 @@ class SimpleDialog extends React.Component {
               <ListItemText primary="add account" />
             </ListItem>
           </List>
-        </div>
+        </View>
       </Dialog>
     );
   }
@@ -93,7 +93,7 @@ class SimpleDialogDemo extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <Typography variant="subheading">Selected: {this.state.selectedValue}</Typography>
         <br />
         <Button onClick={this.handleClickOpen}>Open simple dialog</Button>
@@ -102,7 +102,7 @@ class SimpleDialogDemo extends React.Component {
           open={this.state.open}
           onClose={this.handleClose}
         />
-      </div>
+      </View>
     );
   }
 }

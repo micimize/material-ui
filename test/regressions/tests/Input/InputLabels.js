@@ -19,7 +19,7 @@ function InputLabels(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.container}>
+    <View className={classes.container}>
       <InputLabel shrink>First Name Shrunk</InputLabel>
       <InputLabel>First Name</InputLabel>
       <InputLabel focused>Required</InputLabel>
@@ -31,7 +31,7 @@ function InputLabels(props) {
       <InputLabel required error>
         Required Error
       </InputLabel>
-    </div>
+    </View>
   );
 }
 

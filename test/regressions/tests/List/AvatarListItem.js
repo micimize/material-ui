@@ -10,7 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 export default function AvatarListItem() {
   return (
-    <div style={{ backgroundColor: '#fff', width: 300 }}>
+    <View style={{ backgroundColor: '#fff', width: 300 }}>
       <ListItem>
         <Avatar>
           <Icon>folder</Icon>
@@ -37,6 +37,6 @@ export default function AvatarListItem() {
           <ListItemText primary="Avatar" secondary="Secondary" />
         </ListItem>
       </List>
-    </div>
+    </View>
   );
 }

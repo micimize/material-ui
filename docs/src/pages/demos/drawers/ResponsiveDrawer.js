@@ -64,17 +64,17 @@ class ResponsiveDrawer extends React.Component {
     const { classes, theme } = this.props;
 
     const drawer = (
-      <div>
-        <div className={classes.toolbar} />
+      <View>
+        <View className={classes.toolbar} />
         <Divider />
         <List>{mailFolderListItems}</List>
         <Divider />
         <List>{otherMailFolderListItems}</List>
-      </div>
+      </View>
     );
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <AppBar className={classes.appBar}>
           <Toolbar>
             <IconButton
@@ -118,10 +118,10 @@ class ResponsiveDrawer extends React.Component {
           </Drawer>
         </Hidden>
         <main className={classes.content}>
-          <div className={classes.toolbar} />
+          <View className={classes.toolbar} />
           <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
         </main>
-      </div>
+      </View>
     );
   }
 }

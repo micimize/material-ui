@@ -30,8 +30,8 @@ class Inputs extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
-        <div className={classes.container}>
+      <View>
+        <View className={classes.container}>
           <Input value="Hello world" className={classes.input} />
           <Input placeholder="Placeholder" className={classes.input} />
           <Input value="Disabled" className={classes.input} disabled />
@@ -43,9 +43,9 @@ class Inputs extends React.Component {
             }}
             className={classes.input}
           />
-        </div>
+        </View>
         <Input value="Large input" className={classNames(classes.input, classes.large)} />
-      </div>
+      </View>
     );
   }
 }

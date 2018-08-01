@@ -22,14 +22,14 @@ const styles = {
 function ImageAvatars(props) {
   const { classes } = props;
   return (
-    <div className={classes.row}>
+    <View className={classes.row}>
       <Avatar alt="Remy Sharp" src="/static/images/remy.jpg" className={classes.avatar} />
       <Avatar
         alt="Adelle Charles"
         src="/static/images/uxceo-128.jpg"
         className={classNames(classes.avatar, classes.bigAvatar)}
       />
-    </div>
+    </View>
   );
 }
 

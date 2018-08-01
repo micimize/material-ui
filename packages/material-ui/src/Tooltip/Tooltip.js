@@ -341,7 +341,7 @@ class Tooltip extends React.Component {
               {...TransitionPropsInner}
               {...TransitionProps}
             >
-              <div
+              <View
                 className={classNames(
                   classes.tooltip,
                   {
@@ -351,7 +351,7 @@ class Tooltip extends React.Component {
                 )}
               >
                 {title}
-              </div>
+              </View>
             </TransitionComponent>
           )}
         </Popper>

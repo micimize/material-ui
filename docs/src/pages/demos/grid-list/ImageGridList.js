@@ -45,7 +45,7 @@ function ImageGridList(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <GridList cellHeight={160} className={classes.gridList} cols={3}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1}>
@@ -53,7 +53,7 @@ function ImageGridList(props) {
           </GridListTile>
         ))}
       </GridList>
-    </div>
+    </View>
   );
 }
 

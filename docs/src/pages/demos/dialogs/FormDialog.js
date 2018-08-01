@@ -23,7 +23,7 @@ export default class FormDialog extends React.Component {
 
   render() {
     return (
-      <div>
+      <View>
         <Button onClick={this.handleClickOpen}>Open form dialog</Button>
         <Dialog
           open={this.state.open}
@@ -54,7 +54,7 @@ export default class FormDialog extends React.Component {
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+      </View>
     );
   }
 }

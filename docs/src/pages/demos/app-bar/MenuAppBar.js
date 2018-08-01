@@ -51,7 +51,7 @@ class MenuAppBar extends React.Component {
     const open = Boolean(anchorEl);
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <FormGroup>
           <FormControlLabel
             control={
@@ -69,7 +69,7 @@ class MenuAppBar extends React.Component {
               Photos
             </Typography>
             {auth && (
-              <div>
+              <View>
                 <IconButton
                   aria-owns={open ? 'menu-appbar' : null}
                   aria-haspopup="true"
@@ -95,11 +95,11 @@ class MenuAppBar extends React.Component {
                   <MenuItem onClick={this.handleClose}>Profile</MenuItem>
                   <MenuItem onClick={this.handleClose}>My account</MenuItem>
                 </Menu>
-              </div>
+              </View>
             )}
           </Toolbar>
         </AppBar>
-      </div>
+      </View>
     );
   }
 }

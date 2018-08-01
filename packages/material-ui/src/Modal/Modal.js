@@ -291,7 +291,7 @@ class Modal extends React.Component {
         disablePortal={disablePortal}
         onRendered={this.handleRendered}
       >
-        <div
+        <View
           data-mui-test="Modal"
           ref={ref => {
             this.modalRef = ref;
@@ -311,7 +311,7 @@ class Modal extends React.Component {
           >
             {React.cloneElement(children, childProps)}
           </RootRef>
-        </div>
+        </View>
       </Portal>
     );
   }

@@ -182,7 +182,7 @@ class Popper extends React.Component {
 
     return (
       <Portal onRendered={this.handleOpen} disablePortal={disablePortal} container={container}>
-        <div
+        <View
           role="tooltip"
           style={{
             // Prevents scroll issue, waiting for Popper.js to add this style once initiated.
@@ -191,7 +191,7 @@ class Popper extends React.Component {
           {...other}
         >
           {typeof children === 'function' ? children(childProps) : children}
-        </div>
+        </View>
       </Portal>
     );
   }

@@ -22,7 +22,7 @@ const styles = theme => ({
 function InsetDividers(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <View className={classes.root}>
       <List>
         <ListItem>
           <Avatar>
@@ -47,7 +47,7 @@ function InsetDividers(props) {
           <ListItemText primary="Vacation" secondary="July 20, 2014" />
         </ListItem>
       </List>
-    </div>
+    </View>
   );
 }
 

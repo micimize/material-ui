@@ -37,7 +37,7 @@ class NativeSelects extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
+      <View className={classes.root}>
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="age-native-simple">Age</InputLabel>
           <Select
@@ -180,7 +180,7 @@ class NativeSelects extends React.Component {
           </Select>
           <FormHelperText>Required</FormHelperText>
         </FormControl>
-      </div>
+      </View>
     );
   }
 }
