@@ -25,7 +25,8 @@ function mergeClasses(options = {}) {
       );
 
       warning(
-        !newClasses[key] || typeof newClasses[key] === 'string',
+        // It might be good to have a more robust type check, but also less efficient
+        !newClasses[key] || typeof newClasses[key] === 'number',
         [
           `Material-UI: the key \`${key}\` ` +
             `provided to the classes property is not valid for ${getDisplayName(Component)}.`,
