@@ -28,7 +28,7 @@ function About(props) {
       </Typography>
       <Typography gutterBottom>
         <Link href="/">
-          <a>Go to the main page</a>
+          <Text>Go to the main page</Text>
         </Link>
       </Typography>
       <Button variant="contained" color="primary">

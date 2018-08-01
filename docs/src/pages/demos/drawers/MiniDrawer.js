@@ -135,10 +135,10 @@ class MiniDrawer extends React.Component {
           <Divider />
           <List>{otherMailFolderListItems}</List>
         </Drawer>
-        <main className={classes.content}>
+        <View className={classes.content}>
           <View className={classes.toolbar} />
           <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
-        </main>
+        </View>
       </View>
     );
   }

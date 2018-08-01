@@ -23,7 +23,7 @@ function MyLink(props) {
   const { children, classes, className, variant, ...other } = props;
 
   return (
-    <a
+    <Text
       className={classNames(
         classes.root,
         {
@@ -34,7 +34,7 @@ function MyLink(props) {
       {...other}
     >
       {children}
-    </a>
+    </Text>
   );
 }
 

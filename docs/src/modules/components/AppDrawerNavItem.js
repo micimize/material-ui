@@ -51,10 +51,10 @@ class AppDrawerNavItem extends React.Component {
     }
 
     // Center the selected item in the list container.
-    const activeElement = document.querySelector(`.${this.props.classes.active}`);
-    if (activeElement && activeElement.scrollIntoView) {
-      activeElement.scrollIntoView({});
-    }
+    // const activeElement = document.querySelector(`.${this.props.classes.active}`);
+    // if (activeElement && activeElement.scrollIntoView) {
+    //   activeElement.scrollIntoView({});
+    // }
   }
 
   handleClick = () => {

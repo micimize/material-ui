@@ -69,9 +69,9 @@ function DetailedExpansionPanel(props) {
           <View className={classNames(classes.column, classes.helper)}>
             <Typography variant="caption">
               Select your destination of choice<br />
-              <a href="#sub-labels-and-columns" className={classes.link}>
+              <Text href="#sub-labels-and-columns" className={classes.link}>
                 Learn more
-              </a>
+              </Text>
             </Typography>
           </View>
         </ExpansionPanelDetails>

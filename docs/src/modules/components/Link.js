@@ -66,7 +66,7 @@ function Link(props) {
       passHref: true,
     };
     children = (
-      <a
+      <Text
         className={classNames(className, {
           [activeClassName]: router.pathname === href && activeClassName,
         })}
@@ -74,10 +74,10 @@ function Link(props) {
         {...other}
       >
         {children}
-      </a>
+      </Text>
     );
   } else {
-    ComponentRoot = 'a';
+    ComponentRoot = Text;
     RootProps = {
       ...other,
       className,

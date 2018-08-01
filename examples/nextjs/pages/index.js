@@ -62,7 +62,7 @@ class Index extends React.Component {
         </Typography>
         <Typography gutterBottom>
           <Link href="/about">
-            <a>Go to the about page</a>
+            <Text>Go to the about page</Text>
           </Link>
         </Typography>
         <Button variant="contained" color="secondary" onClick={this.handleClick}>

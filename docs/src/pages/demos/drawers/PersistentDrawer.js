@@ -187,7 +187,7 @@ class PersistentDrawer extends React.Component {
             </Toolbar>
           </AppBar>
           {before}
-          <main
+          <View
             className={classNames(classes.content, classes[`content-${anchor}`], {
               [classes.contentShift]: open,
               [classes[`contentShift-${anchor}`]]: open,
@@ -195,7 +195,7 @@ class PersistentDrawer extends React.Component {
           >
             <View className={classes.drawerHeader} />
             <Typography>{'You think water moves fast? You should see ice.'}</Typography>
-          </main>
+          </View>
           {after}
         </View>
       </View>

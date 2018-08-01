@@ -113,10 +113,10 @@ class PermanentDrawer extends React.Component {
             </Toolbar>
           </AppBar>
           {before}
-          <main className={classes.content}>
+          <View className={classes.content}>
             <View className={classes.toolbar} />
             <Typography>{'You think water moves fast? You should see ice.'}</Typography>
-          </main>
+          </View>
           {after}
         </View>
       </View>

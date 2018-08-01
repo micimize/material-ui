@@ -282,7 +282,7 @@ class ButtonBase extends React.Component {
     let ComponentProp = component;
 
     if (ComponentProp === 'button' && other.href) {
-      ComponentProp = 'a';
+      ComponentProp = Text;
     }
 
     if (ComponentProp === 'button') {

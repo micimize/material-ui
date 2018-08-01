@@ -117,7 +117,7 @@ function Typography(props) {
     classNameProp,
   );
 
-  const Component = componentProp || (paragraph ? View : headlineMapping[variant]) || View;
+  const Component = componentProp || (paragraph ? Text : headlineMapping[variant]) || Text;
 
   return <Component className={className} {...other} />;
 }
@@ -199,15 +199,15 @@ Typography.defaultProps = {
   color: 'default',
   gutterBottom: false,
   headlineMapping: {
-    display4: View,
-    display3: View,
-    display2: View,
-    display1: View,
-    headline: View,
-    title: View,
-    subheading: View,
-    body2: View,
-    body1: View,
+    display4: Text,
+    display3: Text,
+    display2: Text,
+    display1: Text,
+    headline: Text,
+    title: Text,
+    subheading: Text,
+    body2: Text,
+    body1: Text,
   },
   noWrap: false,
   paragraph: false,
