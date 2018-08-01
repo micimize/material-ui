@@ -41,7 +41,6 @@ function getDemo(props) {
       'demo.js': props.raw,
       'index.js': `
 import React from 'react';
-import { View, Text } from 'react-native';
 import { render } from 'react-dom';
 import Demo from './demo';
 
@@ -54,7 +53,7 @@ if (rootElement) {
 <body>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <View id="root"></View>
+  <div id="root"></div>
 </body>
       `,
     },
