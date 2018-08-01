@@ -17,7 +17,7 @@ export const styles = theme => ({
   /* Styles applied to the `Input` component `select` class. */
   select: {
     '-moz-appearance': 'none', // Reset
-    '-webkit-appearance': 'none', // Reset
+
     // When interacting quickly, the text can end up selected.
     // Native select can't be selected either.
     userSelect: 'none',

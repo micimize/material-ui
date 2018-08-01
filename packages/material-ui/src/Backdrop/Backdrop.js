@@ -16,7 +16,7 @@ export const styles = {
     left: 0,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     // Remove grey highlight
-    WebkitTapHighlightColor: 'transparent',
+
   },
   /* Styles applied to the root element if `invisible={true}`. */
   invisible: {

@@ -9,7 +9,7 @@ export const styles = {
   root: {
     flex: '1 1 auto',
     overflowY: 'auto',
-    WebkitOverflowScrolling: 'touch', // Add iOS momentum scrolling.
+
     padding: '0 24px 24px',
     '&:first-child': {
       paddingTop: 24,

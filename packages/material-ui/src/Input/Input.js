@@ -146,12 +146,12 @@ export const styles = theme => {
       background: 'none',
       margin: 0, // Reset for Safari
       // Remove grey highlight
-      WebkitTapHighlightColor: 'transparent',
+      // WebkitTapHighlightColor: 'transparent',
       display: 'block',
       // Make the flex item shrink with Firefox
       minWidth: 0,
       flexGrow: 1,
-      '&::-webkit-input-placeholder': placeholder,
+      // '&::-webkit-input-placeholder': placeholder,
       '&::-moz-placeholder': placeholder, // Firefox 19+
       '&:-ms-input-placeholder': placeholder, // IE 11
       '&::-ms-input-placeholder': placeholder, // Edge
@@ -162,6 +162,7 @@ export const styles = theme => {
       '&:invalid': {
         boxShadow: 'none',
       },
+      /*
       '&::-webkit-search-decoration': {
         // Remove the padding when type=search.
         '-webkit-appearance': 'none',
@@ -177,6 +178,7 @@ export const styles = theme => {
         '&:focus:-ms-input-placeholder': placeholderVisible, // IE 11
         '&:focus::-ms-input-placeholder': placeholderVisible, // Edge
       },
+      */
       '&$disabled': {
         opacity: 1, // Reset iOS opacity
       },
@@ -196,11 +198,13 @@ export const styles = theme => {
       height: '1.1875em', // Reset (19px), match the native input line-height
     },
     /* Styles applied to the `input` element if `type="search"`. */
+    /*
     inputTypeSearch: {
       // Improve type search style.
       '-moz-appearance': 'textfield',
       '-webkit-appearance': 'textfield',
     },
+    */
   };
 };
 

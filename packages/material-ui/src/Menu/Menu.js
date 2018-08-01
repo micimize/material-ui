@@ -27,7 +27,7 @@ export const styles = {
     // the menu.
     maxHeight: 'calc(100% - 96px)',
     // Add iOS momentum scrolling.
-    WebkitOverflowScrolling: 'touch',
+
   },
 };
 

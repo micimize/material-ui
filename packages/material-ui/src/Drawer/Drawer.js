@@ -39,7 +39,7 @@ export const styles = theme => ({
     height: '100vh',
     flex: '1 0 auto',
     zIndex: theme.zIndex.drawer,
-    WebkitOverflowScrolling: 'touch', // Add iOS momentum scrolling.
+
     // temporary style
     position: 'fixed',
     top: 0,

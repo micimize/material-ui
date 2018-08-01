@@ -40,7 +40,7 @@ export const styles = theme => {
     /* Styles applied to the root element if `onClick` is defined or `clickable={true}`. */
     clickable: {
       // Remove grey highlight
-      WebkitTapHighlightColor: 'transparent',
+
       cursor: 'pointer',
       '&:hover, &:focus': {
         backgroundColor: emphasize(backgroundColor, 0.08),
@@ -82,7 +82,7 @@ export const styles = theme => {
     /* Styles applied to the `deleteIcon` element. */
     deleteIcon: {
       // Remove grey highlight
-      WebkitTapHighlightColor: 'transparent',
+
       color: deleteIconColor,
       cursor: 'pointer',
       height: 'auto',

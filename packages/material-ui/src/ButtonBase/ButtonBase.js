@@ -18,7 +18,7 @@ export const styles = {
     justifyContent: 'center',
     position: 'relative',
     // Remove grey highlight
-    WebkitTapHighlightColor: 'transparent',
+
     backgroundColor: 'transparent', // Reset default value
     // We disable the focus ring for mouse, touch and keyboard users.
     outline: 'none',
@@ -30,7 +30,7 @@ export const styles = {
     userSelect: 'none',
     verticalAlign: 'middle',
     '-moz-appearance': 'none', // Reset
-    '-webkit-appearance': 'none', // Reset
+
     textDecoration: 'none',
     // So we take precedent over the style of a native <a /> element.
     color: 'inherit',

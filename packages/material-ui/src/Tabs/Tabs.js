@@ -19,7 +19,7 @@ export const styles = theme => ({
   root: {
     overflow: 'hidden',
     minHeight: 48,
-    WebkitOverflowScrolling: 'touch', // Add iOS momentum scrolling.
+
   },
   /* Styles applied to the flex container element. */
   flexContainer: {

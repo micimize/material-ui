@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
   '@global': {
     html: {
-      WebkitFontSmoothing: 'antialiased', // Antialiasing.
+
       MozOsxFontSmoothing: 'grayscale', // Antialiasing.
       // Do the opposite of the docs in order to help catching issues.
       boxSizing: 'content-box',

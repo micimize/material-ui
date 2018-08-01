@@ -34,7 +34,7 @@ export const styles = theme => {
       width: '100%',
       padding: '16px 8px',
       cursor: 'pointer',
-      WebkitTapHighlightColor: 'transparent',
+
       '&$disabled': {
         cursor: 'no-drop',
       },

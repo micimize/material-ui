@@ -16,7 +16,7 @@ export const styles = theme => ({
     // For correct alignment with the text.
     verticalAlign: 'middle',
     // Remove grey highlight
-    WebkitTapHighlightColor: 'transparent',
+
     marginLeft: -14,
     marginRight: 16, // used for row presentation of radio/checkbox
     '&$disabled': {
