@@ -30,7 +30,7 @@ function mergeClasses(options = {}) {
         [
           `Material-UI: the key \`${key}\` ` +
             `provided to the classes property is not valid for ${getDisplayName(Component)}.`,
-          `You need to provide a non empty string instead of: ${newClasses[key]}.`,
+          `You need to provide a compiled react-native style instead of: ${newClasses[key]}.`,
         ].join('\n'),
       );
 
