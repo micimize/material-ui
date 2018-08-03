@@ -87,7 +87,7 @@ class FloatingActionButtonZoom extends React.Component {
     ];
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <AppBar position="static" color="default">
           <Tabs
             value={this.state.value}
@@ -120,7 +120,7 @@ class FloatingActionButtonZoom extends React.Component {
             }}
             unmountOnExit
           >
-            <Button variant="fab" className={fab.className} color={fab.color}>
+            <Button variant="fab" style={fab.className} color={fab.color}>
               {fab.icon}
             </Button>
           </Zoom>

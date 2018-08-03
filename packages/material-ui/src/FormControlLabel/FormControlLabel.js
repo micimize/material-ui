@@ -77,7 +77,7 @@ function FormControlLabel(props, context) {
 
   return (
     <label
-      className={classNames(
+      style={classNames(
         classes.root,
         {
           [classes.labelPlacementStart]: labelPlacement === 'start',
@@ -90,7 +90,7 @@ function FormControlLabel(props, context) {
       {React.cloneElement(control, controlProps)}
       <Typography
         component="span"
-        className={classNames(classes.label, { [classes.disabled]: disabled })}
+        style={classNames(classes.label, { [classes.disabled]: disabled })}
       >
         {label}
       </Typography>

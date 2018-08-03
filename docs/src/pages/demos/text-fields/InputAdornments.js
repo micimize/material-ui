@@ -70,11 +70,11 @@ class InputAdornments extends React.Component {
     const { classes } = this.props;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <TextField
           label="With normal TextField"
           id="simple-start-adornment"
-          className={classNames(classes.margin, classes.textField)}
+          style={classNames(classes.margin, classes.textField)}
           InputProps={{
             startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
           }}
@@ -82,7 +82,7 @@ class InputAdornments extends React.Component {
         <TextField
           select
           label="With Select"
-          className={classNames(classes.margin, classes.textField)}
+          style={classNames(classes.margin, classes.textField)}
           value={this.state.weightRange}
           onChange={this.handleChange('weightRange')}
           InputProps={{
@@ -95,7 +95,7 @@ class InputAdornments extends React.Component {
             </MenuItem>
           ))}
         </TextField>
-        <FormControl fullWidth className={classes.margin}>
+        <FormControl fullWidth style={classes.margin}>
           <InputLabel htmlFor="adornment-amount">Amount</InputLabel>
           <Input
             id="adornment-amount"
@@ -105,7 +105,7 @@ class InputAdornments extends React.Component {
           />
         </FormControl>
         <FormControl
-          className={classNames(classes.margin, classes.withoutLabel, classes.textField)}
+          style={classNames(classes.margin, classes.withoutLabel, classes.textField)}
           aria-describedby="weight-helper-text"
         >
           <Input
@@ -119,7 +119,7 @@ class InputAdornments extends React.Component {
           />
           <FormHelperText id="weight-helper-text">Weight</FormHelperText>
         </FormControl>
-        <FormControl className={classNames(classes.margin, classes.textField)}>
+        <FormControl style={classNames(classes.margin, classes.textField)}>
           <InputLabel htmlFor="adornment-password">Password</InputLabel>
           <Input
             id="adornment-password"

@@ -50,7 +50,7 @@ class InteractiveList extends React.Component {
     const { dense, secondary } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <FormGroup row>
           <FormControlLabel
             control={
@@ -75,10 +75,10 @@ class InteractiveList extends React.Component {
         </FormGroup>
         <Grid container spacing={16}>
           <Grid item xs={12} md={6}>
-            <Typography variant="title" className={classes.title}>
+            <Typography variant="title" style={classes.title}>
               Text only
             </Typography>
-            <View className={classes.demo}>
+            <View style={classes.demo}>
               <List dense={dense}>
                 {generate(
                   <ListItem>
@@ -92,10 +92,10 @@ class InteractiveList extends React.Component {
             </View>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Typography variant="title" className={classes.title}>
+            <Typography variant="title" style={classes.title}>
               Icon with text
             </Typography>
-            <View className={classes.demo}>
+            <View style={classes.demo}>
               <List dense={dense}>
                 {generate(
                   <ListItem>
@@ -114,10 +114,10 @@ class InteractiveList extends React.Component {
         </Grid>
         <Grid container spacing={16}>
           <Grid item xs={12} md={6}>
-            <Typography variant="title" className={classes.title}>
+            <Typography variant="title" style={classes.title}>
               Avatar with text
             </Typography>
-            <View className={classes.demo}>
+            <View style={classes.demo}>
               <List dense={dense}>
                 {generate(
                   <ListItem>
@@ -136,10 +136,10 @@ class InteractiveList extends React.Component {
             </View>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Typography variant="title" className={classes.title}>
+            <Typography variant="title" style={classes.title}>
               Avatar with text and icon
             </Typography>
-            <View className={classes.demo}>
+            <View style={classes.demo}>
               <List dense={dense}>
                 {generate(
                   <ListItem>

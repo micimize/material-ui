@@ -25,7 +25,7 @@ class CenteredTabs extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Paper className={classes.root}>
+      <Paper style={classes.root}>
         <Tabs
           value={this.state.value}
           onChange={this.handleChange}

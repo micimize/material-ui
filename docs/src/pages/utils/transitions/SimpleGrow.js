@@ -41,13 +41,13 @@ class SimpleGrow extends React.Component {
     const { checked } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Switch checked={checked} onChange={this.handleChange} aria-label="Collapse" />
-        <View className={classes.container}>
+        <View style={classes.container}>
           <Grow in={checked}>
-            <Paper elevation={4} className={classes.paper}>
-              <svg className={classes.svg}>
-                <polygon points="0,100 50,00, 100,100" className={classes.polygon} />
+            <Paper elevation={4} style={classes.paper}>
+              <svg style={classes.svg}>
+                <polygon points="0,100 50,00, 100,100" style={classes.polygon} />
               </svg>
             </Paper>
           </Grow>
@@ -56,9 +56,9 @@ class SimpleGrow extends React.Component {
             style={{ transformOrigin: '0 0 0' }}
             {...(checked ? { timeout: 1000 } : {})}
           >
-            <Paper elevation={4} className={classes.paper}>
-              <svg className={classes.svg}>
-                <polygon points="0,100 50,00, 100,100" className={classes.polygon} />
+            <Paper elevation={4} style={classes.paper}>
+              <svg style={classes.svg}>
+                <polygon points="0,100 50,00, 100,100" style={classes.polygon} />
               </svg>
             </Paper>
           </Grow>

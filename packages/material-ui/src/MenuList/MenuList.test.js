@@ -15,7 +15,7 @@ describe('<MenuList />', () => {
     let wrapper;
 
     before(() => {
-      wrapper = shallow(<MenuList className="test-class" data-test="hi" />);
+      wrapper = shallow(<MenuList style="test-class" data-test="hi" />);
     });
 
     it('should render a List', () => {

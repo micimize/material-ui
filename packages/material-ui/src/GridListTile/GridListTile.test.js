@@ -61,7 +61,7 @@ describe('<GridListTile />', () => {
   describe('prop: className', () => {
     it('should renders className', () => {
       const children = <img src={tileData.img} alt="foo" />;
-      const wrapper = shallow(<GridListTile className="foo">{children}</GridListTile>);
+      const wrapper = shallow(<GridListTile style="foo">{children}</GridListTile>);
 
       assert.strictEqual(wrapper.hasClass('foo'), true, 'should contain the className');
     });

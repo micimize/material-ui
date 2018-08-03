@@ -32,14 +32,14 @@ describe('<Typography />', () => {
   });
 
   it('should merge user classes', () => {
-    const wrapper = shallow(<Typography className="woofTypography">Hello</Typography>);
+    const wrapper = shallow(<Typography style="woofTypography">Hello</Typography>);
     assert.strictEqual(wrapper.hasClass(classes.body1), true);
     assert.strictEqual(wrapper.hasClass('woofTypography'), true);
   });
 
   it('should center text', () => {
     const wrapper = shallow(
-      <Typography align="center" className="woofTypography">
+      <Typography align="center" style="woofTypography">
         Hello
       </Typography>,
     );

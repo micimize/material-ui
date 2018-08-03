@@ -34,15 +34,15 @@ function HomeIcon(props) {
 function SvgIcons(props) {
   const { classes } = props;
   return (
-    <View className={classes.root}>
-      <HomeIcon className={classes.icon} />
-      <HomeIcon className={classes.icon} color="primary" />
-      <HomeIcon className={classes.icon} color="secondary" />
-      <HomeIcon className={classes.icon} color="action" />
-      <HomeIcon className={classes.iconHover} color="error" style={{ fontSize: 30 }} />
-      <HomeIcon color="disabled" className={classes.icon} style={{ fontSize: 36 }} />
+    <View style={classes.root}>
+      <HomeIcon style={classes.icon} />
+      <HomeIcon style={classes.icon} color="primary" />
+      <HomeIcon style={classes.icon} color="secondary" />
+      <HomeIcon style={classes.icon} color="action" />
+      <HomeIcon style={classes.iconHover} color="error" style={{ fontSize: 30 }} />
+      <HomeIcon color="disabled" style={classes.icon} style={{ fontSize: 36 }} />
       <HomeIcon
-        className={classes.icon}
+        style={classes.icon}
         color="primary"
         style={{ fontSize: 36 }}
         component={svgProps => (

@@ -178,7 +178,7 @@ class IntegrationAutosuggest extends React.Component {
     };
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Autosuggest
           {...autosuggestProps}
           inputProps={{

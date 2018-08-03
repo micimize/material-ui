@@ -17,11 +17,11 @@ function SimpleNoSsr(props) {
 
   return (
     <View>
-      <Button className={classes.button} variant="contained" color="primary">
+      <Button style={classes.button} variant="contained" color="primary">
         Server & Client
       </Button>
       <NoSsr>
-        <Button className={classes.button} variant="contained" color="secondary">
+        <Button style={classes.button} variant="contained" color="secondary">
           Client only
         </Button>
       </NoSsr>

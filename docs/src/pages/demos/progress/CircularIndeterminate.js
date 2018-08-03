@@ -15,10 +15,10 @@ function CircularIndeterminate(props) {
   const { classes } = props;
   return (
     <View>
-      <CircularProgress className={classes.progress} />
-      <CircularProgress className={classes.progress} size={50} />
-      <CircularProgress className={classes.progress} color="secondary" />
-      <CircularProgress className={classes.progress} style={{ color: purple[500] }} thickness={7} />
+      <CircularProgress style={classes.progress} />
+      <CircularProgress style={classes.progress} size={50} />
+      <CircularProgress style={classes.progress} color="secondary" />
+      <CircularProgress style={classes.progress} style={{ color: purple[500] }} thickness={7} />
     </View>
   );
 }

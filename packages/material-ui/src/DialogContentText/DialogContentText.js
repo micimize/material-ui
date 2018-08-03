@@ -21,7 +21,7 @@ function DialogContentText(props) {
     <Typography
       component="p"
       variant="subheading"
-      className={classNames(classes.root, className)}
+      style={classNames(classes.root, className)}
       {...other}
     >
       {children}

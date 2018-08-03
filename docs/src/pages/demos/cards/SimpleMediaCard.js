@@ -23,9 +23,9 @@ function SimpleMediaCard(props) {
   const { classes } = props;
   return (
     <View>
-      <Card className={classes.card}>
+      <Card style={classes.card}>
         <CardMedia
-          className={classes.media}
+          style={classes.media}
           image="/static/images/cards/contemplative-reptile.jpg"
           title="Contemplative Reptile"
         />

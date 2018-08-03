@@ -28,19 +28,19 @@ const styles = {
 
 function SimpleCard(props) {
   const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
+  const bull = <span style={classes.bullet}>•</span>;
 
   return (
     <View>
-      <Card className={classes.card}>
+      <Card style={classes.card}>
         <CardContent>
-          <Typography className={classes.title} color="textSecondary">
+          <Typography style={classes.title} color="textSecondary">
             Word of the Day
           </Typography>
           <Typography variant="headline" component="h2">
             be{bull}nev{bull}o{bull}lent
           </Typography>
-          <Typography className={classes.pos} color="textSecondary">
+          <Typography style={classes.pos} color="textSecondary">
             adjective
           </Typography>
           <Typography component="p">

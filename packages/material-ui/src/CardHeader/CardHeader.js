@@ -58,7 +58,7 @@ function CardHeader(props) {
     title = (
       <Typography
         variant={avatar ? 'body2' : 'headline'}
-        className={classes.title}
+        style={classes.title}
         component="span"
         {...titleTypographyProps}
       >
@@ -72,7 +72,7 @@ function CardHeader(props) {
     subheader = (
       <Typography
         variant={avatar ? 'body2' : 'body1'}
-        className={classes.subheader}
+        style={classes.subheader}
         color="textSecondary"
         component="span"
         {...subheaderTypographyProps}
@@ -83,13 +83,13 @@ function CardHeader(props) {
   }
 
   return (
-    <Component className={classNames(classes.root, classNameProp)} {...other}>
-      {avatar && <View className={classes.avatar}>{avatar}</View>}
-      <View className={classes.content}>
+    <Component style={classNames(classes.root, classNameProp)} {...other}>
+      {avatar && <View style={classes.avatar}>{avatar}</View>}
+      <View style={classes.content}>
         {title}
         {subheader}
       </View>
-      {action && <View className={classes.action}>{action}</View>}
+      {action && <View style={classes.action}>{action}</View>}
     </Component>
   );
 }

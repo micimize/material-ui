@@ -79,12 +79,12 @@ class AppDrawerNavItem extends React.Component {
 
     if (href) {
       return (
-        <ListItem className={classes.itemLeaf} disableGutters {...other}>
+        <ListItem style={classes.itemLeaf} disableGutters {...other}>
           <Button
             component={props => (
               <Link variant="button" activeClassName={classes.active} href={href} {...props} />
             )}
-            className={classNames(classes.buttonLeaf, `depth-${depth}`)}
+            style={classNames(classes.buttonLeaf, `depth-${depth}`)}
             disableRipple
             onClick={onClick}
             style={style}
@@ -96,7 +96,7 @@ class AppDrawerNavItem extends React.Component {
     }
 
     return (
-      <ListItem className={classes.item} disableGutters {...other}>
+      <ListItem style={classes.item} disableGutters {...other}>
         <Button
           classes={{
             root: classes.button,

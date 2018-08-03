@@ -168,7 +168,7 @@ class Chip extends React.Component {
             onClick: this.handleDeleteIconClick,
           })
         ) : (
-          <CancelIcon className={classes.deleteIcon} onClick={this.handleDeleteIconClick} />
+          <CancelIcon style={classes.deleteIcon} onClick={this.handleDeleteIconClick} />
         );
     }
 
@@ -189,7 +189,7 @@ class Chip extends React.Component {
     return (
       <Component
         role="button"
-        className={className}
+        style={className}
         tabIndex={tabIndex}
         onClick={onClick}
         onKeyDown={this.handleKeyDown}
@@ -199,7 +199,7 @@ class Chip extends React.Component {
         {...other}
       >
         {avatar}
-        <span className={classes.label}>{label}</span>
+        <span style={classes.label}>{label}</span>
         {deleteIcon}
       </Component>
     );

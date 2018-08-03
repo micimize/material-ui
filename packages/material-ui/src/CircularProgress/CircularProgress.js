@@ -117,7 +117,7 @@ function CircularProgress(props) {
 
   return (
     <View
-      className={classNames(
+      style={classNames(
         classes.root,
         {
           [classes[`color${capitalize(color)}`]]: color !== 'inherit',
@@ -131,9 +131,9 @@ function CircularProgress(props) {
       {...rootProps}
       {...other}
     >
-      <svg className={classes.svg} viewBox={`${SIZE / 2} ${SIZE / 2} ${SIZE} ${SIZE}`}>
+      <svg style={classes.svg} viewBox={`${SIZE / 2} ${SIZE / 2} ${SIZE} ${SIZE}`}>
         <circle
-          className={classNames(classes.circle, {
+          style={classNames(classes.circle, {
             [classes.circleIndeterminate]: variant === 'indeterminate',
             [classes.circleStatic]: variant === 'static',
           })}

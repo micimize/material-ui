@@ -94,7 +94,7 @@ function NoOptionsMessage(props) {
   return (
     <Typography
       color="textSecondary"
-      className={props.selectProps.classes.noOptionsMessage}
+      style={props.selectProps.classes.noOptionsMessage}
       {...props.innerProps}
     >
       {props.children}
@@ -143,7 +143,7 @@ function Placeholder(props) {
   return (
     <Typography
       color="textSecondary"
-      className={props.selectProps.classes.placeholder}
+      style={props.selectProps.classes.placeholder}
       {...props.innerProps}
     >
       {props.children}
@@ -153,14 +153,14 @@ function Placeholder(props) {
 
 function SingleValue(props) {
   return (
-    <Typography className={props.selectProps.classes.singleValue} {...props.innerProps}>
+    <Typography style={props.selectProps.classes.singleValue} {...props.innerProps}>
       {props.children}
     </Typography>
   );
 }
 
 function ValueContainer(props) {
-  return <View className={props.selectProps.classes.valueContainer}>{props.children}</View>;
+  return <View style={props.selectProps.classes.valueContainer}>{props.children}</View>;
 }
 
 function MultiValue(props) {
@@ -168,7 +168,7 @@ function MultiValue(props) {
     <Chip
       tabIndex={-1}
       label={props.children}
-      className={classNames(props.selectProps.classes.chip, {
+      style={classNames(props.selectProps.classes.chip, {
         [props.selectProps.classes.chipFocused]: props.isFocused,
       })}
       onDelete={event => {
@@ -205,7 +205,7 @@ class IntegrationReactSelect extends React.Component {
     const { classes } = this.props;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <NoSsr>
           <Select
             classes={classes}

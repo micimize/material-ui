@@ -11,7 +11,7 @@ function styled(Component) {
   return (style, options) => {
     function StyledComponent(props) {
       const { classes, className, ...other } = props;
-      return <Component className={classNames(classes.root, className)} {...other} />;
+      return <Component style={classNames(classes.root, className)} {...other} />;
     }
     StyledComponent.propTypes = {
       classes: PropTypes.object.isRequired,

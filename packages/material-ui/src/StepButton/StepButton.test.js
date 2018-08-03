@@ -23,7 +23,7 @@ describe('<StepButton />', () => {
 
   it('merges user className into the root node', () => {
     const wrapper = shallow(
-      <StepButton className="foo" {...defaultProps}>
+      <StepButton style="foo" {...defaultProps}>
         Hello
       </StepButton>,
     );

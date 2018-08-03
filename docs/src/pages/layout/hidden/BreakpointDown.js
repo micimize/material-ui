@@ -28,23 +28,23 @@ function BreakpointDown(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <Typography variant="subheading">Current width: {props.width}</Typography>
-      <View className={classes.container}>
+      <View style={classes.container}>
         <Hidden xsDown>
-          <Paper className={classes.paper}>xsDown</Paper>
+          <Paper style={classes.paper}>xsDown</Paper>
         </Hidden>
         <Hidden smDown>
-          <Paper className={classes.paper}>smDown</Paper>
+          <Paper style={classes.paper}>smDown</Paper>
         </Hidden>
         <Hidden mdDown>
-          <Paper className={classes.paper}>mdDown</Paper>
+          <Paper style={classes.paper}>mdDown</Paper>
         </Hidden>
         <Hidden lgDown>
-          <Paper className={classes.paper}>lgDown</Paper>
+          <Paper style={classes.paper}>lgDown</Paper>
         </Hidden>
         <Hidden xlDown>
-          <Paper className={classes.paper}>xlDown</Paper>
+          <Paper style={classes.paper}>xlDown</Paper>
         </Hidden>
       </View>
     </View>

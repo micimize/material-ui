@@ -24,34 +24,34 @@ function GridIntegration(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <Typography variant="subheading" gutterBottom>
         Current width: {props.width}
       </Typography>
       <Grid container spacing={24}>
         <Hidden xsUp>
           <Grid item xs>
-            <Paper className={classes.paper}>xsUp</Paper>
+            <Paper style={classes.paper}>xsUp</Paper>
           </Grid>
         </Hidden>
         <Hidden smUp>
           <Grid item xs>
-            <Paper className={classes.paper}>smUp</Paper>
+            <Paper style={classes.paper}>smUp</Paper>
           </Grid>
         </Hidden>
         <Hidden mdUp>
           <Grid item xs>
-            <Paper className={classes.paper}>mdUp</Paper>
+            <Paper style={classes.paper}>mdUp</Paper>
           </Grid>
         </Hidden>
         <Hidden lgUp>
           <Grid item xs>
-            <Paper className={classes.paper}>lgUp</Paper>
+            <Paper style={classes.paper}>lgUp</Paper>
           </Grid>
         </Hidden>
         <Hidden xlUp>
           <Grid item xs>
-            <Paper className={classes.paper}>xlUp</Paper>
+            <Paper style={classes.paper}>xlUp</Paper>
           </Grid>
         </Hidden>
       </Grid>

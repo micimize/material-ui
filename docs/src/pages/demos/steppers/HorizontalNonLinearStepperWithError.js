@@ -106,7 +106,7 @@ class HorizontalNonLinearStepperWithError extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Stepper activeStep={activeStep}>
           {steps.map((label, index) => {
             const props = {};
@@ -134,21 +134,21 @@ class HorizontalNonLinearStepperWithError extends React.Component {
         <View>
           {activeStep === steps.length ? (
             <View>
-              <Typography className={classes.instructions}>
+              <Typography style={classes.instructions}>
                 All steps completed - you&quot;re finished
               </Typography>
-              <Button onClick={this.handleReset} className={classes.button}>
+              <Button onClick={this.handleReset} style={classes.button}>
                 Reset
               </Button>
             </View>
           ) : (
             <View>
-              <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+              <Typography style={classes.instructions}>{getStepContent(activeStep)}</Typography>
               <View>
                 <Button
                   disabled={activeStep === 0}
                   onClick={this.handleBack}
-                  className={classes.button}
+                  style={classes.button}
                 >
                   Back
                 </Button>
@@ -157,7 +157,7 @@ class HorizontalNonLinearStepperWithError extends React.Component {
                     variant="contained"
                     color="primary"
                     onClick={this.handleSkip}
-                    className={classes.button}
+                    style={classes.button}
                   >
                     Skip
                   </Button>
@@ -166,7 +166,7 @@ class HorizontalNonLinearStepperWithError extends React.Component {
                   variant="contained"
                   color="primary"
                   onClick={this.handleNext}
-                  className={classes.button}
+                  style={classes.button}
                 >
                   {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                 </Button>

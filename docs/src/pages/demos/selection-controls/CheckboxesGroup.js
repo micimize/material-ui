@@ -35,8 +35,8 @@ class CheckboxesGroup extends React.Component {
     const error = Object.values(this.state).filter(v => v).length !== 2;
 
     return (
-      <View className={classes.root}>
-        <FormControl component="fieldset" className={classes.formControl}>
+      <View style={classes.root}>
+        <FormControl component="fieldset" style={classes.formControl}>
           <FormLabel component="legend">Assign responsibility</FormLabel>
           <FormGroup>
             <FormControlLabel
@@ -64,7 +64,7 @@ class CheckboxesGroup extends React.Component {
           </FormGroup>
           <FormHelperText>Be careful</FormHelperText>
         </FormControl>
-        <FormControl required error={error} component="fieldset" className={classes.formControl}>
+        <FormControl required error={error} component="fieldset" style={classes.formControl}>
           <FormLabel component="legend">Pick two</FormLabel>
           <FormGroup>
             <FormControlLabel

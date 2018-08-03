@@ -91,7 +91,7 @@ describe('<SwitchBase />', () => {
 
   // className is put on the root node, this is a special case!
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<SwitchBase {...defaultProps} className="woofSwitchBase" />);
+    const wrapper = shallow(<SwitchBase {...defaultProps} style="woofSwitchBase" />);
     assert.strictEqual(wrapper.hasClass('woofSwitchBase'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });
@@ -160,7 +160,7 @@ describe('<SwitchBase />', () => {
           classes={{
             checked: 'test-class-checked',
           }}
-          className="test-class"
+          style="test-class"
           checked={false}
         />,
       );
@@ -209,7 +209,7 @@ describe('<SwitchBase />', () => {
           classes={{
             checked: 'test-class-checked',
           }}
-          className="test-class"
+          style="test-class"
         />,
       );
     });

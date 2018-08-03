@@ -25,7 +25,7 @@ class SimpleSlider extends React.Component {
     const { value } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Typography id="label">Slider label</Typography>
         <Slider value={value} aria-labelledby="label" onChange={this.handleChange} />
       </View>

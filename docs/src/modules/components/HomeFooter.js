@@ -33,21 +33,21 @@ function HomeFooter(props) {
   const { classes } = props;
 
   return (
-    <footer className={classes.root}>
+    <footer style={classes.root}>
       <Typography variant="title" gutterBottom>
         Quick Links
       </Typography>
       <Typography variant="subheading" component="div">
         <Grid container>
           <Grid item xs={12} sm={6}>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
+            <ul style={classes.list}>
+              <li style={classes.listItem}>
                 <Link href="https://github.com/mui-org/material-ui">GitHub</Link>
               </li>
-              <li className={classes.listItem}>
+              <li style={classes.listItem}>
                 <Link href="https://twitter.com/MaterialUI">Twitter</Link>
               </li>
-              <li className={classes.listItem}>
+              <li style={classes.listItem}>
                 <Link href="https://github.com/mui-org/material-ui/tree/master/examples">
                   Examples
                 </Link>
@@ -55,21 +55,21 @@ function HomeFooter(props) {
             </ul>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
+            <ul style={classes.list}>
+              <li style={classes.listItem}>
                 <Link href="/discover-more/community">Community</Link>
               </li>
-              <li className={classes.listItem}>
+              <li style={classes.listItem}>
                 <Link href="/discover-more/roadmap">Roadmap</Link>
               </li>
-              <li className={classes.listItem}>
+              <li style={classes.listItem}>
                 <Link href="/discover-more/team">Team</Link>
               </li>
             </ul>
           </Grid>
         </Grid>
       </Typography>
-      <Typography className={classes.version}>
+      <Typography style={classes.version}>
         {`Currently v${process.env.LIB_VERSION}. Released under the `}
         <Link href="https://github.com/mui-org/material-ui/blob/master/LICENSE">MIT License</Link>
         {'.'}

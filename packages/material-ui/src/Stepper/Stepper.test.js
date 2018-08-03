@@ -23,7 +23,7 @@ describe('<Stepper />', () => {
 
   it('merges user className into the root node', () => {
     const wrapper = shallow(
-      <Stepper className="foo">
+      <Stepper style="foo">
         <Step />
       </Stepper>,
     );
@@ -63,9 +63,9 @@ describe('<Stepper />', () => {
     it('controls children linearly based on the activeStep prop', () => {
       const wrapper = shallow(
         <Stepper activeStep={0}>
-          <div className="child-0" />
-          <div className="child-1" />
-          <div className="child-2" />
+          <div style="child-0" />
+          <div style="child-1" />
+          <div style="child-2" />
         </Stepper>,
       );
       assert.strictEqual(wrapper.find('.child-0').props().active, true);
@@ -84,9 +84,9 @@ describe('<Stepper />', () => {
     it('controls children non-linearly based on the activeStep prop', () => {
       const wrapper = shallow(
         <Stepper linear={false} activeStep={0}>
-          <div className="child-0" />
-          <div className="child-1" />
-          <div className="child-2" />
+          <div style="child-0" />
+          <div style="child-1" />
+          <div style="child-2" />
         </Stepper>,
       );
       assert.strictEqual(wrapper.find('.child-0').props().active, true);

@@ -50,7 +50,7 @@ describe('<BottomNavigation />', () => {
 
   it('should render with the user and root classes', () => {
     const wrapper = shallow(
-      <BottomNavigation showLabels value={0} className="woofBottomNavigation">
+      <BottomNavigation showLabels value={0} style="woofBottomNavigation">
         <BottomNavigationAction icon={icon} />
       </BottomNavigation>,
     );

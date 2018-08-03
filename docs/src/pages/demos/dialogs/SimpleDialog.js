@@ -45,7 +45,7 @@ class SimpleDialog extends React.Component {
             {emails.map(email => (
               <ListItem button onClick={() => this.handleListItemClick(email)} key={email}>
                 <ListItemAvatar>
-                  <Avatar className={classes.avatar}>
+                  <Avatar style={classes.avatar}>
                     <PersonIcon />
                   </Avatar>
                 </ListItemAvatar>

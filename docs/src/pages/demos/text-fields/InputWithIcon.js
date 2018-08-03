@@ -21,7 +21,7 @@ function InputWithIcon(props) {
 
   return (
     <View>
-      <FormControl className={classes.margin}>
+      <FormControl style={classes.margin}>
         <InputLabel htmlFor="input-with-icon-adornment">With a start adornment</InputLabel>
         <Input
           id="input-with-icon-adornment"
@@ -33,7 +33,7 @@ function InputWithIcon(props) {
         />
       </FormControl>
       <TextField
-        className={classes.margin}
+        style={classes.margin}
         id="input-with-icon-textfield"
         label="TextField"
         InputProps={{
@@ -44,7 +44,7 @@ function InputWithIcon(props) {
           ),
         }}
       />
-      <View className={classes.margin}>
+      <View style={classes.margin}>
         <Grid container spacing={8} alignItems="flex-end">
           <Grid item>
             <AccountCircle />

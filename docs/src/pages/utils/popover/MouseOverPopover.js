@@ -40,7 +40,7 @@ class MouseOverPopover extends React.Component {
           Hover with a Popover.
         </Typography>
         <Popover
-          className={classes.popover}
+          style={classes.popover}
           classes={{
             paper: classes.paper,
           }}

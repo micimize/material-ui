@@ -75,7 +75,7 @@ function InputLabel(props, context) {
   );
 
   return (
-    <FormLabel data-shrink={shrink} className={className} classes={FormLabelClasses} {...other}>
+    <FormLabel data-shrink={shrink} style={className} classes={FormLabelClasses} {...other}>
       {children}
     </FormLabel>
   );

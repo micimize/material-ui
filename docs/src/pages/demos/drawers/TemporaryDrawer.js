@@ -35,7 +35,7 @@ class TemporaryDrawer extends React.Component {
     const { classes } = this.props;
 
     const sideList = (
-      <View className={classes.list}>
+      <View style={classes.list}>
         <List>{mailFolderListItems}</List>
         <Divider />
         <List>{otherMailFolderListItems}</List>
@@ -43,7 +43,7 @@ class TemporaryDrawer extends React.Component {
     );
 
     const fullList = (
-      <View className={classes.fullList}>
+      <View style={classes.fullList}>
         <List>{mailFolderListItems}</List>
         <Divider />
         <List>{otherMailFolderListItems}</List>

@@ -19,7 +19,7 @@ function About(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <Typography variant="display1" gutterBottom>
         Material-UI
       </Typography>

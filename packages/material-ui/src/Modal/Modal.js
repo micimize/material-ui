@@ -296,7 +296,7 @@ class Modal extends React.Component {
           ref={ref => {
             this.modalRef = ref;
           }}
-          className={classNames(classes.root, className, {
+          style={classNames(classes.root, className, {
             [classes.hidden]: exited,
           })}
           {...other}

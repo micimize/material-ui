@@ -19,7 +19,7 @@ const styles = {
 
 function ClassNames(props) {
   return (
-    <Button className={props.classes.button}>
+    <Button style={props.classes.button}>
       {props.children ? props.children : 'class names'}
     </Button>
   );

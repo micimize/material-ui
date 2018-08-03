@@ -28,23 +28,23 @@ function BreakpointUp(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <Typography variant="subheading">Current width: {props.width}</Typography>
-      <View className={classes.container}>
+      <View style={classes.container}>
         <Hidden xsUp>
-          <Paper className={classes.paper}>xsUp</Paper>
+          <Paper style={classes.paper}>xsUp</Paper>
         </Hidden>
         <Hidden smUp>
-          <Paper className={classes.paper}>smUp</Paper>
+          <Paper style={classes.paper}>smUp</Paper>
         </Hidden>
         <Hidden mdUp>
-          <Paper className={classes.paper}>mdUp</Paper>
+          <Paper style={classes.paper}>mdUp</Paper>
         </Hidden>
         <Hidden lgUp>
-          <Paper className={classes.paper}>lgUp</Paper>
+          <Paper style={classes.paper}>lgUp</Paper>
         </Hidden>
         <Hidden xlUp>
-          <Paper className={classes.paper}>xlUp</Paper>
+          <Paper style={classes.paper}>xlUp</Paper>
         </Hidden>
       </View>
     </View>

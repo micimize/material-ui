@@ -91,9 +91,9 @@ class GridListTile extends React.Component {
     const { children, classes, className, cols, component: Component, rows, ...other } = this.props;
 
     return (
-      <Component className={classNames(classes.root, className)} {...other}>
+      <Component style={classNames(classes.root, className)} {...other}>
         <EventListener target="window" onResize={this.handleResize} />
-        <View className={classes.tile}>
+        <View style={classes.tile}>
           {React.Children.map(children, child => {
             if (!React.isValidElement(child)) {
               return null;

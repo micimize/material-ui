@@ -79,14 +79,14 @@ function Avatar(props) {
         src={src}
         srcSet={srcSet}
         sizes={sizes}
-        className={classes.img}
+        style={classes.img}
         {...imgProps}
       />
     );
   }
 
   return (
-    <Component className={className} {...other}>
+    <Component style={className} {...other}>
       {children}
     </Component>
   );

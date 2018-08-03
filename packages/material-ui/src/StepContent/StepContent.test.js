@@ -46,7 +46,7 @@ describe('<StepContent />', () => {
   it('renders children inside an Collapse component', () => {
     const wrapper = shallow(
       <StepContent {...defaultProps}>
-        <div className="test-content">This is my content!</div>
+        <div style="test-content">This is my content!</div>
       </StepContent>,
     );
     const collapse = wrapper.find(Collapse);

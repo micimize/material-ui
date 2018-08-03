@@ -12,7 +12,7 @@ const styles = theme => ({
 });
 
 function TypographyTheme(props) {
-  return <View className={props.classes.root}>{"This div's text looks like that of a button."}</View>;
+  return <View style={props.classes.root}>{"This div's text looks like that of a button."}</View>;
 }
 
 TypographyTheme.propTypes = {

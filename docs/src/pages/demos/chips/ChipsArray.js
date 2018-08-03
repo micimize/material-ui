@@ -48,14 +48,14 @@ class ChipsArray extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Paper className={classes.root}>
+      <Paper style={classes.root}>
         {this.state.chipData.map(data => {
           let avatar = null;
 
           if (data.label === 'React') {
             avatar = (
               <Avatar>
-                <TagFacesIcon className={classes.svgIcon} />
+                <TagFacesIcon style={classes.svgIcon} />
               </Avatar>
             );
           }
@@ -66,7 +66,7 @@ class ChipsArray extends React.Component {
               avatar={avatar}
               label={data.label}
               onDelete={this.handleDelete(data)}
-              className={classes.chip}
+              style={classes.chip}
             />
           );
         })}

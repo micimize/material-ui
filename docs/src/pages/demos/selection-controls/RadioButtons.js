@@ -78,9 +78,9 @@ class RadioButtons extends React.Component {
           color="default"
           name="radio-button-demo"
           aria-label="E"
-          className={classes.size}
-          icon={<RadioButtonUncheckedIcon className={classes.sizeIcon} />}
-          checkedIcon={<RadioButtonCheckedIcon className={classes.sizeIcon} />}
+          style={classes.size}
+          icon={<RadioButtonUncheckedIcon style={classes.sizeIcon} />}
+          checkedIcon={<RadioButtonCheckedIcon style={classes.sizeIcon} />}
         />
       </View>
     );

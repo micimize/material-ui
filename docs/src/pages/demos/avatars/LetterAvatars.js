@@ -29,10 +29,10 @@ const styles = {
 function LetterAvatars(props) {
   const { classes } = props;
   return (
-    <View className={classes.row}>
-      <Avatar className={classes.avatar}>H</Avatar>
-      <Avatar className={classes.orangeAvatar}>N</Avatar>
-      <Avatar className={classes.purpleAvatar}>OP</Avatar>
+    <View style={classes.row}>
+      <Avatar style={classes.avatar}>H</Avatar>
+      <Avatar style={classes.orangeAvatar}>N</Avatar>
+      <Avatar style={classes.purpleAvatar}>OP</Avatar>
     </View>
   );
 }

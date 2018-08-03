@@ -51,7 +51,7 @@ class SimplePopover extends React.Component {
             horizontal: 'center',
           }}
         >
-          <Typography className={classes.typography}>The content of the Popover.</Typography>
+          <Typography style={classes.typography}>The content of the Popover.</Typography>
         </Popover>
       </View>
     );

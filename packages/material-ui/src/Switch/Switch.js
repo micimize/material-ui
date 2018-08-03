@@ -101,18 +101,18 @@ function Switch(props) {
   const { classes, className, color, ...other } = props;
 
   return (
-    <span className={classNames(classes.root, className)}>
+    <span style={classNames(classes.root, className)}>
       <SwitchBase
-        icon={<span className={classes.icon} />}
+        icon={<span style={classes.icon} />}
         classes={{
           root: classNames(classes.switchBase, classes[`color${capitalize(color)}`]),
           checked: classes.checked,
           disabled: classes.disabled,
         }}
-        checkedIcon={<span className={classNames(classes.icon, classes.iconChecked)} />}
+        checkedIcon={<span style={classNames(classes.icon, classes.iconChecked)} />}
         {...other}
       />
-      <span className={classes.bar} />
+      <span style={classes.bar} />
     </span>
   );
 }

@@ -43,7 +43,7 @@ class DynamicCSSVariables extends React.Component {
           label="Blue"
         />
         <Button
-          className={classes.button}
+          style={classes.button}
           style={
             this.state.color === 'blue'
               ? {

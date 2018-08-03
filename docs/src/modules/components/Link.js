@@ -67,7 +67,7 @@ function Link(props) {
     };
     children = (
       <Text
-        className={classNames(className, {
+        style={classNames(className, {
           [activeClassName]: router.pathname === href && activeClassName,
         })}
         onClick={onClick}

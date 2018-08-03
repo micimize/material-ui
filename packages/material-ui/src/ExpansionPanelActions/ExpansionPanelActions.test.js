@@ -31,7 +31,7 @@ describe('<ExpansionPanelActions />', () => {
 
   it('should render with the user and root classes', () => {
     const wrapper = shallow(
-      <ExpansionPanelActions className="woofExpansionPanelActions">foo</ExpansionPanelActions>,
+      <ExpansionPanelActions style="woofExpansionPanelActions">foo</ExpansionPanelActions>,
     );
     assert.strictEqual(wrapper.hasClass('woofExpansionPanelActions'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
@@ -40,7 +40,7 @@ describe('<ExpansionPanelActions />', () => {
   it('should render children with the button class wrapped in a div with the action class', () => {
     const wrapper = shallow(
       <ExpansionPanelActions>
-        <button type="submit" className="woofExpansionPanelActions">
+        <button type="submit" style="woofExpansionPanelActions">
           Hello
         </button>
       </ExpansionPanelActions>,

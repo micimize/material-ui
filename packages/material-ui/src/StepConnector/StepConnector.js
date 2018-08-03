@@ -58,8 +58,8 @@ function StepConnector(props) {
   });
 
   return (
-    <View className={className} {...other}>
-      <span className={lineClassName} />
+    <View style={className} {...other}>
+      <span style={lineClassName} />
     </View>
   );
 }

@@ -28,7 +28,7 @@ describe('<Chip />', () => {
     let wrapper;
 
     before(() => {
-      wrapper = shallow(<Chip className="my-Chip" data-my-prop="woofChip" />);
+      wrapper = shallow(<Chip style="my-Chip" data-my-prop="woofChip" />);
     });
 
     it('should render a div containing a span', () => {
@@ -53,7 +53,7 @@ describe('<Chip />', () => {
 
     before(() => {
       handleClick = () => {};
-      wrapper = shallow(<Chip className="my-Chip" data-my-prop="woofChip" onClick={handleClick} />);
+      wrapper = shallow(<Chip style="my-Chip" data-my-prop="woofChip" onClick={handleClick} />);
     });
 
     it('should render a div containing a span', () => {
@@ -88,13 +88,13 @@ describe('<Chip />', () => {
       wrapper = shallow(
         <Chip
           avatar={
-            <Avatar className="my-Avatar" data-my-prop="woofChip">
+            <Avatar style="my-Avatar" data-my-prop="woofChip">
               MB
             </Avatar>
           }
           label="Text Avatar Chip"
           onDelete={() => {}}
-          className="my-Chip"
+          style="my-Chip"
           data-my-prop="woofChip"
         />,
       );
@@ -265,7 +265,7 @@ describe('<Chip />', () => {
             onClick={onClickSpy}
             onDelete={onDeleteSpy}
             onKeyDown={onKeyDownSpy}
-            label={<input className="child-input" />}
+            label={<input style="child-input" />}
           />,
         );
       });

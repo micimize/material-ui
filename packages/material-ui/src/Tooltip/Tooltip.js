@@ -327,7 +327,7 @@ class Tooltip extends React.Component {
       <React.Fragment>
         <RootRef rootRef={this.onRootRef}>{React.cloneElement(children, childrenProps)}</RootRef>
         <Popper
-          className={classes.popper}
+          style={classes.popper}
           placement={placement}
           anchorEl={this.childrenRef}
           open={open}
@@ -342,7 +342,7 @@ class Tooltip extends React.Component {
               {...TransitionProps}
             >
               <View
-                className={classNames(
+                style={classNames(
                   classes.tooltip,
                   {
                     [classes.touch]: this.ignoreNonTouchEvents,

@@ -29,7 +29,7 @@ describe('<ListItem />', () => {
   });
 
   it('should render with the user, root and gutters classes', () => {
-    const wrapper = shallow(<ListItem className="woofListItem" />);
+    const wrapper = shallow(<ListItem style="woofListItem" />);
     assert.strictEqual(wrapper.hasClass('woofListItem'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(wrapper.hasClass(classes.gutters), true, 'should have the gutters class');

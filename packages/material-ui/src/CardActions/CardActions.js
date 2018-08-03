@@ -27,7 +27,7 @@ function CardActions(props) {
   const { disableActionSpacing, children, classes, className, ...other } = props;
 
   return (
-    <View className={classNames(classes.root, className)} {...other}>
+    <View style={classNames(classes.root, className)} {...other}>
       {disableActionSpacing ? children : cloneChildrenWithClassName(children, classes.action)}
     </View>
   );

@@ -144,7 +144,7 @@ class AnchorPlayground extends React.Component {
     return (
       <View>
         <Grid container justify="center" spacing={0}>
-          <Grid item className={classes.buttonWrapper}>
+          <Grid item style={classes.buttonWrapper}>
             <Button
               buttonRef={node => {
                 this.anchorEl = node;
@@ -156,7 +156,7 @@ class AnchorPlayground extends React.Component {
             </Button>
             {anchorReference === 'anchorEl' && (
               <View
-                className={classes.anchor}
+                style={classes.anchor}
                 style={{
                   ...inlineStyles.anchorVertical[anchorOriginVertical],
                   ...inlineStyles.anchorHorizontal[anchorOriginHorizontal],
@@ -180,7 +180,7 @@ class AnchorPlayground extends React.Component {
             horizontal: transformOriginHorizontal,
           }}
         >
-          <Typography className={classes.typography}>The content of the Popover.</Typography>
+          <Typography style={classes.typography}>The content of the Popover.</Typography>
         </Popover>
         <Grid container spacing={16}>
           <Grid item xs={12} sm={6}>
@@ -203,7 +203,7 @@ class AnchorPlayground extends React.Component {
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <FormControl className={classes.formControl}>
+            <FormControl style={classes.formControl}>
               <InputLabel htmlFor="position-top">anchorPosition.top</InputLabel>
               <Input
                 id="position-top"
@@ -213,7 +213,7 @@ class AnchorPlayground extends React.Component {
               />
             </FormControl>
             &nbsp;
-            <FormControl className={classes.formControl}>
+            <FormControl style={classes.formControl}>
               <InputLabel htmlFor="position-left">anchorPosition.left</InputLabel>
               <Input
                 id="position-left"

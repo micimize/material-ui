@@ -90,7 +90,7 @@ const AppBarTest = () => (
 
 const AvatarTest = () => <Avatar alt="Image Alt" src="example.jpg" />;
 
-const AvaterClassName = () => <Avatar className="foo" />;
+const AvaterClassName = () => <Avatar style="foo" />;
 
 const BadgeTest = () => (
   <Badge badgeContent={4} color="primary">
@@ -661,7 +661,7 @@ const StepperTest = () =>
           steps={6}
           position="static"
           activeStep={this.state.activeStep}
-          className={classes.root}
+          style={classes.root}
           {...defaultProps}
         />
       );
@@ -699,7 +699,7 @@ const TableTest = () => {
     const classes = props.classes;
 
     return (
-      <Paper className={classes.paper}>
+      <Paper style={classes.paper}>
         <Table>
           <TableHead classes={{ root: 'foo' }}>
             <TableRow>
@@ -771,7 +771,7 @@ const TabsTest = () => {
       const classes = this.props.classes;
 
       return (
-        <div className={classes.root}>
+        <div style={classes.root}>
           <AppBar position="static">
             <Tabs value={this.state.value} onChange={this.handleChange}>
               <Tab label="Item One" />

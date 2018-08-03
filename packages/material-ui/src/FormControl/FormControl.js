@@ -133,7 +133,7 @@ class FormControl extends React.Component {
 
     return (
       <Component
-        className={classNames(
+        style={classNames(
           classes.root,
           {
             [classes[`margin${capitalize(margin)}`]]: margin !== 'none',

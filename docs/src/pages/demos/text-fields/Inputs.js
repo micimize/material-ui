@@ -17,24 +17,24 @@ const styles = theme => ({
 function Inputs(props) {
   const { classes } = props;
   return (
-    <View className={classes.container}>
+    <View style={classes.container}>
       <Input
         defaultValue="Hello world"
-        className={classes.input}
+        style={classes.input}
         inputProps={{
           'aria-label': 'Description',
         }}
       />
       <Input
         placeholder="Placeholder"
-        className={classes.input}
+        style={classes.input}
         inputProps={{
           'aria-label': 'Description',
         }}
       />
       <Input
         value="Disabled"
-        className={classes.input}
+        style={classes.input}
         disabled
         inputProps={{
           'aria-label': 'Description',
@@ -42,7 +42,7 @@ function Inputs(props) {
       />
       <Input
         defaultValue="Error"
-        className={classes.input}
+        style={classes.input}
         error
         inputProps={{
           'aria-label': 'Description',

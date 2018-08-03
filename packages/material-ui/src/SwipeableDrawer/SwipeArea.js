@@ -41,7 +41,7 @@ function SwipeArea(props) {
 
   return (
     <View
-      className={classNames(classes.root, classes[`anchor${capitalize(anchor)}`])}
+      style={classNames(classes.root, classes[`anchor${capitalize(anchor)}`])}
       style={{
         [isHorizontal(props) ? 'width' : 'height']: width,
       }}

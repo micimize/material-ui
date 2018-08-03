@@ -35,7 +35,7 @@ describe('<Step />', () => {
 
   describe('rendering children', () => {
     it('renders children', () => {
-      const children = <h1 className="hello-world">Hello World</h1>;
+      const children = <h1 style="hello-world">Hello World</h1>;
       const wrapper = shallow(
         <Step label="Step One" index={1} orientation="horizontal">
           {children}
@@ -46,10 +46,10 @@ describe('<Step />', () => {
 
     it('renders children with all props passed through', () => {
       const children = [
-        <h1 key={1} className="hello-world">
+        <h1 key={1} style="hello-world">
           Hello World
         </h1>,
-        <p key={2} className="hay">
+        <p key={2} style="hay">
           How are you?
         </p>,
       ];
@@ -71,7 +71,7 @@ describe('<Step />', () => {
 
     it('honours children overriding props passed through', () => {
       const children = (
-        <h1 active={false} className="hello-world">
+        <h1 active={false} style="hello-world">
           Hello World
         </h1>
       );
@@ -87,7 +87,7 @@ describe('<Step />', () => {
     it('should handle invalid children', () => {
       const wrapper = shallow(
         <Step label="Step One" index={1} orientation="horizontal">
-          <h1 className="hello-world">Hello World</h1>
+          <h1 style="hello-world">Hello World</h1>
           {null}
         </Step>,
       );

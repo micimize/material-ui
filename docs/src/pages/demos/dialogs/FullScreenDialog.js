@@ -52,12 +52,12 @@ class FullScreenDialog extends React.Component {
           onClose={this.handleClose}
           TransitionComponent={Transition}
         >
-          <AppBar className={classes.appBar}>
+          <AppBar style={classes.appBar}>
             <Toolbar>
               <IconButton color="inherit" onClick={this.handleClose} aria-label="Close">
                 <CloseIcon />
               </IconButton>
-              <Typography variant="title" color="inherit" className={classes.flex}>
+              <Typography variant="title" color="inherit" style={classes.flex}>
                 Sound
               </Typography>
               <Button color="inherit" onClick={this.handleClose}>

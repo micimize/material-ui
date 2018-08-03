@@ -51,25 +51,25 @@ const styles = theme => ({
 function DetailedExpansionPanel(props) {
   const { classes } = props;
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <ExpansionPanel defaultExpanded>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <View className={classes.column}>
-            <Typography className={classes.heading}>Location</Typography>
+          <View style={classes.column}>
+            <Typography style={classes.heading}>Location</Typography>
           </View>
-          <View className={classes.column}>
-            <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
+          <View style={classes.column}>
+            <Typography style={classes.secondaryHeading}>Select trip destination</Typography>
           </View>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails className={classes.details}>
-          <View className={classes.column} />
-          <View className={classes.column}>
-            <Chip label="Barbados" className={classes.chip} onDelete={() => {}} />
+        <ExpansionPanelDetails style={classes.details}>
+          <View style={classes.column} />
+          <View style={classes.column}>
+            <Chip label="Barbados" style={classes.chip} onDelete={() => {}} />
           </View>
-          <View className={classNames(classes.column, classes.helper)}>
+          <View style={classNames(classes.column, classes.helper)}>
             <Typography variant="caption">
               Select your destination of choice<br />
-              <Text href="#sub-labels-and-columns" className={classes.link}>
+              <Text href="#sub-labels-and-columns" style={classes.link}>
                 Learn more
               </Text>
             </Typography>

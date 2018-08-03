@@ -30,7 +30,7 @@ describe('<ExpansionPanelSummary />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<ExpansionPanelSummary className="woofExpansionPanelSummary" />);
+    const wrapper = shallow(<ExpansionPanelSummary style="woofExpansionPanelSummary" />);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(wrapper.hasClass('woofExpansionPanelSummary'), true);
   });

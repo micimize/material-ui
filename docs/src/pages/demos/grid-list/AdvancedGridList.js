@@ -55,8 +55,8 @@ function AdvancedGridList(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
-      <GridList cellHeight={200} spacing={1} className={classes.gridList}>
+    <View style={classes.root}>
+      <GridList cellHeight={200} spacing={1} style={classes.gridList}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}>
             <img src={tile.img} alt={tile.title} />
@@ -64,12 +64,12 @@ function AdvancedGridList(props) {
               title={tile.title}
               titlePosition="top"
               actionIcon={
-                <IconButton className={classes.icon}>
+                <IconButton style={classes.icon}>
                   <StarBorderIcon />
                 </IconButton>
               }
               actionPosition="left"
-              className={classes.titleBar}
+              style={classes.titleBar}
             />
           </GridListTile>
         ))}

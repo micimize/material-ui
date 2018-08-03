@@ -127,7 +127,7 @@ class Tabs extends React.Component {
         direction={theme && theme.direction === 'rtl' ? 'right' : 'left'}
         onClick={this.handleLeftScrollClick}
         visible={this.state.showLeftScroll}
-        className={classNames(classes.scrollButtons, {
+        style={classNames(classes.scrollButtons, {
           [classes.scrollButtonsAuto]: scrollButtons === 'auto',
         })}
       />
@@ -138,7 +138,7 @@ class Tabs extends React.Component {
         direction={theme && theme.direction === 'rtl' ? 'left' : 'right'}
         onClick={this.handleRightScrollClick}
         visible={this.state.showRightScroll}
-        className={classNames(classes.scrollButtons, {
+        style={classNames(classes.scrollButtons, {
           [classes.scrollButtonsAuto]: scrollButtons === 'auto',
         })}
       />
@@ -314,7 +314,7 @@ class Tabs extends React.Component {
 
     const indicator = (
       <TabIndicator
-        className={classes.indicator}
+        style={classes.indicator}
         color={indicatorColor}
         {...TabIndicatorProps}
         style={{
@@ -357,13 +357,13 @@ class Tabs extends React.Component {
     const conditionalElements = this.getConditionalElements();
 
     return (
-      <Component className={className} {...other}>
+      <Component style={className} {...other}>
         <EventListener target="window" onResize={this.handleResize} />
         {conditionalElements.scrollbarSizeListener}
-        <View className={classes.flexContainer}>
+        <View style={classes.flexContainer}>
           {conditionalElements.scrollButtonLeft}
           <View
-            className={scrollerClassName}
+            style={scrollerClassName}
             style={this.state.scrollerStyle}
             ref={ref => {
               this.tabsRef = ref;
@@ -371,7 +371,7 @@ class Tabs extends React.Component {
             role="tablist"
             onScroll={this.handleTabsScroll}
           >
-            <View className={flexContainerClassName}>{children}</View>
+            <View style={flexContainerClassName}>{children}</View>
             {this.state.mounted && indicator}
           </View>
           {conditionalElements.scrollButtonRight}

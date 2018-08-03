@@ -14,7 +14,7 @@ describe('<FormGroup />', () => {
   });
 
   it('should render a div with the root and user classes', () => {
-    const wrapper = shallow(<FormGroup className="woofFormGroup" />);
+    const wrapper = shallow(<FormGroup style="woofFormGroup" />);
 
     assert.strictEqual(wrapper.name(), 'div');
     assert.strictEqual(wrapper.hasClass(classes.root), true);
@@ -24,7 +24,7 @@ describe('<FormGroup />', () => {
   it('should render a div with a div child', () => {
     const wrapper = shallow(
       <FormGroup>
-        <div className="woofFormGroup" />
+        <div style="woofFormGroup" />
       </FormGroup>,
     );
 

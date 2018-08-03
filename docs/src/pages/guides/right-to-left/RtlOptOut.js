@@ -22,9 +22,9 @@ function RtlOptOut(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
-      <View className={classes.affected}>Affected</View>
-      <View className={classes.unaffected}>Unaffected</View>
+    <View style={classes.root}>
+      <View style={classes.affected}>Affected</View>
+      <View style={classes.unaffected}>Unaffected</View>
     </View>
   );
 }

@@ -239,7 +239,7 @@ class Snackbar extends React.Component {
     return (
       <ClickAwayListener onClickAway={this.handleClickAway}>
         <View
-          className={classNames(
+          style={classNames(
             classes.root,
             classes[`anchorOrigin${capitalize(vertical)}${capitalize(horizontal)}`],
             className,

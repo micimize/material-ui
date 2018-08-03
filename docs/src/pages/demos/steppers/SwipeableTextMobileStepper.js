@@ -82,8 +82,8 @@ class SwipeableTextMobileStepper extends React.Component {
     const maxSteps = tutorialSteps.length;
 
     return (
-      <View className={classes.root}>
-        <Paper square elevation={0} className={classes.header}>
+      <View style={classes.root}>
+        <Paper square elevation={0} style={classes.header}>
           <Typography>{tutorialSteps[activeStep].label}</Typography>
         </Paper>
         <SwipeableViews
@@ -93,14 +93,14 @@ class SwipeableTextMobileStepper extends React.Component {
           enableMouseEvents
         >
           {tutorialSteps.map(step => (
-            <img key={step.label} className={classes.img} src={step.imgPath} alt={step.label} />
+            <img key={step.label} style={classes.img} src={step.imgPath} alt={step.label} />
           ))}
         </SwipeableViews>
         <MobileStepper
           steps={maxSteps}
           position="static"
           activeStep={activeStep}
-          className={classes.mobileStepper}
+          style={classes.mobileStepper}
           nextButton={
             <Button size="small" onClick={this.handleNext} disabled={activeStep === maxSteps - 1}>
               Next

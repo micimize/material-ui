@@ -13,7 +13,7 @@ const styles = {
 function LinearIndeterminate(props) {
   const { classes } = props;
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <LinearProgress />
       <br />
       <LinearProgress color="secondary" />

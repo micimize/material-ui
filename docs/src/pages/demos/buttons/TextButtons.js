@@ -17,28 +17,28 @@ function TextButtons(props) {
   const { classes } = props;
   return (
     <View>
-      <Button className={classes.button}>Default</Button>
-      <Button color="primary" className={classes.button}>
+      <Button style={classes.button}>Default</Button>
+      <Button color="primary" style={classes.button}>
         Primary
       </Button>
-      <Button color="secondary" className={classes.button}>
+      <Button color="secondary" style={classes.button}>
         Secondary
       </Button>
-      <Button disabled className={classes.button}>
+      <Button disabled style={classes.button}>
         Disabled
       </Button>
-      <Button href="#text-buttons" className={classes.button}>
+      <Button href="#text-buttons" style={classes.button}>
         Link
       </Button>
       <input
         accept="image/*"
-        className={classes.input}
+        style={classes.input}
         id="flat-button-file"
         multiple
         type="file"
       />
       <label htmlFor="flat-button-file">
-        <Button component="span" className={classes.button}>
+        <Button component="span" style={classes.button}>
           Upload
         </Button>
       </label>

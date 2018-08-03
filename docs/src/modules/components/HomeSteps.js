@@ -85,12 +85,12 @@ function HomeSteps(props) {
 
   return (
     <Grid container>
-      <Grid item xs={12} md={4} className={classNames(classes.step, classes.leftStep)}>
-        <View className={classes.stepTitle}>
-          <FileDownloadIcon className={classes.stepIcon} />
+      <Grid item xs={12} md={4} style={classNames(classes.step, classes.leftStep)}>
+        <View style={classes.stepTitle}>
+          <FileDownloadIcon style={classes.stepIcon} />
           <Typography variant="title">Installation</Typography>
         </View>
-        <View className={classes.stepBody}>
+        <View style={classes.stepBody}>
           <Typography variant="subheading" gutterBottom>
             {`
             Install Material-UI's source files via npm.
@@ -98,7 +98,7 @@ function HomeSteps(props) {
             `}
           </Typography>
           <MarkdownElement
-            className={classes.markdownElement}
+            style={classes.markdownElement}
             text={`
   \`\`\`sh
   $ npm install @material-ui/core
@@ -109,7 +109,7 @@ function HomeSteps(props) {
             {'or use a CDN.'}
           </Typography>
           <MarkdownElement
-            className={classes.markdownElement}
+            style={classes.markdownElement}
             text={`
   \`\`\`html
   <script src="https://unpkg.com/@material-ui/core/umd/material-ui.production.min.js" crossorigin="anonymous"></script>
@@ -120,7 +120,7 @@ function HomeSteps(props) {
             {'Load the default Roboto font.'}
           </Typography>
           <MarkdownElement
-            className={classes.markdownElement}
+            style={classes.markdownElement}
             text={`
   \`\`\`html
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
@@ -128,7 +128,7 @@ function HomeSteps(props) {
                 `}
           />
         </View>
-        <Divider className={classes.divider} />
+        <Divider style={classes.divider} />
         <Button
           component={buttonProps => (
             <Link variant="button" prefetch href="/getting-started/installation" {...buttonProps} />
@@ -137,17 +137,17 @@ function HomeSteps(props) {
           Read installation docs
         </Button>
       </Grid>
-      <Grid item xs={12} md={4} className={classes.step}>
-        <View className={classes.stepTitle}>
-          <BuildIcon className={classes.stepIcon} />
+      <Grid item xs={12} md={4} style={classes.step}>
+        <View style={classes.stepTitle}>
+          <BuildIcon style={classes.stepIcon} />
           <Typography variant="title">Usage</Typography>
         </View>
-        <View className={classes.stepBody}>
+        <View style={classes.stepBody}>
           <Typography variant="subheading" gutterBottom>
             {'Material-UI components work in isolation. They are self-supporting.'}
           </Typography>
           <MarkdownElement
-            className={classes.markdownElement}
+            style={classes.markdownElement}
             text={`
   \`\`\`jsx
   import React from 'react';
@@ -162,7 +162,7 @@ function HomeSteps(props) {
                 `}
           />
         </View>
-        <Divider className={classes.divider} />
+        <Divider style={classes.divider} />
         <Button
           component={buttonProps => (
             <Link variant="button" prefetch href="/getting-started/usage" {...buttonProps} />
@@ -171,23 +171,23 @@ function HomeSteps(props) {
           Explore the docs
         </Button>
       </Grid>
-      <Grid item xs={12} md={4} className={classNames(classes.step, classes.rightStep)}>
-        <View className={classes.stepTitle}>
-          <WhatshotIcon className={classes.stepIcon} />
+      <Grid item xs={12} md={4} style={classNames(classes.step, classes.rightStep)}>
+        <View style={classes.stepTitle}>
+          <WhatshotIcon style={classes.stepIcon} />
           <Typography variant="title">Premium Themes</Typography>
         </View>
-        <View className={classes.stepBody}>
+        <View style={classes.stepBody}>
           <Typography variant="subheading" gutterBottom>
             {`Take Material-UI to the next level with premium themes from
               our official marketplace—all built on Material-UI.`}
           </Typography>
-          <Link prefetch href="/premium-themes" className={classes.link}>
+          <Link prefetch href="/premium-themes" style={classes.link}>
             <NoSsr>
-              <img className={classes.img} alt="themes" src="/static/images/themes.jpg" />
+              <img style={classes.img} alt="themes" src="/static/images/themes.jpg" />
             </NoSsr>
           </Link>
         </View>
-        <Divider className={classes.divider} />
+        <Divider style={classes.divider} />
         <Button
           component={buttonProps => (
             <Link variant="button" prefetch href="/premium-themes" {...buttonProps} />

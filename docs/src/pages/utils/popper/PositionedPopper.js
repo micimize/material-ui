@@ -39,12 +39,12 @@ class PositionedPopper extends React.Component {
     const { anchorEl, open, placement } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Popper open={open} anchorEl={anchorEl} placement={placement} transition>
           {({ TransitionProps }) => (
             <Fade {...TransitionProps} timeout={350}>
               <Paper>
-                <Typography className={classes.typography}>The content of the Popper.</Typography>
+                <Typography style={classes.typography}>The content of the Popper.</Typography>
               </Paper>
             </Fade>
           )}

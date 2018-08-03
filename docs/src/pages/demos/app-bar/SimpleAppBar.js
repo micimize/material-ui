@@ -15,7 +15,7 @@ const styles = {
 function SimpleAppBar(props) {
   const { classes } = props;
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <AppBar position="static" color="default">
         <Toolbar>
           <Typography variant="title" color="inherit">

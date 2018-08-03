@@ -165,7 +165,7 @@ class ExpansionPanel extends React.Component {
       : null;
 
     return (
-      <Paper className={className} elevation={1} square {...other}>
+      <Paper style={className} elevation={1} square {...other}>
         {summary}
         <Collapse in={expanded} timeout="auto" {...CollapseProps} {...CollapsePropsProp}>
           {children}

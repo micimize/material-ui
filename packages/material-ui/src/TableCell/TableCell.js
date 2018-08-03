@@ -112,7 +112,7 @@ function TableCell(props, context) {
   }
 
   return (
-    <Component className={className} aria-sort={ariaSort} scope={scope} {...other}>
+    <Component style={className} aria-sort={ariaSort} scope={scope} {...other}>
       {children}
     </Component>
   );

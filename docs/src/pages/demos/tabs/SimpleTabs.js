@@ -40,7 +40,7 @@ class SimpleTabs extends React.Component {
     const { value } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <AppBar position="static">
           <Tabs value={value} onChange={this.handleChange}>
             <Tab label="Item One" />

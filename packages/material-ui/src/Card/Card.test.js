@@ -21,7 +21,7 @@ describe('<Card />', () => {
   });
 
   it('should have the root and custom class', () => {
-    const wrapper = shallow(<Card className="card" />);
+    const wrapper = shallow(<Card style="card" />);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(wrapper.hasClass('card'), true);
   });

@@ -13,8 +13,8 @@ describe('<ListItemAvatar />', () => {
   before(() => {
     shallow = createShallow({ dive: true });
     classes = getClasses(
-      <ListItemAvatar className="foo">
-        <Avatar className="bar" />
+      <ListItemAvatar style="foo">
+        <Avatar style="bar" />
       </ListItemAvatar>,
       { context: { dense: true } },
     );
@@ -22,8 +22,8 @@ describe('<ListItemAvatar />', () => {
 
   it('should render with the user and root classes', () => {
     const wrapper = shallow(
-      <ListItemAvatar className="foo">
-        <Avatar className="bar" />
+      <ListItemAvatar style="foo">
+        <Avatar style="bar" />
       </ListItemAvatar>,
       {
         context: {

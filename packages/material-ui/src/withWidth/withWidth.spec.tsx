@@ -25,7 +25,7 @@ export class Hello extends React.Component<IHelloProps> {
   public render() {
     return (
       <Grid
-        className={this.props.classes.root}
+        style={this.props.classes.root}
         direction={this.props.width === 'sm' ? 'column' : 'row'}
       >
         <h1>Hello {this.props.name}!</h1>

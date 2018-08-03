@@ -52,8 +52,8 @@ function SingleLineGridList(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
-      <GridList className={classes.gridList} cols={2.5}>
+    <View style={classes.root}>
+      <GridList style={classes.gridList} cols={2.5}>
         {tileData.map(tile => (
           <GridListTile key={tile.img}>
             <img src={tile.img} alt={tile.title} />
@@ -65,7 +65,7 @@ function SingleLineGridList(props) {
               }}
               actionIcon={
                 <IconButton>
-                  <StarBorderIcon className={classes.title} />
+                  <StarBorderIcon style={classes.title} />
                 </IconButton>
               }
             />

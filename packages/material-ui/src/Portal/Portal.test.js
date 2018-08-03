@@ -43,7 +43,7 @@ describe('<Portal />', () => {
     it('should work as expected', () => {
       const wrapper = mount(
         <Portal disablePortal>
-          <h1 className="woofPortal">Foo</h1>
+          <h1 style="woofPortal">Foo</h1>
         </Portal>,
       );
       assert.strictEqual(wrapper.children().length, 1, 'should have one children');
@@ -103,7 +103,7 @@ describe('<Portal />', () => {
     it('should render nothing directly', () => {
       const wrapper = mount(
         <Portal>
-          <h1 className="woofPortal">Foo</h1>
+          <h1 style="woofPortal">Foo</h1>
         </Portal>,
       );
       assert.strictEqual(wrapper.children().length, 0, 'should have no children');
@@ -122,7 +122,7 @@ describe('<Portal />', () => {
     it('should render in a different node', () => {
       const wrapper = mount(
         <Portal>
-          <h1 className="woofPortal">Foo</h1>
+          <h1 style="woofPortal">Foo</h1>
         </Portal>,
       );
       const instance = wrapper.instance();

@@ -58,12 +58,12 @@ function MarkdownDocs(props, context) {
   const section = markdownLocation.split('/')[4];
 
   return (
-    <AppContent className={classes.root}>
+    <AppContent style={classes.root}>
       <Head
         title={`${headers.title || getTitle(markdown)} - Material-UI`}
         description={getDescription(markdown)}
       />
-      <View className={classes.header}>
+      <View style={classes.header}>
         <Button component="a" href={`${SOURCE_CODE_ROOT_URL}${markdownLocation}`}>
           {'Edit this page'}
         </Button>
@@ -89,11 +89,11 @@ function MarkdownDocs(props, context) {
           );
         }
 
-        return <MarkdownElement className={classes.markdownElement} key={content} text={content} />;
+        return <MarkdownElement style={classes.markdownElement} key={content} text={content} />;
       })}
       {headers.components.length > 0 ? (
         <MarkdownElement
-          className={classes.markdownElement}
+          style={classes.markdownElement}
           text={`
 ## API
 

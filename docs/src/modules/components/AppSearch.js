@@ -167,9 +167,9 @@ class AppSearch extends React.Component {
     }
 
     return (
-      <View className={classes.root} style={{ display: isWidthUp('sm', width) ? 'block' : 'none' }}>
+      <View style={classes.root} style={{ display: isWidthUp('sm', width) ? 'block' : 'none' }}>
         <EventListener target="window" onKeyDown={this.handleKeyDown} />
-        <View className={classes.search}>
+        <View style={classes.search}>
           <SearchIcon />
         </View>
         <Input

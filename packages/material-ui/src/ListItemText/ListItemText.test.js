@@ -21,7 +21,7 @@ describe('<ListItemText />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<ListItemText className="woofListItemText" />);
+    const wrapper = shallow(<ListItemText style="woofListItemText" />);
     assert.strictEqual(wrapper.hasClass('woofListItemText'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });
@@ -136,8 +136,8 @@ describe('<ListItemText />', () => {
     });
 
     it('should render JSX children', () => {
-      const primaryChild = <p className="test">This is the primary text</p>;
-      const secondaryChild = <p className="test">This is the secondary text</p>;
+      const primaryChild = <p style="test">This is the primary text</p>;
+      const secondaryChild = <p style="test">This is the secondary text</p>;
       const wrapper = shallow(
         <ListItemText primary={primaryChild} secondary={secondaryChild} disableTypography />,
       );

@@ -24,7 +24,7 @@ function ExpansionPanelActions(props) {
   const { children, classes, className, ...other } = props;
 
   return (
-    <View className={classNames(classes.root, className)} {...other}>
+    <View style={classNames(classes.root, className)} {...other}>
       {cloneChildrenWithClassName(children, classes.action)}
     </View>
   );

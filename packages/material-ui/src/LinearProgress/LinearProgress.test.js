@@ -23,7 +23,7 @@ describe('<LinearProgress />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<LinearProgress className="woofLinearProgress" />);
+    const wrapper = shallow(<LinearProgress style="woofLinearProgress" />);
     assert.strictEqual(wrapper.hasClass('woofLinearProgress'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });

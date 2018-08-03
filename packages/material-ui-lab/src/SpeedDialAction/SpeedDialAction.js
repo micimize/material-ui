@@ -62,7 +62,7 @@ class SpeedDialAction extends React.Component {
     return (
       <Tooltip
         id={id}
-        className={classNames(classes.root, classNameProp)}
+        style={classNames(classes.root, classNameProp)}
         title={tooltipTitle}
         placement="left"
         onClose={this.handleTooltipClose}
@@ -73,7 +73,7 @@ class SpeedDialAction extends React.Component {
         <Button
           variant="fab"
           mini
-          className={classNames(classes.button, !open && classes.buttonClosed)}
+          style={classNames(classes.button, !open && classes.buttonClosed)}
           style={{ transitionDelay: `${delay}ms` }}
           onClick={onClick}
           tabIndex={-1}

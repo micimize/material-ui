@@ -32,13 +32,13 @@ const styles = ({ palette, spacing }: Theme) => ({
 });
 
 const StyledExampleOne = withStyles(styles)<ComponentProps>(({ classes, text }) => (
-  <div className={classes.root}>{text}</div>
+  <div style={classes.root}>{text}</div>
 ));
 <StyledExampleOne text="I am styled!" />;
 
 // Example 2
 const Component: React.SFC<ComponentProps & WithStyles<typeof styles>> = ({ classes, text }) => (
-  <div className={classes.root}>{text}</div>
+  <div style={classes.root}>{text}</div>
 );
 
 const StyledExampleTwo = withStyles(styles)(Component);
@@ -55,7 +55,7 @@ const styleRule = createStyles({
 });
 
 const ComponentWithChildren: React.SFC<WithStyles<typeof styles>> = ({ classes, children }) => (
-  <div className={classes.root}>{children}</div>
+  <div style={classes.root}>{children}</div>
 );
 
 const StyledExampleThree = withStyles(styleRule)(ComponentWithChildren);
@@ -70,7 +70,7 @@ const stylesAsPojo = {
 
 const AnotherStyledSFC = withStyles({
   root: { backgroundColor: 'hotpink' },
-})(({ classes }) => <div className={classes.root}>Stylish!</div>);
+})(({ classes }) => <div style={classes.root}>Stylish!</div>);
 
 // Overriding styles
 const theme = createMuiTheme({
@@ -171,7 +171,7 @@ type AllTheProps = WithTheme & WithStyles<typeof styles>;
 
 const AllTheComposition = withTheme()(
   withStyles(styles)(({ theme, classes }: AllTheProps) => (
-    <div className={classes.root}>{theme.palette.text.primary}</div>
+    <div style={classes.root}>{theme.palette.text.primary}</div>
   )),
 );
 
@@ -184,7 +184,7 @@ const DecoratedComponent = withStyles(styles)(
   class extends React.Component<ComponentProps & WithStyles<typeof styles>> {
     render() {
       const { classes, text } = this.props;
-      return <div className={classes.root}>{text}</div>;
+      return <div style={classes.root}>{text}</div>;
     }
   },
 );
@@ -239,7 +239,7 @@ withStyles(theme =>
 
   const ListItemContent = withStyles(styles, { name: 'ui-ListItemContent' })<ListItemContentProps>(
     ({ children, classes, inset, row }) => (
-      <div className={classes.root} color="textSecondary">
+      <div style={classes.root} color="textSecondary">
         {children}
       </div>
     ),
@@ -273,7 +273,7 @@ withStyles(theme =>
     });
 
   const Component = (props: ComponentProps) => {
-    return <div className={props.classes.content}>Hello {props.caption}</div>;
+    return <div style={props.classes.content}>Hello {props.caption}</div>;
   };
 
   const StyledComponent = withStyles(styles)(Component);
@@ -281,7 +281,7 @@ withStyles(theme =>
   class App extends React.Component {
     public render() {
       return (
-        <div className="App">
+        <div style="App">
           <StyledComponent caption="Developer" />
         </div>
       );

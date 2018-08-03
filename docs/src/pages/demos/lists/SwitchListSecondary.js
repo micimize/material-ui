@@ -45,7 +45,7 @@ class SwitchListSecondary extends React.Component {
     const { classes } = this.props;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <List subheader={<ListSubheader>Settings</ListSubheader>}>
           <ListItem>
             <ListItemIcon>

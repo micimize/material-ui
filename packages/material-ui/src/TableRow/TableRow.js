@@ -66,7 +66,7 @@ function TableRow(props, context) {
     classNameProp,
   );
 
-  return <Component className={className} {...other} />;
+  return <Component style={className} {...other} />;
 }
 
 TableRow.propTypes = {

@@ -15,7 +15,7 @@ function Types(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <Typography variant="display4" gutterBottom>
         Display 4
       </Typography>

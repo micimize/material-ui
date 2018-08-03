@@ -38,7 +38,7 @@ class NoTransitionPopper extends React.Component {
         </Button>
         <Popper id={id} open={open} anchorEl={anchorEl}>
           <Paper>
-            <Typography className={classes.typography}>The content of the Popper.</Typography>
+            <Typography style={classes.typography}>The content of the Popper.</Typography>
           </Paper>
         </Popper>
       </View>

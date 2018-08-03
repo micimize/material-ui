@@ -20,13 +20,13 @@ function DatePickers(props) {
   const { classes } = props;
 
   return (
-    <form className={classes.container} noValidate>
+    <form style={classes.container} noValidate>
       <TextField
         id="date"
         label="Birthday"
         type="date"
         defaultValue="2017-05-24"
-        className={classes.textField}
+        style={classes.textField}
         InputLabelProps={{
           shrink: true,
         }}

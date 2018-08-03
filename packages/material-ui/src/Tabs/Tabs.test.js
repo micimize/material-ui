@@ -76,7 +76,7 @@ describe('<Tabs />', () => {
           width="md"
           onChange={noop}
           value={0}
-          className="woofTabs"
+          style="woofTabs"
           action={actions => {
             tabsActions = actions;
           }}
@@ -98,7 +98,7 @@ describe('<Tabs />', () => {
   describe('prop: className', () => {
     it('should render with the user and root classes', () => {
       const wrapper = shallow(
-        <Tabs width="md" onChange={noop} value={0} className="woofTabs">
+        <Tabs width="md" onChange={noop} value={0} style="woofTabs">
           <Tab />
           <Tab />
         </Tabs>,

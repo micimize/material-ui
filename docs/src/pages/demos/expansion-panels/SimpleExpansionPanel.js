@@ -21,10 +21,10 @@ const styles = theme => ({
 function SimpleExpansionPanel(props) {
   const { classes } = props;
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Expansion Panel 1</Typography>
+          <Typography style={classes.heading}>Expansion Panel 1</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
@@ -35,7 +35,7 @@ function SimpleExpansionPanel(props) {
       </ExpansionPanel>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Expansion Panel 2</Typography>
+          <Typography style={classes.heading}>Expansion Panel 2</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
@@ -46,7 +46,7 @@ function SimpleExpansionPanel(props) {
       </ExpansionPanel>
       <ExpansionPanel disabled>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Disabled Expansion Panel</Typography>
+          <Typography style={classes.heading}>Disabled Expansion Panel</Typography>
         </ExpansionPanelSummary>
       </ExpansionPanel>
     </View>

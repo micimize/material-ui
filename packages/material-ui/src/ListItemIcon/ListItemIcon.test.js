@@ -28,8 +28,8 @@ describe('<ListItemIcon />', () => {
 
   it('should render with the user and root classes', () => {
     const wrapper = shallow(
-      <ListItemIcon className="foo">
-        <span className="bar" />
+      <ListItemIcon style="foo">
+        <span style="bar" />
       </ListItemIcon>,
     );
     assert.strictEqual(wrapper.hasClass('foo'), true, 'should have the "foo" class');

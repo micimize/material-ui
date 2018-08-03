@@ -237,7 +237,7 @@ function Grid(props) {
     classNameProp,
   );
 
-  return <Component className={className} {...other} />;
+  return <Component style={className} {...other} />;
 }
 
 Grid.propTypes = {

@@ -38,7 +38,7 @@ describe('svg-icons', () => {
         }
 
         const Icon = fileLoaded.default;
-        const wrapper = shallow(<Icon className="foo" />);
+        const wrapper = shallow(<Icon style="foo" />);
         assert.strictEqual(wrapper.hasClass('foo'), true);
       });
 

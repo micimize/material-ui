@@ -57,12 +57,12 @@ class InteractiveGrid extends React.Component {
 `;
 
     return (
-      <Grid container className={classes.root}>
+      <Grid container style={classes.root}>
         <Grid item xs={12}>
           <Grid
             container
             spacing={16}
-            className={classes.demo}
+            style={classes.demo}
             alignItems={alignItems}
             direction={direction}
             justify={justify}
@@ -70,7 +70,7 @@ class InteractiveGrid extends React.Component {
             {[0, 1, 2].map(value => (
               <Grid key={value} item>
                 <Paper
-                  className={classes.paper}
+                  style={classes.paper}
                   style={{ paddingTop: (value + 1) * 10, paddingBottom: (value + 1) * 10 }}
                 >
                   {`Cell ${value + 1}`}
@@ -80,7 +80,7 @@ class InteractiveGrid extends React.Component {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.control}>
+          <Paper style={classes.control}>
             <Grid container spacing={24}>
               <Grid item xs={12}>
                 <FormControl component="fieldset">

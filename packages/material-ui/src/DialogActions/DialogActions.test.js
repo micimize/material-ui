@@ -30,7 +30,7 @@ describe('<DialogActions />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<DialogActions className="woofDialogActions" />);
+    const wrapper = shallow(<DialogActions style="woofDialogActions" />);
     assert.strictEqual(wrapper.hasClass('woofDialogActions'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });
@@ -38,7 +38,7 @@ describe('<DialogActions />', () => {
   it('should render children with the button class wrapped in a div with the action class', () => {
     const wrapper = shallow(
       <DialogActions>
-        <button type="submit" className="woofDialogActions">
+        <button type="submit" style="woofDialogActions">
           Hello
         </button>
       </DialogActions>,
@@ -54,7 +54,7 @@ describe('<DialogActions />', () => {
     const wrapper = shallow(
       <DialogActions>
         {showButton ? (
-          <button type="submit" className="woofDialogActions">
+          <button type="submit" style="woofDialogActions">
             Hello
           </button>
         ) : null}

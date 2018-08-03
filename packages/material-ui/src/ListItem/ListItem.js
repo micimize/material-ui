@@ -140,7 +140,7 @@ class ListItem extends React.Component {
 
       return (
         <ContainerComponent
-          className={classNames(classes.container, ContainerClassName)}
+          style={classNames(classes.container, ContainerClassName)}
           {...ContainerProps}
         >
           <Component {...componentProps}>{children}</Component>

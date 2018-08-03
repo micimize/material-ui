@@ -14,7 +14,7 @@ describe('<CardMedia />', () => {
   });
 
   it('should have the root and custom class', () => {
-    const wrapper = shallow(<CardMedia className="woofCardMedia" image="/foo.jpg" />);
+    const wrapper = shallow(<CardMedia style="woofCardMedia" image="/foo.jpg" />);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(wrapper.hasClass('woofCardMedia'), true);
   });

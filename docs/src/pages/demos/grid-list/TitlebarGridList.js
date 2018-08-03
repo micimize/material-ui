@@ -48,8 +48,8 @@ function TitlebarGridList(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList}>
+    <View style={classes.root}>
+      <GridList cellHeight={180} style={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div">December</ListSubheader>
         </GridListTile>
@@ -60,7 +60,7 @@ function TitlebarGridList(props) {
               title={tile.title}
               subtitle={<span>by: {tile.author}</span>}
               actionIcon={
-                <IconButton className={classes.icon}>
+                <IconButton style={classes.icon}>
                   <InfoIcon />
                 </IconButton>
               }

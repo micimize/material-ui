@@ -68,7 +68,7 @@ function getColorBlock(classes, theme, colorName, colorValue, colorTitle) {
 
   let blockTitle;
   if (colorTitle) {
-    blockTitle = <View className={classes.name}>{colorName}</View>;
+    blockTitle = <View style={classes.name}>{colorName}</View>;
   }
 
   let rowStyle = {
@@ -86,11 +86,11 @@ function getColorBlock(classes, theme, colorName, colorValue, colorTitle) {
   }
 
   return (
-    <li style={rowStyle} key={colorValue} className={classes.themeInherit}>
+    <li style={rowStyle} key={colorValue} style={classes.themeInherit}>
       {blockTitle}
-      <View className={classes.colorContainer}>
+      <View style={classes.colorContainer}>
         <span>{colorValue}</span>
-        <span className={classes.colorValue}>{bgColor.toUpperCase()}</span>
+        <span style={classes.colorValue}>{bgColor.toUpperCase()}</span>
       </View>
     </li>
   );
@@ -109,9 +109,9 @@ function getColorGroup(options) {
   }
 
   return (
-    <ul className={classes.colorGroup} key={cssColor}>
+    <ul style={classes.colorGroup} key={cssColor}>
       {getColorBlock(classes, theme, cssColor, 500, true)}
-      <View className={classes.blockSpace} />
+      <View style={classes.blockSpace} />
       {colorsList}
     </ul>
   );
@@ -121,7 +121,7 @@ function Color(props) {
   const { classes, theme } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       {mainColors.map(mainColor =>
         getColorGroup({
           classes,

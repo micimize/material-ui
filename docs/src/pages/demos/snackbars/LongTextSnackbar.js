@@ -22,21 +22,21 @@ function LongTextSnackbar(props) {
 
   return (
     <View>
-      <SnackbarContent className={classes.snackbar} message="I love snacks." action={action} />
+      <SnackbarContent style={classes.snackbar} message="I love snacks." action={action} />
       <SnackbarContent
-        className={classes.snackbar}
+        style={classes.snackbar}
         message={
           'I love candy. I love cookies. I love cupcakes. \
           I love cheesecake. I love chocolate.'
         }
       />
       <SnackbarContent
-        className={classes.snackbar}
+        style={classes.snackbar}
         message="I love candy. I love cookies. I love cupcakes."
         action={action}
       />
       <SnackbarContent
-        className={classes.snackbar}
+        style={classes.snackbar}
         message={
           'I love candy. I love cookies. I love cupcakes. \
           I love cheesecake. I love chocolate.'

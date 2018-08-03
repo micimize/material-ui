@@ -44,7 +44,7 @@ function RawCSSButton() {
       <Button>
         Material-UI
       </Button>
-      <Button className="button">
+      <Button style="button">
         Raw CSS
       </Button>
     </div>
@@ -144,7 +144,7 @@ function CSSModulesButton() {
       <Button>
         Material-UI
       </Button>
-      <Button className={styles.button}>
+      <Button style={styles.button}>
         CSS Modules
       </Button>
     </div>
@@ -369,7 +369,7 @@ function GlamorButton() {
       <Button>
         Material-UI
       </Button>
-      <Button className={className}>
+      <Button style={className}>
         Glamor
       </Button>
     </div>

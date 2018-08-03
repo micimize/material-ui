@@ -57,7 +57,7 @@ class SimpleModal extends React.Component {
           open={this.state.open}
           onClose={this.handleClose}
         >
-          <View style={getModalStyle()} className={classes.paper}>
+          <View style={getModalStyle()} style={classes.paper}>
             <Typography variant="title" id="modal-title">
               Text in a modal
             </Typography>

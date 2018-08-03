@@ -20,7 +20,7 @@ function ReactJss(props) {
   return (
     <View>
       <Button>Material-UI</Button>
-      <Button className={props.classes.button}>react-jss</Button>
+      <Button style={props.classes.button}>react-jss</Button>
     </View>
   );
 }

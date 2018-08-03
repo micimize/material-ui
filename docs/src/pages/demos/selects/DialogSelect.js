@@ -56,8 +56,8 @@ class DialogSelect extends React.Component {
         >
           <DialogTitle>Fill the form</DialogTitle>
           <DialogContent>
-            <form className={classes.container}>
-              <FormControl className={classes.formControl}>
+            <form style={classes.container}>
+              <FormControl style={classes.formControl}>
                 <InputLabel htmlFor="age-native-simple">Age</InputLabel>
                 <Select
                   native
@@ -71,7 +71,7 @@ class DialogSelect extends React.Component {
                   <option value={30}>Thirty</option>
                 </Select>
               </FormControl>
-              <FormControl className={classes.formControl}>
+              <FormControl style={classes.formControl}>
                 <InputLabel htmlFor="age-simple">Age</InputLabel>
                 <Select
                   value={this.state.age}

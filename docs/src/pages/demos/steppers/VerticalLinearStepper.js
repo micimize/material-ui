@@ -77,7 +77,7 @@ class VerticalLinearStepper extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((label, index) => {
             return (
@@ -85,12 +85,12 @@ class VerticalLinearStepper extends React.Component {
                 <StepLabel>{label}</StepLabel>
                 <StepContent>
                   <Typography>{getStepContent(index)}</Typography>
-                  <View className={classes.actionsContainer}>
+                  <View style={classes.actionsContainer}>
                     <View>
                       <Button
                         disabled={activeStep === 0}
                         onClick={this.handleBack}
-                        className={classes.button}
+                        style={classes.button}
                       >
                         Back
                       </Button>
@@ -98,7 +98,7 @@ class VerticalLinearStepper extends React.Component {
                         variant="contained"
                         color="primary"
                         onClick={this.handleNext}
-                        className={classes.button}
+                        style={classes.button}
                       >
                         {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                       </Button>
@@ -110,9 +110,9 @@ class VerticalLinearStepper extends React.Component {
           })}
         </Stepper>
         {activeStep === steps.length && (
-          <Paper square elevation={0} className={classes.resetContainer}>
+          <Paper square elevation={0} style={classes.resetContainer}>
             <Typography>All steps completed - you&quot;re finished</Typography>
-            <Button onClick={this.handleReset} className={classes.button}>
+            <Button onClick={this.handleReset} style={classes.button}>
               Reset
             </Button>
           </Paper>

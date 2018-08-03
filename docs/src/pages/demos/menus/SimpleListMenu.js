@@ -48,7 +48,7 @@ class SimpleListMenu extends React.Component {
     const { anchorEl } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <List component="nav">
           <ListItem
             button

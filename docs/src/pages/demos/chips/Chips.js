@@ -29,19 +29,19 @@ function handleClick() {
 function Chips(props) {
   const { classes } = props;
   return (
-    <View className={classes.root}>
-      <Chip label="Basic Chip" className={classes.chip} />
+    <View style={classes.root}>
+      <Chip label="Basic Chip" style={classes.chip} />
       <Chip
         avatar={<Avatar>MB</Avatar>}
         label="Clickable Chip"
         onClick={handleClick}
-        className={classes.chip}
+        style={classes.chip}
       />
       <Chip
         avatar={<Avatar src="/static/images/uxceo-128.jpg" />}
         label="Deletable Chip"
         onDelete={handleDelete}
-        className={classes.chip}
+        style={classes.chip}
       />
       <Chip
         avatar={
@@ -52,18 +52,18 @@ function Chips(props) {
         label="Clickable Deletable Chip"
         onClick={handleClick}
         onDelete={handleDelete}
-        className={classes.chip}
+        style={classes.chip}
       />
       <Chip
         label="Custom delete icon Chip"
         onClick={handleClick}
         onDelete={handleDelete}
-        className={classes.chip}
+        style={classes.chip}
         deleteIcon={<DoneIcon />}
       />
       <Chip
         label="Clickable Link Chip"
-        className={classes.chip}
+        style={classes.chip}
         component="a"
         href="#chip"
         clickable

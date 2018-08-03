@@ -57,9 +57,9 @@ class ThemeDefault extends React.Component {
     });
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <FormControlLabel
-          className={classes.switch}
+          style={classes.switch}
           control={
             <Switch
               checked={checked}

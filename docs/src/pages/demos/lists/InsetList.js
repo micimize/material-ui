@@ -19,7 +19,7 @@ const styles = theme => ({
 function InsetList(props) {
   const { classes } = props;
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <List component="nav">
         <ListItem button>
           <ListItemIcon>

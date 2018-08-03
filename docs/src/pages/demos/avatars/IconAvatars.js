@@ -32,14 +32,14 @@ const styles = {
 function IconAvatars(props) {
   const { classes } = props;
   return (
-    <View className={classes.row}>
-      <Avatar className={classes.avatar}>
+    <View style={classes.row}>
+      <Avatar style={classes.avatar}>
         <FolderIcon />
       </Avatar>
-      <Avatar className={classes.pinkAvatar}>
+      <Avatar style={classes.pinkAvatar}>
         <PageviewIcon />
       </Avatar>
-      <Avatar className={classes.greenAvatar}>
+      <Avatar style={classes.greenAvatar}>
         <AssignmentIcon />
       </Avatar>
     </View>

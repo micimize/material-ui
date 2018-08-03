@@ -61,7 +61,7 @@ function ListItemText(props, context) {
     primary = (
       <Typography
         variant="subheading"
-        className={classNames(classes.primary, { [classes.textDense]: dense })}
+        style={classNames(classes.primary, { [classes.textDense]: dense })}
         component="span"
         {...primaryTypographyProps}
       >
@@ -75,7 +75,7 @@ function ListItemText(props, context) {
     secondary = (
       <Typography
         variant="body1"
-        className={classNames(classes.secondary, {
+        style={classNames(classes.secondary, {
           [classes.textDense]: dense,
         })}
         color="textSecondary"
@@ -88,7 +88,7 @@ function ListItemText(props, context) {
 
   return (
     <View
-      className={classNames(
+      style={classNames(
         classes.root,
         {
           [classes.dense]: dense,

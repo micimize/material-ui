@@ -43,7 +43,7 @@ class CheckboxList extends React.Component {
     const { classes } = this.props;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <List>
           {[0, 1, 2, 3].map(value => (
             <ListItem
@@ -52,7 +52,7 @@ class CheckboxList extends React.Component {
               dense
               button
               onClick={this.handleToggle(value)}
-              className={classes.listItem}
+              style={classes.listItem}
             >
               <Checkbox
                 checked={this.state.checked.indexOf(value) !== -1}

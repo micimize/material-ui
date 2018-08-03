@@ -30,7 +30,7 @@ describe('<DialogContent />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<DialogContent className="woofDialogContent" />);
+    const wrapper = shallow(<DialogContent style="woofDialogContent" />);
     assert.strictEqual(wrapper.hasClass('woofDialogContent'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });

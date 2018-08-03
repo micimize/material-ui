@@ -17,7 +17,7 @@ describe('<FormControl />', () => {
 
   describe('initial state', () => {
     it('should render a div with the root and user classes', () => {
-      const wrapper = shallow(<FormControl className="woofFormControl" />);
+      const wrapper = shallow(<FormControl style="woofFormControl" />);
 
       assert.strictEqual(wrapper.name(), 'div');
       assert.strictEqual(wrapper.hasClass(classes.root), true);
@@ -25,7 +25,7 @@ describe('<FormControl />', () => {
     });
 
     it('should have the focused class', () => {
-      const wrapper = shallow(<FormControl className="woofFormControl" />);
+      const wrapper = shallow(<FormControl style="woofFormControl" />);
 
       assert.strictEqual(wrapper.name(), 'div');
       assert.strictEqual(wrapper.hasClass(classes.root), true);

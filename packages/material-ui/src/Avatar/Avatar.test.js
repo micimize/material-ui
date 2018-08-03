@@ -18,7 +18,7 @@ describe('<Avatar />', () => {
     it('should render a div containing an img', () => {
       const wrapper = shallow(
         <Avatar
-          className="my-avatar"
+          style="my-avatar"
           src="something.jpg"
           alt="Hello World!"
           data-my-prop="woofAvatar"
@@ -61,8 +61,8 @@ describe('<Avatar />', () => {
 
     before(() => {
       wrapper = shallow(
-        <Avatar className="my-avatar" data-my-prop="woofAvatar" childrenClassName="my-children">
-          <span className="my-icon-font">icon</span>
+        <Avatar style="my-avatar" data-my-prop="woofAvatar" childrenClassName="my-children">
+          <span style="my-icon-font">icon</span>
         </Avatar>,
       );
     });
@@ -95,7 +95,7 @@ describe('<Avatar />', () => {
 
     before(() => {
       wrapper = shallow(
-        <Avatar className="my-avatar" data-my-prop="woofAvatar" childrenClassName="my-children">
+        <Avatar style="my-avatar" data-my-prop="woofAvatar" childrenClassName="my-children">
           <CancelIcon />
         </Avatar>,
       );
@@ -126,7 +126,7 @@ describe('<Avatar />', () => {
 
     before(() => {
       wrapper = shallow(
-        <Avatar className="my-avatar" data-my-prop="woofAvatar">
+        <Avatar style="my-avatar" data-my-prop="woofAvatar">
           OT
         </Avatar>,
       );

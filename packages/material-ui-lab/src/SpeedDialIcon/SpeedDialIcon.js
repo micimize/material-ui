@@ -58,9 +58,9 @@ function SpeedDialIcon(props) {
   }
 
   return (
-    <span className={classes.root} {...other}>
+    <span style={classes.root} {...other}>
       {openIconProp ? formatIcon(openIconProp, openIconClassName) : null}
-      {iconProp ? formatIcon(iconProp, iconClassName) : <AddIcon className={iconClassName} />}
+      {iconProp ? formatIcon(iconProp, iconClassName) : <AddIcon style={iconClassName} />}
     </span>
   );
 }

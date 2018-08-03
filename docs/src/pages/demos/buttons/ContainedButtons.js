@@ -17,30 +17,30 @@ function ContainedButtons(props) {
   const { classes } = props;
   return (
     <View>
-      <Button variant="contained" className={classes.button}>
+      <Button variant="contained" style={classes.button}>
         Default
       </Button>
-      <Button variant="contained" color="primary" className={classes.button}>
+      <Button variant="contained" color="primary" style={classes.button}>
         Primary
       </Button>
-      <Button variant="contained" color="secondary" className={classes.button}>
+      <Button variant="contained" color="secondary" style={classes.button}>
         Secondary
       </Button>
-      <Button variant="contained" color="secondary" disabled className={classes.button}>
+      <Button variant="contained" color="secondary" disabled style={classes.button}>
         Disabled
       </Button>
-      <Button variant="contained" href="#contained-buttons" className={classes.button}>
+      <Button variant="contained" href="#contained-buttons" style={classes.button}>
         Link
       </Button>
       <input
         accept="image/*"
-        className={classes.input}
+        style={classes.input}
         id="contained-button-file"
         multiple
         type="file"
       />
       <label htmlFor="contained-button-file">
-        <Button variant="contained" component="span" className={classes.button}>
+        <Button variant="contained" component="span" style={classes.button}>
           Upload
         </Button>
       </label>

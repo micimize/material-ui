@@ -54,11 +54,11 @@ function MySnackbarContent(props) {
 
   return (
     <SnackbarContent
-      className={classNames(classes[variant], className)}
+      style={classNames(classes[variant], className)}
       aria-describedby="client-snackbar"
       message={
-        <span id="client-snackbar" className={classes.message}>
-          <Icon className={classNames(classes.icon, classes.iconVariant)} />
+        <span id="client-snackbar" style={classes.message}>
+          <Icon style={classNames(classes.icon, classes.iconVariant)} />
           {message}
         </span>
       }
@@ -67,10 +67,10 @@ function MySnackbarContent(props) {
           key="close"
           aria-label="Close"
           color="inherit"
-          className={classes.close}
+          style={classes.close}
           onClick={onClose}
         >
-          <CloseIcon className={classes.icon} />
+          <CloseIcon style={classes.icon} />
         </IconButton>,
       ]}
       {...other}
@@ -116,7 +116,7 @@ class CustomizedSnackbars extends React.Component {
 
     return (
       <View>
-        <Button className={classes.margin} onClick={this.handleClick}>
+        <Button style={classes.margin} onClick={this.handleClick}>
           Open success snackbar
         </Button>
         <Snackbar
@@ -136,22 +136,22 @@ class CustomizedSnackbars extends React.Component {
         </Snackbar>
         <MySnackbarContentWrapper
           variant="error"
-          className={classes.margin}
+          style={classes.margin}
           message="This is an error message!"
         />
         <MySnackbarContentWrapper
           variant="warning"
-          className={classes.margin}
+          style={classes.margin}
           message="This is a warning message!"
         />
         <MySnackbarContentWrapper
           variant="info"
-          className={classes.margin}
+          style={classes.margin}
           message="This is an information message!"
         />
         <MySnackbarContentWrapper
           variant="success"
-          className={classes.margin}
+          style={classes.margin}
           message="This is a success message!"
         />
       </View>

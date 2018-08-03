@@ -67,16 +67,16 @@ function CustomizedInputs(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.container}>
+    <View style={classes.container}>
       <Button
         variant="contained"
         color="primary"
-        className={classNames(classes.margin, classes.cssRoot)}
+        style={classNames(classes.margin, classes.cssRoot)}
       >
         Custom CSS
       </Button>
       <MuiThemeProvider theme={theme}>
-        <Button variant="contained" color="primary" className={classes.margin}>
+        <Button variant="contained" color="primary" style={classes.margin}>
           MuiThemeProvider
         </Button>
       </MuiThemeProvider>
@@ -84,7 +84,7 @@ function CustomizedInputs(props) {
         variant="contained"
         color="primary"
         disableRipple
-        className={classNames(classes.margin, classes.bootstrapRoot)}
+        style={classNames(classes.margin, classes.bootstrapRoot)}
       >
         Bootstrap
       </Button>

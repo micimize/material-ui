@@ -40,7 +40,7 @@ class Index extends React.Component {
     const { open } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Dialog open={open} onClose={this.handleClose}>
           <DialogTitle>Super Secret Password</DialogTitle>
           <DialogContent>

@@ -29,7 +29,7 @@ describe('<TabIndicator />', () => {
 
   describe('prop: className', () => {
     it('should append the className on the root element', () => {
-      const wrapper = shallow(<TabIndicator color="secondary" style={style} className="foo" />);
+      const wrapper = shallow(<TabIndicator color="secondary" style={style} style="foo" />);
       assert.strictEqual(wrapper.name(), 'span');
       assert.strictEqual(wrapper.hasClass('foo'), true, 'should have the property class');
     });

@@ -120,7 +120,7 @@ function Dialog(props) {
 
   return (
     <Modal
-      className={classNames(classes.root, classes[`scroll${capitalize(scroll)}`], className)}
+      style={classNames(classes.root, classes[`scroll${capitalize(scroll)}`], className)}
       BackdropProps={{
         transitionDuration,
         ...BackdropProps,
@@ -148,7 +148,7 @@ function Dialog(props) {
       >
         <Paper
           elevation={24}
-          className={classNames(classes.paper, classes[`paperScroll${capitalize(scroll)}`], {
+          style={classNames(classes.paper, classes[`paperScroll${capitalize(scroll)}`], {
             [classes[`paperWidth${maxWidth ? capitalize(maxWidth) : ''}`]]: maxWidth,
             [classes.paperFullScreen]: fullScreen,
             [classes.paperFullWidth]: fullWidth,

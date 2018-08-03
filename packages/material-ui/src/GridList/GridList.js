@@ -32,7 +32,7 @@ function GridList(props) {
 
   return (
     <Component
-      className={classNames(classes.root, classNameProp)}
+      style={classNames(classes.root, classNameProp)}
       style={{ margin: -spacing / 2, ...style }}
       {...other}
     >

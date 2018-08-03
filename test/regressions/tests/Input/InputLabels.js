@@ -19,7 +19,7 @@ function InputLabels(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.container}>
+    <View style={classes.container}>
       <InputLabel shrink>First Name Shrunk</InputLabel>
       <InputLabel>First Name</InputLabel>
       <InputLabel focused>Required</InputLabel>

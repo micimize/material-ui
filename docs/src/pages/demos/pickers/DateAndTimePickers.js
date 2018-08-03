@@ -20,13 +20,13 @@ function DateAndTimePickers(props) {
   const { classes } = props;
 
   return (
-    <form className={classes.container} noValidate>
+    <form style={classes.container} noValidate>
       <TextField
         id="datetime-local"
         label="Next appointment"
         type="datetime-local"
         defaultValue="2017-05-24T10:30"
-        className={classes.textField}
+        style={classes.textField}
         InputLabelProps={{
           shrink: true,
         }}

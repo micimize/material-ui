@@ -14,7 +14,7 @@ describe('<FormLabel />', () => {
   });
 
   it('should render a <label />', () => {
-    const wrapper = shallow(<FormLabel className="woofFormLabel" />);
+    const wrapper = shallow(<FormLabel style="woofFormLabel" />);
     assert.strictEqual(wrapper.name(), 'label');
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(wrapper.hasClass('woofFormLabel'), true, 'should have the user class');

@@ -57,7 +57,7 @@ function Step(props) {
   );
 
   return (
-    <View className={className} {...other}>
+    <View style={className} {...other}>
       {React.Children.map(children, child => {
         if (!React.isValidElement(child)) {
           return null;

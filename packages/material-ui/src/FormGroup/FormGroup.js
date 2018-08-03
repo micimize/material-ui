@@ -27,7 +27,7 @@ function FormGroup(props) {
 
   return (
     <View
-      className={classNames(
+      style={classNames(
         classes.root,
         {
           [classes.row]: row,

@@ -27,7 +27,7 @@ describe('<Slider />', () => {
   });
 
   it('should render with the default and user classes', () => {
-    const wrapper = shallow(<Slider value={0} className="mySliderClass" />);
+    const wrapper = shallow(<Slider value={0} style="mySliderClass" />);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(wrapper.hasClass('mySliderClass'), true);
   });

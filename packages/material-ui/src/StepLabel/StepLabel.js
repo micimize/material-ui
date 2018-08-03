@@ -84,7 +84,7 @@ function StepLabel(props) {
 
   return (
     <span
-      className={classNames(
+      style={classNames(
         classes.root,
         classes[orientation],
         {
@@ -98,7 +98,7 @@ function StepLabel(props) {
     >
       {icon && (
         <span
-          className={classNames(classes.iconContainer, {
+          style={classNames(classes.iconContainer, {
             [classes.alternativeLabel]: alternativeLabel,
           })}
         >
@@ -111,11 +111,11 @@ function StepLabel(props) {
           />
         </span>
       )}
-      <span className={classes.labelContainer}>
+      <span style={classes.labelContainer}>
         <Typography
           variant="body1"
           component="span"
-          className={classNames(classes.label, {
+          style={classNames(classes.label, {
             [classes.alternativeLabel]: alternativeLabel,
             [classes.completed]: completed,
             [classes.active]: active,

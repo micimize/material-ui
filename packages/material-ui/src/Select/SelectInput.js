@@ -261,9 +261,9 @@ class SelectInput extends React.Component {
     }
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <View
-          className={classNames(
+          style={classNames(
             classes.select,
             classes.selectMenu,
             {
@@ -295,7 +295,7 @@ class SelectInput extends React.Component {
           type={type}
           {...other}
         />
-        <IconComponent className={classes.icon} />
+        <IconComponent style={classes.icon} />
         <Menu
           id={`menu-${name || ''}`}
           anchorEl={this.displayRef}

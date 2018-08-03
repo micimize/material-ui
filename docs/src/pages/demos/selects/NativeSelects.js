@@ -37,8 +37,8 @@ class NativeSelects extends React.Component {
     const { classes } = this.props;
 
     return (
-      <View className={classes.root}>
-        <FormControl className={classes.formControl}>
+      <View style={classes.root}>
+        <FormControl style={classes.formControl}>
           <InputLabel htmlFor="age-native-simple">Age</InputLabel>
           <Select
             native
@@ -55,7 +55,7 @@ class NativeSelects extends React.Component {
             <option value={30}>Thirty</option>
           </Select>
         </FormControl>
-        <FormControl className={classes.formControl}>
+        <FormControl style={classes.formControl}>
           <InputLabel htmlFor="age-native-helper">Age</InputLabel>
           <NativeSelect
             value={this.state.age}
@@ -69,12 +69,12 @@ class NativeSelects extends React.Component {
           </NativeSelect>
           <FormHelperText>Some important helper text</FormHelperText>
         </FormControl>
-        <FormControl className={classes.formControl}>
+        <FormControl style={classes.formControl}>
           <NativeSelect
             value={this.state.age}
             onChange={this.handleChange('age')}
             name="age"
-            className={classes.selectEmpty}
+            style={classes.selectEmpty}
           >
             <option value="">None</option>
             <option value={10}>Ten</option>
@@ -83,7 +83,7 @@ class NativeSelects extends React.Component {
           </NativeSelect>
           <FormHelperText>Without label</FormHelperText>
         </FormControl>
-        <FormControl className={classes.formControl}>
+        <FormControl style={classes.formControl}>
           <InputLabel shrink htmlFor="age-native-label-placeholder">
             Age
           </InputLabel>
@@ -99,7 +99,7 @@ class NativeSelects extends React.Component {
           </NativeSelect>
           <FormHelperText>Label + placeholder</FormHelperText>
         </FormControl>
-        <FormControl className={classes.formControl} disabled>
+        <FormControl style={classes.formControl} disabled>
           <InputLabel htmlFor="name-native-disabled">Name</InputLabel>
           <NativeSelect
             value={this.state.name}
@@ -117,7 +117,7 @@ class NativeSelects extends React.Component {
           </NativeSelect>
           <FormHelperText>Disabled</FormHelperText>
         </FormControl>
-        <FormControl className={classes.formControl} error>
+        <FormControl style={classes.formControl} error>
           <InputLabel htmlFor="name-native-error">Name</InputLabel>
           <NativeSelect
             value={this.state.name}
@@ -136,7 +136,7 @@ class NativeSelects extends React.Component {
           </NativeSelect>
           <FormHelperText>Error</FormHelperText>
         </FormControl>
-        <FormControl className={classes.formControl}>
+        <FormControl style={classes.formControl}>
           <InputLabel htmlFor="uncontrolled-native">Name</InputLabel>
           <NativeSelect defaultValue={30} input={<Input name="name" id="uncontrolled-native" />}>
             <option value="" />
@@ -146,9 +146,9 @@ class NativeSelects extends React.Component {
           </NativeSelect>
           <FormHelperText>Uncontrolled</FormHelperText>
         </FormControl>
-        <FormControl className={classes.formControl}>
+        <FormControl style={classes.formControl}>
           <NativeSelect
-            className={classes.selectEmpty}
+            style={classes.selectEmpty}
             value={this.state.age}
             name="age"
             onChange={this.handleChange('age')}
@@ -162,7 +162,7 @@ class NativeSelects extends React.Component {
           </NativeSelect>
           <FormHelperText>Placeholder</FormHelperText>
         </FormControl>
-        <FormControl required className={classes.formControl}>
+        <FormControl required style={classes.formControl}>
           <InputLabel htmlFor="age-native-required">Age</InputLabel>
           <Select
             native

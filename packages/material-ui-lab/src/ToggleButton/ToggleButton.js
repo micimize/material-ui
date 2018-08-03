@@ -123,13 +123,13 @@ class ToggleButton extends React.Component {
 
     return (
       <ButtonBase
-        className={className}
+        style={className}
         disabled={disabled}
         focusRipple={!disableFocusRipple}
         onClick={this.handleChange}
         {...other}
       >
-        <span className={classes.label}>{children}</span>
+        <span style={classes.label}>{children}</span>
       </ButtonBase>
     );
   }

@@ -25,7 +25,7 @@ class VerticalSlider extends React.Component {
     const { value } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Slider value={value} onChange={this.handleChange} vertical />
         <Slider value={value} onChange={this.handleChange} vertical reverse />
       </View>

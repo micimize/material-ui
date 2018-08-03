@@ -21,21 +21,21 @@ function IconButtons(props) {
   const { classes } = props;
   return (
     <View>
-      <IconButton className={classes.button} aria-label="Delete">
+      <IconButton style={classes.button} aria-label="Delete">
         <DeleteIcon />
       </IconButton>
-      <IconButton className={classes.button} aria-label="Delete" disabled color="primary">
+      <IconButton style={classes.button} aria-label="Delete" disabled color="primary">
         <DeleteIcon />
       </IconButton>
-      <IconButton color="secondary" className={classes.button} aria-label="Add an alarm">
+      <IconButton color="secondary" style={classes.button} aria-label="Add an alarm">
         <Icon>alarm</Icon>
       </IconButton>
-      <IconButton color="primary" className={classes.button} aria-label="Add to shopping cart">
+      <IconButton color="primary" style={classes.button} aria-label="Add to shopping cart">
         <AddShoppingCartIcon />
       </IconButton>
-      <input accept="image/*" className={classes.input} id="icon-button-file" type="file" />
+      <input accept="image/*" style={classes.input} id="icon-button-file" type="file" />
       <label htmlFor="icon-button-file">
-        <IconButton color="primary" className={classes.button} component="span">
+        <IconButton color="primary" style={classes.button} component="span">
           <PhotoCamera />
         </IconButton>
       </label>

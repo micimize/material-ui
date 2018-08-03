@@ -34,13 +34,13 @@ class CircularStatic extends React.Component {
     const { classes } = this.props;
     return (
       <View>
-        <CircularProgress className={classes.progress} variant="static" value={5} />
-        <CircularProgress className={classes.progress} variant="static" value={25} />
-        <CircularProgress className={classes.progress} variant="static" value={50} />
-        <CircularProgress className={classes.progress} variant="static" value={75} />
-        <CircularProgress className={classes.progress} variant="static" value={100} />
+        <CircularProgress style={classes.progress} variant="static" value={5} />
+        <CircularProgress style={classes.progress} variant="static" value={25} />
+        <CircularProgress style={classes.progress} variant="static" value={50} />
+        <CircularProgress style={classes.progress} variant="static" value={75} />
+        <CircularProgress style={classes.progress} variant="static" value={100} />
         <CircularProgress
-          className={classes.progress}
+          style={classes.progress}
           variant="static"
           value={this.state.completed}
         />

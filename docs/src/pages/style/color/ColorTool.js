@@ -136,10 +136,10 @@ class ColorTool extends React.Component {
       theme.palette.augmentColor(background);
 
       return (
-        <Grid container className={classes.colorBar}>
+        <Grid container style={classes.colorBar}>
           {['dark', 'main', 'light'].map(key => (
             <View
-              className={classes.colorSquare}
+              style={classes.colorSquare}
               style={{ backgroundColor: background[key] }}
               key={key}
             >
@@ -174,10 +174,10 @@ class ColorTool extends React.Component {
             }}
             fullWidth
           />
-          <View className={classes.sliderContainer}>
+          <View style={classes.sliderContainer}>
             <Typography id={`${intent}ShadeSliderLabel`}>Shade:</Typography>
             <Slider
-              className={classes.slider}
+              style={classes.slider}
               value={intentShade}
               min={0}
               max={13}
@@ -187,7 +187,7 @@ class ColorTool extends React.Component {
             />
             <Typography>{shades[intentShade]}</Typography>
           </View>
-          <View className={classes.swatch}>
+          <View style={classes.swatch}>
             {hues.map(hue => {
               const shade = intent === 'primary' ? shades[primaryShade] : shades[secondaryShade];
               const backgroundColor = colors[hue][shade];
@@ -201,9 +201,9 @@ class ColorTool extends React.Component {
                     value={hue}
                     name={intent}
                     aria-labelledby={`tooltip-${intent}-${hue}`}
-                    icon={<View className={classes.radio} style={{ backgroundColor }} />}
+                    icon={<View style={classes.radio} style={{ backgroundColor }} />}
                     checkedIcon={
-                      <View className={classes.radioSelected} style={{ backgroundColor }}>
+                      <View style={classes.radioSelected} style={{ backgroundColor }}>
                         <CheckIcon style={{ fontSize: 30 }} />
                       </View>
                     }
@@ -218,7 +218,7 @@ class ColorTool extends React.Component {
     };
 
     return (
-      <Grid container spacing={40} className={classes.root}>
+      <Grid container spacing={40} style={classes.root}>
         {colorPicker('primary')}
         {colorPicker('secondary')}
         <Grid item xs={12} sm={6} md={4}>

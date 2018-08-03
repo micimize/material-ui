@@ -158,7 +158,7 @@ class Collapse extends React.Component {
         {(state, childProps) => {
           return (
             <Component
-              className={classNames(
+              style={classNames(
                 classes.container,
                 {
                   [classes.entered]: state === 'entered',
@@ -172,12 +172,12 @@ class Collapse extends React.Component {
               {...childProps}
             >
               <View
-                className={classes.wrapper}
+                style={classes.wrapper}
                 ref={ref => {
                   this.wrapperRef = ref;
                 }}
               >
-                <View className={classes.wrapperInner}>{children}</View>
+                <View style={classes.wrapperInner}>{children}</View>
               </View>
             </Component>
           );

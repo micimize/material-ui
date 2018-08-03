@@ -13,7 +13,7 @@ describe('<Badge />', () => {
     classes = getClasses(<Badge badgeContent={1}>Hello World</Badge>);
   });
 
-  const testChildren = <div className="unique">Hello World</div>;
+  const testChildren = <div style="unique">Hello World</div>;
 
   it('renders children and badgeContent', () => {
     const wrapper = shallow(<Badge badgeContent={10}>{testChildren}</Badge>);
@@ -49,7 +49,7 @@ describe('<Badge />', () => {
 
   it('renders children and className', () => {
     const wrapper = shallow(
-      <Badge badgeContent={10} className="testClassName">
+      <Badge badgeContent={10} style="testClassName">
         {testChildren}
       </Badge>,
     );

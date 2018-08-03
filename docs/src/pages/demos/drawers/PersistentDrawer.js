@@ -131,7 +131,7 @@ class PersistentDrawer extends React.Component {
           paper: classes.drawerPaper,
         }}
       >
-        <View className={classes.drawerHeader}>
+        <View style={classes.drawerHeader}>
           <IconButton onClick={this.handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
@@ -153,7 +153,7 @@ class PersistentDrawer extends React.Component {
     }
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <TextField
           id="persistent-anchor"
           select
@@ -165,9 +165,9 @@ class PersistentDrawer extends React.Component {
           <MenuItem value="left">left</MenuItem>
           <MenuItem value="right">right</MenuItem>
         </TextField>
-        <View className={classes.appFrame}>
+        <View style={classes.appFrame}>
           <AppBar
-            className={classNames(classes.appBar, {
+            style={classNames(classes.appBar, {
               [classes.appBarShift]: open,
               [classes[`appBarShift-${anchor}`]]: open,
             })}
@@ -177,7 +177,7 @@ class PersistentDrawer extends React.Component {
                 color="inherit"
                 aria-label="Open drawer"
                 onClick={this.handleDrawerOpen}
-                className={classNames(classes.menuButton, open && classes.hide)}
+                style={classNames(classes.menuButton, open && classes.hide)}
               >
                 <MenuIcon />
               </IconButton>
@@ -188,12 +188,12 @@ class PersistentDrawer extends React.Component {
           </AppBar>
           {before}
           <View
-            className={classNames(classes.content, classes[`content-${anchor}`], {
+            style={classNames(classes.content, classes[`content-${anchor}`], {
               [classes.contentShift]: open,
               [classes[`contentShift-${anchor}`]]: open,
             })}
           >
-            <View className={classes.drawerHeader} />
+            <View style={classes.drawerHeader} />
             <Typography>{'You think water moves fast? You should see ice.'}</Typography>
           </View>
           {after}

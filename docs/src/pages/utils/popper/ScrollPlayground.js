@@ -178,10 +178,10 @@ class AnchorPlayground extends React.Component {
 `;
 
     return (
-      <View className={classes.root}>
-        <View className={classes.scrollContainer}>
+      <View style={classes.root}>
+        <View style={classes.scrollContainer}>
           <RootRef rootRef={this.centerScroll}>
-            <Grid className={classes.scroll} container alignItems="center" justify="center">
+            <Grid style={classes.scroll} container alignItems="center" justify="center">
               <View>
                 <Button
                   buttonRef={node => {
@@ -192,7 +192,7 @@ class AnchorPlayground extends React.Component {
                 >
                   Toggle Popper
                 </Button>
-                <Typography className={classes.legend}>
+                <Typography style={classes.legend}>
                   Scroll around this container to experiment with flip and preventOverflow
                   modifiers.
                 </Typography>
@@ -201,7 +201,7 @@ class AnchorPlayground extends React.Component {
                   anchorEl={this.anchorEl}
                   placement={placement}
                   disablePortal={disablePortal}
-                  className={classes.popper}
+                  style={classes.popper}
                   modifiers={{
                     flip: {
                       enabled: flip,
@@ -217,8 +217,8 @@ class AnchorPlayground extends React.Component {
                     },
                   }}
                 >
-                  {arrow ? <span className={classes.arrow} ref={this.handleArrowRef} /> : null}
-                  <Paper className={classes.paper}>
+                  {arrow ? <span style={classes.arrow} ref={this.handleArrowRef} /> : null}
+                  <Paper style={classes.paper}>
                     <DialogTitle>{"Use Google's location service?"}</DialogTitle>
                     <DialogContent>
                       <DialogContentText>
@@ -247,7 +247,7 @@ class AnchorPlayground extends React.Component {
             <View>
               <TextField
                 margin="normal"
-                className={classes.select}
+                style={classes.select}
                 label="Placement"
                 select
                 SelectProps={{ native: true }}
@@ -286,7 +286,7 @@ class AnchorPlayground extends React.Component {
             <View>
               <TextField
                 margin="normal"
-                className={classes.select}
+                style={classes.select}
                 label="Prevent overflow"
                 select
                 SelectProps={{ native: true }}

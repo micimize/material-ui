@@ -14,7 +14,7 @@ describe('<CardActions />', () => {
   });
 
   it('should render a div with the root and custom class', () => {
-    const wrapper = shallow(<CardActions className="cardActions" />);
+    const wrapper = shallow(<CardActions style="cardActions" />);
     assert.strictEqual(wrapper.name(), 'div');
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(wrapper.hasClass('cardActions'), true);

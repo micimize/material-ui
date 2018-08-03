@@ -305,7 +305,7 @@ class ButtonBase extends React.Component {
         onTouchMove={this.handleTouchMove}
         onTouchStart={this.handleTouchStart}
         tabIndex={disabled ? '-1' : tabIndex}
-        className={className}
+        style={className}
         ref={buttonRef}
         {...buttonProps}
         {...other}

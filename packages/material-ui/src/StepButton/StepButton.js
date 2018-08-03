@@ -64,7 +64,7 @@ function StepButton(props) {
     <ButtonBase
       disabled={disabled}
       TouchRippleProps={{ className: classes.touchRipple }}
-      className={classNames(classes.root, classes[orientation], classNameProp)}
+      style={classNames(classes.root, classes[orientation], classNameProp)}
       {...other}
     >
       {child}

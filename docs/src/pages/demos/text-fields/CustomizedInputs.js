@@ -74,8 +74,8 @@ function CustomizedInputs(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.container}>
-      <FormControl className={classes.margin}>
+    <View style={classes.container}>
+      <FormControl style={classes.margin}>
         <InputLabel
           FormLabelClasses={{
             root: classes.cssLabel,
@@ -94,7 +94,7 @@ function CustomizedInputs(props) {
       </FormControl>
       <MuiThemeProvider theme={theme}>
         <TextField
-          className={classes.margin}
+          style={classes.margin}
           label="MuiThemeProvider"
           id="mui-theme-provider-input"
         />

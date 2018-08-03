@@ -43,7 +43,7 @@ describe('<StepIcon />', () => {
   });
 
   it('renders the custom icon', () => {
-    const wrapper = shallow(<StepIcon icon={<span className="my-icon" />} />);
+    const wrapper = shallow(<StepIcon icon={<span style="my-icon" />} />);
     assert.strictEqual(wrapper.find('.my-icon').length, 1, 'should have the custom icon');
   });
 });

@@ -19,7 +19,7 @@ describe('<ListSubheader />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<ListSubheader className="woofListSubheader" />);
+    const wrapper = shallow(<ListSubheader style="woofListSubheader" />);
     assert.strictEqual(wrapper.hasClass('woofListSubheader'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });

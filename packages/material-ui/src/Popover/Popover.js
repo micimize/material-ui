@@ -323,7 +323,7 @@ class Popover extends React.Component {
           {...TransitionProps}
         >
           <Paper
-            className={classes.paper}
+            style={classes.paper}
             data-mui-test="Popover"
             elevation={elevation}
             ref={ref => {

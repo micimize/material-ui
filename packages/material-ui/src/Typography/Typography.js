@@ -119,7 +119,7 @@ function Typography(props) {
 
   const Component = componentProp || (paragraph ? Text : headlineMapping[variant]) || Text;
 
-  return <Component className={className} {...other} />;
+  return <Component style={className} {...other} />;
 }
 
 Typography.propTypes = {

@@ -30,22 +30,22 @@ class ComposedTextField extends React.Component {
     const { classes } = this.props;
 
     return (
-      <View className={classes.container}>
-        <FormControl className={classes.formControl}>
+      <View style={classes.container}>
+        <FormControl style={classes.formControl}>
           <InputLabel htmlFor="name-simple">Name</InputLabel>
           <Input id="name-simple" value={this.state.name} onChange={this.handleChange} />
         </FormControl>
-        <FormControl className={classes.formControl} aria-describedby="name-helper-text">
+        <FormControl style={classes.formControl} aria-describedby="name-helper-text">
           <InputLabel htmlFor="name-helper">Name</InputLabel>
           <Input id="name-helper" value={this.state.name} onChange={this.handleChange} />
           <FormHelperText id="name-helper-text">Some important helper text</FormHelperText>
         </FormControl>
-        <FormControl className={classes.formControl} disabled>
+        <FormControl style={classes.formControl} disabled>
           <InputLabel htmlFor="name-disabled">Name</InputLabel>
           <Input id="name-disabled" value={this.state.name} onChange={this.handleChange} />
           <FormHelperText>Disabled</FormHelperText>
         </FormControl>
-        <FormControl className={classes.formControl} error aria-describedby="name-error-text">
+        <FormControl style={classes.formControl} error aria-describedby="name-error-text">
           <InputLabel htmlFor="name-error">Name</InputLabel>
           <Input id="name-error" value={this.state.name} onChange={this.handleChange} />
           <FormHelperText id="name-error-text">Error</FormHelperText>

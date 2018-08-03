@@ -30,20 +30,20 @@ function ListItemComposition(props) {
   return (
     <Paper>
       <MenuList>
-        <MenuItem className={classes.menuItem}>
-          <ListItemIcon className={classes.icon}>
+        <MenuItem style={classes.menuItem}>
+          <ListItemIcon style={classes.icon}>
             <SendIcon />
           </ListItemIcon>
           <ListItemText classes={{ primary: classes.primary }} inset primary="Sent mail" />
         </MenuItem>
-        <MenuItem className={classes.menuItem}>
-          <ListItemIcon className={classes.icon}>
+        <MenuItem style={classes.menuItem}>
+          <ListItemIcon style={classes.icon}>
             <DraftsIcon />
           </ListItemIcon>
           <ListItemText classes={{ primary: classes.primary }} inset primary="Drafts" />
         </MenuItem>
-        <MenuItem className={classes.menuItem}>
-          <ListItemIcon className={classes.icon}>
+        <MenuItem style={classes.menuItem}>
+          <ListItemIcon style={classes.icon}>
             <InboxIcon />
           </ListItemIcon>
           <ListItemText classes={{ primary: classes.primary }} inset primary="Inbox" />

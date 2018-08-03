@@ -18,7 +18,7 @@ function ListItemSecondaryAction(props) {
   const { children, classes, className, ...other } = props;
 
   return (
-    <View className={classNames(classes.root, className)} {...other}>
+    <View style={classNames(classes.root, className)} {...other}>
       {children}
     </View>
   );

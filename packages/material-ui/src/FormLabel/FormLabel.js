@@ -81,11 +81,11 @@ function FormLabel(props, context) {
   );
 
   return (
-    <Component className={className} {...other}>
+    <Component style={className} {...other}>
       {children}
       {required && (
         <span
-          className={classNames(classes.asterisk, {
+          style={classNames(classes.asterisk, {
             [classes.error]: error,
           })}
           data-mui-test="FormLabelAsterisk"

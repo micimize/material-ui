@@ -48,7 +48,7 @@ class ScrollableTabsButtonPrevent extends React.Component {
     const { value } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <AppBar position="static">
           <Tabs value={value} onChange={this.handleChange} scrollable scrollButtons="off">
             <Tab icon={<PhoneIcon />} />

@@ -26,21 +26,21 @@ function Icons(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
-      <Icon className={classes.icon}>add_circle</Icon>
-      <Icon className={classes.icon} color="primary">
+    <View style={classes.root}>
+      <Icon style={classes.icon}>add_circle</Icon>
+      <Icon style={classes.icon} color="primary">
         add_circle
       </Icon>
-      <Icon className={classes.icon} color="secondary">
+      <Icon style={classes.icon} color="secondary">
         add_circle
       </Icon>
-      <Icon className={classes.icon} color="action">
+      <Icon style={classes.icon} color="action">
         add_circle
       </Icon>
-      <Icon className={classes.iconHover} color="error" style={{ fontSize: 30 }}>
+      <Icon style={classes.iconHover} color="error" style={{ fontSize: 30 }}>
         add_circle
       </Icon>
-      <Icon className={classes.icon} color="disabled" style={{ fontSize: 36 }}>
+      <Icon style={classes.icon} color="disabled" style={{ fontSize: 36 }}>
         add_circle
       </Icon>
     </View>

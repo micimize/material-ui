@@ -14,7 +14,7 @@ function DisabledSlider(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <Slider value={0} disabled />
       <Slider value={50} disabled />
       <Slider value={100} disabled />

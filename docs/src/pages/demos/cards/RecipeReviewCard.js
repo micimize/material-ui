@@ -59,10 +59,10 @@ class RecipeReviewCard extends React.Component {
 
     return (
       <View>
-        <Card className={classes.card}>
+        <Card style={classes.card}>
           <CardHeader
             avatar={
-              <Avatar aria-label="Recipe" className={classes.avatar}>
+              <Avatar aria-label="Recipe" style={classes.avatar}>
                 R
               </Avatar>
             }
@@ -75,7 +75,7 @@ class RecipeReviewCard extends React.Component {
             subheader="September 14, 2016"
           />
           <CardMedia
-            className={classes.media}
+            style={classes.media}
             image="/static/images/cards/paella.jpg"
             title="Contemplative Reptile"
           />
@@ -85,7 +85,7 @@ class RecipeReviewCard extends React.Component {
               your guests. Add 1 cup of frozen peas along with the mussels, if you like.
             </Typography>
           </CardContent>
-          <CardActions className={classes.actions} disableActionSpacing>
+          <CardActions style={classes.actions} disableActionSpacing>
             <IconButton aria-label="Add to favorites">
               <FavoriteIcon />
             </IconButton>
@@ -93,7 +93,7 @@ class RecipeReviewCard extends React.Component {
               <ShareIcon />
             </IconButton>
             <IconButton
-              className={classnames(classes.expand, {
+              style={classnames(classes.expand, {
                 [classes.expandOpen]: this.state.expanded,
               })}
               onClick={this.handleExpandClick}

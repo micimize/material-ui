@@ -99,17 +99,17 @@ class MiniDrawer extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <AppBar
           position="absolute"
-          className={classNames(classes.appBar, this.state.open && classes.appBarShift)}
+          style={classNames(classes.appBar, this.state.open && classes.appBarShift)}
         >
           <Toolbar disableGutters={!this.state.open}>
             <IconButton
               color="inherit"
               aria-label="Open drawer"
               onClick={this.handleDrawerOpen}
-              className={classNames(classes.menuButton, this.state.open && classes.hide)}
+              style={classNames(classes.menuButton, this.state.open && classes.hide)}
             >
               <MenuIcon />
             </IconButton>
@@ -125,7 +125,7 @@ class MiniDrawer extends React.Component {
           }}
           open={this.state.open}
         >
-          <View className={classes.toolbar}>
+          <View style={classes.toolbar}>
             <IconButton onClick={this.handleDrawerClose}>
               {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
             </IconButton>
@@ -135,8 +135,8 @@ class MiniDrawer extends React.Component {
           <Divider />
           <List>{otherMailFolderListItems}</List>
         </Drawer>
-        <View className={classes.content}>
-          <View className={classes.toolbar} />
+        <View style={classes.content}>
+          <View style={classes.toolbar} />
           <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
         </View>
       </View>

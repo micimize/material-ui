@@ -38,8 +38,8 @@ function SimpleTable(props) {
   const { classes } = props;
 
   return (
-    <Paper className={classes.root}>
-      <Table className={classes.table}>
+    <Paper style={classes.root}>
+      <Table style={classes.table}>
         <TableHead>
           <TableRow>
             <TableCell>Dessert (100g serving)</TableCell>

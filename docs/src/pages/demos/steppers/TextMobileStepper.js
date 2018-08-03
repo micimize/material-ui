@@ -77,12 +77,12 @@ class TextMobileStepper extends React.Component {
     const maxSteps = tutorialSteps.length;
 
     return (
-      <View className={classes.root}>
-        <Paper square elevation={0} className={classes.header}>
+      <View style={classes.root}>
+        <Paper square elevation={0} style={classes.header}>
           <Typography>{tutorialSteps[activeStep].label}</Typography>
         </Paper>
         <img
-          className={classes.img}
+          style={classes.img}
           src={tutorialSteps[activeStep].imgPath}
           alt={tutorialSteps[activeStep].label}
         />
@@ -90,7 +90,7 @@ class TextMobileStepper extends React.Component {
           steps={maxSteps}
           position="static"
           activeStep={activeStep}
-          className={classes.mobileStepper}
+          style={classes.mobileStepper}
           nextButton={
             <Button size="small" onClick={this.handleNext} disabled={activeStep === maxSteps - 1}>
               Next

@@ -15,7 +15,7 @@ const styles = {
 function PositionedTooltips(props) {
   const { classes } = props;
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <Grid container justify="center">
         <Grid item>
           <Tooltip title="Add" placement="top-start">

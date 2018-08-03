@@ -39,11 +39,11 @@ class ControlledExpansionPanels extends React.Component {
     const { expanded } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>General settings</Typography>
-            <Typography className={classes.secondaryHeading}>I am an expansion panel</Typography>
+            <Typography style={classes.heading}>General settings</Typography>
+            <Typography style={classes.secondaryHeading}>I am an expansion panel</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
@@ -54,8 +54,8 @@ class ControlledExpansionPanels extends React.Component {
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel2'} onChange={this.handleChange('panel2')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Users</Typography>
-            <Typography className={classes.secondaryHeading}>
+            <Typography style={classes.heading}>Users</Typography>
+            <Typography style={classes.secondaryHeading}>
               You are currently not an owner
             </Typography>
           </ExpansionPanelSummary>
@@ -68,8 +68,8 @@ class ControlledExpansionPanels extends React.Component {
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel3'} onChange={this.handleChange('panel3')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Advanced settings</Typography>
-            <Typography className={classes.secondaryHeading}>
+            <Typography style={classes.heading}>Advanced settings</Typography>
+            <Typography style={classes.secondaryHeading}>
               Filtering has been entirely disabled for whole web server
             </Typography>
           </ExpansionPanelSummary>
@@ -82,7 +82,7 @@ class ControlledExpansionPanels extends React.Component {
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel4'} onChange={this.handleChange('panel4')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Personal data</Typography>
+            <Typography style={classes.heading}>Personal data</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>

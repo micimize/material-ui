@@ -61,14 +61,14 @@ function TableSortLabel(props) {
 
   return (
     <ButtonBase
-      className={classNames(classes.root, { [classes.active]: active }, className)}
+      style={classNames(classes.root, { [classes.active]: active }, className)}
       component="span"
       disableRipple
       {...other}
     >
       {children}
       <ArrowDownwardIcon
-        className={classNames(classes.icon, classes[`iconDirection${capitalize(direction)}`])}
+        style={classNames(classes.icon, classes[`iconDirection${capitalize(direction)}`])}
       />
     </ButtonBase>
   );

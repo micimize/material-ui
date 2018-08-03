@@ -35,7 +35,7 @@ function CardMedia(props) {
 
   return (
     <Component
-      className={classNames(
+      style={classNames(
         classes.root,
         {
           [classes.media]: isMediaComponent,

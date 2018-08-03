@@ -119,7 +119,7 @@ class ExpansionPanelSummary extends React.Component {
         disabled={disabled}
         component="div"
         aria-expanded={expanded}
-        className={classNames(
+        style={classNames(
           classes.root,
           {
             [classes.disabled]: disabled,
@@ -133,13 +133,13 @@ class ExpansionPanelSummary extends React.Component {
         onBlur={this.handleBlur}
         onClick={this.handleChange}
       >
-        <View className={classNames(classes.content, { [classes.expanded]: expanded })}>
+        <View style={classNames(classes.content, { [classes.expanded]: expanded })}>
           {children}
         </View>
         {expandIcon && (
           <IconButton
             disabled={disabled}
-            className={classNames(classes.expandIcon, {
+            style={classNames(classes.expandIcon, {
               [classes.expanded]: expanded,
             })}
             component="div"

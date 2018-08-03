@@ -127,11 +127,11 @@ let EnhancedTableToolbar = props => {
 
   return (
     <Toolbar
-      className={classNames(classes.root, {
+      style={classNames(classes.root, {
         [classes.highlight]: numSelected > 0,
       })}
     >
-      <View className={classes.title}>
+      <View style={classes.title}>
         {numSelected > 0 ? (
           <Typography color="inherit" variant="subheading">
             {numSelected} selected
@@ -142,8 +142,8 @@ let EnhancedTableToolbar = props => {
           </Typography>
         )}
       </View>
-      <View className={classes.spacer} />
-      <View className={classes.actions}>
+      <View style={classes.spacer} />
+      <View style={classes.actions}>
         {numSelected > 0 ? (
           <Tooltip title="Delete">
             <IconButton aria-label="Delete">
@@ -266,10 +266,10 @@ class EnhancedTable extends React.Component {
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
 
     return (
-      <Paper className={classes.root}>
+      <Paper style={classes.root}>
         <EnhancedTableToolbar numSelected={selected.length} />
-        <View className={classes.tableWrapper}>
-          <Table className={classes.table} aria-labelledby="tableTitle">
+        <View style={classes.tableWrapper}>
+          <Table style={classes.table} aria-labelledby="tableTitle">
             <EnhancedTableHead
               numSelected={selected.length}
               order={order}

@@ -90,7 +90,7 @@ describe('<Drawer />', () => {
 
     it('should set the custom className for Modal when variant is temporary', () => {
       const wrapper = shallow(
-        <Drawer className="woofDrawer" variant="temporary">
+        <Drawer style="woofDrawer" variant="temporary">
           <h1>Hello</h1>
         </Drawer>,
       );

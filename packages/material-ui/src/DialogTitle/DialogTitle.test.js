@@ -30,13 +30,13 @@ describe('<DialogTitle />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<DialogTitle className="woofDialogTitle">foo</DialogTitle>);
+    const wrapper = shallow(<DialogTitle style="woofDialogTitle">foo</DialogTitle>);
     assert.strictEqual(wrapper.hasClass('woofDialogTitle'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });
 
   it('should render JSX children', () => {
-    const children = <p className="test">Hello</p>;
+    const children = <p style="test">Hello</p>;
     const wrapper = shallow(<DialogTitle disableTypography>{children}</DialogTitle>);
     assert.strictEqual(wrapper.childAt(0).equals(children), true);
   });

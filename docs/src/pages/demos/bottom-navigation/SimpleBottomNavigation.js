@@ -32,7 +32,7 @@ class SimpleBottomNavigation extends React.Component {
         value={value}
         onChange={this.handleChange}
         showLabels
-        className={classes.root}
+        style={classes.root}
       >
         <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
         <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />

@@ -165,7 +165,7 @@ class DownshiftMultiple extends React.Component {
           selectedItem: selectedItem2,
           highlightedIndex,
         }) => (
-          <View className={classes.container}>
+          <View style={classes.container}>
             {renderInput({
               fullWidth: true,
               classes,
@@ -175,7 +175,7 @@ class DownshiftMultiple extends React.Component {
                     key={item}
                     tabIndex={-1}
                     label={item}
-                    className={classes.chip}
+                    style={classes.chip}
                     onDelete={this.handleDelete(item)}
                   />
                 )),
@@ -185,7 +185,7 @@ class DownshiftMultiple extends React.Component {
               }),
             })}
             {isOpen ? (
-              <Paper className={classes.paper} square>
+              <Paper style={classes.paper} square>
                 {getSuggestions(inputValue2).map((suggestion, index) =>
                   renderSuggestion({
                     suggestion,
@@ -238,10 +238,10 @@ function IntegrationDownshift(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <Downshift id="downshift-simple">
         {({ getInputProps, getItemProps, isOpen, inputValue, selectedItem, highlightedIndex }) => (
-          <View className={classes.container}>
+          <View style={classes.container}>
             {renderInput({
               fullWidth: true,
               classes,
@@ -250,7 +250,7 @@ function IntegrationDownshift(props) {
               }),
             })}
             {isOpen ? (
-              <Paper className={classes.paper} square>
+              <Paper style={classes.paper} square>
                 {getSuggestions(inputValue).map((suggestion, index) =>
                   renderSuggestion({
                     suggestion,
@@ -268,7 +268,7 @@ function IntegrationDownshift(props) {
       <DownshiftMultiple classes={classes} />
       <Downshift id="downshift-popper">
         {({ getInputProps, getItemProps, isOpen, inputValue, selectedItem, highlightedIndex }) => (
-          <View className={classes.container}>
+          <View style={classes.container}>
             {renderInput({
               fullWidth: true,
               classes,

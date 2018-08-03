@@ -22,13 +22,13 @@ function FormRow(props) {
   return (
     <React.Fragment>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>item</Paper>
+        <Paper style={classes.paper}>item</Paper>
       </Grid>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>item</Paper>
+        <Paper style={classes.paper}>item</Paper>
       </Grid>
       <Grid item xs={4}>
-        <Paper className={classes.paper}>item</Paper>
+        <Paper style={classes.paper}>item</Paper>
       </Grid>
     </React.Fragment>
   );
@@ -42,7 +42,7 @@ function NestedGrid(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <Grid container spacing={8}>
         <Grid item xs={12} container spacing={24}>
           <FormRow classes={classes} />

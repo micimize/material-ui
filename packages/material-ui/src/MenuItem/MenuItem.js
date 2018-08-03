@@ -35,7 +35,7 @@ function MenuItem(props) {
       button
       role={role}
       tabIndex={-1}
-      className={classNames(classes.root, { [classes.selected]: selected }, className)}
+      style={classNames(classes.root, { [classes.selected]: selected }, className)}
       component={component}
       {...other}
     />

@@ -21,7 +21,7 @@ const styles = theme => ({
 function FolderList(props) {
   const { classes } = props;
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <List>
         <ListItem>
           <Avatar>

@@ -24,11 +24,11 @@ function TabScrollButton(props) {
   const className = classNames(classes.root, classNameProp);
 
   if (!visible) {
-    return <View className={className} />;
+    return <View style={className} />;
   }
 
   return (
-    <ButtonBase className={className} onClick={onClick} tabIndex={-1} {...other}>
+    <ButtonBase style={className} onClick={onClick} tabIndex={-1} {...other}>
       {direction === 'left' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
     </ButtonBase>
   );

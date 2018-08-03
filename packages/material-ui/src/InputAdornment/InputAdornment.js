@@ -35,7 +35,7 @@ function InputAdornment(props) {
 
   return (
     <Component
-      className={classNames(
+      style={classNames(
         classes.root,
         {
           [classes.positionStart]: position === 'start',

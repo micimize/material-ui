@@ -133,7 +133,7 @@ class Drawer extends React.Component {
       <Paper
         elevation={variant === 'temporary' ? elevation : 0}
         square
-        className={classNames(classes.paper, classes[`paperAnchor${capitalize(anchor)}`], {
+        style={classNames(classes.paper, classes[`paperAnchor${capitalize(anchor)}`], {
           [classes[`paperAnchorDocked${capitalize(anchor)}`]]: variant !== 'temporary',
         })}
         {...PaperProps}
@@ -144,7 +144,7 @@ class Drawer extends React.Component {
 
     if (variant === 'permanent') {
       return (
-        <View className={classNames(classes.docked, className)} {...other}>
+        <View style={classNames(classes.docked, className)} {...other}>
           {drawer}
         </View>
       );
@@ -164,7 +164,7 @@ class Drawer extends React.Component {
 
     if (variant === 'persistent') {
       return (
-        <View className={classNames(classes.docked, className)} {...other}>
+        <View style={classNames(classes.docked, className)} {...other}>
           {slidingDrawer}
         </View>
       );
@@ -177,7 +177,7 @@ class Drawer extends React.Component {
           ...BackdropPropsProp,
           transitionDuration,
         }}
-        className={classNames(classes.modal, className)}
+        style={classNames(classes.modal, className)}
         open={open}
         onClose={onClose}
         {...other}

@@ -20,7 +20,7 @@ describe('<ListItemSecondaryAction />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<ListItemSecondaryAction className="woofListItemSecondaryAction" />);
+    const wrapper = shallow(<ListItemSecondaryAction style="woofListItemSecondaryAction" />);
     assert.strictEqual(wrapper.hasClass('woofListItemSecondaryAction'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });

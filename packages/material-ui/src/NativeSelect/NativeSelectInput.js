@@ -21,9 +21,9 @@ function NativeSelectInput(props) {
   } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <select
-        className={classNames(
+        style={classNames(
           classes.select,
           {
             [classes.disabled]: disabled,
@@ -39,7 +39,7 @@ function NativeSelectInput(props) {
       >
         {children}
       </select>
-      <IconComponent className={classes.icon} />
+      <IconComponent style={classes.icon} />
     </View>
   );
 }

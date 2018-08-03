@@ -42,7 +42,7 @@ function ListSubheader(props) {
 
   return (
     <Component
-      className={classNames(
+      style={classNames(
         classes.root,
         {
           [classes[`color${capitalize(color)}`]]: color !== 'default',

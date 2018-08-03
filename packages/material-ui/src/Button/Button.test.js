@@ -81,7 +81,7 @@ describe('<Button />', () => {
   });
 
   it('should render the custom className and the root class', () => {
-    const wrapper = shallow(<Button className="test-class-name">Hello World</Button>);
+    const wrapper = shallow(<Button style="test-class-name">Hello World</Button>);
     assert.strictEqual(wrapper.is('.test-class-name'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });
@@ -501,7 +501,7 @@ describe('<Button />', () => {
 
   it('should render Icon children with right classes', () => {
     const childClassName = 'child-woof';
-    const iconChild = <Icon className={childClassName} />;
+    const iconChild = <Icon style={childClassName} />;
     const wrapper = shallow(<Button variant="fab">{iconChild}</Button>);
     const label = wrapper.childAt(0);
     const renderedIconChild = label.childAt(0);

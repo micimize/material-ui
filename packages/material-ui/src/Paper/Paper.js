@@ -50,7 +50,7 @@ function Paper(props) {
     classNameProp,
   );
 
-  return <Component className={className} {...other} />;
+  return <Component style={className} {...other} />;
 }
 
 Paper.propTypes = {

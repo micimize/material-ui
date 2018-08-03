@@ -38,18 +38,18 @@ class GuttersGrid extends React.Component {
     const { spacing } = this.state;
 
     return (
-      <Grid container className={classes.root} spacing={16}>
+      <Grid container style={classes.root} spacing={16}>
         <Grid item xs={12}>
-          <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
+          <Grid container style={classes.demo} justify="center" spacing={Number(spacing)}>
             {[0, 1, 2].map(value => (
               <Grid key={value} item>
-                <Paper className={classes.paper} />
+                <Paper style={classes.paper} />
               </Grid>
             ))}
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.control}>
+          <Paper style={classes.control}>
             <Grid container>
               <Grid item>
                 <FormLabel>spacing</FormLabel>

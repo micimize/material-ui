@@ -50,7 +50,7 @@ class Index extends React.Component<ProvidedProps & Props, State> {
 
   render() {
     return (
-      <View className={this.props.classes.root}>
+      <View style={this.props.classes.root}>
         <Dialog open={this.state.open} onClose={this.handleClose}>
           <DialogTitle>Super Secret Password</DialogTitle>
           <DialogContent>

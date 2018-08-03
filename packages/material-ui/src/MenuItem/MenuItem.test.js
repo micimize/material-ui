@@ -30,7 +30,7 @@ describe('<MenuItem />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<MenuItem className="woofMenuItem" />);
+    const wrapper = shallow(<MenuItem style="woofMenuItem" />);
     assert.strictEqual(wrapper.hasClass('woofMenuItem'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });

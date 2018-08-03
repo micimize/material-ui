@@ -53,8 +53,8 @@ function CustomizedTable(props) {
   const { classes } = props;
 
   return (
-    <Paper className={classes.root}>
-      <Table className={classes.table}>
+    <Paper style={classes.root}>
+      <Table style={classes.table}>
         <TableHead>
           <TableRow>
             <CustomTableCell>Dessert (100g serving)</CustomTableCell>
@@ -67,7 +67,7 @@ function CustomizedTable(props) {
         <TableBody>
           {data.map(n => {
             return (
-              <TableRow className={classes.row} key={n.id}>
+              <TableRow style={classes.row} key={n.id}>
                 <CustomTableCell component="th" scope="row">
                   {n.name}
                 </CustomTableCell>

@@ -54,7 +54,7 @@ describe('<ButtonBase />', () => {
     });
 
     it('should render the custom className and the root class', () => {
-      const wrapper = shallow(<ButtonBase className="test-class-name" />);
+      const wrapper = shallow(<ButtonBase style="test-class-name" />);
       assert.strictEqual(
         wrapper.hasClass('test-class-name'),
         true,

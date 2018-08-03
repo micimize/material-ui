@@ -71,7 +71,7 @@ class PermanentDrawer extends React.Component {
         }}
         anchor={anchor}
       >
-        <View className={classes.toolbar} />
+        <View style={classes.toolbar} />
         <Divider />
         <List>{mailFolderListItems}</List>
         <Divider />
@@ -89,7 +89,7 @@ class PermanentDrawer extends React.Component {
     }
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <TextField
           id="permanent-anchor"
           select
@@ -101,10 +101,10 @@ class PermanentDrawer extends React.Component {
           <MenuItem value="left">left</MenuItem>
           <MenuItem value="right">right</MenuItem>
         </TextField>
-        <View className={classes.appFrame}>
+        <View style={classes.appFrame}>
           <AppBar
             position="absolute"
-            className={classNames(classes.appBar, classes[`appBar-${anchor}`])}
+            style={classNames(classes.appBar, classes[`appBar-${anchor}`])}
           >
             <Toolbar>
               <Typography variant="title" color="inherit" noWrap>
@@ -113,8 +113,8 @@ class PermanentDrawer extends React.Component {
             </Toolbar>
           </AppBar>
           {before}
-          <View className={classes.content}>
-            <View className={classes.toolbar} />
+          <View style={classes.content}>
+            <View style={classes.toolbar} />
             <Typography>{'You think water moves fast? You should see ice.'}</Typography>
           </View>
           {after}

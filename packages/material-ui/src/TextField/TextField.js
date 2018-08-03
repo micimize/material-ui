@@ -105,7 +105,7 @@ function TextField(props) {
   return (
     <FormControl
       aria-describedby={helperTextId}
-      className={className}
+      style={className}
       error={error}
       fullWidth={fullWidth}
       required={required}

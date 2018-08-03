@@ -54,10 +54,10 @@ function StepContent(props) {
   }
 
   return (
-    <View className={classNames(classes.root, { [classes.last]: last }, className)} {...other}>
+    <View style={classNames(classes.root, { [classes.last]: last }, className)} {...other}>
       <TransitionComponent
         in={active}
-        className={classes.transition}
+        style={classes.transition}
         timeout={transitionDuration}
         unmountOnExit
         {...TransitionProps}

@@ -14,7 +14,7 @@ describe('<Backdrop />', () => {
   });
 
   it('should render a backdrop div', () => {
-    const wrapper = shallow(<Backdrop open className="woofBackdrop" />);
+    const wrapper = shallow(<Backdrop open style="woofBackdrop" />);
     assert.strictEqual(wrapper.childAt(0).hasClass('woofBackdrop'), true);
     assert.strictEqual(wrapper.childAt(0).hasClass(classes.root), true);
   });

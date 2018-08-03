@@ -87,7 +87,7 @@ function Stepper(props) {
   });
 
   return (
-    <Paper square elevation={0} className={className} {...other}>
+    <Paper square elevation={0} style={className} {...other}>
       {steps}
     </Paper>
   );

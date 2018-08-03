@@ -41,8 +41,8 @@ class MenuListComposition extends React.Component {
     const { open } = this.state;
 
     return (
-      <View className={classes.root}>
-        <Paper className={classes.paper}>
+      <View style={classes.root}>
+        <Paper style={classes.paper}>
           <MenuList>
             <MenuItem>Profile</MenuItem>
             <MenuItem>My account</MenuItem>

@@ -127,24 +127,24 @@ class AppFrame extends React.Component {
     }
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <NProgressBar />
-        <AppBar className={appBarClassName}>
+        <AppBar style={appBarClassName}>
           <Toolbar>
             <IconButton
               color="inherit"
               aria-label="Open drawer"
               onClick={this.handleDrawerOpen}
-              className={navIconClassName}
+              style={navIconClassName}
             >
               <MenuIcon />
             </IconButton>
             {title !== null && (
-              <Typography className={classes.title} variant="title" color="inherit" noWrap>
+              <Typography style={classes.title} variant="title" color="inherit" noWrap>
                 {title}
               </Typography>
             )}
-            <View className={classes.grow} />
+            <View style={classes.grow} />
             <AppSearch />
             <Tooltip title="Edit docs colors" enterDelay={300}>
               <IconButton
@@ -192,7 +192,7 @@ class AppFrame extends React.Component {
         </AppBar>
         <Notifications />
         <AppDrawer
-          className={classes.drawer}
+          style={classes.drawer}
           disablePermanent={disablePermanent}
           onClose={this.handleDrawerClose}
           onOpen={this.handleDrawerOpen}

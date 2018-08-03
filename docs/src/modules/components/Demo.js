@@ -203,10 +203,10 @@ class Demo extends React.Component {
     const { anchorEl, codeOpen } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         {demoOptions.hideHeader ? null : (
           <View>
-            <View className={classes.header}>
+            <View style={classes.header}>
               <Tooltip title="See the source on GitHub" placement="top">
                 <IconButton href={githubLocation} target="_blank" aria-label="GitHub">
                   <Github />
@@ -259,14 +259,14 @@ class Demo extends React.Component {
             <Collapse in={codeOpen} unmountOnExit>
               <MarkdownElement
                 dir="ltr"
-                className={classes.code}
+                style={classes.code}
                 text={`\`\`\`jsx\n${raw}\n\`\`\``}
               />
             </Collapse>
           </View>
         )}
         <View
-          className={classNames(classes.demo, {
+          style={classNames(classes.demo, {
             [classes.demoHiddenHeader]: demoOptions.hideHeader,
           })}
         >

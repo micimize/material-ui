@@ -35,7 +35,7 @@ describe('<SpeedDialAction />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<SpeedDialAction className="mySpeedDialAction" icon={icon} />);
+    const wrapper = shallow(<SpeedDialAction style="mySpeedDialAction" icon={icon} />);
     assert.strictEqual(wrapper.hasClass('mySpeedDialAction'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });

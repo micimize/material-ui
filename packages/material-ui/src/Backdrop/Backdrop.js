@@ -31,7 +31,7 @@ function Backdrop(props) {
     <Fade appear in={open} timeout={transitionDuration} {...other}>
       <View
         data-mui-test="Backdrop"
-        className={classNames(
+        style={classNames(
           classes.root,
           {
             [classes.invisible]: invisible,

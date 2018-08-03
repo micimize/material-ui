@@ -167,9 +167,9 @@ class Tab extends React.Component {
 
     if (labelProp !== undefined) {
       label = (
-        <span className={classes.labelContainer}>
+        <span style={classes.labelContainer}>
           <span
-            className={classNames(classes.label, {
+            style={classNames(classes.label, {
               [classes.labelWrapped]: this.state.labelWrapped,
             })}
             ref={ref => {
@@ -197,14 +197,14 @@ class Tab extends React.Component {
     return (
       <ButtonBase
         focusRipple
-        className={className}
+        style={className}
         role="tab"
         aria-selected={selected}
         disabled={disabled}
         {...other}
         onClick={this.handleChange}
       >
-        <span className={classes.wrapper}>
+        <span style={classes.wrapper}>
           {icon}
           {label}
         </span>

@@ -32,7 +32,7 @@ class SimplePortal extends React.Component {
     return (
       <View>
         <Button onClick={this.handleClick}>{show ? 'Unmount children' : 'Mount children'}</Button>
-        <View className={classes.alert}>
+        <View style={classes.alert}>
           <Typography>It looks like I will render here.</Typography>
           {show ? (
             <Portal container={this.container}>
@@ -41,7 +41,7 @@ class SimplePortal extends React.Component {
           ) : null}
         </View>
         <View
-          className={classes.alert}
+          style={classes.alert}
           ref={ref => {
             this.container = ref;
           }}

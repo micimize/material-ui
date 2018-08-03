@@ -60,8 +60,8 @@ class Ripple extends React.Component {
 
     return (
       <Transition onEnter={this.handleEnter} onExit={this.handleExit} {...other}>
-        <span className={rippleClassName} style={rippleStyles}>
-          <span className={childClassName} />
+        <span style={rippleClassName} style={rippleStyles}>
+          <span style={childClassName} />
         </span>
       </Transition>
     );

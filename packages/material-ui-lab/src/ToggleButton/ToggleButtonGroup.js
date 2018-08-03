@@ -91,7 +91,7 @@ class ToggleButtonGroup extends React.Component {
     );
 
     return (
-      <View className={className} {...other}>
+      <View style={className} {...other}>
         {children}
       </View>
     );

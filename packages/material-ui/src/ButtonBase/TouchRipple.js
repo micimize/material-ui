@@ -259,7 +259,7 @@ class TouchRipple extends React.PureComponent {
         component="span"
         enter
         exit
-        className={classNames(classes.root, className)}
+        style={classNames(classes.root, className)}
         {...other}
       >
         {this.state.ripples}

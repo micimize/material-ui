@@ -144,9 +144,9 @@ class Carbon extends React.Component {
 
     if (adblock) {
       return (
-        <View className={classes.root}>
-          <View className={classes.ad}>
-            <View className={classes.carbonads}>
+        <View style={classes.root}>
+          <View style={classes.ad}>
+            <View style={classes.carbonads}>
               <Typography gutterBottom>Like Material-UI?</Typography>
               <Typography gutterBottom>
                 {`If you don't mind tech-related ads, and want to support Open Source,
@@ -165,8 +165,8 @@ class Carbon extends React.Component {
     }
 
     return (
-      <View className={classes.root}>
-        <View className={classes.ad}>
+      <View style={classes.root}>
+        <View style={classes.ad}>
           <View id="ad" />
           {adblock === false && (
             <Tooltip
@@ -174,7 +174,7 @@ class Carbon extends React.Component {
               title="This ad is designed to support Open Source."
               placement="left"
             >
-              <span className={classes.info}>i</span>
+              <span style={classes.info}>i</span>
             </Tooltip>
           )}
         </View>

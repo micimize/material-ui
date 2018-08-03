@@ -160,7 +160,7 @@ class SpeedDial extends React.Component {
     };
 
     return (
-      <View className={classNames(classes.root, classNameProp)} {...other}>
+      <View style={classNames(classes.root, classNameProp)} {...other}>
         <TransitionComponent
           in={!hidden}
           timeout={transitionDuration}
@@ -179,7 +179,7 @@ class SpeedDial extends React.Component {
             ref={ref => {
               this.fabRef = ref;
             }}
-            className={classes.fab}
+            style={classes.fab}
             {...ButtonProps}
           >
             {icon()}
@@ -187,7 +187,7 @@ class SpeedDial extends React.Component {
         </TransitionComponent>
         <View
           id={`${id}-actions`}
-          className={classNames(classes.actions, { [classes.actionsClosed]: !open })}
+          style={classNames(classes.actions, { [classes.actionsClosed]: !open })}
           ref={ref => {
             this.actionsRef = ref;
           }}

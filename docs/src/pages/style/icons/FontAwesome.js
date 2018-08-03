@@ -36,18 +36,18 @@ class FontAwesome extends React.Component {
     const { classes } = this.props;
 
     return (
-      <View className={classes.root}>
-        <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} />
-        <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} color="primary" />
-        <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} color="secondary" />
-        <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} color="action" />
+      <View style={classes.root}>
+        <Icon style={classNames(classes.icon, 'fa fa-plus-circle')} />
+        <Icon style={classNames(classes.icon, 'fa fa-plus-circle')} color="primary" />
+        <Icon style={classNames(classes.icon, 'fa fa-plus-circle')} color="secondary" />
+        <Icon style={classNames(classes.icon, 'fa fa-plus-circle')} color="action" />
         <Icon
-          className={classNames(classes.iconHover, 'fa fa-plus-circle')}
+          style={classNames(classes.iconHover, 'fa fa-plus-circle')}
           color="error"
           style={{ fontSize: 30 }}
         />
         <Icon
-          className={classNames(classes.icon, 'fa fa-plus-circle')}
+          style={classNames(classes.icon, 'fa fa-plus-circle')}
           color="disabled"
           style={{ fontSize: 36 }}
         />

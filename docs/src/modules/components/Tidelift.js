@@ -40,14 +40,14 @@ function Tidelift(props) {
 
   return (
     <Link
-      className={classes.root}
+      style={classes.root}
       variant="button"
       href="https://tidelift.com/subscription/npm/material-ui?utm_source=material_ui&utm_medium=referral&utm_campaign=homepage"
       target="_blank"
       rel="noopener"
     >
-      <span className={classes.logo} />
-      <Typography className={classes.label}>Get Professionally Supported Material-UI</Typography>
+      <span style={classes.logo} />
+      <Typography style={classes.label}>Get Professionally Supported Material-UI</Typography>
     </Link>
   );
 }

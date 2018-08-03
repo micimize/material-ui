@@ -83,7 +83,7 @@ function IconButton(props) {
 
   return (
     <ButtonBase
-      className={classNames(
+      style={classNames(
         classes.root,
         {
           [classes[`color${capitalize(color)}`]]: color !== 'default',
@@ -96,7 +96,7 @@ function IconButton(props) {
       disabled={disabled}
       {...other}
     >
-      <span className={classes.label}>{children}</span>
+      <span style={classes.label}>{children}</span>
     </ButtonBase>
   );
 }

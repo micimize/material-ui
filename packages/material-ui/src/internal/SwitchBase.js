@@ -125,7 +125,7 @@ class SwitchBase extends React.Component {
     return (
       <IconButton
         component="span"
-        className={classNames(
+        style={classNames(
           classes.root,
           {
             [classes.checked]: checked,
@@ -144,7 +144,7 @@ class SwitchBase extends React.Component {
         <input
           autoFocus={autoFocus}
           checked={checked}
-          className={classes.input}
+          style={classes.input}
           disabled={disabled}
           id={hasLabelFor && id}
           name={name}

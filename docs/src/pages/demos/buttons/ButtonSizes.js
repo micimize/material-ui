@@ -16,43 +16,43 @@ function ButtonSizes(props) {
   return (
     <View>
       <View>
-        <Button size="small" className={classes.button}>
+        <Button size="small" style={classes.button}>
           Small
         </Button>
-        <Button size="medium" className={classes.button}>
+        <Button size="medium" style={classes.button}>
           Medium
         </Button>
-        <Button size="large" className={classes.button}>
+        <Button size="large" style={classes.button}>
           Large
         </Button>
       </View>
       <View>
-        <Button variant="outlined" size="small" color="primary" className={classes.button}>
+        <Button variant="outlined" size="small" color="primary" style={classes.button}>
           Small
         </Button>
-        <Button variant="outlined" size="medium" color="primary" className={classes.button}>
+        <Button variant="outlined" size="medium" color="primary" style={classes.button}>
           Medium
         </Button>
-        <Button variant="outlined" size="large" color="primary" className={classes.button}>
+        <Button variant="outlined" size="large" color="primary" style={classes.button}>
           Large
         </Button>
       </View>
       <View>
-        <Button variant="contained" size="small" color="primary" className={classes.button}>
+        <Button variant="contained" size="small" color="primary" style={classes.button}>
           Small
         </Button>
-        <Button variant="contained" size="medium" color="primary" className={classes.button}>
+        <Button variant="contained" size="medium" color="primary" style={classes.button}>
           Medium
         </Button>
-        <Button variant="contained" size="large" color="primary" className={classes.button}>
+        <Button variant="contained" size="large" color="primary" style={classes.button}>
           Large
         </Button>
       </View>
       <View>
-        <Button variant="fab" mini color="secondary" aria-label="Add" className={classes.button}>
+        <Button variant="fab" mini color="secondary" aria-label="Add" style={classes.button}>
           <AddIcon />
         </Button>
-        <Button variant="fab" color="secondary" aria-label="Add" className={classes.button}>
+        <Button variant="fab" color="secondary" aria-label="Add" style={classes.button}>
           <AddIcon />
         </Button>
       </View>

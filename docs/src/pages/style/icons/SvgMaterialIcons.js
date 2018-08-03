@@ -31,49 +31,49 @@ const styles = theme => ({
 function SvgMaterialIcons(props) {
   const { classes } = props;
   return (
-    <Grid container className={classes.root}>
+    <Grid container style={classes.root}>
       <Grid item xs={4}>
         <Typography>Filled</Typography>
       </Grid>
       <Grid item xs={8}>
-        <DeleteIcon className={classes.icon} />
-        <DeleteForeverIcon className={classes.icon} />
+        <DeleteIcon style={classes.icon} />
+        <DeleteForeverIcon style={classes.icon} />
       </Grid>
       <Grid item xs={4}>
         <Typography>Outlined</Typography>
       </Grid>
       <Grid item xs={8}>
-        <DeleteOutlinedIcon className={classes.icon} />
-        <DeleteForeverOutlinedIcon className={classes.icon} />
+        <DeleteOutlinedIcon style={classes.icon} />
+        <DeleteForeverOutlinedIcon style={classes.icon} />
       </Grid>
       <Grid item xs={4}>
         <Typography>Rounded</Typography>
       </Grid>
       <Grid item xs={8}>
-        <DeleteRoundedIcon className={classes.icon} />
-        <DeleteForeverRoundedIcon className={classes.icon} />
+        <DeleteRoundedIcon style={classes.icon} />
+        <DeleteForeverRoundedIcon style={classes.icon} />
       </Grid>
       <Grid item xs={4}>
         <Typography>Two Tone</Typography>
       </Grid>
       <Grid item xs={8}>
-        <DeleteTwoToneIcon className={classes.icon} />
-        <DeleteForeverTwoToneIcon className={classes.icon} />
+        <DeleteTwoToneIcon style={classes.icon} />
+        <DeleteForeverTwoToneIcon style={classes.icon} />
       </Grid>
       <Grid item xs={4}>
         <Typography>Sharp</Typography>
       </Grid>
       <Grid item xs={8}>
-        <DeleteSharpIcon className={classes.icon} />
-        <DeleteForeverSharpIcon className={classes.icon} />
+        <DeleteSharpIcon style={classes.icon} />
+        <DeleteForeverSharpIcon style={classes.icon} />
       </Grid>
       <Grid item xs={4}>
         <Typography>Edge-cases</Typography>
       </Grid>
       <Grid item xs={8}>
-        <ThreeDRotationIcon className={classes.icon} />
-        <FourKIcon className={classes.icon} />
-        <ThreeSixtyIcon className={classes.icon} />
+        <ThreeDRotationIcon style={classes.icon} />
+        <FourKIcon style={classes.icon} />
+        <ThreeSixtyIcon style={classes.icon} />
       </Grid>
     </Grid>
   );

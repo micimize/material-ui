@@ -17,7 +17,7 @@ describe('<ExpansionPanelDetails />', () => {
 
   it('should render a div', () => {
     const wrapper = shallow(
-      <ExpansionPanelDetails className="woofExpansionPanelDetails">foo</ExpansionPanelDetails>,
+      <ExpansionPanelDetails style="woofExpansionPanelDetails">foo</ExpansionPanelDetails>,
     );
     assert.strictEqual(wrapper.name(), 'div');
     assert.strictEqual(wrapper.hasClass(classes.root), true);

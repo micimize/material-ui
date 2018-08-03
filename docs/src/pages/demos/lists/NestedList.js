@@ -37,7 +37,7 @@ class NestedList extends React.Component {
     const { classes } = this.props;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <List
           component="nav"
           subheader={<ListSubheader component="div">Nested List Items</ListSubheader>}
@@ -63,7 +63,7 @@ class NestedList extends React.Component {
           </ListItem>
           <Collapse in={this.state.open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem button className={classes.nested}>
+              <ListItem button style={classes.nested}>
                 <ListItemIcon>
                   <StarBorder />
                 </ListItemIcon>

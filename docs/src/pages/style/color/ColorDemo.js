@@ -67,12 +67,12 @@ function ColorDemo(props) {
   theme.palette.augmentColor(secondary);
 
   return (
-    <View className={classes.root}>
-      <View className={classes.appFrame}>
-        <View className={classes.statusBar} style={{ backgroundColor: primary.dark }} />
+    <View style={classes.root}>
+      <View style={classes.appFrame}>
+        <View style={classes.statusBar} style={{ backgroundColor: primary.dark }} />
         <AppBar position="static" style={{ backgroundColor: primary.main }}>
           <Toolbar style={{ color: primary.contrastText }}>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <IconButton style={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit">
@@ -82,7 +82,7 @@ function ColorDemo(props) {
         </AppBar>
         <MarkdownElement
           dir="ltr"
-          className={classes.code}
+          style={classes.code}
           text={`\`\`\`jsx
 {
   palette: {
@@ -92,7 +92,7 @@ function ColorDemo(props) {
 }
 \`\`\``}
         />
-        <Button variant="fab" className={classes.fab} style={{ backgroundColor: secondary.main }}>
+        <Button variant="fab" style={classes.fab} style={{ backgroundColor: secondary.main }}>
           <AddIcon nativeColor={secondary.contrastText} />
         </Button>
       </View>

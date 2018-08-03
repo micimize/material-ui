@@ -27,7 +27,7 @@ describe('<Dialog />', () => {
   });
 
   it('should render a Modal with TransitionComponent', () => {
-    const Transition = props => <div className="cloned-element-class" {...props} />;
+    const Transition = props => <div style="cloned-element-class" {...props} />;
     const wrapper = shallow(
       <Dialog {...defaultProps} TransitionComponent={Transition}>
         foo
@@ -81,7 +81,7 @@ describe('<Dialog />', () => {
 
   it('should render with the user classes on the root node', () => {
     const wrapper = shallow(
-      <Dialog {...defaultProps} className="woofDialog">
+      <Dialog {...defaultProps} style="woofDialog">
         foo
       </Dialog>,
     );

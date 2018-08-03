@@ -165,11 +165,11 @@ class Textarea extends React.Component {
     } = this.props;
 
     return (
-      <View className={classes.root} style={{ height: this.state.height }}>
+      <View style={classes.root} style={{ height: this.state.height }}>
         <EventListener target="window" onResize={this.handleResize} />
         <textarea
           aria-hidden="true"
-          className={classnames(classes.textarea, classes.shadow)}
+          style={classnames(classes.textarea, classes.shadow)}
           readOnly
           ref={this.handleRefSinglelineShadow}
           rows="1"
@@ -178,7 +178,7 @@ class Textarea extends React.Component {
         />
         <textarea
           aria-hidden="true"
-          className={classnames(classes.textarea, classes.shadow)}
+          style={classnames(classes.textarea, classes.shadow)}
           defaultValue={defaultValue}
           readOnly
           ref={this.handleRefShadow}
@@ -188,7 +188,7 @@ class Textarea extends React.Component {
         />
         <textarea
           rows={rows}
-          className={classnames(classes.textarea, className)}
+          style={classnames(classes.textarea, className)}
           defaultValue={defaultValue}
           value={value}
           onChange={this.handleChange}

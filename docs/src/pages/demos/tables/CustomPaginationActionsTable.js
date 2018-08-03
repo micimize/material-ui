@@ -47,7 +47,7 @@ class TablePaginationActions extends React.Component {
     const { classes, count, page, rowsPerPage, theme } = this.props;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <IconButton
           onClick={this.handleFirstPageButtonClick}
           disabled={page === 0}
@@ -152,9 +152,9 @@ class CustomPaginationActionsTable extends React.Component {
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
 
     return (
-      <Paper className={classes.root}>
-        <View className={classes.tableWrapper}>
-          <Table className={classes.table}>
+      <Paper style={classes.root}>
+        <View style={classes.tableWrapper}>
+          <Table style={classes.table}>
             <TableBody>
               {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(n => {
                 return (

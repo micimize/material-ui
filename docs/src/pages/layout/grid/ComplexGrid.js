@@ -28,11 +28,11 @@ const styles = theme => ({
 function ComplexGrid(props) {
   const { classes } = props;
   return (
-    <Paper className={classes.root}>
+    <Paper style={classes.root}>
       <Grid container spacing={16}>
         <Grid item>
-          <ButtonBase className={classes.image}>
-            <img className={classes.img} alt="complex" src="/static/images/grid/complex.jpg" />
+          <ButtonBase style={classes.image}>
+            <img style={classes.img} alt="complex" src="/static/images/grid/complex.jpg" />
           </ButtonBase>
         </Grid>
         <Grid item xs={12} sm container>

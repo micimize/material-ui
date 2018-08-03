@@ -78,7 +78,7 @@ class Index extends React.Component {
 
     return (
       <MuiThemeProvider theme={theme}>
-        <div className={classes.root}>
+        <div style={classes.root}>
           <CssBaseline />
           <Dialog open={open} onClose={this.handleClose}>
             <DialogTitle>Super Secret Password</DialogTitle>
@@ -98,7 +98,7 @@ class Index extends React.Component {
             example project
           </Typography>
           <Button variant="raised" color="secondary" onClick={this.handleClick}>
-            <Icon className={classes.icon}>fingerprint</Icon>
+            <Icon style={classes.icon}>fingerprint</Icon>
             Super Secret Password
           </Button>
         </div>

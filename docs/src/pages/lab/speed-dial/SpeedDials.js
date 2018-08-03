@@ -74,11 +74,11 @@ class SpeedDials extends React.Component {
     }
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Button onClick={this.handleVisibility}>Toggle Speed Dial</Button>
         <SpeedDial
           ariaLabel="SpeedDial example"
-          className={classes.speedDial}
+          style={classes.speedDial}
           hidden={hidden}
           icon={<SpeedDialIcon />}
           onBlur={this.handleClose}

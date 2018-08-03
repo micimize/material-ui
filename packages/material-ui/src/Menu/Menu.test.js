@@ -92,7 +92,7 @@ describe('<Menu />', () => {
     let list;
 
     before(() => {
-      wrapper = shallow(<Menu {...defaultProps} className="test-class" data-test="hi" />);
+      wrapper = shallow(<Menu {...defaultProps} style="test-class" data-test="hi" />);
       list = wrapper.childAt(0);
     });
 

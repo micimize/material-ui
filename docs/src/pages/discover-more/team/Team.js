@@ -117,13 +117,13 @@ function Team(props) {
             <Grid container>
               <Grid item>
                 <CardMedia
-                  className={classes.cover}
+                  style={classes.cover}
                   image={`https://github.com/${member.github}.png`}
                   title="Picture"
                 />
               </Grid>
               <Grid item>
-                <View className={classes.details}>
+                <View style={classes.details}>
                   <Typography variant="headline">{member.name}</Typography>
                   <Typography variant="subheading" color="textSecondary">
                     {member.flag}
@@ -131,13 +131,13 @@ function Team(props) {
                   <Typography variant="body2" color="textSecondary">
                     {member.city}
                   </Typography>
-                  <View className={classes.controls}>
+                  <View style={classes.controls}>
                     {member.github && (
                       <IconButton
                         aria-label="GitHub"
                         component="a"
                         href={`https://github.com/${member.github}`}
-                        className={classes.icon}
+                        style={classes.icon}
                       >
                         <Github />
                       </IconButton>
@@ -147,7 +147,7 @@ function Team(props) {
                         aria-label="Twitter"
                         component="a"
                         href={`https://twitter.com/${member.twitter}`}
-                        className={classes.icon}
+                        style={classes.icon}
                       >
                         <Twitter />
                       </IconButton>

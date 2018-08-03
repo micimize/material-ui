@@ -28,14 +28,14 @@ describe('<TableCell />', () => {
   });
 
   it('should render with the user, root and padding classes', () => {
-    const wrapper = shallow(<TableCell className="woofTableCell" />);
+    const wrapper = shallow(<TableCell style="woofTableCell" />);
     assert.strictEqual(wrapper.hasClass('woofTableCell'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(wrapper.hasClass(classes.paddingDefault), false);
   });
 
   it('should render with the user, root and without the padding classes', () => {
-    const wrapper = shallow(<TableCell className="woofTableCell" padding="none" />);
+    const wrapper = shallow(<TableCell style="woofTableCell" padding="none" />);
     assert.strictEqual(wrapper.hasClass('woofTableCell'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(
@@ -46,21 +46,21 @@ describe('<TableCell />', () => {
   });
 
   it('should render with the user, root, padding, and checkbox classes', () => {
-    const wrapper = shallow(<TableCell className="woofTableCell" padding="checkbox" />);
+    const wrapper = shallow(<TableCell style="woofTableCell" padding="checkbox" />);
     assert.strictEqual(wrapper.hasClass('woofTableCell'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(wrapper.hasClass(classes.paddingCheckbox), true);
   });
 
   it('should render with the user, root, padding, and dense classes', () => {
-    const wrapper = shallow(<TableCell className="woofTableCell" padding="dense" />);
+    const wrapper = shallow(<TableCell style="woofTableCell" padding="dense" />);
     assert.strictEqual(wrapper.hasClass('woofTableCell'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(wrapper.hasClass(classes.paddingDense), true);
   });
 
   it('should render children', () => {
-    const children = <p className="test">Hello</p>;
+    const children = <p style="test">Hello</p>;
     const wrapper = shallow(<TableCell>{children}</TableCell>);
     assert.strictEqual(wrapper.childAt(0).equals(children), true);
   });

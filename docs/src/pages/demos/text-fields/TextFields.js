@@ -57,11 +57,11 @@ class TextFields extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form className={classes.container} noValidate autoComplete="off">
+      <form style={classes.container} noValidate autoComplete="off">
         <TextField
           id="name"
           label="Name"
-          className={classes.textField}
+          style={classes.textField}
           value={this.state.name}
           onChange={this.handleChange('name')}
           margin="normal"
@@ -70,7 +70,7 @@ class TextFields extends React.Component {
           id="uncontrolled"
           label="Uncontrolled"
           defaultValue="foo"
-          className={classes.textField}
+          style={classes.textField}
           margin="normal"
         />
         <TextField
@@ -78,7 +78,7 @@ class TextFields extends React.Component {
           id="required"
           label="Required"
           defaultValue="Hello World"
-          className={classes.textField}
+          style={classes.textField}
           margin="normal"
         />
         <TextField
@@ -86,13 +86,13 @@ class TextFields extends React.Component {
           id="error"
           label="Error"
           defaultValue="Hello World"
-          className={classes.textField}
+          style={classes.textField}
           margin="normal"
         />
         <TextField
           id="password-input"
           label="Password"
-          className={classes.textField}
+          style={classes.textField}
           type="password"
           autoComplete="current-password"
           margin="normal"
@@ -101,7 +101,7 @@ class TextFields extends React.Component {
           id="read-only-input"
           label="Read Only"
           defaultValue="Hello World"
-          className={classes.textField}
+          style={classes.textField}
           margin="normal"
           InputProps={{
             readOnly: true,
@@ -114,7 +114,7 @@ class TextFields extends React.Component {
           rowsMax="4"
           value={this.state.multiline}
           onChange={this.handleChange('multiline')}
-          className={classes.textField}
+          style={classes.textField}
           margin="normal"
         />
         <TextField
@@ -123,14 +123,14 @@ class TextFields extends React.Component {
           multiline
           rows="4"
           defaultValue="Default Value"
-          className={classes.textField}
+          style={classes.textField}
           margin="normal"
         />
         <TextField
           id="helperText"
           label="Helper text"
           defaultValue="Default Value"
-          className={classes.textField}
+          style={classes.textField}
           helperText="Some important text"
           margin="normal"
         />
@@ -138,7 +138,7 @@ class TextFields extends React.Component {
           id="with-placeholder"
           label="With placeholder"
           placeholder="Placeholder"
-          className={classes.textField}
+          style={classes.textField}
           margin="normal"
         />
         <TextField
@@ -146,7 +146,7 @@ class TextFields extends React.Component {
           label="With placeholder multiline"
           placeholder="Placeholder"
           multiline
-          className={classes.textField}
+          style={classes.textField}
           margin="normal"
         />
         <TextField
@@ -155,7 +155,7 @@ class TextFields extends React.Component {
           value={this.state.age}
           onChange={this.handleChange('age')}
           type="number"
-          className={classes.textField}
+          style={classes.textField}
           InputLabelProps={{
             shrink: true,
           }}
@@ -165,14 +165,14 @@ class TextFields extends React.Component {
           id="search"
           label="Search field"
           type="search"
-          className={classes.textField}
+          style={classes.textField}
           margin="normal"
         />
         <TextField
           id="select-currency"
           select
           label="Select"
-          className={classes.textField}
+          style={classes.textField}
           value={this.state.currency}
           onChange={this.handleChange('currency')}
           SelectProps={{
@@ -193,7 +193,7 @@ class TextFields extends React.Component {
           id="select-currency-native"
           select
           label="Native select"
-          className={classes.textField}
+          style={classes.textField}
           value={this.state.currency}
           onChange={this.handleChange('currency')}
           SelectProps={{

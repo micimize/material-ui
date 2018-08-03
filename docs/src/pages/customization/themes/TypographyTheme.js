@@ -51,7 +51,7 @@ function TypographyTheme(props) {
   );
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       {children}
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </View>

@@ -214,7 +214,7 @@ describe('<Popover />', () => {
 
     it('should have the paper class and user classes', () => {
       const wrapper = shallow(
-        <Popover {...defaultProps} className="test-class">
+        <Popover {...defaultProps} style="test-class">
           <div />
         </Popover>,
       );

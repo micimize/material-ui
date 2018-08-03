@@ -43,20 +43,20 @@ function MediaControlCard(props) {
 
   return (
     <View>
-      <Card className={classes.card}>
-        <View className={classes.details}>
-          <CardContent className={classes.content}>
+      <Card style={classes.card}>
+        <View style={classes.details}>
+          <CardContent style={classes.content}>
             <Typography variant="headline">Live From Space</Typography>
             <Typography variant="subheading" color="textSecondary">
               Mac Miller
             </Typography>
           </CardContent>
-          <View className={classes.controls}>
+          <View style={classes.controls}>
             <IconButton aria-label="Previous">
               {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
             </IconButton>
             <IconButton aria-label="Play/pause">
-              <PlayArrowIcon className={classes.playIcon} />
+              <PlayArrowIcon style={classes.playIcon} />
             </IconButton>
             <IconButton aria-label="Next">
               {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
@@ -64,7 +64,7 @@ function MediaControlCard(props) {
           </View>
         </View>
         <CardMedia
-          className={classes.cover}
+          style={classes.cover}
           image="/static/images/cards/live-from-space.jpg"
           title="Live from space album cover"
         />

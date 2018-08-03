@@ -65,7 +65,7 @@ class ResponsiveDrawer extends React.Component {
 
     const drawer = (
       <View>
-        <View className={classes.toolbar} />
+        <View style={classes.toolbar} />
         <Divider />
         <List>{mailFolderListItems}</List>
         <Divider />
@@ -74,14 +74,14 @@ class ResponsiveDrawer extends React.Component {
     );
 
     return (
-      <View className={classes.root}>
-        <AppBar className={classes.appBar}>
+      <View style={classes.root}>
+        <AppBar style={classes.appBar}>
           <Toolbar>
             <IconButton
               color="inherit"
               aria-label="Open drawer"
               onClick={this.handleDrawerToggle}
-              className={classes.navIconHide}
+              style={classes.navIconHide}
             >
               <MenuIcon />
             </IconButton>
@@ -117,8 +117,8 @@ class ResponsiveDrawer extends React.Component {
             {drawer}
           </Drawer>
         </Hidden>
-        <View className={classes.content}>
-          <View className={classes.toolbar} />
+        <View style={classes.content}>
+          <View style={classes.toolbar} />
           <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
         </View>
       </View>

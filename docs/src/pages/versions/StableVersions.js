@@ -76,7 +76,7 @@ class StableVersions extends React.Component {
     const { docs } = this.state;
 
     return (
-      <Paper className={classes.root}>
+      <Paper style={classes.root}>
         <Table>
           <TableBody>
             {docs.map(doc => {

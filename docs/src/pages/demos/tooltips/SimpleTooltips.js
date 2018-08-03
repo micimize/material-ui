@@ -29,12 +29,12 @@ function SimpleTooltips(props) {
         </IconButton>
       </Tooltip>
       <Tooltip title="Add">
-        <Button variant="fab" color="primary" aria-label="Add" className={classes.fab}>
+        <Button variant="fab" color="primary" aria-label="Add" style={classes.fab}>
           <AddIcon />
         </Button>
       </Tooltip>
       <Tooltip title="FAB 'position: absolute;'">
-        <Button variant="fab" color="secondary" className={classes.absolute}>
+        <Button variant="fab" color="secondary" style={classes.absolute}>
           <AddIcon />
         </Button>
       </Tooltip>

@@ -29,7 +29,7 @@ describe('<Switch />', () => {
     let wrapper;
 
     beforeEach(() => {
-      wrapper = shallow(<Switch className="foo" />);
+      wrapper = shallow(<Switch style="foo" />);
     });
 
     it('should render a span with the root and user classes', () => {

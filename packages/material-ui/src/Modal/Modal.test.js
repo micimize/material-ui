@@ -413,7 +413,7 @@ describe('<Modal />', () => {
     it('should focus on the modal when it is opened', () => {
       wrapper = mount(
         <Modal open>
-          <div className="modal">Foo</div>
+          <div style="modal">Foo</div>
         </Modal>,
       );
       assert.strictEqual(document.activeElement.className, 'modal');
@@ -424,7 +424,7 @@ describe('<Modal />', () => {
     it('should keep focus on the modal when it is closed', () => {
       wrapper = mount(
         <Modal open disableRestoreFocus>
-          <div className="modal">Foo</div>
+          <div style="modal">Foo</div>
         </Modal>,
       );
       assert.strictEqual(document.activeElement.className, 'modal');
@@ -455,7 +455,7 @@ describe('<Modal />', () => {
     it('should return focus to the modal', () => {
       wrapper = mount(
         <Modal open>
-          <div className="modal">
+          <div style="modal">
             <input autoFocus />
           </div>
         </Modal>,
@@ -469,7 +469,7 @@ describe('<Modal />', () => {
     it('should not return focus to the modal when disableEnforceFocus is true', () => {
       wrapper = mount(
         <Modal open disableEnforceFocus>
-          <div className="modal">
+          <div style="modal">
             <input autoFocus />
           </div>
         </Modal>,

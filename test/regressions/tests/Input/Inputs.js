@@ -31,20 +31,20 @@ class Inputs extends React.Component {
 
     return (
       <View>
-        <View className={classes.container}>
-          <Input value="Hello world" className={classes.input} />
-          <Input placeholder="Placeholder" className={classes.input} />
-          <Input value="Disabled" className={classes.input} disabled />
-          <Input error value="Error" className={classes.input} />
+        <View style={classes.container}>
+          <Input value="Hello world" style={classes.input} />
+          <Input placeholder="Placeholder" style={classes.input} />
+          <Input value="Disabled" style={classes.input} disabled />
+          <Input error value="Error" style={classes.input} />
           <Input
             value="Focused"
             inputRef={node => {
               this.focusInput = node;
             }}
-            className={classes.input}
+            style={classes.input}
           />
         </View>
-        <Input value="Large input" className={classNames(classes.input, classes.large)} />
+        <Input value="Large input" style={classNames(classes.input, classes.large)} />
       </View>
     );
   }

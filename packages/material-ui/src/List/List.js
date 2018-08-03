@@ -57,7 +57,7 @@ class List extends React.Component {
     );
 
     return (
-      <Component className={className} {...other}>
+      <Component style={className} {...other}>
         {subheader}
         {children}
       </Component>

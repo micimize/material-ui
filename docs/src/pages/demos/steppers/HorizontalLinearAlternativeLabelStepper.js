@@ -69,7 +69,7 @@ class HorizontalLabelPositionBelowStepper extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Stepper activeStep={activeStep} alternativeLabel>
           {steps.map(label => {
             return (
@@ -82,17 +82,17 @@ class HorizontalLabelPositionBelowStepper extends React.Component {
         <View>
           {this.state.activeStep === steps.length ? (
             <View>
-              <Typography className={classes.instructions}>All steps completed</Typography>
+              <Typography style={classes.instructions}>All steps completed</Typography>
               <Button onClick={this.handleReset}>Reset</Button>
             </View>
           ) : (
             <View>
-              <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+              <Typography style={classes.instructions}>{getStepContent(activeStep)}</Typography>
               <View>
                 <Button
                   disabled={activeStep === 0}
                   onClick={this.handleBack}
-                  className={classes.backButton}
+                  style={classes.backButton}
                 >
                   Back
                 </Button>

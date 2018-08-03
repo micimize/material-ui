@@ -490,13 +490,13 @@ class Input extends React.Component {
     }
 
     return (
-      <View className={className} {...other}>
+      <View style={className} {...other}>
         {startAdornment}
         <InputComponent
           aria-invalid={error}
           autoComplete={autoComplete}
           autoFocus={autoFocus}
-          className={inputClassName}
+          style={inputClassName}
           defaultValue={defaultValue}
           disabled={disabled}
           id={id}

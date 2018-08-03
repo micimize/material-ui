@@ -64,8 +64,8 @@ class DelayingAppearance extends React.Component {
     const { loading, query } = this.state;
 
     return (
-      <View className={classes.root}>
-        <View className={classes.placeholder}>
+      <View style={classes.root}>
+        <View style={classes.placeholder}>
           <Fade
             in={loading}
             style={{
@@ -76,10 +76,10 @@ class DelayingAppearance extends React.Component {
             <CircularProgress />
           </Fade>
         </View>
-        <Button onClick={this.handleClickLoading} className={classes.button}>
+        <Button onClick={this.handleClickLoading} style={classes.button}>
           {loading ? 'Stop loading' : 'Loading'}
         </Button>
-        <View className={classes.placeholder}>
+        <View style={classes.placeholder}>
           {query === 'success' ? (
             <Typography>Success!</Typography>
           ) : (
@@ -94,7 +94,7 @@ class DelayingAppearance extends React.Component {
             </Fade>
           )}
         </View>
-        <Button onClick={this.handleClickQuery} className={classes.button}>
+        <Button onClick={this.handleClickQuery} style={classes.button}>
           {query !== 'idle' ? 'Reset' : 'Simulate a load'}
         </Button>
       </View>

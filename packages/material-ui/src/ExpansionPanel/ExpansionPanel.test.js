@@ -49,7 +49,7 @@ describe('<ExpansionPanel />', () => {
   });
 
   it('should render the custom className and the root class', () => {
-    const wrapper = shallow(<ExpansionPanel className="test-class-name">foo</ExpansionPanel>);
+    const wrapper = shallow(<ExpansionPanel style="test-class-name">foo</ExpansionPanel>);
     assert.strictEqual(wrapper.hasClass('test-class-name'), true, 'should pass the test className');
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });

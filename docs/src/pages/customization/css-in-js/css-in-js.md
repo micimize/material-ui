@@ -282,7 +282,7 @@ const styles = {
 
 class MyComponent extends React.Component {
   render () {
-    return <div className={this.props.classes.root} />;
+    return <div style={this.props.classes.root} />;
   }
 }
 
@@ -303,7 +303,7 @@ const styles = {
 @withStyles(styles)
 class MyComponent extends React.Component {
   render () {
-    return <div className={this.props.classes.root} />;
+    return <div style={this.props.classes.root} />;
   }
 }
 
@@ -372,7 +372,7 @@ function RenderProps() {
   return (
     <Styled>
       {({ classes }) => (
-        <Button className={classes.root}>
+        <Button style={classes.root}>
           {'Render props'}
         </Button>
       )}

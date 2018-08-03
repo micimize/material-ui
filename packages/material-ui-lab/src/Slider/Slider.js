@@ -438,7 +438,7 @@ class Slider extends React.Component {
     return (
       <Component
         role="slider"
-        className={className}
+        style={className}
         aria-valuenow={value}
         aria-valuemin={min}
         aria-valuemax={max}
@@ -452,10 +452,10 @@ class Slider extends React.Component {
         }}
         {...other}
       >
-        <View className={containerClasses}>
-          <View className={trackBeforeClasses} style={inlineTrackBeforeStyles} />
+        <View style={containerClasses}>
+          <View style={trackBeforeClasses} style={inlineTrackBeforeStyles} />
           <ButtonBase
-            className={thumbClasses}
+            style={thumbClasses}
             disableRipple
             style={inlineThumbStyles}
             onBlur={this.handleBlur}
@@ -465,7 +465,7 @@ class Slider extends React.Component {
             onTouchMove={this.handleMouseMove}
             onFocusVisible={this.handleFocus}
           />
-          <View className={trackAfterClasses} style={inlineTrackAfterStyles} />
+          <View style={trackAfterClasses} style={inlineTrackAfterStyles} />
         </View>
       </Component>
     );

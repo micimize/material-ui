@@ -17,30 +17,30 @@ function OutlinedButtons(props) {
   const { classes } = props;
   return (
     <View>
-      <Button variant="outlined" className={classes.button}>
+      <Button variant="outlined" style={classes.button}>
         Default
       </Button>
-      <Button variant="outlined" color="primary" className={classes.button}>
+      <Button variant="outlined" color="primary" style={classes.button}>
         Primary
       </Button>
-      <Button variant="outlined" color="secondary" className={classes.button}>
+      <Button variant="outlined" color="secondary" style={classes.button}>
         Secondary
       </Button>
-      <Button variant="outlined" disabled className={classes.button}>
+      <Button variant="outlined" disabled style={classes.button}>
         Disabled
       </Button>
-      <Button variant="outlined" href="#outlined-buttons" className={classes.button}>
+      <Button variant="outlined" href="#outlined-buttons" style={classes.button}>
         Link
       </Button>
       <input
         accept="image/*"
-        className={classes.input}
+        style={classes.input}
         id="outlined-button-file"
         multiple
         type="file"
       />
       <label htmlFor="outlined-button-file">
-        <Button variant="outlined" component="span" className={classes.button}>
+        <Button variant="outlined" component="span" style={classes.button}>
           Upload
         </Button>
       </label>

@@ -25,23 +25,23 @@ function SimpleBadge(props) {
   return (
     <View>
       <View>
-        <Badge className={classes.margin} badgeContent={4} color="primary">
+        <Badge style={classes.margin} badgeContent={4} color="primary">
           <MailIcon />
         </Badge>
-        <Badge className={classes.margin} badgeContent={10} color="secondary">
+        <Badge style={classes.margin} badgeContent={10} color="secondary">
           <MailIcon />
         </Badge>
-        <IconButton aria-label="4 pending messages" className={classes.margin}>
+        <IconButton aria-label="4 pending messages" style={classes.margin}>
           <Badge badgeContent={4} color="primary">
             <MailIcon />
           </Badge>
         </IconButton>
       </View>
-      <AppBar position="static" className={classes.margin}>
+      <AppBar position="static" style={classes.margin}>
         <Tabs value={0}>
           <Tab
             label={
-              <Badge className={classes.padding} color="secondary" badgeContent={4}>
+              <Badge style={classes.padding} color="secondary" badgeContent={4}>
                 Item One
               </Badge>
             }
@@ -50,10 +50,10 @@ function SimpleBadge(props) {
           <Tab label="Item Three" />
         </Tabs>
       </AppBar>
-      <Badge color="primary" badgeContent={4} className={classes.margin}>
-        <Typography className={classes.padding}>Typography</Typography>
+      <Badge color="primary" badgeContent={4} style={classes.margin}>
+        <Typography style={classes.padding}>Typography</Typography>
       </Badge>
-      <Badge color="primary" badgeContent={4} className={classes.margin}>
+      <Badge color="primary" badgeContent={4} style={classes.margin}>
         <Button variant="contained">Button</Button>
       </Badge>
     </View>

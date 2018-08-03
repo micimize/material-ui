@@ -30,7 +30,7 @@ describe('<AppBar />', () => {
   });
 
   it('should render the custom className and the appBar class', () => {
-    const wrapper = shallow(<AppBar className="test-class-name">Hello World</AppBar>);
+    const wrapper = shallow(<AppBar style="test-class-name">Hello World</AppBar>);
     assert.strictEqual(wrapper.is('.test-class-name'), true, 'should pass the test className');
     assert.strictEqual(wrapper.hasClass(classes.root), true);
     assert.strictEqual(

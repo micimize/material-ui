@@ -41,19 +41,19 @@ function StepIcon(props) {
 
   if (typeof icon === 'number' || typeof icon === 'string') {
     if (error) {
-      return <Warning className={classNames(classes.root, classes.error)} />;
+      return <Warning style={classNames(classes.root, classes.error)} />;
     }
     if (completed) {
-      return <CheckCircle className={classNames(classes.root, classes.completed)} />;
+      return <CheckCircle style={classNames(classes.root, classes.completed)} />;
     }
     return (
       <SvgIcon
-        className={classNames(classes.root, {
+        style={classNames(classes.root, {
           [classes.active]: active,
         })}
       >
         <circle cx="12" cy="12" r="12" />
-        <text className={classes.text} x="12" y="16" textAnchor="middle">
+        <text style={classes.text} x="12" y="16" textAnchor="middle">
           {icon}
         </text>
       </SvgIcon>

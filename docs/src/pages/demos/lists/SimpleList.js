@@ -21,7 +21,7 @@ const styles = theme => ({
 function SimpleList(props) {
   const { classes } = props;
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <List component="nav">
         <ListItem button>
           <ListItemIcon>

@@ -24,7 +24,7 @@ function MyLink(props) {
 
   return (
     <Text
-      className={classNames(
+      style={classNames(
         classes.root,
         {
           [classes.primary]: variant === 'primary',

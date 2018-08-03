@@ -70,11 +70,11 @@ class OpenIconSpeedDial extends React.Component {
     const { hidden, open } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Button onClick={this.handleVisibility}>Toggle Speed Dial</Button>
         <SpeedDial
           ariaLabel="SpeedDial openIcon example"
-          className={classes.speedDial}
+          style={classes.speedDial}
           hidden={hidden}
           icon={<SpeedDialIcon openIcon={<EditIcon />} />}
           onBlur={this.handleClose}

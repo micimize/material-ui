@@ -58,11 +58,11 @@ function SnackbarContent(props) {
       role="alertdialog"
       square
       elevation={6}
-      className={classNames(classes.root, className)}
+      style={classNames(classes.root, className)}
       {...other}
     >
-      <View className={classes.message}>{message}</View>
-      {action ? <View className={classes.action}>{action}</View> : null}
+      <View style={classes.message}>{message}</View>
+      {action ? <View style={classes.action}>{action}</View> : null}
     </Paper>
   );
 }

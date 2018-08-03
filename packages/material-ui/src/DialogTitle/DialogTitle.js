@@ -18,7 +18,7 @@ function DialogTitle(props) {
   const { children, classes, className, disableTypography, ...other } = props;
 
   return (
-    <View className={classNames(classes.root, className)} {...other}>
+    <View style={classNames(classes.root, className)} {...other}>
       {disableTypography ? children : <Typography variant="title">{children}</Typography>}
     </View>
   );

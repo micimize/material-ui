@@ -100,33 +100,33 @@ function ButtonBases(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       {images.map(image => (
         <ButtonBase
           focusRipple
           key={image.title}
-          className={classes.image}
+          style={classes.image}
           focusVisibleClassName={classes.focusVisible}
           style={{
             width: image.width,
           }}
         >
           <span
-            className={classes.imageSrc}
+            style={classes.imageSrc}
             style={{
               backgroundImage: `url(${image.url})`,
             }}
           />
-          <span className={classes.imageBackdrop} />
-          <span className={classes.imageButton}>
+          <span style={classes.imageBackdrop} />
+          <span style={classes.imageButton}>
             <Typography
               component="span"
               variant="subheading"
               color="inherit"
-              className={classes.imageTitle}
+              style={classes.imageTitle}
             >
               {image.title}
-              <span className={classes.imageMarked} />
+              <span style={classes.imageMarked} />
             </Typography>
           </span>
         </ButtonBase>

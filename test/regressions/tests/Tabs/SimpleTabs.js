@@ -23,15 +23,15 @@ function SimpleTabs(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
-      <Paper className={classes.appBar}>
+    <View style={classes.root}>
+      <Paper style={classes.appBar}>
         <Tabs onChange={noop} value={0}>
           <Tab label="Item One" />
           <Tab label="Item Two" />
           <Tab label="Item Three" disabled />
         </Tabs>
       </Paper>
-      <Paper className={classes.root}>
+      <Paper style={classes.root}>
         <Tabs onChange={noop} value={1} textColor="secondary" centered>
           <Tab label="Item One" />
           <Tab label="Item Two" />

@@ -25,7 +25,7 @@ describe('<HiddenCss />', () => {
     it('should be ok with only', () => {
       const wrapper = shallow(
         <HiddenCss only="sm">
-          <div className="foo" />
+          <div style="foo" />
         </HiddenCss>,
       );
 
@@ -40,7 +40,7 @@ describe('<HiddenCss />', () => {
     it('should be ok with only as an array', () => {
       const wrapper = shallow(
         <HiddenCss only={['xs', 'sm']}>
-          <div className="foo" />
+          <div style="foo" />
         </HiddenCss>,
       );
 
@@ -52,7 +52,7 @@ describe('<HiddenCss />', () => {
     it('should be ok with only as an empty array', () => {
       const wrapper = shallow(
         <HiddenCss only={[]}>
-          <div className="foo" />
+          <div style="foo" />
         </HiddenCss>,
       );
 
@@ -63,7 +63,7 @@ describe('<HiddenCss />', () => {
     it('should be ok with mdDown', () => {
       const wrapper = shallow(
         <HiddenCss mdDown>
-          <div className="foo" />
+          <div style="foo" />
         </HiddenCss>,
       );
       assert.strictEqual(wrapper.hasClass(classes.mdDown), true);
@@ -72,15 +72,15 @@ describe('<HiddenCss />', () => {
     it('should be ok with mdUp', () => {
       const wrapper = shallow(
         <HiddenCss mdUp>
-          <div className="foo" />
+          <div style="foo" />
         </HiddenCss>,
       );
       assert.strictEqual(wrapper.hasClass(classes.mdUp), true);
     });
     it('should handle provided className prop', () => {
       const wrapper = shallow(
-        <HiddenCss mdUp className="custom">
-          <div className="foo" />
+        <HiddenCss mdUp style="custom">
+          <div style="foo" />
         </HiddenCss>,
       );
       assert.strictEqual(wrapper.hasClass('custom'), true);

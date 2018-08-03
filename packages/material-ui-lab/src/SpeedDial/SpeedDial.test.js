@@ -73,7 +73,7 @@ describe('<SpeedDial />', () => {
 
   it('should render with the user and root classes', () => {
     const wrapper = shallow(
-      <SpeedDial {...defaultProps} className="mySpeedDialClass" icon={icon}>
+      <SpeedDial {...defaultProps} style="mySpeedDialClass" icon={icon}>
         <div />
       </SpeedDial>,
     );
@@ -83,7 +83,7 @@ describe('<SpeedDial />', () => {
 
   it('should render the actions with the actions class', () => {
     const wrapper = shallow(
-      <SpeedDial {...defaultProps} className="mySpeedDial" icon={icon}>
+      <SpeedDial {...defaultProps} style="mySpeedDial" icon={icon}>
         <SpeedDialAction icon={icon} tooltipTitle="SpeedDialAction" />
       </SpeedDial>,
     );
@@ -94,7 +94,7 @@ describe('<SpeedDial />', () => {
 
   it('should render the actions with the actions and actionsClosed classes', () => {
     const wrapper = shallow(
-      <SpeedDial {...defaultProps} open={false} className="mySpeedDial" icon={icon}>
+      <SpeedDial {...defaultProps} open={false} style="mySpeedDial" icon={icon}>
         <SpeedDialAction icon={icon} tooltipTitle="SpeedDialAction" />
       </SpeedDial>,
     );

@@ -81,8 +81,8 @@ class FormattedInputs extends React.Component {
     const { textmask, numberformat } = this.state;
 
     return (
-      <View className={classes.container}>
-        <FormControl className={classes.formControl}>
+      <View style={classes.container}>
+        <FormControl style={classes.formControl}>
           <InputLabel htmlFor="formatted-text-mask-input">react-text-mask</InputLabel>
           <Input
             value={textmask}
@@ -92,7 +92,7 @@ class FormattedInputs extends React.Component {
           />
         </FormControl>
         <TextField
-          className={classes.formControl}
+          style={classes.formControl}
           label="react-number-format"
           value={numberformat}
           onChange={this.handleChange('numberformat')}

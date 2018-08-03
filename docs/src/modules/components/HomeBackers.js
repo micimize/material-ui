@@ -21,10 +21,10 @@ function HomeBackers(props) {
   const classes = props.classes;
 
   return (
-    <View className={classes.root}>
+    <View style={classes.root}>
       <NoSsr>
         <MarkdownElement
-          className={classes.markdownElement}
+          style={classes.markdownElement}
           text={`
 <h2>Supporting Material-UI</h2>
 

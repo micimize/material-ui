@@ -3371,7 +3371,7 @@ Also, `props` can now be set when applying the HOC:
 - >(styles)(Component);
 + const StyledComponent = withStyles(styles)<StyledComponentProps>(
 +   ({ classes, text }) => (
-+     <div className={classes.root}>
++     <div style={classes.root}>
 +       {text}
 +     </div>
 +   )

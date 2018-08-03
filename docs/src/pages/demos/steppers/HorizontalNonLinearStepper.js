@@ -114,7 +114,7 @@ class HorizontalNonLinearStepper extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <View className={classes.root}>
+      <View style={classes.root}>
         <Stepper nonLinear activeStep={activeStep}>
           {steps.map((label, index) => {
             return (
@@ -132,19 +132,19 @@ class HorizontalNonLinearStepper extends React.Component {
         <View>
           {this.allStepsCompleted() ? (
             <View>
-              <Typography className={classes.instructions}>
+              <Typography style={classes.instructions}>
                 All steps completed - you&quot;re finished
               </Typography>
               <Button onClick={this.handleReset}>Reset</Button>
             </View>
           ) : (
             <View>
-              <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+              <Typography style={classes.instructions}>{getStepContent(activeStep)}</Typography>
               <View>
                 <Button
                   disabled={activeStep === 0}
                   onClick={this.handleBack}
-                  className={classes.button}
+                  style={classes.button}
                 >
                   Back
                 </Button>
@@ -152,13 +152,13 @@ class HorizontalNonLinearStepper extends React.Component {
                   variant="contained"
                   color="primary"
                   onClick={this.handleNext}
-                  className={classes.button}
+                  style={classes.button}
                 >
                   Next
                 </Button>
                 {activeStep !== steps.length &&
                   (this.state.completed[this.state.activeStep] ? (
-                    <Typography variant="caption" className={classes.completed}>
+                    <Typography variant="caption" style={classes.completed}>
                       Step {activeStep + 1} already completed
                     </Typography>
                   ) : (

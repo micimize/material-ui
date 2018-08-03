@@ -49,7 +49,7 @@ describe('<GridList />', () => {
         {tilesData.map(tile => (
           <span
             key={tile.img}
-            className="grid-tile"
+            style="grid-tile"
             title={tile.title}
             subtitle={<span>by: {tile.author}</span>}
           >
@@ -76,7 +76,7 @@ describe('<GridList />', () => {
         {tilesData.map(tile => (
           <span
             key={tile.img}
-            className="grid-tile"
+            style="grid-tile"
             title={tile.title}
             subtitle={<span>by: {tile.author}</span>}
           >
@@ -96,7 +96,7 @@ describe('<GridList />', () => {
         {tilesData.map(tile => (
           <span
             key={tile.img}
-            className="grid-tile"
+            style="grid-tile"
             title={tile.title}
             subtitle={<span>by: {tile.author}</span>}
           >
@@ -124,7 +124,7 @@ describe('<GridList />', () => {
         {tilesData.map(tile => (
           <span
             key={tile.img}
-            className="grid-tile"
+            style="grid-tile"
             title={tile.title}
             subtitle={<span>by: {tile.author}</span>}
           >
@@ -152,7 +152,7 @@ describe('<GridList />', () => {
         {tilesData.map(tile => (
           <span
             key={tile.img}
-            className="grid-tile"
+            style="grid-tile"
             title={tile.title}
             subtitle={<span>by: {tile.author}</span>}
           >

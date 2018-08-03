@@ -32,7 +32,7 @@ describe('<ToggleButtonGroup />', () => {
 
   it('should render the custom className and the root class', () => {
     const wrapper = shallow(
-      <ToggleButtonGroup className="test-class-name">
+      <ToggleButtonGroup style="test-class-name">
         <ToggleButton value="hello" />
       </ToggleButtonGroup>,
     );

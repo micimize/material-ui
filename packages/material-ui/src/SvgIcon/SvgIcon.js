@@ -70,7 +70,7 @@ function SvgIcon(props) {
 
   return (
     <Component
-      className={className}
+      style={className}
       focusable="false"
       viewBox={viewBox}
       color={nativeColor}

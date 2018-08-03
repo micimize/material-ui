@@ -40,7 +40,7 @@ class ProgressMobileStepper extends React.Component {
         steps={6}
         position="static"
         activeStep={this.state.activeStep}
-        className={classes.root}
+        style={classes.root}
         nextButton={
           <Button size="small" onClick={this.handleNext} disabled={this.state.activeStep === 5}>
             Next

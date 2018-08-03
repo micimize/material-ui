@@ -106,11 +106,11 @@ class TablePagination extends React.Component {
     }
 
     return (
-      <Component className={classes.root} colSpan={colSpan} {...other}>
-        <Toolbar className={classes.toolbar}>
-          <View className={classes.spacer} />
+      <Component style={classes.root} colSpan={colSpan} {...other}>
+        <Toolbar style={classes.toolbar}>
+          <View style={classes.spacer} />
           {rowsPerPageOptions.length > 1 && (
-            <Typography variant="caption" className={classes.caption}>
+            <Typography variant="caption" style={classes.caption}>
               {labelRowsPerPage}
             </Typography>
           )}
@@ -121,14 +121,14 @@ class TablePagination extends React.Component {
                 select: classes.select,
                 icon: classes.selectIcon,
               }}
-              input={<Input className={classes.input} disableUnderline />}
+              input={<Input style={classes.input} disableUnderline />}
               value={rowsPerPage}
               onChange={onChangeRowsPerPage}
               {...SelectProps}
             >
               {rowsPerPageOptions.map(rowsPerPageOption => (
                 <MenuItem
-                  className={classes.menuItem}
+                  style={classes.menuItem}
                   key={rowsPerPageOption}
                   value={rowsPerPageOption}
                 >
@@ -137,7 +137,7 @@ class TablePagination extends React.Component {
               ))}
             </Select>
           )}
-          <Typography variant="caption" className={classes.caption}>
+          <Typography variant="caption" style={classes.caption}>
             {labelDisplayedRows({
               from: count === 0 ? 0 : page * rowsPerPage + 1,
               to: Math.min(count, (page + 1) * rowsPerPage),
@@ -146,7 +146,7 @@ class TablePagination extends React.Component {
             })}
           </Typography>
           <ActionsComponent
-            className={classes.actions}
+            style={classes.actions}
             backIconButtonProps={backIconButtonProps}
             count={count}
             nextIconButtonProps={nextIconButtonProps}

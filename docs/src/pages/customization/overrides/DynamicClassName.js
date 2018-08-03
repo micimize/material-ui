@@ -48,7 +48,7 @@ class DynamicClassName extends React.Component {
           label="Blue"
         />
         <Button
-          className={classNames(classes.button, {
+          style={classNames(classes.button, {
             [classes.buttonBlue]: this.state.color === 'blue',
           })}
         >

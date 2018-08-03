@@ -34,13 +34,13 @@ class RadioButtonsGroup extends React.Component {
     const { classes } = this.props;
 
     return (
-      <View className={classes.root}>
-        <FormControl component="fieldset" className={classes.formControl}>
+      <View style={classes.root}>
+        <FormControl component="fieldset" style={classes.formControl}>
           <FormLabel component="legend">Gender</FormLabel>
           <RadioGroup
             aria-label="Gender"
             name="gender1"
-            className={classes.group}
+            style={classes.group}
             value={this.state.value}
             onChange={this.handleChange}
           >
@@ -55,12 +55,12 @@ class RadioButtonsGroup extends React.Component {
             />
           </RadioGroup>
         </FormControl>
-        <FormControl component="fieldset" className={classes.formControl}>
+        <FormControl component="fieldset" style={classes.formControl}>
           <FormLabel component="legend">Gender</FormLabel>
           <RadioGroup
             aria-label="gender"
             name="gender2"
-            className={classes.group}
+            style={classes.group}
             value={this.state.value}
             onChange={this.handleChange}
           >

@@ -21,7 +21,7 @@ function LatestVersion(props) {
   const { classes } = props;
 
   return (
-    <Paper className={classes.root}>
+    <Paper style={classes.root}>
       <Table>
         <TableBody>
           <TableRow>

@@ -33,13 +33,13 @@ describe('<Table />', () => {
   });
 
   it('should render with the user and root classes', () => {
-    const wrapper = shallow(<Table className="woofTable">foo</Table>);
+    const wrapper = shallow(<Table style="woofTable">foo</Table>);
     assert.strictEqual(wrapper.hasClass('woofTable'), true);
     assert.strictEqual(wrapper.hasClass(classes.root), true);
   });
 
   it('should render children', () => {
-    const children = <tbody className="test" />;
+    const children = <tbody style="test" />;
     const wrapper = shallow(<Table>{children}</Table>);
     assert.strictEqual(wrapper.childAt(0).equals(children), true);
   });

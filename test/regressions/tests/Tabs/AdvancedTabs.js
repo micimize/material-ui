@@ -23,15 +23,15 @@ function AdvancedTabs(props) {
   const { classes } = props;
 
   return (
-    <View className={classes.root}>
-      <Paper className={classes.appBar}>
+    <View style={classes.root}>
+      <Paper style={classes.appBar}>
         <Tabs onChange={noop} value={0}>
           <Tab label="New Arrivals in the Longest Text of Nonfiction" />
           <Tab label="Item Two" />
           <Tab label="Item Three" />
         </Tabs>
       </Paper>
-      <Paper className={classes.appBar}>
+      <Paper style={classes.appBar}>
         <Tabs onChange={noop} value="two" scrollable scrollButtons="auto">
           <Tab label="Item One" />
           <Tab value="two" label="Item Two" />
@@ -42,7 +42,7 @@ function AdvancedTabs(props) {
           <Tab label="Item Seven" />
         </Tabs>
       </Paper>
-      <Paper className={classes.root}>
+      <Paper style={classes.root}>
         <Tabs onChange={noop} value={0} scrollable scrollButtons="on" textColor="secondary">
           <Tab label="Item One" icon={<Icon>phone</Icon>} />
           <Tab label="Item Two" icon={<Icon>favorite</Icon>} />
@@ -53,7 +53,7 @@ function AdvancedTabs(props) {
           <Tab label="Item Seven" icon={<Icon>thumb_up</Icon>} />
         </Tabs>
       </Paper>
-      <Paper className={classes.appBar}>
+      <Paper style={classes.appBar}>
         <Tabs onChange={noop} value={0} scrollable scrollButtons="off">
           <Tab icon={<Icon>phone</Icon>} />
           <Tab icon={<Icon>favorite</Icon>} />

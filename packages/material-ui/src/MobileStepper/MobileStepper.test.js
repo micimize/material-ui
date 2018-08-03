@@ -45,7 +45,7 @@ describe('<MobileStepper />', () => {
   });
 
   it('should render the custom className and the root class', () => {
-    const wrapper = shallow(<MobileStepper className="test-class-name" {...defaultProps} />);
+    const wrapper = shallow(<MobileStepper style="test-class-name" {...defaultProps} />);
     assert.strictEqual(wrapper.is('.test-class-name'), true, 'should pass the test className');
     assert.strictEqual(wrapper.hasClass(classes.root), true, 'should have the mobileStepper class');
   });

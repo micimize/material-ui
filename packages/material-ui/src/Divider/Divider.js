@@ -52,7 +52,7 @@ function Divider(props) {
     classNameProp,
   );
 
-  return <Component className={className} {...other} />;
+  return <Component style={className} {...other} />;
 }
 
 Divider.propTypes = {

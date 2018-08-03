@@ -92,16 +92,16 @@ class CustomizedTooltips extends React.Component {
     return (
       <View>
         <Tooltip title="Add">
-          <Button className={classes.button}>Default</Button>
+          <Button style={classes.button}>Default</Button>
         </Tooltip>
         <Tooltip title="Add" classes={{ tooltip: classes.lightTooltip }}>
-          <Button className={classes.button}>Light</Button>
+          <Button style={classes.button}>Light</Button>
         </Tooltip>
         <Tooltip
           title={
             <React.Fragment>
               Add
-              <span className={classes.arrowArrow} ref={this.handleArrowRef} />
+              <span style={classes.arrowArrow} ref={this.handleArrowRef} />
             </React.Fragment>
           }
           classes={{ popper: classes.arrowPopper }}
@@ -116,7 +116,7 @@ class CustomizedTooltips extends React.Component {
             },
           }}
         >
-          <Button className={classes.button}>Arrow</Button>
+          <Button style={classes.button}>Arrow</Button>
         </Tooltip>
       </View>
     );
