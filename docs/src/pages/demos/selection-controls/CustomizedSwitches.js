@@ -10,15 +10,14 @@ import Switch from '@material-ui/core/Switch';
 const styles = theme => ({
   colorSwitchBase: {
     color: purple[300],
-    '[colorChecked="true"]': {
-      color: purple[500],
-      '& + $colorBar': {
-        backgroundColor: purple[500],
-      },
-    },
   },
   colorBar: {},
-  colorChecked: {},
+  colorChecked: {
+    color: purple[500],
+    '& + $colorBar': {
+      backgroundColor: purple[500],
+    },
+  },
   iOSSwitchBase: {
     '[iOSChecked="true"]': {
       color: theme.palette.common.white,

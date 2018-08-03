@@ -38,15 +38,14 @@ const styles = theme => ({
       color: '#40a9ff',
       opacity: 1,
     },
-    '[tabSelected="true"]': {
-      color: '#1890ff',
-      fontWeight: theme.typography.fontWeightMedium,
-    },
     '&:focus': {
       color: '#40a9ff',
     },
   },
-  tabSelected: {},
+  tabSelected: {
+    color: '#1890ff',
+    fontWeight: theme.typography.fontWeightMedium,
+  },
   typography: {
     padding: theme.spacing.unit * 3,
   },

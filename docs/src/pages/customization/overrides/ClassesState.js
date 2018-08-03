@@ -16,13 +16,12 @@ const styles = {
     // $disabled is a reference to the local disabled
     // rule within the same style sheet.
     // By using &, we increase the specificity.
-    '[disabled="true"]': {
-      background: 'rgba(0, 0, 0, 0.12)',
-      color: 'white',
-      boxShadow: 'none',
-    },
   },
-  disabled: {},
+  disabled: {
+    background: 'rgba(0, 0, 0, 0.12)',
+    color: 'white',
+    boxShadow: 'none',
+  },
 };
 
 function ClassesState(props) {

@@ -2,11 +2,11 @@
 
 <p class="description">As components can be used in different contexts, Material-UI supports different types of customization requirements going from the most specific to the most generic.</p>
 
-1. [Specific variation for a one-time situation](#1-specific-variation-for-a-one-time-situation)
-1. [Dynamic variation for a one-time situation](#2-dynamic-variation-for-a-one-time-situation)
-1. [Specific variation of a component](#3-specific-variation-of-a-component) re-used in different contexts
-1. [Material Design variations](#4-material-design-variations) such as with the button component
-1. [Global theme variation](#5-global-theme-variation)
+1.  [Specific variation for a one-time situation](#1-specific-variation-for-a-one-time-situation)
+1.  [Dynamic variation for a one-time situation](#2-dynamic-variation-for-a-one-time-situation)
+1.  [Specific variation of a component](#3-specific-variation-of-a-component) re-used in different contexts
+1.  [Material Design variations](#4-material-design-variations) such as with the button component
+1.  [Global theme variation](#5-global-theme-variation)
 
 ## 1. Specific variation for a one-time situation
 
@@ -29,7 +29,7 @@ of the `<head />` to ensure the components always render correctly.
 ### Overriding with classes
 
 When the `className` property isn't enough, and you need to access deeper elements, you can take advantage of the `classes` property to customize all the CSS injected by Material-UI for a given component.
-The list of  classes for each
+The list of classes for each
 component is documented in the **Component API** section.
 For instance, you can have a look at the [Button CSS API](/api/button#css-api).
 Alternatively, you can always look at the [implementation details](https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/Button/Button.js).
@@ -61,7 +61,6 @@ Here is an example with the `disable` state and the button component:
 ```
 
 ```jsx
-
 <Button
   disabled
   classes={{
@@ -69,7 +68,6 @@ Here is an example with the `disable` state and the button component:
     disabled: 'disabled', }
   }
 >
-
 ```
 
 #### Use `$ruleName` to reference a local rule within the same style sheet
@@ -78,12 +76,10 @@ The [jss-nested](https://github.com/cssinjs/jss-nested) plugin (available by def
 
 ```js
 const styles = {
-  root: {
-    '[disabled="true"]': {
-      color: 'white',
-    },
+  root: {},
+  disabled: {
+    color: 'white',
   },
-  disabled: {},
 };
 ```
 
@@ -146,7 +142,7 @@ It will come with: [#7633](https://github.com/mui-org/material-ui/issues/7633).
 
 ## 3. Specific variation of a component
 
-You might need to create a variation of a component and use it in different contexts, for instance a colorful button on your product page, however you probably want to keep your code [*DRY*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+You might need to create a variation of a component and use it in different contexts, for instance a colorful button on your product page, however you probably want to keep your code [_DRY_](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
 The best approach is to follow option 1 and then take advantage of the composition power of React by exporting your customized component to use wherever you need it.
 

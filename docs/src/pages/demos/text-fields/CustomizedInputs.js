@@ -17,12 +17,10 @@ const styles = theme => ({
   margin: {
     margin: theme.spacing.unit,
   },
-  cssLabel: {
-    '[cssFocused="true"]': {
-      color: purple[500],
-    },
+  cssLabel: {},
+  cssFocused: {
+    color: purple[500],
   },
-  cssFocused: {},
   cssUnderline: {
     '&:after': {
       borderBottomColor: purple[500],
@@ -93,11 +91,7 @@ function CustomizedInputs(props) {
         />
       </FormControl>
       <MuiThemeProvider theme={theme}>
-        <TextField
-          style={classes.margin}
-          label="MuiThemeProvider"
-          id="mui-theme-provider-input"
-        />
+        <TextField style={classes.margin} label="MuiThemeProvider" id="mui-theme-provider-input" />
       </MuiThemeProvider>
       <TextField
         defaultValue="react-bootstrap"

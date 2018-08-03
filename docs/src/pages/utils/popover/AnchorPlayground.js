@@ -30,11 +30,10 @@ const styles = theme => ({
   },
   radioAnchor: {
     color: green[600],
-    '[checked="true"]': {
-      color: green[500],
-    },
   },
-  checked: {},
+  checked: {
+    color: green[500],
+  },
   typography: {
     margin: theme.spacing.unit * 2,
   },

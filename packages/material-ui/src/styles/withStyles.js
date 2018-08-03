@@ -19,6 +19,10 @@ const validNumber = numberString => Number.isFinite(Number(numberString));
 const felaRenderer = createRenderer({
   plugins: [
     customProperty({
+      '&:hover': () => ({}),
+      '[disabled="true"]': () => ({}),
+      '[checked="true"]': () => ({}),
+      '[focused="true"]': () => ({}),
       pointerEvents() {
         return {};
       },

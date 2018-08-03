@@ -10,11 +10,10 @@ import pink from '@material-ui/core/colors/pink';
 const styles = theme => ({
   root: {
     color: theme.status.color,
-    '[checked="true"]': {
-      color: theme.status.color,
-    },
   },
-  checked: {},
+  checked: {
+    color: theme.status.color,
+  },
 });
 
 let NestedCheckbox = props => (

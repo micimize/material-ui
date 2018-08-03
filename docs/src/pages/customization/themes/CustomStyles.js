@@ -8,11 +8,10 @@ import orange from '@material-ui/core/colors/orange';
 const styles = theme => ({
   root: {
     color: theme.status.danger,
-    '[checked="true"]': {
-      color: theme.status.danger,
-    },
   },
-  checked: {},
+  checked: {
+    color: theme.status.danger,
+  },
 });
 
 let CustomCheckbox = props => (
