@@ -5,3 +5,8 @@
 * [react-native-animatable](https://github.com/oblador/react-native-animatable) has keyframe support, and could probably be used instead of transition-group as well, which [may or may not work with native](https://github.com/reactjs/react-transition-group/issues/6).
 * I agree with subverting the no-cascading view of react-native. It could be opt-in at provider and consumer with `cascade` and `inherit` props.
  Every react-native library I've tried working with has been painful or unusable because of overly-rigid apis and un-overridable styles, with the exception of ones that use [`@shoutem/theme`](https://shoutem.github.io/docs/ui-toolkit/theme/introduction) to allow overrides (like native-base).
+
+
+NOTES:
+Right now we are ignoring props, but material-ui uses the jss `&$prop` selector which is a function of boolean props. I don't know how they are resolving them, maybe jss does something under the hood. I don't expect ours to work right now though.
+

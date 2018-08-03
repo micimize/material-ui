@@ -118,7 +118,7 @@ function AppDrawer(props, context) {
   );
 
   return (
-    <View style={className}>
+    <View style={style}>
       <Hidden lgUp={!disablePermanent} implementation="js">
         <SwipeableDrawer
           classes={{

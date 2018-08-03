@@ -114,7 +114,7 @@ class AppFrame extends React.Component {
       this.context.activePage.title !== false ? pageToTitle(this.context.activePage) : null;
 
     let disablePermanent = false;
-    let navIconClassName = '';
+    let navIconStyle = [];
     let appBarClassName = classes.appBar;
 
     if (title === null) {
@@ -122,7 +122,7 @@ class AppFrame extends React.Component {
       disablePermanent = true;
       appBarClassName += ` ${classes.appBarHome}`;
     } else {
-      navIconClassName = classes.navIconHide;
+      navIconStyle = classes.navIconHide;
       appBarClassName += ` ${classes.appBarShift}`;
     }
 
@@ -135,7 +135,7 @@ class AppFrame extends React.Component {
               color="inherit"
               aria-label="Open drawer"
               onClick={this.handleDrawerOpen}
-              style={navIconClassName}
+              style={navIconStyle}
             >
               <MenuIcon />
             </IconButton>
