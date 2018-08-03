@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 
 /**
  * @ignore - internal component.
@@ -23,7 +23,7 @@ function NativeSelectInput(props) {
   return (
     <View style={classes.root}>
       <select
-        style={classNames(
+        style={styleNames(
           classes.select,
           {
             [classes.disabled]: disabled,

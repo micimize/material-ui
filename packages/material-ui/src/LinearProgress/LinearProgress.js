@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import warning from 'warning';
 import withStyles from '../styles/withStyles';
 import { lighten } from '../styles/colorManipulator';
@@ -166,7 +166,7 @@ export const styles = theme => ({
 function LinearProgress(props) {
   const { classes, style: styleProp, color, value, valueBuffer, variant, ...other } = props;
 
-  const className = classNames(
+  const className = styleNames(
     classes.root,
     {
       [classes.colorPrimary]: color === 'primary',
@@ -176,18 +176,18 @@ function LinearProgress(props) {
     },
     styleProp,
   );
-  const dashedClass = classNames(classes.dashed, {
+  const dashedClass = styleNames(classes.dashed, {
     [classes.dashedColorPrimary]: color === 'primary',
     [classes.dashedColorSecondary]: color === 'secondary',
   });
-  const bar1ClassName = classNames(classes.bar, {
+  const bar1ClassName = styleNames(classes.bar, {
     [classes.barColorPrimary]: color === 'primary',
     [classes.barColorSecondary]: color === 'secondary',
     [classes.bar1Indeterminate]: variant === 'indeterminate' || variant === 'query',
     [classes.bar1Determinate]: variant === 'determinate',
     [classes.bar1Buffer]: variant === 'buffer',
   });
-  const bar2ClassName = classNames(classes.bar, {
+  const bar2ClassName = styleNames(classes.bar, {
     [classes.barColorPrimary]: color === 'primary' && variant !== 'buffer',
     [classes.colorPrimary]: color === 'primary' && variant === 'buffer',
     [classes.barColorSecondary]: color === 'secondary' && variant !== 'buffer',

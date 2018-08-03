@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import Typography from '../Typography';
 import withStyles from '../styles/withStyles';
 
@@ -35,7 +35,7 @@ function InputAdornment(props) {
 
   return (
     <Component
-      style={classNames(
+      style={styleNames(
         classes.root,
         {
           [classes.positionStart]: position === 'start',

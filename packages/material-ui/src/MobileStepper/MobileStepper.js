@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Paper from '../Paper';
 import { capitalize } from '../utils/helpers';
@@ -73,7 +73,7 @@ function MobileStepper(props) {
     ...other
   } = props;
 
-  const className = classNames(
+  const className = styleNames(
     classes.root,
     classes[`position${capitalize(position)}`],
     styleProp,
@@ -85,7 +85,7 @@ function MobileStepper(props) {
       {variant === 'dots' && (
         <View style={classes.dots}>
           {[...new Array(steps)].map((_, step) => {
-            const dotClassName = classNames(classes.dot, {
+            const dotClassName = styleNames(classes.dot, {
               [classes.dotActive]: step === activeStep,
             });
             // eslint-disable-next-line react/no-array-index-key

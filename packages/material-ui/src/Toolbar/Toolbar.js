@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -24,7 +24,7 @@ export const styles = theme => ({
 function Toolbar(props) {
   const { children, classes, style: styleProp, disableGutters, variant, ...other } = props;
 
-  const className = classNames(
+  const style = styleNames(
     classes.root,
     classes[variant],
     {
@@ -34,7 +34,7 @@ function Toolbar(props) {
   );
 
   return (
-    <View style={className} {...other}>
+    <View style={style} {...other}>
       {children}
     </View>
   );

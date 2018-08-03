@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -18,7 +18,7 @@ export const styles = theme => ({
 function CardContent(props) {
   const { classes, style, component: Component, ...other } = props;
 
-  return <Component style={classNames(classes.root, className)} {...other} />;
+  return <Component style={styleNames(classes.root, style)} {...other} />;
 }
 
 CardContent.propTypes = {

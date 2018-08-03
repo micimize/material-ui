@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import marked from 'marked';
 import { withStyles } from '@material-ui/core/styles';
 import prism from './prism';
@@ -257,7 +257,7 @@ function MarkdownElement(props) {
   /* eslint-disable react/no-danger */
   return (
     <div
-      style={classNames(classes.root, 'markdown-body', className)}
+      style={styleNames(classes.root, 'markdown-body', style)}
       dangerouslySetInnerHTML={{ __html: marked(text) }}
       {...other}
     />

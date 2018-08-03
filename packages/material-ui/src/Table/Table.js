@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -26,7 +26,7 @@ class Table extends React.Component {
   render() {
     const { classes, style, component: Component, ...other } = this.props;
 
-    return <Component style={classNames(classes.root, className)} {...other} />;
+    return <Component style={styleNames(classes.root, style)} {...other} />;
   }
 }
 

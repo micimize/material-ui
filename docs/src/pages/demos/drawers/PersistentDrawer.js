@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -167,7 +167,7 @@ class PersistentDrawer extends React.Component {
         </TextField>
         <View style={classes.appFrame}>
           <AppBar
-            style={classNames(classes.appBar, {
+            style={styleNames(classes.appBar, {
               [classes.appBarShift]: open,
               [classes[`appBarShift-${anchor}`]]: open,
             })}
@@ -177,7 +177,7 @@ class PersistentDrawer extends React.Component {
                 color="inherit"
                 aria-label="Open drawer"
                 onClick={this.handleDrawerOpen}
-                style={classNames(classes.menuButton, open && classes.hide)}
+                style={styleNames(classes.menuButton, open && classes.hide)}
               >
                 <MenuIcon />
               </IconButton>
@@ -188,7 +188,7 @@ class PersistentDrawer extends React.Component {
           </AppBar>
           {before}
           <View
-            style={classNames(classes.content, classes[`content-${anchor}`], {
+            style={styleNames(classes.content, classes[`content-${anchor}`], {
               [classes.contentShift]: open,
               [classes[`contentShift-${anchor}`]]: open,
             })}

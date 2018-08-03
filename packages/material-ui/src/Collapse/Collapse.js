@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { View, Text } from 'react-native';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import PropTypes from 'prop-types';
 import Transition from 'react-transition-group/Transition';
 import withStyles from '../styles/withStyles';
@@ -157,7 +157,7 @@ class Collapse extends React.Component {
         {(state, childProps) => {
           return (
             <Component
-              style={classNames(
+              style={styleNames(
                 classes.container,
                 {
                   [classes.entered]: state === 'entered',

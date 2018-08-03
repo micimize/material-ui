@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import compose from 'recompose/compose';
 import { withRouter } from 'next/router';
 import NextLink from 'next/link';
@@ -34,7 +34,7 @@ const styles = theme => ({
 
 function Link(props) {
   const {
-    activeClassName,
+    activeStyle,
     children: childrenProp,
     classes,
     style: styleProp,
@@ -48,7 +48,7 @@ function Link(props) {
   } = props;
 
   let ComponentRoot;
-  const className = classNames(classes.root, classes[variant], styleProp);
+  const style = styleNames(classes.root, classes[variant], styleProp);
   let RootProps;
   let children = childrenProp;
 
@@ -56,7 +56,7 @@ function Link(props) {
     ComponentRoot = ComponentProp;
     RootProps = {
       ...other,
-      style,
+      style: styleProp,
     };
   } else if (href) {
     ComponentRoot = NextLink;
@@ -67,9 +67,7 @@ function Link(props) {
     };
     children = (
       <Text
-        style={classNames(className, {
-          [activeClassName]: router.pathname === href && activeClassName,
-        })}
+        style={styleNames(style, router.pathname === href && activeStyle)}
         onClick={onClick}
         {...other}
       >
@@ -80,7 +78,7 @@ function Link(props) {
     ComponentRoot = Text;
     RootProps = {
       ...other,
-      style,
+      style: styleProp,
     };
   }
 
@@ -89,11 +87,10 @@ function Link(props) {
 
 Link.defaultProps = {
   variant: 'default',
-  activeClassName: 'active',
 };
 
 Link.propTypes = {
-  activeClassName: PropTypes.string,
+  // activeStyle: PropTypes.object,
   children: PropTypes.node.isRequired,
   classes: PropTypes.object.isRequired,
   className: PropTypes.string,

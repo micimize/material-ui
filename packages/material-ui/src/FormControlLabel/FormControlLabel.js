@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Typography from '../Typography';
 
@@ -77,7 +77,7 @@ function FormControlLabel(props, context) {
 
   return (
     <label
-      style={classNames(
+      style={styleNames(
         classes.root,
         {
           [classes.labelPlacementStart]: labelPlacement === 'start',
@@ -90,7 +90,7 @@ function FormControlLabel(props, context) {
       {React.cloneElement(control, controlProps)}
       <Typography
         component="span"
-        style={classNames(classes.label, { [classes.disabled]: disabled })}
+        style={styleNames(classes.label, { [classes.disabled]: disabled })}
       >
         {label}
       </Typography>

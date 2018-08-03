@@ -188,7 +188,7 @@ class Textarea extends React.Component {
         />
         <textarea
           rows={rows}
-          style={classnames(classes.textarea, className)}
+          style={classnames(classes.textarea, style)}
           defaultValue={defaultValue}
           value={value}
           onChange={this.handleChange}

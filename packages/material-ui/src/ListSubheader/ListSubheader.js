@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 
@@ -42,7 +42,7 @@ function ListSubheader(props) {
 
   return (
     <Component
-      style={classNames(
+      style={styleNames(
         classes.root,
         {
           [classes[`color${capitalize(color)}`]]: color !== 'default',

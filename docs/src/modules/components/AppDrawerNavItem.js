@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import Button from '@material-ui/core/Button';
@@ -29,9 +29,9 @@ const styles = theme => ({
     textTransform: 'none',
     width: '100%',
     fontWeight: theme.typography.fontWeightRegular,
-    '&.depth-0': {
-      fontWeight: theme.typography.fontWeightMedium,
-    },
+  },
+  depth0: {
+    fontWeight: theme.typography.fontWeightMedium,
   },
   active: {
     color: theme.palette.primary.main,
@@ -43,19 +43,6 @@ class AppDrawerNavItem extends React.Component {
   state = {
     open: this.props.openImmediately,
   };
-
-  componentDidMount() {
-    // So we only run this logic once.
-    if (!this.props.openImmediately) {
-      return;
-    }
-
-    // Center the selected item in the list container.
-    // const activeElement = document.querySelector(`.${this.props.classes.active}`);
-    // if (activeElement && activeElement.scrollIntoView) {
-    //   activeElement.scrollIntoView({});
-    // }
-  }
 
   handleClick = () => {
     this.setState(state => ({ open: !state.open }));
@@ -73,21 +60,24 @@ class AppDrawerNavItem extends React.Component {
       ...other
     } = this.props;
 
-    const style = {
-      paddingLeft: 8 * (3 + 2 * depth),
-    };
+    const style = styleNames(
+      classes.buttonLeaf,
+      { [classes.depth0]: depth === 0 },
+      {
+        paddingLeft: 8 * (3 + 2 * depth),
+      },
+    );
 
     if (href) {
       return (
         <ListItem style={classes.itemLeaf} disableGutters {...other}>
           <Button
             component={props => (
-              <Link variant="button" activeClassName={classes.active} href={href} {...props} />
+              <Link variant="button" activeStyle={classes.active} href={href} {...props} />
             )}
-            style={classNames(classes.buttonLeaf, `depth-${depth}`)}
+            style={style}
             disableRipple
             onClick={onClick}
-            style={style}
           >
             {title}
           </Button>

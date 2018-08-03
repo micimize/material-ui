@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 
@@ -104,7 +104,7 @@ function Typography(props) {
     ...other
   } = props;
 
-  const className = classNames(
+  const className = styleNames(
     classes.root,
     classes[variant],
     {

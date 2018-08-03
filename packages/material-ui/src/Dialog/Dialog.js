@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import Modal from '../Modal';
@@ -120,7 +120,7 @@ function Dialog(props) {
 
   return (
     <Modal
-      style={classNames(classes.root, classes[`scroll${capitalize(scroll)}`], className)}
+      style={styleNames(classes.root, classes[`scroll${capitalize(scroll)}`], style)}
       BackdropProps={{
         transitionDuration,
         ...BackdropProps,
@@ -148,7 +148,7 @@ function Dialog(props) {
       >
         <Paper
           elevation={24}
-          style={classNames(classes.paper, classes[`paperScroll${capitalize(scroll)}`], {
+          style={styleNames(classes.paper, classes[`paperScroll${capitalize(scroll)}`], {
             [classes[`paperWidth${maxWidth ? capitalize(maxWidth) : ''}`]]: maxWidth,
             [classes.paperFullScreen]: fullScreen,
             [classes.paperFullWidth]: fullWidth,

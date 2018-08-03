@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import RootRef from '../RootRef';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
@@ -342,7 +342,7 @@ class Tooltip extends React.Component {
               {...TransitionProps}
             >
               <View
-                style={classNames(
+                style={styleNames(
                   classes.tooltip,
                   {
                     [classes.touch]: this.ignoreNonTouchEvents,

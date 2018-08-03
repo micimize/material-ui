@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { isFilled, isAdornedStart } from '../Input/Input';
 import { capitalize } from '../utils/helpers';
@@ -133,7 +133,7 @@ class FormControl extends React.Component {
 
     return (
       <Component
-        style={classNames(
+        style={styleNames(
           classes.root,
           {
             [classes[`margin${capitalize(margin)}`]]: margin !== 'none',

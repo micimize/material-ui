@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import EventListener from 'react-event-listener';
 import debounce from 'debounce'; // < 1kb payload overhead when lodash/debounce is > 3kb.
 import withStyles from '../styles/withStyles';
@@ -91,7 +91,7 @@ class GridListTile extends React.Component {
     const { children, classes, style, cols, component: Component, rows, ...other } = this.props;
 
     return (
-      <Component style={classNames(classes.root, className)} {...other}>
+      <Component style={styleNames(classes.root, style)} {...other}>
         <EventListener target="window" onResize={this.handleResize} />
         <View style={classes.tile}>
           {React.Children.map(children, child => {

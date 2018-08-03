@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 
@@ -44,7 +44,7 @@ class Inputs extends React.Component {
             style={classes.input}
           />
         </View>
-        <Input value="Large input" style={classNames(classes.input, classes.large)} />
+        <Input value="Large input" style={styleNames(classes.input, classes.large)} />
       </View>
     );
   }

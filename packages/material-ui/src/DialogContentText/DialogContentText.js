@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Typography from '../Typography';
 
@@ -21,7 +21,7 @@ function DialogContentText(props) {
     <Typography
       component="p"
       variant="subheading"
-      style={classNames(classes.root, className)}
+      style={styleNames(classes.root, style)}
       {...other}
     >
       {children}

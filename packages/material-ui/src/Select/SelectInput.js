@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import keycode from 'keycode';
 import warning from 'warning';
 import Menu from '../Menu/Menu';
@@ -263,7 +263,7 @@ class SelectInput extends React.Component {
     return (
       <View style={classes.root}>
         <View
-          style={classNames(
+          style={styleNames(
             classes.select,
             classes.selectMenu,
             {

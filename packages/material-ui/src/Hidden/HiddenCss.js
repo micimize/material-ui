@@ -58,8 +58,8 @@ function HiddenCss(props) {
 
   const classNames = [];
 
-  if (className) {
-    classNames.push(className);
+  if (style) {
+    classNames.push(style);
   }
 
   for (let i = 0; i < breakpointKeys.length; i += 1) {

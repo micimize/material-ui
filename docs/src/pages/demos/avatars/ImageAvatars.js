@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 
@@ -27,7 +27,7 @@ function ImageAvatars(props) {
       <Avatar
         alt="Adelle Charles"
         src="/static/images/uxceo-128.jpg"
-        style={classNames(classes.avatar, classes.bigAvatar)}
+        style={styleNames(classes.avatar, classes.bigAvatar)}
       />
     </View>
   );

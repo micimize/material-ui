@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import purple from '@material-ui/core/colors/purple';
@@ -71,7 +71,7 @@ function CustomizedInputs(props) {
       <Button
         variant="contained"
         color="primary"
-        style={classNames(classes.margin, classes.cssRoot)}
+        style={styleNames(classes.margin, classes.cssRoot)}
       >
         Custom CSS
       </Button>
@@ -84,7 +84,7 @@ function CustomizedInputs(props) {
         variant="contained"
         color="primary"
         disableRipple
-        style={classNames(classes.margin, classes.bootstrapRoot)}
+        style={styleNames(classes.margin, classes.bootstrapRoot)}
       >
         Bootstrap
       </Button>

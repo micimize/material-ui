@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -48,7 +48,7 @@ class DynamicClassName extends React.Component {
           label="Blue"
         />
         <Button
-          style={classNames(classes.button, {
+          style={styleNames(classes.button, {
             [classes.buttonBlue]: this.state.color === 'blue',
           })}
         >

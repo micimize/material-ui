@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import CheckCircle from '../internal/svg-icons/CheckCircle';
 import Warning from '../internal/svg-icons/Warning';
 import withStyles from '../styles/withStyles';
@@ -41,14 +41,14 @@ function StepIcon(props) {
 
   if (typeof icon === 'number' || typeof icon === 'string') {
     if (error) {
-      return <Warning style={classNames(classes.root, classes.error)} />;
+      return <Warning style={styleNames(classes.root, classes.error)} />;
     }
     if (completed) {
-      return <CheckCircle style={classNames(classes.root, classes.completed)} />;
+      return <CheckCircle style={styleNames(classes.root, classes.completed)} />;
     }
     return (
       <SvgIcon
-        style={classNames(classes.root, {
+        style={styleNames(classes.root, {
           [classes.active]: active,
         })}
       >

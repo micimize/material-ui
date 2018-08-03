@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import Transition from 'react-transition-group/Transition';
 
 /**
@@ -37,15 +37,6 @@ class Ripple extends React.Component {
     } = this.props;
     const { visible, leaving } = this.state;
 
-    const rippleClassName = classNames(
-      classes.ripple,
-      {
-        [classes.rippleVisible]: visible,
-        [classes.ripplePulsate]: pulsate,
-      },
-      styleProp,
-    );
-
     const rippleStyles = {
       width: rippleSize,
       height: rippleSize,
@@ -53,16 +44,26 @@ class Ripple extends React.Component {
       left: -(rippleSize / 2) + rippleX,
     };
 
-    const childClassName = classNames(classes.child, {
+    const style = styleNames(
+      classes.ripple,
+      {
+        [classes.rippleVisible]: visible,
+        [classes.ripplePulsate]: pulsate,
+      },
+      styleProp,
+      rippleStyles,
+    );
+
+    const childStyle = styleNames(classes.child, {
       [classes.childLeaving]: leaving,
       [classes.childPulsate]: pulsate,
     });
 
     return (
       <Transition onEnter={this.handleEnter} onExit={this.handleExit} {...other}>
-        <span style={rippleClassName} style={rippleStyles}>
-          <span style={childClassName} />
-        </span>
+        <View style={style}>
+          <View style={childStyle} />
+        </View>
       </Transition>
     );
   }

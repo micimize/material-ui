@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -81,7 +81,7 @@ function GridListTileBar(props) {
   } = props;
 
   const actionPos = actionIcon && actionPosition;
-  const className = classNames(
+  const className = styleNames(
     classes.root,
     {
       [classes.titlePositionBottom]: titlePosition === 'bottom',
@@ -92,7 +92,7 @@ function GridListTileBar(props) {
   );
 
   // Remove the margin between the title / subtitle wrapper, and the Action Icon
-  const titleWrapClassName = classNames(classes.titleWrap, {
+  const titleWrapClassName = styleNames(classes.titleWrap, {
     [classes.titleWrapActionPosLeft]: actionPos === 'left',
     [classes.titleWrapActionPosRight]: actionPos === 'right',
   });
@@ -105,7 +105,7 @@ function GridListTileBar(props) {
       </View>
       {actionIcon ? (
         <View
-          style={classNames(classes.actionIcon, {
+          style={styleNames(classes.actionIcon, {
             [classes.actionIconActionPosLeft]: actionPos === 'left',
           })}
         >

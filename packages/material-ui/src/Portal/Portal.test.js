@@ -59,7 +59,7 @@ describe('<Portal />', () => {
         const element = document.createElement(children.type);
         element.textContent = children.props.children;
         element.setAttribute('id', children.props.id);
-        element.setAttribute('class', children.props.className);
+        element.setAttribute('class', children.props.style);
         mountNode.appendChild(element);
         if (cleanUp) {
           cleanUp.mountNode.removeChild(cleanUp.element);

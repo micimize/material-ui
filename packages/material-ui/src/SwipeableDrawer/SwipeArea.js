@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import { isHorizontal } from '../Drawer/Drawer';
@@ -41,7 +41,7 @@ function SwipeArea(props) {
 
   return (
     <View
-      style={classNames(classes.root, classes[`anchor${capitalize(anchor)}`])}
+      style={styleNames(classes.root, classes[`anchor${capitalize(anchor)}`])}
       style={{
         [isHorizontal(props) ? 'width' : 'height']: width,
       }}

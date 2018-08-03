@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Typography from '../Typography';
 
@@ -18,7 +18,7 @@ function DialogTitle(props) {
   const { children, classes, style, disableTypography, ...other } = props;
 
   return (
-    <View style={classNames(classes.root, className)} {...other}>
+    <View style={styleNames(classes.root, style)} {...other}>
       {disableTypography ? children : <Typography variant="title">{children}</Typography>}
     </View>
   );

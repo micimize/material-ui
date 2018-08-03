@@ -4,7 +4,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import EventListener from 'react-event-listener';
 import debounce from 'debounce'; // < 1kb payload overhead when lodash/debounce is > 3kb.
 import { getNormalizedScrollLeft, detectScrollType } from 'normalize-scroll-left';
@@ -127,7 +127,7 @@ class Tabs extends React.Component {
         direction={theme && theme.direction === 'rtl' ? 'right' : 'left'}
         onClick={this.handleLeftScrollClick}
         visible={this.state.showLeftScroll}
-        style={classNames(classes.scrollButtons, {
+        style={styleNames(classes.scrollButtons, {
           [classes.scrollButtonsAuto]: scrollButtons === 'auto',
         })}
       />
@@ -138,7 +138,7 @@ class Tabs extends React.Component {
         direction={theme && theme.direction === 'rtl' ? 'left' : 'right'}
         onClick={this.handleRightScrollClick}
         visible={this.state.showRightScroll}
-        style={classNames(classes.scrollButtons, {
+        style={styleNames(classes.scrollButtons, {
           [classes.scrollButtonsAuto]: scrollButtons === 'auto',
         })}
       />
@@ -303,11 +303,11 @@ class Tabs extends React.Component {
         'at the same time on a `Tabs` component.',
     );
 
-    const className = classNames(classes.root, styleProp);
-    const flexContainerClassName = classNames(classes.flexContainer, {
+    const className = styleNames(classes.root, styleProp);
+    const flexContainerClassName = styleNames(classes.flexContainer, {
       [classes.centered]: centered && !scrollable,
     });
-    const scrollerClassName = classNames(classes.scroller, {
+    const scrollerClassName = styleNames(classes.scroller, {
       [classes.fixed]: !scrollable,
       [classes.scrollable]: scrollable,
     });

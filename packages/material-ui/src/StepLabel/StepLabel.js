@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Typography from '../Typography';
 import StepIcon from '../StepIcon';
@@ -84,7 +84,7 @@ function StepLabel(props) {
 
   return (
     <span
-      style={classNames(
+      style={styleNames(
         classes.root,
         classes[orientation],
         {
@@ -98,7 +98,7 @@ function StepLabel(props) {
     >
       {icon && (
         <span
-          style={classNames(classes.iconContainer, {
+          style={styleNames(classes.iconContainer, {
             [classes.alternativeLabel]: alternativeLabel,
           })}
         >
@@ -115,7 +115,7 @@ function StepLabel(props) {
         <Typography
           variant="body1"
           component="span"
-          style={classNames(classes.label, {
+          style={styleNames(classes.label, {
             [classes.alternativeLabel]: alternativeLabel,
             [classes.completed]: completed,
             [classes.active]: active,

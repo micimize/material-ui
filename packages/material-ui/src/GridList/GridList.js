@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import warning from 'warning';
 import withStyles from '../styles/withStyles';
 
@@ -32,7 +32,7 @@ function GridList(props) {
 
   return (
     <Component
-      style={classNames(classes.root, styleProp)}
+      style={styleNames(classes.root, styleProp)}
       style={{ margin: -spacing / 2, ...style }}
       {...other}
     >

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import green from '@material-ui/core/colors/green';
@@ -75,7 +75,7 @@ class CircularIntegration extends React.Component {
   render() {
     const { loading, success } = this.state;
     const { classes } = this.props;
-    const buttonClassname = classNames({
+    const buttonClassname = styleNames({
       [classes.buttonSuccess]: success,
     });
 

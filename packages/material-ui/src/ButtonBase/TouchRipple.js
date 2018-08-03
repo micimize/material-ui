@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Ripple from './Ripple';
 
@@ -259,7 +259,7 @@ class TouchRipple extends React.PureComponent {
         component="span"
         enter
         exit
-        style={classNames(classes.root, className)}
+        style={styleNames(classes.root, style)}
         {...other}
       >
         {this.state.ripples}

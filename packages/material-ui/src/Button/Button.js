@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { fade } from '../styles/colorManipulator';
 import ButtonBase from '../ButtonBase';
@@ -200,7 +200,7 @@ function Button(props) {
     disabled,
     disableFocusRipple,
     fullWidth,
-    focusVisibleClassName,
+    focusVisibleStyle,
     mini,
     size,
     variant,
@@ -210,7 +210,7 @@ function Button(props) {
   const fab = variant === 'fab' || variant === 'extendedFab';
   const contained = variant === 'contained' || variant === 'raised';
   const text = variant === 'text' || variant === 'flat' || variant === 'outlined';
-  const className = classNames(
+  const style = styleNames(
     classes.root,
     {
       [classes.fab]: fab,
@@ -239,13 +239,15 @@ function Button(props) {
 
   return (
     <ButtonBase
-      style={className}
+      style={style}
       disabled={disabled}
       focusRipple={!disableFocusRipple}
-      focusVisibleClassName={classNames(classes.focusVisible, focusVisibleClassName)}
+      focusVisibleStyle={styleNames(classes.focusVisible, focusVisibleStyle)}
       {...other}
     >
-      <span style={classes.label}>{children}</span>
+      <View style={classes.label}>
+        {typeof children === 'string' ? <Text>{children}</Text> : children}
+      </View>
     </ButtonBase>
   );
 }

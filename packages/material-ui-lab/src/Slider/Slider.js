@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
@@ -405,7 +405,7 @@ class Slider extends React.Component {
       [classes.activated]: !disabled && currentState === 'activated',
     };
 
-    const className = classNames(
+    const className = styleNames(
       classes.root,
       {
         [classes.vertical]: vertical,
@@ -415,19 +415,19 @@ class Slider extends React.Component {
       styleProp,
     );
 
-    const containerClasses = classNames(classes.container, {
+    const containerClasses = styleNames(classes.container, {
       [classes.vertical]: vertical,
     });
 
-    const trackBeforeClasses = classNames(classes.track, classes.trackBefore, commonClasses, {
+    const trackBeforeClasses = styleNames(classes.track, classes.trackBefore, commonClasses, {
       [classes.vertical]: vertical,
     });
 
-    const trackAfterClasses = classNames(classes.track, classes.trackAfter, commonClasses, {
+    const trackAfterClasses = styleNames(classes.track, classes.trackAfter, commonClasses, {
       [classes.vertical]: vertical,
     });
 
-    const thumbClasses = classNames(classes.thumb, commonClasses);
+    const thumbClasses = styleNames(classes.thumb, commonClasses);
 
     const trackProperty = vertical ? 'height' : 'width';
     const thumbProperty = vertical ? 'top' : 'left';

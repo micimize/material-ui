@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import Collapse from '../Collapse';
 import withStyles from '../styles/withStyles';
 
@@ -54,7 +54,7 @@ function StepContent(props) {
   }
 
   return (
-    <View style={classNames(classes.root, { [classes.last]: last }, className)} {...other}>
+    <View style={styleNames(classes.root, { [classes.last]: last }, style)} {...other}>
       <TransitionComponent
         in={active}
         style={classes.transition}

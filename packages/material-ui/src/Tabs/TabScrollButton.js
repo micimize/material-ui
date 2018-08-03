@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import KeyboardArrowLeft from '../internal/svg-icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '../internal/svg-icons/KeyboardArrowRight';
 import withStyles from '../styles/withStyles';
@@ -21,7 +21,7 @@ export const styles = {
 function TabScrollButton(props) {
   const { classes, style: styleProp, direction, onClick, visible, ...other } = props;
 
-  const className = classNames(classes.root, styleProp);
+  const className = styleNames(classes.root, styleProp);
 
   if (!visible) {
     return <View style={className} />;

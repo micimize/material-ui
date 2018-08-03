@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -85,7 +85,7 @@ function HomeSteps(props) {
 
   return (
     <Grid container>
-      <Grid item xs={12} md={4} style={classNames(classes.step, classes.leftStep)}>
+      <Grid item xs={12} md={4} style={styleNames(classes.step, classes.leftStep)}>
         <View style={classes.stepTitle}>
           <FileDownloadIcon style={classes.stepIcon} />
           <Typography variant="title">Installation</Typography>
@@ -171,7 +171,7 @@ function HomeSteps(props) {
           Explore the docs
         </Button>
       </Grid>
-      <Grid item xs={12} md={4} style={classNames(classes.step, classes.rightStep)}>
+      <Grid item xs={12} md={4} style={styleNames(classes.step, classes.rightStep)}>
         <View style={classes.stepTitle}>
           <WhatshotIcon style={classes.stepIcon} />
           <Typography variant="title">Premium Themes</Typography>

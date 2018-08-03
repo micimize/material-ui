@@ -2,17 +2,17 @@
 
 import React from 'react';
 import { View, Text } from 'react-native';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 
-export function cloneElementWithClassName(child, className) {
+export function cloneElementWithClassName(child, style) {
   return React.cloneElement(child, {
-    style: classNames(child.props.className, className),
+    style: styleNames(child.props.className, style),
   });
 }
 
-export function cloneChildrenWithClassName(children, className) {
+export function cloneChildrenWithClassName(children, style) {
   return React.Children.map(children, child => {
-    return React.isValidElement(child) && cloneElementWithClassName(child, className);
+    return React.isValidElement(child) && cloneElementWithClassName(child, style);
   });
 }
 

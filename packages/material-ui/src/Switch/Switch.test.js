@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { assert } from 'chai';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { createShallow, getClasses } from '../test-utils';
 import SwitchBase from '../internal/SwitchBase';
 import Switch from './Switch';
@@ -46,7 +46,7 @@ describe('<Switch />', () => {
       assert.strictEqual(switchBase.props().checkedIcon.type, 'span');
       assert.strictEqual(
         switchBase.props().checkedIcon.props.className,
-        classNames(classes.icon, classes.iconChecked),
+        styleNames(classes.icon, classes.iconChecked),
       );
     });
 

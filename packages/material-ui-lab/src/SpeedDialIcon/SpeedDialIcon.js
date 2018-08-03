@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import AddIcon from '../internal/svg-icons/Add';
 
@@ -43,13 +43,13 @@ export const styles = theme => ({
 function SpeedDialIcon(props) {
   const { classes, icon: iconProp, open, openIcon: openIconProp, ...other } = props;
 
-  const iconClassName = classNames(classes.icon, {
+  const iconClassName = styleNames(classes.icon, {
     [classes.iconOpen]: open,
     [classes.iconWithOpenIconOpen]: openIconProp && open,
   });
-  const openIconClassName = classNames(classes.openIcon, { [classes.openIconOpen]: open });
+  const openIconClassName = styleNames(classes.openIcon, { [classes.openIconOpen]: open });
 
-  function formatIcon(icon, className) {
+  function formatIcon(icon, style) {
     if (React.isValidElement(icon)) {
       return React.cloneElement(icon, { className });
     }

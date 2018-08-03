@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Typography from '../Typography';
 
@@ -83,7 +83,7 @@ function CardHeader(props) {
   }
 
   return (
-    <Component style={classNames(classes.root, styleProp)} {...other}>
+    <Component style={styleNames(classes.root, styleProp)} {...other}>
       {avatar && <View style={classes.avatar}>{avatar}</View>}
       <View style={classes.content}>
         {title}

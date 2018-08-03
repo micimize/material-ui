@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import warning from 'warning';
 import withStyles from '../styles/withStyles';
 
@@ -41,7 +41,7 @@ function Paper(props) {
     `Material-UI: this elevation \`${elevation}\` is not implemented.`,
   );
 
-  const className = classNames(
+  const className = styleNames(
     classes.root,
     classes[`elevation${elevation}`],
     {

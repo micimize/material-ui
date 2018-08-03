@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import ButtonBase from '../ButtonBase';
 import IconButton from '../IconButton';
 import withStyles from '../styles/withStyles';
@@ -119,7 +119,7 @@ class ExpansionPanelSummary extends React.Component {
         disabled={disabled}
         component="div"
         aria-expanded={expanded}
-        style={classNames(
+        style={styleNames(
           classes.root,
           {
             [classes.disabled]: disabled,
@@ -133,13 +133,13 @@ class ExpansionPanelSummary extends React.Component {
         onBlur={this.handleBlur}
         onClick={this.handleChange}
       >
-        <View style={classNames(classes.content, { [classes.expanded]: expanded })}>
+        <View style={styleNames(classes.content, { [classes.expanded]: expanded })}>
           {children}
         </View>
         {expandIcon && (
           <IconButton
             disabled={disabled}
-            style={classNames(classes.expandIcon, {
+            style={styleNames(classes.expandIcon, {
               [classes.expanded]: expanded,
             })}
             component="div"

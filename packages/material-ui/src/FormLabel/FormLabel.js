@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -70,7 +70,7 @@ function FormLabel(props, context) {
     }
   }
 
-  const className = classNames(
+  const className = styleNames(
     classes.root,
     {
       [classes.focused]: focused,
@@ -85,7 +85,7 @@ function FormLabel(props, context) {
       {children}
       {required && (
         <span
-          style={classNames(classes.asterisk, {
+          style={styleNames(classes.asterisk, {
             [classes.error]: error,
           })}
           data-mui-test="FormLabelAsterisk"

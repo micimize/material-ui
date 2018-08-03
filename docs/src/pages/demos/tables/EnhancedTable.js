@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -127,7 +127,7 @@ let EnhancedTableToolbar = props => {
 
   return (
     <Toolbar
-      style={classNames(classes.root, {
+      style={styleNames(classes.root, {
         [classes.highlight]: numSelected > 0,
       })}
     >

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import ButtonBase from '../ButtonBase';
 import { isMuiElement } from '../utils/reactHelpers';
@@ -99,7 +99,7 @@ class ListItem extends React.Component {
     const hasSecondaryAction =
       children.length && isMuiElement(children[children.length - 1], ['ListItemSecondaryAction']);
 
-    const className = classNames(
+    const style = styleNames(
       classes.root,
       classes.default,
       {
@@ -118,7 +118,7 @@ class ListItem extends React.Component {
 
     if (button) {
       componentProps.component = componentProp || View;
-      componentProps.focusVisibleClassName = classNames(
+      componentProps.focusVisibleClassName = styleNames(
         classes.focusVisible,
         focusVisibleClassName,
       );
@@ -140,7 +140,7 @@ class ListItem extends React.Component {
 
       return (
         <ContainerComponent
-          style={classNames(classes.container, ContainerClassName)}
+          style={styleNames(classes.container, ContainerClassName)}
           {...ContainerProps}
         >
           <Component {...componentProps}>{children}</Component>

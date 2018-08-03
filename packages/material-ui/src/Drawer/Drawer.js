@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import Modal from '../Modal';
 import withStyles from '../styles/withStyles';
 import Slide from '../Slide';
@@ -133,7 +133,7 @@ class Drawer extends React.Component {
       <Paper
         elevation={variant === 'temporary' ? elevation : 0}
         square
-        style={classNames(classes.paper, classes[`paperAnchor${capitalize(anchor)}`], {
+        style={styleNames(classes.paper, classes[`paperAnchor${capitalize(anchor)}`], {
           [classes[`paperAnchorDocked${capitalize(anchor)}`]]: variant !== 'temporary',
         })}
         {...PaperProps}
@@ -144,7 +144,7 @@ class Drawer extends React.Component {
 
     if (variant === 'permanent') {
       return (
-        <View style={classNames(classes.docked, className)} {...other}>
+        <View style={styleNames(classes.docked, style)} {...other}>
           {drawer}
         </View>
       );
@@ -164,7 +164,7 @@ class Drawer extends React.Component {
 
     if (variant === 'persistent') {
       return (
-        <View style={classNames(classes.docked, className)} {...other}>
+        <View style={styleNames(classes.docked, style)} {...other}>
           {slidingDrawer}
         </View>
       );
@@ -177,7 +177,7 @@ class Drawer extends React.Component {
           ...BackdropPropsProp,
           transitionDuration,
         }}
-        style={classNames(classes.modal, className)}
+        style={styleNames(classes.modal, style)}
         open={open}
         onClose={onClose}
         {...other}

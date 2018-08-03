@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -66,7 +66,7 @@ function DetailedExpansionPanel(props) {
           <View style={classes.column}>
             <Chip label="Barbados" style={classes.chip} onDelete={() => {}} />
           </View>
-          <View style={classNames(classes.column, classes.helper)}>
+          <View style={styleNames(classes.column, classes.helper)}>
             <Typography variant="caption">
               Select your destination of choice<br />
               <Text href="#sub-labels-and-columns" style={classes.link}>

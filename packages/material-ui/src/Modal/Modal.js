@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import warning from 'warning';
 import keycode from 'keycode';
 import ownerDocument from '../utils/ownerDocument';
@@ -296,7 +296,7 @@ class Modal extends React.Component {
           ref={ref => {
             this.modalRef = ref;
           }}
-          style={classNames(classes.root, style, {
+          style={styleNames(classes.root, style, {
             [classes.hidden]: exited,
           })}
           {...other}

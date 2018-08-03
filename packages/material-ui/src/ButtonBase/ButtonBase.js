@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import keycode from 'keycode';
 import ownerWindow from '../utils/ownerWindow';
 import withStyles from '../styles/withStyles';
@@ -269,7 +269,7 @@ class ButtonBase extends React.Component {
       ...other
     } = this.props;
 
-    const className = classNames(
+    const className = styleNames(
       classes.root,
       {
         [classes.disabled]: disabled,

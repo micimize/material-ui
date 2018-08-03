@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = {
@@ -18,7 +18,7 @@ function ListItemSecondaryAction(props) {
   const { children, classes, style, ...other } = props;
 
   return (
-    <View style={classNames(classes.root, className)} {...other}>
+    <View style={styleNames(classes.root, style)} {...other}>
       {children}
     </View>
   );

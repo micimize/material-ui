@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { fade } from '../styles/colorManipulator';
 import ButtonBase from '../ButtonBase';
@@ -83,7 +83,7 @@ function IconButton(props) {
 
   return (
     <ButtonBase
-      style={classNames(
+      style={styleNames(
         classes.root,
         {
           [classes[`color${capitalize(color)}`]]: color !== 'default',
@@ -96,7 +96,7 @@ function IconButton(props) {
       disabled={disabled}
       {...other}
     >
-      <span style={classes.label}>{children}</span>
+      <View style={classes.label}>{children}</View>
     </ButtonBase>
   );
 }

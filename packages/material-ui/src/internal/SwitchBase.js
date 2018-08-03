@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import IconButton from '../IconButton';
 
@@ -125,7 +125,7 @@ class SwitchBase extends React.Component {
     return (
       <IconButton
         component="span"
-        style={classNames(
+        style={styleNames(
           classes.root,
           {
             [classes.checked]: checked,

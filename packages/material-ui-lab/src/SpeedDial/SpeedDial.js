@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import ReactDOM from 'react-dom';
 import keycode from 'keycode';
 import warning from 'warning';
@@ -160,7 +160,7 @@ class SpeedDial extends React.Component {
     };
 
     return (
-      <View style={classNames(classes.root, styleProp)} {...other}>
+      <View style={styleNames(classes.root, styleProp)} {...other}>
         <TransitionComponent
           in={!hidden}
           timeout={transitionDuration}
@@ -187,7 +187,7 @@ class SpeedDial extends React.Component {
         </TransitionComponent>
         <View
           id={`${id}-actions`}
-          style={classNames(classes.actions, { [classes.actionsClosed]: !open })}
+          style={styleNames(classes.actions, { [classes.actionsClosed]: !open })}
           ref={ref => {
             this.actionsRef = ref;
           }}

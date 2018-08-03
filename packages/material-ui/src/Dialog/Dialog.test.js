@@ -130,7 +130,7 @@ describe('<Dialog />', () => {
           foo
         </Dialog>,
       );
-      assert.strictEqual(wrapper.find(Paper).hasClass(className), true);
+      assert.strictEqual(wrapper.find(Paper).hasClass(style), true);
     });
   });
 

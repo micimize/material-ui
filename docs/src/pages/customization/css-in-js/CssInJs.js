@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
@@ -24,7 +24,7 @@ function MyLink(props) {
 
   return (
     <Text
-      style={classNames(
+      style={styleNames(
         classes.root,
         {
           [classes.primary]: variant === 'primary',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = {
@@ -46,7 +46,7 @@ class List extends React.Component {
       subheader,
       ...other
     } = this.props;
-    const className = classNames(
+    const className = styleNames(
       classes.root,
       {
         [classes.dense]: dense && !disablePadding,

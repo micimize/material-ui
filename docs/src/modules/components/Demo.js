@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import LZString from 'lz-string';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import copy from 'clipboard-copy';
 import { withStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
@@ -66,7 +66,6 @@ const styles = theme => ({
     marginBottom: 40,
     marginLeft: -theme.spacing.unit * 2,
     marginRight: -theme.spacing.unit * 2,
-    clear: 'both',
     [theme.breakpoints.up('sm')]: {
       padding: `0 ${theme.spacing.unit}px`,
       marginLeft: 0,
@@ -257,16 +256,12 @@ class Demo extends React.Component {
               </Menu>
             </View>
             <Collapse in={codeOpen} unmountOnExit>
-              <MarkdownElement
-                dir="ltr"
-                style={classes.code}
-                text={`\`\`\`jsx\n${raw}\n\`\`\``}
-              />
+              <MarkdownElement dir="ltr" style={classes.code} text={`\`\`\`jsx\n${raw}\n\`\`\``} />
             </Collapse>
           </View>
         )}
         <View
-          style={classNames(classes.demo, {
+          style={styleNames(classes.demo, {
             [classes.demoHiddenHeader]: demoOptions.hideHeader,
           })}
         >

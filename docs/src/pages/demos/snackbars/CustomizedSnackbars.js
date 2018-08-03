@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import Button from '@material-ui/core/Button';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';
@@ -54,11 +54,11 @@ function MySnackbarContent(props) {
 
   return (
     <SnackbarContent
-      style={classNames(classes[variant], className)}
+      style={styleNames(classes[variant], style)}
       aria-describedby="client-snackbar"
       message={
         <span id="client-snackbar" style={classes.message}>
-          <Icon style={classNames(classes.icon, classes.iconVariant)} />
+          <Icon style={styleNames(classes.icon, classes.iconVariant)} />
           {message}
         </span>
       }

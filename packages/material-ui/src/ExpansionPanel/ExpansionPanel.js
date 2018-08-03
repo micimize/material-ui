@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import warning from 'warning';
 import Collapse from '../Collapse';
 import Paper from '../Paper';
@@ -122,7 +122,7 @@ class ExpansionPanel extends React.Component {
     } = this.props;
     const expanded = this.isControlled ? expandedProp : this.state.expanded;
 
-    const className = classNames(
+    const className = styleNames(
       classes.root,
       {
         [classes.expanded]: expanded,

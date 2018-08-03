@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import ListItem from '../ListItem';
 
@@ -35,7 +35,7 @@ function MenuItem(props) {
       button
       role={role}
       tabIndex={-1}
-      style={classNames(classes.root, { [classes.selected]: selected }, className)}
+      style={styleNames(classes.root, { [classes.selected]: selected }, style)}
       component={component}
       {...other}
     />

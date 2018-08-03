@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -72,7 +72,7 @@ class FabIntegrationSnackbar extends React.Component {
   render() {
     const { classes } = this.props;
     const { open } = this.state;
-    const fabClassName = classNames(classes.fab, open ? classes.fabMoveUp : classes.fabMoveDown);
+    const fabClassName = styleNames(classes.fab, open ? classes.fabMoveUp : classes.fabMoveDown);
 
     return (
       <View style={classes.root}>

@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import ButtonBase from '@material-ui/core/ButtonBase';
@@ -112,7 +112,7 @@ class ToggleButton extends React.Component {
       ...other
     } = this.props;
 
-    const className = classNames(
+    const className = styleNames(
       classes.root,
       {
         [classes.disabled]: disabled,

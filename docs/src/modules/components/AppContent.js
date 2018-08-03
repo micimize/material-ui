@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -21,7 +21,7 @@ const styles = theme => ({
 function AppContent(props) {
   const { style, classes, children } = props;
 
-  return <View style={classNames(classes.root, style)}>{children}</View>;
+  return <View style={styleNames(classes.root, style)}>{children}</View>;
 }
 
 AppContent.propTypes = {

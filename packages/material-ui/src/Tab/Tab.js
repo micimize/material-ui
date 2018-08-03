@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import ButtonBase from '../ButtonBase';
 import { capitalize } from '../utils/helpers';
@@ -169,7 +169,7 @@ class Tab extends React.Component {
       label = (
         <span style={classes.labelContainer}>
           <span
-            style={classNames(classes.label, {
+            style={styleNames(classes.label, {
               [classes.labelWrapped]: this.state.labelWrapped,
             })}
             ref={ref => {
@@ -182,7 +182,7 @@ class Tab extends React.Component {
       );
     }
 
-    const className = classNames(
+    const className = styleNames(
       classes.root,
       classes[`textColor${capitalize(textColor)}`],
       {

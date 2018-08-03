@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -20,7 +20,7 @@ function ListItemIcon(props) {
   const { children, classes, style: styleProp, ...other } = props;
 
   return React.cloneElement(children, {
-    style: classNames(classes.root, styleProp, children.props.className),
+    style: styleNames(classes.root, styleProp, children.props.style),
     ...other,
   });
 }

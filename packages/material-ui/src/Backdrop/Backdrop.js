@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Fade from '../Fade';
 
@@ -31,7 +31,7 @@ function Backdrop(props) {
     <Fade appear in={open} timeout={transitionDuration} {...other}>
       <View
         data-mui-test="Backdrop"
-        style={classNames(
+        style={styleNames(
           classes.root,
           {
             [classes.invisible]: invisible,

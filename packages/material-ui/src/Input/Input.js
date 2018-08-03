@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Textarea from './Textarea';
 
@@ -434,7 +434,7 @@ class Input extends React.Component {
     const { muiFormControl } = this.context;
     const { disabled, error, margin, required } = formControlState(this.props, this.context);
 
-    const className = classNames(
+    const className = styleNames(
       classes.root,
       {
         [classes.disabled]: disabled,
@@ -448,7 +448,7 @@ class Input extends React.Component {
       styleProp,
     );
 
-    const inputClassName = classNames(
+    const inputClassName = styleNames(
       classes.input,
       {
         [classes.disabled]: disabled,

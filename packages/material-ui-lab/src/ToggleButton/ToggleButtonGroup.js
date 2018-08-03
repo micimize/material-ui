@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import hasValue from './hasValue';
 import isValueSelected from './isValueSelected';
@@ -82,7 +82,7 @@ class ToggleButtonGroup extends React.Component {
     });
 
     const groupSelected = selectedProp === 'auto' ? hasValue(value) : selectedProp;
-    const className = classNames(
+    const className = styleNames(
       classes.root,
       {
         [classes.selected]: groupSelected,

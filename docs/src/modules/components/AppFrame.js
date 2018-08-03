@@ -115,21 +115,21 @@ class AppFrame extends React.Component {
 
     let disablePermanent = false;
     let navIconStyle = [];
-    let appBarClassName = classes.appBar;
+    const appBarStyle = [classes.appBar];
 
     if (title === null) {
       // home route, don't shift app bar or dock drawer
       disablePermanent = true;
-      appBarClassName += ` ${classes.appBarHome}`;
+      appBarStyle.push(classes.appBarHome);
     } else {
       navIconStyle = classes.navIconHide;
-      appBarClassName += ` ${classes.appBarShift}`;
+      appBarStyle.push(classes.appBarShift);
     }
 
     return (
       <View style={classes.root}>
         <NProgressBar />
-        <AppBar style={appBarClassName}>
+        <AppBar style={appBarStyle}>
           <Toolbar>
             <IconButton
               color="inherit"

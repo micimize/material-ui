@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { cloneChildrenWithClassName } from '../utils/reactHelpers';
 import '../Button'; // So we don't have any override priority issue.
@@ -24,7 +24,7 @@ function ExpansionPanelActions(props) {
   const { children, classes, style, ...other } = props;
 
   return (
-    <View style={classNames(classes.root, className)} {...other}>
+    <View style={styleNames(classes.root, style)} {...other}>
       {cloneChildrenWithClassName(children, classes.action)}
     </View>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -104,7 +104,7 @@ class PermanentDrawer extends React.Component {
         <View style={classes.appFrame}>
           <AppBar
             position="absolute"
-            style={classNames(classes.appBar, classes[`appBar-${anchor}`])}
+            style={styleNames(classes.appBar, classes[`appBar-${anchor}`])}
           >
             <Toolbar>
               <Typography variant="title" color="inherit" noWrap>

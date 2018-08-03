@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import EventListener from 'react-event-listener';
 import withStyles from '../styles/withStyles';
 import { duration } from '../styles/transitions';
@@ -239,7 +239,7 @@ class Snackbar extends React.Component {
     return (
       <ClickAwayListener onClickAway={this.handleClickAway}>
         <View
-          style={classNames(
+          style={styleNames(
             classes.root,
             classes[`anchorOrigin${capitalize(vertical)}${capitalize(horizontal)}`],
             style,

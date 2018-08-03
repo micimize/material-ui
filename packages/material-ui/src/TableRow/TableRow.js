@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -55,7 +55,7 @@ function TableRow(props, context) {
   } = props;
   const { table } = context;
 
-  const className = classNames(
+  const className = styleNames(
     classes.root,
     {
       [classes.head]: table && table.head,

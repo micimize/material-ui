@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import SwitchBase from '../internal/SwitchBase';
@@ -101,15 +101,15 @@ function Switch(props) {
   const { classes, style, color, ...other } = props;
 
   return (
-    <span style={classNames(classes.root, className)}>
+    <span style={styleNames(classes.root, style)}>
       <SwitchBase
         icon={<span style={classes.icon} />}
         classes={{
-          root: classNames(classes.switchBase, classes[`color${capitalize(color)}`]),
+          root: styleNames(classes.switchBase, classes[`color${capitalize(color)}`]),
           checked: classes.checked,
           disabled: classes.disabled,
         }}
-        checkedIcon={<span style={classNames(classes.icon, classes.iconChecked)} />}
+        checkedIcon={<span style={styleNames(classes.icon, classes.iconChecked)} />}
         {...other}
       />
       <span style={classes.bar} />

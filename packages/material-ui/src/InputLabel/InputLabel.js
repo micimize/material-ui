@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'react-native-style-names';
+import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import FormLabel from '../FormLabel';
 
@@ -63,7 +63,7 @@ function InputLabel(props, context) {
     margin = muiFormControl.margin;
   }
 
-  const className = classNames(
+  const className = styleNames(
     classes.root,
     {
       [classes.formControl]: muiFormControl,
