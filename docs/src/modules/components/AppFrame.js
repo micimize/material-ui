@@ -51,9 +51,6 @@ const styles = theme => ({
   },
   appBar: {
     transition: theme.transitions.create('width'),
-    '@media print': {
-      position: 'absolute',
-    },
   },
   appBarHome: {
     boxShadow: 'none',

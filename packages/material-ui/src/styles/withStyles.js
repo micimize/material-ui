@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -11,9 +10,55 @@ import getStylesCreator from './getStylesCreator';
 import getThemeProps from './getThemeProps';
 import { createRenderer } from 'fela-native';
 import getClassSheet from './getClassSheet';
+import customProperty from 'fela-plugin-custom-property';
+
+const validNumber = numberString => Number.isFinite(Number(numberString));
 
 // Default fela renderer
-const felaRenderer = createRenderer({});
+const felaRenderer = createRenderer({
+  plugins: [
+    customProperty({
+      flex(prop) {
+        if (typeof prop !== 'string') {
+          return { flex: prop };
+        }
+        const [flexGrow, flexShrink = undefined, _flexBasis = undefined] = prop.split(/\s+/);
+        let flexBasis = _flexBasis;
+        let expandedStyles = {};
+
+        // handle flexGrow
+        if (!(flexGrow && validNumber(flexGrow))) {
+          warning(
+            true,
+            [
+              `Material-UI: invalid flex shorthand "${prop}",`,
+              'must be <grow number> <shrink number>? <basis>?',
+            ].join('\n'),
+          );
+          return {};
+        }
+        expandedStyles.flexGrow = Number(flexGrow);
+
+        // handle flexShrink
+        if (flexShrink) {
+          if (validNumber(flexShrink)) {
+            // flexShrink is valid number
+            expandedStyles.flexShrink = Number(flexShrink);
+          } else if (flexShrink && !flexBasis) {
+            // flexShrink position might be valid flexBasis
+            flexBasis = flexShrink;
+          }
+        }
+
+        // handle flexBasis. TODO valid string values unknown
+        if (flexBasis && flexBasis !== 'auto') {
+          expandedStyles = validNumber(flexShrink) ? Number(flexShrink) : flexShrink;
+        }
+        return expandedStyles;
+      },
+    }),
+  ],
+});
 
 // Global index counter to preserve source order.
 // We create the style sheet during at the creation of the component,

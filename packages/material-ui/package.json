@@ -45,6 +45,7 @@
     "dom-helpers": "^3.2.1",
     "fela": "^6.1.9",
     "fela-native": "^5.0.22",
+    "fela-plugin-custom-property": "^7.0.3",
     "hoist-non-react-statics": "^2.5.0",
     "is-plain-object": "^2.0.4",
     "jss": "^9.3.3",

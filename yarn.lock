@@ -4335,9 +4335,6 @@ eslint-plugin-jsx-a11y@^6.0.3:
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
 
-"eslint-plugin-material-ui@file:packages/eslint-plugin-material-ui":
-  version "1.0.0-beta.35"
-
 eslint-plugin-mocha@^5.0.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-mocha/-/eslint-plugin-mocha-5.1.0.tgz#3637cdde93155e650591d7ab14e7a66485f0f7c1"
@@ -4743,6 +4740,12 @@ fela-native@^5.0.22:
   dependencies:
     fast-loops "^1.0.0"
     fela-utils "^8.0.8"
+
+fela-plugin-custom-property@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/fela-plugin-custom-property/-/fela-plugin-custom-property-7.0.3.tgz#2262b13acc6d437955dd731b8f68cf739fb440fc"
+  dependencies:
+    isobject "^3.0.1"
 
 fela-tools@^5.1.7:
   version "5.1.7"

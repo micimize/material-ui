@@ -49,12 +49,14 @@ export const styles = theme => {
       duration: theme.transitions.duration.shorter,
     }),
   };
+  /*
   const placeholderHidden = {
     opacity: 0,
   };
   const placeholderVisible = {
     opacity: light ? 0.42 : 0.5,
   };
+  */
   const bottomLineColor = light ? 'rgba(0, 0, 0, 0.42)' : 'rgba(255, 255, 255, 0.7)';
 
   return {
