@@ -11,6 +11,7 @@ import getThemeProps from './getThemeProps';
 import { createRenderer } from 'fela-native';
 import getClassSheet from './getClassSheet';
 import customProperty from 'fela-plugin-custom-property';
+import getDisplayName from 'recompose/getDisplayName';
 
 const validNumber = numberString => Number.isFinite(Number(numberString));
 
@@ -18,6 +19,12 @@ const validNumber = numberString => Number.isFinite(Number(numberString));
 const felaRenderer = createRenderer({
   plugins: [
     customProperty({
+      pointerEvents() {
+        return {};
+      },
+      transition() {
+        return {};
+      },
       flex(prop) {
         if (typeof prop !== 'string') {
           return { flex: prop };
@@ -252,8 +259,9 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
       if (sheetManagerTheme.refs === 0) {
         const styles = stylesCreatorSaved.create(theme, name);
-
-        if (process.env.NODE_ENV !== 'production' && !name) {
+        let meta = name;
+        if (process.env.NODE_ENV !== 'production' && !meta) {
+          meta = getDisplayName(Component);
           warning(
             typeof meta === 'string',
             [
