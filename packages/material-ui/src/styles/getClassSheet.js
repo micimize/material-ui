@@ -1,4 +1,4 @@
-// ({ className: style }) => { className: reactNativeClass }
+// ({ style: style }) => { style: reactNativeClass }
 function getClassSheet(styleSheet, felaRenderer) {
   return Object.keys(styleSheet).reduce((ruleSheet, className) => {
     const styleOrRule = styleSheet[className];

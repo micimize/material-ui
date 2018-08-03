@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import ButtonBase from '../ButtonBase';
 import { isMuiElement } from '../utils/reactHelpers';
@@ -81,10 +81,10 @@ class ListItem extends React.Component {
       button,
       children: childrenProp,
       classes,
-      className: classNameProp,
+      style: styleProp,
       component: componentProp,
       ContainerComponent,
-      ContainerProps: { className: ContainerClassName, ...ContainerProps } = {},
+      ContainerProps: { style: ContainerClassName, ...ContainerProps } = {},
       dense,
       disabled,
       disableGutters,
@@ -110,10 +110,10 @@ class ListItem extends React.Component {
         [classes.button]: button,
         [classes.secondaryAction]: hasSecondaryAction,
       },
-      classNameProp,
+      styleProp,
     );
 
-    const componentProps = { className, disabled, ...other };
+    const componentProps = { style, disabled, ...other };
     let Component = componentProp || View;
 
     if (button) {

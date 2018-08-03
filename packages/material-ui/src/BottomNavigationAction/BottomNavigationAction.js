@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import ButtonBase from '../ButtonBase';
 import unsupportedProp from '../utils/unsupportedProp';
@@ -75,7 +75,7 @@ class BottomNavigationAction extends React.Component {
   render() {
     const {
       classes,
-      className: classNameProp,
+      style: styleProp,
       icon,
       label,
       onChange,
@@ -92,7 +92,7 @@ class BottomNavigationAction extends React.Component {
         [classes.selected]: selected,
         [classes.iconOnly]: !showLabelProp && !selected,
       },
-      classNameProp,
+      styleProp,
     );
 
     const labelClassName = classNames(classes.label, {

@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import compose from 'recompose/compose';
 import { withRouter } from 'next/router';
 import NextLink from 'next/link';
@@ -37,7 +37,7 @@ function Link(props) {
     activeClassName,
     children: childrenProp,
     classes,
-    className: classNameProp,
+    style: styleProp,
     component: ComponentProp,
     href,
     onClick,
@@ -48,7 +48,7 @@ function Link(props) {
   } = props;
 
   let ComponentRoot;
-  const className = classNames(classes.root, classes[variant], classNameProp);
+  const className = classNames(classes.root, classes[variant], styleProp);
   let RootProps;
   let children = childrenProp;
 
@@ -56,7 +56,7 @@ function Link(props) {
     ComponentRoot = ComponentProp;
     RootProps = {
       ...other,
-      className,
+      style,
     };
   } else if (href) {
     ComponentRoot = NextLink;
@@ -80,7 +80,7 @@ function Link(props) {
     ComponentRoot = Text;
     RootProps = {
       ...other,
-      className,
+      style,
     };
   }
 

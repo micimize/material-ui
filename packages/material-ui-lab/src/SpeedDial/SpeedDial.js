@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import ReactDOM from 'react-dom';
 import keycode from 'keycode';
 import warning from 'warning';
@@ -103,7 +103,7 @@ class SpeedDial extends React.Component {
       ButtonProps,
       children: childrenProp,
       classes,
-      className: classNameProp,
+      style: styleProp,
       hidden,
       icon: iconProp,
       onClick,
@@ -160,7 +160,7 @@ class SpeedDial extends React.Component {
     };
 
     return (
-      <View style={classNames(classes.root, classNameProp)} {...other}>
+      <View style={classNames(classes.root, styleProp)} {...other}>
         <TransitionComponent
           in={!hidden}
           timeout={transitionDuration}

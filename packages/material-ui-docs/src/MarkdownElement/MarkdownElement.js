@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import marked from 'marked';
 import { withStyles } from '@material-ui/core/styles';
 import prism from './prism';
@@ -252,7 +252,7 @@ const styles = theme => ({
 });
 
 function MarkdownElement(props) {
-  const { classes, className, text, ...other } = props;
+  const { classes, style, text, ...other } = props;
 
   /* eslint-disable react/no-danger */
   return (

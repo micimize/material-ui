@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import ListItem from '../ListItem';
 
@@ -28,7 +28,7 @@ export const styles = theme => ({
 });
 
 function MenuItem(props) {
-  const { classes, className, component, selected, role, ...other } = props;
+  const { classes, style, component, selected, role, ...other } = props;
 
   return (
     <ListItem

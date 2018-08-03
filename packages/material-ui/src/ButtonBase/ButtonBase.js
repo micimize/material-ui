@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import keycode from 'keycode';
 import ownerWindow from '../utils/ownerWindow';
 import withStyles from '../styles/withStyles';
@@ -34,9 +34,11 @@ export const styles = {
     textDecoration: 'none',
     // So we take precedent over the style of a native <a /> element.
     color: 'inherit',
+    /*
     '&::-moz-focus-inner': {
       borderStyle: 'none', // Remove Firefox dotted outline.
     },
+    */
     '&$disabled': {
       pointerEvents: 'none', // Disable link interactions
       cursor: 'default',
@@ -243,7 +245,7 @@ class ButtonBase extends React.Component {
       centerRipple,
       children,
       classes,
-      className: classNameProp,
+      style: styleProp,
       component,
       disabled,
       disableRipple,
@@ -274,7 +276,7 @@ class ButtonBase extends React.Component {
         [classes.focusVisible]: this.state.focusVisible,
         [focusVisibleClassName]: this.state.focusVisible,
       },
-      classNameProp,
+      styleProp,
     );
 
     const buttonProps = {};

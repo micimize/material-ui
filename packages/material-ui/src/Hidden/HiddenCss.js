@@ -33,7 +33,7 @@ function HiddenCss(props) {
   const {
     children,
     classes,
-    className,
+    style,
     lgDown,
     lgUp,
     mdDown,

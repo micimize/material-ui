@@ -4,7 +4,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import EventListener from 'react-event-listener';
 import debounce from 'debounce'; // < 1kb payload overhead when lodash/debounce is > 3kb.
 import { getNormalizedScrollLeft, detectScrollType } from 'normalize-scroll-left';
@@ -282,7 +282,7 @@ class Tabs extends React.Component {
       centered,
       children: childrenProp,
       classes,
-      className: classNameProp,
+      style: styleProp,
       component: Component,
       fullWidth,
       indicatorColor,
@@ -303,7 +303,7 @@ class Tabs extends React.Component {
         'at the same time on a `Tabs` component.',
     );
 
-    const className = classNames(classes.root, classNameProp);
+    const className = classNames(classes.root, styleProp);
     const flexContainerClassName = classNames(classes.flexContainer, {
       [classes.centered]: centered && !scrollable,
     });

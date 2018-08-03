@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = {
@@ -23,7 +23,7 @@ export const styles = {
  * For the `Radio`, you should be using the `RadioGroup` component instead of this one.
  */
 function FormGroup(props) {
-  const { classes, className, children, row, ...other } = props;
+  const { classes, style, children, row, ...other } = props;
 
   return (
     <View
@@ -32,7 +32,7 @@ function FormGroup(props) {
         {
           [classes.row]: row,
         },
-        className,
+        style,
       )}
       {...other}
     >

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Typography from '../Typography';
 import StepIcon from '../StepIcon';
@@ -70,7 +70,7 @@ function StepLabel(props) {
     alternativeLabel,
     children,
     classes,
-    className: classNameProp,
+    style: styleProp,
     completed,
     disabled,
     error,
@@ -92,7 +92,7 @@ function StepLabel(props) {
           [classes.alternativeLabel]: alternativeLabel,
           [classes.error]: error,
         },
-        classNameProp,
+        styleProp,
       )}
       {...other}
     >

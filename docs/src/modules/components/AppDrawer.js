@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
@@ -94,7 +94,7 @@ function reduceChildRoutes({ props, activePage, items, page, depth }) {
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 function AppDrawer(props, context) {
-  const { classes, className, disablePermanent, mobileOpen, onClose, onOpen } = props;
+  const { classes, style, disablePermanent, mobileOpen, onClose, onOpen } = props;
 
   const drawer = (
     <View style={classes.nav}>

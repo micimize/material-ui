@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 
@@ -29,7 +29,7 @@ export const styles = theme => ({
  * @ignore - internal component.
  */
 function TabIndicator(props) {
-  const { classes, className, color, ...other } = props;
+  const { classes, style, color, ...other } = props;
 
   return (
     <span

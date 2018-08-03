@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -39,7 +39,7 @@ function FormLabel(props, context) {
   const {
     children,
     classes,
-    className: classNameProp,
+    style: styleProp,
     component: Component,
     disabled: disabledProp,
     error: errorProp,
@@ -77,7 +77,7 @@ function FormLabel(props, context) {
       [classes.disabled]: disabled,
       [classes.error]: error,
     },
-    classNameProp,
+    styleProp,
   );
 
   return (

@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
@@ -385,7 +385,7 @@ class Slider extends React.Component {
     const {
       component: Component,
       classes,
-      className: classNameProp,
+      style: styleProp,
       disabled,
       max,
       min,
@@ -412,7 +412,7 @@ class Slider extends React.Component {
         [classes.reverse]: reverse,
         [classes.disabled]: disabled,
       },
-      classNameProp,
+      styleProp,
     );
 
     const containerClasses = classNames(classes.container, {

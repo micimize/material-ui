@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 
@@ -38,7 +38,7 @@ export const styles = theme => ({
 });
 
 function ListSubheader(props) {
-  const { classes, className, color, component: Component, disableSticky, inset, ...other } = props;
+  const { classes, style, color, component: Component, disableSticky, inset, ...other } = props;
 
   return (
     <Component
@@ -49,7 +49,7 @@ function ListSubheader(props) {
           [classes.inset]: inset,
           [classes.sticky]: !disableSticky,
         },
-        className,
+        style,
       )}
       {...other}
     />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -41,9 +41,9 @@ function Avatar(props) {
   const {
     alt,
     children: childrenProp,
-    childrenClassName: childrenClassNameProp,
+    childrenClassName: childrenstyleProp,
     classes,
-    className: classNameProp,
+    style: styleProp,
     component: Component,
     imgProps,
     sizes,
@@ -57,18 +57,18 @@ function Avatar(props) {
     {
       [classes.colorDefault]: childrenProp && !src && !srcSet,
     },
-    classNameProp,
+    styleProp,
   );
   let children = null;
 
   if (childrenProp) {
     if (
-      childrenClassNameProp &&
+      childrenstyleProp &&
       typeof childrenProp !== 'string' &&
       React.isValidElement(childrenProp)
     ) {
-      const childrenClassName = classNames(childrenClassNameProp, childrenProp.props.className);
-      children = React.cloneElement(childrenProp, { className: childrenClassName });
+      const childrenClassName = classNames(childrenstyleProp, childrenProp.props.className);
+      children = React.cloneElement(childrenProp, { style: childrenClassName });
     } else {
       children = childrenProp;
     }

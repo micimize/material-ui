@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -47,7 +47,7 @@ export const styles = theme => ({
 function TableRow(props, context) {
   const {
     classes,
-    className: classNameProp,
+    style: styleProp,
     component: Component,
     hover,
     selected,
@@ -63,7 +63,7 @@ function TableRow(props, context) {
       [classes.hover]: table && hover,
       [classes.selected]: table && selected,
     },
-    classNameProp,
+    styleProp,
   );
 
   return <Component style={className} {...other} />;

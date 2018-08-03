@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import ArrowDownwardIcon from '../internal/svg-icons/ArrowDownward';
 import withStyles from '../styles/withStyles';
 import ButtonBase from '../ButtonBase';
@@ -57,7 +57,7 @@ export const styles = theme => ({
  * A button based label for placing inside `TableCell` for column sorting.
  */
 function TableSortLabel(props) {
-  const { active, classes, className, children, direction, ...other } = props;
+  const { active, classes, style, children, direction, ...other } = props;
 
   return (
     <ButtonBase

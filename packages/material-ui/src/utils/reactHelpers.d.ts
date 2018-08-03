@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StandardProps } from '../';
 
-export function cloneChildrenWithClassName<T>(children: React.ReactNode, className: string): T[];
+export function cloneChildrenWithClassName<T>(children: React.ReactNode, style: string): T[];
 
 type NamedMuiComponent = React.ComponentType<{}> & { muiName: string };
 

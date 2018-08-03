@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import SwipeableViews from 'react-swipeable-views';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -71,17 +71,17 @@ class FloatingActionButtonZoom extends React.Component {
     const fabs = [
       {
         color: 'primary',
-        className: classes.fab,
+        style: classes.fab,
         icon: <AddIcon />,
       },
       {
         color: 'secondary',
-        className: classes.fab,
+        style: classes.fab,
         icon: <EditIcon />,
       },
       {
         color: 'inherit',
-        className: classNames(classes.fab, classes.fabGreen),
+        style: classNames(classes.fab, classes.fabGreen),
         icon: <UpIcon />,
       },
     ];

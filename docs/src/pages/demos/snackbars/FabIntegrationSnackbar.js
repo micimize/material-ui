@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -99,7 +99,7 @@ class FabIntegrationSnackbar extends React.Component {
             onClose={this.handleClose}
             ContentProps={{
               'aria-describedby': 'snackbar-fab-message-id',
-              className: classes.snackbarContent,
+              style: classes.snackbarContent,
             }}
             message={<span id="snackbar-fab-message-id">Archived</span>}
             action={

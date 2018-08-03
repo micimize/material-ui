@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import warning from 'warning';
 import withStyles from '../styles/withStyles';
 
@@ -25,7 +25,7 @@ export const styles = theme => ({
  * This is a simple wrapper to apply the `dense` mode styles to `Avatar`.
  */
 function ListItemAvatar(props, context) {
-  const { children, classes, className: classNameProp, ...other } = props;
+  const { children, classes, style: styleProp, ...other } = props;
 
   if (context.dense === undefined) {
     warning(
@@ -37,9 +37,9 @@ function ListItemAvatar(props, context) {
   }
 
   return React.cloneElement(children, {
-    className: classNames(
+    style: classNames(
       { [classes.root]: context.dense },
-      classNameProp,
+      styleProp,
       children.props.className,
     ),
     childrenClassName: classNames(

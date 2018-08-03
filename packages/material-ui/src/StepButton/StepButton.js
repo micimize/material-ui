@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import ButtonBase from '../ButtonBase';
 import StepLabel from '../StepLabel';
@@ -35,7 +35,7 @@ function StepButton(props) {
     alternativeLabel,
     children,
     classes,
-    className: classNameProp,
+    style: styleProp,
     completed,
     disabled,
     icon,
@@ -63,8 +63,8 @@ function StepButton(props) {
   return (
     <ButtonBase
       disabled={disabled}
-      TouchRippleProps={{ className: classes.touchRipple }}
-      style={classNames(classes.root, classes[orientation], classNameProp)}
+      TouchRippleProps={{ style: classes.touchRipple }}
+      style={classNames(classes.root, classes[orientation], styleProp)}
       {...other}
     >
       {child}

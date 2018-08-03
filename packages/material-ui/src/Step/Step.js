@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import warning from 'warning';
 import withStyles from '../styles/withStyles';
 
@@ -36,7 +36,7 @@ function Step(props) {
     alternativeLabel,
     children,
     classes,
-    className: classNameProp,
+    style: styleProp,
     completed,
     connector,
     disabled,
@@ -53,7 +53,7 @@ function Step(props) {
       [classes.alternativeLabel]: alternativeLabel,
       [classes.completed]: completed,
     },
-    classNameProp,
+    styleProp,
   );
 
   return (

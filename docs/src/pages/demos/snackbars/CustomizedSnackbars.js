@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import Button from '@material-ui/core/Button';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';
@@ -49,7 +49,7 @@ const styles1 = theme => ({
 });
 
 function MySnackbarContent(props) {
-  const { classes, className, message, onClose, variant, ...other } = props;
+  const { classes, style, message, onClose, variant, ...other } = props;
   const Icon = variantIcon[variant];
 
   return (

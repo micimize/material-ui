@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -17,10 +17,10 @@ export const styles = theme => ({
  * A simple wrapper to apply `List` styles to an `Icon` or `SvgIcon`.
  */
 function ListItemIcon(props) {
-  const { children, classes, className: classNameProp, ...other } = props;
+  const { children, classes, style: styleProp, ...other } = props;
 
   return React.cloneElement(children, {
-    className: classNames(classes.root, classNameProp, children.props.className),
+    style: classNames(classes.root, styleProp, children.props.className),
     ...other,
   });
 }

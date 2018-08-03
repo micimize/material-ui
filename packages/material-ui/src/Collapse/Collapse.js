@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { View, Text } from 'react-native';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import PropTypes from 'prop-types';
 import Transition from 'react-transition-group/Transition';
 import withStyles from '../styles/withStyles';
@@ -130,7 +130,7 @@ class Collapse extends React.Component {
     const {
       children,
       classes,
-      className,
+      style,
       collapsedHeight,
       component: Component,
       onEnter,
@@ -138,7 +138,6 @@ class Collapse extends React.Component {
       onEntering,
       onExit,
       onExiting,
-      style,
       theme,
       timeout,
       ...other
@@ -163,12 +162,9 @@ class Collapse extends React.Component {
                 {
                   [classes.entered]: state === 'entered',
                 },
-                className,
+                style,
+                { minHeight: collapsedHeight },
               )}
-              style={{
-                ...style,
-                minHeight: collapsedHeight,
-              }}
               {...childProps}
             >
               <View

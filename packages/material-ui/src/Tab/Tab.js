@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import ButtonBase from '../ButtonBase';
 import { capitalize } from '../utils/helpers';
@@ -150,7 +150,7 @@ class Tab extends React.Component {
   render() {
     const {
       classes,
-      className: classNameProp,
+      style: styleProp,
       disabled,
       fullWidth,
       icon,
@@ -191,7 +191,7 @@ class Tab extends React.Component {
         [classes.labelIcon]: icon && label,
         [classes.fullWidth]: fullWidth,
       },
-      classNameProp,
+      styleProp,
     );
 
     return (

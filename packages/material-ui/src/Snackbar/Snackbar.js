@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import EventListener from 'react-event-listener';
 import withStyles from '../styles/withStyles';
 import { duration } from '../styles/transitions';
@@ -210,7 +210,7 @@ class Snackbar extends React.Component {
       autoHideDuration,
       children,
       classes,
-      className,
+      style,
       ContentProps,
       disableWindowBlurListener,
       message,
@@ -242,7 +242,7 @@ class Snackbar extends React.Component {
           style={classNames(
             classes.root,
             classes[`anchorOrigin${capitalize(vertical)}${capitalize(horizontal)}`],
-            className,
+            style,
           )}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}

@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import warning from 'warning';
 import Collapse from '../Collapse';
 import Paper from '../Paper';
@@ -112,7 +112,7 @@ class ExpansionPanel extends React.Component {
     const {
       children: childrenProp,
       classes,
-      className: classNameProp,
+      style: styleProp,
       CollapseProps: CollapsePropsProp,
       defaultExpanded,
       disabled,
@@ -128,7 +128,7 @@ class ExpansionPanel extends React.Component {
         [classes.expanded]: expanded,
         [classes.disabled]: disabled,
       },
-      classNameProp,
+      styleProp,
     );
 
     let summary = null;

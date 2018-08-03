@@ -471,7 +471,7 @@ describe('<Input />', () => {
 
   describe('prop: inputProps', () => {
     it('should apply the props on the input', () => {
-      const wrapper = shallow(<Input inputProps={{ className: 'foo', maxLength: true }} />);
+      const wrapper = shallow(<Input inputProps={{ style: 'foo', maxLength: true }} />);
       const input = wrapper.find('input');
       assert.strictEqual(input.hasClass('foo'), true);
       assert.strictEqual(input.hasClass(classes.input), true);

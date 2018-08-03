@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Ripple from './Ripple';
 
@@ -252,7 +252,7 @@ class TouchRipple extends React.PureComponent {
   };
 
   render() {
-    const { center, classes, className, ...other } = this.props;
+    const { center, classes, style, ...other } = this.props;
 
     return (
       <TransitionGroup

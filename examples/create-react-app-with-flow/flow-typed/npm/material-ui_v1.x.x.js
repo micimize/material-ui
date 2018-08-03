@@ -2301,7 +2301,7 @@ declare module "material-ui/utils/reactHelpers" {
   declare module.exports: {
     cloneChildrenWithClassName: (
       children?: React$Node,
-      className: string
+      style: string
     ) => any,
     isMuiElement: (element: any, muiNames: Array<string>) => any,
     isMuiComponent: (element: any, muiNames: Array<string>) => any

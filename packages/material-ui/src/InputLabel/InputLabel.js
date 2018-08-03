@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import FormLabel from '../FormLabel';
 
@@ -43,7 +43,7 @@ function InputLabel(props, context) {
   const {
     children,
     classes,
-    className: classNameProp,
+    style: styleProp,
     disableAnimation,
     FormLabelClasses,
     margin: marginProp,
@@ -71,7 +71,7 @@ function InputLabel(props, context) {
       [classes.shrink]: shrink,
       [classes.marginDense]: margin === 'dense',
     },
-    classNameProp,
+    styleProp,
   );
 
   return (

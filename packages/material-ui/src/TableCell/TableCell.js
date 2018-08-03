@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import { darken, fade, lighten } from '../styles/colorManipulator';
@@ -72,7 +72,7 @@ function TableCell(props, context) {
   const {
     children,
     classes,
-    className: classNameProp,
+    style: styleProp,
     component,
     sortDirection,
     numeric,
@@ -103,7 +103,7 @@ function TableCell(props, context) {
       [classes.numeric]: numeric,
       [classes[`padding${capitalize(padding)}`]]: padding !== 'default',
     },
-    classNameProp,
+    styleProp,
   );
 
   let ariaSort = null;

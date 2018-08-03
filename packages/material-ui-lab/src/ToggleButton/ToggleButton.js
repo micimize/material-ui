@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import ButtonBase from '@material-ui/core/ButtonBase';
@@ -104,7 +104,7 @@ class ToggleButton extends React.Component {
   render() {
     const {
       children,
-      className: classNameProp,
+      style: styleProp,
       classes,
       disableFocusRipple,
       disabled,
@@ -118,7 +118,7 @@ class ToggleButton extends React.Component {
         [classes.disabled]: disabled,
         [classes.selected]: selected,
       },
-      classNameProp,
+      styleProp,
     );
 
     return (

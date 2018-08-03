@@ -35,7 +35,7 @@ describe('<TextField />', () => {
       });
 
       it('should pass className to the FormControl', () => {
-        wrapper.setProps({ className: 'foo' });
+        wrapper.setProps({ style: 'foo' });
         assert.strictEqual(wrapper.dive().hasClass('foo'), true);
       });
 
@@ -74,7 +74,7 @@ describe('<TextField />', () => {
       });
 
       it('should apply the className to the InputLabel', () => {
-        wrapper.setProps({ InputLabelProps: { className: 'foo' } });
+        wrapper.setProps({ InputLabelProps: { style: 'foo' } });
         assert.strictEqual(wrapper.find(InputLabel).hasClass('foo'), true);
       });
 
@@ -97,7 +97,7 @@ describe('<TextField />', () => {
       });
 
       it('should apply the className to the FormHelperText', () => {
-        wrapper.setProps({ FormHelperTextProps: { className: 'foo' } });
+        wrapper.setProps({ FormHelperTextProps: { style: 'foo' } });
         assert.strictEqual(wrapper.find(FormHelperText).hasClass('foo'), true);
       });
 

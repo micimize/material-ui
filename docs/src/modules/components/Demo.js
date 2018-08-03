@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import LZString from 'lz-string';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import copy from 'clipboard-copy';
 import { withStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';

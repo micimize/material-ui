@@ -177,7 +177,7 @@ class TextFields extends React.Component {
           onChange={this.handleChange('currency')}
           SelectProps={{
             MenuProps: {
-              className: classes.menu,
+              style: classes.menu,
             },
           }}
           helperText="Please select your currency"
@@ -199,7 +199,7 @@ class TextFields extends React.Component {
           SelectProps={{
             native: true,
             MenuProps: {
-              className: classes.menu,
+              style: classes.menu,
             },
           }}
           helperText="Please select your currency"

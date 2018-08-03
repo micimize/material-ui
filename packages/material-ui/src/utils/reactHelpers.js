@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { View, Text } from 'react-native';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 
 export function cloneElementWithClassName(child, className) {
   return React.cloneElement(child, {
-    className: classNames(child.props.className, className),
+    style: classNames(child.props.className, className),
   });
 }
 

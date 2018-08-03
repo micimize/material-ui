@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import keycode from 'keycode';
 import warning from 'warning';
 import Menu from '../Menu/Menu';
@@ -158,7 +158,7 @@ class SelectInput extends React.Component {
       autoWidth,
       children,
       classes,
-      className,
+      style,
       disabled,
       displayEmpty,
       IconComponent,
@@ -269,7 +269,7 @@ class SelectInput extends React.Component {
             {
               [classes.disabled]: disabled,
             },
-            className,
+            style,
           )}
           ref={this.handleDisplayRef}
           data-mui-test="SelectDisplay"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import { emphasize } from '@material-ui/core/styles/colorManipulator';
 import Button from '@material-ui/core/Button';
@@ -49,7 +49,7 @@ class SpeedDialAction extends React.Component {
     const {
       ButtonProps,
       classes,
-      className: classNameProp,
+      style: styleProp,
       delay,
       icon,
       id,
@@ -62,7 +62,7 @@ class SpeedDialAction extends React.Component {
     return (
       <Tooltip
         id={id}
-        style={classNames(classes.root, classNameProp)}
+        style={classNames(classes.root, styleProp)}
         title={tooltipTitle}
         placement="left"
         onClose={this.handleTooltipClose}

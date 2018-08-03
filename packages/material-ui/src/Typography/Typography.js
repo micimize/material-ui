@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 
@@ -93,7 +93,7 @@ function Typography(props) {
   const {
     align,
     classes,
-    className: classNameProp,
+    style: styleProp,
     color,
     component: componentProp,
     gutterBottom,
@@ -114,7 +114,7 @@ function Typography(props) {
       [classes.paragraph]: paragraph,
       [classes[`align${capitalize(align)}`]]: align !== 'inherit',
     },
-    classNameProp,
+    styleProp,
   );
 
   const Component = componentProp || (paragraph ? Text : headlineMapping[variant]) || Text;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Textarea from './Textarea';
 
@@ -400,7 +400,7 @@ class Input extends React.Component {
       autoComplete,
       autoFocus,
       classes,
-      className: classNameProp,
+      style: styleProp,
       defaultValue,
       disabled: disabledProp,
       disableUnderline,
@@ -409,7 +409,7 @@ class Input extends React.Component {
       fullWidth,
       id,
       inputComponent,
-      inputProps: { className: inputPropsClassName, ...inputPropsProp } = {},
+      inputProps: { style: inputPropsClassName, ...inputPropsProp } = {},
       inputRef,
       margin: marginProp,
       multiline,
@@ -445,7 +445,7 @@ class Input extends React.Component {
         [classes.multiline]: multiline,
         [classes.underline]: !disableUnderline,
       },
-      classNameProp,
+      styleProp,
     );
 
     const inputClassName = classNames(

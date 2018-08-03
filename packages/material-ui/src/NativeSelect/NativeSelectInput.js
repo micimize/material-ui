@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 
 /**
  * @ignore - internal component.
@@ -10,7 +10,7 @@ function NativeSelectInput(props) {
   const {
     children,
     classes,
-    className,
+    style,
     disabled,
     IconComponent,
     inputRef,
@@ -28,7 +28,7 @@ function NativeSelectInput(props) {
           {
             [classes.disabled]: disabled,
           },
-          className,
+          style,
         )}
         name={name}
         disabled={disabled}

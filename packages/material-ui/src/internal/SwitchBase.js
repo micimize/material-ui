@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import IconButton from '../IconButton';
 
@@ -92,7 +92,7 @@ class SwitchBase extends React.Component {
       checked: checkedProp,
       checkedIcon,
       classes,
-      className: classNameProp,
+      style: styleProp,
       disabled: disabledProp,
       icon,
       id,
@@ -131,7 +131,7 @@ class SwitchBase extends React.Component {
             [classes.checked]: checked,
             [classes.disabled]: disabled,
           },
-          classNameProp,
+          styleProp,
         )}
         disabled={disabled}
         tabIndex={null}

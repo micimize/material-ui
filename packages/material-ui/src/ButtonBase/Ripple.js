@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import Transition from 'react-transition-group/Transition';
 
 /**
@@ -28,7 +28,7 @@ class Ripple extends React.Component {
   render() {
     const {
       classes,
-      className: classNameProp,
+      style: styleProp,
       pulsate,
       rippleX,
       rippleY,
@@ -43,7 +43,7 @@ class Ripple extends React.Component {
         [classes.rippleVisible]: visible,
         [classes.ripplePulsate]: pulsate,
       },
-      classNameProp,
+      styleProp,
     );
 
     const rippleStyles = {

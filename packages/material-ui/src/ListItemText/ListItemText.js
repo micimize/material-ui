@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Typography from '../Typography';
 
@@ -45,7 +45,7 @@ function ListItemText(props, context) {
   const {
     children,
     classes,
-    className: classNameProp,
+    style: styleProp,
     disableTypography,
     inset,
     primary: primaryProp,
@@ -94,7 +94,7 @@ function ListItemText(props, context) {
           [classes.dense]: dense,
           [classes.inset]: inset,
         },
-        classNameProp,
+        styleProp,
       )}
       {...other}
     >

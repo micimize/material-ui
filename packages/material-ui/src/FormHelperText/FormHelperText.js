@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -35,7 +35,7 @@ export const styles = theme => ({
 function FormHelperText(props, context) {
   const {
     classes,
-    className: classNameProp,
+    style: styleProp,
     disabled: disabledProp,
     error: errorProp,
     margin: marginProp,
@@ -69,7 +69,7 @@ function FormHelperText(props, context) {
       [classes.error]: error,
       [classes.marginDense]: margin === 'dense',
     },
-    classNameProp,
+    styleProp,
   );
 
   return <Component style={className} {...other} />;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import classnames from 'react-native-style-names';
 import debounce from 'debounce'; // < 1kb payload overhead when lodash/debounce is > 3kb.
 import EventListener from 'react-event-listener';
 import withStyles from '../styles/withStyles';
@@ -154,7 +154,7 @@ class Textarea extends React.Component {
   render() {
     const {
       classes,
-      className,
+      style,
       defaultValue,
       onChange,
       rows,

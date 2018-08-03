@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { fade } from '../styles/colorManipulator';
 import ButtonBase from '../ButtonBase';
@@ -79,7 +79,7 @@ export const styles = theme => ({
  * regarding the available icon options.
  */
 function IconButton(props) {
-  const { children, classes, className, color, disabled, ...other } = props;
+  const { children, classes, style, color, disabled, ...other } = props;
 
   return (
     <ButtonBase
@@ -89,7 +89,7 @@ function IconButton(props) {
           [classes[`color${capitalize(color)}`]]: color !== 'default',
           [classes.disabled]: disabled,
         },
-        className,
+        style,
       )}
       centerRipple
       focusRipple

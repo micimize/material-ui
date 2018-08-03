@@ -150,7 +150,7 @@ describe('<ListItem />', () => {
 
     it('should allow customization of the wrapper', () => {
       const wrapper = shallow(
-        <ListItem ContainerProps={{ className: 'bubu' }}>
+        <ListItem ContainerProps={{ style: 'bubu' }}>
           <ListItemText primary="primary" />
           <ListItemSecondaryAction />
         </ListItem>,

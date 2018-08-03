@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Typography from '../Typography';
 
@@ -45,7 +45,7 @@ function FormControlLabel(props, context) {
   const {
     checked,
     classes,
-    className: classNameProp,
+    style: styleProp,
     control,
     disabled: disabledProp,
     inputRef,
@@ -83,7 +83,7 @@ function FormControlLabel(props, context) {
           [classes.labelPlacementStart]: labelPlacement === 'start',
           [classes.disabled]: disabled,
         },
-        classNameProp,
+        styleProp,
       )}
       {...other}
     >

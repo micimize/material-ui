@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { fade } from '../styles/colorManipulator';
 import ButtonBase from '../ButtonBase';
@@ -195,7 +195,7 @@ function Button(props) {
   const {
     children,
     classes,
-    className: classNameProp,
+    style: styleProp,
     color,
     disabled,
     disableFocusRipple,
@@ -234,7 +234,7 @@ function Button(props) {
       [classes.fullWidth]: fullWidth,
       [classes.colorInherit]: color === 'inherit',
     },
-    classNameProp,
+    styleProp,
   );
 
   return (

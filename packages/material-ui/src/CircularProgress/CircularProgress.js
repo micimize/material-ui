@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 
@@ -93,7 +93,7 @@ export const styles = theme => ({
  * attribute to `true` on that region until it has finished loading.
  */
 function CircularProgress(props) {
-  const { classes, className, color, size, style, thickness, value, variant, ...other } = props;
+  const { classes, style, color, size, style, thickness, value, variant, ...other } = props;
 
   const circleStyle = {};
   const rootStyle = {};
@@ -124,7 +124,7 @@ function CircularProgress(props) {
           [classes.indeterminate]: variant === 'indeterminate',
           [classes.static]: variant === 'static',
         },
-        className,
+        style,
       )}
       style={{ width: size, height: size, ...rootStyle, ...style }}
       role="progressbar"

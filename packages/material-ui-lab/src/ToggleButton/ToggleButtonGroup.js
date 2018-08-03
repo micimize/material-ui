@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import hasValue from './hasValue';
 import isValueSelected from './isValueSelected';
@@ -56,7 +56,7 @@ class ToggleButtonGroup extends React.Component {
   render() {
     const {
       children: childrenProp,
-      className: classNameProp,
+      style: styleProp,
       classes,
       exclusive,
       onChange,
@@ -87,7 +87,7 @@ class ToggleButtonGroup extends React.Component {
       {
         [classes.selected]: groupSelected,
       },
-      classNameProp,
+      styleProp,
     );
 
     return (

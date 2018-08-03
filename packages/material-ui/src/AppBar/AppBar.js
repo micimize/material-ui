@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import Paper from '../Paper';
@@ -66,7 +66,7 @@ export const styles = theme => {
 };
 
 function AppBar(props) {
-  const { children, classes, className: classNameProp, color, position, ...other } = props;
+  const { children, classes, style: styleProp, color, position, ...other } = props;
 
   const className = classNames(
     classes.root,
@@ -75,7 +75,7 @@ function AppBar(props) {
       [classes[`color${capitalize(color)}`]]: color !== 'inherit',
       'mui-fixed': position === 'fixed', // Useful for the Dialog
     },
-    classNameProp,
+    styleProp,
   );
 
   return (

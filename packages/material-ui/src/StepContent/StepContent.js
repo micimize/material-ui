@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import Collapse from '../Collapse';
 import withStyles from '../styles/withStyles';
 
@@ -31,7 +31,7 @@ function StepContent(props) {
     alternativeLabel,
     children,
     classes,
-    className,
+    style,
     completed,
     last,
     optional,

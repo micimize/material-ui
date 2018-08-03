@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import warning from 'warning';
 import withStyles from '../styles/withStyles';
 
@@ -29,7 +29,7 @@ export const styles = theme => {
 function Paper(props) {
   const {
     classes,
-    className: classNameProp,
+    style: styleProp,
     component: Component,
     square,
     elevation,
@@ -47,7 +47,7 @@ function Paper(props) {
     {
       [classes.rounded]: !square,
     },
-    classNameProp,
+    styleProp,
   );
 
   return <Component style={className} {...other} />;

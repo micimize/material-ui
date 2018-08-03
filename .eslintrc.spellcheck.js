@@ -50,7 +50,7 @@ module.exports = {
           'childs',
           'chorizo',
           'classname',
-          'classnames',
+          'react-native-style-names',
           'clickaway',
           'commonjs',
           'commonjs2',

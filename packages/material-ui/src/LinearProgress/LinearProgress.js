@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import warning from 'warning';
 import withStyles from '../styles/withStyles';
 import { lighten } from '../styles/colorManipulator';
@@ -164,7 +164,7 @@ export const styles = theme => ({
  * attribute to `true` on that region until it has finished loading.
  */
 function LinearProgress(props) {
-  const { classes, className: classNameProp, color, value, valueBuffer, variant, ...other } = props;
+  const { classes, style: styleProp, color, value, valueBuffer, variant, ...other } = props;
 
   const className = classNames(
     classes.root,
@@ -174,7 +174,7 @@ function LinearProgress(props) {
       [classes.buffer]: variant === 'buffer',
       [classes.query]: variant === 'query',
     },
-    classNameProp,
+    styleProp,
   );
   const dashedClass = classNames(classes.dashed, {
     [classes.dashedColorPrimary]: color === 'primary',

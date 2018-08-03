@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Fade from '../Fade';
 
@@ -25,7 +25,7 @@ export const styles = {
 };
 
 function Backdrop(props) {
-  const { classes, className, invisible, open, transitionDuration, ...other } = props;
+  const { classes, style, invisible, open, transitionDuration, ...other } = props;
 
   return (
     <Fade appear in={open} timeout={transitionDuration} {...other}>
@@ -36,7 +36,7 @@ function Backdrop(props) {
           {
             [classes.invisible]: invisible,
           },
-          className,
+          style,
         )}
         aria-hidden="true"
       />

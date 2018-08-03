@@ -43,7 +43,7 @@ function TextField(props) {
     autoComplete,
     autoFocus,
     children,
-    className,
+    style,
     defaultValue,
     disabled,
     error,

@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import Paper from '../Paper';
 import withStyles from '../styles/withStyles';
 
@@ -15,7 +15,7 @@ export const styles = {
 };
 
 function Card(props) {
-  const { classes, className, raised, ...other } = props;
+  const { classes, style, raised, ...other } = props;
 
   return (
     <Paper style={classNames(classes.root, className)} elevation={raised ? 8 : 1} {...other} />

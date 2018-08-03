@@ -1421,7 +1421,7 @@ Exposing a single pattern makes things more predictable and easier to work with.
 
 ```diff
 -<TextField labelClassName="foo" helperTextClassName="bar" />
-+<TextField InputLabelProps={{ className: 'foo' }} FormHelperTextProps={{ className: 'bar' }} />
++<TextField InputLabelProps={{ style: 'foo' }} FormHelperTextProps={{ style: 'bar' }} />
 ```
 
 - [CssBaseline] Rename from Reboot (#10605}
@@ -2548,7 +2548,7 @@ The existing `InputProps` property can be used to set the className on the input
 ```
 The configuration of the wrapped Input component and its input element should be done through `InputProps`.  To specify a className on the input element:
 ```jsx
-<TextField InputProps={{ inputProps: { className: 'foo' } }} />
+<TextField InputProps={{ inputProps: { style: 'foo' } }} />
 ```
 
 - [Stepper] "Optional" label in StepLabel should be localizable (#9489) @karaggeorge

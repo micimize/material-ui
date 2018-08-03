@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import keycode from 'keycode';
 import CancelIcon from '../internal/svg-icons/Cancel';
 import withStyles from '../styles/withStyles';
@@ -140,7 +140,7 @@ class Chip extends React.Component {
     const {
       avatar: avatarProp,
       classes,
-      className: classNameProp,
+      style: styleProp,
       clickable,
       component: Component,
       deleteIcon: deleteIconProp,
@@ -156,7 +156,7 @@ class Chip extends React.Component {
       classes.root,
       { [classes.clickable]: onClick || clickable },
       { [classes.deletable]: onDelete },
-      classNameProp,
+      styleProp,
     );
 
     let deleteIcon = null;
@@ -164,7 +164,7 @@ class Chip extends React.Component {
       deleteIcon =
         deleteIconProp && React.isValidElement(deleteIconProp) ? (
           React.cloneElement(deleteIconProp, {
-            className: classNames(deleteIconProp.props.className, classes.deleteIcon),
+            style: classNames(deleteIconProp.props.className, classes.deleteIcon),
             onClick: this.handleDeleteIconClick,
           })
         ) : (
@@ -175,7 +175,7 @@ class Chip extends React.Component {
     let avatar = null;
     if (avatarProp && React.isValidElement(avatarProp)) {
       avatar = React.cloneElement(avatarProp, {
-        className: classNames(classes.avatar, avatarProp.props.className),
+        style: classNames(classes.avatar, avatarProp.props.className),
         childrenClassName: classNames(classes.avatarChildren, avatarProp.props.childrenClassName),
       });
     }

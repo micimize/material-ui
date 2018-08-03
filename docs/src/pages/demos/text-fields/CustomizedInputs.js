@@ -112,7 +112,7 @@ function CustomizedInputs(props) {
         }}
         InputLabelProps={{
           shrink: true,
-          className: classes.bootstrapFormLabel,
+          style: classes.bootstrapFormLabel,
         }}
       />
     </View>

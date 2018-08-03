@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
@@ -42,7 +42,7 @@ export const styles = theme => ({
 });
 
 function StepConnector(props) {
-  const { alternativeLabel, className: classNameProp, classes, orientation, ...other } = props;
+  const { alternativeLabel, style: styleProp, classes, orientation, ...other } = props;
 
   const className = classNames(
     classes.root,
@@ -50,7 +50,7 @@ function StepConnector(props) {
     {
       [classes.alternativeLabel]: alternativeLabel,
     },
-    classNameProp,
+    styleProp,
   );
   const lineClassName = classNames(classes.line, {
     [classes.lineHorizontal]: orientation === 'horizontal',

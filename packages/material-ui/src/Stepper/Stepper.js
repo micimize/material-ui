@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Paper from '../Paper';
 import StepConnector from '../StepConnector';
@@ -35,7 +35,7 @@ function Stepper(props) {
     alternativeLabel,
     children,
     classes,
-    className: classNameProp,
+    style: styleProp,
     connector: connectorProp,
     nonLinear,
     orientation,
@@ -48,7 +48,7 @@ function Stepper(props) {
     {
       [classes.alternativeLabel]: alternativeLabel,
     },
-    classNameProp,
+    styleProp,
   );
 
   const connector = React.isValidElement(connectorProp)

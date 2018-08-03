@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import warning from 'warning';
 import withStyles from '../styles/withStyles';
 
@@ -19,14 +19,14 @@ function BottomNavigation(props) {
   const {
     children: childrenProp,
     classes,
-    className: classNameProp,
+    style: styleProp,
     onChange,
     showLabels,
     value,
     ...other
   } = props;
 
-  const className = classNames(classes.root, classNameProp);
+  const className = classNames(classes.root, styleProp);
 
   const children = React.Children.map(childrenProp, (child, childIndex) => {
     if (!React.isValidElement(child)) {

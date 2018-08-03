@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { isFilled, isAdornedStart } from '../Input/Input';
 import { capitalize } from '../utils/helpers';
@@ -121,7 +121,7 @@ class FormControl extends React.Component {
   render() {
     const {
       classes,
-      className,
+      style,
       component: Component,
       disabled,
       error,
@@ -139,7 +139,7 @@ class FormControl extends React.Component {
             [classes[`margin${capitalize(margin)}`]]: margin !== 'none',
             [classes.fullWidth]: fullWidth,
           },
-          className,
+          style,
         )}
         {...other}
       />

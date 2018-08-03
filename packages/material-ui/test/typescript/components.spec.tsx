@@ -459,7 +459,7 @@ const ListTest = () => (
         </ListItemSecondaryAction>
       </ListItem>
     ))}
-    <ListItem ContainerComponent="div" ContainerProps={{ className: 'demo' }}>
+    <ListItem ContainerComponent="div" ContainerProps={{ style: 'demo' }}>
       an item
     </ListItem>
   </List>

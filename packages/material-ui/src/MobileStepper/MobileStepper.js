@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Paper from '../Paper';
 import { capitalize } from '../utils/helpers';
@@ -65,7 +65,7 @@ function MobileStepper(props) {
     activeStep,
     backButton,
     classes,
-    className: classNameProp,
+    style: styleProp,
     nextButton,
     position,
     steps,
@@ -76,7 +76,7 @@ function MobileStepper(props) {
   const className = classNames(
     classes.root,
     classes[`position${capitalize(position)}`],
-    classNameProp,
+    styleProp,
   );
 
   return (

@@ -128,7 +128,7 @@ class MenuList extends React.Component {
   }
 
   render() {
-    const { children, className, onBlur, onKeyDown, ...other } = this.props;
+    const { children, style, onBlur, onKeyDown, ...other } = this.props;
 
     return (
       <List

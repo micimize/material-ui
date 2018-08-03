@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import EventListener from 'react-event-listener';
 import debounce from 'debounce'; // < 1kb payload overhead when lodash/debounce is > 3kb.
 import withStyles from '../styles/withStyles';
@@ -88,7 +88,7 @@ class GridListTile extends React.Component {
   }
 
   render() {
-    const { children, classes, className, cols, component: Component, rows, ...other } = this.props;
+    const { children, classes, style, cols, component: Component, rows, ...other } = this.props;
 
     return (
       <Component style={classNames(classes.root, className)} {...other}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import SwitchBase from '../internal/SwitchBase';
@@ -98,7 +98,7 @@ export const styles = theme => ({
 });
 
 function Switch(props) {
-  const { classes, className, color, ...other } = props;
+  const { classes, style, color, ...other } = props;
 
   return (
     <span style={classNames(classes.root, className)}>

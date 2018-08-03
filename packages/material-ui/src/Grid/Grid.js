@@ -12,7 +12,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { keys as breakpointKeys } from '../styles/createBreakpoints';
 import requirePropFactory from '../utils/requirePropFactory';
@@ -198,7 +198,7 @@ function Grid(props) {
     alignContent,
     alignItems,
     classes,
-    className: classNameProp,
+    style: styleProp,
     component: Component,
     container,
     direction,
@@ -234,7 +234,7 @@ function Grid(props) {
       [classes[`grid-lg-${String(lg)}`]]: lg !== false,
       [classes[`grid-xl-${String(xl)}`]]: xl !== false,
     },
-    classNameProp,
+    styleProp,
   );
 
   return <Component style={className} {...other} />;

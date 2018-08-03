@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import ButtonBase from '../ButtonBase';
 import IconButton from '../IconButton';
 import withStyles from '../styles/withStyles';
@@ -102,7 +102,7 @@ class ExpansionPanelSummary extends React.Component {
     const {
       children,
       classes,
-      className,
+      style,
       disabled,
       expanded,
       expandIcon,
@@ -126,7 +126,7 @@ class ExpansionPanelSummary extends React.Component {
             [classes.expanded]: expanded,
             [classes.focused]: focused,
           },
-          className,
+          style,
         )}
         {...other}
         onFocusVisible={this.handleFocus}

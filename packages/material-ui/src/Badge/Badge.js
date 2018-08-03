@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 
@@ -58,7 +58,7 @@ function Badge(props) {
     badgeContent,
     children,
     classes,
-    className: classNameProp,
+    style: styleProp,
     color,
     component: ComponentProp,
     ...other
@@ -69,7 +69,7 @@ function Badge(props) {
   });
 
   return (
-    <ComponentProp style={classNames(classes.root, classNameProp)} {...other}>
+    <ComponentProp style={classNames(classes.root, styleProp)} {...other}>
       {children}
       <span style={badgeClassName}>{badgeContent}</span>
     </ComponentProp>

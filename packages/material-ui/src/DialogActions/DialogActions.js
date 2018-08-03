@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { cloneChildrenWithClassName } from '../utils/reactHelpers';
 import '../Button'; // So we don't have any override priority issue.
@@ -22,7 +22,7 @@ export const styles = {
 };
 
 function DialogActions(props) {
-  const { disableActionSpacing, children, classes, className, ...other } = props;
+  const { disableActionSpacing, children, classes, style, ...other } = props;
 
   return (
     <View style={classNames(classes.root, className)} {...other}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 function styled(Component) {
   return (style, options) => {
     function StyledComponent(props) {
-      const { classes, className, ...other } = props;
+      const { classes, style, ...other } = props;
       return <Component style={classNames(classes.root, className)} {...other} />;
     }
     StyledComponent.propTypes = {

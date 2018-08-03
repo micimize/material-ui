@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 export const styles = {
@@ -22,7 +22,7 @@ class TableBody extends React.Component {
   }
 
   render() {
-    const { classes, className, component: Component, ...other } = this.props;
+    const { classes, style, component: Component, ...other } = this.props;
 
     return <Component style={classNames(classes.root, className)} {...other} />;
   }

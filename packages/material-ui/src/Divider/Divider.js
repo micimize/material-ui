@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { fade } from '../styles/colorManipulator';
 
@@ -35,7 +35,7 @@ function Divider(props) {
   const {
     absolute,
     classes,
-    className: classNameProp,
+    style: styleProp,
     component: Component,
     inset,
     light,
@@ -49,7 +49,7 @@ function Divider(props) {
       [classes.inset]: inset,
       [classes.light]: light,
     },
-    classNameProp,
+    styleProp,
   );
 
   return <Component style={className} {...other} />;
