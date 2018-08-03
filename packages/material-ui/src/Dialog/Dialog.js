@@ -47,7 +47,7 @@ export const styles = theme => ({
   /* Styles applied to the `Paper` component if `maxWidth="xs"`. */
   paperWidthXs: {
     maxWidth: Math.max(theme.breakpoints.values.xs, 360),
-    '&$paperScrollBody': {
+    '[paperScrollBody="true"]': {
       [theme.breakpoints.down(Math.max(theme.breakpoints.values.xs, 360) + 48 * 2)]: {
         margin: 48,
       },
@@ -56,7 +56,7 @@ export const styles = theme => ({
   /* Styles applied to the `Paper` component if `maxWidth="sm"`. */
   paperWidthSm: {
     maxWidth: theme.breakpoints.values.sm,
-    '&$paperScrollBody': {
+    '[paperScrollBody="true"]': {
       [theme.breakpoints.down(theme.breakpoints.values.sm + 48 * 2)]: {
         margin: 48,
       },
@@ -65,7 +65,7 @@ export const styles = theme => ({
   /* Styles applied to the `Paper` component if `maxWidth="md"`. */
   paperWidthMd: {
     maxWidth: theme.breakpoints.values.md,
-    '&$paperScrollBody': {
+    '[paperScrollBody="true"]': {
       [theme.breakpoints.down(theme.breakpoints.values.md + 48 * 2)]: {
         margin: 48,
       },

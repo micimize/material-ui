@@ -8,7 +8,7 @@ import orange from '@material-ui/core/colors/orange';
 const styles = theme => ({
   root: {
     color: theme.status.danger,
-    '&$checked': {
+    '[checked="true"]': {
       color: theme.status.danger,
     },
   },

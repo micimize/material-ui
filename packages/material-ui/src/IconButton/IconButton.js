@@ -29,11 +29,11 @@ export const styles = theme => ({
       '@media (hover: none)': {
         backgroundColor: 'transparent',
       },
-      '&$disabled': {
+      '[disabled="true"]': {
         backgroundColor: 'transparent',
       },
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       color: theme.palette.action.disabled,
     },
   },

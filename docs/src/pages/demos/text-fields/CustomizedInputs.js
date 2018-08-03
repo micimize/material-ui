@@ -18,7 +18,7 @@ const styles = theme => ({
     margin: theme.spacing.unit,
   },
   cssLabel: {
-    '&$cssFocused': {
+    '[cssFocused="true"]': {
       color: purple[500],
     },
   },

@@ -15,10 +15,10 @@ export const styles = theme => ({
     lineHeight: '1em',
     minHeight: '1em',
     margin: 0,
-    '&$error': {
+    '[error="true"]': {
       color: theme.palette.error.main,
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       color: theme.palette.text.disabled,
     },
   },

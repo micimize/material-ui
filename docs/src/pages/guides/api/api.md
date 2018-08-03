@@ -63,7 +63,7 @@ Hopefully, it's also more intuitive.
 const styles = {
   root: {
     color: green[600],
-    '&$checked': {
+    '[checked="true"]': {
       color: green[500],
     },
   },

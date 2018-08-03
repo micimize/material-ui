@@ -32,30 +32,30 @@ export const styles = theme => ({
   textColorInherit: {
     color: 'inherit',
     opacity: 0.7,
-    '&$selected': {
+    '[selected="true"]': {
       opacity: 1,
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       opacity: 0.4,
     },
   },
   /* Styles applied to the root element if `textColor="primary"`. */
   textColorPrimary: {
     color: theme.palette.text.secondary,
-    '&$selected': {
+    '[selected="true"]': {
       color: theme.palette.primary.main,
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       color: theme.palette.text.disabled,
     },
   },
   /* Styles applied to the root element if `textColor="secondary"`. */
   textColorSecondary: {
     color: theme.palette.text.secondary,
-    '&$selected': {
+    '[selected="true"]': {
       color: theme.palette.secondary.main,
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       color: theme.palette.text.disabled,
     },
   },

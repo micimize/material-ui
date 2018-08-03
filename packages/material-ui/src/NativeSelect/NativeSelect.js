@@ -40,7 +40,7 @@ export const styles = theme => ({
     '&::-ms-expand': {
       display: 'none',
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       cursor: 'default',
     },
   },

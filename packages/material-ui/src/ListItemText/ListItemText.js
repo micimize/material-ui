@@ -27,13 +27,13 @@ export const styles = theme => ({
   },
   /* Styles applied to the primary `Typography` component. */
   primary: {
-    '&$textDense': {
+    '[textDense="true"]': {
       fontSize: 'inherit',
     },
   },
   /* Styles applied to the secondary `Typography` component. */
   secondary: {
-    '&$textDense': {
+    '[textDense="true"]': {
       fontSize: 'inherit',
     },
   },

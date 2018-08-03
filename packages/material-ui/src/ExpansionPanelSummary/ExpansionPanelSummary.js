@@ -22,13 +22,13 @@ export const styles = theme => {
       '&:hover:not($disabled)': {
         cursor: 'pointer',
       },
-      '&$expanded': {
+      '[expanded="true"]': {
         minHeight: 64,
       },
-      '&$focused': {
+      '[focused="true"]': {
         backgroundColor: theme.palette.grey[300],
       },
-      '&$disabled': {
+      '[disabled="true"]': {
         opacity: 0.38,
       },
     },
@@ -47,7 +47,7 @@ export const styles = theme => {
       '& > :last-child': {
         paddingRight: 32,
       },
-      '&$expanded': {
+      '[expanded="true"]': {
         margin: '20px 0',
       },
     },
@@ -64,7 +64,7 @@ export const styles = theme => {
         // not only to the IconButton.
         backgroundColor: 'transparent',
       },
-      '&$expanded': {
+      '[expanded="true"]': {
         transform: 'translateY(-50%) rotate(180deg)',
       },
     },

@@ -12,13 +12,13 @@ export const styles = theme => ({
   root: {
     display: 'block',
     color: theme.palette.text.disabled,
-    '&$active': {
+    '[active="true"]': {
       color: theme.palette.primary.main,
     },
-    '&$completed': {
+    '[completed="true"]': {
       color: theme.palette.primary.main,
     },
-    '&$error': {
+    '[error="true"]': {
       color: theme.palette.error.main,
     },
   },

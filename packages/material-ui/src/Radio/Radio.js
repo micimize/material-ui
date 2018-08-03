@@ -19,19 +19,19 @@ export const styles = theme => ({
   disabled: {},
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {
-    '&$checked': {
+    '[checked="true"]': {
       color: theme.palette.primary.main,
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       color: theme.palette.action.disabled,
     },
   },
   /* Styles applied to the root element if `color="secondary"`. */
   colorSecondary: {
-    '&$checked': {
+    '[checked="true"]': {
       color: theme.palette.secondary.main,
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       color: theme.palette.action.disabled,
     },
   },

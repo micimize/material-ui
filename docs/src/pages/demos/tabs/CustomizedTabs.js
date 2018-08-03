@@ -38,7 +38,7 @@ const styles = theme => ({
       color: '#40a9ff',
       opacity: 1,
     },
-    '&$tabSelected': {
+    '[tabSelected="true"]': {
       color: '#1890ff',
       fontWeight: theme.typography.fontWeightMedium,
     },

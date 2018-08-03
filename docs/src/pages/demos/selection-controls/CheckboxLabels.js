@@ -14,7 +14,7 @@ import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 const styles = {
   root: {
     color: green[600],
-    '&$checked': {
+    '[checked="true"]': {
       color: green[500],
     },
   },

@@ -22,10 +22,10 @@ export const styles = theme => ({
     maxWidth: 168,
     color: theme.palette.text.secondary,
     flex: '1',
-    '&$iconOnly': {
+    '[iconOnly="true"]': {
       paddingTop: 16,
     },
-    '&$selected': {
+    '[selected="true"]': {
       paddingTop: 6,
       color: theme.palette.primary.main,
     },
@@ -49,11 +49,11 @@ export const styles = theme => ({
     opacity: 1,
     transition: 'font-size 0.2s, opacity 0.2s',
     transitionDelay: '0.1s',
-    '&$iconOnly': {
+    '[iconOnly="true"]': {
       opacity: 0,
       transitionDelay: '0s',
     },
-    '&$selected': {
+    '[selected="true"]': {
       fontSize: theme.typography.pxToRem(14),
     },
   },

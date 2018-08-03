@@ -12,13 +12,13 @@ export const styles = theme => ({
     fontSize: theme.typography.pxToRem(16),
     lineHeight: 1,
     padding: 0,
-    '&$focused': {
+    '[focused="true"]': {
       color: theme.palette.primary[theme.palette.type === 'light' ? 'dark' : 'light'],
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       color: theme.palette.text.disabled,
     },
-    '&$error': {
+    '[error="true"]': {
       color: theme.palette.error.main,
     },
   },
@@ -29,7 +29,7 @@ export const styles = theme => ({
   /* Styles applied to the root element if `error={true}`. */
   error: {},
   asterisk: {
-    '&$error': {
+    '[error="true"]': {
       color: theme.palette.error.main,
     },
   },

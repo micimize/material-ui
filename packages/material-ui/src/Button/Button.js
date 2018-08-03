@@ -30,11 +30,11 @@ export const styles = theme => ({
       '@media (hover: none)': {
         backgroundColor: 'transparent',
       },
-      '&$disabled': {
+      '[disabled="true"]': {
         backgroundColor: 'transparent',
       },
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       color: theme.palette.action.disabled,
     },
   },
@@ -86,13 +86,13 @@ export const styles = theme => ({
     color: theme.palette.getContrastText(theme.palette.grey[300]),
     backgroundColor: theme.palette.grey[300],
     boxShadow: theme.shadows[2],
-    '&$focusVisible': {
+    '[focusVisible="true"]': {
       boxShadow: theme.shadows[6],
     },
     '&:active': {
       boxShadow: theme.shadows[8],
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       color: theme.palette.action.disabled,
       boxShadow: theme.shadows[0],
       backgroundColor: theme.palette.action.disabledBackground,
@@ -103,7 +103,7 @@ export const styles = theme => ({
       '@media (hover: none)': {
         backgroundColor: theme.palette.grey[300],
       },
-      '&$disabled': {
+      '[disabled="true"]': {
         backgroundColor: theme.palette.action.disabledBackground,
       },
     },

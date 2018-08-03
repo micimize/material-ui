@@ -19,7 +19,7 @@ export const styles = theme => ({
     whiteSpace: 'nowrap',
     paddingLeft: 16,
     paddingRight: 16,
-    '&$selected': {
+    '[selected="true"]': {
       backgroundColor: theme.palette.action.selected,
     },
   },

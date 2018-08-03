@@ -39,7 +39,7 @@ export const styles = {
       borderStyle: 'none', // Remove Firefox dotted outline.
     },
     */
-    '&$disabled': {
+    '[disabled="true"]': {
       pointerEvents: 'none', // Disable link interactions
       cursor: 'default',
     },

@@ -79,7 +79,7 @@ The [jss-nested](https://github.com/cssinjs/jss-nested) plugin (available by def
 ```js
 const styles = {
   root: {
-    '&$disabled': {
+    '[disabled="true"]': {
       color: 'white',
     },
   },

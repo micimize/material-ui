@@ -69,7 +69,7 @@ export const styles = theme => {
       color: light ? 'rgba(0, 0, 0, 0.87)' : theme.palette.common.white,
       fontSize: theme.typography.pxToRem(16),
       lineHeight: '1.1875em', // Reset (19px), match the native input line-height
-      '&$disabled': {
+      '[disabled="true"]': {
         color: theme.palette.text.disabled,
       },
     },
@@ -181,7 +181,7 @@ export const styles = theme => {
         '&:focus::-ms-input-placeholder': placeholderVisible, // Edge
       },
       */
-      '&$disabled': {
+      '[disabled="true"]': {
         opacity: 1, // Reset iOS opacity
       },
     },

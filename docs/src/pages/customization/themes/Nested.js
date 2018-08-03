@@ -10,7 +10,7 @@ import pink from '@material-ui/core/colors/pink';
 const styles = theme => ({
   root: {
     color: theme.status.color,
-    '&$checked': {
+    '[checked="true"]': {
       color: theme.status.color,
     },
   },

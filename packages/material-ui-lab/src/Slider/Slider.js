@@ -35,14 +35,14 @@ export const styles = theme => {
       padding: '16px 8px',
       cursor: 'pointer',
 
-      '&$disabled': {
+      '[disabled="true"]': {
         cursor: 'no-drop',
       },
-      '&$vertical': {
+      '[vertical="true"]': {
         height: '100%',
         padding: '8px 16px',
       },
-      '&$reverse': {
+      '[reverse="true"]': {
         transform: 'scaleX(-1)',
       },
       '&$vertical$reverse': {
@@ -52,7 +52,7 @@ export const styles = theme => {
     /* Styles applied to the container element. */
     container: {
       position: 'relative',
-      '&$vertical': {
+      '[vertical="true"]': {
         height: '100%',
       },
     },
@@ -66,10 +66,10 @@ export const styles = theme => {
       '&$focused, &$activated': {
         transition: 'none',
       },
-      '&$disabled': {
+      '[disabled="true"]': {
         backgroundColor: colors.disabled,
       },
-      '&$vertical': {
+      '[vertical="true"]': {
         transform: 'translate(-50%, 0)',
         left: '50%',
         top: 'initial',
@@ -87,7 +87,7 @@ export const styles = theme => {
       right: 0,
       opacity: 0.24,
       transition: commonTransitions,
-      '&$vertical': {
+      '[vertical="true"]': {
         bottom: 0,
       },
     },
@@ -101,21 +101,21 @@ export const styles = theme => {
       borderRadius: '50%',
       transition: commonTransitions,
       backgroundColor: colors.primary,
-      '&$focused': {
+      '[focused="true"]': {
         boxShadow: `0px 0px 0px 9px ${fade(colors.primary, 0.16)}`,
       },
-      '&$activated': {
+      '[activated="true"]': {
         width: 17,
         height: 17,
         transition: 'none',
       },
-      '&$disabled': {
+      '[disabled="true"]': {
         cursor: 'no-drop',
         width: 9,
         height: 9,
         backgroundColor: colors.disabled,
       },
-      '&$jumped': {
+      '[jumped="true"]': {
         width: 17,
         height: 17,
       },

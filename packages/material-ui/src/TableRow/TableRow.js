@@ -13,7 +13,7 @@ export const styles = theme => ({
     verticalAlign: 'middle',
     // We disable the focus ring for mouse, touch and keyboard users.
     outline: 'none',
-    '&$selected': {
+    '[selected="true"]': {
       backgroundColor:
         theme.palette.type === 'light'
           ? 'rgba(0, 0, 0, 0.04)' // grey[100]

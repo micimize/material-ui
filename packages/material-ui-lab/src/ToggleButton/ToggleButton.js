@@ -26,7 +26,7 @@ export const styles = theme => ({
       '@media (hover: none)': {
         backgroundColor: 'transparent',
       },
-      '&$disabled': {
+      '[disabled="true"]': {
         backgroundColor: 'transparent',
       },
     },

@@ -11,10 +11,10 @@ export const styles = theme => ({
   root: {
     display: 'flex',
     alignItems: 'center',
-    '&$alternativeLabel': {
+    '[alternativeLabel="true"]': {
       flexDirection: 'column',
     },
-    '&$disabled': {
+    '[disabled="true"]': {
       cursor: 'default',
     },
   },
@@ -25,19 +25,19 @@ export const styles = theme => ({
   /* Styles applied to the `Typography` component which wraps `children`. */
   label: {
     color: theme.palette.text.secondary,
-    '&$active': {
+    '[active="true"]': {
       color: theme.palette.text.primary,
       fontWeight: 500,
     },
-    '&$completed': {
+    '[completed="true"]': {
       color: theme.palette.text.primary,
       fontWeight: 500,
     },
-    '&$alternativeLabel': {
+    '[alternativeLabel="true"]': {
       textAlign: 'center',
       marginTop: 16,
     },
-    '&$error': {
+    '[error="true"]': {
       color: theme.palette.error.main,
     },
   },
@@ -52,7 +52,7 @@ export const styles = theme => ({
   /* Styles applied to the `icon` container element. */
   iconContainer: {
     paddingRight: 8,
-    '&$alternativeLabel': {
+    '[alternativeLabel="true"]': {
       paddingRight: 0,
     },
   },

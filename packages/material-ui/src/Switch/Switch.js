@@ -45,7 +45,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the internal SwitchBase component's root element if `color="primary"`. */
   colorPrimary: {
-    '&$checked': {
+    '[checked="true"]': {
       color: theme.palette.primary.main,
       '& + $bar': {
         backgroundColor: theme.palette.primary.main,
@@ -54,7 +54,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the internal SwitchBase component's root element if `color="secondary"`. */
   colorSecondary: {
-    '&$checked': {
+    '[checked="true"]': {
       color: theme.palette.secondary.main,
       '& + $bar': {
         backgroundColor: theme.palette.secondary.main,
@@ -69,7 +69,7 @@ export const styles = theme => ({
     '& $icon': {
       boxShadow: theme.shadows[1],
     },
-    '&$switchBase': {
+    '[switchBase="true"]': {
       color: theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[800],
       '& + $bar': {
         backgroundColor:
