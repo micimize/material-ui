@@ -14,6 +14,7 @@ import customProperty from 'fela-plugin-custom-property';
 import getDisplayName from 'recompose/getDisplayName';
 import nativeMediaQuery from './fela-plugin-native-media-query';
 import customModules from './fela-plugin-custom-modules';
+import expandShorthand, { cast } from './shorthand-properties';
 
 const validNumber = numberString => Number.isFinite(Number(numberString));
 
@@ -37,6 +38,9 @@ const felaRenderer = createRenderer({
       fontWeight(prop) {
         return typeof prop === 'number' ? prop.toString() : prop;
       },
+      borderRight: expandShorthand('border-right', {
+        borderRightWidth: cast.toNumber,
+      }),
       flex(prop) {
         if (typeof prop !== 'string') {
           return { flex: prop };

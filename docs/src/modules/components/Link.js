@@ -34,7 +34,7 @@ const styles = theme => ({
 
 function Link(props) {
   const {
-    activeStyle,
+    activeStyle = {},
     children: childrenProp,
     classes,
     style: styleProp,
@@ -67,7 +67,7 @@ function Link(props) {
     };
     children = (
       <Text
-        style={styleNames(style, router.pathname === href && activeStyle)}
+        style={router.pathname === href ? styleNames(style, activeStyle) : style}
         onClick={onClick}
         {...other}
       >
