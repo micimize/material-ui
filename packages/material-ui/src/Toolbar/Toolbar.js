@@ -9,6 +9,7 @@ export const styles = theme => ({
   root: {
     position: 'relative',
     display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
   },
   /* Styles applied to the root element if `disableGutters={false}`. */
