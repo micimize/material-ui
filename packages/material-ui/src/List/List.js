@@ -101,7 +101,7 @@ List.propTypes = {
 };
 
 List.defaultProps = {
-  component: 'ul',
+  component: View,
   dense: false,
   disablePadding: false,
 };

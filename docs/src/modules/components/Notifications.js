@@ -79,7 +79,7 @@ class Notifications extends React.Component {
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         ContentProps={{ 'aria-describedby': 'notification-message' }}
         message={
-          <span id="notification-message" dangerouslySetInnerHTML={{ __html: message.text }} />
+          <Text id="notification-message" dangerouslySetInnerHTML={{ __html: message.text }} />
         }
         action={
           <Button size="small" color="secondary" onClick={this.handleClose}>

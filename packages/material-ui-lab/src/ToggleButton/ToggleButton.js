@@ -131,7 +131,7 @@ class ToggleButton extends React.Component {
         onClick={this.handleChange}
         {...other}
       >
-        <span style={classes.label}>{children}</span>
+        <Text style={classes.label}>{children}</Text>
       </ButtonBase>
     );
   }

@@ -102,10 +102,10 @@ class BottomNavigationAction extends React.Component {
 
     return (
       <ButtonBase style={className} focusRipple onClick={this.handleChange} {...other}>
-        <span style={classes.wrapper}>
+        <Text style={classes.wrapper}>
           {icon}
-          <span style={labelClassName}>{label}</span>
-        </span>
+          <Text style={labelClassName}>{label}</Text>
+        </Text>
       </ButtonBase>
     );
   }

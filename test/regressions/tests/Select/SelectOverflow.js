@@ -7,7 +7,7 @@ function SelectOverflow() {
   return (
     <Select value={10} style={{ maxWidth: 100 }}>
       <MenuItem value="">
-        <em>None</em>
+        <Text>None</Text>
       </MenuItem>
       <MenuItem value={10}>Tennnnnnn</MenuItem>
     </Select>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -30,18 +30,18 @@ function TextButtons(props) {
       <Button href="#text-buttons" style={classes.button}>
         Link
       </Button>
-      <input
+      <TextInput
         accept="image/*"
         style={classes.input}
         id="flat-button-file"
         multiple
         type="file"
       />
-      <label htmlFor="flat-button-file">
+      <Text htmlFor="flat-button-file">
         <Button component="span" style={classes.button}>
           Upload
         </Button>
-      </label>
+      </Text>
     </View>
   );
 }

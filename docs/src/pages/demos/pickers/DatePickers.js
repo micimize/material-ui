@@ -20,7 +20,7 @@ function DatePickers(props) {
   const { classes } = props;
 
   return (
-    <form style={classes.container} noValidate>
+    <View style={classes.container} noValidate>
       <TextField
         id="date"
         label="Birthday"
@@ -31,7 +31,7 @@ function DatePickers(props) {
           shrink: true,
         }}
       />
-    </form>
+    </View>
   );
 }
 

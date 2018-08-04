@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
@@ -93,7 +93,7 @@ class SwipeableTextMobileStepper extends React.Component {
           enableMouseEvents
         >
           {tutorialSteps.map(step => (
-            <img key={step.label} style={classes.img} src={step.imgPath} alt={step.label} />
+            <Image key={step.label} style={classes.img} src={step.imgPath} alt={step.label} />
           ))}
         </SwipeableViews>
         <MobileStepper

@@ -14,7 +14,7 @@ function SelectAlignment() {
         <InputLabel htmlFor="age1">Age</InputLabel>
         <Select value="" input={<Input name="age1" id="age1" />}>
           <MenuItem value="">
-            <em>None</em>
+            <Text>None</Text>
           </MenuItem>
           <MenuItem value={10}>Ten</MenuItem>
         </Select>
@@ -23,7 +23,7 @@ function SelectAlignment() {
         <InputLabel htmlFor="age2">year</InputLabel>
         <Select value={10} input={<Input name="year" id="age2" />}>
           <MenuItem value="">
-            <em>None</em>
+            <Text>None</Text>
           </MenuItem>
           <MenuItem value={10}>Ten</MenuItem>
         </Select>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
@@ -33,12 +33,12 @@ function IconButtons(props) {
       <IconButton color="primary" style={classes.button} aria-label="Add to shopping cart">
         <AddShoppingCartIcon />
       </IconButton>
-      <input accept="image/*" style={classes.input} id="icon-button-file" type="file" />
-      <label htmlFor="icon-button-file">
+      <TextInput accept="image/*" style={classes.input} id="icon-button-file" type="file" />
+      <Text htmlFor="icon-button-file">
         <IconButton color="primary" style={classes.button} component="span">
           <PhotoCamera />
         </IconButton>
-      </label>
+      </Text>
     </View>
   );
 }

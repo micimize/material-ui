@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from 'react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
@@ -183,7 +183,7 @@ function HomeSteps(props) {
           </Typography>
           <Link prefetch href="/premium-themes" style={classes.link}>
             <NoSsr>
-              <img style={classes.img} alt="themes" src="/static/images/themes.jpg" />
+              <Image style={classes.img} alt="themes" src="/static/images/themes.jpg" />
             </NoSsr>
           </Link>
         </View>

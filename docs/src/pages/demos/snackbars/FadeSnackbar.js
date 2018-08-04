@@ -28,7 +28,7 @@ class FadeSnackbar extends React.Component {
           ContentProps={{
             'aria-describedby': 'message-id',
           }}
-          message={<span id="message-id">I love snacks</span>}
+          message={<Text id="message-id">I love snacks</Text>}
         />
       </View>
     );

@@ -101,7 +101,7 @@ class FabIntegrationSnackbar extends React.Component {
               'aria-describedby': 'snackbar-fab-message-id',
               style: classes.snackbarContent,
             }}
-            message={<span id="snackbar-fab-message-id">Archived</span>}
+            message={<Text id="snackbar-fab-message-id">Archived</Text>}
             action={
               <Button color="inherit" size="small" onClick={this.handleClose}>
                 Undo

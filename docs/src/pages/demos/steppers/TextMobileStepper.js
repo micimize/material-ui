@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
@@ -81,7 +81,7 @@ class TextMobileStepper extends React.Component {
         <Paper square elevation={0} style={classes.header}>
           <Typography>{tutorialSteps[activeStep].label}</Typography>
         </Paper>
-        <img
+        <Image
           style={classes.img}
           src={tutorialSteps[activeStep].imgPath}
           alt={tutorialSteps[activeStep].label}

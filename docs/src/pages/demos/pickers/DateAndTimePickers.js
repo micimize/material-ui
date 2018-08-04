@@ -20,7 +20,7 @@ function DateAndTimePickers(props) {
   const { classes } = props;
 
   return (
-    <form style={classes.container} noValidate>
+    <View style={classes.container} noValidate>
       <TextField
         id="datetime-local"
         label="Next appointment"
@@ -31,7 +31,7 @@ function DateAndTimePickers(props) {
           shrink: true,
         }}
       />
-    </form>
+    </View>
   );
 }
 

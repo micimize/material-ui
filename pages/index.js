@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
 import { withStyles } from '@material-ui/core/styles';
@@ -111,7 +111,7 @@ class HomePage extends React.Component {
         <Tidelift />
         <View style={classes.hero}>
           <View style={classes.content}>
-            <img
+            <Image
               src="/static/images/material-ui-logo.svg"
               alt="Material-UI Logo"
               style={classes.logo}

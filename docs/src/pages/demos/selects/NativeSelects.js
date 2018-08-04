@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,Picker } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
@@ -49,10 +49,10 @@ class NativeSelects extends React.Component {
               id: 'age-native-simple',
             }}
           >
-            <option value="" />
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <Picker.Item value="" />
+            <Picker.Item value={10}>Ten</Picker.Item>
+            <Picker.Item value={20}>Twenty</Picker.Item>
+            <Picker.Item value={30}>Thirty</Picker.Item>
           </Select>
         </FormControl>
         <FormControl style={classes.formControl}>
@@ -62,10 +62,10 @@ class NativeSelects extends React.Component {
             onChange={this.handleChange('age')}
             input={<Input name="age" id="age-native-helper" />}
           >
-            <option value="" />
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <Picker.Item value="" />
+            <Picker.Item value={10}>Ten</Picker.Item>
+            <Picker.Item value={20}>Twenty</Picker.Item>
+            <Picker.Item value={30}>Thirty</Picker.Item>
           </NativeSelect>
           <FormHelperText>Some important helper text</FormHelperText>
         </FormControl>
@@ -76,10 +76,10 @@ class NativeSelects extends React.Component {
             name="age"
             style={classes.selectEmpty}
           >
-            <option value="">None</option>
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <Picker.Item value="">None</Picker.Item>
+            <Picker.Item value={10}>Ten</Picker.Item>
+            <Picker.Item value={20}>Twenty</Picker.Item>
+            <Picker.Item value={30}>Thirty</Picker.Item>
           </NativeSelect>
           <FormHelperText>Without label</FormHelperText>
         </FormControl>
@@ -92,10 +92,10 @@ class NativeSelects extends React.Component {
             onChange={this.handleChange('age')}
             input={<Input name="age" id="age-native-label-placeholder" />}
           >
-            <option value="">None</option>
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <Picker.Item value="">None</Picker.Item>
+            <Picker.Item value={10}>Ten</Picker.Item>
+            <Picker.Item value={20}>Twenty</Picker.Item>
+            <Picker.Item value={30}>Thirty</Picker.Item>
           </NativeSelect>
           <FormHelperText>Label + placeholder</FormHelperText>
         </FormControl>
@@ -106,13 +106,13 @@ class NativeSelects extends React.Component {
             onChange={this.handleChange('name')}
             input={<Input name="name" id="name-native-disabled" />}
           >
-            <option value="" />
+            <Picker.Item value="" />
             <optgroup label="Author">
-              <option value="hai">Hai</option>
+              <Picker.Item value="hai">Hai</Picker.Item>
             </optgroup>
             <optgroup label="Contributors">
-              <option value="olivier">Olivier</option>
-              <option value="kevin">Kevin</option>
+              <Picker.Item value="olivier">Olivier</Picker.Item>
+              <Picker.Item value="kevin">Kevin</Picker.Item>
             </optgroup>
           </NativeSelect>
           <FormHelperText>Disabled</FormHelperText>
@@ -125,13 +125,13 @@ class NativeSelects extends React.Component {
             name="name"
             input={<Input id="name-native-error" />}
           >
-            <option value="" />
+            <Picker.Item value="" />
             <optgroup label="Author">
-              <option value="hai">Hai</option>
+              <Picker.Item value="hai">Hai</Picker.Item>
             </optgroup>
             <optgroup label="Contributors">
-              <option value="olivier">Olivier</option>
-              <option value="kevin">Kevin</option>
+              <Picker.Item value="olivier">Olivier</Picker.Item>
+              <Picker.Item value="kevin">Kevin</Picker.Item>
             </optgroup>
           </NativeSelect>
           <FormHelperText>Error</FormHelperText>
@@ -139,10 +139,10 @@ class NativeSelects extends React.Component {
         <FormControl style={classes.formControl}>
           <InputLabel htmlFor="uncontrolled-native">Name</InputLabel>
           <NativeSelect defaultValue={30} input={<Input name="name" id="uncontrolled-native" />}>
-            <option value="" />
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <Picker.Item value="" />
+            <Picker.Item value={10}>Ten</Picker.Item>
+            <Picker.Item value={20}>Twenty</Picker.Item>
+            <Picker.Item value={30}>Thirty</Picker.Item>
           </NativeSelect>
           <FormHelperText>Uncontrolled</FormHelperText>
         </FormControl>
@@ -153,12 +153,12 @@ class NativeSelects extends React.Component {
             name="age"
             onChange={this.handleChange('age')}
           >
-            <option value="" disabled>
+            <Picker.Item value="" disabled>
               Placeholder
-            </option>
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            </Picker.Item>
+            <Picker.Item value={10}>Ten</Picker.Item>
+            <Picker.Item value={20}>Twenty</Picker.Item>
+            <Picker.Item value={30}>Thirty</Picker.Item>
           </NativeSelect>
           <FormHelperText>Placeholder</FormHelperText>
         </FormControl>
@@ -173,10 +173,10 @@ class NativeSelects extends React.Component {
               id: 'age-native-required',
             }}
           >
-            <option value="" />
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <Picker.Item value="" />
+            <Picker.Item value={10}>Ten</Picker.Item>
+            <Picker.Item value={20}>Twenty</Picker.Item>
+            <Picker.Item value={30}>Thirty</Picker.Item>
           </Select>
           <FormHelperText>Required</FormHelperText>
         </FormControl>

@@ -37,7 +37,7 @@ class SimpleSelect extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form style={classes.root} autoComplete="off">
+      <View style={classes.root} autoComplete="off">
         <FormControl style={classes.formControl}>
           <InputLabel htmlFor="age-simple">Age</InputLabel>
           <Select
@@ -49,7 +49,7 @@ class SimpleSelect extends React.Component {
             }}
           >
             <MenuItem value="">
-              <em>None</em>
+              <Text>None</Text>
             </MenuItem>
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
@@ -64,7 +64,7 @@ class SimpleSelect extends React.Component {
             input={<Input name="age" id="age-helper" />}
           >
             <MenuItem value="">
-              <em>None</em>
+              <Text>None</Text>
             </MenuItem>
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
@@ -81,7 +81,7 @@ class SimpleSelect extends React.Component {
             style={classes.selectEmpty}
           >
             <MenuItem value="">
-              <em>None</em>
+              <Text>None</Text>
             </MenuItem>
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
@@ -102,7 +102,7 @@ class SimpleSelect extends React.Component {
             style={classes.selectEmpty}
           >
             <MenuItem value="">
-              <em>None</em>
+              <Text>None</Text>
             </MenuItem>
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
@@ -118,7 +118,7 @@ class SimpleSelect extends React.Component {
             input={<Input name="name" id="name-disabled" />}
           >
             <MenuItem value="">
-              <em>None</em>
+              <Text>None</Text>
             </MenuItem>
             <MenuItem value="hai">Hai</MenuItem>
             <MenuItem value="olivier">Olivier</MenuItem>
@@ -136,7 +136,7 @@ class SimpleSelect extends React.Component {
             input={<Input id="name-error" />}
           >
             <MenuItem value="">
-              <em>None</em>
+              <Text>None</Text>
             </MenuItem>
             <MenuItem value="hai">Hai</MenuItem>
             <MenuItem value="olivier">Olivier</MenuItem>
@@ -152,7 +152,7 @@ class SimpleSelect extends React.Component {
             input={<Input name="name" id="name-readonly" readOnly />}
           >
             <MenuItem value="">
-              <em>None</em>
+              <Text>None</Text>
             </MenuItem>
             <MenuItem value="hai">Hai</MenuItem>
             <MenuItem value="olivier">Olivier</MenuItem>
@@ -169,7 +169,7 @@ class SimpleSelect extends React.Component {
             autoWidth
           >
             <MenuItem value="">
-              <em>None</em>
+              <Text>None</Text>
             </MenuItem>
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
@@ -206,7 +206,7 @@ class SimpleSelect extends React.Component {
             style={classes.selectEmpty}
           >
             <MenuItem value="">
-              <em>None</em>
+              <Text>None</Text>
             </MenuItem>
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
@@ -214,7 +214,7 @@ class SimpleSelect extends React.Component {
           </Select>
           <FormHelperText>Required</FormHelperText>
         </FormControl>
-      </form>
+      </View>
     );
   }
 }

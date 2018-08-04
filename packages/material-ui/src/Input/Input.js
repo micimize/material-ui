@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -463,7 +463,7 @@ class Input extends React.Component {
       inputPropsClassName,
     );
 
-    let InputComponent = 'input';
+    let InputComponent = TextInput;
     let inputProps = {
       ...inputPropsProp,
       ref: this.handleRefInput,
@@ -480,7 +480,7 @@ class Input extends React.Component {
       };
     } else if (multiline) {
       if (rows && !rowsMax) {
-        InputComponent = 'textarea';
+        InputComponent = Text;
       } else {
         inputProps = {
           rowsMax,

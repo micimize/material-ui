@@ -196,15 +196,15 @@ function generateProps(reactAPI) {
     let defaultValue = '\u00a0';
 
     if (prop.defaultValue) {
-      defaultValue = `<span class="prop-default">${escapeCell(
+      defaultValue = `<Text class="prop-default">${escapeCell(
         prop.defaultValue.value.replace(/\n/g, ''),
       )}</span>`;
     }
 
     if (prop.required) {
-      propRaw = `<span class="prop-name required">${propRaw}\u00a0*</span>`;
+      propRaw = `<Text class="prop-name required">${propRaw}\u00a0*</span>`;
     } else {
-      propRaw = `<span class="prop-name">${propRaw}</span>`;
+      propRaw = `<Text class="prop-name">${propRaw}</span>`;
     }
 
     if (prop.type.name === 'custom') {
@@ -213,7 +213,7 @@ function generateProps(reactAPI) {
       }
     }
 
-    textProps += `| ${propRaw} | <span class="prop-type">${generatePropType(
+    textProps += `| ${propRaw} | <Text class="prop-type">${generatePropType(
       prop.type,
     )} | ${defaultValue} | ${description} |\n`;
 
@@ -247,7 +247,7 @@ function generateClasses(reactAPI) {
     text += reactAPI.styles.classes
       .map(
         className =>
-          `| <span class="prop-name">${className}</span> | ${
+          `| <Text class="prop-name">${className}</span> | ${
             reactAPI.styles.descriptions[className]
               ? escapeCell(reactAPI.styles.descriptions[className])
               : ''

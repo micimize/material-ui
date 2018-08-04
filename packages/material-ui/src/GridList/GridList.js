@@ -103,7 +103,7 @@ GridList.propTypes = {
 GridList.defaultProps = {
   cellHeight: 180,
   cols: 2,
-  component: 'ul',
+  component: View,
   spacing: 4,
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Picker } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -217,7 +217,7 @@ class AnchorPlayground extends React.Component {
                     },
                   }}
                 >
-                  {arrow ? <span style={classes.arrow} ref={this.handleArrowRef} /> : null}
+                  {arrow ? <Text style={classes.arrow} ref={this.handleArrowRef} /> : null}
                   <Paper style={classes.paper}>
                     <DialogTitle>{"Use Google's location service?"}</DialogTitle>
                     <DialogContent>
@@ -254,18 +254,18 @@ class AnchorPlayground extends React.Component {
                 value={placement}
                 onChange={this.handleChangeTarget('placement')}
               >
-                <option value="top-start">top-start</option>
-                <option value="top">top</option>
-                <option value="top-end">top-end</option>
-                <option value="left-start">left-start</option>
-                <option value="left">left</option>
-                <option value="left-end">left-end</option>
-                <option value="right-start">right-start</option>
-                <option value="right">right</option>
-                <option value="right-end">right-end</option>
-                <option value="bottom-start">bottom-start</option>
-                <option value="bottom">bottom</option>
-                <option value="bottom-end">bottom-end</option>
+                <Picker.Item value="top-start">top-start</Picker.Item>
+                <Picker.Item value="top">top</Picker.Item>
+                <Picker.Item value="top-end">top-end</Picker.Item>
+                <Picker.Item value="left-start">left-start</Picker.Item>
+                <Picker.Item value="left">left</Picker.Item>
+                <Picker.Item value="left-end">left-end</Picker.Item>
+                <Picker.Item value="right-start">right-start</Picker.Item>
+                <Picker.Item value="right">right</Picker.Item>
+                <Picker.Item value="right-end">right-end</Picker.Item>
+                <Picker.Item value="bottom-start">bottom-start</Picker.Item>
+                <Picker.Item value="bottom">bottom</Picker.Item>
+                <Picker.Item value="bottom-end">bottom-end</Picker.Item>
               </TextField>
             </View>
             <FormControlLabel
@@ -293,10 +293,10 @@ class AnchorPlayground extends React.Component {
                 value={preventOverflow}
                 onChange={this.handleChangeTarget('preventOverflow')}
               >
-                <option value="disabled">disabled</option>
-                <option value="scrollParent">scrollParent</option>
-                <option value="viewport">viewport</option>
-                <option value="window">window</option>
+                <Picker.Item value="disabled">disabled</Picker.Item>
+                <Picker.Item value="scrollParent">scrollParent</Picker.Item>
+                <Picker.Item value="viewport">viewport</Picker.Item>
+                <Picker.Item value="window">window</Picker.Item>
               </TextField>
             </View>
             <FormControlLabel

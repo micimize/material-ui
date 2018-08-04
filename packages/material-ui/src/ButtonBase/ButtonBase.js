@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, Button as ReactNativeButton } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import styleNames from 'react-native-style-names';
@@ -189,7 +189,7 @@ class ButtonBase extends React.Component {
     if (
       event.target === event.currentTarget &&
       component &&
-      component !== 'button' &&
+      component !== ReactNativeButton &&
       (key === 'space' || key === 'enter') &&
       !(this.button.tagName === 'A' && this.button.href)
     ) {
@@ -283,11 +283,11 @@ class ButtonBase extends React.Component {
 
     let ComponentProp = component;
 
-    if (ComponentProp === 'button' && other.href) {
+    if (ComponentProp === ReactNativeButton && other.href) {
       ComponentProp = Text;
     }
 
-    if (ComponentProp === 'button') {
+    if (ComponentProp === ReactNativeButton) {
       buttonProps.type = type || 'button';
       buttonProps.disabled = disabled;
     } else {
@@ -453,7 +453,7 @@ ButtonBase.propTypes = {
 
 ButtonBase.defaultProps = {
   centerRipple: false,
-  component: 'button',
+  component: ReactNativeButton,
   disableRipple: false,
   disableTouchRipple: false,
   focusRipple: false,

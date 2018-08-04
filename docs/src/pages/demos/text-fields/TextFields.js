@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Picker } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -57,7 +57,7 @@ class TextFields extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form style={classes.container} noValidate autoComplete="off">
+      <View style={classes.container} noValidate autoComplete="off">
         <TextField
           id="name"
           label="Name"
@@ -206,9 +206,9 @@ class TextFields extends React.Component {
           margin="normal"
         >
           {currencies.map(option => (
-            <option key={option.value} value={option.value}>
+            <Picker.Item key={option.value} value={option.value}>
               {option.label}
-            </option>
+            </Picker.Item>
           ))}
         </TextField>
         <TextField
@@ -222,7 +222,7 @@ class TextFields extends React.Component {
           fullWidth
           margin="normal"
         />
-      </form>
+      </View>
     );
   }
 }

@@ -1,7 +1,7 @@
 // @inheritedComponent ButtonBase
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button as ReactNativeButton } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -332,7 +332,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   color: 'default',
-  component: 'button',
+  component: ReactNativeButton,
   disabled: false,
   disableFocusRipple: false,
   fullWidth: false,

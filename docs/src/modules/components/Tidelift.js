@@ -46,7 +46,7 @@ function Tidelift(props) {
       target="_blank"
       rel="noopener"
     >
-      <span style={classes.logo} />
+      <Text style={classes.logo} />
       <Typography style={classes.label}>Get Professionally Supported Material-UI</Typography>
     </Link>
   );

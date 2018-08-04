@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
@@ -59,7 +59,7 @@ function AdvancedGridList(props) {
       <GridList cellHeight={200} spacing={1} style={classes.gridList}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}>
-            <img src={tile.img} alt={tile.title} />
+            <Image src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
               titlePosition="top"

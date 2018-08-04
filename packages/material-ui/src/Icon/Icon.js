@@ -46,7 +46,7 @@ function Icon(props) {
   const { children, classes, className, color, fontSize, ...other } = props;
 
   return (
-    <span
+    <Text
       className={classNames(
         'material-icons',
         classes.root,
@@ -60,7 +60,7 @@ function Icon(props) {
       {...other}
     >
       {children}
-    </span>
+    </Text>
   );
 }
 

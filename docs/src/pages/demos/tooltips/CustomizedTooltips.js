@@ -101,7 +101,7 @@ class CustomizedTooltips extends React.Component {
           title={
             <React.Fragment>
               Add
-              <span style={classes.arrowArrow} ref={this.handleArrowRef} />
+              <Text style={classes.arrowArrow} ref={this.handleArrowRef} />
             </React.Fragment>
           }
           classes={{ popper: classes.arrowPopper }}
