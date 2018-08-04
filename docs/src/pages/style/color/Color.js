@@ -86,13 +86,13 @@ function getColorBlock(classes, theme, colorName, colorValue, colorTitle) {
   }
 
   return (
-    <li style={rowStyle} key={colorValue} style={classes.themeInherit}>
+    <View style={rowStyle} key={colorValue} style={classes.themeInherit}>
       {blockTitle}
       <View style={classes.colorContainer}>
-        <span>{colorValue}</span>
-        <span style={classes.colorValue}>{bgColor.toUpperCase()}</span>
+        <Text>{colorValue}</Text>
+        <Text style={classes.colorValue}>{bgColor.toUpperCase()}</Text>
       </View>
-    </li>
+    </View>
   );
 }
 
@@ -109,11 +109,11 @@ function getColorGroup(options) {
   }
 
   return (
-    <ul style={classes.colorGroup} key={cssColor}>
+    <View style={classes.colorGroup} key={cssColor}>
       {getColorBlock(classes, theme, cssColor, 500, true)}
       <View style={classes.blockSpace} />
       {colorsList}
-    </ul>
+    </View>
   );
 }
 

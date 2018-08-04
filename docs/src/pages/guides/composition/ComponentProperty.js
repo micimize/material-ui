@@ -31,12 +31,12 @@ class ListItemLink1 extends React.Component {
   render() {
     const { icon, primary } = this.props;
     return (
-      <li>
+      <View>
         <ListItem button component={this.renderLink}>
           <ListItemIcon>{icon}</ListItemIcon>
           <ListItemText primary={primary} />
         </ListItem>
-      </li>
+      </View>
     );
   }
 }
@@ -50,11 +50,11 @@ ListItemLink1.propTypes = {
 function ListItemLink2(props) {
   const { primary, to } = props;
   return (
-    <li>
+    <View>
       <ListItem button component={Link} to={to}>
         <ListItemText primary={primary} />
       </ListItem>
-    </li>
+    </View>
   );
 }
 

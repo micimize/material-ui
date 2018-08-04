@@ -6,9 +6,9 @@ import Tooltip from '@material-ui/core/Tooltip';
 function DisabledTooltips() {
   return (
     <Tooltip title="You don't have permission to do this">
-      <span>
+      <Text>
         <Button disabled>A Disabled Button</Button>
-      </span>
+      </Text>
     </Tooltip>
   );
 }

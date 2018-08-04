@@ -111,14 +111,14 @@ function ButtonBases(props) {
             width: image.width,
           }}
         >
-          <span
+          <Text
             style={classes.imageSrc}
             style={{
               backgroundImage: `url(${image.url})`,
             }}
           />
-          <span style={classes.imageBackdrop} />
-          <span style={classes.imageButton}>
+          <Text style={classes.imageBackdrop} />
+          <Text style={classes.imageButton}>
             <Typography
               component="span"
               variant="subheading"
@@ -126,9 +126,9 @@ function ButtonBases(props) {
               style={classes.imageTitle}
             >
               {image.title}
-              <span style={classes.imageMarked} />
+              <Text style={classes.imageMarked} />
             </Typography>
-          </span>
+          </Text>
         </ButtonBase>
       ))}
     </View>

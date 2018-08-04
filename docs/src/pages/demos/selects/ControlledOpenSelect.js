@@ -41,7 +41,7 @@ class ControlledOpenSelect extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form autoComplete="off">
+      <View autoComplete="off">
         <Button style={classes.button} onClick={this.handleOpen}>
           Open the select
         </Button>
@@ -59,14 +59,14 @@ class ControlledOpenSelect extends React.Component {
             }}
           >
             <MenuItem value="">
-              <em>None</em>
+              <Text>None</Text>
             </MenuItem>
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
             <MenuItem value={30}>Thirty</MenuItem>
           </Select>
         </FormControl>
-      </form>
+      </View>
     );
   }
 }

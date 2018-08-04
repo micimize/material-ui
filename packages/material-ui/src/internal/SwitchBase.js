@@ -1,7 +1,7 @@
 // @inheritedComponent IconButton
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -141,7 +141,7 @@ class SwitchBase extends React.Component {
         {...other}
       >
         {checked ? checkedIcon : icon}
-        <input
+        <TextInput
           autoFocus={autoFocus}
           checked={checked}
           style={classes.input}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from 'react-native-style-names';
 import keycode from 'keycode';
@@ -286,9 +286,9 @@ class SelectInput extends React.Component {
         >
           {/* So the vertical align positioning algorithm quicks in. */}
           {/* eslint-disable-next-line react/no-danger */}
-          {display || <span dangerouslySetInnerHTML={{ __html: '&#8203;' }} />}
+          {display || <Text dangerouslySetInnerHTML={{ __html: '&#8203;' }} />}
         </View>
-        <input
+        <TextInput
           value={Array.isArray(value) ? value.join(',') : value}
           name={name}
           ref={this.handleInputRef}

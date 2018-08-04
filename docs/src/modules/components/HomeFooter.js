@@ -33,39 +33,39 @@ function HomeFooter(props) {
   const { classes } = props;
 
   return (
-    <footer style={classes.root}>
+    <View style={classes.root}>
       <Typography variant="title" gutterBottom>
         Quick Links
       </Typography>
       <Typography variant="subheading" component="div">
         <Grid container>
           <Grid item xs={12} sm={6}>
-            <ul style={classes.list}>
-              <li style={classes.listItem}>
+            <View style={classes.list}>
+              <View style={classes.listItem}>
                 <Link href="https://github.com/mui-org/material-ui">GitHub</Link>
-              </li>
-              <li style={classes.listItem}>
+              </View>
+              <View style={classes.listItem}>
                 <Link href="https://twitter.com/MaterialUI">Twitter</Link>
-              </li>
-              <li style={classes.listItem}>
+              </View>
+              <View style={classes.listItem}>
                 <Link href="https://github.com/mui-org/material-ui/tree/master/examples">
                   Examples
                 </Link>
-              </li>
-            </ul>
+              </View>
+            </View>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <ul style={classes.list}>
-              <li style={classes.listItem}>
+            <View style={classes.list}>
+              <View style={classes.listItem}>
                 <Link href="/discover-more/community">Community</Link>
-              </li>
-              <li style={classes.listItem}>
+              </View>
+              <View style={classes.listItem}>
                 <Link href="/discover-more/roadmap">Roadmap</Link>
-              </li>
-              <li style={classes.listItem}>
+              </View>
+              <View style={classes.listItem}>
                 <Link href="/discover-more/team">Team</Link>
-              </li>
-            </ul>
+              </View>
+            </View>
           </Grid>
         </Grid>
       </Typography>
@@ -74,7 +74,7 @@ function HomeFooter(props) {
         <Link href="https://github.com/mui-org/material-ui/blob/master/LICENSE">MIT License</Link>
         {'.'}
       </Typography>
-    </footer>
+    </View>
   );
 }
 

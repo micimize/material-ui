@@ -29,18 +29,18 @@ function PinnedSubheaderList(props) {
   const { classes } = props;
 
   return (
-    <List style={classes.root} subheader={<li />}>
+    <List style={classes.root} subheader={<View />}>
       {[0, 1, 2, 3, 4].map(sectionId => (
-        <li key={`section-${sectionId}`} style={classes.listSection}>
-          <ul style={classes.ul}>
+        <View key={`section-${sectionId}`} style={classes.listSection}>
+          <View style={classes.ul}>
             <ListSubheader>{`I'm sticky ${sectionId}`}</ListSubheader>
             {[0, 1, 2].map(item => (
               <ListItem key={`item-${sectionId}-${item}`}>
                 <ListItemText primary={`Item ${item}`} />
               </ListItem>
             ))}
-          </ul>
-        </li>
+          </View>
+        </View>
       ))}
     </List>
   );

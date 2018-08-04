@@ -30,9 +30,9 @@ function InsetDividers(props) {
           </Avatar>
           <ListItemText primary="Photos" secondary="Jan 9, 2014" />
         </ListItem>
-        <li>
+        <View>
           <Divider inset />
-        </li>
+        </View>
         <ListItem>
           <Avatar>
             <WorkIcon />

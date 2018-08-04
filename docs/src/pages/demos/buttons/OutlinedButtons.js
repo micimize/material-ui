@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -32,18 +32,18 @@ function OutlinedButtons(props) {
       <Button variant="outlined" href="#outlined-buttons" style={classes.button}>
         Link
       </Button>
-      <input
+      <TextInput
         accept="image/*"
         style={classes.input}
         id="outlined-button-file"
         multiple
         type="file"
       />
-      <label htmlFor="outlined-button-file">
+      <Text htmlFor="outlined-button-file">
         <Button variant="outlined" component="span" style={classes.button}>
           Upload
         </Button>
-      </label>
+      </Text>
     </View>
   );
 }

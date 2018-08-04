@@ -57,10 +57,10 @@ function MySnackbarContent(props) {
       style={styleNames(classes[variant], style)}
       aria-describedby="client-snackbar"
       message={
-        <span id="client-snackbar" style={classes.message}>
+        <Text id="client-snackbar" style={classes.message}>
           <Icon style={styleNames(classes.icon, classes.iconVariant)} />
           {message}
-        </span>
+        </Text>
       }
       action={[
         <IconButton

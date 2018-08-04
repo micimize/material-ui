@@ -15,7 +15,7 @@ function SelectAndDialog(props: Props) {
     <Dialog open>
       <Select value={10} MenuProps={props.MenuProps}>
         <MenuItem value="">
-          <em>None</em>
+          <Text>None</Text>
         </MenuItem>
         <MenuItem value={10}>Ten</MenuItem>
         <MenuItem value={20}>Twenty</MenuItem>

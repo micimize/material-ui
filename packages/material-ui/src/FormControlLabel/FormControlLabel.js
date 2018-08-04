@@ -76,7 +76,7 @@ function FormControlLabel(props, context) {
   });
 
   return (
-    <label
+    <Text
       style={styleNames(
         classes.root,
         {
@@ -94,7 +94,7 @@ function FormControlLabel(props, context) {
       >
         {label}
       </Typography>
-    </label>
+    </Text>
   );
 }
 

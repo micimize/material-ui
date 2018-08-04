@@ -84,14 +84,14 @@ function FormLabel(props, context) {
     <Component style={className} {...other}>
       {children}
       {required && (
-        <span
+        <Text
           style={styleNames(classes.asterisk, {
             [classes.error]: error,
           })}
           data-mui-test="FormLabelAsterisk"
         >
           {'\u2009*'}
-        </span>
+        </Text>
       )}
     </Component>
   );
@@ -135,7 +135,7 @@ FormLabel.propTypes = {
 };
 
 FormLabel.defaultProps = {
-  component: 'label',
+  component: Text,
 };
 
 FormLabel.contextTypes = {

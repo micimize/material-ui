@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -32,7 +32,7 @@ function ComplexGrid(props) {
       <Grid container spacing={16}>
         <Grid item>
           <ButtonBase style={classes.image}>
-            <img style={classes.img} alt="complex" src="/static/images/grid/complex.jpg" />
+            <Image style={classes.img} alt="complex" src="/static/images/grid/complex.jpg" />
           </ButtonBase>
         </Grid>
         <Grid item xs={12} sm container>

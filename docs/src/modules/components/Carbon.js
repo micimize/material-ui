@@ -154,9 +154,9 @@ class Carbon extends React.Component {
               </Typography>
               <Typography>
                 Thank you!{' '}
-                <span role="img" aria-label="Love">
+                <Text role="img" aria-label="Love">
                   ❤️
-                </span>
+                </Text>
               </Typography>
             </View>
           </View>
@@ -174,7 +174,7 @@ class Carbon extends React.Component {
               title="This ad is designed to support Open Source."
               placement="left"
             >
-              <span style={classes.info}>i</span>
+              <Text style={classes.info}>i</Text>
             </Tooltip>
           )}
         </View>

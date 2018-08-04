@@ -167,8 +167,8 @@ class Tab extends React.Component {
 
     if (labelProp !== undefined) {
       label = (
-        <span style={classes.labelContainer}>
-          <span
+        <Text style={classes.labelContainer}>
+          <Text
             style={styleNames(classes.label, {
               [classes.labelWrapped]: this.state.labelWrapped,
             })}
@@ -177,8 +177,8 @@ class Tab extends React.Component {
             }}
           >
             {labelProp}
-          </span>
-        </span>
+          </Text>
+        </Text>
       );
     }
 
@@ -204,10 +204,10 @@ class Tab extends React.Component {
         {...other}
         onClick={this.handleChange}
       >
-        <span style={classes.wrapper}>
+        <Text style={classes.wrapper}>
           {icon}
           {label}
-        </span>
+        </Text>
         {indicator}
       </ButtonBase>
     );

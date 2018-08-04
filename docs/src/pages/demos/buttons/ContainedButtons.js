@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -32,18 +32,18 @@ function ContainedButtons(props) {
       <Button variant="contained" href="#contained-buttons" style={classes.button}>
         Link
       </Button>
-      <input
+      <TextInput
         accept="image/*"
         style={classes.input}
         id="contained-button-file"
         multiple
         type="file"
       />
-      <label htmlFor="contained-button-file">
+      <Text htmlFor="contained-button-file">
         <Button variant="contained" component="span" style={classes.button}>
           Upload
         </Button>
-      </label>
+      </Text>
     </View>
   );
 }

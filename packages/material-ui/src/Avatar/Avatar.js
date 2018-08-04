@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -74,7 +74,7 @@ function Avatar(props) {
     }
   } else if (src || srcSet) {
     children = (
-      <img
+      <Image
         alt={alt}
         src={src}
         srcSet={srcSet}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Picker } from 'react-native';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
@@ -56,7 +56,7 @@ class DialogSelect extends React.Component {
         >
           <DialogTitle>Fill the form</DialogTitle>
           <DialogContent>
-            <form style={classes.container}>
+            <View style={classes.container}>
               <FormControl style={classes.formControl}>
                 <InputLabel htmlFor="age-native-simple">Age</InputLabel>
                 <Select
@@ -65,10 +65,10 @@ class DialogSelect extends React.Component {
                   onChange={this.handleChange('age')}
                   input={<Input id="age-native-simple" />}
                 >
-                  <option value="" />
-                  <option value={10}>Ten</option>
-                  <option value={20}>Twenty</option>
-                  <option value={30}>Thirty</option>
+                  <Picker.Item value="" />
+                  <Picker.Item value={10}>Ten</Picker.Item>
+                  <Picker.Item value={20}>Twenty</Picker.Item>
+                  <Picker.Item value={30}>Thirty</Picker.Item>
                 </Select>
               </FormControl>
               <FormControl style={classes.formControl}>
@@ -79,14 +79,14 @@ class DialogSelect extends React.Component {
                   input={<Input id="age-simple" />}
                 >
                   <MenuItem value="">
-                    <em>None</em>
+                    <Text>None</Text>
                   </MenuItem>
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                   <MenuItem value={30}>Thirty</MenuItem>
                 </Select>
               </FormControl>
-            </form>
+            </View>
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">

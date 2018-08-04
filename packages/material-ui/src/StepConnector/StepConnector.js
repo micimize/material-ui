@@ -59,7 +59,7 @@ function StepConnector(props) {
 
   return (
     <View style={className} {...other}>
-      <span style={lineClassName} />
+      <Text style={lineClassName} />
     </View>
   );
 }

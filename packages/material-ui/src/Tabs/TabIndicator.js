@@ -32,7 +32,7 @@ function TabIndicator(props) {
   const { classes, style, color, ...other } = props;
 
   return (
-    <span
+    <Text
       style={styleNames(classes.root, classes[`color${capitalize(color)}`], style)}
       {...other}
     />

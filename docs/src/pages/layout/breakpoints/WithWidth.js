@@ -5,9 +5,9 @@ import withWidth from '@material-ui/core/withWidth';
 import Typography from '@material-ui/core/Typography';
 
 const components = {
-  sm: 'em',
-  md: 'u',
-  lg: 'del',
+  sm: Text,
+  md: Text,
+  lg: Text,
 };
 
 function WithWidth(props) {

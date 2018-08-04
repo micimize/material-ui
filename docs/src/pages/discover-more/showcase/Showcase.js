@@ -228,7 +228,7 @@ function Showcase(props) {
       {appList.map(app => (
         <View key={app.image}>
           <Typography variant="display1" gutterBottom>
-            <span>{app.title}</span>
+            <Text>{app.title}</Text>
             {app.source ? (
               <IconButton href={app.source} target="_blank" aria-label={`${app.title} source code`}>
                 <GithubIcon />

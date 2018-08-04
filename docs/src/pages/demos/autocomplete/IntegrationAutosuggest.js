@@ -76,9 +76,9 @@ function renderSuggestion(suggestion, { query, isHighlighted }) {
       <View>
         {parts.map((part, index) => {
           return part.highlight ? (
-            <span key={String(index)} style={{ fontWeight: 500 }}>
+            <Text key={String(index)} style={{ fontWeight: 500 }}>
               {part.text}
-            </span>
+            </Text>
           ) : (
             <strong key={String(index)} style={{ fontWeight: 300 }}>
               {part.text}

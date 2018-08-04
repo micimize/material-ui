@@ -77,7 +77,7 @@ class ConsecutiveSnackbars extends React.Component {
           ContentProps={{
             'aria-describedby': 'message-id',
           }}
-          message={<span id="message-id">{message}</span>}
+          message={<Text id="message-id">{message}</Text>}
           action={[
             <Button key="undo" color="secondary" size="small" onClick={this.handleClose}>
               UNDO

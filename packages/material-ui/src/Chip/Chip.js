@@ -199,7 +199,7 @@ class Chip extends React.Component {
         {...other}
       >
         {avatar}
-        <span style={classes.label}>{label}</span>
+        <Text style={classes.label}>{label}</Text>
         {deleteIcon}
       </Component>
     );

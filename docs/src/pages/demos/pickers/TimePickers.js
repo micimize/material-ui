@@ -20,7 +20,7 @@ function TimePickers(props) {
   const { classes } = props;
 
   return (
-    <form style={classes.container} noValidate>
+    <View style={classes.container} noValidate>
       <TextField
         id="time"
         label="Alarm clock"
@@ -34,7 +34,7 @@ function TimePickers(props) {
           step: 300, // 5 min
         }}
       />
-    </form>
+    </View>
   );
 }
 

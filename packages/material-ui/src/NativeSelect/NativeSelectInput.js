@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Picker } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from 'react-native-style-names';
 
@@ -22,7 +22,7 @@ function NativeSelectInput(props) {
 
   return (
     <View style={classes.root}>
-      <select
+      <Picker
         style={styleNames(
           classes.select,
           {
@@ -38,7 +38,7 @@ function NativeSelectInput(props) {
         {...other}
       >
         {children}
-      </select>
+      </Picker>
       <IconComponent style={classes.icon} />
     </View>
   );
