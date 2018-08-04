@@ -18,7 +18,6 @@ const styleSheet = theme => ({
   list: {
     margin: 0,
     paddingLeft: 0,
-    listStyle: 'none',
   },
   listItem: {
     paddingTop: theme.spacing.unit / 2,

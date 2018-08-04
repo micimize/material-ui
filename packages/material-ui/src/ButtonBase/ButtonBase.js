@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Button as ReactNativeButton } from 'react-native';
+import { Text, TouchableOpacity as ReactNativeButton } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import styleNames from '@material-ui/core/styles/react-native-style-names';

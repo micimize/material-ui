@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import Svg from 'svgs'
+import Svg from 'svgs';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
