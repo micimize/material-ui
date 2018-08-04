@@ -9,7 +9,7 @@ function Usage() {
       style={{
         width: '100%',
         height: 350,
-        border: 0,
+        borderWidth: 0,
       }}
       sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
     />

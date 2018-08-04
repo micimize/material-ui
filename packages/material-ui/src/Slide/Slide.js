@@ -203,8 +203,10 @@ class Slide extends React.Component {
     }
     */
 
-    const style = styleNames(styleProp, React.isValidElement(children) ? children.props.style : {});
+    // const style = styleNames(styleProp, React.isValidElement(children) ? children.props.style : {});
 
+    return children;
+    /* TODO transitions
     return (
       <EventListener target="window" onResize={this.handleResize}>
         <Transition
@@ -223,6 +225,7 @@ class Slide extends React.Component {
         </Transition>
       </EventListener>
     );
+    */
   }
 }
 

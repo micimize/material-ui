@@ -17,7 +17,7 @@ export const styles = {
     minWidth: 0,
     padding: 0,
     margin: 0,
-    border: 0,
+    borderWidth: 0,
   },
   /* Styles applied to the root element if `margin="normal"`. */
   marginNormal: {

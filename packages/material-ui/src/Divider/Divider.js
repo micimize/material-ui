@@ -10,7 +10,7 @@ export const styles = theme => ({
   root: {
     height: 1,
     margin: 0, // Reset browser default style.
-    border: 'none',
+    // border: 'none',
     flexShrink: 0,
     backgroundColor: theme.palette.divider,
   },

@@ -11,6 +11,14 @@ function getClassSheet(styleSheet, felaRenderer) {
       ruleSheet[className] = style;
     } else { }
     */
+    if (Array.isArray(style)) {
+      debugger;
+    }
+    Object.keys(style).map(k => {
+      if (Array.isArray(style[k])) {
+        debugger;
+      }
+    });
     ruleSheet[className] = felaRenderer.renderRule(() => style, {});
     return ruleSheet;
   }, {});

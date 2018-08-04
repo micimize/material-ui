@@ -34,7 +34,7 @@ const styles = theme => ({
     transform: 'translateX(15px)',
     '& + $iOSBar': {
       opacity: 1,
-      border: 'none',
+      // border: 'none',
     },
   },
   iOSBar: {

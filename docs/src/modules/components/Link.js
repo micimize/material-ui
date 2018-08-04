@@ -49,7 +49,6 @@ function Link(props) {
 
   let ComponentRoot;
   const style = styleNames(classes.root, classes[variant], styleProp);
-  console.log(style);
   let RootProps;
   let children = childrenProp;
 
@@ -82,7 +81,6 @@ function Link(props) {
       style: styleProp,
     };
   }
-
   return <ComponentRoot {...RootProps}>{children}</ComponentRoot>;
 }
 

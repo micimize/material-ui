@@ -23,7 +23,7 @@ export const styles = {
     cursor: 'inherit',
     boxSizing: 'border-box',
     lineHeight: 'inherit',
-    border: 'none',
+    // border: 'none',
     outline: 'none',
     background: 'transparent',
   },

@@ -23,9 +23,6 @@ const felaRenderer = createRenderer({
   plugins: [
     nativeMediaQuery(),
     customProperty({
-      '&:invalid': () => ({}),
-      '&:focus': () => ({}),
-      '&:hover': () => ({}),
       '[disabled="true"]': () => ({}),
       '[checked="true"]': () => ({}),
       '[focused="true"]': () => ({}),
@@ -80,7 +77,7 @@ const felaRenderer = createRenderer({
         return expandedStyles;
       },
     }),
-    customModules([['& ', () => ({})]]),
+    customModules([['#', () => ({})], ['@', () => ({})], ['&', () => ({})]]),
   ],
 });
 

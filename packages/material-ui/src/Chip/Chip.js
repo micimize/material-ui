@@ -34,7 +34,7 @@ export const styles = theme => {
       // We disable the focus ring for mouse, touch and keyboard users.
       outline: 'none',
       textDecoration: 'none',
-      border: 'none', // Remove `button` border
+      // border: 'none', // Remove `button` border
       padding: 0, // Remove `button` padding
     },
     /* Styles applied to the root element if `onClick` is defined or `clickable={true}`. */

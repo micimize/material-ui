@@ -24,7 +24,7 @@ Nothing fancy, just plain old CSS. Why reinvent the wheel when it has been worki
 .button {
   background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   border-radius: 3px;
-  border: 0;
+  borderWidth: 0;
   color: white;
   height: 48px;
   padding: 0 30px;
@@ -69,7 +69,7 @@ prototyping: [`dangerouslyUseGlobalCSS`](/customization/css-in-js#global-css).
 .MuiButton-root {
   background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   border-radius: 3px;
-  border: 0;
+  borderWidth: 0;
   color: white;
   height: 48px;
   padding: 0 30px;
@@ -122,7 +122,7 @@ bundling solution people are using.
 .button {
   background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   border-radius: 3px;
-  border: 0;
+  borderWidth: 0;
   color: white;
   height: 48px;
   padding: 0 30px;
@@ -174,7 +174,7 @@ import Button from '@material-ui/core/Button';
 const StyledButton = styled(Button)`
   background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   border-radius: 3px;
-  border: 0;
+  borderWidth: 0;
   color: white;
   height: 48px;
   padding: 0 30px;
@@ -218,7 +218,7 @@ const StyledButton = styled(Button)`
   && {
     background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
     border-radius: 3px;
-    border: 0;
+    borderWidth: 0;
     color: white;
     height: 48px;
     padding: 0 30px;
@@ -263,7 +263,7 @@ const StyledButton = styled(({ color, ...other }) => (
   <Button {...other} classes={{ label: 'label' }} />
 ))`
   background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
-  border: 0;
+  borderWidth: 0;
   color: white;
   height: 48px;
   padding: 0 30px;
@@ -304,7 +304,7 @@ import Button from '@material-ui/core/Button';
 const StyledButton = glamorous(Button)({
   background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   borderRadius: 3,
-  border: 0,
+  borderWidth: 0,
   color: 'white',
   height: 48,
   padding: '0 30px',
@@ -349,7 +349,7 @@ import Button from '@material-ui/core/Button';
 const buttonStyles = {
   background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   borderRadius: 3,
-  border: 0,
+  borderWidth: 0,
   color: 'white',
   height: 48,
   padding: '0 30px',

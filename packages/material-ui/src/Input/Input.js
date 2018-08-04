@@ -145,7 +145,7 @@ export const styles = theme => {
       paddingLeft: 0,
       paddingRight: 0,
       paddingBottom: 8 - 1,
-      border: 0,
+      borderWidth: 0,
       boxSizing: 'content-box',
       verticalAlign: 'middle',
       background: 'none',

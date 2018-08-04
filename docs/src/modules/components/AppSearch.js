@@ -102,7 +102,7 @@ const styles = theme => ({
           display: 'none',
         },
         '& [class^=ds-dataset-]': {
-          border: 0,
+          borderWidth: 0,
           borderRadius: 2,
           backgroundColor: theme.palette.background.paper,
         },

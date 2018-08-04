@@ -10,7 +10,7 @@ const styles = {
   button: {
     background: 'linear-gradient(45deg, var(--background-start) 30%, var(--background-end) 90%)',
     borderRadius: 3,
-    border: 0,
+    borderWidth: 0,
     color: 'white',
     height: 48,
     padding: '0 30px',

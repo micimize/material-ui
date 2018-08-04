@@ -5,17 +5,19 @@ export default function RNStyleNames(...args) {
     const arg = args[i];
     if (typeof arg === 'number') {
       styleNames.push(arg);
+    } else if (Array.isArray(arg) && arg.length) {
+      styleNames.push(...RNStyleNames(...arg));
     } else if (typeof arg === 'object') {
       for (let key in arg) {
-        if (arg.hasOwnProperty(key) && !parseInt(key) && key !== 'undefined' && key !== 'null') {
-          styleNames.push(arg);
-          break;
-        } else if (arg.hasOwnProperty(key) && arg[key]) {
-          styleNames.push(Number(key));
+        if (key !== 'undefined' && key !== 'null') {
+          if (arg.hasOwnProperty(key) && !Number.isFinite(Number(key))) {
+            styleNames.push(arg);
+            break;
+          } else if (arg.hasOwnProperty(key) && arg[key]) {
+            styleNames.push(Number(key));
+          }
         }
       }
-    } else if (Array.isArray(arg) && arg.length) {
-      styleNames.push(...RNStyleNames.apply(null, arg));
     }
   }
 
