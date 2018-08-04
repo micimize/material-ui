@@ -69,8 +69,10 @@ export const styles = theme => ({
   label: {
     width: '100%',
     display: 'flex',
+    /*
     alignItems: 'inherit',
     justifyContent: 'inherit',
+    */
   },
 });
 

@@ -79,9 +79,11 @@ export const styles = theme => ({
   /* Styles applied to the `label` wrapper element. */
   label: {
     width: '100%',
+    /*
     display: 'inherit',
     alignItems: 'inherit',
     justifyContent: 'inherit',
+    */
   },
 });
 

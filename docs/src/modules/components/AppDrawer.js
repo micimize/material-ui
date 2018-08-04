@@ -122,7 +122,7 @@ function AppDrawer(props, context) {
       <Hidden lgUp={!disablePermanent} implementation="js">
         <SwipeableDrawer
           classes={{
-            paper: styleNames(classes.paper, 'algolia-drawer'),
+            paper: styleNames(classes.paper /* , 'algolia-drawer' */),
           }}
           disableBackdropTransition={!iOS}
           variant="temporary"

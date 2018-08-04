@@ -141,7 +141,10 @@ export const styles = theme => {
     input: {
       font: 'inherit',
       color: 'currentColor',
-      padding: `${8 - 2}px 0 ${8 - 1}px`,
+      paddingTop: 8 - 2,
+      paddingLeft: 0,
+      paddingRight: 0,
+      paddingBottom: 8 - 1,
       border: 0,
       boxSizing: 'content-box',
       verticalAlign: 'middle',
@@ -154,9 +157,9 @@ export const styles = theme => {
       minWidth: 0,
       flexGrow: 1,
       // '&::-webkit-input-placeholder': placeholder,
-      '&::-moz-placeholder': placeholder, // Firefox 19+
-      '&:-ms-input-placeholder': placeholder, // IE 11
-      '&::-ms-input-placeholder': placeholder, // Edge
+      // '&::-moz-placeholder': placeholder, // Firefox 19+
+      // '&:-ms-input-placeholder': placeholder, // IE 11
+      // '&::-ms-input-placeholder': placeholder, // Edge
       '&:focus': {
         outline: 0,
       },

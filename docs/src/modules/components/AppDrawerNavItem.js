@@ -90,7 +90,7 @@ class AppDrawerNavItem extends React.Component {
         <Button
           classes={{
             root: classes.button,
-            label: openImmediately ? 'algolia-lvl0' : '',
+            // label: openImmediately ? 'algolia-lvl0' : '',
           }}
           onClick={this.handleClick}
           style={style}

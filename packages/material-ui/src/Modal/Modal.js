@@ -240,7 +240,7 @@ class Modal extends React.Component {
   render() {
     const {
       BackdropComponent,
-      BackdropProps,
+      BackdropProps: { style: backdropStyle, ...BackdropProps } = {},
       children,
       classes,
       style,
@@ -302,7 +302,12 @@ class Modal extends React.Component {
           {...other}
         >
           {hideBackdrop ? null : (
-            <BackdropComponent open={open} onClick={this.handleBackdropClick} {...BackdropProps} />
+            <BackdropComponent
+              open={open}
+              onClick={this.handleBackdropClick}
+              style={styleNames(backdropStyle)}
+              {...BackdropProps}
+            />
           )}
           <RootRef
             rootRef={ref => {

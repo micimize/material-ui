@@ -13,6 +13,7 @@ import getClassSheet from './getClassSheet';
 import customProperty from 'fela-plugin-custom-property';
 import getDisplayName from 'recompose/getDisplayName';
 import nativeMediaQuery from './fela-plugin-native-media-query';
+import customModules from './fela-plugin-custom-modules';
 
 const validNumber = numberString => Number.isFinite(Number(numberString));
 
@@ -21,17 +22,16 @@ const felaRenderer = createRenderer({
   plugins: [
     nativeMediaQuery(),
     customProperty({
+      '&:invalid': () => ({}),
       '&:focus': () => ({}),
       '&:hover': () => ({}),
       '[disabled="true"]': () => ({}),
       '[checked="true"]': () => ({}),
       '[focused="true"]': () => ({}),
-      pointerEvents() {
-        return {};
-      },
-      transition() {
-        return {};
-      },
+      pointerEvents: () => ({}),
+      fontFamily: () => ({}),
+      transition: () => ({}),
+      animation: () => ({}),
       flex(prop) {
         if (typeof prop !== 'string') {
           return { flex: prop };
@@ -71,6 +71,7 @@ const felaRenderer = createRenderer({
         return expandedStyles;
       },
     }),
+    customModules([['& ', () => ({})]]),
   ],
 });
 

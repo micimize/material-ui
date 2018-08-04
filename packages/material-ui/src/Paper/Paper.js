@@ -27,14 +27,7 @@ export const styles = theme => {
 };
 
 function Paper(props) {
-  const {
-    classes,
-    style: styleProp,
-    component: Component,
-    square,
-    elevation,
-    ...other
-  } = props;
+  const { classes, style: styleProp, component: Component, square, elevation, ...other } = props;
 
   warning(
     elevation >= 0 && elevation < 25,

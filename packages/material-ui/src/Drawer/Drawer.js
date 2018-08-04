@@ -117,10 +117,10 @@ class Drawer extends React.Component {
       classes,
       style,
       elevation,
-      ModalProps: { BackdropProps: BackdropPropsProp, ...ModalProps } = {},
+      ModalProps: { style: modalStyle, BackdropProps: BackdropPropsProp, ...ModalProps } = {},
       onClose,
       open,
-      PaperProps,
+      PaperProps: { style: paperStyle, ...PaperProps } = {},
       SlideProps,
       theme,
       transitionDuration,
@@ -133,10 +133,16 @@ class Drawer extends React.Component {
       <Paper
         elevation={variant === 'temporary' ? elevation : 0}
         square
-        style={styleNames(classes.paper, classes[`paperAnchor${capitalize(anchor)}`], {
-          [classes[`paperAnchorDocked${capitalize(anchor)}`]]: variant !== 'temporary',
-        })}
         {...PaperProps}
+        style={styleNames(
+          classes.paper,
+          classes[`paperAnchor${capitalize(anchor)}`],
+          {
+            [classes[`paperAnchorDocked${capitalize(anchor)}`]]: variant !== 'temporary',
+          },
+          paperStyle,
+        )}
+        {...paperStyle}
       >
         {children}
       </Paper>
@@ -177,7 +183,7 @@ class Drawer extends React.Component {
           ...BackdropPropsProp,
           transitionDuration,
         }}
-        style={styleNames(classes.modal, style)}
+        style={styleNames(classes.modal, style, modalStyle)}
         open={open}
         onClose={onClose}
         {...other}
