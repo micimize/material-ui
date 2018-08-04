@@ -9,9 +9,9 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
   root: {
     color: 'inherit',
-    textDecoration: 'inherit',
+    // textDecorationLine: 'inherit',
     '&:hover': {
-      textDecoration: 'underline',
+      textDecorationLine: 'underline',
     },
   },
   primary: {

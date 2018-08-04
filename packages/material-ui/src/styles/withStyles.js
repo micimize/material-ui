@@ -33,7 +33,9 @@ const felaRenderer = createRenderer({
       transition: () => ({}),
       animation: () => ({}),
       fontWeight(prop) {
-        return typeof prop === 'number' ? prop.toString() : prop;
+        return {
+          fontWeight: typeof prop === 'number' ? prop.toString() : prop,
+        };
       },
       borderRight: expandShorthand('border-right', {
         borderRightWidth: cast.toNumber,

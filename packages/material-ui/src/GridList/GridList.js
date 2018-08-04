@@ -1,4 +1,5 @@
 import React from 'react';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
@@ -48,14 +49,11 @@ function GridList(props) {
         const childRows = child.props.rows || 1;
 
         return React.cloneElement(child, {
-          style: Object.assign(
-            {
-              width: `${(100 / cols) * childCols}%`,
-              height: cellHeight === 'auto' ? 'auto' : cellHeight * childRows + spacing,
-              padding: spacing / 2,
-            },
-            child.props.style,
-          ),
+          style: styleNames(child.props.style, {
+            width: `${(100 / cols) * childCols}%`,
+            height: cellHeight === 'auto' ? 'auto' : cellHeight * childRows + spacing,
+            padding: spacing / 2,
+          }),
         });
       })}
     </Component>

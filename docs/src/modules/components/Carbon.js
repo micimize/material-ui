@@ -15,7 +15,7 @@ const styles = theme => ({
         verticalAlign: 'middle',
       },
       '& a': {
-        textDecoration: 'none',
+        textDecorationLine: 'none',
       },
       '& .carbon-wrap': {
         display: 'flex',

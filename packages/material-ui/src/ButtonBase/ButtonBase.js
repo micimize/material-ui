@@ -31,7 +31,7 @@ export const styles = {
     verticalAlign: 'middle',
     // '-moz-appearance': 'none', // Reset
 
-    textDecoration: 'none',
+    textDecorationLine: 'none',
     // So we take precedent over the style of a native <a /> element.
     color: 'inherit',
     /*

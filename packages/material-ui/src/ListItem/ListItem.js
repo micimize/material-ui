@@ -13,7 +13,7 @@ export const styles = theme => ({
     justifyContent: 'flex-start',
     alignItems: 'center',
     position: 'relative',
-    textDecoration: 'none',
+    textDecorationLine: 'none',
     width: '100%',
     boxSizing: 'border-box',
     textAlign: 'left',
@@ -53,7 +53,7 @@ export const styles = theme => ({
       duration: theme.transitions.duration.shortest,
     }),
     '&:hover': {
-      textDecoration: 'none',
+      textDecorationLine: 'none',
       backgroundColor: theme.palette.action.hover,
       // Reset on touch devices, it doesn't add specificity
       '@media (hover: none)': {
@@ -84,7 +84,7 @@ class ListItem extends React.Component {
       style: styleProp,
       component: componentProp,
       ContainerComponent,
-      ContainerProps: { style: ContainerClassName, ...ContainerProps } = {},
+      ContainerProps: { style: containerStyle, ...ContainerProps } = {},
       dense,
       disabled,
       disableGutters,
@@ -140,7 +140,7 @@ class ListItem extends React.Component {
 
       return (
         <ContainerComponent
-          style={styleNames(classes.container, ContainerClassName)}
+          style={styleNames(classes.container, containerStyle)}
           {...ContainerProps}
         >
           <Component {...componentProps}>{children}</Component>

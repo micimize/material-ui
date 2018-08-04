@@ -1,9 +1,6 @@
 import warning from 'warning';
 import getDisplayName from 'recompose/getDisplayName';
-
-function arrayify(classes) {
-  return Array.isArray(classes) ? classes : [classes];
-}
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 
 function mergeClasses(options = {}) {
   const { baseClasses, newClasses, Component, noBase = false } = options;
@@ -35,7 +32,7 @@ function mergeClasses(options = {}) {
       );
 
       if (newClasses[key]) {
-        accumulator[key] = [...arrayify(baseClasses[key]), ...arrayify(newClasses[key])];
+        accumulator[key] = styleNames(baseClasses[key], newClasses[key]);
       }
 
       return accumulator;

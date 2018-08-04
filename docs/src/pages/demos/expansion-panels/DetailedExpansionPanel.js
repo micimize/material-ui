@@ -41,9 +41,9 @@ const styles = theme => ({
   },
   link: {
     color: theme.palette.primary.main,
-    textDecoration: 'none',
+    textDecorationLine: 'none',
     '&:hover': {
-      textDecoration: 'underline',
+      textDecorationLine: 'underline',
     },
   },
 });
