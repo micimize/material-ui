@@ -55,11 +55,13 @@ export const styles = theme => {
         borderBottomRightRadius: 2,
         ...edgeFix,
       },
+      /*
       '&$expanded + &': {
         '&:before': {
           display: 'none',
         },
       },
+      */
     },
     /* Styles applied to the root element if `expanded={true}`. */
     expanded: {

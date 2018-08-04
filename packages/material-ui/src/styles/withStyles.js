@@ -40,15 +40,13 @@ const felaRenderer = createRenderer({
   plugins: [
     nativeMediaQuery(),
     customProperty({
-      '[disabled="true"]': () => ({}),
-      '[checked="true"]': () => ({}),
-      '[focused="true"]': () => ({}),
       transform: () => ({}),
       willChange: () => ({}),
       pointerEvents: () => ({}),
       fontFamily: () => ({}),
       transition: () => ({}),
       animation: () => ({}),
+      flip: () => ({}),
       fontWeight(prop) {
         return {
           fontWeight: typeof prop === 'number' ? prop.toString() : prop,
@@ -94,7 +92,7 @@ const felaRenderer = createRenderer({
         return expandedStyles;
       },
     }),
-    customModules([['#', () => ({})], ['@', () => ({})], ['&', () => ({})]]),
+    customModules([['[', () => ({})], ['#', () => ({})], ['@', () => ({})], ['&', () => ({})]]),
   ],
 });
 

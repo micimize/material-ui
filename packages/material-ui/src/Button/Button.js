@@ -1,7 +1,7 @@
 // @inheritedComponent ButtonBase
 
 import React from 'react';
-import { View, Text, Button as ReactNativeButton } from 'react-native';
+import { View, Text, TouchableOpacity as ReactNativeButton } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '../styles/withStyles';

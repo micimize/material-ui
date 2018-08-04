@@ -62,7 +62,7 @@ const styles = theme => ({
     [theme.breakpoints.up('sm')]: {
       margin: `${theme.spacing.unit * 2}px ${theme.spacing.unit}px ${theme.spacing.unit}px`,
       maxWidth: 130 + theme.spacing.unit * 2,
-      float: 'right',
+      alignSelf: 'flex-end',
     },
     [theme.breakpoints.up('xl')]: {
       position: 'fixed',

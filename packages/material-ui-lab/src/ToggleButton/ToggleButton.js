@@ -61,6 +61,7 @@ export const styles = theme => ({
       backgroundColor: 'currentColor',
       opacity: 0.38,
     },
+    /*
     '& + &:before': {
       content: '""',
       display: 'block',
@@ -75,6 +76,7 @@ export const styles = theme => ({
       backgroundColor: 'currentColor',
       opacity: 0.12,
     },
+    */
   },
   /* Styles applied to the `label` wrapper element. */
   label: {

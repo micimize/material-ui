@@ -73,9 +73,11 @@ export const styles = theme => {
     },
     /* Styles applied to the root element if the component is a descendant of `FormControl`. */
     formControl: {
+      /*
       'label + &': {
         marginTop: 16,
       },
+      */
     },
     /* Styles applied to the root element if the component is focused. */
     focused: {},
