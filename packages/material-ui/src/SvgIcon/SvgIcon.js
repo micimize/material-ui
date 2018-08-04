@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import Svg from 'svgs'
 import PropTypes from 'prop-types';
 import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -132,7 +133,7 @@ SvgIcon.propTypes = {
 
 SvgIcon.defaultProps = {
   color: 'inherit',
-  component: 'svg',
+  component: Svg,
   fontSize: 'default',
   viewBox: '0 0 24 24',
 };

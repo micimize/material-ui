@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import Svg, {Path, Defs, Stop} from 'svgs'
 import { withStyles } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
 import blue from '@material-ui/core/colors/blue';
@@ -26,7 +27,7 @@ const styles = theme => ({
 function HomeIcon(props) {
   return (
     <SvgIcon {...props}>
-      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+      <Path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
     </SvgIcon>
   );
 }
@@ -46,15 +47,15 @@ function SvgIcons(props) {
         color="primary"
         style={{ fontSize: 36 }}
         component={svgProps => (
-          <svg {...svgProps}>
-            <defs>
+          <Svg {...svgProps}>
+            <Defs>
               <linearGradient id="gradient1">
-                <stop offset="30%" stopColor={blue[400]} />
-                <stop offset="70%" stopColor={red[400]} />
+                <Stop offset="30%" stopColor={blue[400]} />
+                <Stop offset="70%" stopColor={red[400]} />
               </linearGradient>
-            </defs>
+            </Defs>
             {React.cloneElement(svgProps.children[0], { fill: 'url(#gradient1)' })}
-          </svg>
+          </Svg>
         )}
       />
     </View>
