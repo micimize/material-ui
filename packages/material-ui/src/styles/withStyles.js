@@ -28,10 +28,15 @@ const felaRenderer = createRenderer({
       '[disabled="true"]': () => ({}),
       '[checked="true"]': () => ({}),
       '[focused="true"]': () => ({}),
+      transform: () => ({}),
+      willChange: () => ({}),
       pointerEvents: () => ({}),
       fontFamily: () => ({}),
       transition: () => ({}),
       animation: () => ({}),
+      fontWeight(prop) {
+        return typeof prop === 'number' ? prop.toString() : prop;
+      },
       flex(prop) {
         if (typeof prop !== 'string') {
           return { flex: prop };

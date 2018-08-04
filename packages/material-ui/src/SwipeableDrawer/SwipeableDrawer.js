@@ -2,6 +2,7 @@
 // @inheritedComponent Drawer
 
 import React from 'react';
+import styleNames from 'react-native-style-names';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
@@ -362,10 +363,12 @@ class SwipeableDrawer extends React.Component {
           }}
           PaperProps={{
             ...PaperProps,
-            style: {
-              pointerEvents: variant === 'temporary' && !open ? 'none' : '',
-              ...PaperProps.style,
-            },
+            style: styleNames(
+              {
+                // pointerEvents: variant === 'temporary' && !open ? 'none' : '',
+              },
+              PaperProps.style,
+            ),
             ref: this.handlePaperRef,
           }}
           anchor={anchor}

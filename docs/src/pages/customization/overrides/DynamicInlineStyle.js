@@ -1,4 +1,5 @@
 import React from 'react';
+import styleNames from 'react-native-style-names';
 import { View, Text } from 'react-native';
 import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -44,10 +45,7 @@ class DynamicInlineStyle extends React.Component {
           label="Blue"
         />
         <Button
-          style={{
-            ...styles.button,
-            ...(this.state.color === 'blue' ? styles.buttonBlue : {}),
-          }}
+          style={styleNames(styles.button, this.state.color === 'blue' ? styles.buttonBlue : {})}
         >
           {'dynamic inline-style'}
         </Button>

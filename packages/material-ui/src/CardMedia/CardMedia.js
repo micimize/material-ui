@@ -31,7 +31,7 @@ function CardMedia(props) {
 
   const isMediaComponent = MEDIA_COMPONENTS.indexOf(Component) !== -1;
   const composedStyle =
-    !isMediaComponent && image ? { backgroundImage: `url("${image}")`, ...style } : style;
+    !isMediaComponent && image ? styleNames({ backgroundImage: `url("${image}")` }, style) : style;
 
   return (
     <Component
@@ -40,9 +40,8 @@ function CardMedia(props) {
         {
           [classes.media]: isMediaComponent,
         },
-        style,
+        composedStyle,
       )}
-      style={composedStyle}
       src={isMediaComponent ? image || src : undefined}
       {...other}
     />

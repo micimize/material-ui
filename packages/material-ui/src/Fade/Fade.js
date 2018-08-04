@@ -1,6 +1,7 @@
 // @inheritedComponent Transition
 
 import React from 'react';
+import styleNames from 'react-native-style-names';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import Transition from 'react-transition-group/Transition';
@@ -53,21 +54,19 @@ class Fade extends React.Component {
   render() {
     const { children, onEnter, onExit, style: styleProp, theme, ...other } = this.props;
 
-    const style = {
-      ...styleProp,
-      ...(React.isValidElement(children) ? children.props.style : {}),
-    };
-
     return (
       <Transition appear onEnter={this.handleEnter} onExit={this.handleExit} {...other}>
         {(state, childProps) => {
           return React.cloneElement(children, {
-            style: {
-              opacity: 0,
-              willChange: 'opacity',
-              ...styles[state],
-              ...style,
-            },
+            style: styleNames(
+              {
+                opacity: 0,
+                willChange: 'opacity',
+              },
+              styles[state],
+              styleProp,
+              React.isValidElement(children) ? children.props.style : {},
+            ),
             ...childProps,
           });
         }}

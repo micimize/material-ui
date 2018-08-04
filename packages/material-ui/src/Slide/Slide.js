@@ -1,6 +1,7 @@
 // @inheritedComponent Transition
 
 import React from 'react';
+import styleNames from 'react-native-style-names';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
@@ -193,20 +194,16 @@ class Slide extends React.Component {
       ...other
     } = this.props;
 
-    let style = {};
-
     // We use this state to handle the server-side rendering.
     // We don't know the width of the children ahead of time.
     // We need to render it.
+    /*
     if (!this.props.in && !this.mounted) {
       style.visibility = 'hidden';
     }
+    */
 
-    style = {
-      ...style,
-      ...styleProp,
-      ...(React.isValidElement(children) ? children.props.style : {}),
-    };
+    const style = styleNames(styleProp, React.isValidElement(children) ? children.props.style : {});
 
     return (
       <EventListener target="window" onResize={this.handleResize}>

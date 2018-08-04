@@ -124,9 +124,10 @@ function CircularProgress(props) {
           [classes.indeterminate]: variant === 'indeterminate',
           [classes.static]: variant === 'static',
         },
+        { width: size, height: size },
+        rootStyle,
         style,
       )}
-      style={{ width: size, height: size, ...rootStyle, ...style }}
       role="progressbar"
       {...rootProps}
       {...other}

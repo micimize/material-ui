@@ -13,7 +13,6 @@ export const styles = {
     overflowY: 'auto',
     listStyle: 'none',
     padding: 0,
-
   },
 };
 
@@ -31,11 +30,7 @@ function GridList(props) {
   } = props;
 
   return (
-    <Component
-      style={styleNames(classes.root, styleProp)}
-      style={{ margin: -spacing / 2, ...style }}
-      {...other}
-    >
+    <Component style={styleNames(classes.root, { margin: -spacing / 2 }, styleProp)} {...other}>
       {React.Children.map(children, child => {
         if (!React.isValidElement(child)) {
           return null;

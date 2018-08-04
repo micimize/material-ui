@@ -1,5 +1,6 @@
 // @inheritedComponent Transition
 
+import styleNames from 'react-native-style-names';
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
@@ -110,11 +111,6 @@ class Grow extends React.Component {
   render() {
     const { children, onEnter, onExit, style: styleProp, theme, timeout, ...other } = this.props;
 
-    const style = {
-      ...styleProp,
-      ...(React.isValidElement(children) ? children.props.style : {}),
-    };
-
     return (
       <Transition
         appear
@@ -126,12 +122,15 @@ class Grow extends React.Component {
       >
         {(state, childProps) => {
           return React.cloneElement(children, {
-            style: {
-              opacity: 0,
-              transform: getScale(0.75),
-              ...styles[state],
-              ...style,
-            },
+            style: styleNames(
+              {
+                opacity: 0,
+                transform: getScale(0.75),
+              },
+              styles[state],
+              styleProp,
+              React.isValidElement(children) ? children.props.style : {},
+            ),
             ...childProps,
           });
         }}
