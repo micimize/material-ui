@@ -12,7 +12,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from 'react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { keys as breakpointKeys } from '../styles/createBreakpoints';
 import requirePropFactory from '../utils/requirePropFactory';

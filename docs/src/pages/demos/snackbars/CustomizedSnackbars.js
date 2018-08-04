@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from 'react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import Button from '@material-ui/core/Button';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';

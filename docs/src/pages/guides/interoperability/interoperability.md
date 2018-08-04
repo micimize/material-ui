@@ -343,7 +343,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import glamorous from 'glamorous';
 import { css } from 'glamor';
-import classnames from 'react-native-style-names';
+import classnames from '@material-ui/core/styles/react-native-style-names';
 import Button from '@material-ui/core/Button';
 
 const buttonStyles = {

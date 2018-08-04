@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Button as ReactNativeButton } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import styleNames from 'react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import keycode from 'keycode';
 import ownerWindow from '../utils/ownerWindow';
 import withStyles from '../styles/withStyles';
@@ -29,7 +29,7 @@ export const styles = {
     cursor: 'pointer',
     userSelect: 'none',
     verticalAlign: 'middle',
-    '-moz-appearance': 'none', // Reset
+    // '-moz-appearance': 'none', // Reset
 
     textDecoration: 'none',
     // So we take precedent over the style of a native <a /> element.
@@ -251,7 +251,6 @@ class ButtonBase extends React.Component {
       disableRipple,
       disableTouchRipple,
       focusRipple,
-      focusVisibleClassName,
       onBlur,
       onFocus,
       onFocusVisible,
@@ -274,7 +273,6 @@ class ButtonBase extends React.Component {
       {
         [classes.disabled]: disabled,
         [classes.focusVisible]: this.state.focusVisible,
-        [focusVisibleClassName]: this.state.focusVisible,
       },
       styleProp,
     );
@@ -380,8 +378,9 @@ ButtonBase.propTypes = {
    * The class name will be applied when the element gain the focus through a keyboard interaction.
    * It's a polyfill for the [CSS :focus-visible feature](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).
    * The rational for using this feature [is explain here](https://github.com/WICG/focus-visible/blob/master/explainer.md).
-   */
   focusVisibleClassName: PropTypes.string,
+  TODO idk how we can achieve this in react-native
+   */
   /**
    * @ignore
    */

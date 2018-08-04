@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import styleNames from 'react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import Collapse from '../Collapse';
 import withStyles from '../styles/withStyles';
 

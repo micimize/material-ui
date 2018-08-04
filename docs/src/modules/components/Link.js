@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from 'react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import compose from 'recompose/compose';
 import { withRouter } from 'next/router';
 import NextLink from 'next/link';
@@ -49,6 +49,7 @@ function Link(props) {
 
   let ComponentRoot;
   const style = styleNames(classes.root, classes[variant], styleProp);
+  console.log(style);
   let RootProps;
   let children = childrenProp;
 

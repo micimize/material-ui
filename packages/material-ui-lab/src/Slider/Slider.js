@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
-import styleNames from 'react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';

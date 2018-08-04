@@ -1,6 +1,6 @@
 // @inheritedComponent Transition
 
-import styleNames from 'react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';

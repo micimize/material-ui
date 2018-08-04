@@ -50,7 +50,7 @@ module.exports = {
           'childs',
           'chorizo',
           'classname',
-          'react-native-style-names',
+          '@material-ui/core/styles/react-native-style-names',
           'clickaway',
           'commonjs',
           'commonjs2',

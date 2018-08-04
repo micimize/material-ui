@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { assert } from 'chai';
-import styleNames from 'react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import { createShallow, getClasses } from '../test-utils';
 import SwitchBase from '../internal/SwitchBase';
 import Switch from './Switch';

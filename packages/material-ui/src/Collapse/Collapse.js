@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { View, Text } from 'react-native';
-import styleNames from 'react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import PropTypes from 'prop-types';
 import Transition from 'react-transition-group/Transition';
 import withStyles from '../styles/withStyles';

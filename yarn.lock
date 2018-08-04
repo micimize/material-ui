@@ -8696,9 +8696,9 @@ react-native-markdown-renderer@^3.2.8:
     prop-types "^15.5.10"
     react-native-fit-image "^1.5.2"
 
-react-native-style-names@^0.0.11:
+@material-ui/core/styles/react-native-style-names@^0.0.11:
   version "0.0.11"
-  resolved "https://registry.yarnpkg.com/react-native-style-names/-/react-native-style-names-0.0.11.tgz#ae7122b80cea95b96eeb2a931cf35c6237022d45"
+  resolved "https://registry.yarnpkg.com/@material-ui/core/styles/react-native-style-names/-/@material-ui/core/styles/react-native-style-names-0.0.11.tgz#ae7122b80cea95b96eeb2a931cf35c6237022d45"
 
 react-native-web@^0.8.9:
   version "0.8.9"
