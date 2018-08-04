@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react';import { Circle, ClipPath, G, LinearGradient, RadialGradient, Line, Path, Polygon, Polyline, Rect, Symbol, Text, Use, Defs, Stop } from 'svgs';
 import createSvgIcon from './utils/createSvgIcon';
 
 export default createSvgIcon(
-  <React.Fragment><path fill="none" d="M0 0h24v24H0V0z" /><g><path d="M14.91 6.71a.9959.9959 0 0 0-1.41 0L8.91 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L11.03 12l3.88-3.88c.38-.39.38-1.03 0-1.41z" /></g></React.Fragment>
+  <React.Fragment><Path fill="none" d="M0 0h24v24H0V0z" /><G><Path d="M14.91 6.71a.9959.9959 0 0 0-1.41 0L8.91 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L11.03 12l3.88-3.88c.38-.39.38-1.03 0-1.41z" /></G></React.Fragment>
 , 'NavigateBeforeRounded');

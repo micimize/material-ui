@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react';import { Circle, ClipPath, G, LinearGradient, RadialGradient, Line, Path, Polygon, Polyline, Rect, Symbol, Text, Use, Defs, Stop } from 'svgs';
 import createSvgIcon from './utils/createSvgIcon';
 
 export default createSvgIcon(
-  <React.Fragment><path fill="none" d="M0 0h24v24H0V0z" /><g><path d="M4 15h16v-2H4v2zm0 4h16v-2H4v2zm0-8h16V9H4v2zm0-6v2h16V5H4z" /></g></React.Fragment>
+  <React.Fragment><Path fill="none" d="M0 0h24v24H0V0z" /><G><Path d="M4 15h16v-2H4v2zm0 4h16v-2H4v2zm0-8h16V9H4v2zm0-6v2h16V5H4z" /></G></React.Fragment>
 , 'ViewHeadlineSharp');
