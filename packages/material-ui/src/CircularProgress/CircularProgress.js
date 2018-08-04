@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import Svg, {Circle} from 'svgs'
 import PropTypes from 'prop-types';
 import styleNames from 'react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -132,8 +133,8 @@ function CircularProgress(props) {
       {...rootProps}
       {...other}
     >
-      <svg style={classes.svg} viewBox={`${SIZE / 2} ${SIZE / 2} ${SIZE} ${SIZE}`}>
-        <circle
+      <Svg style={classes.svg} viewBox={`${SIZE / 2} ${SIZE / 2} ${SIZE} ${SIZE}`}>
+        <Circle
           style={styleNames(classes.circle, {
             [classes.circleIndeterminate]: variant === 'indeterminate',
             [classes.circleStatic]: variant === 'static',
@@ -145,7 +146,7 @@ function CircularProgress(props) {
           fill="none"
           strokeWidth={thickness}
         />
-      </svg>
+      </Svg>
     </View>
   );
 }

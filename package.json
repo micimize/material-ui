@@ -55,7 +55,8 @@
     "react-dom": "*"
   },
   "dependencies": {
-    "react-native-style-names": "^0.0.11"
+    "react-native-style-names": "^0.0.11",
+    "svgs": "^3.2.1"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.42",

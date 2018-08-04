@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react';import { Circle, ClipPath, G, LinearGradient, RadialGradient, Line, Path, Polygon, Polyline, Rect, Symbol, Text, Use, Defs, Stop } from 'svgs';
 import createSvgIcon from './utils/createSvgIcon';
 
 export default createSvgIcon(
-  <React.Fragment><path fill="none" d="M0 0h24v24H0V0z" /><g><circle cx="7" cy="14" r="3" /><circle cx="11" cy="6" r="3" /><circle cx="16.6" cy="17.6" r="3" /></g></React.Fragment>
+  <React.Fragment><Path fill="none" d="M0 0h24v24H0V0z" /><G><Circle cx="7" cy="14" r="3" /><Circle cx="11" cy="6" r="3" /><Circle cx="16.6" cy="17.6" r="3" /></G></React.Fragment>
 , 'ScatterPlotRounded');

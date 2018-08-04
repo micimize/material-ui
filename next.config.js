@@ -50,6 +50,7 @@ module.exports = {
       resolve: Object.assign({}, config.resolve || {}, {
         alias: {
           'react-native$': 'react-native-web',
+          'react-native-svg': 'svgs',
         },
       }),
     });

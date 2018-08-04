@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import Svg, {Polygon} from 'svgs'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Switch from '@material-ui/core/Switch';
@@ -46,16 +47,16 @@ class SimpleZoom extends React.Component {
         <View style={classes.container}>
           <Zoom in={checked}>
             <Paper elevation={4} style={classes.paper}>
-              <svg style={classes.svg}>
-                <polygon points="0,100 50,00, 100,100" style={classes.polygon} />
-              </svg>
+              <Svg style={classes.svg}>
+                <Polygon points="0,100 50,00, 100,100" style={classes.polygon} />
+              </Svg>
             </Paper>
           </Zoom>
           <Zoom in={checked} style={{ transitionDelay: checked ? 500 : 0 }}>
             <Paper elevation={4} style={classes.paper}>
-              <svg style={classes.svg}>
-                <polygon points="0,100 50,00, 100,100" style={classes.polygon} />
-              </svg>
+              <Svg style={classes.svg}>
+                <Polygon points="0,100 50,00, 100,100" style={classes.polygon} />
+              </Svg>
             </Paper>
           </Zoom>
         </View>
