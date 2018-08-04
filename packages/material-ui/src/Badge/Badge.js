@@ -13,7 +13,7 @@ export const styles = theme => ({
     position: 'relative',
     display: 'inline-flex',
     // For correct alignment with the text.
-    verticalAlign: 'middle',
+    textAlignVertical: 'middle',
   },
   /* Styles applied to the badge `span` element. */
   badge: {

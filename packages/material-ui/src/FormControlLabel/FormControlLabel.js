@@ -14,7 +14,7 @@ export const styles = theme => ({
     alignItems: 'center',
     cursor: 'pointer',
     // For correct alignment with the text.
-    verticalAlign: 'middle',
+    textAlignVertical: 'middle',
     // Remove grey highlight
 
     marginLeft: -14,

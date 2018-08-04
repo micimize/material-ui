@@ -12,7 +12,6 @@ export const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     overflowY: 'auto',
-    listStyle: 'none',
     padding: 0,
   },
 };

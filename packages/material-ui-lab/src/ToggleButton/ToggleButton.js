@@ -20,7 +20,7 @@ export const styles = theme => ({
     willChange: 'opacity',
     color: fade(theme.palette.action.active, 0.38),
     '&:hover': {
-      textDecorationLine: 'none',
+      // textDecorationLine: 'none',
       // Reset on mouse devices
       backgroundColor: fade(theme.palette.text.primary, 0.12),
       '@media (hover: none)': {

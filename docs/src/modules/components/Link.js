@@ -11,7 +11,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {
-    textDecorationLine: 'none',
+    // textDecorationLine: 'none',
     '&:hover': {
       textDecorationLine: 'underline',
     },

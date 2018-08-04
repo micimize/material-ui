@@ -18,6 +18,23 @@ import expandShorthand, { cast } from './shorthand-properties';
 
 const validNumber = numberString => Number.isFinite(Number(numberString));
 
+const capitalize = lower => lower.replace(/^\w/, c => c.toUpperCase());
+
+const borders = ['top', 'right', 'bottom', 'left'].reduce(
+  (bs, side) => {
+    let pre = `border${capitalize(side)}`;
+    bs[pre] = expandShorthand(`border-${side}`, {
+      [`${pre}Width`]: cast.toNumber,
+    });
+    return bs;
+  },
+  {
+    border: expandShorthand('border', {
+      borderWidth: cast.toNumber,
+    }),
+  },
+);
+
 // Default fela renderer
 const felaRenderer = createRenderer({
   plugins: [
@@ -37,9 +54,7 @@ const felaRenderer = createRenderer({
           fontWeight: typeof prop === 'number' ? prop.toString() : prop,
         };
       },
-      borderRight: expandShorthand('border-right', {
-        borderRightWidth: cast.toNumber,
-      }),
+      ...borders,
       flex(prop) {
         if (typeof prop !== 'string') {
           return { flex: prop };

@@ -10,7 +10,6 @@ export const styles = theme => ({
   root: theme.mixins.gutters({
     boxSizing: 'border-box',
     lineHeight: '48px',
-    listStyle: 'none',
     color: theme.palette.text.secondary,
     fontFamily: theme.typography.fontFamily,
     fontWeight: theme.typography.fontWeightMedium,

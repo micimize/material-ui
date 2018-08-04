@@ -18,7 +18,6 @@ export const styles = {
     width: '100%',
     height: '100%',
     resize: 'none',
-    font: 'inherit',
     padding: 0,
     cursor: 'inherit',
     boxSizing: 'border-box',
@@ -165,7 +164,7 @@ class Textarea extends React.Component {
     } = this.props;
 
     return (
-      <View style={classes.root} style={{ height: this.state.height }}>
+      <View style={styleNames(classes.root, { height: this.state.height })}>
         <EventListener target="window" onResize={this.handleResize} />
         <Text
           aria-hidden="true"

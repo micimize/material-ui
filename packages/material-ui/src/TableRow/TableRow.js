@@ -10,7 +10,7 @@ export const styles = theme => ({
     color: 'inherit',
     display: 'table-row',
     height: 48,
-    verticalAlign: 'middle',
+    textAlignVertical: 'middle',
     // We disable the focus ring for mouse, touch and keyboard users.
     outline: 'none',
     '[selected="true"]': {
@@ -45,14 +45,7 @@ export const styles = theme => ({
  * based on the material table element parent (head, body, etc).
  */
 function TableRow(props, context) {
-  const {
-    classes,
-    style: styleProp,
-    component: Component,
-    hover,
-    selected,
-    ...other
-  } = props;
+  const { classes, style: styleProp, component: Component, hover, selected, ...other } = props;
   const { table } = context;
 
   const className = styleNames(

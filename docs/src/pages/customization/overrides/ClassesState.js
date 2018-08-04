@@ -18,7 +18,7 @@ const styles = {
     // By using &, we increase the specificity.
   },
   disabled: {
-    background: 'rgba(0, 0, 0, 0.12)',
+    backgroundColor: 'rgba(0, 0, 0, 0.12)',
     color: 'white',
     boxShadow: 'none',
   },

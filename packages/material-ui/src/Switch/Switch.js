@@ -14,7 +14,7 @@ export const styles = theme => ({
     position: 'relative',
     flexShrink: 0,
     // For correct alignment with the text.
-    verticalAlign: 'middle',
+    textAlignVertical: 'middle',
   },
   /* Styles used to create the `icon` passed to the internal `SwitchBase` component `icon` prop. */
   icon: {

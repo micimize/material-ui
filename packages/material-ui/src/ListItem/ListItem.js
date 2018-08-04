@@ -13,10 +13,8 @@ export const styles = theme => ({
     justifyContent: 'flex-start',
     alignItems: 'center',
     position: 'relative',
-    textDecorationLine: 'none',
     width: '100%',
     boxSizing: 'border-box',
-    textAlign: 'left',
     paddingTop: 12,
     paddingBottom: 12,
   },
@@ -53,7 +51,7 @@ export const styles = theme => ({
       duration: theme.transitions.duration.shortest,
     }),
     '&:hover': {
-      textDecorationLine: 'none',
+      // textDecorationLine: 'none',
       backgroundColor: theme.palette.action.hover,
       // Reset on touch devices, it doesn't add specificity
       '@media (hover: none)': {

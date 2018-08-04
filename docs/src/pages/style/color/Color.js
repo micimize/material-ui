@@ -74,7 +74,6 @@ function getColorBlock(classes, theme, colorName, colorValue, colorTitle) {
   let rowStyle = {
     backgroundColor: bgColor,
     color: fgColor,
-    listStyle: 'none',
     padding: 15,
   };
 

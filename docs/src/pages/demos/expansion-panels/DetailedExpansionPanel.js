@@ -25,7 +25,7 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
   },
   icon: {
-    verticalAlign: 'bottom',
+    textAlignVertical: 'bottom',
     height: 20,
     width: 20,
   },
@@ -41,7 +41,7 @@ const styles = theme => ({
   },
   link: {
     color: theme.palette.primary.main,
-    textDecorationLine: 'none',
+    // textDecorationLine: 'none',
     '&:hover': {
       textDecorationLine: 'underline',
     },

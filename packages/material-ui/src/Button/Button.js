@@ -24,7 +24,7 @@ export const styles = theme => ({
       duration: theme.transitions.duration.short,
     }),
     '&:hover': {
-      textDecorationLine: 'none',
+      // textDecorationLine: 'none',
       backgroundColor: fade(theme.palette.text.primary, theme.palette.action.hoverOpacity),
       // Reset on touch devices, it doesn't add specificity
       '@media (hover: none)': {

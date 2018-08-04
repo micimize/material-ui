@@ -136,10 +136,9 @@ const styles = theme => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  inputRoot: {
-    color: 'inherit',
-  },
+  inputRoot: {},
   inputInput: {
+    color: 'inherit',
     padding: `${theme.spacing.unit}px ${theme.spacing.unit}px ${theme.spacing.unit}px ${theme
       .spacing.unit * 9}px`,
   },

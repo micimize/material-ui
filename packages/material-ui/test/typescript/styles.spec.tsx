@@ -197,7 +197,7 @@ withStyles(theme =>
   createStyles({
     guttered: theme.mixins.gutters({
       '&:hover': {
-        textDecorationLine: 'none',
+        // textDecorationLine: 'none',
       },
     }),
     listItem: {

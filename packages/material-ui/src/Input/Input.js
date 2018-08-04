@@ -42,6 +42,7 @@ export function isAdornedStart(obj) {
 
 export const styles = theme => {
   const light = theme.palette.type === 'light';
+  /*
   const placeholder = {
     color: 'currentColor',
     opacity: light ? 0.42 : 0.5,
@@ -49,6 +50,7 @@ export const styles = theme => {
       duration: theme.transitions.duration.shorter,
     }),
   };
+  */
   /*
   const placeholderHidden = {
     opacity: 0,
@@ -65,10 +67,6 @@ export const styles = theme => {
       // Mimics the default input display property used by browsers for an input.
       display: 'inline-flex',
       position: 'relative',
-      fontFamily: theme.typography.fontFamily,
-      color: light ? 'rgba(0, 0, 0, 0.87)' : theme.palette.common.white,
-      fontSize: theme.typography.pxToRem(16),
-      lineHeight: '1.1875em', // Reset (19px), match the native input line-height
       '[disabled="true"]': {
         color: theme.palette.text.disabled,
       },
@@ -139,16 +137,17 @@ export const styles = theme => {
     },
     /* Styles applied to the `input` element. */
     input: {
-      font: 'inherit',
-      color: 'currentColor',
+      lineHeight: '19px', // '1.1875em', // Reset (19px), match the native input line-height
+      fontFamily: theme.typography.fontFamily,
+      fontSize: theme.typography.pxToRem(16),
+      color: light ? 'rgba(0, 0, 0, 0.87)' : theme.palette.common.white,
       paddingTop: 8 - 2,
       paddingLeft: 0,
       paddingRight: 0,
       paddingBottom: 8 - 1,
       borderWidth: 0,
       boxSizing: 'content-box',
-      verticalAlign: 'middle',
-      background: 'none',
+      textAlignVertical: 'middle',
       margin: 0, // Reset for Safari
       // Remove grey highlight
       // WebkitTapHighlightColor: 'transparent',

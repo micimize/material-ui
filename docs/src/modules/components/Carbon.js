@@ -12,10 +12,10 @@ const styles = theme => ({
       padding: theme.spacing.unit,
       backgroundColor: theme.palette.background.paper,
       '& img': {
-        verticalAlign: 'middle',
+        textAlignVertical: 'middle',
       },
       '& a': {
-        textDecorationLine: 'none',
+        // textDecorationLine: 'none',
       },
       '& .carbon-wrap': {
         display: 'flex',

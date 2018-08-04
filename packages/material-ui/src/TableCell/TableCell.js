@@ -10,7 +10,6 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     display: 'table-cell',
-    verticalAlign: 'inherit',
     // Workaround for a rendering bug with spanned columns in Chrome 62.0.
     // Removes the alpha (sets it to 1), and lightens or darkens the theme color.
     borderBottom: `1px solid

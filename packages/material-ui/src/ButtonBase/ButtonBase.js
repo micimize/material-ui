@@ -28,10 +28,10 @@ export const styles = {
     padding: 0, // Remove the padding in Firefox
     cursor: 'pointer',
     userSelect: 'none',
-    verticalAlign: 'middle',
+    textAlignVertical: 'middle',
     // '-moz-appearance': 'none', // Reset
 
-    textDecorationLine: 'none',
+    // textDecorationLine: 'none',
     // So we take precedent over the style of a native <a /> element.
     color: 'inherit',
     /*
