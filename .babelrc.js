@@ -1,5 +1,6 @@
 const moduleAlias = require('module-alias')
 moduleAlias.addAlias('react-native', 'react-native-web')
+moduleAlias.addAlias('react-native-svg', 'svgs')
 
 const ENV = process.env.BABEL_ENV;
 let defaultPresets;
