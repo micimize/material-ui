@@ -73,5 +73,8 @@
   },
   "engines": {
     "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "fela-plugin-native-media-query": "^6.0.9"
   }
 }

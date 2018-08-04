@@ -3486,6 +3486,10 @@ css-loader@^1.0.0:
     postcss-value-parser "^3.3.0"
     source-list-map "^2.0.0"
 
+css-mediaquery@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/css-mediaquery/-/css-mediaquery-0.1.2.tgz#6a2c37344928618631c54bd33cedd301da18bea0"
+
 css-select-base-adapter@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/css-select-base-adapter/-/css-select-base-adapter-0.1.0.tgz#0102b3d14630df86c3eb9fa9f5456270106cf990"
@@ -4745,6 +4749,15 @@ fela-plugin-custom-property@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/fela-plugin-custom-property/-/fela-plugin-custom-property-7.0.3.tgz#2262b13acc6d437955dd731b8f68cf739fb440fc"
   dependencies:
+    isobject "^3.0.1"
+
+fela-plugin-native-media-query@^6.0.9:
+  version "6.0.9"
+  resolved "https://registry.yarnpkg.com/fela-plugin-native-media-query/-/fela-plugin-native-media-query-6.0.9.tgz#4e3108b92074f78ec5a07ee6acf1be7ce7aac518"
+  dependencies:
+    css-in-js-utils "^2.0.0"
+    css-mediaquery "^0.1.2"
+    fela-utils "^8.0.8"
     isobject "^3.0.1"
 
 fela-tools@^5.1.7:

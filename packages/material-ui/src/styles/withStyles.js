@@ -12,13 +12,16 @@ import { createRenderer } from 'fela-native';
 import getClassSheet from './getClassSheet';
 import customProperty from 'fela-plugin-custom-property';
 import getDisplayName from 'recompose/getDisplayName';
+import nativeMediaQuery from './fela-plugin-native-media-query';
 
 const validNumber = numberString => Number.isFinite(Number(numberString));
 
 // Default fela renderer
 const felaRenderer = createRenderer({
   plugins: [
+    nativeMediaQuery(),
     customProperty({
+      '&:focus': () => ({}),
       '&:hover': () => ({}),
       '[disabled="true"]': () => ({}),
       '[checked="true"]': () => ({}),
