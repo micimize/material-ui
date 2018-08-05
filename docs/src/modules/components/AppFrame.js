@@ -137,7 +137,7 @@ class AppFrame extends React.Component {
               onClick={this.handleDrawerOpen}
               style={navIconStyle}
             >
-              <MenuIcon />
+              <MenuIcon color="onPrimary" />
             </IconButton>
             {title !== null && (
               <Typography style={classes.title} variant="title" color="inherit" noWrap>
@@ -153,7 +153,7 @@ class AppFrame extends React.Component {
                 component={Link}
                 href="/style/color#color-tool"
               >
-                <ColorsIcon />
+                <ColorsIcon color="onPrimary" />
               </IconButton>
             </Tooltip>
             <Tooltip title="Toggle light/dark theme" enterDelay={300}>
@@ -162,7 +162,11 @@ class AppFrame extends React.Component {
                 onClick={this.handleTogglePaletteType}
                 aria-label="Toggle light/dark theme"
               >
-                {uiTheme.paletteType === 'light' ? <LightbulbOutlineIcon /> : <LightbulbFullIcon />}
+                {uiTheme.paletteType === 'light' ? (
+                  <LightbulbOutlineIcon color="onPrimary" />
+                ) : (
+                  <LightbulbFullIcon color="onPrimary" />
+                )}
               </IconButton>
             </Tooltip>
             <Tooltip title="Toggle right-to-left/left-to-right" enterDelay={300}>
@@ -172,9 +176,9 @@ class AppFrame extends React.Component {
                 aria-label="Toggle right-to-left/left-to-right"
               >
                 {uiTheme.direction === 'rtl' ? (
-                  <FormatTextdirectionLToR />
+                  <FormatTextdirectionLToR color="onPrimary" />
                 ) : (
-                  <FormatTextdirectionRToL />
+                  <FormatTextdirectionRToL color="onPrimary" />
                 )}
               </IconButton>
             </Tooltip>
@@ -185,7 +189,7 @@ class AppFrame extends React.Component {
                 href="https://github.com/mui-org/material-ui"
                 aria-label="GitHub repository"
               >
-                <GithubIcon />
+                <GithubIcon color="onPrimary" />
               </IconButton>
             </Tooltip>
           </Toolbar>

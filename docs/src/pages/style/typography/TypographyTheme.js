@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -12,7 +12,7 @@ const styles = theme => ({
 });
 
 function TypographyTheme(props) {
-  return <View style={props.classes.root}>{"This div's text looks like that of a button."}</View>;
+  return <Text style={props.classes.root}>{"This Text's text looks like that of a button."}</Text>;
 }
 
 TypographyTheme.propTypes = {

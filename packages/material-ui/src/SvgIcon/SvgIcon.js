@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Svg from 'svgs';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
@@ -10,12 +10,15 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     userSelect: 'none',
-    width: '1em',
-    height: '1em',
-    display: 'inline-block',
+    width: 24,
+    height: 24,
+    fontSize: 24,
     fill: 'currentColor',
     flexShrink: 0,
-    fontSize: 24,
+    /* TODO is a context-based em and color inheritence system worth it
+    width: '1em',
+    height: '1em',
+    */
     transition: theme.transitions.create('fill', {
       duration: theme.transitions.duration.shorter,
     }),
@@ -40,10 +43,27 @@ export const styles = theme => ({
   colorDisabled: {
     color: theme.palette.action.disabled,
   },
+
+  /* Styles applied to the root element if `color="onDefault"`. */
+  colorOnDefault: {
+    color: theme.palette.getContrastText(
+      theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
+    ),
+  },
+  /* Styles applied to the root element if `color="onPrimary"`. */
+  colorOnPrimary: {
+    color: theme.palette.primary.contrastText,
+  },
+  /* Styles applied to the root element if `color="onSecondary"`. */
+  colorOnSecondary: {
+    color: theme.palette.secondary.contrastText,
+  },
   /* Styles applied to the root element if `fontSize="inherit"`. */
+  /*
   fontSizeInherit: {
     fontSize: 'inherit',
   },
+  */
 });
 
 function SvgIcon(props) {
@@ -53,17 +73,18 @@ function SvgIcon(props) {
     style: styleProp,
     color,
     component: Component,
-    fontSize,
+    // fontSize,
     nativeColor,
     titleAccess,
     viewBox,
     ...other
   } = props;
 
-  const className = styleNames(
+  // TODO optimize styles, svgs doesn't support native styles
+  const style = styleNames(
     classes.root,
     {
-      [classes.fontSizeInherit]: fontSize === 'inherit',
+      // [classes.fontSizeInherit]: fontSize === 'inherit',
       [classes[`color${capitalize(color)}`]]: color !== 'inherit',
     },
     styleProp,
@@ -71,7 +92,7 @@ function SvgIcon(props) {
 
   return (
     <Component
-      style={className}
+      style={StyleSheet.flatten(style)}
       focusable="false"
       viewBox={viewBox}
       color={nativeColor}
@@ -111,7 +132,7 @@ SvgIcon.propTypes = {
   /**
    * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
    */
-  fontSize: PropTypes.oneOf(['inherit', 'default']),
+  // fontSize: PropTypes.oneOf(['inherit', 'default']),
   /**
    * Applies a color attribute to the SVG element.
    */
@@ -132,9 +153,9 @@ SvgIcon.propTypes = {
 };
 
 SvgIcon.defaultProps = {
-  color: 'inherit',
+  color: 'default',
   component: Svg,
-  fontSize: 'default',
+  // fontSize: 'default',
   viewBox: '0 0 24 24',
 };
 
