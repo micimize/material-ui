@@ -1,6 +1,6 @@
 // https://github.com/rofrischmann/fela/issues/591
 import { Dimensions } from 'react-native';
-import isPlainObject from 'isobject';
+import deepmerge from 'deepmerge';
 import { match } from 'css-mediaquery';
 import { isMediaQuery } from 'fela-utils';
 
@@ -8,11 +8,13 @@ function getOrientation(width, height) {
   return width > height ? 'landscape' : 'portrait';
 }
 
-function resolveMediaQuery(style, _, renderer) {
+// merge valid media queries
+function resolveMediaQueries(_styles) {
   const { width, height } = Dimensions.get('window');
-  Object.keys(style).forEach(property => {
-    const value = style[property];
-    if (isMediaQuery(property) && isPlainObject(value)) {
+  let containsMediaQueries = false;
+  const resolved = Object.keys(_styles).reduce((styles, property) => {
+    if (isMediaQuery(property)) {
+      containsMediaQueries = true;
       if (
         match(property.slice(6).trim(), {
           type: 'screen',
@@ -21,15 +23,15 @@ function resolveMediaQuery(style, _, renderer) {
           height,
         })
       ) {
-        // eslint-disable-next-line no-underscore-dangle
-        renderer._mergeStyle(style, value);
+        return deepmerge(styles, resolveMediaQueries(_styles[property]).resolved);
       }
-
-      delete style[property];
+    } else {
+      styles[property] = _styles[property];
     }
-  });
+    return styles;
+  }, {});
 
-  return style;
+  return { resolved, containsMediaQueries };
 }
 
-export default () => resolveMediaQuery;
+export default resolveMediaQueries;

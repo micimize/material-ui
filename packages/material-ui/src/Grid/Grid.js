@@ -10,7 +10,7 @@
 // - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -231,11 +231,11 @@ function Grid(props) {
         alignContent !== Grid.defaultProps.alignContent,
       [classes[`justify-xs-${String(justify)}`]]: justify !== Grid.defaultProps.justify,
       [classes[`grid-xs-${String(xs)}`]]: xs !== false,
-      [classes[`grid-sm-${String(sm)}`]]: sm !== false,
-      [classes[`grid-md-${String(md)}`]]: md !== false,
-      [classes[`grid-lg-${String(lg)}`]]: lg !== false,
-      [classes[`grid-xl-${String(xl)}`]]: xl !== false,
     },
+    { [classes[`grid-sm-${String(sm)}`]]: sm !== false },
+    { [classes[`grid-md-${String(md)}`]]: md !== false },
+    { [classes[`grid-lg-${String(lg)}`]]: lg !== false },
+    { [classes[`grid-xl-${String(xl)}`]]: xl !== false },
     styleProp,
   );
 

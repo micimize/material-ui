@@ -23,7 +23,7 @@ function gridRow(props) {
   const { classes } = props;
 
   return (
-    <Grid item xs={12} container spacing={24} classes={classes}>
+    <Grid item xs={12} container spacing={24} style={classes.root}>
       <Grid item xs={4}>
         <Paper style={classes.paper}>
           <Text>item</Text>

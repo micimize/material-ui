@@ -1,4 +1,5 @@
 import React from 'react';
+import { Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -12,9 +13,9 @@ import { createRenderer } from 'fela-native';
 import getClassSheet from './getClassSheet';
 import customProperty from 'fela-plugin-custom-property';
 import getDisplayName from 'recompose/getDisplayName';
-import nativeMediaQuery from './fela-plugin-native-media-query';
 import customModules from './fela-plugin-custom-modules';
 import expandShorthand, { cast } from './shorthand-properties';
+import resolveMediaQueries from './resolveMediaQueries';
 
 const validNumber = numberString => Number.isFinite(Number(numberString));
 
@@ -38,7 +39,6 @@ const borders = ['top', 'right', 'bottom', 'left'].reduce(
 // Default fela renderer
 const felaRenderer = createRenderer({
   plugins: [
-    nativeMediaQuery(),
     customProperty({
       transform: () => ({}),
       willChange: () => ({}),
@@ -144,6 +144,8 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
   );
 
   class WithStyles extends React.Component {
+    extensions = { mediaQuery: false, mediaQueryListener: false };
+
     disableStylesGeneration = false;
 
     felaRenderer = null;
@@ -188,11 +190,18 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
         // Cache for the last used rendered classes pointer.
         lastFela: {},
       };
+
+      if (this.extensions.mediaQuery) {
+        this.extensions.mediaQueryListener =
+          Dimensions.addEventListener('change', this.forceReattach) || true;
+      }
     }
 
     state = {};
 
     componentDidMount() {
+      this._mounted = true;
+
       if (!listenToTheme) {
         return;
       }
@@ -228,7 +237,18 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       if (this.unsubscribeId !== null) {
         themeListener.unsubscribe(this.context, this.unsubscribeId);
       }
+
+      if (this.extensions.mediaQueryListener) {
+        console.log('detaching');
+        Dimensions.removeEventListener('change', this.forceReattach);
+        this.extensions.mediaQueryListener = false;
+      }
     }
+
+    forceReattach = () => {
+      this.computeClasses(this.theme);
+      this.forceUpdate();
+    };
 
     getClasses() {
       // Tracks if either the rendered classes or classes prop has changed,
@@ -238,7 +258,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       if (!this.disableStylesGeneration) {
         const sheetManager = this.sheetsManager.get(this.stylesCreatorSaved);
         const sheetsManagerTheme = sheetManager.get(this.theme);
-        if (sheetsManagerTheme.classSheet !== this.cacheClasses.lastFela) {
+        if (sheetsManagerTheme.classSheet !== this.cacheClasses.lastFela || true) {
           this.cacheClasses.lastFela = sheetsManagerTheme.classSheet;
           generate = true;
         }
@@ -261,13 +281,47 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       return this.cacheClasses.value;
     }
 
+    getSheetManagerTheme(theme) {
+      const stylesCreatorSaved = this.stylesCreatorSaved;
+      let sheetManager = this.sheetsManager.get(stylesCreatorSaved);
+
+      if (!sheetManager) {
+        sheetManager = new Map();
+        this.sheetsManager.set(stylesCreatorSaved, sheetManager);
+      }
+      let sheetManagerTheme = sheetManager.get(theme);
+
+      if (!sheetManagerTheme) {
+        sheetManagerTheme = {
+          refs: 0,
+          classSheet: null,
+        };
+        sheetManager.set(theme, sheetManagerTheme);
+      }
+      return sheetManagerTheme;
+    }
+
+    computeClasses(theme) {
+      const sheetManagerTheme = this.getSheetManagerTheme(theme);
+
+      const stylesCreatorSaved = this.stylesCreatorSaved;
+      const styles = stylesCreatorSaved.create(theme, name);
+      const { resolved, containsMediaQueries } = resolveMediaQueries(styles);
+
+      const classSheet = getClassSheet(resolved, this.felaRenderer);
+
+      sheetManagerTheme.classSheet = classSheet;
+
+      // look for media queries
+      this.extensions.mediaQuery = containsMediaQueries;
+    }
+
     // now that withStyles uses fela, attach/detatch might be overkill
     // same goes for the sheetManager
     attach(theme) {
       if (this.disableStylesGeneration) {
         return;
       }
-
       const stylesCreatorSaved = this.stylesCreatorSaved;
       let sheetManager = this.sheetsManager.get(stylesCreatorSaved);
 
@@ -287,7 +341,6 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       }
 
       if (sheetManagerTheme.refs === 0) {
-        const styles = stylesCreatorSaved.create(theme, name);
         let meta = name;
         if (process.env.NODE_ENV !== 'production' && !meta) {
           meta = getDisplayName(Component);
@@ -300,9 +353,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
           );
         }
 
-        const classSheet = getClassSheet(styles, this.felaRenderer);
-
-        sheetManagerTheme.classSheet = classSheet;
+        this.computeClasses(theme);
       }
 
       sheetManagerTheme.refs += 1;
