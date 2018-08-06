@@ -21,26 +21,44 @@ function AutoGrid(props) {
 
   return (
     <View style={classes.root}>
-      <Grid container spacing={24}>
-        <Grid item xs>
-          <Paper style={classes.paper}>xs</Paper>
+      <Grid direction="column" container spacing={24}>
+        <Grid item>
+          <Grid container spacing={24}>
+            <Grid item xs>
+              <Paper style={classes.paper}>
+                <Text>xs</Text>
+              </Paper>
+            </Grid>
+            <Grid item xs>
+              <Paper style={classes.paper}>
+                <Text>xs</Text>
+              </Paper>
+            </Grid>
+            <Grid item xs>
+              <Paper style={classes.paper}>
+                <Text>xs</Text>
+              </Paper>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item xs>
-          <Paper style={classes.paper}>xs</Paper>
-        </Grid>
-        <Grid item xs>
-          <Paper style={classes.paper}>xs</Paper>
-        </Grid>
-      </Grid>
-      <Grid container spacing={24}>
-        <Grid item xs>
-          <Paper style={classes.paper}>xs</Paper>
-        </Grid>
-        <Grid item xs={6}>
-          <Paper style={classes.paper}>xs=6</Paper>
-        </Grid>
-        <Grid item xs>
-          <Paper style={classes.paper}>xs</Paper>
+        <Grid item>
+          <Grid container spacing={24}>
+            <Grid item xs>
+              <Paper style={classes.paper}>
+                <Text>xs</Text>
+              </Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper style={classes.paper}>
+                <Text>xs=6</Text>
+              </Paper>
+            </Grid>
+            <Grid item xs>
+              <Paper style={classes.paper}>
+                <Text>xs</Text>
+              </Paper>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </View>

@@ -35,22 +35,34 @@ function CSSGrid(props) {
       </Typography>
       <Grid container spacing={24}>
         <Grid item xs={3}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </Grid>
         <Grid item xs={8}>
-          <Paper style={classes.paper}>xs=8</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=8</Text>
+          </Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper style={classes.paper}>xs=4</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=4</Text>
+          </Paper>
         </Grid>
       </Grid>
       <Divider style={classes.divider} />
@@ -59,22 +71,34 @@ function CSSGrid(props) {
       </Typography>
       <View style={classes.container}>
         <View style={{ gridColumnEnd: 'span 3' }}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </View>
         <View style={{ gridColumnEnd: 'span 3' }}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </View>
         <View style={{ gridColumnEnd: 'span 3' }}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </View>
         <View style={{ gridColumnEnd: 'span 3' }}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </View>
         <View style={{ gridColumnEnd: 'span 8' }}>
-          <Paper style={classes.paper}>xs=8</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=8</Text>
+          </Paper>
         </View>
         <View style={{ gridColumnEnd: 'span 4' }}>
-          <Paper style={classes.paper}>xs=4</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=4</Text>
+          </Paper>
         </View>
       </View>
     </View>

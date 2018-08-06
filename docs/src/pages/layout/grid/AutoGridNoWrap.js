@@ -32,7 +32,9 @@ function AutoGridNoWrap(props) {
         <Paper style={classes.paper}>
           <Grid container wrap="nowrap" spacing={16}>
             <Grid item>
-              <Avatar>W</Avatar>
+              <Avatar>
+                <Text>W</Text>
+              </Avatar>
             </Grid>
             <Grid item xs zeroMinWidth>
               <Typography noWrap>{message}</Typography>
@@ -42,7 +44,9 @@ function AutoGridNoWrap(props) {
         <Paper style={classes.paper}>
           <Grid container wrap="nowrap" spacing={16}>
             <Grid item>
-              <Avatar>W</Avatar>
+              <Avatar>
+                <Text>W</Text>
+              </Avatar>
             </Grid>
             <Grid item xs>
               <Typography noWrap>{message}</Typography>
@@ -52,7 +56,9 @@ function AutoGridNoWrap(props) {
         <Paper style={classes.paper}>
           <Grid container wrap="nowrap" spacing={16}>
             <Grid item>
-              <Avatar>W</Avatar>
+              <Avatar>
+                <Text>W</Text>
+              </Avatar>
             </Grid>
             <Grid item xs>
               <Typography>{message}</Typography>

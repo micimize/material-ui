@@ -23,25 +23,39 @@ function CenteredGrid(props) {
     <View style={classes.root}>
       <Grid container spacing={24}>
         <Grid item xs={12}>
-          <Paper style={classes.paper}>xs=12</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=12</Text>
+          </Paper>
         </Grid>
         <Grid item xs={6}>
-          <Paper style={classes.paper}>xs=6</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=6</Text>
+          </Paper>
         </Grid>
         <Grid item xs={6}>
-          <Paper style={classes.paper}>xs=6</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=6</Text>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper style={classes.paper}>xs=3</Paper>
+          <Paper style={classes.paper}>
+            <Text>xs=3</Text>
+          </Paper>
         </Grid>
       </Grid>
     </View>

@@ -1,4 +1,5 @@
 import React from 'react';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -70,10 +71,12 @@ class InteractiveGrid extends React.Component {
             {[0, 1, 2].map(value => (
               <Grid key={value} item>
                 <Paper
-                  style={classes.paper}
-                  style={{ paddingTop: (value + 1) * 10, paddingBottom: (value + 1) * 10 }}
+                  style={styleNames(classes.paper, {
+                    paddingTop: (value + 1) * 10,
+                    paddingBottom: (value + 1) * 10,
+                  })}
                 >
-                  {`Cell ${value + 1}`}
+                  <Text>{`Cell ${value + 1}`}</Text>
                 </Paper>
               </Grid>
             ))}

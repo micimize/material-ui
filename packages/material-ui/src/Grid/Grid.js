@@ -16,6 +16,7 @@ import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { keys as breakpointKeys } from '../styles/createBreakpoints';
 import requirePropFactory from '../utils/requirePropFactory';
+import { isMuiElement } from '../utils/reactHelpers';
 
 const GUTTERS = [0, 8, 16, 24, 32, 40];
 const GRID_SIZES = ['auto', true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -73,13 +74,12 @@ function generateGutter(theme, breakpoint) {
       // Skip the default style.
       return;
     }
-
     styles[`spacing-${breakpoint}-${spacing}`] = {
       margin: -spacing / 2,
       width: `calc(100% + ${spacing}px)`,
-      '& > $item': {
-        padding: spacing / 2,
-      },
+    };
+    styles[`spacing-${breakpoint}-${spacing}-item`] = {
+      padding: spacing / 2,
     };
   });
 
@@ -99,6 +99,7 @@ export const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     width: '100%',
+    flexDirection: 'row',
   },
   /* Styles applied to the root element if `item={true}`. */
   item: {
@@ -212,10 +213,11 @@ function Grid(props) {
     xl,
     xs,
     zeroMinWidth,
+    children: childrenProp,
     ...other
   } = props;
 
-  const className = styleNames(
+  const style = styleNames(
     {
       [classes.container]: container,
       [classes.item]: item,
@@ -237,7 +239,22 @@ function Grid(props) {
     styleProp,
   );
 
-  return <Component style={className} {...other} />;
+  // if we stick with containers controlling spacing, this needs to be done with context
+  const children = React.Children.map(
+    childrenProp,
+    child =>
+      isMuiElement(child, ['Grid']) && child.props.item
+        ? React.cloneElement(child, {
+            style: styleNames(child.props.style, classes[`spacing-xs-${spacing}-item`]),
+          })
+        : child,
+  );
+
+  return (
+    <Component style={style} {...other}>
+      {children}
+    </Component>
+  );
 }
 
 Grid.propTypes = {
@@ -364,6 +381,7 @@ Grid.defaultProps = {
 };
 
 const StyledGrid = withStyles(styles, { name: 'MuiGrid' })(Grid);
+StyledGrid.muiName = 'Grid';
 
 if (process.env.NODE_ENV !== 'production') {
   const requireProp = requirePropFactory('Grid');

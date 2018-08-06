@@ -16,43 +16,42 @@ const styles = theme => ({
   },
 });
 
-function FormRow(props) {
+// right now Grid spacing is controlled with React.Children.map, which is fragile
+// requires direct nesting, no wrapping components
+// thus we use a regular function here
+function gridRow(props) {
   const { classes } = props;
 
   return (
-    <React.Fragment>
+    <Grid item xs={12} container spacing={24} classes={classes}>
       <Grid item xs={4}>
-        <Paper style={classes.paper}>item</Paper>
+        <Paper style={classes.paper}>
+          <Text>item</Text>
+        </Paper>
       </Grid>
       <Grid item xs={4}>
-        <Paper style={classes.paper}>item</Paper>
+        <Paper style={classes.paper}>
+          <Text>item</Text>
+        </Paper>
       </Grid>
       <Grid item xs={4}>
-        <Paper style={classes.paper}>item</Paper>
+        <Paper style={classes.paper}>
+          <Text>item</Text>
+        </Paper>
       </Grid>
-    </React.Fragment>
+    </Grid>
   );
 }
-
-FormRow.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 function NestedGrid(props) {
   const { classes } = props;
 
   return (
     <View style={classes.root}>
-      <Grid container spacing={8}>
-        <Grid item xs={12} container spacing={24}>
-          <FormRow classes={classes} />
-        </Grid>
-        <Grid item xs={12} container spacing={24}>
-          <FormRow classes={classes} />
-        </Grid>
-        <Grid item xs={12} container spacing={24}>
-          <FormRow classes={classes} />
-        </Grid>
+      <Grid container direction="column" spacing={8}>
+        {gridRow({ classes })}
+        {gridRow({ classes })}
+        {gridRow({ classes })}
       </Grid>
     </View>
   );
