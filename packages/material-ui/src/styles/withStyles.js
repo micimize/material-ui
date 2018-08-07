@@ -23,7 +23,7 @@ const capitalize = lower => lower.replace(/^\w/, c => c.toUpperCase());
 
 const borders = ['top', 'right', 'bottom', 'left'].reduce(
   (bs, side) => {
-    let pre = `border${capitalize(side)}`;
+    const pre = `border${capitalize(side)}`;
     bs[pre] = expandShorthand(`border-${side}`, {
       [`${pre}Width`]: cast.toNumber,
     });
@@ -193,14 +193,14 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
       if (this.extensions.mediaQuery) {
         this.extensions.mediaQueryListener =
-          Dimensions.addEventListener('change', this.forceReattach) || true;
+          Dimensions.addEventListener('change', this.forceComputeClasses.bind(this)) || true;
       }
     }
 
-    state = {};
+    state = { mounted: false };
 
     componentDidMount() {
-      this._mounted = true;
+      this.setState({ mounted: true });
 
       if (!listenToTheme) {
         return;
@@ -240,15 +240,10 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
       if (this.extensions.mediaQueryListener) {
         console.log('detaching');
-        Dimensions.removeEventListener('change', this.forceReattach);
+        Dimensions.removeEventListener('change', this.forceComputeClasses.bind(this));
         this.extensions.mediaQueryListener = false;
       }
     }
-
-    forceReattach = () => {
-      this.computeClasses(this.theme);
-      this.forceUpdate();
-    };
 
     getClasses() {
       // Tracks if either the rendered classes or classes prop has changed,
@@ -258,7 +253,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       if (!this.disableStylesGeneration) {
         const sheetManager = this.sheetsManager.get(this.stylesCreatorSaved);
         const sheetsManagerTheme = sheetManager.get(this.theme);
-        if (sheetsManagerTheme.classSheet !== this.cacheClasses.lastFela || true) {
+        if (sheetsManagerTheme.classSheet !== this.cacheClasses.lastFela) {
           this.cacheClasses.lastFela = sheetsManagerTheme.classSheet;
           generate = true;
         }
@@ -299,6 +294,17 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
         sheetManager.set(theme, sheetManagerTheme);
       }
       return sheetManagerTheme;
+    }
+
+    forceComputeClasses() {
+      if (this.state.mounted) {
+        if (name === 'MuiGrid') console.log('Grid retatch');
+        this.computeClasses(this.theme);
+        this.forceUpdate();
+      } else {
+        if (name === 'MuiGrid') console.log('Grid fail');
+        // debugger;
+      }
     }
 
     computeClasses(theme) {
