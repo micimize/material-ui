@@ -37,7 +37,16 @@ export const styles = theme => ({
 });
 
 function ListSubheader(props) {
-  const { classes, style, color, component: Component, disableSticky, inset, ...other } = props;
+  const {
+    children,
+    classes,
+    style,
+    color,
+    component: Component,
+    disableSticky,
+    inset,
+    ...other
+  } = props;
 
   return (
     <Component
@@ -51,7 +60,9 @@ function ListSubheader(props) {
         style,
       )}
       {...other}
-    />
+    >
+      {typeof children === 'string' ? <Text>{children}</Text> : children}
+    </Component>
   );
 }
 

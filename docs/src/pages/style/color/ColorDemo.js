@@ -32,7 +32,7 @@ const styles = theme => ({
   code: {
     marginTop: theme.spacing.unit,
     '& pre': {
-      margin: '0px !important',
+      margin: '0px',
     },
   },
   fab: {

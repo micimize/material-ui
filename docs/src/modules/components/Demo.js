@@ -111,8 +111,8 @@ const styles = theme => ({
     },
     '& pre': {
       overflow: 'auto',
-      margin: '0px !important',
-      borderRadius: '0px !important',
+      margin: '0px',
+      borderRadius: '0px',
     },
   },
 });

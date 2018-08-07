@@ -8,7 +8,7 @@ function toNumber(value) {
 // property in dash-case
 // cast map in camelCase
 // takes shorthandvalue and returns it's constituent parts
-function expander(shorthand, castMap) {
+function expander(shorthand, castMap = {}) {
   return value => {
     const styles = expandShorthandProperty(shorthand, value);
     return Object.keys(styles).reduce((resolved, prop) => {
@@ -23,6 +23,13 @@ function expander(shorthand, castMap) {
   };
 }
 
-export const cast = { toNumber };
+function conditionalExpander(shorthand, condition, castMap = {}) {
+  const expand = expander(shorthand, castMap);
+  return value => (condition(value) ? expand(value) : { [shorthand]: value });
+}
+
+const cast = { toNumber };
+
+export { cast, conditionalExpander };
 
 export default expander;

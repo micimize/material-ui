@@ -14,7 +14,7 @@ import getClassSheet from './getClassSheet';
 import customProperty from 'fela-plugin-custom-property';
 import getDisplayName from 'recompose/getDisplayName';
 import customModules from './fela-plugin-custom-modules';
-import expandShorthand, { cast } from './shorthand-properties';
+import expandShorthand, { conditionalExpander, cast } from './shorthand-properties';
 import resolveMediaQueries from './resolveMediaQueries';
 
 const validNumber = numberString => Number.isFinite(Number(numberString));
@@ -53,6 +53,8 @@ const felaRenderer = createRenderer({
         };
       },
       ...borders,
+      margin: conditionalExpander('margin', margin => typeof margin !== 'number'),
+      padding: conditionalExpander('padding', margin => typeof margin !== 'number'),
       flex(prop) {
         if (typeof prop !== 'string') {
           return { flex: prop };
@@ -239,7 +241,6 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       }
 
       if (this.extensions.mediaQueryListener) {
-        console.log('detaching');
         Dimensions.removeEventListener('change', this.forceComputeClasses.bind(this));
         this.extensions.mediaQueryListener = false;
       }
@@ -298,11 +299,11 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
     forceComputeClasses() {
       if (this.state.mounted) {
-        if (name === 'MuiGrid') console.log('Grid retatch');
+        // if (name === 'MuiGrid') console.log('Grid retatch');
         this.computeClasses(this.theme);
         this.forceUpdate();
       } else {
-        if (name === 'MuiGrid') console.log('Grid fail');
+        // if (name === 'MuiGrid') console.log('Grid fail');
         // debugger;
       }
     }

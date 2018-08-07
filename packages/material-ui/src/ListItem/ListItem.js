@@ -10,6 +10,7 @@ export const styles = theme => ({
   /* Styles applied to the (normally root) `component` element. May be wrapped by a `container`. */
   root: {
     display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
     position: 'relative',
