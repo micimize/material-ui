@@ -27,7 +27,9 @@
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c scripts/rollup.config.js",
     "build:copy-files": "babel-node ./scripts/copy-files.js",
     "build": "yarn build:es2015 && yarn build:es2015modules && yarn build:es && yarn build:umd && yarn build:copy-files",
-    "release": "yarn build && npm publish build"
+    "release": "yarn build && npm publish build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": "^16.3.0",
@@ -77,6 +79,14 @@
     "node": ">=6.0.0"
   },
   "devDependencies": {
-    "fela-plugin-native-media-query": "^6.0.9"
+    "fela-plugin-native-media-query": "^6.0.9",
+    "@storybook/addon-options": "^3.4.3",
+    "@storybook/react": "^3.4.3",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "babel-plugin-react-native-web": "0.8.9",
+    "url-loader": "^1.0.1",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
   }
 }
