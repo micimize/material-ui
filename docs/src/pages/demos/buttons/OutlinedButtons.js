@@ -5,6 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
+  row: {
+    flexDirection: 'row',
+  },
   button: {
     margin: theme.spacing.unit,
   },
@@ -16,7 +19,7 @@ const styles = theme => ({
 function OutlinedButtons(props) {
   const { classes } = props;
   return (
-    <View>
+    <View style={classes.row}>
       <Button variant="outlined" style={classes.button}>
         Default
       </Button>
@@ -39,8 +42,9 @@ function OutlinedButtons(props) {
         multiple
         type="file"
       />
+      {/* TODO htmlFor doesn't make sense  */}
       <Text htmlFor="outlined-button-file">
-        <Button variant="outlined" component="span" style={classes.button}>
+        <Button variant="outlined" style={classes.button}>
           Upload
         </Button>
       </Text>

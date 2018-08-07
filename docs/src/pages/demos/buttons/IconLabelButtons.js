@@ -11,6 +11,9 @@ import Icon from '@material-ui/core/Icon';
 import SaveIcon from '@material-ui/icons/Save';
 
 const styles = theme => ({
+  row: {
+    flexDirection: 'row',
+  },
   button: {
     margin: theme.spacing.unit,
   },
@@ -28,7 +31,7 @@ const styles = theme => ({
 function IconLabelButtons(props) {
   const { classes } = props;
   return (
-    <View>
+    <View style={classes.row}>
       <Button variant="contained" color="secondary" style={classes.button}>
         <Text>Delete</Text>
         <DeleteIcon style={classes.rightIcon} />

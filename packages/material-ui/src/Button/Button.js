@@ -34,14 +34,17 @@ export const styles = theme => ({
         backgroundColor: 'transparent',
       },
     },
-    '[disabled="true"]': {
-      color: theme.palette.action.disabled,
-    },
+  },
+  /* Styles applied to the root element if `disabled={true}`. */
+  disabled: {
+    color: theme.palette.action.disabled,
   },
   /* Styles applied to the span element that wraps the children. */
   label: {
     width: '100%', // assure the correct width for iOS Safari
     alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
     /*
     display: 'inherit',
     alignItems: 'inherit',
@@ -95,11 +98,6 @@ export const styles = theme => ({
     '&:active': {
       boxShadow: theme.shadows[8],
     },
-    '[disabled="true"]': {
-      color: theme.palette.action.disabled,
-      boxShadow: theme.shadows[0],
-      backgroundColor: theme.palette.action.disabledBackground,
-    },
     '&:hover': {
       backgroundColor: theme.palette.grey.A100,
       // Reset on touch devices, it doesn't add specificity
@@ -110,6 +108,11 @@ export const styles = theme => ({
         backgroundColor: theme.palette.action.disabledBackground,
       },
     },
+  },
+  containedDisabled: {
+    color: theme.palette.action.disabled,
+    boxShadow: theme.shadows[0],
+    backgroundColor: theme.palette.action.disabledBackground,
   },
   /* Styles applied to the root element if `variant="[contained | fab]"` and `color="primary"`. */
   containedPrimary: {
@@ -163,8 +166,6 @@ export const styles = theme => ({
   },
   /* Styles applied to the ButtonBase root element if the button is keyboard focused. */
   focusVisible: {},
-  /* Styles applied to the root element if `disabled={true}`. */
-  disabled: {},
   /* Styles applied to the root element if `color="inherit"`. */
   colorInherit: {
     color: 'inherit',
@@ -233,9 +234,12 @@ function Button(props) {
       [classes.raisedSecondary]: (contained || fab) && color === 'secondary',
       [classes.outlined]: variant === 'outlined',
       [classes[`size${capitalize(size)}`]]: size !== 'medium',
-      [classes.disabled]: disabled,
       [classes.fullWidth]: fullWidth,
       [classes.colorInherit]: color === 'inherit',
+    },
+    {
+      [classes.containedDisabled]: (contained || fab) && disabled,
+      [classes.disabled]: disabled,
     },
     styleProp,
   );

@@ -9,6 +9,9 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 
 const styles = theme => ({
+  row: {
+    flexDirection: 'row',
+  },
   button: {
     margin: theme.spacing.unit,
   },
@@ -20,7 +23,7 @@ const styles = theme => ({
 function IconButtons(props) {
   const { classes } = props;
   return (
-    <View>
+    <View style={classes.row}>
       <IconButton style={classes.button} aria-label="Delete">
         <DeleteIcon />
       </IconButton>

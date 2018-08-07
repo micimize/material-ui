@@ -5,6 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
+  row: {
+    flexDirection: 'row',
+  },
   button: {
     margin: theme.spacing.unit,
   },
@@ -16,7 +19,7 @@ const styles = theme => ({
 function ContainedButtons(props) {
   const { classes } = props;
   return (
-    <View>
+    <View style={classes.row}>
       <Button variant="contained" style={classes.button}>
         Default
       </Button>
@@ -40,7 +43,7 @@ function ContainedButtons(props) {
         type="file"
       />
       <Text htmlFor="contained-button-file">
-        <Button variant="contained" component="span" style={classes.button}>
+        <Button variant="contained" style={classes.button}>
           Upload
         </Button>
       </Text>

@@ -9,6 +9,9 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import NavigationIcon from '@material-ui/icons/Navigation';
 
 const styles = theme => ({
+  row: {
+    flexDirection: 'row',
+  },
   button: {
     margin: theme.spacing.unit,
   },
@@ -20,7 +23,7 @@ const styles = theme => ({
 function FloatingActionButtons(props) {
   const { classes } = props;
   return (
-    <View>
+    <View style={classes.row}>
       <Button variant="fab" color="primary" aria-label="Add" style={classes.button}>
         <AddIcon />
       </Button>
