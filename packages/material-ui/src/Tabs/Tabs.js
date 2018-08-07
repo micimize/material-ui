@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-globals */
 
 import React from 'react';
+import { getBoundingClientRect, layoutToBoundingRect } from '../utils/reactHelpers';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
@@ -19,11 +20,11 @@ export const styles = theme => ({
   root: {
     overflow: 'hidden',
     minHeight: 48,
-
   },
   /* Styles applied to the flex container element. */
   flexContainer: {
     display: 'flex',
+    flexDirection: 'row',
   },
   /* Styles applied to the flex container element if `centered={true}` & `scrollable={false}`. */
   centered: {
@@ -58,7 +59,10 @@ export const styles = theme => ({
 });
 
 class Tabs extends React.Component {
-  tabs = null;
+  tabs = null; // TODO seems to be unused
+
+  // TODO move from refs to onLayout
+  tabData = [];
 
   valueToIndex = new Map();
 
@@ -84,6 +88,7 @@ class Tabs extends React.Component {
   componentDidMount() {
     // eslint-disable-next-line react/no-did-mount-set-state
     this.setState({ mounted: true });
+
     this.updateIndicatorState(this.props);
     this.updateScrollButtonState();
 
@@ -97,12 +102,13 @@ class Tabs extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     // The index might have changed at the same time.
     // We need to check again the right indicator position.
-    this.updateIndicatorState(this.props);
-    this.updateScrollButtonState();
+    this.updateIndicatorState(this.props).then(() => {
+      if (this.state.indicatorStyle !== prevState.indicatorStyle) {
+        this.scrollSelectedIntoView();
+      }
+    });
 
-    if (this.state.indicatorStyle !== prevState.indicatorStyle) {
-      this.scrollSelectedIntoView();
-    }
+    this.updateScrollButtonState();
   }
 
   componentWillUnmount() {
@@ -147,16 +153,17 @@ class Tabs extends React.Component {
     return conditionalElements;
   };
 
-  getTabsMeta = (value, direction) => {
+  getTabsMeta = async (value, direction) => {
     let tabsMeta;
     if (this.tabsRef) {
-      const rect = this.tabsRef.getBoundingClientRect();
+      const rect = await getBoundingClientRect(this.tabsRef);
       // create a new object with ClientRect class props + scrollLeft
+      // TODO find clientWidth and scrollProperty equivalents for react-native
       tabsMeta = {
-        clientWidth: this.tabsRef.clientWidth,
-        scrollLeft: this.tabsRef.scrollLeft,
-        scrollLeftNormalized: getNormalizedScrollLeft(this.tabsRef, direction),
-        scrollWidth: this.tabsRef.scrollWidth,
+        clientWidth: rect.width, // this.tabsRef.clientWidth,
+        scrollLeft: 0, // this.tabsRef.scrollLeft,
+        scrollLeftNormalized: 0, // getNormalizedScrollLeft(this.tabsRef, direction),
+        scrollWidth: rect.width, // this.tabsRef.scrollWidth,
         left: rect.left,
         right: rect.right,
       };
@@ -164,14 +171,12 @@ class Tabs extends React.Component {
 
     let tabMeta;
     if (this.tabsRef && value !== false) {
-      const children = this.tabsRef.children[0].children;
-
-      if (children.length > 0) {
-        const tab = children[this.valueToIndex.get(value)];
-        warning(tab, `Material-UI: the value provided \`${value}\` is invalid`);
-        tabMeta = tab ? tab.getBoundingClientRect() : null;
+      if (this.tabData.length > 0) {
+        tabMeta = this.tabData[this.valueToIndex.get(value)];
+        // warning(tabMeta, `Material-UI: the value provided \`${value}\` is invalid`);
       }
     }
+
     return { tabsMeta, tabMeta };
   };
 
@@ -201,9 +206,9 @@ class Tabs extends React.Component {
     this.scroll(invert * nextScrollLeft);
   };
 
-  scrollSelectedIntoView = () => {
+  scrollSelectedIntoView = async () => {
     const { theme, value } = this.props;
-    const { tabsMeta, tabMeta } = this.getTabsMeta(value, theme.direction);
+    const { tabsMeta, tabMeta } = await this.getTabsMeta(value, theme.direction);
 
     if (!tabMeta || !tabsMeta) {
       return;
@@ -246,10 +251,10 @@ class Tabs extends React.Component {
     }
   };
 
-  updateIndicatorState(props) {
+  updateIndicatorState = async props => {
     const { theme, value } = props;
 
-    const { tabsMeta, tabMeta } = this.getTabsMeta(value, theme.direction);
+    const { tabsMeta, tabMeta } = await this.getTabsMeta(value, theme.direction);
     let left = 0;
 
     if (tabMeta && tabsMeta) {
@@ -274,7 +279,7 @@ class Tabs extends React.Component {
     ) {
       this.setState({ indicatorStyle });
     }
-  }
+  };
 
   render() {
     const {
@@ -314,17 +319,15 @@ class Tabs extends React.Component {
 
     const indicator = (
       <TabIndicator
-        style={classes.indicator}
+        style={styleNames(classes.indicator, this.state.indicatorStyle, TabIndicatorProps.style)}
         color={indicatorColor}
         {...TabIndicatorProps}
-        style={{
-          ...this.state.indicatorStyle,
-          ...TabIndicatorProps.style,
-        }}
       />
     );
 
     this.valueToIndex = new Map();
+
+    // avoid incrementing on invalid elements
     let childIndex = 0;
     const children = React.Children.map(childrenProp, child => {
       if (!React.isValidElement(child)) {
@@ -343,6 +346,7 @@ class Tabs extends React.Component {
       this.valueToIndex.set(childValue, childIndex);
       const selected = childValue === value;
 
+      const refTarget = childIndex;
       childIndex += 1;
       return React.cloneElement(child, {
         fullWidth,
@@ -351,6 +355,10 @@ class Tabs extends React.Component {
         onChange,
         textColor,
         value: childValue,
+        onLayout: layout => {
+          this.tabData[refTarget] = layoutToBoundingRect(layout);
+          this.getTabsMeta();
+        },
       });
     });
 
@@ -363,8 +371,7 @@ class Tabs extends React.Component {
         <View style={classes.flexContainer}>
           {conditionalElements.scrollButtonLeft}
           <View
-            style={scrollerClassName}
-            style={this.state.scrollerStyle}
+            style={styleNames(scrollerClassName, this.state.scrollerStyle)}
             ref={ref => {
               this.tabsRef = ref;
             }}

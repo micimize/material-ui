@@ -6,6 +6,9 @@ import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 
 const styles = theme => ({
+  row: {
+    flexDirection: 'row',
+  },
   button: {
     margin: theme.spacing.unit,
   },
@@ -15,7 +18,7 @@ function ButtonSizes(props) {
   const { classes } = props;
   return (
     <View>
-      <View>
+      <View style={classes.row}>
         <Button size="small" style={classes.button}>
           Small
         </Button>
@@ -26,7 +29,7 @@ function ButtonSizes(props) {
           Large
         </Button>
       </View>
-      <View>
+      <View style={classes.row}>
         <Button variant="outlined" size="small" color="primary" style={classes.button}>
           Small
         </Button>
@@ -37,7 +40,7 @@ function ButtonSizes(props) {
           Large
         </Button>
       </View>
-      <View>
+      <View style={classes.row}>
         <Button variant="contained" size="small" color="primary" style={classes.button}>
           Small
         </Button>
@@ -48,7 +51,7 @@ function ButtonSizes(props) {
           Large
         </Button>
       </View>
-      <View>
+      <View style={classes.row}>
         <Button variant="fab" mini color="secondary" aria-label="Add" style={classes.button}>
           <AddIcon />
         </Button>

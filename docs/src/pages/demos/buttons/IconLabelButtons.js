@@ -30,24 +30,24 @@ function IconLabelButtons(props) {
   return (
     <View>
       <Button variant="contained" color="secondary" style={classes.button}>
-        Delete
+        <Text>Delete</Text>
         <DeleteIcon style={classes.rightIcon} />
       </Button>
       <Button variant="contained" color="primary" style={classes.button}>
-        Send
+        <Text>Send</Text>
         <Icon style={classes.rightIcon}>send</Icon>
       </Button>
       <Button variant="contained" color="default" style={classes.button}>
-        Upload
+        <Text>Upload</Text>
         <CloudUploadIcon style={classes.rightIcon} />
       </Button>
       <Button variant="contained" disabled color="secondary" style={classes.button}>
         <KeyboardVoiceICon style={classes.leftIcon} />
-        Talk
+        <Text>Talk</Text>
       </Button>
       <Button variant="contained" size="small" style={classes.button}>
         <SaveIcon style={styleNames(classes.leftIcon, classes.iconSmall)} />
-        Save
+        <Text>Save</Text>
       </Button>
     </View>
   );

@@ -58,7 +58,7 @@ export const styles = theme => ({
       top: 0,
       pointerEvents: 'none',
       zIndex: 0,
-      backgroundColor: 'currentColor',
+      backgroundColor: theme.palette.action.active, // 'currentColor',
       opacity: 0.38,
     },
     /*

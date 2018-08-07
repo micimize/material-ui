@@ -108,9 +108,10 @@ class Tab extends React.Component {
   label = null;
 
   state = {
-    labelWrapped: false,
+    // labelWrapped: false,
   };
 
+  /* TODO it isn't clear to me how we want to detect andstyle wrapped text in react native
   componentDidMount() {
     this.checkTextWrap();
   }
@@ -121,10 +122,11 @@ class Tab extends React.Component {
        * At certain text and tab lengths, a larger font size may wrap to two lines while the smaller
        * font size still only requires one line.  This check will prevent an infinite render loop
        * fron occurring in that scenario.
-       */
+       * /
       this.checkTextWrap();
     }
   }
+  */
 
   handleChange = event => {
     const { onChange, value, onClick } = this.props;
@@ -138,6 +140,7 @@ class Tab extends React.Component {
     }
   };
 
+  /*
   checkTextWrap = () => {
     if (this.labelRef) {
       const labelWrapped = this.labelRef.getClientRects().length > 1;
@@ -146,6 +149,7 @@ class Tab extends React.Component {
       }
     }
   };
+  */
 
   render() {
     const {
@@ -169,9 +173,7 @@ class Tab extends React.Component {
       label = (
         <Text style={classes.labelContainer}>
           <Text
-            style={styleNames(classes.label, {
-              [classes.labelWrapped]: this.state.labelWrapped,
-            })}
+            style={styleNames(classes.label)}
             ref={ref => {
               this.labelRef = ref;
             }}

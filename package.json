@@ -59,6 +59,7 @@
     "svgs": "^3.2.1"
   },
   "devDependencies": {
+    "@babel/runtime": "7.0.0-beta.42",
     "@babel/cli": "7.0.0-beta.42",
     "@babel/core": "7.0.0-beta.42",
     "@babel/node": "7.0.0-beta.42",

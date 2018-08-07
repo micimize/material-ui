@@ -13,7 +13,7 @@ export const styles = theme => ({
     width: 24,
     height: 24,
     fontSize: 24,
-    fill: 'currentColor',
+    // fill: 'currentColor',
     flexShrink: 0,
     /* TODO is a context-based em and color inheritence system worth it
     width: '1em',

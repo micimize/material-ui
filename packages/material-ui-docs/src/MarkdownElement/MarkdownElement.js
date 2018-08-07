@@ -157,7 +157,7 @@ const styles = theme => ({
         '& svg': {
           width: '0.55em',
           height: '0.55em',
-          fill: 'currentColor',
+          // fill: 'currentColor',
         },
       },
     },

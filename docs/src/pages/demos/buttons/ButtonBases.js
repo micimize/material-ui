@@ -28,7 +28,7 @@ const styles = theme => ({
         opacity: 0,
       },
       '& $imageTitle': {
-        border: '4px solid currentColor',
+        // border: '4px solid currentColor',
       },
     },
   },

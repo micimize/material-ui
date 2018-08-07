@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import Svg, {Circle} from 'svgs'
+import Svg, { Circle } from 'svgs';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -50,7 +50,7 @@ export const styles = theme => ({
   svg: {},
   /* Styles applied to the `circle` svg path. */
   circle: {
-    stroke: 'currentColor',
+    // stroke: 'currentColor',
     // Use butt to follow the specification, by chance, it's already the default CSS value.
     // strokeLinecap: 'butt',
   },

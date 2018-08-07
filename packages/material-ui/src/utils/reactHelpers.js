@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 
 import React from 'react';
-import { View, Text } from 'react-native';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 
 export function cloneElementWithClassName(child, style) {
@@ -22,4 +21,45 @@ export function isMuiElement(element, muiNames) {
 
 export function isMuiComponent(element, muiNames) {
   return muiNames.indexOf(element.muiName) !== -1;
+}
+
+// TODO not sure if this is "correct"
+export function getBoundingClientRect(ref) {
+  return new Promise(res =>
+    ref.measure((x, y, width, height, pageX, pageY) =>
+      res({
+        left: x,
+        right: x + width,
+        top: y,
+        bottom: y + height,
+
+        x,
+        y,
+        width,
+        height,
+
+        // not technically in spec
+        pageX,
+        pageY,
+      }),
+    ),
+  );
+}
+
+export function layoutToBoundingRect({
+  nativeEvent: {
+    layout: { x, y, width, height },
+  },
+}) {
+  return {
+    left: x,
+    right: x + width,
+    top: y,
+    bottom: y + height,
+
+    x,
+    y,
+    width,
+    height,
+  };
 }

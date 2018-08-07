@@ -19,7 +19,7 @@ export const styles = theme => ({
   /* Styles used to create the `icon` passed to the internal `SwitchBase` component `icon` prop. */
   icon: {
     boxShadow: theme.shadows[1],
-    backgroundColor: 'currentColor',
+    // backgroundColor: 'currentColor',
     width: 20,
     height: 20,
     borderRadius: '50%',
