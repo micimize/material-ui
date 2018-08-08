@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import withStyles from '../styles/withStyles';
@@ -42,6 +42,7 @@ export const styles = theme => ({
   },
 });
 
+/* TODO doesn't work right now, maybe use react-native-vector-icons */
 function Icon(props) {
   const { children, classes, className, color, fontSize, ...other } = props;
 

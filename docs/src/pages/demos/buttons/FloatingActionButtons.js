@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
-import Icon from '@material-ui/core/Icon';
+import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import NavigationIcon from '@material-ui/icons/Navigation';
 
@@ -28,7 +28,7 @@ function FloatingActionButtons(props) {
         <AddIcon />
       </Button>
       <Button variant="fab" color="secondary" aria-label="Edit" style={classes.button}>
-        <Icon>edit_icon</Icon>
+        <EditIcon />
       </Button>
       <Button variant="extendedFab" aria-label="Delete" style={classes.button}>
         <NavigationIcon style={classes.extendedIcon} />

@@ -5,6 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
+  row: {
+    flexDirection: 'row',
+  },
   button: {
     margin: theme.spacing.unit,
   },
@@ -16,7 +19,7 @@ const styles = theme => ({
 function TextButtons(props) {
   const { classes } = props;
   return (
-    <View>
+    <View style={classes.row}>
       <Button style={classes.button}>Default</Button>
       <Button color="primary" style={classes.button}>
         Primary
@@ -38,9 +41,7 @@ function TextButtons(props) {
         type="file"
       />
       <Text htmlFor="flat-button-file">
-        <Button component="span" style={classes.button}>
-          Upload
-        </Button>
+        <Button style={classes.button}>Upload</Button>
       </Text>
     </View>
   );
