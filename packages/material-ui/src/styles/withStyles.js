@@ -12,7 +12,6 @@ import getThemeProps from './getThemeProps';
 import { createRenderer } from 'fela-native';
 import getClassSheet from './getClassSheet';
 import customProperty from 'fela-plugin-custom-property';
-import getDisplayName from 'recompose/getDisplayName';
 import customModules from './fela-plugin-custom-modules';
 import expandShorthand, { conditionalExpander, cast } from './shorthand-properties';
 import resolveMediaQueries from './resolveMediaQueries';
@@ -98,19 +97,6 @@ const felaRenderer = createRenderer({
   ],
 });
 
-// Global index counter to preserve source order.
-// We create the style sheet during at the creation of the component,
-// children are handled after the parents, so the order of style elements would be parent->child.
-// It is a problem though when a parent passes a className
-// which needs to override any childs styles.
-// StyleSheet of the child has a higher specificity, because of the source order.
-// So our solution is to render sheets them in the reverse order child->sheet, so
-// that parent has a higher specificity.
-let indexCounter = -10e10;
-
-// Exported for test purposes
-export const sheetsManager = new Map();
-
 // We use the same empty object to ref count the styles that don't need a theme object.
 const noopTheme = {};
 
@@ -134,25 +120,12 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
   const stylesCreator = getStylesCreator(stylesOrCreator);
   const listenToTheme = stylesCreator.themingEnabled || withTheme || typeof name === 'string';
 
-  indexCounter += 1;
-  stylesCreator.options.index = indexCounter;
-
-  warning(
-    indexCounter < 0,
-    [
-      'Material-UI: you might have a memory leak.',
-      'The indexCounter is not supposed to grow that much.',
-    ].join(' '),
-  );
-
   class WithStyles extends React.Component {
     extensions = { mediaQuery: false, mediaQueryListener: false };
 
     disableStylesGeneration = false;
 
     felaRenderer = null;
-
-    sheetsManager = sheetsManager;
 
     stylesCreatorSaved = null;
 
@@ -167,10 +140,6 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
       const { muiThemeProviderOptions } = this.context;
       if (muiThemeProviderOptions) {
-        if (muiThemeProviderOptions.sheetsManager) {
-          this.sheetsManager = muiThemeProviderOptions.sheetsManager;
-        }
-
         this.disableStylesGeneration = muiThemeProviderOptions.disableStylesGeneration;
       }
 
@@ -182,7 +151,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       // We use || as the function call is lazy evaluated.
       this.theme = listenToTheme ? themeListener.initial(context) || getDefaultTheme() : noopTheme;
 
-      this.attach(this.theme);
+      this.computeClasses(this.theme);
 
       this.cacheClasses = {
         // Cache for the finalized classes value.
@@ -209,15 +178,9 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       }
 
       this.unsubscribeId = themeListener.subscribe(this.context, theme => {
-        const oldTheme = this.theme;
         this.theme = theme;
-        this.attach(this.theme);
-
-        // Rerender the component so the underlying component gets the theme update.
-        // By theme update we mean receiving and applying the new class names.
-        this.setState({}, () => {
-          this.detach(oldTheme);
-        });
+        this.computeClasses(this.theme);
+        this.forceUpdate();
       });
     }
 
@@ -227,15 +190,12 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
         return;
       }
 
-      this.detach(this.theme);
       this.stylesCreatorSaved = stylesCreator;
-      this.attach(this.theme);
+      this.computeClasses(this.theme);
       this.forceUpdate();
     }
 
     componentWillUnmount() {
-      this.detach(this.theme);
-
       if (this.unsubscribeId !== null) {
         themeListener.unsubscribe(this.context, this.unsubscribeId);
       }
@@ -252,10 +212,8 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       let generate = false;
 
       if (!this.disableStylesGeneration) {
-        const sheetManager = this.sheetsManager.get(this.stylesCreatorSaved);
-        const sheetsManagerTheme = sheetManager.get(this.theme);
-        if (sheetsManagerTheme.classSheet !== this.cacheClasses.lastFela) {
-          this.cacheClasses.lastFela = sheetsManagerTheme.classSheet;
+        if (this.classSheet !== this.cacheClasses.lastFela) {
+          this.cacheClasses.lastFela = this.classSheet;
           generate = true;
         }
       }
@@ -277,26 +235,6 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       return this.cacheClasses.value;
     }
 
-    getSheetManagerTheme(theme) {
-      const stylesCreatorSaved = this.stylesCreatorSaved;
-      let sheetManager = this.sheetsManager.get(stylesCreatorSaved);
-
-      if (!sheetManager) {
-        sheetManager = new Map();
-        this.sheetsManager.set(stylesCreatorSaved, sheetManager);
-      }
-      let sheetManagerTheme = sheetManager.get(theme);
-
-      if (!sheetManagerTheme) {
-        sheetManagerTheme = {
-          refs: 0,
-          classSheet: null,
-        };
-        sheetManager.set(theme, sheetManagerTheme);
-      }
-      return sheetManagerTheme;
-    }
-
     forceComputeClasses() {
       if (this.state.mounted) {
         // if (name === 'MuiGrid') console.log('Grid retatch');
@@ -309,7 +247,9 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
     }
 
     computeClasses(theme) {
-      const sheetManagerTheme = this.getSheetManagerTheme(theme);
+      if (this.disableStylesGeneration) {
+        return;
+      }
 
       const stylesCreatorSaved = this.stylesCreatorSaved;
       const styles = stylesCreatorSaved.create(theme, name);
@@ -317,69 +257,10 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
       const classSheet = getClassSheet(resolved, this.felaRenderer);
 
-      sheetManagerTheme.classSheet = classSheet;
+      this.classSheet = classSheet;
 
       // look for media queries
       this.extensions.mediaQuery = containsMediaQueries;
-    }
-
-    // now that withStyles uses fela, attach/detatch might be overkill
-    // same goes for the sheetManager
-    attach(theme) {
-      if (this.disableStylesGeneration) {
-        return;
-      }
-      const stylesCreatorSaved = this.stylesCreatorSaved;
-      let sheetManager = this.sheetsManager.get(stylesCreatorSaved);
-
-      if (!sheetManager) {
-        sheetManager = new Map();
-        this.sheetsManager.set(stylesCreatorSaved, sheetManager);
-      }
-
-      let sheetManagerTheme = sheetManager.get(theme);
-
-      if (!sheetManagerTheme) {
-        sheetManagerTheme = {
-          refs: 0,
-          classSheet: null,
-        };
-        sheetManager.set(theme, sheetManagerTheme);
-      }
-
-      if (sheetManagerTheme.refs === 0) {
-        let meta = name;
-        if (process.env.NODE_ENV !== 'production' && !meta) {
-          meta = getDisplayName(Component);
-          warning(
-            typeof meta === 'string',
-            [
-              'Material-UI: the component displayName is invalid. It needs to be a string.',
-              `Please fix the following component: ${Component}.`,
-            ].join('\n'),
-          );
-        }
-
-        this.computeClasses(theme);
-      }
-
-      sheetManagerTheme.refs += 1;
-    }
-
-    detach(theme) {
-      if (this.disableStylesGeneration) {
-        return;
-      }
-
-      const stylesCreatorSaved = this.stylesCreatorSaved;
-      const sheetManager = this.sheetsManager.get(stylesCreatorSaved);
-      const sheetManagerTheme = sheetManager.get(theme);
-
-      sheetManagerTheme.refs -= 1;
-
-      if (sheetManagerTheme.refs === 0) {
-        sheetManager.delete(theme);
-      }
     }
 
     render() {

@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-
 import { Welcome } from '@storybook/react/demo';
 import { View, Text, TextInput } from 'react-native';
 import { withStyles } from '@material-ui/core/styles';
@@ -11,8 +9,9 @@ import Button from '@material-ui/core/Button';
 import blue from '@material-ui/core/colors/blue';
 import pink from '@material-ui/core/colors/pink';
 import { darken } from '@material-ui/core/styles/colorManipulator';
-import AppWrapper from './AppWrapper'
-import FullWidthGrid from './FullWidthGrid'
+import AppWrapper from './AppWrapper';
+import FullWidthGrid from './FullWidthGrid';
+import ContainedButtons from './ContainedButtons';
 
 let uiTheme = {
   paletteType: 'light',
@@ -72,12 +71,15 @@ const Thing = withStyles(styles)(TextButtons);
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
-storiesOf('Button', module).add('test', () => (
-  <AppWrapper uiTheme={uiTheme}>
-    <Thing />
-  </AppWrapper>
-)).add('test2', () => (
-  <AppWrapper uiTheme={uiTheme}>
-    <FullWidthGrid />
-  </AppWrapper>
-));
+storiesOf('Button', module)
+  .add('test', () => (
+    <AppWrapper uiTheme={uiTheme}>
+      <ContainedButtons />
+      <Thing />
+    </AppWrapper>
+  ))
+  .add('test2', () => (
+    <AppWrapper uiTheme={uiTheme}>
+      <FullWidthGrid />
+    </AppWrapper>
+  ));
