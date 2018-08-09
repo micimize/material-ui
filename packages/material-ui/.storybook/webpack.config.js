@@ -1,7 +1,32 @@
 const path = require('path');
 const webpack = require('webpack');
 
+const nodeModule = mod => path.dirname(require.resolve(mod))
+
+const babelOptions = require('./.babelrc.js')
+
 module.exports = storybookBaseConfig => {
+  storybookBaseConfig.module.rules[0].query = babelOptions
+
+  /*
+  storybookBaseConfig.resolve = Object.assign(
+    {},
+    storybookBaseConfig.resolve || {},
+    {
+      alias: {
+        'react-native$': 'react-native-web',
+        'react-native-svg': 'svgs',
+      },
+    }
+  )
+  */
+
+  /*
+  storybookBaseConfig.module.rules[0].include.push(
+    nodeModule('react-native-animatable')
+  )
+  */
+
   storybookBaseConfig.module.rules.push({
     test: /\.(gif|jpe?g|png|svg)$/,
     use: {
@@ -14,6 +39,7 @@ module.exports = storybookBaseConfig => {
 
   storybookBaseConfig.resolve.alias = {
     'react-native': 'react-native-web',
+    'react-native-animatable': '@micimize/react-native-animatable',
     '@material-ui/core': path.resolve(__dirname, '../src'),
   };
 

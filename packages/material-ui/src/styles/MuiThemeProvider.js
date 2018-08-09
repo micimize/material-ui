@@ -29,12 +29,8 @@ class MuiThemeProvider extends React.Component {
   }
 
   getChildContext() {
-    const { sheetsManager, disableStylesGeneration } = this.props;
+    const { disableStylesGeneration } = this.props;
     const muiThemeProviderOptions = this.context.muiThemeProviderOptions || {};
-
-    if (sheetsManager !== undefined) {
-      muiThemeProviderOptions.sheetsManager = sheetsManager;
-    }
 
     if (disableStylesGeneration !== undefined) {
       muiThemeProviderOptions.disableStylesGeneration = disableStylesGeneration;
@@ -94,15 +90,6 @@ class MuiThemeProvider extends React.Component {
   }
 
   render() {
-    // TODO move the sheetsManager property to a different component.
-    // warning(
-    //   typeof window !== 'undefined' || this.props.sheetsManager,
-    //   [
-    //     'Material-UI: you need to provide a sheetsManager to the MuiThemeProvider ' +
-    //       'when rendering on the server.',
-    //     'If you do not, you might experience a memory leak',
-    //   ].join('\n'),
-    // );
     return this.props.children;
   }
 }
@@ -121,12 +108,6 @@ MuiThemeProvider.propTypes = {
    * You can significantly speed up the traversal with this property.
    */
   disableStylesGeneration: PropTypes.bool,
-  /**
-   * The sheetsManager is used to deduplicate style sheet injection in the page.
-   * It's deduplicating using the (theme, styles) couple.
-   * On the server, you should provide a new instance for each request.
-   */
-  sheetsManager: PropTypes.object,
   /**
    * A theme object.
    */

@@ -1,5 +1,9 @@
 import React from 'react';
-import { Text, TouchableOpacity as ReactNativeButton } from 'react-native';
+import {
+  Text,
+  TouchableOpacity as ReactNativeButton,
+  StyleSheet as RNStyleSheet,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
@@ -9,6 +13,11 @@ import withStyles from '../styles/withStyles';
 import { listenForFocusKeys, detectFocusVisible } from './focusVisible';
 import TouchRipple from './TouchRipple';
 import createRippleHandler from './createRippleHandler';
+import { Animated } from '../styles/extendedStyles';
+
+Object.assign(window, {
+  RNStyleSheet,
+});
 
 export const styles = {
   /* Styles applied to the root element. */
@@ -44,6 +53,7 @@ export const styles = {
       cursor: 'default',
     },
   },
+  active: {},
   /* Styles applied to the root element if `disabled={true}`. */
   disabled: {},
   /* Styles applied to the root element if keyboard focused. */
@@ -275,15 +285,23 @@ class ButtonBase extends React.Component {
         [classes.focusVisible]: this.state.focusVisible,
       },
       styleProp,
+      { [classes.active]: this.state.active },
     );
+    /*
+    console.log('buttonsss');
+    console.log([classes.root, styleProp, classes.active].map(s => RNStyleSheet.flatten(s)));
+    console.log(RNStyleSheet.flatten(className));
+    */
 
     const buttonProps = {};
 
     let ComponentProp = component;
 
+    /*
     if (ComponentProp === ReactNativeButton && other.href) {
       ComponentProp = Text;
     }
+    */
 
     if (ComponentProp === ReactNativeButton) {
       buttonProps.type = type || 'button';
@@ -294,6 +312,8 @@ class ButtonBase extends React.Component {
 
     return (
       <ComponentProp
+        disabled={disabled}
+        activeOpacity={0.6}
         onBlur={this.handleBlur}
         onFocus={this.handleFocus}
         onKeyDown={this.handleKeyDown}
@@ -304,6 +324,8 @@ class ButtonBase extends React.Component {
         onTouchEnd={this.handleTouchEnd}
         onTouchMove={this.handleTouchMove}
         onTouchStart={this.handleTouchStart}
+        onPressIn={() => this.setState({ active: true })}
+        onPressOut={() => this.setState({ active: false })}
         tabIndex={disabled ? '-1' : tabIndex}
         style={className}
         ref={buttonRef}
@@ -452,7 +474,7 @@ ButtonBase.propTypes = {
 
 ButtonBase.defaultProps = {
   centerRipple: false,
-  component: ReactNativeButton,
+  component: Animated.createComponent(ReactNativeButton),
   disableRipple: false,
   disableTouchRipple: false,
   focusRipple: false,
