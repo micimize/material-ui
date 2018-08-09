@@ -108,7 +108,7 @@ const customStyles = CustomStyleRule({
             shadowColor: 'rgba(0, 0, 0, 0.25)',
             shadowOffset: {
               width: 0,
-              height: elevation - 1,
+              height: floor(0)(elevation),
             },
             shadowRadius: (elevation * 3) / 2,
             shadowOpacity: floor(2.25)(0.25 * elevation),

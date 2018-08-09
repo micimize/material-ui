@@ -312,6 +312,7 @@ class ButtonBase extends React.Component {
 
     return (
       <ComponentProp
+        disabled={disabled}
         activeOpacity={0.6}
         onBlur={this.handleBlur}
         onFocus={this.handleFocus}

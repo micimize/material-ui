@@ -111,6 +111,7 @@ export const styles = theme => ({
     color: theme.palette.action.disabled,
     boxShadow: theme.shadows[0],
     backgroundColor: theme.palette.action.disabledBackground,
+    elevation: 0,
   },
   /* Styles applied to the root element if `variant="[contained | fab]"` and `color="primary"`. */
   containedPrimary: {
