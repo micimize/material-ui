@@ -13,6 +13,10 @@ function objectFilterer(filter) {
       }, {});
 }
 
+function floor(minimumValue) {
+  return value => (value < minimumValue ? minimumValue : value);
+}
+
 const validNumber = numberString => Number.isFinite(Number(numberString));
 
 const capitalize = lower => lower.replace(/^\w/, c => c.toUpperCase());
@@ -101,13 +105,13 @@ const customStyles = CustomStyleRule({
       return Platform.OS === 'android'
         ? { elevation }
         : {
-            shadowColor: 'rgba(0,0,0, .25)',
+            shadowColor: 'rgba(0, 0, 0, 0.25)',
             shadowOffset: {
               width: 0,
-              height: elevation,
+              height: elevation - 1,
             },
-            shadowRadius: elevation,
-            shadowOpacity: 0.5, // 0.24,
+            shadowRadius: (elevation * 3) / 2,
+            shadowOpacity: floor(2.25)(0.25 * elevation),
           };
     },
     padding: conditionalExpander('padding', margin => typeof margin !== 'number'),

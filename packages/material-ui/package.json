@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.42",
+    "@micimize/react-native-animatable": "1.3.1-alpha2",
     "@types/jss": "^9.5.3",
     "@types/react-transition-group": "^2.0.8",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -67,7 +68,6 @@
     "react-event-listener": "^0.6.0",
     "react-fela": "^7.3.1",
     "react-jss": "^8.1.0",
-    "react-native-animatable": "^1.3.0",
     "react-native-web": "^0.8.9",
     "react-transition-group": "^2.2.1",
     "recompose": "^0.27.0",
@@ -81,12 +81,12 @@
     "node": ">=6.0.0"
   },
   "devDependencies": {
+    "@babel/core": "7.0.0-beta.42",
     "@storybook/addon-options": "^3.4.3",
     "@storybook/react": "^3.4.3",
     "babel-plugin-react-native-web": "0.8.9",
     "babel-preset-react-native": "^4.0.0",
     "babel-runtime": "^6.26.0",
-    "@babel/core": "7.0.0-beta.42",
     "fela-plugin-native-media-query": "^6.0.9",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Platform } from 'react-native';
 import * as Animatable from 'react-native-animatable';
+import { flattenDiagnosticMessageText } from '../../../../node_modules/typescript';
 
 function objectFilterer(filter) {
   return raw =>
@@ -13,7 +14,9 @@ function objectFilterer(filter) {
 }
 
 const normalizedElevation =
-  Platform.OS === 'android' ? ['elevation'] : ['shadowOffset', 'shadowRadius'];
+  Platform.OS === 'android'
+    ? ['elevation']
+    : ['shadowOffset', 'shadowRadius', 'shadowColor', 'shadowOpacity'];
 
 function normalize(transitionProps) {
   if (Array.isArray(transitionProps)) {
@@ -74,10 +77,12 @@ const Animated = {
     const AnimatableComponent = Animatable.createAnimatableComponent(Component);
     return props => {
       let transitionProps = getExtensions(props.style).transition;
-      console.log(transitionProps);
-      console.log(StyleSheet.flatten(props.style));
       return transitionProps ? (
-        <AnimatableComponent {...transitionProps} {...props} />
+        <AnimatableComponent
+          {...transitionProps}
+          {...props}
+          style={StyleSheet.flatten(props.style)}
+        />
       ) : (
         <Component {...props} />
       );

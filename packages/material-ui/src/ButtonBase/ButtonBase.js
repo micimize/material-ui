@@ -287,9 +287,11 @@ class ButtonBase extends React.Component {
       styleProp,
       { [classes.active]: this.state.active },
     );
+    /*
     console.log('buttonsss');
     console.log([classes.root, styleProp, classes.active].map(s => RNStyleSheet.flatten(s)));
     console.log(RNStyleSheet.flatten(className));
+    */
 
     const buttonProps = {};
 
