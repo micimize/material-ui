@@ -8,6 +8,7 @@ import withStyles from '../styles/withStyles';
 import { fade } from '../styles/colorManipulator';
 import ButtonBase from '../ButtonBase';
 import { capitalize } from '../utils/helpers';
+import { Animated } from '../styles/extendedStyles';
 
 export const styles = theme => ({
   /* Styles applied to the root element. */
@@ -20,7 +21,7 @@ export const styles = theme => ({
     padding: '8px 16px',
     borderRadius: theme.shape.borderRadius,
     color: theme.palette.text.primary,
-    transition: theme.transitions.create(['background-color', 'box-shadow'], {
+    transition: theme.transitions.create(['backgroundColor', 'elevation'], {
       duration: theme.transitions.duration.short,
     }),
     '&:hover': {
@@ -91,12 +92,9 @@ export const styles = theme => ({
   contained: {
     color: theme.palette.getContrastText(theme.palette.grey[300]),
     backgroundColor: theme.palette.grey[300],
-    boxShadow: theme.shadows[2],
+    elevation: 2,
     '[focusVisible="true"]': {
       boxShadow: theme.shadows[6],
-    },
-    '&:active': {
-      boxShadow: theme.shadows[8],
     },
     '&:hover': {
       backgroundColor: theme.palette.grey.A100,
@@ -104,10 +102,10 @@ export const styles = theme => ({
       '@media (hover: none)': {
         backgroundColor: theme.palette.grey[300],
       },
-      '[disabled="true"]': {
-        backgroundColor: theme.palette.action.disabledBackground,
-      },
     },
+  },
+  containedActive: {
+    elevation: 8,
   },
   containedDisabled: {
     color: theme.palette.action.disabled,
@@ -152,9 +150,9 @@ export const styles = theme => ({
     width: 56,
     height: 56,
     boxShadow: theme.shadows[6],
-    '&:active': {
-      boxShadow: theme.shadows[12],
-    },
+  },
+  fabActive: {
+    boxShadow: theme.shadows[12],
   },
   /* Styles applied to the root element if `variant="extendedFab"`. */
   extendedFab: {
@@ -246,6 +244,17 @@ function Button(props) {
 
   return (
     <ButtonBase
+      classes={
+        fab
+          ? {
+              active: classes.fabActive,
+            }
+          : contained
+            ? {
+                active: classes.containedActive,
+              }
+            : {}
+      }
       style={style}
       disabled={disabled}
       focusRipple={!disableFocusRipple}
@@ -337,7 +346,6 @@ Button.propTypes = {
 
 Button.defaultProps = {
   color: 'default',
-  component: ReactNativeButton,
   disabled: false,
   disableFocusRipple: false,
   fullWidth: false,

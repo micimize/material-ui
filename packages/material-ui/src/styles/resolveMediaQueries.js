@@ -23,7 +23,7 @@ function resolveMediaQueries(_styles) {
           height,
         })
       ) {
-        return deepmerge(styles, resolveMediaQueries(_styles[property]).resolved);
+        return deepmerge(styles, resolveMediaQueries(_styles[property]).styles);
       }
     } else {
       styles[property] = _styles[property];
@@ -31,7 +31,7 @@ function resolveMediaQueries(_styles) {
     return styles;
   }, {});
 
-  return { resolved, containsMediaQueries };
+  return { styles: resolved, meta: { containsMediaQueries } };
 }
 
 export default resolveMediaQueries;

@@ -9,93 +9,7 @@ import createMuiTheme from './createMuiTheme';
 import themeListener from './themeListener';
 import getStylesCreator from './getStylesCreator';
 import getThemeProps from './getThemeProps';
-import { createRenderer } from 'fela-native';
-import getClassSheet from './getClassSheet';
-import customProperty from 'fela-plugin-custom-property';
-import customModules from './fela-plugin-custom-modules';
-import expandShorthand, { conditionalExpander, cast } from './shorthand-properties';
-import resolveMediaQueries from './resolveMediaQueries';
-
-const validNumber = numberString => Number.isFinite(Number(numberString));
-
-const capitalize = lower => lower.replace(/^\w/, c => c.toUpperCase());
-
-const borders = ['top', 'right', 'bottom', 'left'].reduce(
-  (bs, side) => {
-    const pre = `border${capitalize(side)}`;
-    bs[pre] = expandShorthand(`border-${side}`, {
-      [`${pre}Width`]: cast.toNumber,
-    });
-    return bs;
-  },
-  {
-    border: expandShorthand('border', {
-      borderWidth: cast.toNumber,
-    }),
-  },
-);
-
-// Default fela renderer
-const felaRenderer = createRenderer({
-  plugins: [
-    customProperty({
-      transform: () => ({}),
-      willChange: () => ({}),
-      pointerEvents: () => ({}),
-      fontFamily: () => ({}),
-      transition: () => ({}),
-      animation: () => ({}),
-      flip: () => ({}),
-      fontWeight(prop) {
-        return {
-          fontWeight: typeof prop === 'number' ? prop.toString() : prop,
-        };
-      },
-      ...borders,
-      margin: conditionalExpander('margin', margin => typeof margin !== 'number'),
-      padding: conditionalExpander('padding', margin => typeof margin !== 'number'),
-      flex(prop) {
-        if (typeof prop !== 'string') {
-          return { flex: prop };
-        }
-        const [flexGrow, flexShrink = undefined, _flexBasis = undefined] = prop.split(/\s+/);
-        let flexBasis = _flexBasis;
-        let expandedStyles = {};
-
-        // handle flexGrow
-        if (!(flexGrow && validNumber(flexGrow))) {
-          warning(
-            true,
-            [
-              `Material-UI: invalid flex shorthand "${prop}",`,
-              'must be <grow number> <shrink number>? <basis>?',
-            ].join('\n'),
-          );
-          return {};
-        }
-        expandedStyles.flexGrow = Number(flexGrow);
-
-        // handle flexShrink
-        if (flexShrink) {
-          if (validNumber(flexShrink)) {
-            // flexShrink is valid number
-            expandedStyles.flexShrink = Number(flexShrink);
-          } else if (flexShrink && !flexBasis) {
-            // flexShrink position might be valid flexBasis
-            flexBasis = flexShrink;
-          }
-        }
-
-        // handle flexBasis. TODO valid string values unknown
-        if (flexBasis && flexBasis !== 'auto') {
-          expandedStyles = validNumber(flexShrink) ? Number(flexShrink) : flexShrink;
-        }
-        return expandedStyles;
-      },
-    }),
-    customModules([['[', () => ({})], ['#', () => ({})], ['@', () => ({})], ['&', () => ({})]]),
-  ],
-});
+import renderStyleSheet from './renderStyleSheet';
 
 // We use the same empty object to ref count the styles that don't need a theme object.
 const noopTheme = {};
@@ -125,7 +39,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
     disableStylesGeneration = false;
 
-    felaRenderer = null;
+    renderer = null;
 
     stylesCreatorSaved = null;
 
@@ -136,7 +50,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
     constructor(props, context) {
       super(props, context);
 
-      this.felaRenderer = this.context.renderer || felaRenderer;
+      this.renderer = this.context.renderer || renderStyleSheet;
 
       const { muiThemeProviderOptions } = this.context;
       if (muiThemeProviderOptions) {
@@ -159,7 +73,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
         // Cache for the last used classes prop pointer.
         lastProp: null,
         // Cache for the last used rendered classes pointer.
-        lastFela: {},
+        lastStyleSheet: {},
       };
 
       if (this.extensions.mediaQuery) {
@@ -212,8 +126,8 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       let generate = false;
 
       if (!this.disableStylesGeneration) {
-        if (this.classSheet !== this.cacheClasses.lastFela) {
-          this.cacheClasses.lastFela = this.classSheet;
+        if (this.classSheet !== this.cacheClasses.lastStyleSheet) {
+          this.cacheClasses.lastStyleSheet = this.classSheet;
           generate = true;
         }
       }
@@ -225,7 +139,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
       if (generate) {
         this.cacheClasses.value = mergeClasses({
-          baseClasses: this.cacheClasses.lastFela,
+          baseClasses: this.cacheClasses.lastStyleSheet,
           newClasses: this.props.classes,
           Component,
           noBase: this.disableStylesGeneration,
@@ -237,12 +151,8 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
     forceComputeClasses() {
       if (this.state.mounted) {
-        // if (name === 'MuiGrid') console.log('Grid retatch');
         this.computeClasses(this.theme);
         this.forceUpdate();
-      } else {
-        // if (name === 'MuiGrid') console.log('Grid fail');
-        // debugger;
       }
     }
 
@@ -252,15 +162,11 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       }
 
       const stylesCreatorSaved = this.stylesCreatorSaved;
-      const styles = stylesCreatorSaved.create(theme, name);
-      const { resolved, containsMediaQueries } = resolveMediaQueries(styles);
-
-      const classSheet = getClassSheet(resolved, this.felaRenderer);
-
-      this.classSheet = classSheet;
+      const { styles, meta } = renderStyleSheet(stylesCreatorSaved.create(theme, name));
+      this.classSheet = styles;
 
       // look for media queries
-      this.extensions.mediaQuery = containsMediaQueries;
+      this.extensions.mediaQuery = meta.containsMediaQueries;
     }
 
     render() {
