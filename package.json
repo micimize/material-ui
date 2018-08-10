@@ -20,8 +20,11 @@
   },
   "homepage": "http://material-ui.com/",
   "scripts": {
+    "@storybook/addon-options": "^3.4.3",
+    "@storybook/react": "^3.4.3",
     "start": "yarn docs:dev",
     "docs:dev": "rimraf node_modules/.cache/babel-loader && cross-env BABEL_ENV=docs-development next dev",
+    "docs:stories": "cross-env BABEL_ENV=docs-development start-storybook -p 6006 --config-dir docs/src/storybook",
     "docs:api": "yarn docs:api:core && yarn docs:api:lab",
     "docs:api:core": "rimraf ./pages/api && cross-env BABEL_ENV=docs-development babel-node ./docs/scripts/buildApi.js ./packages/material-ui/src ./pages/api",
     "docs:api:lab": "rimraf ./pages/lab/api && cross-env BABEL_ENV=docs-development babel-node ./docs/scripts/buildApi.js ./packages/material-ui-lab/src ./pages/lab/api",
@@ -59,7 +62,6 @@
     "svgs": "^3.2.1"
   },
   "devDependencies": {
-    "@babel/runtime": "7.0.0-beta.42",
     "@babel/cli": "7.0.0-beta.42",
     "@babel/core": "7.0.0-beta.42",
     "@babel/node": "7.0.0-beta.42",
@@ -70,11 +72,13 @@
     "@babel/preset-react": "7.0.0-beta.42",
     "@babel/preset-stage-1": "7.0.0-beta.42",
     "@babel/register": "7.0.0-beta.42",
+    "@babel/runtime": "7.0.0-beta.42",
     "@types/enzyme": "^3.1.4",
     "@types/react": "^16.3.14",
     "argos-cli": "^0.0.9",
     "autoprefixer": "^9.0.0",
     "autosuggest-highlight": "^3.1.1",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.2",
     "babel-loader": "8.0.0-beta.2",
     "babel-plugin-istanbul": "^4.1.5",

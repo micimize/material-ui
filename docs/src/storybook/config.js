@@ -3,17 +3,17 @@ import centered from './decorator-centered';
 import { configure, addDecorator } from '@storybook/react';
 
 // const context = require.context('../', true, /Screen\.js$/);
-const context = require.context('../stories', true, /.stories.js$/);
+const context = require.context('../pages/demos/', true, /.stories.js$/);
 addDecorator(centered);
 
 setOptions({
-  name: 'React Native Web',
-  url: 'https://necolas.github.io/react-native-web',
+  name: 'Material UI',
+  url: 'https://material-ui.com',
   goFullScreen: false,
   addonPanelInRight: false,
   showSearchBox: false,
   showAddonPanel: false,
-  showStoriesPanel: true
+  showStoriesPanel: true,
 });
 
 function loadStories() {
