@@ -12,7 +12,7 @@ import IconLabelButtons from './IconLabelButtons';
 import CustomizedButtons from './CustomizedButtons';
 import ButtonBases from './ButtonBases';
 
-storiesOf('Demos', module).addWithChapters('Buttons', {
+storiesOf('Buttons', module).addWithChapters('Demos', {
   subtitle: 'Buttons allow users to take actions, and make choices, with a single tap.',
   chapters: [
     {
