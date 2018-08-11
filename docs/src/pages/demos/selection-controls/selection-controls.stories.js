@@ -20,15 +20,15 @@ storiesOf('Selection Controls', module).addWithChapters('Demos', {
           title: 'Checkboxes',
           sectionFn: () => <Checkboxes />,
         },
-        /*
         {
-          title: 'Labeld Checkboxes',
+          title: 'Labeled Checkboxes',
           sectionFn: () => <CheckboxLabels />,
         },
         {
           title: 'Checkboxes with FormGroup',
           sectionFn: () => <CheckboxesGroup />,
         },
+        /*
         {
           title: 'Radio Buttons',
           sectionFn: () => <RadioButtonsGroup />,

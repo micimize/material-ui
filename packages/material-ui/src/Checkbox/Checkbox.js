@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import SwitchBase from '../internal/SwitchBase';
@@ -40,18 +39,27 @@ export const styles = theme => ({
 });
 
 function Checkbox(props) {
-  const { checkedIcon, classes, color, icon, indeterminate, indeterminateIcon, ...other } = props;
+  const {
+    checkedIcon,
+    classes,
+    color,
+    icon,
+    indeterminate,
+    indeterminateIcon,
+    checked,
+    value,
+    ...other
+  } = props;
   return (
     <SwitchBase
       checkedIcon={indeterminate ? indeterminateIcon : checkedIcon}
       classes={{
         root: styleNames(classes.root, classes[`color${capitalize(color)}`]),
-        checked: styleNames(classes.checked, {
-          [classes[`color${capitalize(color)}Checked`]]: other.checked,
-        }),
+        checked: styleNames(classes[`color${capitalize(color)}Checked`], classes.checked),
         disabled: classes.disabled,
       }}
       icon={indeterminate ? indeterminateIcon : icon}
+      value={value !== null ? value || checked : null}
       {...other}
     />
   );
@@ -59,9 +67,9 @@ function Checkbox(props) {
 
 Checkbox.propTypes = {
   /**
-   * If `true`, the component is checked.
+   * If `true`, the component is checked. Alias for value
    */
-  checked: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  checked: PropTypes.bool,
   /**
    * The icon to display when the component is checked.
    */

@@ -10,15 +10,11 @@ import Typography from '../Typography';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    display: 'inline-flex',
+    flexDirection: 'row',
     alignItems: 'center',
-    cursor: 'pointer',
-    // For correct alignment with the text.
-    textAlignVertical: 'middle',
-    // Remove grey highlight
-
     marginLeft: -14,
     marginRight: 16, // used for row presentation of radio/checkbox
+
     '[disabled="true"]': {
       cursor: 'default',
     },
@@ -28,13 +24,11 @@ export const styles = theme => ({
     flexDirection: 'row-reverse',
   },
   /* Styles applied to the root element if `disabled={true}`. */
-  disabled: {},
-  /* Styles applied to the label's Typography component. */
-  label: {
-    '[disabled="true"]': {
-      color: theme.palette.text.disabled,
-    },
+  disabled: {
+    color: theme.palette.text.disabled,
   },
+  /* Styles applied to the label's Typography component. */
+  label: {},
 });
 
 /**
@@ -52,7 +46,7 @@ function FormControlLabel(props, context) {
     label,
     labelPlacement,
     name,
-    onChange,
+    onValueChange,
     value,
     ...other
   } = props;
@@ -69,14 +63,14 @@ function FormControlLabel(props, context) {
   const controlProps = {
     disabled,
   };
-  ['checked', 'name', 'onChange', 'value', 'inputRef'].forEach(key => {
+  [('checked', 'name', 'onValueChange', 'value', 'inputRef')].forEach(key => {
     if (typeof control.props[key] === 'undefined' && typeof props[key] !== 'undefined') {
       controlProps[key] = props[key];
     }
   });
 
   return (
-    <Text
+    <View
       style={styleNames(
         classes.root,
         {
@@ -88,13 +82,10 @@ function FormControlLabel(props, context) {
       {...other}
     >
       {React.cloneElement(control, controlProps)}
-      <Typography
-        component="span"
-        style={styleNames(classes.label, { [classes.disabled]: disabled })}
-      >
+      <Typography style={styleNames(classes.label, { [classes.disabled]: disabled })}>
         {label}
       </Typography>
-    </Text>
+    </View>
   );
 }
 
@@ -139,11 +130,9 @@ FormControlLabel.propTypes = {
   /**
    * Callback fired when the state is changed.
    *
-   * @param {object} event The event source of the callback.
-   * You can pull out the new value by accessing `event.target.checked`.
    * @param {boolean} checked The `checked` value of the switch
    */
-  onChange: PropTypes.func,
+  onValueChange: PropTypes.func,
   /**
    * The value of the component.
    */

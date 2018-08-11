@@ -36,8 +36,8 @@ class CheckboxesGroup extends React.Component {
 
     return (
       <View style={classes.root}>
-        <FormControl component="fieldset" style={classes.formControl}>
-          <FormLabel component="legend">Assign responsibility</FormLabel>
+        <FormControl style={classes.formControl}>
+          <FormLabel>Assign responsibility</FormLabel>
           <FormGroup>
             <FormControlLabel
               control={
@@ -64,8 +64,8 @@ class CheckboxesGroup extends React.Component {
           </FormGroup>
           <FormHelperText>Be careful</FormHelperText>
         </FormControl>
-        <FormControl required error={error} component="fieldset" style={classes.formControl}>
-          <FormLabel component="legend">Pick two</FormLabel>
+        <FormControl required error={error} style={classes.formControl}>
+          <FormLabel>Pick two</FormLabel>
           <FormGroup>
             <FormControlLabel
               control={

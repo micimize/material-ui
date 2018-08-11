@@ -14,9 +14,11 @@ import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 const styles = {
   root: {
     color: green[600],
+    fill: green[600],
   },
   checked: {
     color: green[500],
+    fill: green[500],
   },
   size: {
     width: 40,
@@ -35,8 +37,8 @@ class CheckboxLabels extends React.Component {
     checkedG: true,
   };
 
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.checked });
+  handleChange = name => value => {
+    this.setState({ [name]: value });
   };
 
   render() {
@@ -47,9 +49,9 @@ class CheckboxLabels extends React.Component {
         <FormControlLabel
           control={
             <Checkbox
-              checked={this.state.checkedA}
-              onChange={this.handleChange('checkedA')}
-              value="checkedA"
+              color="secondary"
+              value={this.state.checkedA}
+              onValueChange={this.handleChange('checkedA')}
             />
           }
           label="Secondary"
@@ -57,27 +59,21 @@ class CheckboxLabels extends React.Component {
         <FormControlLabel
           control={
             <Checkbox
-              checked={this.state.checkedB}
-              onChange={this.handleChange('checkedB')}
-              value="checkedB"
+              value={this.state.checkedB}
+              onValueChange={this.handleChange('checkedB')}
               color="primary"
             />
           }
           label="Primary"
         />
-        <FormControlLabel control={<Checkbox value="checkedC" />} label="Uncontrolled" />
-        <FormControlLabel disabled control={<Checkbox value="checkedD" />} label="Disabled" />
-        <FormControlLabel
-          disabled
-          control={<Checkbox checked value="checkedE" />}
-          label="Disabled"
-        />
+        <FormControlLabel control={<Checkbox />} label="Uncontrolled" />
+        <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
+        <FormControlLabel disabled control={<Checkbox checked />} label="Disabled" />
         <FormControlLabel
           control={
             <Checkbox
-              checked={this.state.checkedF}
-              onChange={this.handleChange('checkedF')}
-              value="checkedF"
+              value={this.state.checkedF}
+              onValueChange={this.handleChange('checkedF')}
               indeterminate
             />
           }
@@ -86,9 +82,8 @@ class CheckboxLabels extends React.Component {
         <FormControlLabel
           control={
             <Checkbox
-              checked={this.state.checkedG}
-              onChange={this.handleChange('checkedG')}
-              value="checkedG"
+              value={this.state.checkedG}
+              onValueChange={this.handleChange('checkedG')}
               classes={{
                 root: classes.root,
                 checked: classes.checked,
@@ -98,9 +93,7 @@ class CheckboxLabels extends React.Component {
           label="Custom color"
         />
         <FormControlLabel
-          control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedH" />
-          }
+          control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} checked />}
           label="Custom icon"
         />
         <FormControlLabel
@@ -109,7 +102,6 @@ class CheckboxLabels extends React.Component {
               style={classes.size}
               icon={<CheckBoxOutlineBlankIcon style={classes.sizeIcon} />}
               checkedIcon={<CheckBoxIcon style={classes.sizeIcon} />}
-              value="checkedI"
             />
           }
           label="Custom size"

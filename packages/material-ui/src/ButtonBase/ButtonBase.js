@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  Text,
-  TouchableOpacity as ReactNativeButton,
-  StyleSheet as RNStyleSheet,
-} from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
@@ -15,9 +11,7 @@ import TouchRipple from './TouchRipple';
 import createRippleHandler from './createRippleHandler';
 import { Animated } from '../styles/extendedStyles';
 
-Object.assign(window, {
-  RNStyleSheet,
-});
+const DefaultButton = Animated.createComponent(TouchableOpacity);
 
 export const styles = {
   /* Styles applied to the root element. */
@@ -178,6 +172,7 @@ class ButtonBase extends React.Component {
     };
   }
 
+  /*
   handleKeyDown = event => {
     const { component, focusRipple, onKeyDown, onClick } = this.props;
     const key = keycode(event);
@@ -227,6 +222,7 @@ class ButtonBase extends React.Component {
       this.props.onKeyUp(event);
     }
   };
+  */
 
   handleFocus = event => {
     if (this.props.disabled) {
@@ -264,8 +260,6 @@ class ButtonBase extends React.Component {
       onBlur,
       onFocus,
       onFocusVisible,
-      onKeyDown,
-      onKeyUp,
       onMouseDown,
       onMouseLeave,
       onMouseUp,
@@ -287,11 +281,6 @@ class ButtonBase extends React.Component {
       styleProp,
       { [classes.active]: this.state.active },
     );
-    /*
-    console.log('buttonsss');
-    console.log([classes.root, styleProp, classes.active].map(s => RNStyleSheet.flatten(s)));
-    console.log(RNStyleSheet.flatten(className));
-    */
 
     const buttonProps = {};
 
@@ -303,7 +292,7 @@ class ButtonBase extends React.Component {
     }
     */
 
-    if (ComponentProp === ReactNativeButton) {
+    if (ComponentProp === DefaultButton) {
       buttonProps.type = type || 'button';
       buttonProps.disabled = disabled;
     } else {
@@ -316,8 +305,6 @@ class ButtonBase extends React.Component {
         activeOpacity={0.6}
         onBlur={this.handleBlur}
         onFocus={this.handleFocus}
-        onKeyDown={this.handleKeyDown}
-        onKeyUp={this.handleKeyUp}
         onMouseDown={this.handleMouseDown}
         onMouseLeave={this.handleMouseLeave}
         onMouseUp={this.handleMouseUp}
@@ -474,7 +461,7 @@ ButtonBase.propTypes = {
 
 ButtonBase.defaultProps = {
   centerRipple: false,
-  component: Animated.createComponent(ReactNativeButton),
+  component: DefaultButton,
   disableRipple: false,
   disableTouchRipple: false,
   focusRipple: false,

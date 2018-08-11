@@ -1,7 +1,6 @@
 // @inheritedComponent IconButton
 
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -28,7 +27,7 @@ class SwitchBase extends React.Component {
   constructor(props) {
     super(props);
 
-    this.isControlled = props.checked != null;
+    this.isControlled = props.value !== null;
     if (!this.isControlled) {
       // not controlled, use internal state
       this.state.checked = props.defaultChecked !== undefined ? props.defaultChecked : false;
@@ -63,12 +62,15 @@ class SwitchBase extends React.Component {
     if (this.props.onValueChange) {
       this.props.onValueChange(!value);
     }
+    if (!this.isControlled) {
+      this.setState({ checked: !value });
+    }
   };
 
   render() {
     const {
       autoFocus,
-      value: checkedProp,
+      value,
       checkedIcon,
       classes,
       style: styleProp,
@@ -97,7 +99,7 @@ class SwitchBase extends React.Component {
       }
     }
 
-    const checked = this.isControlled ? checkedProp : this.state.checked;
+    const checked = this.isControlled ? value : this.state.checked;
 
     const style = styleNames(
       classes.root,
@@ -135,7 +137,7 @@ SwitchBase.propTypes = {
   /**
    * If `true`, the component is checked.
    */
-  checked: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  value: PropTypes.bool,
   /**
    * The icon to display when the component is checked.
    */
@@ -220,10 +222,10 @@ SwitchBase.propTypes = {
    * The input component property `type`.
    */
   type: PropTypes.string,
-  /**
-   * The value of the component.
-   */
-  value: PropTypes.string,
+};
+
+SwitchBase.defaultProps = {
+  value: null,
 };
 
 SwitchBase.contextTypes = {

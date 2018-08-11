@@ -110,7 +110,7 @@ FormHelperText.propTypes = {
 };
 
 FormHelperText.defaultProps = {
-  component: View,
+  component: Text,
 };
 
 FormHelperText.contextTypes = {
