@@ -150,10 +150,10 @@ export const styles = theme => ({
     minWidth: 0,
     width: 56,
     height: 56,
-    boxShadow: theme.shadows[6],
+    elevation: 6,
   },
   fabActive: {
-    boxShadow: theme.shadows[12],
+    elevation: 12,
   },
   /* Styles applied to the root element if `variant="extendedFab"`. */
   extendedFab: {

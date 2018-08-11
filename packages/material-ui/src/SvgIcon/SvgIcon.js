@@ -26,22 +26,27 @@ export const styles = theme => ({
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {
     color: theme.palette.primary.main,
+    fill: theme.palette.primary.main,
   },
   /* Styles applied to the root element if `color="secondary"`. */
   colorSecondary: {
     color: theme.palette.secondary.main,
+    fill: theme.palette.secondary.main,
   },
   /* Styles applied to the root element if `color="saction"`. */
   colorAction: {
     color: theme.palette.action.active,
+    fill: theme.palette.action.active,
   },
   /* Styles applied to the root element if `color="error"`. */
   colorError: {
     color: theme.palette.error.main,
+    fill: theme.palette.error.main,
   },
   /* Styles applied to the root element if `color="disabled"`. */
   colorDisabled: {
     color: theme.palette.action.disabled,
+    fill: theme.palette.action.disabled,
   },
 
   /* Styles applied to the root element if `color="onDefault"`. */
@@ -49,14 +54,19 @@ export const styles = theme => ({
     color: theme.palette.getContrastText(
       theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
     ),
+    fill: theme.palette.getContrastText(
+      theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
+    ),
   },
   /* Styles applied to the root element if `color="onPrimary"`. */
   colorOnPrimary: {
     color: theme.palette.primary.contrastText,
+    fill: theme.palette.primary.contrastText,
   },
   /* Styles applied to the root element if `color="onSecondary"`. */
   colorOnSecondary: {
     color: theme.palette.secondary.contrastText,
+    fill: theme.palette.secondary.contrastText,
   },
   /* Styles applied to the root element if `fontSize="inherit"`. */
   /*
@@ -123,7 +133,16 @@ SvgIcon.propTypes = {
    * The color of the component. It supports those theme colors that make sense for this component.
    * You can use the `nativeColor` property to apply a color attribute to the SVG element.
    */
-  color: PropTypes.oneOf(['inherit', 'primary', 'secondary', 'action', 'error', 'disabled']),
+  color: PropTypes.oneOf([
+    'inherit',
+    'primary',
+    'onPrimary',
+    'secondary',
+    'onSecondary',
+    'action',
+    'error',
+    'disabled',
+  ]),
   /**
    * The component used for the root node.
    * Either a string to use a DOM element or a component.
