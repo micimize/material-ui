@@ -63,7 +63,7 @@ function FormControlLabel(props, context) {
   const controlProps = {
     disabled,
   };
-  [('checked', 'name', 'onValueChange', 'value', 'inputRef')].forEach(key => {
+  [('name', 'onValueChange', 'value', 'inputRef')].forEach(key => {
     if (typeof control.props[key] === 'undefined' && typeof props[key] !== 'undefined') {
       controlProps[key] = props[key];
     }

@@ -39,17 +39,7 @@ export const styles = theme => ({
 });
 
 function Checkbox(props) {
-  const {
-    checkedIcon,
-    classes,
-    color,
-    icon,
-    indeterminate,
-    indeterminateIcon,
-    checked,
-    value,
-    ...other
-  } = props;
+  const { checkedIcon, classes, color, icon, indeterminate, indeterminateIcon, ...other } = props;
   return (
     <SwitchBase
       checkedIcon={indeterminate ? indeterminateIcon : checkedIcon}
@@ -59,17 +49,12 @@ function Checkbox(props) {
         disabled: classes.disabled,
       }}
       icon={indeterminate ? indeterminateIcon : icon}
-      value={value !== null ? value || checked : null}
       {...other}
     />
   );
 }
 
 Checkbox.propTypes = {
-  /**
-   * If `true`, the component is checked. Alias for value
-   */
-  checked: PropTypes.bool,
   /**
    * The icon to display when the component is checked.
    */

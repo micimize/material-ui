@@ -10,7 +10,6 @@ import { isMuiElement } from '../utils/reactHelpers';
 export const styles = {
   /* Styles applied to the root element. */
   root: {
-    display: 'inline-flex',
     flexDirection: 'column',
     position: 'relative',
     // Reset fieldset default style

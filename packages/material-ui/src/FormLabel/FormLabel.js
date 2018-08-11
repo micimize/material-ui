@@ -9,29 +9,25 @@ export const styles = theme => ({
   root: {
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.secondary,
-    fontSize: theme.typography.pxToRem(16),
+    fontSize: 16,
     lineHeight: 1,
     padding: 0,
-    '[focused="true"]': {
-      color: theme.palette.primary[theme.palette.type === 'light' ? 'dark' : 'light'],
-    },
-    '[disabled="true"]': {
-      color: theme.palette.text.disabled,
-    },
-    '[error="true"]': {
-      color: theme.palette.error.main,
-    },
   },
   /* Styles applied to the root element if `focused={true}`. */
-  focused: {},
+  focused: {
+    color: theme.palette.primary[theme.palette.type === 'light' ? 'dark' : 'light'],
+  },
   /* Styles applied to the root element if `disabled={true}`. */
-  disabled: {},
+  disabled: {
+    color: theme.palette.text.disabled,
+  },
   /* Styles applied to the root element if `error={true}`. */
-  error: {},
-  asterisk: {
-    '[error="true"]': {
-      color: theme.palette.error.main,
-    },
+  error: {
+    color: theme.palette.error.main,
+  },
+  asterisk: {},
+  asteriskError: {
+    color: theme.palette.error.main,
   },
 });
 
@@ -69,6 +65,7 @@ function FormLabel(props, context) {
       error = muiFormControl.error;
     }
   }
+  console.log(focused);
 
   const className = styleNames(
     classes.root,
@@ -87,6 +84,7 @@ function FormLabel(props, context) {
         <Text
           style={styleNames(classes.asterisk, {
             [classes.error]: error,
+            [classes.asteriskError]: error,
           })}
           data-mui-test="FormLabelAsterisk"
         >

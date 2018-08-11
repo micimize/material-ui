@@ -25,8 +25,8 @@ class CheckboxesGroup extends React.Component {
     antoine: false,
   };
 
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.checked });
+  handleChange = name => value => {
+    this.setState({ [name]: value });
   };
 
   render() {
@@ -40,25 +40,15 @@ class CheckboxesGroup extends React.Component {
           <FormLabel>Assign responsibility</FormLabel>
           <FormGroup>
             <FormControlLabel
-              control={
-                <Checkbox checked={gilad} onChange={this.handleChange('gilad')} value="gilad" />
-              }
+              control={<Checkbox value={gilad} onValueChange={this.handleChange('gilad')} />}
               label="Gilad Gray"
             />
             <FormControlLabel
-              control={
-                <Checkbox checked={jason} onChange={this.handleChange('jason')} value="jason" />
-              }
+              control={<Checkbox value={jason} onValueChange={this.handleChange('jason')} />}
               label="Jason Killian"
             />
             <FormControlLabel
-              control={
-                <Checkbox
-                  checked={antoine}
-                  onChange={this.handleChange('antoine')}
-                  value="antoine"
-                />
-              }
+              control={<Checkbox value={antoine} onValueChange={this.handleChange('antoine')} />}
               label="Antoine Llorca"
             />
           </FormGroup>
@@ -68,25 +58,15 @@ class CheckboxesGroup extends React.Component {
           <FormLabel>Pick two</FormLabel>
           <FormGroup>
             <FormControlLabel
-              control={
-                <Checkbox checked={gilad} onChange={this.handleChange('gilad')} value="gilad" />
-              }
+              control={<Checkbox value={gilad} onValueChange={this.handleChange('gilad')} />}
               label="Gilad Gray"
             />
             <FormControlLabel
-              control={
-                <Checkbox checked={jason} onChange={this.handleChange('jason')} value="jason" />
-              }
+              control={<Checkbox value={jason} onValueChange={this.handleChange('jason')} />}
               label="Jason Killian"
             />
             <FormControlLabel
-              control={
-                <Checkbox
-                  checked={antoine}
-                  onChange={this.handleChange('antoine')}
-                  value="antoine"
-                />
-              }
+              control={<Checkbox value={antoine} onValueChange={this.handleChange('antoine')} />}
               label="Antoine Llorca"
             />
           </FormGroup>

@@ -9,23 +9,21 @@ export const styles = theme => ({
   root: {
     color: theme.palette.text.secondary,
     fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.pxToRem(12),
+    fontSize: 12,
     textAlign: 'left',
     marginTop: 8,
-    lineHeight: '1em',
-    minHeight: '1em',
+    lineHeight: 12,
+    minHeight: 12,
     margin: 0,
-    '[error="true"]': {
-      color: theme.palette.error.main,
-    },
-    '[disabled="true"]': {
-      color: theme.palette.text.disabled,
-    },
   },
   /* Styles applied to the root element if `error={true}`. */
-  error: {},
+  error: {
+    color: theme.palette.error.main,
+  },
   /* Styles applied to the root element if `disabled={true}`. */
-  disabled: {},
+  disabled: {
+    color: theme.palette.text.disabled,
+  },
   /* Styles applied to the root element if `margin="dense"`. */
   marginDense: {
     marginTop: 4,
