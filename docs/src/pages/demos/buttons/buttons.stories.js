@@ -1,16 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { Welcome } from '@storybook/react/demo';
-import { View, Text, TextInput } from 'react-native';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import blue from '@material-ui/core/colors/blue';
-import pink from '@material-ui/core/colors/pink';
-import { darken } from '@material-ui/core/styles/colorManipulator';
-
-import AppWrapper from './AppWrapper';
 
 import TextButtons from './TextButtons';
 import OutlinedButtons from './OutlinedButtons';
@@ -23,68 +12,22 @@ import IconLabelButtons from './IconLabelButtons';
 import CustomizedButtons from './CustomizedButtons';
 import ButtonBases from './ButtonBases';
 
-let uiTheme = {
-  paletteType: 'light',
-  paletteColors: {
-    primary: blue,
-    secondary: {
-      // Darken so we reach the AA contrast ratio level.
-      main: darken(pink.A400, 0.08),
+storiesOf('Demos', module).addWithChapters('Buttons', {
+  subtitle: 'Buttons allow users to take actions, and make choices, with a single tap.',
+  chapters: [
+    {
+      sections: [
+        { title: 'Text Buttons', sectionFn: () => <TextButtons /> },
+        { title: 'Outlined Buttons', sectionFn: () => <OutlinedButtons /> },
+        { title: 'Contained Buttons', sectionFn: () => <ContainedButtons /> },
+        { title: 'Floating Action Buttons', sectionFn: () => <FloatingActionButtons /> },
+        { title: 'Floating Action Button Zoom', sectionFn: () => <FloatingActionButtonZoom /> },
+        { title: 'Button Sizes', sectionFn: () => <ButtonSizes /> },
+        { title: 'Icon Buttons', sectionFn: () => <IconButtons /> },
+        { title: 'Icon Label Buttons', sectionFn: () => <IconLabelButtons /> },
+        { title: 'Customized Buttons', sectionFn: () => <CustomizedButtons /> },
+        { title: 'Button Bases', sectionFn: () => <ButtonBases /> },
+      ],
     },
-  },
-  direction: 'ltr',
-};
-
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
-
-storiesOf('Button', module)
-  .add('TextButtons', () => (
-    <AppWrapper uiTheme={uiTheme}>
-      <TextButtons />
-    </AppWrapper>
-  ))
-  .add('OutlinedButtons', () => (
-    <AppWrapper uiTheme={uiTheme}>
-      <OutlinedButtons />
-    </AppWrapper>
-  ))
-  .add('ContainedButtons', () => (
-    <AppWrapper uiTheme={uiTheme}>
-      <ContainedButtons />
-    </AppWrapper>
-  ))
-  .add('FloatingActionButtons', () => (
-    <AppWrapper uiTheme={uiTheme}>
-      <FloatingActionButtons />
-    </AppWrapper>
-  ))
-  .add('FloatingActionButtonZoom', () => (
-    <AppWrapper uiTheme={uiTheme}>
-      <FloatingActionButtonZoom />
-    </AppWrapper>
-  ))
-  .add('ButtonSizes', () => (
-    <AppWrapper uiTheme={uiTheme}>
-      <ButtonSizes />
-    </AppWrapper>
-  ))
-  .add('IconButtons', () => (
-    <AppWrapper uiTheme={uiTheme}>
-      <IconButtons />
-    </AppWrapper>
-  ))
-  .add('IconLabelButtons', () => (
-    <AppWrapper uiTheme={uiTheme}>
-      <IconLabelButtons />
-    </AppWrapper>
-  ))
-  .add('CustomizedButtons', () => (
-    <AppWrapper uiTheme={uiTheme}>
-      <CustomizedButtons />
-    </AppWrapper>
-  ))
-  .add('ButtonBases', () => (
-    <AppWrapper uiTheme={uiTheme}>
-      <ButtonBases />
-    </AppWrapper>
-  ));
+  ],
+});

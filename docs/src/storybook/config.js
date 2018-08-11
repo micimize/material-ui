@@ -1,6 +1,19 @@
 import { setOptions } from '@storybook/addon-options';
 import centered from './decorator-centered';
-import { configure, addDecorator } from '@storybook/react';
+import { configure, addDecorator, setAddon } from '@storybook/react';
+import chaptersAddon, { setDefaults } from 'react-storybook-addon-chapters';
+
+// optionally override defaults
+setDefaults({
+  sectionOptions: {
+    showSource: false,
+    allowSourceToggling: false,
+    showPropTables: false,
+    allowPropTablesToggling: false,
+  },
+});
+
+setAddon(chaptersAddon);
 
 // const context = require.context('../', true, /Screen\.js$/);
 const context = require.context('../pages/demos/', true, /.stories.js$/);

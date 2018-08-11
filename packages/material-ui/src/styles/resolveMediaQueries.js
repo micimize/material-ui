@@ -25,6 +25,10 @@ function resolveMediaQueries(_styles) {
       ) {
         return deepmerge(styles, resolveMediaQueries(_styles[property]).styles);
       }
+    } else if (typeof _styles[property] === 'object') {
+      const nested = resolveMediaQueries(_styles[property]);
+      containsMediaQueries = containsMediaQueries || nested.containsMediaQueries;
+      styles[property] = nested.styles;
     } else {
       styles[property] = _styles[property];
     }

@@ -110,7 +110,9 @@ class FloatingActionButtonZoom extends React.Component {
           <TabContainer dir={theme.direction}>Item Two</TabContainer>
           <TabContainer dir={theme.direction}>Item Three</TabContainer>
         </SwipeableViews>
-        {fabs.map((fab, index) => (
+        {fabs.map(
+          (fab, index) =>
+            /*
           <Zoom
             key={fab.color}
             in={this.state.value === index}
@@ -120,11 +122,14 @@ class FloatingActionButtonZoom extends React.Component {
             }}
             unmountOnExit
           >
-            <Button variant="fab" style={fab.className} color={fab.color}>
-              {fab.icon}
-            </Button>
-          </Zoom>
-        ))}
+          */
+            this.state.value === index && (
+              <Button variant="fab" style={fab.className} color={fab.color}>
+                {fab.icon}
+              </Button>
+            ),
+            /*</Zoom>*/
+        )}
       </View>
     );
   }

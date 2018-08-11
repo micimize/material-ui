@@ -22,7 +22,7 @@ export const styles = {
 const MEDIA_COMPONENTS = ['video', 'audio', 'picture', 'iframe', 'img'];
 
 function CardMedia(props) {
-  const { classes, style, component: Component, image, src, style, ...other } = props;
+  const { classes, style, component: Component, image, src, ...other } = props;
 
   warning(
     Boolean(image || src),

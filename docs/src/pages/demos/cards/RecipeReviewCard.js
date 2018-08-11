@@ -63,7 +63,7 @@ class RecipeReviewCard extends React.Component {
           <CardHeader
             avatar={
               <Avatar aria-label="Recipe" style={classes.avatar}>
-                R
+                <Text>R</Text>
               </Avatar>
             }
             action={
