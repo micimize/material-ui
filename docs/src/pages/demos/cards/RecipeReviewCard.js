@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import classnames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -30,7 +30,7 @@ const styles = theme => ({
     flexDirection: 'row',
   },
   expand: {
-    transform: [{ rotate: '0deg)' }],
+    transform: [{ rotate: '0deg' }],
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
     }),
@@ -76,7 +76,7 @@ class RecipeReviewCard extends React.Component {
           />
           <CardMedia
             style={classes.media}
-            image="/static/images/cards/paella.jpg"
+            image={require('/static/images/cards/paella.jpg')}
             title="Contemplative Reptile"
           />
           <CardContent>
@@ -93,10 +93,10 @@ class RecipeReviewCard extends React.Component {
               <ShareIcon />
             </IconButton>
             <IconButton
-              style={classnames(classes.expand, {
+              style={styleNames(classes.expand, {
                 [classes.expandOpen]: this.state.expanded,
               })}
-              onClick={this.handleExpandClick}
+              onPress={this.handleExpandClick}
               aria-expanded={this.state.expanded}
               aria-label="Show more"
             >
