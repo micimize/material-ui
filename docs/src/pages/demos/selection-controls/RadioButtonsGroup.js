@@ -35,8 +35,8 @@ class RadioButtonsGroup extends React.Component {
 
     return (
       <View style={classes.root}>
-        <FormControl component="fieldset" style={classes.formControl}>
-          <FormLabel component="legend">Gender</FormLabel>
+        <FormControl style={classes.formControl}>
+          <FormLabel>Gender</FormLabel>
           <RadioGroup
             aria-label="Gender"
             name="gender1"
@@ -55,8 +55,8 @@ class RadioButtonsGroup extends React.Component {
             />
           </RadioGroup>
         </FormControl>
-        <FormControl component="fieldset" style={classes.formControl}>
-          <FormLabel component="legend">Gender</FormLabel>
+        <FormControl style={classes.formControl}>
+          <FormLabel>Gender</FormLabel>
           <RadioGroup
             aria-label="gender"
             name="gender2"

@@ -10,9 +10,11 @@ import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 const styles = {
   root: {
     color: green[600],
+    fill: green[600],
   },
   checked: {
     color: green[500],
+    fill: green[500],
   },
   size: {
     width: 40,
@@ -28,33 +30,31 @@ class RadioButtons extends React.Component {
     selectedValue: 'a',
   };
 
-  handleChange = event => {
-    this.setState({ selectedValue: event.target.value });
+  changeHandler = value => checked => {
+    this.setState({ selectedValue: checked && value });
   };
 
   render() {
     const { classes } = this.props;
 
     return (
-      <View>
+      <View style={{ flexDirection: 'row' }}>
         <Radio
-          checked={this.state.selectedValue === 'a'}
-          onChange={this.handleChange}
+          value={this.state.selectedValue === 'a'}
+          onValueChange={this.changeHandler('a')}
           value="a"
           name="radio-button-demo"
           aria-label="A"
         />
         <Radio
-          checked={this.state.selectedValue === 'b'}
-          onChange={this.handleChange}
-          value="b"
+          value={this.state.selectedValue === 'b'}
+          onValueChange={this.changeHandler('b')}
           name="radio-button-demo"
           aria-label="B"
         />
         <Radio
-          checked={this.state.selectedValue === 'c'}
-          onChange={this.handleChange}
-          value="c"
+          value={this.state.selectedValue === 'c'}
+          onValueChange={this.changeHandler('c')}
           name="radio-button-demo"
           aria-label="C"
           classes={{
@@ -63,17 +63,15 @@ class RadioButtons extends React.Component {
           }}
         />
         <Radio
-          checked={this.state.selectedValue === 'd'}
-          onChange={this.handleChange}
-          value="d"
+          value={this.state.selectedValue === 'd'}
+          onValueChange={this.changeHandler('d')}
           color="default"
           name="radio-button-demo"
           aria-label="D"
         />
         <Radio
-          checked={this.state.selectedValue === 'e'}
-          onChange={this.handleChange}
-          value="e"
+          value={this.state.selectedValue === 'e'}
+          onValueChange={this.changeHandler('e')}
           color="default"
           name="radio-button-demo"
           aria-label="E"
