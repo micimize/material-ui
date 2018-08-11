@@ -31,43 +31,43 @@ class RadioGroup extends React.Component {
     focusRadios[0].focus();
   };
 
-  handleRadioChange = (event, checked) => {
-    if (checked && this.props.onChange) {
-      this.props.onChange(event, event.target.value);
-    }
-  };
-
   render() {
-    const { children, name, value, onChange, ...other } = this.props;
+    const { children, value, onValueChange: _, ...other } = this.props;
 
     this.radios = [];
 
     return (
       <FormGroup role="radiogroup" {...other}>
-        {React.Children.map(children, child => {
-          if (!React.isValidElement(child)) {
-            return null;
-          }
+        {React.Children.map(children, child => child)
+          .filter(React.isValidElement)
+          .map((child, index) => {
+            warning(
+              child.type !== React.Fragment,
+              [
+                "Material-UI: the RadioGroup component doesn't accept a Fragment as a child.",
+                'Consider providing an array instead.',
+              ].join('\n'),
+            );
 
-          warning(
-            child.type !== React.Fragment,
-            [
-              "Material-UI: the RadioGroup component doesn't accept a Fragment as a child.",
-              'Consider providing an array instead.',
-            ].join('\n'),
-          );
-
-          return React.cloneElement(child, {
-            name,
-            inputRef: node => {
-              if (node) {
-                this.radios.push(node);
+            const onValueChange = value => {
+              if (child.props.onValueChange) {
+                child.props.onValueChange(child.props.value, index);
               }
-            },
-            checked: value === child.props.value,
-            onChange: createChainedFunction(child.props.onChange, this.handleRadioChange),
-          });
-        })}
+              if (this.props.onValueChange) {
+                this.props.onValueChange(value && child.props.value, index);
+              }
+            };
+
+            return React.cloneElement(child, {
+              inputRef: node => {
+                if (node) {
+                  this.radios.push(node);
+                }
+              },
+              value: value === child.props.value,
+              onValueChange,
+            });
+          })}
       </FormGroup>
     );
   }
@@ -89,11 +89,10 @@ RadioGroup.propTypes = {
   /**
    * Callback fired when a radio button is selected.
    *
-   * @param {object} event The event source of the callback.
-   * You can pull out the new value by accessing `event.target.value`.
-   * @param {string} value The `value` of the selected radio button
+   * @param {any} itemValue: the value prop of the item that was selected
+   * @param {number} itemPosition: the index of the selected item in this picker
    */
-  onChange: PropTypes.func,
+  onValueChange: PropTypes.func,
   /**
    * @ignore
    */

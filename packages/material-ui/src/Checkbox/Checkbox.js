@@ -22,9 +22,6 @@ export const styles = theme => ({
     fill: theme.palette.action.disabled,
   },
   /* Styles applied to the root element if `color="primary"`. */
-  colorDefault: {},
-  colorDefaultChecked: {},
-  /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {},
   colorPrimaryChecked: {
     color: theme.palette.primary.main,

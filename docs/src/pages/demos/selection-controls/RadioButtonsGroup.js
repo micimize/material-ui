@@ -26,8 +26,8 @@ class RadioButtonsGroup extends React.Component {
     value: 'female',
   };
 
-  handleChange = event => {
-    this.setState({ value: event.target.value });
+  handleChange = value => {
+    this.setState({ value });
   };
 
   render() {
@@ -42,7 +42,7 @@ class RadioButtonsGroup extends React.Component {
             name="gender1"
             style={classes.group}
             value={this.state.value}
-            onChange={this.handleChange}
+            onValueChange={this.handleChange}
           >
             <FormControlLabel value="female" control={<Radio />} label="Female" />
             <FormControlLabel value="male" control={<Radio />} label="Male" />
@@ -62,7 +62,7 @@ class RadioButtonsGroup extends React.Component {
             name="gender2"
             style={classes.group}
             value={this.state.value}
-            onChange={this.handleChange}
+            onValueChange={this.handleChange}
           >
             <FormControlLabel
               value="female"

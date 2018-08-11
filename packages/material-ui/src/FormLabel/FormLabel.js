@@ -65,7 +65,6 @@ function FormLabel(props, context) {
       error = muiFormControl.error;
     }
   }
-  console.log(focused);
 
   const className = styleNames(
     classes.root,

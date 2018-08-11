@@ -86,9 +86,9 @@ class SwitchBase extends React.Component {
       readOnly,
       required,
       tabIndex,
-      type,
       ...other
     } = this.props;
+    console.log(value);
 
     const { muiFormControl } = this.context;
     let disabled = disabledProp;
@@ -218,10 +218,6 @@ SwitchBase.propTypes = {
    * @ignore
    */
   tabIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  /**
-   * The input component property `type`.
-   */
-  type: PropTypes.string,
 };
 
 SwitchBase.defaultProps = {

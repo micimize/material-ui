@@ -28,7 +28,6 @@ storiesOf('Selection Controls', module).addWithChapters('Demos', {
           title: 'Checkboxes with FormGroup',
           sectionFn: () => <CheckboxesGroup />,
         },
-        /*
         {
           title: 'Radio Buttons',
           sectionFn: () => <RadioButtonsGroup />,
@@ -53,7 +52,6 @@ storiesOf('Selection Controls', module).addWithChapters('Demos', {
           title: 'Customized Switches',
           sectionFn: () => <CustomizedSwitches />,
         },
-        */
       ],
     },
   ],

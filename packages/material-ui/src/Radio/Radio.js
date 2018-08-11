@@ -12,28 +12,26 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     color: theme.palette.text.secondary,
+    fill: theme.palette.text.secondary,
   },
   /* Styles applied to the root element if `checked={true}`. */
   checked: {},
   /* Styles applied to the root element if `disabled={true}`. */
-  disabled: {},
+  disabled: {
+    color: theme.palette.action.disabled,
+    fill: theme.palette.action.disabled,
+  },
   /* Styles applied to the root element if `color="primary"`. */
-  colorPrimary: {
-    '[checked="true"]': {
-      color: theme.palette.primary.main,
-    },
-    '[disabled="true"]': {
-      color: theme.palette.action.disabled,
-    },
+  colorPrimary: {},
+  colorPrimaryChecked: {
+    color: theme.palette.primary.main,
+    fill: theme.palette.primary.main,
   },
   /* Styles applied to the root element if `color="secondary"`. */
-  colorSecondary: {
-    '[checked="true"]': {
-      color: theme.palette.secondary.main,
-    },
-    '[disabled="true"]': {
-      color: theme.palette.action.disabled,
-    },
+  colorSecondary: {},
+  colorSecondaryChecked: {
+    color: theme.palette.secondary.main,
+    fill: theme.palette.secondary.main,
   },
 });
 
@@ -42,12 +40,11 @@ function Radio(props) {
 
   return (
     <SwitchBase
-      type="radio"
       icon={<RadioButtonUncheckedIcon />}
       checkedIcon={<RadioButtonCheckedIcon />}
       classes={{
         root: styleNames(classes.root, classes[`color${capitalize(color)}`]),
-        checked: classes.checked,
+        checked: styleNames(classes[`color${capitalize(color)}Checked`], classes.checked),
         disabled: classes.disabled,
       }}
       {...other}
@@ -100,11 +97,9 @@ Radio.propTypes = {
   /**
    * Callback fired when the state is changed.
    *
-   * @param {object} event The event source of the callback.
-   * You can pull out the new value by accessing `event.target.value`.
-   * @param {boolean} checked The `checked` value of the switch
+   * @param {boolean} value The `value` value of the button
    */
-  onChange: PropTypes.func,
+  onValueChange: PropTypes.func,
   /**
    * The input component property `type`.
    */
@@ -112,7 +107,7 @@ Radio.propTypes = {
   /**
    * The value of the component.
    */
-  value: PropTypes.string,
+  value: PropTypes.bool,
 };
 
 Radio.defaultProps = {
