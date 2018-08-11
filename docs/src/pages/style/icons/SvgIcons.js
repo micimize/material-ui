@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import Svg, {Path, Defs, Stop} from 'svgs'
+import Svg, { Path, Defs, Stop } from 'svgs';
 import { withStyles } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
 import blue from '@material-ui/core/colors/blue';
@@ -9,7 +9,7 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-end',
   },

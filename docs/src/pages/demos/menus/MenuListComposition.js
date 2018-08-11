@@ -12,7 +12,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
   },
   paper: {
     marginRight: theme.spacing.unit * 2,

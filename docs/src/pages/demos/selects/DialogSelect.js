@@ -15,7 +15,7 @@ import Select from '@material-ui/core/Select';
 
 const styles = theme => ({
   container: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   formControl: {

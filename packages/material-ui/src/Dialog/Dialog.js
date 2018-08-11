@@ -16,7 +16,7 @@ export const styles = theme => ({
   root: {},
   /* Styles applied to the root element if `scroll="paper"`. */
   scrollPaper: {
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -27,7 +27,6 @@ export const styles = theme => ({
   },
   /* Styles applied to the `Paper` component. */
   paper: {
-    display: 'flex',
     flexDirection: 'column',
     margin: 48,
     position: 'relative',

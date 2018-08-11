@@ -24,7 +24,7 @@ const styles = {
     backgroundColor: green[500],
   },
   row: {
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
   },
 };

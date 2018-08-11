@@ -11,7 +11,7 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   formControl: {

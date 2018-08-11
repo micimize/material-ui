@@ -8,7 +8,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 const styles = {
   container: {
-    display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
     padding: 20, // so transform doesn't let things get cut off

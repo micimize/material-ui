@@ -34,7 +34,6 @@ export const styles = theme => ({
   /* Styles applied to the `Paper` component. */
   paper: {
     overflowY: 'auto',
-    display: 'flex',
     flexDirection: 'column',
     height: '100vh',
     flex: '1 0 auto',

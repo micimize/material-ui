@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 
 const styles = {
   root: {
-    display: 'flex',
+    flexDirection: 'row',
   },
 };
 

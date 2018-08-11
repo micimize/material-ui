@@ -12,7 +12,7 @@ export const styles = theme => ({
     right: 0,
     height: 48,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     fontFamily: theme.typography.fontFamily,
   },

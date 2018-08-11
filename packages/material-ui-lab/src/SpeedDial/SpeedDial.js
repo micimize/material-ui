@@ -15,7 +15,6 @@ export const styles = {
   /* Styles applied to the root element. */
   root: {
     zIndex: 1050,
-    display: 'flex',
     flexDirection: 'column-reverse', // Place the Actions above the FAB.
     pointerEvents: 'none',
   },
@@ -25,7 +24,6 @@ export const styles = {
   },
   /* Styles applied to the actions (`children` wrapper) element. */
   actions: {
-    display: 'flex',
     flexDirection: 'column-reverse', // Display the first action at the bottom.
     paddingBottom: 16,
     pointerEvents: 'auto',

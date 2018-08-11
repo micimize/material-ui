@@ -10,7 +10,7 @@ describe('createMixins', () => {
     const mixins = createMixins(theme.breakpoints, theme.spacing, {});
 
     const mixin = mixins.gutters({
-      display: 'flex',
+      flexDirection: 'row',
       [theme.breakpoints.up('sm')]: {
         paddingLeft: 1,
       },
@@ -20,7 +20,7 @@ describe('createMixins', () => {
         paddingLeft: 1,
         paddingRight: 24,
       },
-      display: 'flex',
+      flexDirection: 'row',
       paddingLeft: 16,
       paddingRight: 16,
     });

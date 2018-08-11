@@ -6,7 +6,7 @@ import Slider from '@material-ui/lab/Slider';
 
 const styles = {
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     height: 300,
   },
 };

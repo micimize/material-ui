@@ -15,7 +15,7 @@ const styles = theme => ({
     paddingBottom: 0,
   },
   itemLeaf: {
-    display: 'flex',
+    flexDirection: 'row',
     paddingTop: 0,
     paddingBottom: 0,
   },

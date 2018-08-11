@@ -11,7 +11,7 @@ import green from '@material-ui/core/colors/green';
 
 const styles = theme => ({
   container: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   margin: {

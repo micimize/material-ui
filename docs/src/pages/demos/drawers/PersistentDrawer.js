@@ -28,7 +28,7 @@ const styles = theme => ({
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
-    display: 'flex',
+    flexDirection: 'row',
     width: '100%',
   },
   appBar: {
@@ -63,7 +63,7 @@ const styles = theme => ({
     width: drawerWidth,
   },
   drawerHeader: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: '0 8px',

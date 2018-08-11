@@ -11,7 +11,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
   },
   formControl: {
     margin: theme.spacing.unit * 3,

@@ -19,7 +19,7 @@ const styles = theme => ({
   toggleContainer: {
     height: 56,
     padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
     margin: `${theme.spacing.unit}px 0`,

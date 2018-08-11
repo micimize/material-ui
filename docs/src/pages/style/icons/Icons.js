@@ -7,7 +7,7 @@ import Icon from '@material-ui/core/Icon';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-end',
   },

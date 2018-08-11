@@ -6,7 +6,7 @@ import Input from '@material-ui/core/Input';
 
 const styles = theme => ({
   container: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   input: {

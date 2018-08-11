@@ -13,7 +13,7 @@ const styles = theme => ({
     flexGrow: 1,
   },
   container: {
-    display: 'flex',
+    flexDirection: 'row',
   },
   paper: {
     padding: theme.spacing.unit * 2,

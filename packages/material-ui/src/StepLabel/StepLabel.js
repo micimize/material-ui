@@ -9,7 +9,7 @@ import StepIcon from '../StepIcon';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     '[alternativeLabel="true"]': {
       flexDirection: 'column',

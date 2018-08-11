@@ -21,7 +21,7 @@ const styles = {
     backgroundColor: deepPurple[500],
   },
   row: {
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
   },
 };

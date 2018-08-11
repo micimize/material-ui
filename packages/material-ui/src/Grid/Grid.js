@@ -96,7 +96,7 @@ export const styles = theme => ({
   /* Styles applied to the root element if `container={true}`. */
   container: {
     boxSizing: 'border-box',
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
     width: '100%',
     flexDirection: 'row',

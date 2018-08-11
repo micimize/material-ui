@@ -8,7 +8,7 @@ import tileData from './tileData';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',

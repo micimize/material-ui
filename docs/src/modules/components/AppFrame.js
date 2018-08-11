@@ -40,7 +40,7 @@ Router.onRouteChangeError = () => {
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
   },
   grow: {
     flex: '1 1 auto',

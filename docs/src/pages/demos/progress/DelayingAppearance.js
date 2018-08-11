@@ -9,7 +9,6 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },

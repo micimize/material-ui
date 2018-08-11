@@ -7,7 +7,7 @@ import withWidth, { WithWidthProps } from '../withWidth';
 const styles = (theme: Theme) =>
   createStyles({
     root: {
-      display: 'flex',
+      flexDirection: 'row',
       flexDirection: 'column',
       backgroundColor: theme.palette.common.black,
     },

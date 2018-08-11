@@ -8,7 +8,7 @@ import withStyles from '../styles/withStyles';
 export const styles = {
   /* Styles applied to the root element. */
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     maxHeight: '2em',
     alignItems: 'center',
   },

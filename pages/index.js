@@ -20,14 +20,14 @@ const styles = theme => ({
   hero: {
     minHeight: '80vh',
     flex: '0 0 auto',
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: theme.palette.background.paper,
     color: theme.palette.type === 'light' ? theme.palette.primary.dark : theme.palette.primary.main,
   },
   text: {
-    display: 'flex',
+    flexDirection: 'row',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',

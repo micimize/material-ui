@@ -8,7 +8,7 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     position: 'relative',
-    display: 'flex',
+    flexDirection: 'row',
     flexDirection: 'row',
     alignItems: 'center',
   },

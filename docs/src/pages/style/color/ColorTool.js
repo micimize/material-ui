@@ -31,7 +31,7 @@ const styles = theme => ({
     height: 48,
     border: '1px solid white',
     color: theme.palette.common.white,
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -39,7 +39,7 @@ const styles = theme => ({
     width: 192,
   },
   sliderContainer: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit,
@@ -53,7 +53,7 @@ const styles = theme => ({
   colorSquare: {
     width: 64,
     height: 64,
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },

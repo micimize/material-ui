@@ -15,7 +15,6 @@ export const styles = theme => {
   return {
     /* Styles applied to the root element. */
     root: {
-      display: 'flex',
       flexDirection: 'column',
       width: '100%',
       boxSizing: 'border-box', // Prevent padding issue with the Modal and fixed positioned AppBar.

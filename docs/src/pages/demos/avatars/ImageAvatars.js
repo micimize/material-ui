@@ -7,7 +7,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 const styles = {
   row: {
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
   },
   avatar: {

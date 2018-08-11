@@ -18,7 +18,7 @@ export const styles = theme => {
     root: {
       color: theme.palette.getContrastText(backgroundColor),
       backgroundColor,
-      display: 'flex',
+      flexDirection: 'row',
       alignItems: 'center',
       flexWrap: 'wrap',
       padding: '6px 24px',
@@ -37,7 +37,7 @@ export const styles = theme => {
     },
     /* Styles applied to the action wrapper element if `action` is provided. */
     action: {
-      display: 'flex',
+      flexDirection: 'row',
       alignItems: 'center',
       marginLeft: 'auto',
       paddingLeft: 24,

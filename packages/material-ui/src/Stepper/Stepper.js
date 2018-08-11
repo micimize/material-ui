@@ -11,7 +11,7 @@ import StepConnector from '../StepConnector';
 export const styles = {
   /* Styles applied to the root element. */
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     padding: 24,
   },
   /* Styles applied to the root element if `orientation="horizontal"`. */

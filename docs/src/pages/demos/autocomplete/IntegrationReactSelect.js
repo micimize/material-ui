@@ -59,11 +59,11 @@ const styles = theme => ({
     height: 250,
   },
   input: {
-    display: 'flex',
+    flexDirection: 'row',
     padding: 0,
   },
   valueContainer: {
-    display: 'flex',
+    flexDirection: 'row',
     flex: 1,
     alignItems: 'center',
   },

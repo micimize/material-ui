@@ -13,7 +13,6 @@ import Typography from '@material-ui/core/Typography';
 const styles = {
   card: {
     height: '100%',
-    display: 'flex',
     flexDirection: 'column',
   },
   cardContent: {

@@ -754,7 +754,7 @@ const TabsTest = () => {
       backgroundColor: theme.palette.background.paper,
     },
     button: {
-      display: 'flex',
+      flexDirection: 'row',
     },
   });
 

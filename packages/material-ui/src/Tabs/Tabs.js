@@ -23,7 +23,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the flex container element. */
   flexContainer: {
-    display: 'flex',
+    flexDirection: 'row',
     flexDirection: 'row',
   },
   /* Styles applied to the flex container element if `centered={true}` & `scrollable={false}`. */

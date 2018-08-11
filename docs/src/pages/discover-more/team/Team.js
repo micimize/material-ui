@@ -83,7 +83,6 @@ const members = [
 
 const styles = theme => ({
   details: {
-    display: 'flex',
     flexDirection: 'column',
     margin: `${theme.spacing.unit}px 0`,
   },
@@ -96,7 +95,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.default,
   },
   controls: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
   },
   icon: {

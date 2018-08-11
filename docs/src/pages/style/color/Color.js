@@ -28,7 +28,7 @@ const altPalette = ['A100', 'A200', 'A400', 'A700'];
 
 export const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   name: {
@@ -38,7 +38,7 @@ export const styles = theme => ({
     height: 4,
   },
   colorContainer: {
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },

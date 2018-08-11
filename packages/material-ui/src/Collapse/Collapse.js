@@ -23,7 +23,7 @@ export const styles = theme => ({
   /* Styles applied to the outer wrapper element. */
   wrapper: {
     // Hack to get children with a negative margin to not falsify the height computation.
-    display: 'flex',
+    flexDirection: 'row',
   },
   /* Styles applied to the outer wrapper element. */
   wrapperInner: {

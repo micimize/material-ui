@@ -7,7 +7,7 @@ import Input from '@material-ui/core/Input';
 
 const styles = {
   container: {
-    display: 'flex',
+    flexDirection: 'row',
     flexDirection: 'column',
     width: 200,
   },

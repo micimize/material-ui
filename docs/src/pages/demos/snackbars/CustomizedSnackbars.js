@@ -43,7 +43,7 @@ const styles1 = theme => ({
     marginRight: theme.spacing.unit,
   },
   message: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
   },
 });

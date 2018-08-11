@@ -15,7 +15,7 @@ export const styles = theme => {
   return {
     /* Styles applied to the root element. */
     root: {
-      display: 'flex',
+      flexDirection: 'row',
       minHeight: 8 * 6,
       transition: theme.transitions.create(['min-height', 'background-color'], transition),
       padding: '0 24px 0 24px',
@@ -40,7 +40,7 @@ export const styles = theme => {
     disabled: {},
     /* Styles applied to the children wrapper element. */
     content: {
-      display: 'flex',
+      flexDirection: 'row',
       flexGrow: 1,
       transition: theme.transitions.create(['margin'], transition),
       margin: '12px 0',

@@ -22,7 +22,7 @@ const styles = theme => ({
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
-    display: 'flex',
+    flexDirection: 'row',
     width: '100%',
   },
   appBar: {

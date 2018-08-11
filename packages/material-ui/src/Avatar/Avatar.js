@@ -8,7 +8,7 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     position: 'relative',
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
@@ -74,14 +74,7 @@ function Avatar(props) {
     }
   } else if (src || srcSet) {
     children = (
-      <Image
-        alt={alt}
-        src={src}
-        srcSet={srcSet}
-        sizes={sizes}
-        style={classes.img}
-        {...imgProps}
-      />
+      <Image alt={alt} src={src} srcSet={srcSet} sizes={sizes} style={classes.img} {...imgProps} />
     );
   }
 

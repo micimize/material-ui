@@ -37,7 +37,7 @@ describe('withStyles', () => {
     let classes;
 
     before(() => {
-      const styles = { root: { display: 'flex' } };
+      const styles = { root: { flexDirection: 'row' } };
       StyledComponent1 = withStyles(styles, { name: 'MuiTextField' })(Empty);
       classes = getClasses(<StyledComponent1 />);
     });
@@ -149,7 +149,7 @@ describe('withStyles', () => {
     });
 
     it('should run lifecycles with no theme', () => {
-      const styles = { root: { display: 'flex' } };
+      const styles = { root: { flexDirection: 'row' } };
       const StyledComponent = withStyles(styles)(Empty);
 
       const wrapper = mount(
@@ -218,7 +218,7 @@ describe('withStyles', () => {
 
     describe('options: disableStylesGeneration', () => {
       it('should not generate the styles', () => {
-        const styles = { root: { display: 'flex' } };
+        const styles = { root: { flexDirection: 'row' } };
         const StyledComponent = withStyles(styles)(Empty);
 
         const wrapper = mount(

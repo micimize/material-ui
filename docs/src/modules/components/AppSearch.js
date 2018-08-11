@@ -132,7 +132,7 @@ const styles = theme => ({
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },

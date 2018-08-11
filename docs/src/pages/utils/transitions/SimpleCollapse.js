@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import Svg, {Polygon} from 'svgs'
+import Svg, { Polygon } from 'svgs';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Switch from '@material-ui/core/Switch';
@@ -12,7 +12,7 @@ const styles = theme => ({
     height: 180,
   },
   container: {
-    display: 'flex',
+    flexDirection: 'row',
   },
   paper: {
     margin: theme.spacing.unit,

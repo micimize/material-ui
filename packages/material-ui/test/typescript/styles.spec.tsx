@@ -47,7 +47,7 @@ const StyledExampleTwo = withStyles(styles)(Component);
 // Example 3
 const styleRule = createStyles({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'stretch',
     height: '100vh',
     width: '100%',
@@ -227,7 +227,7 @@ withStyles(theme =>
       },
       row: {
         alignItems: 'center',
-        display: 'flex',
+        flexDirection: 'row',
         flexDirection: 'row',
       },
     });

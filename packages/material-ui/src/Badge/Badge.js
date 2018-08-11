@@ -17,7 +17,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the badge `span` element. */
   badge: {
-    display: 'flex',
+    flexDirection: 'row''row',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',

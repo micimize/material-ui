@@ -13,7 +13,7 @@ import FormControl from '@material-ui/core/FormControl';
 
 const styles = theme => ({
   container: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   formControl: {

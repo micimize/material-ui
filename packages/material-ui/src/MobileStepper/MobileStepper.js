@@ -12,7 +12,7 @@ import LinearProgress from '../LinearProgress';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -39,7 +39,7 @@ export const styles = theme => ({
   positionStatic: {},
   /* Styles applied to the dots container if `variant="dots"`. */
   dots: {
-    display: 'flex',
+    flexDirection: 'row',
     flexDirection: 'row',
   },
   /* Styles applied to each dot if `variant="dots"`. */

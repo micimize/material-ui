@@ -26,13 +26,9 @@ const styles = theme => ({
     },
   },
   // https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items
-  toolbarIe11: {
-    display: 'flex',
-  },
   toolbar: {
     ...theme.mixins.toolbar,
     paddingLeft: theme.spacing.unit * 3,
-    display: 'flex',
     flexGrow: 1,
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -98,7 +94,7 @@ function AppDrawer(props, context) {
 
   const drawer = (
     <View style={classes.nav}>
-      <View style={classes.toolbarIe11}>
+      <View>
         <View style={classes.toolbar}>
           <Link style={classes.title} href="/" onClick={onClose}>
             <Typography variant="title" color="inherit">

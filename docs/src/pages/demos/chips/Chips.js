@@ -9,7 +9,7 @@ import DoneIcon from '@material-ui/icons/Done';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
     flexWrap: 'wrap',
   },
@@ -61,13 +61,7 @@ function Chips(props) {
         style={classes.chip}
         deleteIcon={<DoneIcon />}
       />
-      <Chip
-        label="Clickable Link Chip"
-        style={classes.chip}
-        component="a"
-        href="#chip"
-        clickable
-      />
+      <Chip label="Clickable Link Chip" style={classes.chip} component="a" href="#chip" clickable />
     </View>
   );
 }

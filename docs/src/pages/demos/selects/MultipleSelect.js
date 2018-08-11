@@ -13,7 +13,7 @@ import Chip from '@material-ui/core/Chip';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   formControl: {
@@ -22,7 +22,7 @@ const styles = theme => ({
     maxWidth: 300,
   },
   chips: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   chip: {

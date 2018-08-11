@@ -16,7 +16,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   margin: {

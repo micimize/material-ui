@@ -9,7 +9,7 @@ import '../Button'; // So we don't have any override priority issue.
 export const styles = {
   /* Styles applied to the root element. */
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: '16px 8px',

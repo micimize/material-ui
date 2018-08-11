@@ -24,7 +24,7 @@ const styles = theme => ({
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
-    display: 'flex',
+    flexDirection: 'row',
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -69,7 +69,7 @@ const styles = theme => ({
     },
   },
   toolbar: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: '0 8px',

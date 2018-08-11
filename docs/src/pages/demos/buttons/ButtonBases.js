@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',
@@ -39,7 +39,7 @@ const styles = theme => ({
     right: 0,
     top: 0,
     bottom: 0,
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     color: theme.palette.common.white,

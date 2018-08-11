@@ -71,7 +71,7 @@ export const styles = theme => {
     },
     /* Styles applied to the label `span` element`. */
     label: {
-      display: 'flex',
+      flexDirection: 'row''row',
       alignItems: 'center',
       paddingLeft: 12,
       paddingRight: 12,
