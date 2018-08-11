@@ -13,40 +13,42 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     color: theme.palette.text.secondary,
+    fill: theme.palette.text.secondary,
   },
   /* Styles applied to the root element if `checked={true}`. */
   checked: {},
   /* Styles applied to the root element if `disabled={true}`. */
-  disabled: {},
+  disabled: {
+    color: theme.palette.action.disabled,
+    fill: theme.palette.action.disabled,
+  },
   /* Styles applied to the root element if `color="primary"`. */
-  colorPrimary: {
-    '[checked="true"]': {
-      color: theme.palette.primary.main,
-    },
-    '[disabled="true"]': {
-      color: theme.palette.action.disabled,
-    },
+  colorDefault: {},
+  colorDefaultChecked: {},
+  /* Styles applied to the root element if `color="primary"`. */
+  colorPrimary: {},
+  colorPrimaryChecked: {
+    color: theme.palette.primary.main,
+    fill: theme.palette.primary.main,
   },
   /* Styles applied to the root element if `color="secondary"`. */
-  colorSecondary: {
-    '[checked="true"]': {
-      color: theme.palette.secondary.main,
-    },
-    '[disabled="true"]': {
-      color: theme.palette.action.disabled,
-    },
+  colorSecondary: {},
+  colorSecondaryChecked: {
+    color: theme.palette.secondary.main,
+    fill: theme.palette.secondary.main,
   },
 });
 
 function Checkbox(props) {
   const { checkedIcon, classes, color, icon, indeterminate, indeterminateIcon, ...other } = props;
-
   return (
     <SwitchBase
       checkedIcon={indeterminate ? indeterminateIcon : checkedIcon}
       classes={{
         root: styleNames(classes.root, classes[`color${capitalize(color)}`]),
-        checked: classes.checked,
+        checked: styleNames(classes.checked, {
+          [classes[`color${capitalize(color)}Checked`]]: other.checked,
+        }),
         disabled: classes.disabled,
       }}
       icon={indeterminate ? indeterminateIcon : icon}

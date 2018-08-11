@@ -9,31 +9,31 @@ class Checkboxes extends React.Component {
     checkedF: true,
   };
 
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.checked });
+  handleChange = name => value => {
+    this.setState({ [name]: value });
   };
 
   render() {
     return (
-      <View>
+      <View style={{ flexDirection: 'row' }}>
         <Checkbox
           checked={this.state.checkedA}
-          onChange={this.handleChange('checkedA')}
-          value="checkedA"
+          onValueChange={this.handleChange('checkedA')}
+          value={this.state.checkedA}
         />
         <Checkbox
           checked={this.state.checkedB}
-          onChange={this.handleChange('checkedB')}
-          value="checkedB"
+          onValueChange={this.handleChange('checkedB')}
+          value={this.state.checkedB}
           color="primary"
         />
-        <Checkbox value="checkedC" />
-        <Checkbox disabled value="checkedD" />
-        <Checkbox disabled checked value="checkedE" />
+        <Checkbox value={false} />
+        <Checkbox disabled value={false} />
+        <Checkbox disabled value={true} />
         <Checkbox
           checked={this.state.checkedF}
-          onChange={this.handleChange('checkedF')}
-          value="checkedF"
+          onValueChange={this.handleChange('checkedF')}
+          value={this.state.checkedF}
           indeterminate
         />
         <Checkbox defaultChecked color="default" value="checkedG" />

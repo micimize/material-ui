@@ -9,9 +9,9 @@ import IconButton from '../IconButton';
 
 export const styles = {
   root: {
-    display: 'inline-flex',
+    // display: 'inline-flex',
     alignItems: 'center',
-    transition: 'none',
+    // transition: 'none',
     '&:hover': {
       // Disable the hover effect for the IconButton.
       backgroundColor: 'transparent',
@@ -19,27 +19,12 @@ export const styles = {
   },
   checked: {},
   disabled: {},
-  input: {
-    cursor: 'inherit',
-    position: 'absolute',
-    opacity: 0,
-    width: '100%',
-    height: '100%',
-    top: 0,
-    left: 0,
-    margin: 0,
-    padding: 0,
-  },
 };
 
 /**
  * @ignore - internal component.
  */
 class SwitchBase extends React.Component {
-  input = null;
-
-  isControlled = null;
-
   constructor(props) {
     super(props);
 
@@ -74,22 +59,16 @@ class SwitchBase extends React.Component {
     }
   };
 
-  handleInputChange = event => {
-    const checked = event.target.checked;
-
-    if (!this.isControlled) {
-      this.setState({ checked });
-    }
-
-    if (this.props.onChange) {
-      this.props.onChange(event, checked);
+  changeHandler = value => () => {
+    if (this.props.onValueChange) {
+      this.props.onValueChange(!value);
     }
   };
 
   render() {
     const {
       autoFocus,
-      checked: checkedProp,
+      value: checkedProp,
       checkedIcon,
       classes,
       style: styleProp,
@@ -100,13 +79,12 @@ class SwitchBase extends React.Component {
       inputRef,
       name,
       onBlur,
-      onChange,
+      onValueChange,
       onFocus,
       readOnly,
       required,
       tabIndex,
       type,
-      value,
       ...other
     } = this.props;
 
@@ -120,43 +98,28 @@ class SwitchBase extends React.Component {
     }
 
     const checked = this.isControlled ? checkedProp : this.state.checked;
-    const hasLabelFor = type === 'checkbox' || type === 'radio';
+
+    const style = styleNames(
+      classes.root,
+      {
+        [classes.checked]: checked,
+        [classes.disabled]: disabled,
+      },
+      styleProp,
+    );
 
     return (
       <IconButton
-        component="span"
-        style={styleNames(
-          classes.root,
-          {
-            [classes.checked]: checked,
-            [classes.disabled]: disabled,
-          },
-          styleProp,
-        )}
+        style={style}
         disabled={disabled}
         tabIndex={null}
         role={undefined}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
+        onPress={this.changeHandler(checked)}
         {...other}
       >
-        {checked ? checkedIcon : icon}
-        <TextInput
-          autoFocus={autoFocus}
-          checked={checked}
-          style={classes.input}
-          disabled={disabled}
-          id={hasLabelFor && id}
-          name={name}
-          onChange={this.handleInputChange}
-          readOnly={readOnly}
-          ref={inputRef}
-          required={required}
-          tabIndex={tabIndex}
-          type={type}
-          value={value}
-          {...inputProps}
-        />
+        {React.cloneElement(checked ? checkedIcon : icon, { style })}
       </IconButton>
     );
   }
@@ -233,11 +196,9 @@ SwitchBase.propTypes = {
   /**
    * Callback fired when the state is changed.
    *
-   * @param {object} event The event source of the callback.
-   * You can pull out the new value by accessing `event.target.checked`.
    * @param {boolean} checked The `checked` value of the switch
    */
-  onChange: PropTypes.func,
+  onValueChange: PropTypes.func,
   /**
    * @ignore
    */
@@ -263,10 +224,6 @@ SwitchBase.propTypes = {
    * The value of the component.
    */
   value: PropTypes.string,
-};
-
-SwitchBase.defaultProps = {
-  type: 'checkbox',
 };
 
 SwitchBase.contextTypes = {
