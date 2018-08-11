@@ -80,6 +80,7 @@ module.exports = {
               '@material-ui/icons': './packages/material-ui-icons/src',
               '@material-ui/lab': './packages/material-ui-lab/src',
               docs: './docs',
+              '/static': './static',
               modules: './modules',
               pages: './pages',
               'react-native$': 'react-native-web',

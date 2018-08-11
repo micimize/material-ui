@@ -88,7 +88,7 @@ const borders = ['top', 'right', 'bottom', 'left'].reduce(
 
 const customStyles = CustomStyleRule({
   customProperties: {
-    transform: () => ({}),
+    transform: transform => (typeof transform === 'string' ? {} : { transform }),
     willChange: () => ({}),
     pointerEvents: () => ({}),
     fontFamily: () => ({}),

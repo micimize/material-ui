@@ -9,9 +9,8 @@ import '../Button'; // So we don't have any override priority issue.
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
-    boxSizing: 'border-box',
     padding: '8px 4px',
     [theme.breakpoints.up('sm')]: {
       padding: '8px 12px',

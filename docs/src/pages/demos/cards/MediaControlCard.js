@@ -13,10 +13,11 @@ import SkipNextIcon from '@material-ui/icons/SkipNext';
 
 const styles = theme => ({
   card: {
-    display: 'flex',
+    flexDirection: 'row',
+    width: 375,
+    justifyContent: 'space-between',
   },
   details: {
-    display: 'flex',
     flexDirection: 'column',
   },
   content: {
@@ -27,8 +28,9 @@ const styles = theme => ({
     height: 151,
   },
   controls: {
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     paddingLeft: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
   },
@@ -65,7 +67,7 @@ function MediaControlCard(props) {
         </View>
         <CardMedia
           style={classes.cover}
-          image="/static/images/cards/live-from-space.jpg"
+          image={require('/static/images/cards/live-from-space.jpg')}
           title="Live from space album cover"
         />
       </Card>

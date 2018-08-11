@@ -10,12 +10,11 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = {
   card: {
-    minWidth: 275,
+    maxWidth: 275,
   },
   bullet: {
-    display: 'inline-block',
     margin: '0 2px',
-    transform: 'scale(0.8)',
+    transform: [{ scale: 0.5 }],
   },
   title: {
     marginBottom: 16,
@@ -37,14 +36,18 @@ function SimpleCard(props) {
           <Typography style={classes.title} color="textSecondary">
             Word of the Day
           </Typography>
-          <Typography variant="headline" component="h2">
-            be{bull}nev{bull}o{bull}lent
+          <Typography variant="headline">
+            be
+            {bull}
+            nev
+            {bull}o{bull}
+            lent
           </Typography>
           <Typography style={classes.pos} color="textSecondary">
             adjective
           </Typography>
-          <Typography component="p">
-            well meaning and kindly.<br />
+          <Typography>
+            well meaning and kindly.
             {'"a benevolent smile"'}
           </Typography>
         </CardContent>

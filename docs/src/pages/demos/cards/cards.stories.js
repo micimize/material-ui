@@ -11,10 +11,10 @@ storiesOf('Demos', module).addWithChapters('Cards', {
   chapters: [
     {
       sections: [
-        { title: 'Media Control Card', sectionFn: () => <MediaControlCard /> },
-        { title: 'Recipe Review Card', sectionFn: () => <RecipeReviewCard /> },
         { title: 'Simple Card', sectionFn: () => <SimpleCard /> },
         { title: 'Simple Media Card', sectionFn: () => <SimpleMediaCard /> },
+        { title: 'Media Control Card', sectionFn: () => <MediaControlCard /> },
+        { title: 'Recipe Review Card', sectionFn: () => <RecipeReviewCard /> },
       ],
     },
   ],

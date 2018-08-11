@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Image, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import warning from 'warning';
@@ -19,20 +19,17 @@ export const styles = {
   },
 };
 
-const MEDIA_COMPONENTS = ['video', 'audio', 'picture', 'iframe', 'img'];
+const MEDIA_COMPONENTS = [Image]; //'video', 'audio', 'picture', 'iframe', 'img'];
 
 function CardMedia(props) {
-  const { classes, style, component: Component, image, src, ...other } = props;
+  const { classes, style, component: Component, image, source, ...other } = props;
 
   warning(
-    Boolean(image || src),
-    'Material-UI: either `image` or `src` property must be specified.',
+    Boolean(image || source),
+    'Material-UI: either `image` or `source` property must be specified.',
   );
 
   const isMediaComponent = MEDIA_COMPONENTS.indexOf(Component) !== -1;
-  const composedStyle =
-    !isMediaComponent && image ? styleNames({ backgroundImage: `url("${image}")` }, style) : style;
-
   return (
     <Component
       style={styleNames(
@@ -40,9 +37,9 @@ function CardMedia(props) {
         {
           [classes.media]: isMediaComponent,
         },
-        composedStyle,
+        style,
       )}
-      src={isMediaComponent ? image || src : undefined}
+      source={isMediaComponent ? image || source : undefined}
       {...other}
     />
   );
@@ -65,7 +62,7 @@ CardMedia.propTypes = {
   component: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   /**
    * Image to be displayed as a background image.
-   * Either `image` or `src` prop must be specified.
+   * Either `image` or `source` prop must be specified.
    * Note that caller must specify height otherwise the image will not be visible.
    */
   image: PropTypes.string,
@@ -74,7 +71,7 @@ CardMedia.propTypes = {
    * Available only with media components.
    * Media components: `video`, `audio`, `picture`, `iframe`, `img`.
    */
-  src: PropTypes.string,
+  source: PropTypes.string,
   /**
    * @ignore
    */
@@ -82,7 +79,7 @@ CardMedia.propTypes = {
 };
 
 CardMedia.defaultProps = {
-  component: View,
+  component: Image,
 };
 
 export default withStyles(styles, { name: 'MuiCardMedia' })(CardMedia);

@@ -8,7 +8,7 @@ import Typography from '../Typography';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: theme.mixins.gutters({
-    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
     paddingTop: 16,
     paddingBottom: 16,

@@ -17,9 +17,7 @@ export const styles = {
 function Card(props) {
   const { classes, style, raised, ...other } = props;
 
-  return (
-    <Paper style={styleNames(classes.root, style)} elevation={raised ? 8 : 1} {...other} />
-  );
+  return <Paper style={styleNames(classes.root, style)} elevation={raised ? 8 : 1} {...other} />;
 }
 
 Card.propTypes = {

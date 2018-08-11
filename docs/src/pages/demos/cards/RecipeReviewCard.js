@@ -27,10 +27,10 @@ const styles = theme => ({
     paddingTop: '56.25%', // 16:9
   },
   actions: {
-    display: 'flex',
+    flexDirection: 'row',
   },
   expand: {
-    transform: 'rotate(0deg)',
+    transform: [{ rotate: '0deg)' }],
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
     }),
@@ -40,7 +40,7 @@ const styles = theme => ({
     },
   },
   expandOpen: {
-    transform: 'rotate(180deg)',
+    transform: [{ rotate: '180deg' }],
   },
   avatar: {
     backgroundColor: red[500],

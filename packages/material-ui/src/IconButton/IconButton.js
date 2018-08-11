@@ -13,6 +13,8 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
     flex: '0 0 auto',
     fontSize: theme.typography.pxToRem(24),
     width: 48,
@@ -68,11 +70,8 @@ export const styles = theme => ({
   /* Styles applied to the children container element. */
   label: {
     width: '100%',
-    display: 'flex',
-    /*
-    alignItems: 'inherit',
-    justifyContent: 'inherit',
-    */
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
