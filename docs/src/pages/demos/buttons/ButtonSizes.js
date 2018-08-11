@@ -53,10 +53,10 @@ function ButtonSizes(props) {
       </View>
       <View style={classes.row}>
         <Button variant="fab" mini color="secondary" aria-label="Add" style={classes.button}>
-          <AddIcon />
+          <AddIcon color="onSecondary" />
         </Button>
         <Button variant="fab" color="secondary" aria-label="Add" style={classes.button}>
-          <AddIcon />
+          <AddIcon color="onSecondary" />
         </Button>
       </View>
     </View>

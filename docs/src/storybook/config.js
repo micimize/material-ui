@@ -1,9 +1,11 @@
 import { setOptions } from '@storybook/addon-options';
 import centered from './decorator-centered';
 import { configure, addDecorator } from '@storybook/react';
+import docsAsStories from './docsAsStories';
 
 // const context = require.context('../', true, /Screen\.js$/);
 const context = require.context('../pages/demos/', true, /.stories.js$/);
+
 addDecorator(centered);
 
 setOptions({

@@ -25,17 +25,17 @@ function FloatingActionButtons(props) {
   return (
     <View style={classes.row}>
       <Button variant="fab" color="primary" aria-label="Add" style={classes.button}>
-        <AddIcon />
+        <AddIcon color="onPrimary" />
       </Button>
       <Button variant="fab" color="secondary" aria-label="Edit" style={classes.button}>
-        <EditIcon />
+        <EditIcon color="onSecondary" />
       </Button>
       <Button variant="extendedFab" aria-label="Delete" style={classes.button}>
         <NavigationIcon style={classes.extendedIcon} />
         <Text>Extended</Text>
       </Button>
       <Button variant="fab" disabled aria-label="Delete" style={classes.button}>
-        <DeleteIcon />
+        <DeleteIcon color="disabled" />
       </Button>
     </View>
   );
