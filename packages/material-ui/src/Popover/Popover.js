@@ -13,6 +13,7 @@ import withStyles from '../styles/withStyles';
 import Modal from '../Modal';
 import Grow from '../Grow';
 import Paper from '../Paper';
+import { getBoundingClientRect } from '@material-ui/core/utils/reactHelpers';
 
 function getOffsetTop(rect, vertical) {
   let offset = 0;
@@ -106,9 +107,9 @@ class Popover extends React.Component {
     this.handleResize.clear();
   };
 
-  setPositioningStyles = element => {
+  setPositioningStyles = async element => {
     if (element && element.style) {
-      const positioning = this.getPositioningStyle(element);
+      const positioning = await this.getPositioningStyle(element);
       if (positioning.top !== null) {
         element.style.top = positioning.top;
       }
@@ -119,7 +120,7 @@ class Popover extends React.Component {
     }
   };
 
-  getPositioningStyle = element => {
+  getPositioningStyle = async element => {
     const { anchorEl, anchorReference, marginThreshold } = this.props;
 
     // Check if the parent has requested anchoring on an inner content node
@@ -141,7 +142,7 @@ class Popover extends React.Component {
     }
 
     // Get the offset of of the anchoring element
-    const anchorOffset = this.getAnchorOffset(contentAnchorOffset);
+    const anchorOffset = await this.getAnchorOffset(contentAnchorOffset);
 
     // Calculate element positioning
     let top = anchorOffset.top - transformOrigin.vertical;
@@ -196,7 +197,7 @@ class Popover extends React.Component {
 
   // Returns the top/left offset of the position
   // to attach to on the anchor element (or body if none is provided)
-  getAnchorOffset(contentAnchorOffset) {
+  async getAnchorOffset(contentAnchorOffset) {
     const { anchorEl, anchorOrigin, anchorReference, anchorPosition } = this.props;
 
     if (anchorReference === 'anchorPosition') {
@@ -210,7 +211,8 @@ class Popover extends React.Component {
 
     // If an anchor element wasn't provided, just use the parent body element of this Popover
     const anchorElement = getAnchorEl(anchorEl) || ownerDocument(this.paperRef).body;
-    const anchorRect = anchorElement.getBoundingClientRect();
+    // const anchorRect = anchorElement.getBoundingClientRect();
+    const anchorRect = await getBoundingClientRect(anchorElement);
     const anchorVertical = contentAnchorOffset === 0 ? anchorOrigin.vertical : 'center';
 
     return {
