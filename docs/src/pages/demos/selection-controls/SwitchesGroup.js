@@ -14,42 +14,26 @@ class SwitchesGroup extends React.Component {
     antoine: true,
   };
 
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.checked });
+  handleChange = name => value => {
+    this.setState({ [name]: value });
   };
 
   render() {
     return (
-      <FormControl component="fieldset">
-        <FormLabel component="legend">Assign responsibility</FormLabel>
+      <FormControl>
+        <FormLabel>Assign responsibility</FormLabel>
         <FormGroup>
           <FormControlLabel
-            control={
-              <Switch
-                checked={this.state.gilad}
-                onChange={this.handleChange('gilad')}
-                value="gilad"
-              />
-            }
+            control={<Switch value={this.state.gilad} onValueChange={this.handleChange('gilad')} />}
             label="Gilad Gray"
           />
           <FormControlLabel
-            control={
-              <Switch
-                checked={this.state.jason}
-                onChange={this.handleChange('jason')}
-                value="jason"
-              />
-            }
+            control={<Switch value={this.state.jason} onValueChange={this.handleChange('jason')} />}
             label="Jason Killian"
           />
           <FormControlLabel
             control={
-              <Switch
-                checked={this.state.antoine}
-                onChange={this.handleChange('antoine')}
-                value="antoine"
-              />
+              <Switch value={this.state.antoine} onValueChange={this.handleChange('antoine')} />
             }
             label="Antoine Llorca"
           />

@@ -40,14 +40,13 @@ export const styles = theme => ({
   /* Styles applied the icon element component if `checked={true}`. */
   iconChecked: {
     elevation: 2,
+    left: 14,
   },
   iconDisabled: {
     elevation: 1,
   },
   /* Styles applied to the internal `SwitchBase` component's `checked` class. */
-  checked: {
-    left: 7,
-  },
+  checked: {},
   checkedBar: {
     opacity: 0.5,
   },
@@ -64,7 +63,7 @@ export const styles = theme => ({
     top: '50%',
     left: '50%',
     marginTop: -7,
-    marginLeft: -17,
+    marginLeft: -10,
     transition: theme.transitions.create(['opacity', 'backgroundColor'], {
       duration: theme.transitions.duration.shortest,
     }),
@@ -111,21 +110,23 @@ function Switch(props) {
           disabled: styleNames(classes.disabled, classes.switchBaseDisabled),
         }}
         renderIcon={({ checked, style }) => (
-          <Animated.View
-            style={styleNames(classes.icon, style, {
-              [classes.iconChecked]: checked,
-              [classes[`color${capitalize(color)}Icon`]]: checked,
-              [classes.iconDisabled]: other.disabled,
-            })}
-          />
+          <>
+            <Animated.View
+              style={styleNames(classes.icon, style, {
+                [classes.iconChecked]: checked,
+                [classes[`color${capitalize(color)}Icon`]]: checked,
+                [classes.iconDisabled]: other.disabled,
+              })}
+            />
+            <Animated.View
+              style={styleNames(classes.bar, {
+                [classes[`color${capitalize(color)}CheckedBar`]]: checked,
+                [classes.checkedBar]: checked,
+                [classes.barDisabled]: other.disabled,
+              })}
+            />
+          </>
         )}
-        {...other}
-      />
-      <Animated.View
-        style={styleNames(classes.bar, {
-          [classes[`color${capitalize(color)}CheckedBar`]]: other.value,
-          [classes.barDisabled]: other.disabled,
-        })}
       />
     </View>
   );

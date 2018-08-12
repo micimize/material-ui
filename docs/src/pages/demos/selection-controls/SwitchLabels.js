@@ -10,8 +10,8 @@ class SwitchLabels extends React.Component {
     checkedB: true,
   };
 
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.checked });
+  handleChange = name => value => {
+    this.setState({ [name]: value });
   };
 
   render() {
@@ -19,28 +19,23 @@ class SwitchLabels extends React.Component {
       <FormGroup row>
         <FormControlLabel
           control={
-            <Switch
-              checked={this.state.checkedA}
-              onChange={this.handleChange('checkedA')}
-              value="checkedA"
-            />
+            <Switch value={this.state.checkedA} onValueChange={this.handleChange('checkedA')} />
           }
           label="Secondary"
         />
         <FormControlLabel
           control={
             <Switch
-              checked={this.state.checkedB}
-              onChange={this.handleChange('checkedB')}
-              value="checkedB"
+              value={this.state.checkedB}
+              onValueChange={this.handleChange('checkedB')}
               color="primary"
             />
           }
           label="Primary"
         />
-        <FormControlLabel control={<Switch value="checkedC" />} label="Uncontrolled" />
-        <FormControlLabel disabled control={<Switch value="checkedD" />} label="Disabled" />
-        <FormControlLabel disabled control={<Switch checked value="checkedE" />} label="Disabled" />
+        <FormControlLabel control={<Switch />} label="Uncontrolled" />
+        <FormControlLabel disabled control={<Switch />} label="Disabled" />
+        <FormControlLabel disabled control={<Switch defaultChecked />} label="Disabled" />
       </FormGroup>
     );
   }
