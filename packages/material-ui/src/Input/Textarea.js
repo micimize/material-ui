@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classnames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import debounce from 'debounce'; // < 1kb payload overhead when lodash/debounce is > 3kb.
 import EventListener from 'react-event-listener';
 import withStyles from '../styles/withStyles';
@@ -168,7 +168,7 @@ class Textarea extends React.Component {
         <EventListener target="window" onResize={this.handleResize} />
         <Text
           aria-hidden="true"
-          style={classnames(classes.textarea, classes.shadow)}
+          style={styleNames(classes.textarea, classes.shadow)}
           readOnly
           ref={this.handleRefSinglelineShadow}
           rows="1"
@@ -177,7 +177,7 @@ class Textarea extends React.Component {
         />
         <Text
           aria-hidden="true"
-          style={classnames(classes.textarea, classes.shadow)}
+          style={styleNames(classes.textarea, classes.shadow)}
           defaultValue={defaultValue}
           readOnly
           ref={this.handleRefShadow}
@@ -187,7 +187,7 @@ class Textarea extends React.Component {
         />
         <Text
           rows={rows}
-          style={classnames(classes.textarea, style)}
+          style={styleNames(classes.textarea, style)}
           defaultValue={defaultValue}
           value={value}
           onChange={this.handleChange}

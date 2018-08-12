@@ -26,6 +26,7 @@ module.exports = storybookBaseConfig => {
     nodeModule('react-native-animatable')
   )
   */
+  storybookBaseConfig.devtool = 'source-map'
 
   storybookBaseConfig.module.rules.push({
     test: /\.(gif|jpe?g|png|svg)$/,
@@ -34,6 +35,15 @@ module.exports = storybookBaseConfig => {
       options: { name: '[name].[ext]' }
     }
   });
+
+  // storybookBaseConfig.node.fs = true
+  // storybookBaseConfig.node.module = true
+  storybookBaseConfig.node = {
+    fs: 'empty',
+    module: 'empty'
+
+    // See "Other node core libraries" for additional options.
+  }
 
   storybookBaseConfig.resolve.extensions = ['.web.js', '.js', '.json', '.web.jsx', '.jsx'];
 

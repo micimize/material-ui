@@ -185,7 +185,7 @@ class TextFields extends React.Component {
         >
           {currencies.map(option => (
             <MenuItem key={option.value} value={option.value}>
-              {option.label}
+              <Text>{option.label}</Text>
             </MenuItem>
           ))}
         </TextField>
@@ -207,7 +207,7 @@ class TextFields extends React.Component {
         >
           {currencies.map(option => (
             <Picker.Item key={option.value} value={option.value}>
-              {option.label}
+              <Text>{option.label}</Text>
             </Picker.Item>
           ))}
         </TextField>

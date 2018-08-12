@@ -2,7 +2,6 @@ import React from 'react';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
 import warning from 'warning';
 import withStyles from '../styles/withStyles';
 

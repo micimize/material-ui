@@ -495,7 +495,7 @@ class Input extends React.Component {
 
     return (
       <View style={className} {...other}>
-        {startAdornment}
+        {typeof startAdornment === 'string' ? <Text>{startAdornment}</Text> : startAdornment}
         <InputComponent
           aria-invalid={error}
           autoComplete={autoComplete}
@@ -518,7 +518,7 @@ class Input extends React.Component {
           value={value}
           {...inputProps}
         />
-        {endAdornment}
+        {typeof endAdornment === 'string' ? <Text>{endAdornment}</Text> : endAdornment}
       </View>
     );
   }

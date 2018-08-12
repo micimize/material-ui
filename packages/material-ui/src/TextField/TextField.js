@@ -105,7 +105,7 @@ function TextField(props) {
   return (
     <FormControl
       aria-describedby={helperTextId}
-      style={className}
+      style={style}
       error={error}
       fullWidth={fullWidth}
       required={required}
@@ -113,7 +113,7 @@ function TextField(props) {
     >
       {label && (
         <InputLabel htmlFor={id} {...InputLabelProps}>
-          {label}
+          <Text>{label}</Text>
         </InputLabel>
       )}
       {select ? (
@@ -125,7 +125,7 @@ function TextField(props) {
       )}
       {helperText && (
         <FormHelperText id={helperTextId} {...FormHelperTextProps}>
-          {helperText}
+          <Text>{helperText}</Text>
         </FormHelperText>
       )}
     </FormControl>

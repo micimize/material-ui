@@ -136,7 +136,7 @@ class MenuList extends React.Component {
         ref={ref => {
           this.listRef = ReactDOM.findDOMNode(ref);
         }}
-        style={className}
+        style={style}
         onKeyDown={this.handleKeyDown}
         onBlur={this.handleBlur}
         {...other}
