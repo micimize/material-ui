@@ -71,10 +71,11 @@ class SwitchBase extends React.Component {
     const {
       autoFocus,
       value,
-      checkedIcon,
       classes,
       style: styleProp,
       disabled: disabledProp,
+      renderIcon,
+      checkedIcon,
       icon,
       id,
       inputProps,
@@ -88,7 +89,6 @@ class SwitchBase extends React.Component {
       tabIndex,
       ...other
     } = this.props;
-    console.log(value);
 
     const { muiFormControl } = this.context;
     let disabled = disabledProp;
@@ -121,7 +121,11 @@ class SwitchBase extends React.Component {
         onPress={this.changeHandler(checked)}
         {...other}
       >
-        {React.cloneElement(checked ? checkedIcon : icon, { style })}
+        {renderIcon
+          ? renderIcon({ checked, style })
+          : checked
+            ? React.cloneElement(checkedIcon, { style: [checkedIcon.props.style, style] })
+            : React.cloneElement(icon, { style: [icon.props.style, style] })}
       </IconButton>
     );
   }
@@ -218,6 +222,11 @@ SwitchBase.propTypes = {
    * @ignore
    */
   tabIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+  /**
+   * Alternative to icon + checked icon. will be passed ({ style, checked })
+   */
+  renderIcon: PropTypes.func,
 };
 
 SwitchBase.defaultProps = {

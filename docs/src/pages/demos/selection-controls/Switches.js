@@ -8,28 +8,23 @@ class Switches extends React.Component {
     checkedB: true,
   };
 
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.checked });
+  handleChange = name => value => {
+    this.setState({ [name]: value });
   };
 
   render() {
     return (
       <View>
+        <Switch value={this.state.checkedA} onValueChange={this.handleChange('checkedA')} />
         <Switch
-          checked={this.state.checkedA}
-          onChange={this.handleChange('checkedA')}
-          value="checkedA"
-        />
-        <Switch
-          checked={this.state.checkedB}
-          onChange={this.handleChange('checkedB')}
-          value="checkedB"
+          value={this.state.checkedB}
+          onValueChange={this.handleChange('checkedB')}
           color="primary"
         />
-        <Switch value="checkedC" />
-        <Switch disabled value="checkedD" />
-        <Switch disabled checked value="checkedE" />
-        <Switch defaultChecked value="checkedF" color="default" />
+        <Switch value={true} />
+        <Switch disabled />
+        <Switch disabled value={true} />
+        <Switch defaultChecked color="default" />
       </View>
     );
   }

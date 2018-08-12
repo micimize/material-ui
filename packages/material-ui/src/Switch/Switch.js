@@ -6,81 +6,58 @@ import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import SwitchBase from '../internal/SwitchBase';
 
+import { Animated } from '../styles/extendedStyles';
+
+/*
+  TODO: This is a bit of a mess
+*/
+
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    display: 'inline-flex',
+    flexDirection: 'row',
     width: 62,
     position: 'relative',
     flexShrink: 0,
-    // For correct alignment with the text.
-    textAlignVertical: 'middle',
-  },
-  /* Styles used to create the `icon` passed to the internal `SwitchBase` component `icon` prop. */
-  icon: {
-    boxShadow: theme.shadows[1],
-    // backgroundColor: 'currentColor',
-    width: 20,
-    height: 20,
-    borderRadius: '50%',
-  },
-  /* Styles applied the icon element component if `checked={true}`. */
-  iconChecked: {
-    boxShadow: theme.shadows[2],
   },
   /* Styles applied to the internal `SwitchBase` component's `root` class. */
   switchBase: {
     zIndex: 1,
-    color: theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[400],
-    transition: theme.transitions.create('transform', {
+  },
+  /* Styles used to create the `icon` passed to the internal `SwitchBase` component `icon` prop. */
+  icon: {
+    left: 0,
+    elevation: 1,
+    width: 20,
+    height: 20,
+    borderRadius: '50%',
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[400],
+    transition: theme.transitions.create(['left', 'backgroundColor'], {
       duration: theme.transitions.duration.shortest,
     }),
   },
+  /* Styles applied the icon element component if `checked={true}`. */
+  iconChecked: {
+    elevation: 2,
+  },
+  iconDisabled: {
+    elevation: 1,
+  },
   /* Styles applied to the internal `SwitchBase` component's `checked` class. */
   checked: {
-    transform: 'translateX(14px)',
-    '& + $bar': {
-      opacity: 0.5,
-    },
+    left: 7,
+  },
+  checkedBar: {
+    opacity: 0.5,
   },
   /* Styles applied to the internal SwitchBase component's root element if `color="primary"`. */
-  colorPrimary: {
-    '[checked="true"]': {
-      color: theme.palette.primary.main,
-      '& + $bar': {
-        backgroundColor: theme.palette.primary.main,
-      },
-    },
-  },
-  /* Styles applied to the internal SwitchBase component's root element if `color="secondary"`. */
-  colorSecondary: {
-    '[checked="true"]': {
-      color: theme.palette.secondary.main,
-      '& + $bar': {
-        backgroundColor: theme.palette.secondary.main,
-      },
-    },
-  },
-  /* Styles applied to the internal SwitchBase component's disabled class. */
-  disabled: {
-    '& + $bar': {
-      opacity: theme.palette.type === 'light' ? 0.12 : 0.1,
-    },
-    '& $icon': {
-      boxShadow: theme.shadows[1],
-    },
-    '[switchBase="true"]': {
-      color: theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[800],
-      '& + $bar': {
-        backgroundColor:
-          theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
-      },
-    },
+  switchBaseDisabled: {
+    color: theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[800],
   },
   /* Styles applied to the bar element. */
   bar: {
     borderRadius: 14 / 2,
-    display: 'block',
     position: 'absolute',
     width: 34,
     height: 14,
@@ -88,12 +65,36 @@ export const styles = theme => ({
     left: '50%',
     marginTop: -7,
     marginLeft: -17,
-    transition: theme.transitions.create(['opacity', 'background-color'], {
+    transition: theme.transitions.create(['opacity', 'backgroundColor'], {
       duration: theme.transitions.duration.shortest,
     }),
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
     opacity: theme.palette.type === 'light' ? 0.38 : 0.3,
+  },
+  barDisabled: {
+    opacity: theme.palette.type === 'light' ? 0.12 : 0.1,
+  },
+  baseWithBarDisabled: {
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
+  },
+  colorPrimary: {},
+  colorPrimaryChecked: {},
+  colorPrimaryIcon: {
+    backgroundColor: theme.palette.primary.main,
+  },
+  colorPrimaryCheckedBar: {
+    backgroundColor: theme.palette.primary.main,
+  },
+  /* Styles applied to the internal SwitchBase component's root element if `color="secondary"`. */
+  colorSecondary: {},
+  colorSecondaryChecked: {},
+  colorSecondaryIcon: {
+    backgroundColor: theme.palette.secondary.main,
+  },
+  colorSecondaryCheckedBar: {
+    backgroundColor: theme.palette.secondary.main,
   },
 });
 
@@ -101,19 +102,32 @@ function Switch(props) {
   const { classes, style, color, ...other } = props;
 
   return (
-    <Text style={styleNames(classes.root, style)}>
+    <View style={styleNames(classes.root, style)}>
       <SwitchBase
-        icon={<Text style={classes.icon} />}
+        activeOpacity={1}
         classes={{
           root: styleNames(classes.switchBase, classes[`color${capitalize(color)}`]),
-          checked: classes.checked,
-          disabled: classes.disabled,
+          checked: styleNames(classes.checked, classes[`color${capitalize(color)}Checked`]),
+          disabled: styleNames(classes.disabled, classes.switchBaseDisabled),
         }}
-        checkedIcon={<Text style={styleNames(classes.icon, classes.iconChecked)} />}
+        renderIcon={({ checked, style }) => (
+          <Animated.View
+            style={styleNames(classes.icon, style, {
+              [classes.iconChecked]: checked,
+              [classes[`color${capitalize(color)}Icon`]]: checked,
+              [classes.iconDisabled]: other.disabled,
+            })}
+          />
+        )}
         {...other}
       />
-      <Text style={classes.bar} />
-    </Text>
+      <Animated.View
+        style={styleNames(classes.bar, {
+          [classes[`color${capitalize(color)}CheckedBar`]]: other.value,
+          [classes.barDisabled]: other.disabled,
+        })}
+      />
+    </View>
   );
 }
 

@@ -302,7 +302,6 @@ class ButtonBase extends React.Component {
     return (
       <ComponentProp
         disabled={disabled}
-        activeOpacity={0.6}
         onBlur={this.handleBlur}
         onFocus={this.handleFocus}
         onMouseDown={this.handleMouseDown}
@@ -457,6 +456,8 @@ ButtonBase.propTypes = {
    * Valid property values include `button`, `submit`, and `reset`.
    */
   type: PropTypes.string,
+
+  activeOpacity: PropTypes.number,
 };
 
 ButtonBase.defaultProps = {
@@ -467,6 +468,7 @@ ButtonBase.defaultProps = {
   focusRipple: false,
   tabIndex: '0',
   type: 'button',
+  activeOpacity: 0.6,
 };
 
 export default withStyles(styles, { name: 'MuiButtonBase' })(ButtonBase);
