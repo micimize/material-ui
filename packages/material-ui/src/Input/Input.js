@@ -65,8 +65,7 @@ export const styles = theme => {
     /* Styles applied to the root element. */
     root: {
       // Mimics the default input display property used by browsers for an input.
-      display: 'inline-flex',
-      position: 'relative',
+      flexDirection: 'row',
       '[disabled="true"]': {
         color: theme.palette.text.disabled,
       },

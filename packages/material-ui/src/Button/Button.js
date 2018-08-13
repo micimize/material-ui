@@ -8,7 +8,7 @@ import withStyles from '../styles/withStyles';
 import { fade } from '../styles/colorManipulator';
 import ButtonBase from '../ButtonBase';
 import { capitalize } from '../utils/helpers';
-import { Animated } from '../styles/extendedStyles';
+import { Animated } from '../styles/extended-styles';
 
 export const styles = theme => ({
   /* Styles applied to the root element. */

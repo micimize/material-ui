@@ -1,7 +1,4 @@
-import React from 'react';
-import { View, Text, StyleSheet, Platform } from 'react-native';
-import * as Animatable from 'react-native-animatable';
-import { flattenDiagnosticMessageText } from '../../../../node_modules/typescript';
+import { Platform } from 'react-native';
 
 function objectFilterer(filter) {
   return raw =>
@@ -31,7 +28,6 @@ function normalize(transitionProps) {
 }
 
 const styleExtensions = new Map();
-Object.assign(window, { styleExtensions });
 
 function addExtensions(id, { transition }) {
   if (transition) {
@@ -56,38 +52,9 @@ function getExtensions(style) {
         : {};
 }
 
-const Animated = {
-  View(props) {
-    let transitionProps = getExtensions(props.style).transition;
-    return transitionProps ? (
-      <Animatable.View {...transitionProps} {...props} />
-    ) : (
-      <View {...props} />
-    );
-  },
-  Text(props) {
-    let transitionProps = getExtensions(props.style).transition;
-    return transitionProps ? (
-      <Animatable.Text {...transitionProps} {...props} />
-    ) : (
-      <Text {...props} />
-    );
-  },
-  createComponent(Component) {
-    const AnimatableComponent = Animatable.createAnimatableComponent(Component);
-    return props => {
-      let transitionProps = getExtensions(props.style).transition;
-      return transitionProps ? (
-        <AnimatableComponent
-          {...transitionProps}
-          {...props}
-          style={StyleSheet.flatten(props.style)}
-        />
-      ) : (
-        <Component {...props} />
-      );
-    };
-  },
+export {
+  addExtensions as add,
+  getExtensions as get,
+  pickExtensions as pick,
+  excludeExtensions as exclude,
 };
-
-export { addExtensions, getExtensions, pickExtensions, excludeExtensions, Animated };

@@ -9,7 +9,7 @@ import withStyles from '../styles/withStyles';
 import { listenForFocusKeys, detectFocusVisible } from './focusVisible';
 import TouchRipple from './TouchRipple';
 import createRippleHandler from './createRippleHandler';
-import { Animated } from '../styles/extendedStyles';
+import { Animated } from '../styles/extended-styles';
 
 const DefaultButton = Animated.createComponent(TouchableOpacity);
 

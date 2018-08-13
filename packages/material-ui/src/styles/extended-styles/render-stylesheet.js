@@ -1,7 +1,7 @@
 import { Platform } from 'react-native';
 import expandShorthand, { conditionalExpander, cast } from './shorthand-properties';
-import resolveMediaQueries from './resolveMediaQueries';
-import createWithExtensionsRule from './createWithExtensionsRule';
+import resolveMediaQueries from './resolve-media-queries';
+import createWithExtensionsRule from './create-with-extensions-rule';
 
 function objectFilterer(filter) {
   return raw =>
