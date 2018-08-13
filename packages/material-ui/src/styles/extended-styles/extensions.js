@@ -1,4 +1,4 @@
-import { Platform } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 function objectFilterer(filter) {
   return raw =>
@@ -25,19 +25,34 @@ function normalize(transitionProps) {
   } else if (transitionProps === 'elevation') {
     return normalizedElevation;
   }
+  return transitionProps;
 }
 
 const styleExtensions = new Map();
 
-function addExtensions(id, { transition }) {
+// TODO implementing :focus might have been premature
+function addExtensions(id, { transition, ':focus': focus }) {
+  let extensions = styleExtensions.get(id);
   if (transition) {
-    styleExtensions.set(id, {
+    extensions = {
+      ...(extensions || {}),
+      // overwrite existing transitions
       transition: { ...transition, transition: normalize(transition.transition) },
-    });
+    };
+  }
+  if (focus) {
+    extensions = {
+      ...(extensions || {}),
+      // merge existing focus rules
+      focus: [...((extensions || {}).focus || []), StyleSheet.create({ focus }).focus],
+    };
+  }
+  if (extensions) {
+    styleExtensions.set(id, extensions);
   }
 }
 
-const extensionsKeys = ['transition'];
+const extensionsKeys = ['transition', ':focus'];
 
 const excludeExtensions = objectFilterer(key => !extensionsKeys.includes(key));
 const pickExtensions = objectFilterer(key => extensionsKeys.includes(key));

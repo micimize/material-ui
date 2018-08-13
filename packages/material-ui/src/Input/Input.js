@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text } from 'react-native';
+import { TextInput } from '../styles/extended-styles/focusable';
+import { View as Underline } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -84,28 +86,25 @@ export const styles = theme => {
     disabled: {},
     /* Styles applied to the root element if `disabledUnderline={false}`. */
     underline: {
-      '&:after': {
-        borderBottom: `2px solid ${theme.palette.primary[light ? 'dark' : 'light']}`,
-        left: 0,
-        bottom: 0,
-        // Doing the other way around crash on IE11 "''" https://github.com/cssinjs/jss/issues/242
-        content: '""',
-        position: 'absolute',
-        right: 0,
-        transform: 'scaleX(0)',
-        transition: theme.transitions.create('transform', {
-          duration: theme.transitions.duration.shorter,
-          easing: theme.transitions.easing.easeOut,
-        }),
-        pointerEvents: 'none', // Transparent to the hover style.
-      },
-      '&$focused:after': {
-        transform: 'scaleX(1)',
-      },
-      '&$error:after': {
-        borderBottomColor: theme.palette.error.main,
-        transform: 'scaleX(1)', // error is always underlined in red
-      },
+      borderBottom: `2px solid ${theme.palette.primary[light ? 'dark' : 'light']}`,
+      left: 0,
+      bottom: 0,
+      position: 'absolute',
+      right: 0,
+      transform: [{ scaleX: 0 }],
+      transition: theme.transitions.create('scaleX', {
+        duration: theme.transitions.duration.shorter,
+        easing: theme.transitions.easing.easeOut,
+      }),
+    },
+    underlineFocused: {
+      transform: [{ scaleX: 1 }],
+    },
+    underlineError: {
+      borderBottomColor: theme.palette.error.main,
+      transform: [{ scaleX: 1 }],
+    },
+    _____________: {
       '&:before': {
         borderBottom: `1px solid ${bottomLineColor}`,
         left: 0,
@@ -160,7 +159,7 @@ export const styles = theme => {
       // '&::-moz-placeholder': placeholder, // Firefox 19+
       // '&:-ms-input-placeholder': placeholder, // IE 11
       // '&::-ms-input-placeholder': placeholder, // Edge
-      '&:focus': {
+      ':focus': {
         outline: 0,
       },
       // Reset Firefox invalid required input style
@@ -446,7 +445,6 @@ class Input extends React.Component {
         [classes.focused]: this.state.focused,
         [classes.formControl]: muiFormControl,
         [classes.multiline]: multiline,
-        [classes.underline]: !disableUnderline,
       },
       styleProp,
     );
@@ -516,6 +514,13 @@ class Input extends React.Component {
           type={type}
           value={value}
           {...inputProps}
+        />
+        <Underline
+          style={styleNames(classes.underline, {
+            [classes.underlineDisabled]: disabled,
+            [classes.underlineError]: error,
+            [classes.underlineFocused]: this.state.focused,
+          })}
         />
         {typeof endAdornment === 'string' ? <Text>{endAdornment}</Text> : endAdornment}
       </View>
