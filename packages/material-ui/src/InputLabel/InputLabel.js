@@ -6,6 +6,9 @@ import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 import FormLabel from '../FormLabel';
+import { createComponent } from '../styles/extended-styles/animated';
+
+const Label = createComponent(FormLabel);
 
 export const styles = theme => ({
   /* Styles applied to the root element. */
@@ -18,21 +21,21 @@ export const styles = theme => ({
     left: 0,
     top: 0,
     // slight alteration to spec spacing to match visual spec result
-    transform: 'translate(0, 24px) scale(1)',
+    transform: [{ translateY: 24 }, { scale: 1 }],
   },
   /* Styles applied to the root element if `margin="dense"`. */
   marginDense: {
     // Compensation for the `Input.inputDense` style.
-    transform: 'translate(0, 21px) scale(1)',
+    transform: [{ translateY: 21 }, { scale: 1 }],
   },
   /* Styles applied to the `input` element if `shrink={true}`. */
   shrink: {
-    transform: 'translate(0, 1.5px) scale(0.75)',
+    transform: [{ translateY: 1.5 }, { scale: 0.75 }],
     transformOrigin: 'top left',
   },
   /* Styles applied to the `input` element if `disableAnimation={false}`. */
   animated: {
-    transition: theme.transitions.create('transform', {
+    transition: theme.transitions.create(['translateY', 'scale'], {
       duration: theme.transitions.duration.shorter,
       easing: theme.transitions.easing.easeOut,
     }),
@@ -75,9 +78,9 @@ function InputLabel(props, context) {
   );
 
   return (
-    <FormLabel data-shrink={shrink} style={className} classes={FormLabelClasses} {...other}>
+    <Label data-shrink={shrink} style={className} classes={FormLabelClasses} {...other}>
       {children}
-    </FormLabel>
+    </Label>
   );
 }
 

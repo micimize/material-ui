@@ -24,11 +24,11 @@ export function hasValue(value) {
 // @param SSR
 // @returns {boolean} False when not present or empty string.
 //                    True when any number or string with length.
-export function isFilled(obj, SSR = false) {
+export function isFilled(obj, includeDefault = false) {
   return (
     obj &&
     ((hasValue(obj.value) && obj.value !== '') ||
-      (SSR && hasValue(obj.defaultValue) && obj.defaultValue !== ''))
+      (includeDefault && hasValue(obj.defaultValue) && obj.defaultValue !== ''))
   );
 }
 
@@ -244,13 +244,15 @@ function formControlState(props, context) {
 class Input extends React.Component {
   isControlled = this.props.value != null;
 
-  input = null; // Holds the input reference
-
   constructor(props, context) {
     super(props, context);
 
     if (this.isControlled) {
-      this.checkDirty(props);
+      this.state.value = '';
+    }
+
+    if (this.isControlled) {
+      this.checkDirty();
     }
 
     const componentWillReceiveProps = (nextProps, nextContext) => {
@@ -292,6 +294,7 @@ class Input extends React.Component {
 
   state = {
     focused: false,
+    dirty: false,
   };
 
   getChildContext() {
@@ -304,13 +307,13 @@ class Input extends React.Component {
 
   componentDidMount() {
     if (!this.isControlled) {
-      this.checkDirty(this.inputRef);
+      this.checkDirty();
     }
   }
 
   componentDidUpdate() {
     if (this.isControlled) {
-      this.checkDirty(this.props);
+      this.checkDirty();
     } // else performed in the onChange
   }
 
@@ -347,7 +350,11 @@ class Input extends React.Component {
 
   handleChange = event => {
     if (!this.isControlled) {
-      this.checkDirty(this.inputRef);
+      this.setState({ dirty: true, value: event.target.value }, () => {
+        this.checkDirty();
+      });
+    } else {
+      this.setState({ dirty: true });
     }
 
     // Perform in the willUpdate
@@ -356,30 +363,15 @@ class Input extends React.Component {
     }
   };
 
-  handleRefInput = ref => {
-    this.inputRef = ref;
-
-    let refProp;
-
-    if (this.props.inputRef) {
-      refProp = this.props.inputRef;
-    } else if (this.props.inputProps && this.props.inputProps.ref) {
-      refProp = this.props.inputProps.ref;
-    }
-
-    if (refProp) {
-      if (typeof refProp === 'function') {
-        refProp(ref);
-      } else {
-        refProp.current = ref;
-      }
-    }
-  };
-
-  checkDirty(obj) {
+  checkDirty = () => {
     const { muiFormControl } = this.context;
-
-    if (isFilled(obj)) {
+    // if dirty, ignore defaults
+    if (
+      isFilled(
+        this.isControlled ? this.props : { ...this.props, value: this.state.value },
+        !this.state.dirty,
+      )
+    ) {
       if (muiFormControl && muiFormControl.onFilled) {
         muiFormControl.onFilled();
       }
@@ -395,7 +387,7 @@ class Input extends React.Component {
     if (this.props.onEmpty) {
       this.props.onEmpty();
     }
-  }
+  };
 
   render() {
     const {
@@ -412,7 +404,6 @@ class Input extends React.Component {
       id,
       inputComponent,
       inputProps: { style: inputPropsClassName, ...inputPropsProp } = {},
-      inputRef,
       margin: marginProp,
       multiline,
       name,
@@ -462,29 +453,17 @@ class Input extends React.Component {
     );
 
     let InputComponent = TextInput;
-    let inputProps = {
-      ...inputPropsProp,
-      ref: this.handleRefInput,
-    };
+    let inputProps = inputPropsProp;
 
     if (inputComponent) {
       InputComponent = inputComponent;
-      inputProps = {
-        // Rename ref to inputRef as we don't know the
-        // provided `inputComponent` structure.
-        inputRef: this.handleRefInput,
-        ...inputProps,
-        ref: null,
-      };
     } else if (multiline) {
       if (rows && !rowsMax) {
         InputComponent = Text;
       } else {
         inputProps = {
           rowsMax,
-          textareaRef: this.handleRefInput,
           ...inputProps,
-          ref: null,
         };
         InputComponent = Textarea;
       }
@@ -588,10 +567,6 @@ Input.propTypes = {
    */
   inputProps: PropTypes.object,
   /**
-   * Use that property to pass a ref callback to the native input component.
-   */
-  inputRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
-  /**
    * If `dense`, will adjust vertical spacing. This is normally obtained via context from
    * FormControl.
    */
@@ -680,7 +655,6 @@ Input.defaultProps = {
   disableUnderline: false,
   fullWidth: false,
   multiline: false,
-  type: 'text',
 };
 
 Input.contextTypes = {

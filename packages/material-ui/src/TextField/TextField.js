@@ -112,7 +112,7 @@ function TextField(props) {
       {...other}
     >
       {label && (
-        <InputLabel htmlFor={id} {...InputLabelProps}>
+        <InputLabel {...InputLabelProps}>
           <Text>{label}</Text>
         </InputLabel>
       )}
