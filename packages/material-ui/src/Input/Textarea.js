@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 
+const ROW_HEIGHT = 19;
+
 export const styles = {
   /* Styles applied to the root element. */
   root: {
@@ -19,7 +21,7 @@ export const styles = {
     height: '100%',
     resize: 'none',
     padding: 0,
-    lineHeight: 19,
+    lineHeight: ROW_HEIGHT,
     outline: 'none',
     background: 'transparent',
   },
@@ -70,7 +72,12 @@ class Textarea extends React.Component {
     } = this.props;
 
     return (
-      <View style={classes.root}>
+      <View
+        style={styleNames(classes.root, {
+          minHeight: rows * ROW_HEIGHT,
+          maxHeight: rowsMax ? rowsMax * ROW_HEIGHT : undefined,
+        })}
+      >
         <Text style={styleNames(classes.textarea, style, classes.sizingText)}>
           {this.isControlled ? value : this.value}.
         </Text>
@@ -131,6 +138,7 @@ Textarea.propTypes = {
 
 Textarea.defaultProps = {
   rows: 1,
+  rowsMax: 3,
 };
 
 export default withStyles(styles)(Textarea);

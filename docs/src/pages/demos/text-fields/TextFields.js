@@ -121,7 +121,7 @@ class TextFields extends React.Component {
           id="multiline-static"
           label="Multiline"
           multiline
-          rows="4"
+          rows={4}
           defaultValue="Default Value"
           style={classes.textField}
           margin="normal"
