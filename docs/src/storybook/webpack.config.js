@@ -20,13 +20,11 @@ module.exports = storybookBaseConfig => {
     }
   )
   */
-
-  /*
-  storybookBaseConfig.module.rules[0].include.push(
-    nodeModule('react-native-animatable')
-  )
-  */
   storybookBaseConfig.devtool = 'source-map'
+
+  storybookBaseConfig.module.rules[0].include.push(
+    //nodeModule('react-native-vector-icons')
+  )
 
   storybookBaseConfig.module.rules.push({
     test: /\.(gif|jpe?g|png|svg)$/,
@@ -34,7 +32,12 @@ module.exports = storybookBaseConfig => {
       loader: 'url-loader',
       options: { name: '[name].[ext]' }
     }
+  }, {
+    test: /\.ttf$/,
+    include: path.resolve(nodeModule("react-native-vector-icons")  + '/../Fonts'),
+    loader: 'url-loader',
   });
+
 
   // storybookBaseConfig.node.fs = true
   // storybookBaseConfig.node.module = true

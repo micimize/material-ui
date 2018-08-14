@@ -4,6 +4,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
+
+import NativeIcon from 'react-native-vector-icons/dist/MaterialIcons';
+import injectFonts from './fonts';
+injectFonts();
 
 export const styles = theme => ({
   /* Styles applied to the root element. */
@@ -44,24 +49,21 @@ export const styles = theme => ({
 
 /* TODO doesn't work right now, maybe use react-native-vector-icons */
 function Icon(props) {
-  const { children, classes, className, color, fontSize, ...other } = props;
+  const { children, classes, style, color, fontSize, ...other } = props;
 
   return (
-    <Text
-      className={classNames(
-        'material-icons',
+    <NativeIcon
+      name={children.replace('_', '-', 'g')}
+      style={styleNames(
         classes.root,
         {
           [classes[`color${capitalize(color)}`]]: color !== 'inherit',
           [classes[`fontSize${capitalize(fontSize)}`]]: fontSize !== 'default',
         },
-        className,
+        style,
       )}
-      aria-hidden="true"
       {...other}
-    >
-      {children}
-    </Text>
+    />
   );
 }
 
