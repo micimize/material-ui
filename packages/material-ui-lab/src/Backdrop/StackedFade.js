@@ -1,95 +1,54 @@
-// @inheritedComponent Fade
-
 import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { View as RNView } from 'react-native';
 import withStyles from '@material-ui/core/styles/withStyles';
-import Fade from '@material-ui/core/Fade';
-import { duration } from '@material-ui/core/styles/transitions';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
+import { View } from '@material-ui/core/styles/extended-styles/animated';
 
-export const styles = {
+export const rootStyles = {
   root: {
-    position: 'relative',
-    top: 0,
-    left: '100%',
-    marginLeft: '-100%',
-    float: 'left',
+    justifyContent: 'center',
+    display: 'flex',
+    width: '100%',
   },
-  selected: {},
 };
 
-function StackedFade(props) {
-  const {
-    classes,
-    timeout,
-    className: classNameProp,
-    style: styleProp,
-    in: inProp,
-    ...other
-  } = props;
-
-  const className = classNames(classes.root, classNameProp);
-
-  const inTransitionDelay =
-    (styleProp && styleProp.transitionDuration) || typeof timeout === 'object'
-      ? timeout.exit
-      : timeout;
-
-  const style = {
-    ...styleProp,
-    zIndex: inProp ? 1 : 0,
-    transitionDelay: inProp ? inTransitionDelay : 0,
-  };
-
-  return <Fade className={className} style={style} in={inProp} timeout={timeout} {...other} />;
+function FadeStack({ classes, style, ...props }) {
+  return <RNView style={styleNames(classes.root, style)} {...props} />;
 }
 
-StackedFade.propTypes = {
-  /**
-   * A single child content element.
-   */
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-  /**
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css-api) below for more details.
-   */
-  classes: PropTypes.object.isRequired,
-  /**
-   * @ignore
-   */
-  className: PropTypes.string,
-  /**
-   * If `true`, the component will transition in.
-   */
-  in: PropTypes.bool,
-  /**
-   * @ignore
-   */
-  onEnter: PropTypes.func,
-  /**
-   * @ignore
-   */
-  onExit: PropTypes.func,
-  /**
-   * @ignore
-   */
-  style: PropTypes.object,
-  /**
-   * @ignore
-   */
-  theme: PropTypes.object,
-  /**
-   * The duration for the transition, in milliseconds.
-   * You may specify a single timeout for all transitions, or individually with an object.
-   */
-  timeout: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.shape({ enter: PropTypes.number, exit: PropTypes.number }),
-  ]),
-};
+export const itemStyles = theme => ({
+  item: {
+    opacity: 0,
+    zIndex: 0,
+    position: 'absolute',
+    transition: theme.transitions.create(['opacity', 'zIndex'], {
+      easing: 'ease-in-out',
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  selected: {
+    opacity: 1,
+    zIndex: 1,
+    transition: theme.transitions.create(['opacity', 'zIndex'], {
+      duration: theme.transitions.duration.shortest,
+      easing: 'ease-in-out',
+      delay: 150,
+    }),
+  },
+});
 
-StackedFade.defaultProps = {
-  timeout: duration.shortest,
-};
+function FadeStackItem(props) {
+  const { classes, style: styleProp, children, selected, ...other } = props;
+  const style = styleNames(classes.item, styleProp, {
+    [classes.selected]: selected,
+  });
+  return (
+    <View style={style} {...other}>
+      {children}
+    </View>
+  );
+}
 
-export default withStyles(styles, { name: 'MuiStackedFade' })(StackedFade);
+const _FadeStack = withStyles(rootStyles, { name: 'MuiFadeStack' })(FadeStack);
+const _FadeStackItem = withStyles(itemStyles, { name: 'MuiFadeStackItem' })(FadeStackItem);
+export { _FadeStack as FadeStack, _FadeStackItem as FadeStackItem };

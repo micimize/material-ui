@@ -8,7 +8,7 @@ import BackSection from '@material-ui/lab/Backdrop/BackdropBackSection';
 import Front from '@material-ui/lab/Backdrop/BackdropFront';
 import Subheader from '@material-ui/lab/Backdrop/BackdropFrontSubheader';
 import FrontContent from '@material-ui/lab/Backdrop/BackdropFrontContent';
-import StackedFade from '@material-ui/lab/Backdrop/StackedFade';
+import { FadeStack, FadeStackItem } from '@material-ui/lab/Backdrop/StackedFade';
 import MenuItem from '@material-ui/lab/Backdrop/BackdropBackMenuItem';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -122,11 +122,11 @@ class MultiSectionBackdrop extends React.Component {
                 >
                   <MenuIcon />
                 </IconButton>
-                <View style={classes.flex}>
-                  <StackedFade in={!expanded}>
+                <FadeStack style={classes.flex}>
+                  <FadeStackItem selected={!expanded}>
                     <Title>Luxurious Lizards</Title>
-                  </StackedFade>
-                  <StackedFade in={expanded === 'nav'}>
+                  </FadeStackItem>
+                  <FadeStackItem selected={expanded === 'nav'}>
                     <Title>
                       {"Nature's Nobility"}
                       <IconButton
@@ -138,11 +138,11 @@ class MultiSectionBackdrop extends React.Component {
                         <FilterIcon />
                       </IconButton>
                     </Title>
-                  </StackedFade>
-                  <StackedFade in={expanded === 'filters'}>
+                  </FadeStackItem>
+                  <FadeStackItem selected={expanded === 'filters'}>
                     <Title> Filter by tags </Title>
-                  </StackedFade>
-                </View>
+                  </FadeStackItem>
+                </FadeStack>
               </Toolbar>
             </BackSection>
             <BackSection expanded={expanded === 'nav'}>

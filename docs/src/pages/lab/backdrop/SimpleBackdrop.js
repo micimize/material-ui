@@ -7,7 +7,7 @@ import BackSection from '@material-ui/lab/Backdrop/BackdropBackSection';
 import Front from '@material-ui/lab/Backdrop/BackdropFront';
 import Subheader from '@material-ui/lab/Backdrop/BackdropFrontSubheader';
 import FrontContent from '@material-ui/lab/Backdrop/BackdropFrontContent';
-import StackedFade from '@material-ui/lab/Backdrop/StackedFade';
+import { FadeStack, FadeStackItem } from '@material-ui/lab/Backdrop/StackedFade';
 import MenuItem from '@material-ui/lab/Backdrop/BackdropBackMenuItem';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -18,7 +18,7 @@ import ListItem from '@material-ui/core/ListItem';
 import SimpleMediaCard from '../../demos/cards/SimpleMediaCard';
 
 import styleNames from '@material-ui/core/styles/react-native-style-names';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 const styles = {
   root: {
@@ -38,6 +38,8 @@ const styles = {
   },
 };
 
+const Title = ({ style, ...props }) => <Typography variant="title" color="onPrimary" {...props} />;
+
 class SimpleBackdrop extends React.Component {
   state = {
     expanded: false,
@@ -46,15 +48,6 @@ class SimpleBackdrop extends React.Component {
   render() {
     const { classes } = this.props;
     const { expanded } = this.state;
-
-    const Title = ({ style, ...props }) => (
-      <Typography
-        variant="title"
-        color="onPrimary"
-        style={styleNames(classes.flex, style)}
-        {...props}
-      />
-    );
 
     return (
       <View style={classes.root}>
@@ -68,16 +61,14 @@ class SimpleBackdrop extends React.Component {
                 >
                   <MenuIcon color="onPrimary" />
                 </IconButton>
-                <Title>
-                  <StackedFade in={!expanded}>
-                    <span>Luxurious Lizards</span>
-                  </StackedFade>
-                  <StackedFade in={expanded}>
-                    <Typography variant="caption" color="onPrimary">
-                      Nature's Nobility
-                    </Typography>
-                  </StackedFade>
-                </Title>
+                <FadeStack>
+                  <FadeStackItem selected={!expanded}>
+                    <Title style={styleNames(classes.flex)}>Luxurious Lizards</Title>
+                  </FadeStackItem>
+                  <FadeStackItem selected={expanded}>
+                    <Title style={styleNames(classes.flex)}>Nature's Nobility</Title>
+                  </FadeStackItem>
+                </FadeStack>
               </Toolbar>
             </BackSection>
             <BackSection expanded={this.state.expanded}>

@@ -13,7 +13,6 @@ export const styles = theme => {
       position: 'absolute',
       zIndex: 0,
       flexDirection: 'column',
-      flexFlow: 'column',
       width: '100%',
       height: '100%',
       justifyContent: 'space-between',
