@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Fade from '@material-ui/core/Fade';
 import { isMuiElement } from '@material-ui/core/utils/reactHelpers';
+import { View, Text } from 'react-native';
 
 export const styles = theme => {
   const transition = {
@@ -87,7 +88,7 @@ function BackdropFront(props) {
   return (
     <Paper style={style} onClick={onClick} elevation={0} square {...other}>
       <Fade in={disabled}>
-        <div style={styleNames(classes.scrim, { [classes.scrimActive]: disabled })} />
+        <View style={styleNames(classes.scrim, { [classes.scrimActive]: disabled })} />
       </Fade>
       {children}
     </Paper>

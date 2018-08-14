@@ -22,9 +22,11 @@ import { View, Text } from 'react-native';
 
 const styles = {
   root: {
-    width: 360,
-    height: 616,
+    width: 360 + 20,
+    height: 616 + 20,
     position: 'relative',
+    border: '10px solid lightgrey',
+    borderRadius: 5,
   },
   flex: {
     flex: 1,

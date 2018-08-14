@@ -8,7 +8,7 @@ export const rootStyles = {
   root: {
     justifyContent: 'center',
     display: 'flex',
-    width: '100%',
+    flexGrow: 1,
   },
 };
 

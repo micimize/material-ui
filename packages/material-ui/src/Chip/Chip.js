@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
+import { View } from '@material-ui/core/styles/extended-styles/animated';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import keycode from 'keycode';
@@ -18,37 +19,39 @@ export const styles = theme => {
   return {
     /* Styles applied to the root element. */
     root: {
-      fontFamily: theme.typography.fontFamily,
-      fontSize: theme.typography.pxToRem(13),
-      display: 'inline-flex',
+      //fontFamily: theme.typography.fontFamily,
+      //fontSize: theme.typography.pxToRem(13),
       alignItems: 'center',
       justifyContent: 'center',
       height,
-      color: theme.palette.getContrastText(backgroundColor),
       backgroundColor,
       borderRadius: height / 2,
       whiteSpace: 'nowrap',
-      transition: theme.transitions.create(['background-color', 'box-shadow']),
+      transition: theme.transitions.create(['backgroundColor', 'elevation']),
+      /*
       // label will inherit this from root, then `clickable` class overrides this for both
       cursor: 'default',
       // We disable the focus ring for mouse, touch and keyboard users.
       outline: 'none',
       // textDecorationLine: 'none',
       // border: 'none', // Remove `button` border
+      */
       padding: 0, // Remove `button` padding
     },
-    /* Styles applied to the root element if `onClick` is defined or `clickable={true}`. */
+    /* Styles applied to the root element if `onPress` is defined or `clickable={true}`. */
     clickable: {
       // Remove grey highlight
 
       cursor: 'pointer',
+      /*
       '&:hover, &:focus': {
         backgroundColor: emphasize(backgroundColor, 0.08),
       },
       '&:active': {
-        boxShadow: theme.shadows[1],
+        elevation: 1,
         backgroundColor: emphasize(backgroundColor, 0.12),
       },
+      */
     },
     /* Styles applied to the root element if `onDelete` is defined. */
     deletable: {
@@ -77,12 +80,11 @@ export const styles = theme => {
       paddingRight: 12,
       userSelect: 'none',
       whiteSpace: 'nowrap',
-      cursor: 'inherit',
+      color: theme.palette.getContrastText(backgroundColor),
     },
     /* Styles applied to the `deleteIcon` element. */
     deleteIcon: {
       // Remove grey highlight
-
       color: deleteIconColor,
       cursor: 'pointer',
       height: 'auto',
@@ -100,7 +102,7 @@ export const styles = theme => {
 class Chip extends React.Component {
   chipRef = null;
 
-  handleDeleteIconClick = event => {
+  handleDeleteIconPress = event => {
     // Stop the event from bubbling up to the `Chip`
     event.stopPropagation();
     const { onDelete } = this.props;
@@ -115,12 +117,12 @@ class Chip extends React.Component {
       return;
     }
 
-    const { onClick, onDelete, onKeyDown } = this.props;
+    const { onPress, onDelete, onKeyDown } = this.props;
     const key = keycode(event);
 
-    if (onClick && (key === 'space' || key === 'enter')) {
+    if (onPress && (key === 'space' || key === 'enter')) {
       event.preventDefault();
-      onClick(event);
+      onPress(event);
     } else if (onDelete && key === 'backspace') {
       event.preventDefault();
       onDelete(event);
@@ -145,16 +147,16 @@ class Chip extends React.Component {
       component: Component,
       deleteIcon: deleteIconProp,
       label,
-      onClick,
+      onPress,
       onDelete,
       onKeyDown,
       tabIndex: tabIndexProp,
       ...other
     } = this.props;
 
-    const className = styleNames(
+    const style = styleNames(
       classes.root,
-      { [classes.clickable]: onClick || clickable },
+      { [classes.clickable]: onPress || clickable },
       { [classes.deletable]: onDelete },
       styleProp,
     );
@@ -164,11 +166,11 @@ class Chip extends React.Component {
       deleteIcon =
         deleteIconProp && React.isValidElement(deleteIconProp) ? (
           React.cloneElement(deleteIconProp, {
-            style: styleNames(deleteIconProp.props.className, classes.deleteIcon),
-            onClick: this.handleDeleteIconClick,
+            style: styleNames(deleteIconProp.props.style, classes.deleteIcon),
+            onPress: this.handleDeleteIconPress,
           })
         ) : (
-          <CancelIcon style={classes.deleteIcon} onClick={this.handleDeleteIconClick} />
+          <CancelIcon style={classes.deleteIcon} onPress={this.handleDeleteIconPress} />
         );
     }
 
@@ -176,22 +178,22 @@ class Chip extends React.Component {
     if (avatarProp && React.isValidElement(avatarProp)) {
       avatar = React.cloneElement(avatarProp, {
         style: styleNames(classes.avatar, avatarProp.props.style),
-        childrenClassName: styleNames(classes.avatarChildren, avatarProp.props.childrenClassName),
+        childrenStyle: styleNames(classes.avatarChildren, avatarProp.props.childrenStyle),
       });
     }
 
     let tabIndex = tabIndexProp;
 
     if (!tabIndex) {
-      tabIndex = onClick || onDelete || clickable ? 0 : -1;
+      tabIndex = onPress || onDelete || clickable ? 0 : -1;
     }
 
     return (
       <Component
         role="button"
-        style={className}
+        style={style}
         tabIndex={tabIndex}
-        onClick={onClick}
+        onPress={onPress}
         onKeyDown={this.handleKeyDown}
         ref={ref => {
           this.chipRef = ref;
@@ -227,7 +229,7 @@ Chip.propTypes = {
   className: PropTypes.string,
   /**
    * If true, the chip will appear clickable, and will raise when pressed,
-   * even if the onClick property is not defined. This can be used, for example,
+   * even if the onPress property is not defined. This can be used, for example,
    * along with the component property to indicate an anchor Chip is clickable.
    */
   clickable: PropTypes.bool,
@@ -247,7 +249,7 @@ Chip.propTypes = {
   /**
    * @ignore
    */
-  onClick: PropTypes.func,
+  onPress: PropTypes.func,
   /**
    * Callback function fired when the delete icon is clicked.
    * If set, the delete icon will be shown.

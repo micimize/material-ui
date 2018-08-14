@@ -21,21 +21,23 @@ import ListItem from '@material-ui/core/ListItem';
 import Chip from '@material-ui/core/Chip';
 import SimpleMediaCard from '../../demos/cards/SimpleMediaCard';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 const tags = [
   'chameleon',
   'green anole',
+  'uromastyx',
   'wing',
   'gecko',
   'water dragon',
+  'red',
+  'dwarf',
   'bearded dragon',
-  'uromastyx',
-  'skink',
+  'cool',
   'horned',
   'rainbow',
-  'leopard gecko',
   'basilisk',
+  'leopard gecko',
   'tegu',
   'brown anole',
   'geico',
@@ -45,7 +47,7 @@ const tags = [
   'rainforest',
   'tropical rainforest',
   'blue',
-  'red',
+  'skink',
   'black',
   'purple',
   'yellow',
@@ -53,19 +55,28 @@ const tags = [
   'godzilla',
   'giant',
   'monster',
-  'dwarf',
-  'cool',
 ];
 
 const styles = theme => {
   return {
     root: {
-      width: 360,
-      height: 616,
+      width: 360 + 20,
+      height: 616 + 20,
       position: 'relative',
+      border: '10px solid lightgrey',
+      borderRadius: 5,
     },
     flex: {
       flex: 1,
+      display: 'flex', // TODO WHY DO I KEEP HAVING TO SET DISPLAY FLEX
+    },
+    withFilter: {
+      flexGrow: 1,
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
     },
     title: {
       display: 'flex',
@@ -79,9 +90,15 @@ const styles = theme => {
       marginLeft: -12,
       marginRight: 20,
     },
+    chipContainer: {
+      flexWrap: 'wrap',
+      flexDirection: 'row',
+    },
     chip: {
       margin: theme.spacing.unit,
-      backgroundColor: theme.palette.primary[300],
+      backgroundColor: theme.palette.primary.light,
+    },
+    chipLabel: {
       color: theme.palette.primary.contrastText,
     },
     content: {
@@ -89,6 +106,8 @@ const styles = theme => {
     },
   };
 };
+
+const Title = props => <Typography variant="title" color="onPrimary" {...props} />;
 
 class MultiSectionBackdrop extends React.Component {
   state = {
@@ -98,15 +117,6 @@ class MultiSectionBackdrop extends React.Component {
   render() {
     const { classes } = this.props;
     const { expanded } = this.state;
-
-    const Title = ({ style, ...props }) => (
-      <Typography
-        variant="title"
-        color="inherit"
-        style={styleNames(classes.title, style)}
-        {...props}
-      />
-    );
 
     return (
       <View style={classes.root}>
@@ -120,22 +130,25 @@ class MultiSectionBackdrop extends React.Component {
                   aria-label="Menu"
                   onClick={() => this.setState({ expanded: expanded ? false : 'nav' })}
                 >
-                  <MenuIcon />
+                  <MenuIcon color="onPrimary" />
                 </IconButton>
-                <FadeStack style={classes.flex}>
+                <FadeStack style={styleNames(classes.flex)}>
                   <FadeStackItem selected={!expanded}>
-                    <Title>Luxurious Lizards</Title>
+                    <Title style={styleNames(classes.flex)}>Luxurious Lizards</Title>
                   </FadeStackItem>
-                  <FadeStackItem selected={expanded === 'nav'}>
-                    <Title>
-                      {"Nature's Nobility"}
+                  <FadeStackItem
+                    selected={expanded === 'nav'}
+                    style={styleNames(classes.flex, classes.withFilter)}
+                  >
+                    <Title style={styleNames(classes.flex, classes.withFilter)}>
+                      <Text>Nature's Nobility</Text>
                       <IconButton
                         color="inherit"
                         aria-label="Filters"
                         style={classes.filter}
                         onClick={() => this.setState({ expanded: 'filters' })}
                       >
-                        <FilterIcon />
+                        <FilterIcon color="onPrimary" />
                       </IconButton>
                     </Title>
                   </FadeStackItem>
@@ -152,9 +165,14 @@ class MultiSectionBackdrop extends React.Component {
                 <MenuItem>Ecstatic Eggs</MenuItem>
               </List>
             </BackSection>
-            <BackSection expanded={expanded === 'filters'}>
+            <BackSection expanded={expanded === 'filters'} style={classes.chipContainer}>
               {tags.map(label => (
-                <Chip key={label} label={label} style={classes.chip} />
+                <Chip
+                  key={label}
+                  label={label}
+                  style={classes.chip}
+                  classes={{ label: classes.chipLabel }}
+                />
               ))}
             </BackSection>
           </Back>
