@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+// TODO might be unnecessary
 import { TextInput } from '../styles/extended-styles/focusable';
 import { View as Underline } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
@@ -74,11 +75,7 @@ export const styles = theme => {
     },
     /* Styles applied to the root element if the component is a descendant of `FormControl`. */
     formControl: {
-      /*
-      'label + &': {
-        marginTop: 16,
-      },
-      */
+      marginTop: 16,
     },
     /* Styles applied to the root element if the component is focused. */
     focused: {},
@@ -104,32 +101,11 @@ export const styles = theme => {
       borderBottomColor: theme.palette.error.main,
       transform: [{ scaleX: 1 }],
     },
-    _____________: {
-      '&:before': {
-        borderBottom: `1px solid ${bottomLineColor}`,
-        left: 0,
-        bottom: 0,
-        // Doing the other way around crash on IE11 "''" https://github.com/cssinjs/jss/issues/242
-        content: '"\\00a0"',
-        position: 'absolute',
-        right: 0,
-        transition: theme.transitions.create('border-bottom-color', {
-          duration: theme.transitions.duration.shorter,
-        }),
-        pointerEvents: 'none', // Transparent to the hover style.
-      },
-      '&:hover:not($disabled):not($focused):not($error):before': {
-        borderBottom: `2px solid ${theme.palette.text.primary}`,
-      },
-      '&$disabled:before': {
-        borderBottom: `1px dotted ${bottomLineColor}`,
-      },
-    },
     /* Styles applied to the root element if `error={true}`. */
     error: {},
     /* Styles applied to the root element if `multiline={true}`. */
     multiline: {
-      padding: `${8 - 2}px 0 ${8 - 1}px`,
+      padding: 0, //`${8 - 2}px 0 ${8 - 1}px`,
     },
     /* Styles applied to the root element if `fullWidth={true}`. */
     fullWidth: {
@@ -137,14 +113,14 @@ export const styles = theme => {
     },
     /* Styles applied to the `input` element. */
     input: {
-      lineHeight: '19px', // '1.1875em', // Reset (19px), match the native input line-height
+      lineHeight: 19, // '1.1875em', // Reset (19px), match the native input line-height
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.pxToRem(16),
       color: light ? 'rgba(0, 0, 0, 0.87)' : theme.palette.common.white,
       paddingTop: 8 - 2,
       paddingLeft: 0,
       paddingRight: 0,
-      paddingBottom: 8 - 1,
+      paddingBottom: 8 - 2,
       borderWidth: 0,
       boxSizing: 'content-box',
       textAlignVertical: 'middle',
@@ -155,6 +131,7 @@ export const styles = theme => {
       // Make the flex item shrink with Firefox
       minWidth: 0,
       flexGrow: 1,
+      borderBottom: `1px solid ${bottomLineColor}`,
       // '&::-webkit-input-placeholder': placeholder,
       // '&::-moz-placeholder': placeholder, // Firefox 19+
       // '&:-ms-input-placeholder': placeholder, // IE 11
@@ -194,12 +171,12 @@ export const styles = theme => {
     /* Styles applied to the `input` element if `multiline={true}`. */
     inputMultiline: {
       resize: 'none',
-      padding: 0,
+      padding: `${8 - 2}px 0 ${8 - 2}px`,
     },
     /* Styles applied to the `input` element if `type` is not "text"`. */
     inputType: {
       // type="date" or type="time", etc. have specific styles we need to reset.
-      height: '1.1875em', // Reset (19px), match the native input line-height
+      // height: '1.1875em', // Reset (19px), match the native input line-height
     },
     /* Styles applied to the `input` element if `type="search"`. */
     /*
@@ -417,7 +394,6 @@ class Input extends React.Component {
       placeholder,
       readOnly,
       rows,
-      rowsMax,
       startAdornment,
       type,
       value,
@@ -458,14 +434,9 @@ class Input extends React.Component {
     if (inputComponent) {
       InputComponent = inputComponent;
     } else if (multiline) {
-      if (rows && !rowsMax) {
-        InputComponent = Text;
-      } else {
-        inputProps = {
-          rowsMax,
-          ...inputProps,
-        };
-        InputComponent = Textarea;
+      InputComponent = Textarea;
+      if (rows) {
+        inputProps.numberOfLines = rows;
       }
     }
 
@@ -475,6 +446,7 @@ class Input extends React.Component {
         <InputComponent
           aria-invalid={error}
           autoComplete={autoComplete}
+          placeholderTextColor={this.state.focused ? undefined : 'rgba(0,0,0,0)'}
           autoFocus={autoFocus}
           style={inputClassName}
           defaultValue={defaultValue}
@@ -627,10 +599,6 @@ Input.propTypes = {
    * Number of rows to display when multiline option is set to true.
    */
   rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /**
-   * Maximum number of rows to display when multiline option is set to true.
-   */
-  rowsMax: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * Start `InputAdornment` for this component.
    */

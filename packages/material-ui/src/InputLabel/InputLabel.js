@@ -14,6 +14,7 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     transformOrigin: 'top left',
+    lineHeight: 16,
   },
   /* Styles applied to the root element if the component is a descendant of `FormControl`. */
   formControl: {

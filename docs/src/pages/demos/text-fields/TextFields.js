@@ -111,7 +111,7 @@ class TextFields extends React.Component {
           id="multiline-flexible"
           label="Multiline"
           multiline
-          rowsMax="4"
+          rowsMax={4}
           value={this.state.multiline}
           onChange={this.handleChange('multiline')}
           style={classes.textField}
@@ -142,7 +142,6 @@ class TextFields extends React.Component {
           margin="normal"
         />
         <TextField
-          id="textarea"
           label="With placeholder multiline"
           placeholder="Placeholder"
           multiline

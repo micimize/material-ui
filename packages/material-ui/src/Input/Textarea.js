@@ -1,40 +1,31 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+// TODO might be unnecessary
+import { TextInput } from '../styles/extended-styles/focusable';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
-import debounce from 'debounce'; // < 1kb payload overhead when lodash/debounce is > 3kb.
-import EventListener from 'react-event-listener';
 import withStyles from '../styles/withStyles';
-
-const ROWS_HEIGHT = 19;
 
 export const styles = {
   /* Styles applied to the root element. */
   root: {
-    position: 'relative', // because the shadow has position: 'absolute',
     width: '100%',
+  },
+  sizingText: {
+    opacity: 0,
   },
   textarea: {
     width: '100%',
     height: '100%',
     resize: 'none',
     padding: 0,
-    cursor: 'inherit',
-    boxSizing: 'border-box',
-    lineHeight: 'inherit',
-    // border: 'none',
+    lineHeight: 19,
     outline: 'none',
     background: 'transparent',
   },
-  shadow: {
-    // Overflow also needed to here to remove the extra row
-    // added to textareas in Firefox.
-    overflow: 'hidden',
-    // Visibility needed to hide the extra text area on ipads
-    visibility: 'hidden',
+  textareaPosition: {
+    boxSizing: 'border-box',
     position: 'absolute',
-    height: 'auto',
-    whiteSpace: 'pre-wrap',
   },
 };
 
@@ -43,18 +34,7 @@ export const styles = {
  */
 class Textarea extends React.Component {
   isControlled = this.props.value != null;
-
-  shadowRef = null;
-
-  singlelineShadowRef = null;
-
-  inputRef = null;
-
   value = null;
-
-  handleResize = debounce(() => {
-    this.syncHeightWithShadow();
-  }, 166); // Corresponds to 10 frames at 60 Hz.
 
   constructor(props) {
     super(props);
@@ -62,93 +42,19 @@ class Textarea extends React.Component {
     // <Input> expects the components it renders to respond to 'value'
     // so that it can check whether they are filled.
     this.value = props.value || props.defaultValue || '';
-    this.state = {
-      height: Number(props.rows) * ROWS_HEIGHT,
-    };
   }
 
   state = {
     height: null,
   };
 
-  componentDidMount() {
-    this.syncHeightWithShadow();
-  }
-
-  componentDidUpdate() {
-    this.syncHeightWithShadow();
-  }
-
-  componentWillUnmount() {
-    this.handleResize.clear();
-  }
-
-  handleRefInput = ref => {
-    this.inputRef = ref;
-
-    const { textareaRef } = this.props;
-    if (textareaRef) {
-      if (typeof textareaRef === 'function') {
-        textareaRef(ref);
-      } else {
-        textareaRef.current = ref;
-      }
-    }
-  };
-
-  handleRefSinglelineShadow = ref => {
-    this.singlelineShadowRef = ref;
-  };
-
-  handleRefShadow = ref => {
-    this.shadowRef = ref;
-  };
-
   handleChange = event => {
     this.value = event.target.value;
-
-    if (!this.isControlled) {
-      // The component is not controlled, we need to update the shallow value.
-      this.shadowRef.value = this.value;
-      this.syncHeightWithShadow();
-    }
 
     if (this.props.onChange) {
       this.props.onChange(event);
     }
   };
-
-  syncHeightWithShadow() {
-    const props = this.props;
-
-    if (this.isControlled) {
-      // The component is controlled, we need to update the shallow value.
-      this.shadowRef.value = props.value == null ? '' : String(props.value);
-    }
-
-    const lineHeight = this.singlelineShadowRef.scrollHeight;
-    let newHeight = this.shadowRef.scrollHeight;
-
-    // Guarding for jsdom, where scrollHeight isn't present.
-    // See https://github.com/tmpvar/jsdom/issues/1013
-    if (newHeight === undefined) {
-      return;
-    }
-
-    if (Number(props.rowsMax) >= Number(props.rows)) {
-      newHeight = Math.min(Number(props.rowsMax) * lineHeight, newHeight);
-    }
-
-    newHeight = Math.max(newHeight, lineHeight);
-
-    // Need a large enough different to update the height.
-    // This prevents infinite rendering loop.
-    if (Math.abs(this.state.height - newHeight) > 1) {
-      this.setState({
-        height: newHeight,
-      });
-    }
-  }
 
   render() {
     const {
@@ -164,32 +70,16 @@ class Textarea extends React.Component {
     } = this.props;
 
     return (
-      <View style={styleNames(classes.root, { height: this.state.height })}>
-        <EventListener target="window" onResize={this.handleResize} />
-        <Text
-          aria-hidden="true"
-          style={styleNames(classes.textarea, classes.shadow)}
-          readOnly
-          ref={this.handleRefSinglelineShadow}
-          rows="1"
-          tabIndex={-1}
-          value=""
-        />
-        <Text
-          aria-hidden="true"
-          style={styleNames(classes.textarea, classes.shadow)}
-          defaultValue={defaultValue}
-          readOnly
-          ref={this.handleRefShadow}
+      <View style={classes.root}>
+        <Text style={styleNames(classes.textarea, style, classes.sizingText)}>
+          {this.isControlled ? value : this.value}.
+        </Text>
+        <TextInput
+          multiline
           rows={rows}
-          tabIndex={-1}
-          value={value}
-        />
-        <Text
-          rows={rows}
-          style={styleNames(classes.textarea, style)}
+          style={styleNames(classes.textarea, style, classes.textareaPosition)}
           defaultValue={defaultValue}
-          value={value}
+          value={this.isControlled ? value : this.value}
           onChange={this.handleChange}
           ref={this.handleRefInput}
           {...other}
