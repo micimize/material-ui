@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import Paper from '@material-ui/core/Paper';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Fade from '@material-ui/core/Fade';
@@ -58,7 +58,7 @@ export const styles = theme => {
 function BackdropFront(props) {
   const {
     classes,
-    className: classNameProp,
+    style: styleProp,
     disabled,
     expanded,
     onExpand,
@@ -66,12 +66,12 @@ function BackdropFront(props) {
     ...other
   } = props;
 
-  const className = classNames(
+  const style = styleNames(
     classes.root,
     {
       [classes.minimized]: !expanded,
     },
-    classNameProp,
+    styleProp,
   );
 
   const onClick = !expanded && !disabled ? onExpand : null;
@@ -85,9 +85,9 @@ function BackdropFront(props) {
   );
 
   return (
-    <Paper className={className} onClick={onClick} elevation={0} square {...other}>
+    <Paper style={style} onClick={onClick} elevation={0} square {...other}>
       <Fade in={disabled}>
-        <div className={classNames(classes.scrim, { [classes.scrimActive]: disabled })} />
+        <div style={styleNames(classes.scrim, { [classes.scrimActive]: disabled })} />
       </Fade>
       {children}
     </Paper>
@@ -107,7 +107,7 @@ BackdropFront.propTypes = {
   /**
    * @ignore
    */
-  className: PropTypes.string,
+  style: PropTypes.string,
   /**
    * If `true`, the panel will be displayed in a disabled state,
    * with a scrim overlay

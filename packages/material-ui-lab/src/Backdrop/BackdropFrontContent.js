@@ -1,33 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
-import AnimateHeight from 'react-animate-height';
+import AnimatedHeight from './animated-height';
 
 export const styles = {
   root: {
-    overflow: 'auto!important',
+    overflow: 'auto',
   },
-  content: {},
+  content: {
+    width: '100%',
+  },
 };
 
 const FADE_OUT = 150;
 const EXPAND = 150;
 
 function BackdropFrontContent(props) {
-  const { classes, className: classNameProp, expanded, ...other } = props;
+  const {
+    classes: { root, ...classes },
+    style: styleProp,
+    expanded,
+    ...other
+  } = props;
 
-  const className = classNames(classes.root, classNameProp);
+  const style = styleNames(root, styleProp);
 
   const animationProps = {
-    className,
-    contentClassName: classes.content,
+    classes,
+    style,
     delay: FADE_OUT,
     duration: EXPAND,
     height: expanded ? 'auto' : 0,
   };
 
-  return <AnimateHeight {...animationProps} {...other} />;
+  return <AnimatedHeight {...animationProps} {...other} />;
 }
 
 BackdropFrontContent.propTypes = {
@@ -43,7 +50,7 @@ BackdropFrontContent.propTypes = {
   /**
    * @ignore
    */
-  className: PropTypes.string,
+  style: PropTypes.string,
   /**
    * @ignore
    * If `true`, parent panel is expanded.

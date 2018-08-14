@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
-import AnimateHeight from 'react-animate-height';
 import Fade from '@material-ui/core/Fade';
+import AnimatedHeight from './animated-height';
 
 const FADE_OUT = 150;
 const EXPAND = 150;
@@ -24,9 +24,9 @@ export const styles = {
 };
 
 function BackdropBackSection(props) {
-  const { children, classes, className: classNameProp, expanded, ...other } = props;
+  const { children, classes, style: styleProp, expanded, ...other } = props;
 
-  const className = classNames(classes.root, classNameProp, { [classes.expanded]: expanded });
+  const style = styleNames(classes.root, styleProp, { [classes.expanded]: expanded });
 
   const animationProps = {
     delay: FADE_OUT,
@@ -43,11 +43,11 @@ function BackdropBackSection(props) {
   };
 
   return (
-    <AnimateHeight {...animationProps} {...other}>
+    <AnimatedHeight {...animationProps} {...other}>
       <Fade {...fadeProps}>
-        <div className={className}>{children}</div>
+        <div style={style}>{children}</div>
       </Fade>
-    </AnimateHeight>
+    </AnimatedHeight>
   );
 }
 
@@ -64,7 +64,7 @@ BackdropBackSection.propTypes = {
   /**
    * @ignore
    */
-  className: PropTypes.string,
+  style: PropTypes.string,
   /**
    * If `true`, expand to reveal section.
    */

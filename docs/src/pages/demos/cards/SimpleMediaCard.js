@@ -8,10 +8,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 
 const styles = {
   card: {
-    maxWidth: 345,
+    width: 345,
+    maxWidth: '100%',
   },
   media: {
     height: 0,
@@ -20,33 +22,31 @@ const styles = {
 };
 
 function SimpleMediaCard(props) {
-  const { classes } = props;
+  const { classes, style } = props;
   return (
-    <View>
-      <Card style={classes.card}>
-        <CardMedia
-          style={classes.media}
-          image={require('/static/images/cards/contemplative-reptile.jpg')}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="headline" component="h2">
-            Lizard
-          </Typography>
-          <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
-        </CardActions>
-      </Card>
-    </View>
+    <Card style={styleNames(classes.card, style)}>
+      <CardMedia
+        style={classes.media}
+        image={require('/static/images/cards/contemplative-reptile.jpg')}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="headline" component="h2">
+          Lizard
+        </Typography>
+        <Typography component="p">
+          Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+          across all continents except Antarctica
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
   );
 }
 

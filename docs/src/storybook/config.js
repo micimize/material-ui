@@ -16,7 +16,7 @@ setDefaults({
 setAddon(chaptersAddon);
 
 // const context = require.context('../', true, /Screen\.js$/);
-const context = require.context('../pages/demos/', true, /.stories.js$/);
+const context = require.context('../pages/', true, /.stories.js$/);
 
 addDecorator(centered);
 

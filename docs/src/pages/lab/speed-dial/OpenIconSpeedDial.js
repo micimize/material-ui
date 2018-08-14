@@ -1,17 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
-import FileCopyIcon from '@material-ui/icons/FileCopyOutlined';
+import ContentCopyIcon from '@material-ui/icons/ContentCopy';
 import SaveIcon from '@material-ui/icons/Save';
 import PrintIcon from '@material-ui/icons/Print';
 import ShareIcon from '@material-ui/icons/Share';
 import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
+import EditIcon from '@material-ui/icons/ModeEdit';
 
 const styles = theme => ({
   root: {
@@ -25,7 +24,7 @@ const styles = theme => ({
 });
 
 const actions = [
-  { icon: <FileCopyIcon />, name: 'Copy' },
+  { icon: <ContentCopyIcon />, name: 'Copy' },
   { icon: <SaveIcon />, name: 'Save' },
   { icon: <PrintIcon />, name: 'Print' },
   { icon: <ShareIcon />, name: 'Share' },
@@ -70,11 +69,11 @@ class OpenIconSpeedDial extends React.Component {
     const { hidden, open } = this.state;
 
     return (
-      <View style={classes.root}>
+      <div className={classes.root}>
         <Button onClick={this.handleVisibility}>Toggle Speed Dial</Button>
         <SpeedDial
           ariaLabel="SpeedDial openIcon example"
-          style={classes.speedDial}
+          className={classes.speedDial}
           hidden={hidden}
           icon={<SpeedDialIcon openIcon={<EditIcon />} />}
           onBlur={this.handleClose}
@@ -94,7 +93,7 @@ class OpenIconSpeedDial extends React.Component {
             />
           ))}
         </SpeedDial>
-      </View>
+      </div>
     );
   }
 }

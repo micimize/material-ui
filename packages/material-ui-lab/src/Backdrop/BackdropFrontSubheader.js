@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 export const styles = theme => {
@@ -38,14 +38,14 @@ export const styles = theme => {
 };
 
 function BackdropFrontSubheader(props) {
-  const { classes, className: classNameProp, divided, expanded, ...other } = props;
-  const className = classNames(
+  const { classes, style: styleProp, divided, expanded, ...other } = props;
+  const style = styleNames(
     classes.root,
     { [classes.divided]: divided, [classes.minimized]: !expanded },
-    classNameProp,
+    styleProp,
   );
 
-  return <div className={className} {...other} />;
+  return <div style={style} {...other} />;
 }
 
 BackdropFrontSubheader.propTypes = {
@@ -61,7 +61,7 @@ BackdropFrontSubheader.propTypes = {
   /**
    * @ignore
    */
-  className: PropTypes.string,
+  style: PropTypes.string,
   /**
    * If `true`, a thin dividing border is included in the header.
    */

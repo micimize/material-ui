@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/lab/Slider';
@@ -24,9 +23,9 @@ class StepSlider extends React.Component {
     const { value } = this.state;
 
     return (
-      <View style={classes.root}>
+      <div className={classes.root}>
         <Slider value={value} min={0} max={6} step={1} onChange={this.handleChange} />
-      </View>
+      </div>
     );
   }
 }

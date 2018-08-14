@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import { capitalize } from '@material-ui/core/utils/helpers';
@@ -37,14 +37,14 @@ const styles = theme => {
 };
 
 function BackdropMenuItem(props) {
-  const { classes, className: classNameProp, color, selected, ...other } = props;
-  const className = classNames(
+  const { classes, style: styleProp, color, selected, ...other } = props;
+  const style = styleNames(
     classes.root,
     classes[`color${capitalize(color)}`],
     { [classes.selected]: selected },
-    classNameProp,
+    styleProp,
   );
-  return <MenuItem className={className} selected={selected} {...other} />;
+  return <MenuItem style={style} selected={selected} {...other} />;
 }
 
 BackdropMenuItem.propTypes = {

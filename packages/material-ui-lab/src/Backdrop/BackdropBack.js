@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 export const styles = {
@@ -13,12 +13,12 @@ export const styles = {
 };
 
 function BackdropBack(props) {
-  const { children, classes, className: classNameProp, ...other } = props;
+  const { children, classes, style: styleProp, ...other } = props;
 
-  const className = classNames(classes.root, classNameProp);
+  const style = styleNames(classes.root, styleProp);
 
   return (
-    <div className={className} {...other}>
+    <div style={style} {...other}>
       {children}
     </div>
   );
@@ -37,7 +37,7 @@ BackdropBack.propTypes = {
   /**
    * @ignore
    */
-  className: PropTypes.string,
+  style: PropTypes.string,
 };
 
 export default withStyles(styles, { name: 'MuiBackdropBack' })(BackdropBack);

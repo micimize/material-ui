@@ -75,6 +75,14 @@ export const styles = theme => ({
   colorSecondary: {
     color: theme.palette.secondary.main,
   },
+  /* Styles applied to the root element if `color="onPrimary"`. */
+  colorOnPrimary: {
+    color: theme.palette.primary.contrastText,
+  },
+  /* Styles applied to the root element if `color="onSecondary"`. */
+  colorOnSecondary: {
+    color: theme.palette.secondary.contrastText,
+  },
   /* Styles applied to the root element if `color="textPrimary"`. */
   colorTextPrimary: {
     color: theme.palette.text.primary,

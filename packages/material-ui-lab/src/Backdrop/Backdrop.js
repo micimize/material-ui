@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { capitalize } from '@material-ui/core/utils/helpers';
 import Paper from '@material-ui/core/Paper';
@@ -30,18 +30,18 @@ export const styles = theme => {
 };
 
 function Backdrop(props) {
-  const { children, classes, className: classNameProp, color, ...other } = props;
+  const { children, classes, style: styleProp, color, ...other } = props;
 
-  const className = classNames(
+  const style = styleNames(
     classes.root,
     {
       [classes[`color${capitalize(color)}`]]: color !== 'inherit',
     },
-    classNameProp,
+    styleProp,
   );
 
   return (
-    <Paper square elevation={0} className={className} {...other}>
+    <Paper square elevation={0} style={style} {...other}>
       {children}
     </Paper>
   );
@@ -60,7 +60,7 @@ Backdrop.propTypes = {
   /**
    * @ignore
    */
-  className: PropTypes.string,
+  style: PropTypes.string,
   /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */

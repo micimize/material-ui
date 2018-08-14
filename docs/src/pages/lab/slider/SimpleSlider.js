@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -25,10 +24,10 @@ class SimpleSlider extends React.Component {
     const { value } = this.state;
 
     return (
-      <View style={classes.root}>
+      <div className={classes.root}>
         <Typography id="label">Slider label</Typography>
         <Slider value={value} aria-labelledby="label" onChange={this.handleChange} />
-      </View>
+      </div>
     );
   }
 }

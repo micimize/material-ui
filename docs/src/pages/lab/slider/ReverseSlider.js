@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/lab/Slider';
@@ -24,10 +23,10 @@ class ReverseSlider extends React.Component {
     const { value } = this.state;
 
     return (
-      <View style={classes.root}>
+      <div className={classes.root}>
         <Slider value={value} onChange={this.handleChange} />
         <Slider value={value} onChange={this.handleChange} reverse />
-      </View>
+      </div>
     );
   }
 }

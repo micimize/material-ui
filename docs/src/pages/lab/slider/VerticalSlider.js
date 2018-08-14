@@ -1,12 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/lab/Slider';
 
 const styles = {
   root: {
-    flexDirection: 'row',
+    display: 'flex',
     height: 300,
   },
 };
@@ -25,10 +24,10 @@ class VerticalSlider extends React.Component {
     const { value } = this.state;
 
     return (
-      <View style={classes.root}>
+      <div className={classes.root}>
         <Slider value={value} onChange={this.handleChange} vertical />
         <Slider value={value} onChange={this.handleChange} vertical reverse />
-      </View>
+      </div>
     );
   }
 }
