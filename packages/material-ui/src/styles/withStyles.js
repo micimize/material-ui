@@ -1,7 +1,6 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
-import warning from 'warning';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import wrapDisplayName from 'recompose/wrapDisplayName';
 import mergeClasses from './mergeClasses';
@@ -9,7 +8,7 @@ import createMuiTheme from './createMuiTheme';
 import themeListener from './themeListener';
 import getStylesCreator from './getStylesCreator';
 import getThemeProps from './getThemeProps';
-import renderStyleSheet from './renderStyleSheet';
+import { render as renderStyleSheet } from './extended-styles';
 
 // We use the same empty object to ref count the styles that don't need a theme object.
 const noopTheme = {};

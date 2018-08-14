@@ -111,7 +111,7 @@ class TextFields extends React.Component {
           id="multiline-flexible"
           label="Multiline"
           multiline
-          rowsMax="4"
+          rowsMax={4}
           value={this.state.multiline}
           onChange={this.handleChange('multiline')}
           style={classes.textField}
@@ -121,7 +121,7 @@ class TextFields extends React.Component {
           id="multiline-static"
           label="Multiline"
           multiline
-          rows="4"
+          rows={4}
           defaultValue="Default Value"
           style={classes.textField}
           margin="normal"
@@ -142,7 +142,6 @@ class TextFields extends React.Component {
           margin="normal"
         />
         <TextField
-          id="textarea"
           label="With placeholder multiline"
           placeholder="Placeholder"
           multiline
@@ -185,7 +184,7 @@ class TextFields extends React.Component {
         >
           {currencies.map(option => (
             <MenuItem key={option.value} value={option.value}>
-              {option.label}
+              <Text>{option.label}</Text>
             </MenuItem>
           ))}
         </TextField>
@@ -207,7 +206,7 @@ class TextFields extends React.Component {
         >
           {currencies.map(option => (
             <Picker.Item key={option.value} value={option.value}>
-              {option.label}
+              <Text>{option.label}</Text>
             </Picker.Item>
           ))}
         </TextField>

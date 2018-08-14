@@ -136,19 +136,21 @@ class ListItem extends React.Component {
           componentProps.component = View;
         }
       }
-
+      let lastChild = children.pop();
       return (
         <ContainerComponent
           style={styleNames(classes.container, containerStyle)}
           {...ContainerProps}
         >
-          <Component {...componentProps}>{children}</Component>
-          {children.pop()}
+          <Component {...componentProps}>
+            {children.map(e => (typeof e === 'string' ? <Text>{e}</Text> : e))}
+          </Component>
+          {typeof lastChild === 'string' ? <Text>{lastChild}</Text> : lastChild}
         </ContainerComponent>
       );
     }
-
-    return <Component {...componentProps}>{children}</Component>;
+    
+    return <Component {...componentProps}>{children.map(e => (typeof e === 'string' ? <Text>{e}</Text> : e))}</Component>;
   }
 }
 

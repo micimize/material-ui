@@ -6,7 +6,7 @@ import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import SwitchBase from '../internal/SwitchBase';
 
-import { Animated } from '../styles/extendedStyles';
+import { Animated } from '../styles/extended-styles';
 
 /*
   TODO: This is a bit of a mess
