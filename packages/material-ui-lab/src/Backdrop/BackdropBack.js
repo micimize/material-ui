@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { View, Text } from 'react-native';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
 
@@ -7,8 +8,7 @@ export const styles = {
   root: {
     // fit to content
     flexGrow: 0,
-    flexShrink: 1,
-    flexBasis: 'auto',
+    flexShrink: 0,
   },
 };
 
@@ -18,9 +18,9 @@ function BackdropBack(props) {
   const style = styleNames(classes.root, styleProp);
 
   return (
-    <div style={style} {...other}>
+    <View style={style} {...other}>
       {children}
-    </div>
+    </View>
   );
 }
 

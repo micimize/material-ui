@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { View } from '@material-ui/core/styles/extended-styles/animated';
+import { View } from 'react-native-animatable';
 
 const styles = {
   animating: {},
@@ -224,7 +224,7 @@ const AnimateHeight = class extends React.Component {
 
   hideContent(newHeight) {
     if (newHeight === 0) {
-      this.setState({ hidden: true });
+      //this.setState({ hidden: true });
     }
   }
 
@@ -249,12 +249,19 @@ const AnimateHeight = class extends React.Component {
       animationStateClasses: __animationStateClasses,
       ...props
     } = this.props;
-    const { height, overflow, animationStateClasses, shouldUseTransitions, hidden } = this.state;
+    const {
+      height,
+      contentHeight,
+      overflow,
+      animationStateClasses,
+      shouldUseTransitions,
+      hidden,
+    } = this.state;
 
     const wrapperStyle = styleNames(
       animationStateClasses,
       { overflow },
-      height === 'auto' ? { flex: 0 } : { height },
+      height === 'auto' ? { height: contentHeight } : { height },
       style,
     );
 
@@ -271,14 +278,15 @@ const AnimateHeight = class extends React.Component {
       [classes.contentAtZero]: height === 0,
     });
 
-    debugger;
-
     return (
       <View {...props} style={wrapperStyle} {...transitionProps}>
         <View
           style={contentStyle}
           onLayout={event => {
-            this.setState({ contentHeight: event.nativeEvent.height });
+            const contentHeight = event.nativeEvent.layout.height;
+            if (contentHeight) {
+              this.setState({ contentHeight });
+            }
           }}
         >
           {hidden || children}

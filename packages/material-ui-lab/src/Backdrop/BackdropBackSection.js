@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -14,12 +15,12 @@ export const styles = {
     width: '100%',
     paddingLeft: 7.5,
     paddingRight: 7.5,
-    opacity: 0,
+    //opacity: 0,
     zIndex: 0,
   },
   expanded: {
     zIndex: 1,
-    opacity: 0,
+    //opacity: 0,
   },
 };
 
@@ -38,15 +39,15 @@ function BackdropBackSection(props) {
     in: expanded,
     timeout: expanded ? FADE_IN : FADE_OUT,
     style: {
-      transitionDelay: expanded ? EXPAND + FADE_OUT : 0,
+      delay: expanded ? EXPAND + FADE_OUT : 0,
     },
   };
 
   return (
     <AnimatedHeight {...animationProps} {...other}>
-      <Fade {...fadeProps}>
-        <div style={style}>{children}</div>
-      </Fade>
+      {/*<Fade {...fadeProps}>*/}
+      <View style={style}>{children}</View>
+      {/* </Fade> */}
     </AnimatedHeight>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
+import { View, Text } from 'react-native';
 
 export const styles = theme => {
   const transition = {
@@ -45,7 +46,7 @@ function BackdropFrontSubheader(props) {
     styleProp,
   );
 
-  return <div style={style} {...other} />;
+  return <View style={style} {...other} />;
 }
 
 BackdropFrontSubheader.propTypes = {

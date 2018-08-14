@@ -12,7 +12,7 @@ export const styles = theme => {
     root: {
       position: 'absolute',
       zIndex: 0,
-      display: 'flex',
+      flexDirection: 'column',
       flexFlow: 'column',
       width: '100%',
       height: '100%',
