@@ -27,8 +27,6 @@ module.exports = storybookBaseConfig => {
     nodeModule("react-native-material-ripple") 
   )
 
-  console.log(JSON.stringify(storybookBaseConfig, null, 2))
-
   storybookBaseConfig.module.rules.push({
     test: /\.(gif|jpe?g|png|svg)$/,
     use: {
