@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity , View} from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
@@ -10,8 +10,313 @@ import { listenForFocusKeys, detectFocusVisible } from './focusVisible';
 import TouchRipple from './TouchRipple';
 import createRippleHandler from './createRippleHandler';
 import { Animated } from '../styles/extended-styles';
+// import Ripple from 'react-native-material-ripple';
+
+/// TODO Remove and move into react-native-material-ripple fork
+/// START
+
+// import PropTypes from 'prop-types'
+import { PureComponent } from 'react'
+import { Animated as Animated2, Easing, TouchableWithoutFeedback } from 'react-native'
 
 const DefaultButton = Animated.createComponent(TouchableOpacity);
+
+import { StyleSheet } from 'react-native';
+
+var _extends =
+  Object.assign ||
+  function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+
+const radius = 10;
+const styles2 = StyleSheet.create({
+  container: _extends({}, StyleSheet.absoluteFillObject, {
+    backgroundColor: 'transparent',
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    overflow: 'hidden',
+    borderRadius: 'inherit',
+  }),
+
+  ripple: {
+    width: radius * 2,
+    height: radius * 2,
+    borderRadius: radius,
+    overflow: 'hidden',
+    position: 'absolute',
+  },
+});
+
+
+function _objectWithoutProperties(obj, keys) {
+	var target = {}
+	for (var i in obj) {
+		if (keys.indexOf(i) >= 0) continue
+		if (!Object.prototype.hasOwnProperty.call(obj, i)) continue
+		target[i] = obj[i]
+	}
+	return target
+}
+
+class Ripple extends PureComponent {
+  static defaultProps = {
+    ...TouchableWithoutFeedback.defaultProps,
+
+    rippleColor: 'rgb(0, 0, 0)',
+    rippleOpacity: 0.30,
+    rippleDuration: 400,
+    rippleSize: 0,
+    rippleContainerBorderRadius: 0,
+    rippleCentered: false,
+    rippleSequential: false,
+    rippleFades: true,
+    disabled: false,
+
+    onRippleAnimation: (animation, callback) => animation.start(callback),
+  };
+
+  static propTypes = {
+    ...Animated2.View.propTypes,
+    ...TouchableWithoutFeedback.propTypes,
+
+    rippleColor: PropTypes.string,
+    rippleOpacity: PropTypes.number,
+    rippleDuration: PropTypes.number,
+    rippleSize: PropTypes.number,
+    rippleContainerBorderRadius: PropTypes.number,
+    rippleCentered: PropTypes.bool,
+    rippleSequential: PropTypes.bool,
+    rippleFades: PropTypes.bool,
+    disabled: PropTypes.bool,
+
+    onRippleAnimation: PropTypes.func,
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.onLayout = this.onLayout.bind(this);
+    this.onPress = this.onPress.bind(this);
+    this.onPressIn = this.onPressIn.bind(this);
+    this.onPressOut = this.onPressOut.bind(this);
+    this.onLongPress = this.onLongPress.bind(this);
+    this.onAnimationEnd = this.onAnimationEnd.bind(this);
+
+    this.renderRipple = this.renderRipple.bind(this);
+
+    this.unique = 0;
+    this.mounted = false;
+
+    this.state = {
+      width: 0,
+      height: 0,
+      ripples: [],
+    };
+  }
+
+  componentDidMount() {
+    this.mounted = true;
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
+  }
+
+  onLayout(event) {
+    let { width, height } = event.nativeEvent.layout;
+    let { onLayout } = this.props;
+
+    if ('function' === typeof onLayout) {
+      onLayout(event);
+    }
+
+    this.setState({ width, height });
+  }
+
+  onPress(event) {
+    let { ripples } = this.state;
+    let { onPress, rippleSequential } = this.props;
+
+    if (!rippleSequential || !ripples.length) {
+      if ('function' === typeof onPress) {
+        requestAnimationFrame(() => onPress(event));
+      }
+
+      this.startRipple(event);
+    }
+  }
+
+  onLongPress(event) {
+    let { onLongPress } = this.props;
+
+    if ('function' === typeof onLongPress) {
+      requestAnimationFrame(() => onLongPress(event));
+    }
+
+    this.startRipple(event);
+  }
+
+  onPressIn(event) {
+    let { onPressIn } = this.props;
+
+    if ('function' === typeof onPressIn) {
+      onPressIn(event);
+    }
+  }
+
+  onPressOut(event) {
+    let { onPressOut } = this.props;
+
+    if ('function' === typeof onPressOut) {
+      onPressOut(event);
+    }
+  }
+
+  onAnimationEnd() {
+    if (this.mounted) {
+      this.setState(({ ripples }) => ({ ripples: ripples.slice(1) }));
+    }
+  }
+
+  startRipple(event) {
+    let { width, height } = this.state;
+    let {
+      rippleDuration,
+      rippleCentered,
+      rippleSize,
+      onRippleAnimation,
+    } = this.props;
+
+    let w2 = 0.5 * width;
+    let h2 = 0.5 * height;
+
+    let { locationX, locationY } = rippleCentered?
+      { locationX: w2, locationY: h2 }:
+      event.nativeEvent;
+
+    let offsetX = Math.abs(w2 - locationX);
+    let offsetY = Math.abs(h2 - locationY);
+
+    let R = rippleSize > 0?
+      0.5 * rippleSize:
+      Math.sqrt(Math.pow(w2 + offsetX, 2) + Math.pow(h2 + offsetY, 2));
+
+    let ripple = {
+      unique: this.unique++,
+      progress: new Animated2.Value(0),
+      locationX,
+      locationY,
+      R,
+    };
+
+    let animation = Animated2
+      .timing(ripple.progress, {
+        toValue: 1,
+        easing: Easing.out(Easing.ease),
+        duration: rippleDuration,
+        useNativeDriver: true,
+      });
+
+    onRippleAnimation(animation, this.onAnimationEnd);
+
+    this.setState(({ ripples }) => ({ ripples: ripples.concat(ripple) }));
+  }
+
+  renderRipple({ unique, progress, locationX, locationY, R }) {
+    let { rippleColor, rippleOpacity, rippleFades } = this.props;
+
+    let rippleStyle = {
+      top: locationY - radius,
+      left: locationX - radius,
+      backgroundColor: rippleColor,
+
+      transform: [{
+        scale: progress.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0.5 / radius, R / radius],
+        }),
+      }],
+
+      opacity: rippleFades?
+        progress.interpolate({
+          inputRange: [0, 1],
+          outputRange: [rippleOpacity, 0],
+        }):
+        rippleOpacity,
+    };
+
+    return (
+      <Animated2.View style={[styles2.ripple, rippleStyle]} key={unique} />
+    );
+  }
+
+  render() {
+    let { ripples } = this.state;
+    let { onPress, onPressIn, onPressOut, onLongPress, onLayout } = this;
+    let {
+      delayLongPress,
+      delayPressIn,
+      delayPressOut,
+      disabled,
+      hitSlop,
+      pressRetentionOffset,
+      children,
+      rippleContainerBorderRadius,
+      testID,
+      nativeID,
+      accessible,
+      accessibilityLabel,
+      onLayout: __ignored__,
+      ...props
+    } = this.props;
+
+    let touchableProps = {
+      delayLongPress,
+      delayPressIn,
+      delayPressOut,
+      disabled,
+      hitSlop,
+      pressRetentionOffset,
+      onPress,
+      onPressIn,
+      testID,
+      nativeID,
+      accessible,
+      accessibilityLabel,
+      onPressOut,
+      onLongPress: props.onLongPress? onLongPress : undefined,
+      onLayout,
+    };
+
+    let containerStyle = {
+      borderRadius: rippleContainerBorderRadius,
+    };
+
+    return (
+      <TouchableWithoutFeedback {...touchableProps}>
+        <Animated2.View {...props} style={[styles2.container]} pointerEvents='box-only'>
+          {children}
+          <View style={[styles2.container, containerStyle]}>
+            {ripples.map(this.renderRipple)}
+          </View>
+        </Animated2.View>
+      </TouchableWithoutFeedback>
+    );
+  }
+}
+
+/// END
+
 
 export const styles = {
   /* Styles applied to the root element. */
@@ -300,30 +605,57 @@ class ButtonBase extends React.Component {
     }
 
     return (
-      <ComponentProp
-        disabled={disabled}
-        onBlur={this.handleBlur}
-        onFocus={this.handleFocus}
-        onMouseDown={this.handleMouseDown}
-        onMouseLeave={this.handleMouseLeave}
-        onMouseUp={this.handleMouseUp}
-        onTouchEnd={this.handleTouchEnd}
-        onTouchMove={this.handleTouchMove}
-        onTouchStart={this.handleTouchStart}
-        onPressIn={() => this.setState({ active: true })}
-        onPressOut={() => this.setState({ active: false })}
-        tabIndex={disabled ? '-1' : tabIndex}
-        style={className}
-        ref={buttonRef}
-        {...buttonProps}
-        {...other}
-      >
-        {typeof children === 'string' ? <Text>{children}</Text> : children}
-        {!disableRipple && !disabled ? (
-          <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
-        ) : null}
-      </ComponentProp>
+      //<Ripple disabled={disableRipple || disabled}>
+        <ComponentProp
+          disabled={disabled}
+          onBlur={this.handleBlur}
+          onFocus={this.handleFocus}
+          onMouseDown={this.handleMouseDown}
+          onMouseLeave={this.handleMouseLeave}
+          onMouseUp={this.handleMouseUp}
+          onTouchEnd={this.handleTouchEnd}
+          onTouchMove={this.handleTouchMove}
+          onTouchStart={this.handleTouchStart}
+          onPressIn={() => this.setState({ active: true })}
+          onPressOut={() => this.setState({ active: false })}
+          tabIndex={disabled ? '-1' : tabIndex}
+          style={className}
+          ref={buttonRef}
+          {...buttonProps}
+          {...other}
+        >
+          {typeof children === 'string' ? <Text>{children}</Text> : children}
+          <Ripple disabled={disableRipple || disabled}></Ripple>
+        </ComponentProp>
+      // </Ripple>
     );
+
+    // return (
+    //   <ComponentProp
+    // disabled={disabled}
+    // onBlur={this.handleBlur}
+    // onFocus={this.handleFocus}
+    // onMouseDown={this.handleMouseDown}
+    // onMouseLeave={this.handleMouseLeave}
+    // onMouseUp={this.handleMouseUp}
+    // onTouchEnd={this.handleTouchEnd}
+    // onTouchMove={this.handleTouchMove}
+    // onTouchStart={this.handleTouchStart}
+    // onPressIn={() => this.setState({ active: true })}
+    // onPressOut={() => this.setState({ active: false })}
+    // tabIndex={disabled ? '-1' : tabIndex}
+    // style={className}
+    // ref={buttonRef}
+    // {...buttonProps}
+    // {...other}
+    //   >
+    //     {typeof children === 'string' ? <Text>{children}</Text> : children}
+    //     {!disableRipple && !disabled ? (
+    //       // <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
+    //       <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
+    //     ) : null}
+    //   </ComponentProp>
+    // );
   }
 }
 
