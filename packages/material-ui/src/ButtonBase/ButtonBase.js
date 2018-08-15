@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity , View} from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
@@ -16,8 +16,8 @@ import { Animated } from '../styles/extended-styles';
 /// START
 
 // import PropTypes from 'prop-types'
-import { PureComponent } from 'react'
-import { Animated as Animated2, Easing, TouchableWithoutFeedback } from 'react-native'
+import { PureComponent } from 'react';
+import { Animated as Animated2, Easing, TouchableWithoutFeedback } from 'react-native';
 
 const DefaultButton = Animated.createComponent(TouchableOpacity);
 
@@ -57,15 +57,14 @@ const styles2 = StyleSheet.create({
   },
 });
 
-
 function _objectWithoutProperties(obj, keys) {
-	var target = {}
-	for (var i in obj) {
-		if (keys.indexOf(i) >= 0) continue
-		if (!Object.prototype.hasOwnProperty.call(obj, i)) continue
-		target[i] = obj[i]
-	}
-	return target
+  var target = {};
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+  return target;
 }
 
 class Ripple extends PureComponent {
@@ -73,7 +72,7 @@ class Ripple extends PureComponent {
     ...TouchableWithoutFeedback.defaultProps,
 
     rippleColor: 'rgb(0, 0, 0)',
-    rippleOpacity: 0.30,
+    rippleOpacity: 0.3,
     rippleDuration: 400,
     rippleSize: 0,
     rippleContainerBorderRadius: 0,
@@ -190,26 +189,22 @@ class Ripple extends PureComponent {
 
   startRipple(event) {
     let { width, height } = this.state;
-    let {
-      rippleDuration,
-      rippleCentered,
-      rippleSize,
-      onRippleAnimation,
-    } = this.props;
+    let { rippleDuration, rippleCentered, rippleSize, onRippleAnimation } = this.props;
 
     let w2 = 0.5 * width;
     let h2 = 0.5 * height;
 
-    let { locationX, locationY } = rippleCentered?
-      { locationX: w2, locationY: h2 }:
-      event.nativeEvent;
+    let { locationX, locationY } = rippleCentered
+      ? { locationX: w2, locationY: h2 }
+      : event.nativeEvent;
 
     let offsetX = Math.abs(w2 - locationX);
     let offsetY = Math.abs(h2 - locationY);
 
-    let R = rippleSize > 0?
-      0.5 * rippleSize:
-      Math.sqrt(Math.pow(w2 + offsetX, 2) + Math.pow(h2 + offsetY, 2));
+    let R =
+      rippleSize > 0
+        ? 0.5 * rippleSize
+        : Math.sqrt(Math.pow(w2 + offsetX, 2) + Math.pow(h2 + offsetY, 2));
 
     let ripple = {
       unique: this.unique++,
@@ -219,13 +214,12 @@ class Ripple extends PureComponent {
       R,
     };
 
-    let animation = Animated2
-      .timing(ripple.progress, {
-        toValue: 1,
-        easing: Easing.out(Easing.ease),
-        duration: rippleDuration,
-        useNativeDriver: true,
-      });
+    let animation = Animated2.timing(ripple.progress, {
+      toValue: 1,
+      easing: Easing.out(Easing.ease),
+      duration: rippleDuration,
+      useNativeDriver: true,
+    });
 
     onRippleAnimation(animation, this.onAnimationEnd);
 
@@ -240,24 +234,24 @@ class Ripple extends PureComponent {
       left: locationX - radius,
       backgroundColor: rippleColor,
 
-      transform: [{
-        scale: progress.interpolate({
-          inputRange: [0, 1],
-          outputRange: [0.5 / radius, R / radius],
-        }),
-      }],
+      transform: [
+        {
+          scale: progress.interpolate({
+            inputRange: [0, 1],
+            outputRange: [0.5 / radius, R / radius],
+          }),
+        },
+      ],
 
-      opacity: rippleFades?
-        progress.interpolate({
-          inputRange: [0, 1],
-          outputRange: [rippleOpacity, 0],
-        }):
-        rippleOpacity,
+      opacity: rippleFades
+        ? progress.interpolate({
+            inputRange: [0, 1],
+            outputRange: [rippleOpacity, 0],
+          })
+        : rippleOpacity,
     };
 
-    return (
-      <Animated2.View style={[styles2.ripple, rippleStyle]} key={unique} />
-    );
+    return <Animated2.View style={[styles2.ripple, rippleStyle]} key={unique} />;
   }
 
   render() {
@@ -294,7 +288,7 @@ class Ripple extends PureComponent {
       accessible,
       accessibilityLabel,
       onPressOut,
-      onLongPress: props.onLongPress? onLongPress : undefined,
+      onLongPress: props.onLongPress ? onLongPress : undefined,
       onLayout,
     };
 
@@ -304,11 +298,9 @@ class Ripple extends PureComponent {
 
     return (
       <TouchableWithoutFeedback {...touchableProps}>
-        <Animated2.View {...props} style={[styles2.container]} pointerEvents='box-only'>
+        <Animated2.View {...props} style={[styles2.container]} pointerEvents="box-only">
           {children}
-          <View style={[styles2.container, containerStyle]}>
-            {ripples.map(this.renderRipple)}
-          </View>
+          <View style={[styles2.container, containerStyle]}>{ripples.map(this.renderRipple)}</View>
         </Animated2.View>
       </TouchableWithoutFeedback>
     );
@@ -604,58 +596,58 @@ class ButtonBase extends React.Component {
       buttonProps.role = 'button';
     }
 
-    return (
-      //<Ripple disabled={disableRipple || disabled}>
-        <ComponentProp
-          disabled={disabled}
-          onBlur={this.handleBlur}
-          onFocus={this.handleFocus}
-          onMouseDown={this.handleMouseDown}
-          onMouseLeave={this.handleMouseLeave}
-          onMouseUp={this.handleMouseUp}
-          onTouchEnd={this.handleTouchEnd}
-          onTouchMove={this.handleTouchMove}
-          onTouchStart={this.handleTouchStart}
-          onPressIn={() => this.setState({ active: true })}
-          onPressOut={() => this.setState({ active: false })}
-          tabIndex={disabled ? '-1' : tabIndex}
-          style={className}
-          ref={buttonRef}
-          {...buttonProps}
-          {...other}
-        >
-          {typeof children === 'string' ? <Text>{children}</Text> : children}
-          <Ripple disabled={disableRipple || disabled}></Ripple>
-        </ComponentProp>
-      // </Ripple>
-    );
-
     // return (
+    //   //<Ripple disabled={disableRipple || disabled}>
     //   <ComponentProp
-    // disabled={disabled}
-    // onBlur={this.handleBlur}
-    // onFocus={this.handleFocus}
-    // onMouseDown={this.handleMouseDown}
-    // onMouseLeave={this.handleMouseLeave}
-    // onMouseUp={this.handleMouseUp}
-    // onTouchEnd={this.handleTouchEnd}
-    // onTouchMove={this.handleTouchMove}
-    // onTouchStart={this.handleTouchStart}
-    // onPressIn={() => this.setState({ active: true })}
-    // onPressOut={() => this.setState({ active: false })}
-    // tabIndex={disabled ? '-1' : tabIndex}
-    // style={className}
-    // ref={buttonRef}
-    // {...buttonProps}
-    // {...other}
+    //     disabled={disabled}
+    //     onBlur={this.handleBlur}
+    //     onFocus={this.handleFocus}
+    //     onMouseDown={this.handleMouseDown}
+    //     onMouseLeave={this.handleMouseLeave}
+    //     onMouseUp={this.handleMouseUp}
+    //     onTouchEnd={this.handleTouchEnd}
+    //     onTouchMove={this.handleTouchMove}
+    //     onTouchStart={this.handleTouchStart}
+    //     onPressIn={() => this.setState({ active: true })}
+    //     onPressOut={() => this.setState({ active: false })}
+    //     tabIndex={disabled ? '-1' : tabIndex}
+    //     style={className}
+    //     ref={buttonRef}
+    //     {...buttonProps}
+    //     {...other}
     //   >
     //     {typeof children === 'string' ? <Text>{children}</Text> : children}
-    //     {!disableRipple && !disabled ? (
-    //       // <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
-    //       <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
-    //     ) : null}
+    //     {/* <Ripple disabled={disableRipple || disabled} /> */}
     //   </ComponentProp>
+    //   // </Ripple>
     // );
+
+    return (
+      <ComponentProp
+    disabled={disabled}
+    onBlur={this.handleBlur}
+    onFocus={this.handleFocus}
+    onMouseDown={this.handleMouseDown}
+    onMouseLeave={this.handleMouseLeave}
+    onMouseUp={this.handleMouseUp}
+    onTouchEnd={this.handleTouchEnd}
+    onTouchMove={this.handleTouchMove}
+    onTouchStart={this.handleTouchStart}
+    onPressIn={() => this.setState({ active: true })}
+    onPressOut={() => this.setState({ active: false })}
+    tabIndex={disabled ? '-1' : tabIndex}
+    style={className}
+    ref={buttonRef}
+    {...buttonProps}
+    {...other}
+      >
+        {typeof children === 'string' ? <Text>{children}</Text> : children}
+        {!disableRipple && !disabled ? (
+          // <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
+          <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
+        ) : null}
+      </ComponentProp>
+    );
   }
 }
 
