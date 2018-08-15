@@ -2,6 +2,9 @@ import { setOptions } from '@storybook/addon-options';
 import centered from './decorator-centered';
 import { configure, addDecorator, setAddon } from '@storybook/react';
 import chaptersAddon, { setDefaults } from 'react-storybook-addon-chapters';
+import { withConsole } from '@storybook/addon-console';
+
+addDecorator((storyFn, context) => withConsole()(storyFn)(context));
 
 // optionally override defaults
 setDefaults({
@@ -26,7 +29,7 @@ setOptions({
   goFullScreen: false,
   addonPanelInRight: false,
   showSearchBox: false,
-  showAddonPanel: false,
+  showAddonPanel: true,
   showStoriesPanel: true,
 });
 
