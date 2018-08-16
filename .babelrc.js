@@ -1,6 +1,6 @@
-const moduleAlias = require('module-alias')
-moduleAlias.addAlias('react-native', 'react-native-web')
-moduleAlias.addAlias('react-native-svg', 'svgs')
+const moduleAlias = require('module-alias');
+moduleAlias.addAlias('react-native', 'react-native-web');
+moduleAlias.addAlias('react-native-svg', 'svgs');
 
 const ENV = process.env.BABEL_ENV;
 let defaultPresets;
@@ -38,6 +38,9 @@ module.exports = {
   plugins: [
     '@babel/plugin-transform-object-assign',
     ['@babel/plugin-transform-runtime', { polyfill: false, useBuiltIns: true }],
+    '@babel/plugin-syntax-class-properties',
+    '@babel/plugin-proposal-class-properties',
+    "transform-class-properties",
   ],
   env: {
     coverage: {

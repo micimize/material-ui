@@ -24,6 +24,7 @@ module.exports = storybookBaseConfig => {
 
   storybookBaseConfig.module.rules[0].include.push(
     //nodeModule('react-native-vector-icons')
+    nodeModule("react-native-material-ripple") 
   )
 
   storybookBaseConfig.module.rules.push({

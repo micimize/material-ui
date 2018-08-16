@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
@@ -10,7 +10,7 @@ import { listenForFocusKeys, detectFocusVisible } from './focusVisible';
 import TouchRipple from './TouchRipple';
 import createRippleHandler from './createRippleHandler';
 import { Animated } from '../styles/extended-styles';
-
+import Ripple from 'react-native-material-ripple';
 const DefaultButton = Animated.createComponent(TouchableOpacity);
 
 export const styles = {
@@ -104,6 +104,9 @@ class ButtonBase extends React.Component {
       this.setState({ focusVisible: false });
     }
   });
+
+  handlePressIn = createRippleHandler(this, 'PressIn', 'start');
+  handlePressOut = createRippleHandler(this, 'PressOut', 'stop');
 
   state = {};
 
@@ -299,27 +302,54 @@ class ButtonBase extends React.Component {
       buttonProps.role = 'button';
     }
 
+    // return (
+    //   <Ripple disabled={disableRipple || disabled}>
+    //   <ComponentProp
+    //     disabled={disabled}
+    //     onBlur={this.handleBlur}
+    //     onFocus={this.handleFocus}
+    //     onMouseDown={this.handleMouseDown}
+    //     onMouseLeave={this.handleMouseLeave}
+    //     onMouseUp={this.handleMouseUp}
+    //     onTouchEnd={this.handleTouchEnd}
+    //     onTouchMove={this.handleTouchMove}
+    //     onTouchStart={this.handleTouchStart}
+    //     onPressIn={() => this.setState({ active: true })}
+    //     onPressOut={() => this.setState({ active: false })}
+    //     tabIndex={disabled ? '-1' : tabIndex}
+    //     style={className}
+    //     ref={buttonRef}
+    //     {...buttonProps}
+    //     {...other}
+    //   >
+    //     {typeof children === 'string' ? <Text>{children}</Text> : children}
+    //     {/* <Ripple disabled={disableRipple || disabled} /> */}
+    //   </ComponentProp>
+    //   </Ripple>
+    // );
+    // debugger
     return (
       <ComponentProp
-        disabled={disabled}
-        onBlur={this.handleBlur}
-        onFocus={this.handleFocus}
-        onMouseDown={this.handleMouseDown}
-        onMouseLeave={this.handleMouseLeave}
-        onMouseUp={this.handleMouseUp}
-        onTouchEnd={this.handleTouchEnd}
-        onTouchMove={this.handleTouchMove}
-        onTouchStart={this.handleTouchStart}
-        onPressIn={() => this.setState({ active: true })}
-        onPressOut={() => this.setState({ active: false })}
-        tabIndex={disabled ? '-1' : tabIndex}
-        style={className}
-        ref={buttonRef}
-        {...buttonProps}
-        {...other}
+    disabled={disabled}
+    onBlur={this.handleBlur}
+    onFocus={this.handleFocus}
+    // onMouseDown={this.handleMouseDown}
+    // onMouseLeave={this.handleMouseLeave}
+    // onMouseUp={this.handleMouseUp}
+    // onTouchEnd={this.handleTouchEnd}
+    // onTouchMove={this.handleTouchMove}
+    // onTouchStart={this.handleTouchStart}
+    onPressIn={this.handlePressIn}
+    onPressOut={this.handlePressOut}
+    tabIndex={disabled ? '-1' : tabIndex}
+    style={className}
+    ref={buttonRef}
+    {...buttonProps}
+    {...other}
       >
         {typeof children === 'string' ? <Text>{children}</Text> : children}
         {!disableRipple && !disabled ? (
+          // <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
           <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
         ) : null}
       </ComponentProp>
