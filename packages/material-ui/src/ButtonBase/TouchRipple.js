@@ -12,6 +12,8 @@ import { Animated, Easing, TouchableWithoutFeedback } from 'react-native';
 const DURATION = 550;
 export const DELAY_RIPPLE = 80;
 
+const radius = 10;
+
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
@@ -26,75 +28,92 @@ export const styles = theme => ({
     pointerEvents: 'none',
     zIndex: 0,
   },
-  /* Styles applied to the internal `Ripple` components `ripple` class. */
-  ripple: {
-    width: 50,
-    height: 50,
-    left: 0,
-    top: 0,
-    opacity: 0,
-    position: 'absolute',
-  },
-  /* Styles applied to the internal `Ripple` components `rippleVisible` class. */
-  rippleVisible: {
-    opacity: 0.3,
-    transform: 'scale(1)',
-    animation: `mui-ripple-enter ${DURATION}ms ${theme.transitions.easing.easeInOut}`,
-  },
-  /* Styles applied to the internal `Ripple` components `ripplePulsate` class. */
-  ripplePulsate: {
-    animationDuration: `${theme.transitions.duration.shorter}ms`,
-  },
-  /* Styles applied to the internal `Ripple` components `child` class. */
-  child: {
-    opacity: 1,
-    display: 'block',
+
+  container: {
+    backgroundColor: 'transparent',
     width: '100%',
     height: '100%',
-    borderRadius: '50%',
-    // backgroundColor: 'currentColor',
-  },
-  /* Styles applied to the internal `Ripple` components `childLeaving` class. */
-  childLeaving: {
-    opacity: 0,
-    animation: `mui-ripple-exit ${DURATION}ms ${theme.transitions.easing.easeInOut}`,
-  },
-  /* Styles applied to the internal `Ripple` components `childPulsate` class. */
-  childPulsate: {
     position: 'absolute',
-    left: 0,
-    top: 0,
-    animation: `mui-ripple-pulsate 2500ms ${theme.transitions.easing.easeInOut} 200ms infinite`,
+    overflow: 'hidden',
+    borderRadius: 'inherit',
   },
-  '@keyframes mui-ripple-enter': {
-    '0%': {
-      transform: 'scale(0)',
-      opacity: 0.1,
-    },
-    '100%': {
-      transform: 'scale(1)',
-      opacity: 0.3,
-    },
+
+  ripple: {
+    width: radius * 2,
+    height: radius * 2,
+    borderRadius: radius,
+    overflow: 'hidden',
+    position: 'absolute',
   },
-  '@keyframes mui-ripple-exit': {
-    '0%': {
-      opacity: 1,
-    },
-    '100%': {
-      opacity: 0,
-    },
-  },
-  '@keyframes mui-ripple-pulsate': {
-    '0%': {
-      transform: 'scale(1)',
-    },
-    '50%': {
-      transform: 'scale(0.92)',
-    },
-    '100%': {
-      transform: 'scale(1)',
-    },
-  },
+  /* Styles applied to the internal `Ripple` components `ripple` class. */
+  // ripple: {
+  //   width: 50,
+  //   height: 50,
+  //   left: 0,
+  //   top: 0,
+  //   opacity: 0,
+  //   position: 'absolute',
+  // },
+  /* Styles applied to the internal `Ripple` components `rippleVisible` class. */
+  // rippleVisible: {
+  //   opacity: 0.3,
+  //   transform: 'scale(1)',
+  //   animation: `mui-ripple-enter ${DURATION}ms ${theme.transitions.easing.easeInOut}`,
+  // },
+  // /* Styles applied to the internal `Ripple` components `ripplePulsate` class. */
+  // ripplePulsate: {
+  //   animationDuration: `${theme.transitions.duration.shorter}ms`,
+  // },
+  // /* Styles applied to the internal `Ripple` components `child` class. */
+  // child: {
+  //   opacity: 1,
+  //   display: 'block',
+  //   width: '100%',
+  //   height: '100%',
+  //   borderRadius: '50%',
+  //   // backgroundColor: 'currentColor',
+  // },
+  // /* Styles applied to the internal `Ripple` components `childLeaving` class. */
+  // childLeaving: {
+  //   opacity: 0,
+  //   animation: `mui-ripple-exit ${DURATION}ms ${theme.transitions.easing.easeInOut}`,
+  // },
+  // /* Styles applied to the internal `Ripple` components `childPulsate` class. */
+  // childPulsate: {
+  //   position: 'absolute',
+  //   left: 0,
+  //   top: 0,
+  //   animation: `mui-ripple-pulsate 2500ms ${theme.transitions.easing.easeInOut} 200ms infinite`,
+  // },
+  // '@keyframes mui-ripple-enter': {
+  //   '0%': {
+  //     transform: 'scale(0)',
+  //     opacity: 0.1,
+  //   },
+  //   '100%': {
+  //     transform: 'scale(1)',
+  //     opacity: 0.3,
+  //   },
+  // },
+  // '@keyframes mui-ripple-exit': {
+  //   '0%': {
+  //     opacity: 1,
+  //   },
+  //   '100%': {
+  //     opacity: 0,
+  //   },
+  // },
+  // '@keyframes mui-ripple-pulsate': {
+  //   '0%': {
+  //     transform: 'scale(1)',
+  //   },
+  //   '50%': {
+  //     transform: 'scale(0.92)',
+  //   },
+  //   '100%': {
+  //     transform: 'scale(1)',
+  //   },
+  // },
 });
 
 class TouchRipple extends React.PureComponent {
@@ -108,23 +127,51 @@ class TouchRipple extends React.PureComponent {
   // This is the hook called once the previous timeout is ready.
   startTimerCommit = null;
 
-  state = {
-    // eslint-disable-next-line react/no-unused-state
-    nextKey: 0,
-    ripples: [],
+  unique = 0;
+  mounted = false;
+
+  static defaultProps = {
+    // ...TouchableWithoutFeedback.defaultProps,
+
+    rippleColor: 'rgb(0, 0, 0)',
+    rippleOpacity: 0.3,
+    rippleDuration: 400,
+    rippleSize: 0,
+    rippleContainerBorderRadius: 0,
+    rippleCentered: false,
+    rippleSequential: false,
+    rippleFades: true,
+    disabled: false,
+    center: false,
+
+    // onRippleAnimation: (animation, callback) => animation.start(callback),
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      nextKey: 0,
+      width: 0,
+      height: 0,
+      ripples: [],
+      fadeAnim: new Animated.Value(0),
+    };
+  }
+
   componentDidMount() {
+    this.mounted = true;
     if (this.props.innerRef) {
       this.props.innerRef(this);
     }
   }
 
   componentWillUnmount() {
+    this.mounted = false;
     clearTimeout(this.startTimer);
   }
 
-  onLayout(event) {
+  onLayout = event => {
+    // console.log("layout", event)
     let { width, height } = event.nativeEvent.layout;
     let { onLayout } = this.props;
 
@@ -133,20 +180,20 @@ class TouchRipple extends React.PureComponent {
     }
 
     this.setState({ width, height });
-  }
+  };
 
   pulsate = () => {
     this.start({}, { pulsate: true });
   };
 
   onAnimationEnd = () => {
+    console.log('jahsjkdhajkshd', this.mounted);
     if (this.mounted) {
-      this.setState(({ ripples }) => ({ ripples: ripples.slice(1) }));
+      this.setState(state => ({ ...state, ripples: state.ripples.slice(1) }));
     }
   };
 
   start = (event = {}, options = {}, cb) => {
-    console.log('started', event, options, cb);
     const {
       pulsate = false,
       center = this.props.center || options.pulsate,
@@ -163,13 +210,11 @@ class TouchRipple extends React.PureComponent {
     }
 
     let { width, height } = this.state;
-    let { rippleDuration, center, rippleSize, onRippleAnimation } = this.props;
+    let { rippleDuration, rippleSize, onRippleAnimation } = this.props;
 
     let w2 = 0.5 * width;
     let h2 = 0.5 * height;
-
     let { locationX, locationY } = center ? { locationX: w2, locationY: h2 } : event.nativeEvent;
-
     let offsetX = Math.abs(w2 - locationX);
     let offsetY = Math.abs(h2 - locationY);
 
@@ -193,9 +238,19 @@ class TouchRipple extends React.PureComponent {
       useNativeDriver: true,
     });
 
-    onRippleAnimation(animation, this.onAnimationEnd);
+    // onRippleAnimation(animation, this.onAnimationEnd);
+    animation.start(this.onAnimationEnd);
 
     this.setState(({ ripples }) => ({ ripples: ripples.concat(ripple) }));
+    // this.state.fadeAnim.setValue(0)
+    // Animated.timing(
+    //   // Animate over time
+    //   this.state.fadeAnim, // The animated value to drive
+    //   {
+    //     toValue: 1, // Animate to opacity: 1 (opaque)
+    //     duration: 10000, // Make it take a while
+    //   },
+    // ).start();
 
     // const element = fakeElement ? null : ReactDOM.findDOMNode(this);
     // const rect = element
@@ -285,10 +340,9 @@ class TouchRipple extends React.PureComponent {
   // };
 
   stop = (event, cb) => {
-    console.log('stopped');
+    // console.log('stopped');
     // clearTimeout(this.startTimer);
     // const { ripples } = this.state;
-
     // // The touch interaction occurs too quickly.
     // // We still want to show ripple effect.
     // if (event.type === 'touchend' && this.startTimerCommit) {
@@ -300,9 +354,7 @@ class TouchRipple extends React.PureComponent {
     //   }, 0);
     //   return;
     // }
-
     // this.startTimerCommit = null;
-
     // if (ripples && ripples.length) {
     //   this.setState(
     //     {
@@ -313,8 +365,77 @@ class TouchRipple extends React.PureComponent {
     // }
   };
 
+  renderRipple = ({ unique, progress, locationX, locationY, R }) => {
+    let { rippleColor, rippleOpacity, rippleFades, classes } = this.props;
+    let rippleStyle = {
+      top: locationY - radius,
+      left: locationX - radius,
+      backgroundColor: rippleColor,
+      transform: [
+        {
+          scale: progress.interpolate({
+            inputRange: [0, 1],
+            outputRange: [0.5 / radius, R / radius],
+          }),
+        },
+      ],
+
+      opacity: rippleFades
+        ? progress.interpolate({
+            inputRange: [0, 1],
+            outputRange: [rippleOpacity, 0],
+          })
+        : rippleOpacity,
+    };
+    // console.log(unique);
+
+    return <Animated.View style={[classes.ripple, rippleStyle]} key={unique} />;
+  };
+
   render() {
-    const { center, classes, style, ...other } = this.props;
+    // const { center, classes, style, ...other } = this.props;
+    let { ripples } = this.state;
+    let { onPress, onPressIn, onPressOut, onLongPress, onLayout } = this;
+    let {
+      delayLongPress,
+      delayPressIn,
+      delayPressOut,
+      disabled,
+      hitSlop,
+      pressRetentionOffset,
+      children,
+      rippleContainerBorderRadius,
+      testID,
+      nativeID,
+      accessible,
+      accessibilityLabel,
+      onLayout: __ignored__,
+      classes,
+      ...props
+    } = this.props;
+    // console.log(this.props);
+
+    let touchableProps = {
+      delayLongPress,
+      delayPressIn,
+      delayPressOut,
+      disabled,
+      hitSlop,
+      pressRetentionOffset,
+      onPress,
+      onPressIn,
+      testID,
+      nativeID,
+      accessible,
+      accessibilityLabel,
+      onPressOut,
+      onLongPress: props.onLongPress ? onLongPress : undefined,
+      onLayout,
+    };
+
+    let containerStyle = {
+      borderRadius: rippleContainerBorderRadius || 0,
+    };
 
     // return (
     //   <TransitionGroup
@@ -327,7 +448,42 @@ class TouchRipple extends React.PureComponent {
     //     {this.state.ripples}
     //   </TransitionGroup>
     // );
-    return <View />;
+    // console.log(this.state.fadeAnim);
+    // return (
+    //   <Animated.View
+    //     style={{
+    //       backgroundColor: this.state.fadeAnim.interpolate({
+    //         inputRange: [0, 1],
+    //         outputRange: ['rgba(0,0,0,0)', 'rgba(0,0,0,1)'],
+    //       }), //`rgba(0,0,0,${this.state.fadeAnim})`,
+    //       width: '100%',
+    //       height: '100%',
+    //       position: 'absolute',
+    //       borderRadius: 'inherit',
+    //     }}
+    //   />
+    // );
+    // console.log(ripples);
+    // return (
+    //   <View onLayout={this.onLayout} style={[classes.container, containerStyle]}>{ripples.map(this.renderRipple).pop() || null}</View>
+    // )
+    return (
+      <Animated.View
+        {...props}
+        onLayout={this.onLayout}
+        style={{
+          backgroundColor: 'transparent',
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          overflow: 'hidden',
+          borderRadius: 'inherit',
+        }}
+        pointerEvents="box-only"
+      >
+        <View style={[classes.container, containerStyle]}>{ripples.map(this.renderRipple)}</View>
+      </Animated.View>
+    );
   }
 }
 
@@ -346,10 +502,6 @@ TouchRipple.propTypes = {
    * @ignore
    */
   className: PropTypes.string,
-};
-
-TouchRipple.defaultProps = {
-  center: false,
 };
 
 export default withStyles(styles, { flip: false, name: 'MuiTouchRipple' })(TouchRipple);
