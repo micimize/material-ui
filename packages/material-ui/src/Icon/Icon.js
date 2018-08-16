@@ -1,14 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 
 import NativeIcon from 'react-native-vector-icons/dist/MaterialIcons';
-import injectFonts from './fonts';
-injectFonts();
 
 export const styles = theme => ({
   /* Styles applied to the root element. */

@@ -5,6 +5,7 @@ import replace from 'rollup-plugin-replace';
 import nodeGlobals from 'rollup-plugin-node-globals';
 import { uglify } from 'rollup-plugin-uglify';
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
+import json from 'rollup-plugin-json';
 
 const input = './src/index.js';
 const name = 'material-ui';
@@ -22,12 +23,20 @@ const commonjsOptions = {
   include: /node_modules/,
 };
 
+const jsonPlugin = json({
+  include: [
+    '../../node_modules/react-native-vector-icons/**',
+    '../../node_modules/css-property-parser/**',
+  ]
+})
+
 export default [
   {
     input,
     output: { file: `build/umd/${name}.development.js`, format: 'umd', name, globals },
     external: Object.keys(globals),
     plugins: [
+      jsonPlugin,
       nodeResolve(),
       babel(babelOptions),
       commonjs(commonjsOptions),
@@ -40,13 +49,14 @@ export default [
     output: { file: `build/umd/${name}.production.min.js`, format: 'umd', name, globals },
     external: Object.keys(globals),
     plugins: [
+      jsonPlugin,
       nodeResolve(),
       babel(babelOptions),
       commonjs(commonjsOptions),
       nodeGlobals(),
       replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
       sizeSnapshot(),
-      uglify(),
+      // TODO  breaks build uglify(),
     ],
   },
 ];

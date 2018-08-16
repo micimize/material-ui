@@ -1,8 +1,10 @@
-// https://github.com/rofrischmann/fela/issues/591
 import { Dimensions } from 'react-native';
 import deepmerge from 'deepmerge';
 import { match } from 'css-mediaquery';
-import { isMediaQuery } from 'fela-utils';
+
+function isMediaQuery(property) {
+  return property.substr(0, 6) === '@media';
+}
 
 function getOrientation(width, height) {
   return width > height ? 'landscape' : 'portrait';

@@ -3,7 +3,11 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
-import Icon from '@material-ui/core/Icon';
+import Icon, { injectFonts } from '@material-ui/core/Icon';
+
+import MaterialIcons from 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
+
+injectFonts({ MaterialIcons });
 
 const styles = theme => ({
   root: {

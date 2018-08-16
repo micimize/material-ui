@@ -1,5 +1,3 @@
-import MaterialIcons from 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
-
 function font(family, url) {
   return `@font-face {
     src: url(${url});
@@ -14,13 +12,8 @@ function fonts(fontObj) {
   );
 }
 
-let injected = false;
-
-function injectFonts() {
-  if (injected) {
-    return;
-  }
-  const iconFontStyles = fonts({ MaterialIcons });
+function injectFonts(fontMap) {
+  const iconFontStyles = fonts(fontMap);
   // Create stylesheet
   const style = document.createElement('style');
   style.type = 'text/css';
@@ -32,7 +25,6 @@ function injectFonts() {
 
   // Inject stylesheet
   document.head.appendChild(style);
-  injected = true;
 }
 
 export default injectFonts;

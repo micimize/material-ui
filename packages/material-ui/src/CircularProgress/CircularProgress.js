@@ -94,7 +94,7 @@ export const styles = theme => ({
  * attribute to `true` on that region until it has finished loading.
  */
 function CircularProgress(props) {
-  const { classes, style, color, size, style, thickness, value, variant, ...other } = props;
+  const { classes, style, color, size, thickness, value, variant, ...other } = props;
 
   const circleStyle = {};
   const rootStyle = {};

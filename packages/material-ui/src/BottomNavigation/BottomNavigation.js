@@ -8,7 +8,7 @@ import withStyles from '../styles/withStyles';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    flexDirection: 'row''row',
+    flexDirection: 'row',
     justifyContent: 'center',
     height: 56,
     backgroundColor: theme.palette.background.paper,
