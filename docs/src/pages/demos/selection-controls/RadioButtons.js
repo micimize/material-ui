@@ -8,7 +8,7 @@ import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 
 const styles = {
-  root: {
+  icon: {
     color: green[600],
     fill: green[600],
   },
@@ -42,7 +42,6 @@ class RadioButtons extends React.Component {
         <Radio
           value={this.state.selectedValue === 'a'}
           onValueChange={this.changeHandler('a')}
-          value="a"
           name="radio-button-demo"
           aria-label="A"
         />
@@ -58,7 +57,7 @@ class RadioButtons extends React.Component {
           name="radio-button-demo"
           aria-label="C"
           classes={{
-            root: classes.root,
+            icon: classes.icon,
             checked: classes.checked,
           }}
         />

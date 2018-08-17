@@ -197,7 +197,7 @@ Switch.propTypes = {
   /**
    * The value of the component.
    */
-  value: PropTypes.string,
+  value: PropTypes.bool,
 };
 
 Switch.defaultProps = {

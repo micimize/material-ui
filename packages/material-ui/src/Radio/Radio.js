@@ -10,7 +10,7 @@ import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
   /* Styles applied to the root element. */
-  root: {
+  icon: {
     color: theme.palette.text.secondary,
     fill: theme.palette.text.secondary,
   },
@@ -43,7 +43,7 @@ function Radio(props) {
       icon={<RadioButtonUncheckedIcon />}
       checkedIcon={<RadioButtonCheckedIcon />}
       classes={{
-        root: styleNames(classes.root, classes[`color${capitalize(color)}`]),
+        icon: styleNames(classes.icon, classes[`color${capitalize(color)}`]),
         checked: styleNames(classes[`color${capitalize(color)}Checked`], classes.checked),
         disabled: classes.disabled,
       }}

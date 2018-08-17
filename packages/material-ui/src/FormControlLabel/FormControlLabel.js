@@ -24,7 +24,8 @@ export const styles = theme => ({
     flexDirection: 'row-reverse',
   },
   /* Styles applied to the root element if `disabled={true}`. */
-  disabled: {
+  disabled: {},
+  disabledText: {
     color: theme.palette.text.disabled,
   },
   /* Styles applied to the label's Typography component. */
@@ -82,7 +83,7 @@ function FormControlLabel(props, context) {
       {...other}
     >
       {React.cloneElement(control, controlProps)}
-      <Typography style={styleNames(classes.label, { [classes.disabled]: disabled })}>
+      <Typography style={styleNames(classes.label, { [classes.disabledText]: disabled })}>
         {label}
       </Typography>
     </View>
@@ -136,7 +137,7 @@ FormControlLabel.propTypes = {
   /**
    * The value of the component.
    */
-  value: PropTypes.string,
+  value: PropTypes.bool,
 };
 
 FormControlLabel.defaultProps = {

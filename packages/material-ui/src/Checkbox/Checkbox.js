@@ -113,7 +113,7 @@ Checkbox.propTypes = {
   /**
    * The value of the component.
    */
-  value: PropTypes.string,
+  value: PropTypes.bool,
 };
 
 Checkbox.defaultProps = {
