@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
-import withStyles from '@material-ui/core/styles/withStyles';
+import styleNames from '../styles/react-native-style-names';
+import withStyles from '../styles/withStyles';
 
 export const styles = {
   root: {

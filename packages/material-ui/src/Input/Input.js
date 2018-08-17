@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 import { TextInput } from '../styles/extended-styles/focusable';
 import { View as Underline } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Textarea from './Textarea';
 
@@ -136,9 +136,6 @@ export const styles = theme => {
       // '&::-moz-placeholder': placeholder, // Firefox 19+
       // '&:-ms-input-placeholder': placeholder, // IE 11
       // '&::-ms-input-placeholder': placeholder, // Edge
-      ':focus': {
-        outline: 0,
-      },
       // Reset Firefox invalid required input style
       '&:invalid': {
         boxShadow: 'none',

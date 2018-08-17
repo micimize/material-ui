@@ -2,11 +2,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
-import Paper from '@material-ui/core/Paper';
-import withStyles from '@material-ui/core/styles/withStyles';
-import Fade from '@material-ui/core/Fade';
-import { isMuiElement } from '@material-ui/core/utils/reactHelpers';
+import styleNames from '../styles/react-native-style-names';
+import Paper from '../Paper';
+import withStyles from '../styles/withStyles';
+import Fade from '../Fade';
+import { isMuiElement } from '../utils/reactHelpers';
 import { View, Text } from 'react-native';
 
 export const styles = theme => {

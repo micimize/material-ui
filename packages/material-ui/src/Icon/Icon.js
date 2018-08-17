@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '../styles/react-native-style-names';
 
 import NativeIcon from 'react-native-vector-icons/dist/MaterialIcons';
 

@@ -5,7 +5,7 @@ import { getBoundingClientRect, layoutToBoundingRect } from '../utils/reactHelpe
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '../styles/react-native-style-names';
 import EventListener from 'react-event-listener';
 import debounce from 'debounce'; // < 1kb payload overhead when lodash/debounce is > 3kb.
 import { getNormalizedScrollLeft, detectScrollType } from 'normalize-scroll-left';

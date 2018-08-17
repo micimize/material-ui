@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 
 import React from 'react';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '../styles/react-native-style-names';
 
 export function cloneElementWithClassName(child, style) {
   return React.cloneElement(child, {

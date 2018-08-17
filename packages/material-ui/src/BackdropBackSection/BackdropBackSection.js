@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
-import withStyles from '@material-ui/core/styles/withStyles';
-import Fade from '@material-ui/core/Fade';
+import styleNames from '../styles/react-native-style-names';
+import withStyles from '../styles/withStyles';
+import Fade from '../Fade';
 import AnimatedHeight from '../internal/animated-height';
 
 const FADE_OUT = 150;

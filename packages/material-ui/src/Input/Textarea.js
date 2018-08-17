@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 // TODO might be unnecessary
 import { TextInput } from '../styles/extended-styles/focusable';
 import PropTypes from 'prop-types';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 const ROW_HEIGHT = 19;

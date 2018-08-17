@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { View } from '@material-ui/core/styles/extended-styles/animated';
+import { View } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '../styles/react-native-style-names';
 import keycode from 'keycode';
 import CancelIcon from '../internal/svg-icons/Cancel';
 import withStyles from '../styles/withStyles';

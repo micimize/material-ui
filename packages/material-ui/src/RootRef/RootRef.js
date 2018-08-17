@@ -20,7 +20,7 @@ function setRef(ref, value) {
  * For example:
  * ```jsx
  * import React from 'react';
- * import RootRef from '@material-ui/core/RootRef';
+ * import RootRef from '../RootRef';
  *
  * class MyComponent extends React.Component {
  *   constructor(props) {

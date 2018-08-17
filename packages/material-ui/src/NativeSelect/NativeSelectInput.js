@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Picker } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '../styles/react-native-style-names';
 
 /**
  * @ignore - internal component.

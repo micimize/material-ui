@@ -1,7 +1,7 @@
 import React from 'react';
 import { View as RNView } from 'react-native';
-import withStyles from '@material-ui/core/styles/withStyles';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
+import withStyles from '../styles/withStyles';
+import styleNames from '../styles/react-native-style-names';
 
 export const styles = {
   root: {

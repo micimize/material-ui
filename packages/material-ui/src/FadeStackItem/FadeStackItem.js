@@ -1,7 +1,7 @@
 import React from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
-import { View } from '@material-ui/core/styles/extended-styles/animated';
+import withStyles from '../styles/withStyles';
+import styleNames from '../styles/react-native-style-names';
+import { View } from '../styles/extended-styles/animated';
 
 export const styles = theme => ({
   item: {

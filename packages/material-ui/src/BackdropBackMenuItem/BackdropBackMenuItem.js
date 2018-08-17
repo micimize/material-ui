@@ -2,10 +2,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
-import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
-import { capitalize } from '@material-ui/core/utils/helpers';
+import styleNames from '../styles/react-native-style-names';
+import { withStyles } from '../styles';
+import MenuItem from '../MenuItem';
+import { capitalize } from '../utils/helpers';
 
 const styles = theme => {
   const transition = theme.transitions.create('backgroundColor', {

@@ -13,7 +13,7 @@ import withStyles from '../styles/withStyles';
 import Modal from '../Modal';
 import Grow from '../Grow';
 import Paper from '../Paper';
-import { getBoundingClientRect } from '@material-ui/core/utils/reactHelpers';
+import { getBoundingClientRect } from '../utils/reactHelpers';
 
 function getOffsetTop(rect, vertical) {
   let offset = 0;

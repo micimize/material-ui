@@ -1,6 +1,5 @@
 // TODO implementing :focus might have been premature
 import React from 'react';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
 import { get as getExtensions } from './extensions';
 
 import { TextInput as RNTextInput } from 'react-native';
@@ -30,9 +29,7 @@ function focusable(Component) {
         <Component
           onFocus={this.focus}
           onBlur={this.blur}
-          style={styleNames(style, {
-            [focusStyle]: this.state.focused,
-          })}
+          style={[style, this.state.focused && focusStyle ]}
           {...props}
         />
       );

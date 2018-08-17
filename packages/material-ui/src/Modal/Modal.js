@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '../styles/react-native-style-names';
 import warning from 'warning';
 import keycode from 'keycode';
 import ownerDocument from '../utils/ownerDocument';

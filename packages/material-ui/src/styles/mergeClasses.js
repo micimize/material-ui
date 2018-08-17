@@ -1,6 +1,6 @@
 import warning from 'warning';
 import getDisplayName from 'recompose/getDisplayName';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
+import styleNames from '../styles/react-native-style-names';
 
 function mergeClasses(options = {}) {
   const { baseClasses, newClasses, Component, noBase = false } = options;
