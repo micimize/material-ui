@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Fade from '@material-ui/core/Fade';
-import AnimatedHeight from './animated-height';
+import AnimatedHeight from '../internal/animated-height';
 
 const FADE_OUT = 150;
 const EXPAND = 150;

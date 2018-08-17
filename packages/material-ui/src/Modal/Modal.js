@@ -11,7 +11,7 @@ import Portal from '../Portal';
 import { createChainedFunction } from '../utils/helpers';
 import withStyles from '../styles/withStyles';
 import ModalManager from './ModalManager';
-import Backdrop from '../Backdrop';
+import Backdrop from '../ModalBackdrop';
 
 function getContainer(container, defaultContainer) {
   container = typeof container === 'function' ? container() : container;

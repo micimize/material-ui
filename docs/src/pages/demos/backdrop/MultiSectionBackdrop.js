@@ -1,15 +1,7 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Fade from '@material-ui/core/Fade';
-import Backdrop from '@material-ui/lab/Backdrop/Backdrop';
-import Back from '@material-ui/lab/Backdrop/BackdropBack';
-import BackSection from '@material-ui/lab/Backdrop/BackdropBackSection';
-import Front from '@material-ui/lab/Backdrop/BackdropFront';
-import Subheader from '@material-ui/lab/Backdrop/BackdropFrontSubheader';
-import FrontContent from '@material-ui/lab/Backdrop/BackdropFrontContent';
-import { FadeStack, FadeStackItem } from '@material-ui/lab/Backdrop/StackedFade';
-import MenuItem from '@material-ui/lab/Backdrop/BackdropBackMenuItem';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -19,9 +11,18 @@ import ExpandIcon from '@material-ui/icons/ExpandLess';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Chip from '@material-ui/core/Chip';
-import SimpleMediaCard from '../../demos/cards/SimpleMediaCard';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
-import { View, Text } from 'react-native';
+import Fade from '@material-ui/core/Fade';
+import FadeStack from '@material-ui/core/FadeStack';
+import FadeStackItem from '@material-ui/core/FadeStackItem';
+import Backdrop from '@material-ui/core/Backdrop';
+import Back from '@material-ui/core/BackdropBack';
+import BackSection from '@material-ui/core/BackdropBackSection';
+import Front from '@material-ui/core/BackdropFront';
+import Subheader from '@material-ui/core/BackdropFrontSubheader';
+import FrontContent from '@material-ui/core/BackdropFrontContent';
+import MenuItem from '@material-ui/core/BackdropBackMenuItem';
+import SimpleMediaCard from '../../demos/cards/SimpleMediaCard';
 
 const tags = [
   'chameleon',

@@ -1,6 +1,6 @@
 import { AppBarProps } from '../AppBar';
 import { AvatarProps } from '../Avatar';
-import { BackdropProps } from '../Backdrop';
+import { BackdropProps } from '../ModalBackdrop';
 import { BadgeProps } from '../Badge';
 import { BottomNavigationActionProps } from '../BottomNavigationAction';
 import { BottomNavigationProps } from '../BottomNavigation';

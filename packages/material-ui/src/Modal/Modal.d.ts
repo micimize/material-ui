@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { StandardProps, ModalManager } from '..';
-import { BackdropProps } from '../Backdrop';
+import { ModalBackdropProps } from '../ModalBackdrop';
 import { PortalProps } from '../Portal';
 
 export interface ModalProps
   extends StandardProps<React.HtmlHTMLAttributes<HTMLDivElement>, ModalClassKey> {
-  BackdropComponent?: React.ReactType<BackdropProps>;
-  BackdropProps?: Partial<BackdropProps>;
+  BackdropComponent?: React.ReactType<ModalBackdropProps>;
+  BackdropProps?: Partial<ModalBackdropProps>;
   container?: PortalProps['container'];
   disableAutoFocus?: boolean;
   disableBackdropClick?: boolean;

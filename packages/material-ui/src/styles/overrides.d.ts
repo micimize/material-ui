@@ -1,6 +1,6 @@
 import { AppBarClassKey } from '../AppBar';
 import { AvatarClassKey } from '../Avatar';
-import { BackdropClassKey } from '../Backdrop';
+import { BackdropClassKey } from '../ModalBackdrop';
 import { BadgeClassKey } from '../Badge';
 import { BottomNavigationActionClassKey } from '../BottomNavigationAction';
 import { BottomNavigationClassKey } from '../BottomNavigation';

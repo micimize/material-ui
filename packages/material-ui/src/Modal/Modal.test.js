@@ -6,7 +6,7 @@ import keycode from 'keycode';
 import consoleErrorMock from 'test/utils/consoleErrorMock';
 import { createShallow, createMount, getClasses, unwrap } from '../test-utils';
 import Fade from '../Fade';
-import Backdrop from '../Backdrop';
+import Backdrop from '../ModalBackdrop';
 import Modal from './Modal';
 
 describe('<Modal />', () => {

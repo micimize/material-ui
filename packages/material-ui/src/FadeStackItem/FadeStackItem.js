@@ -1,22 +1,9 @@
 import React from 'react';
-import { View as RNView } from 'react-native';
 import withStyles from '@material-ui/core/styles/withStyles';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import { View } from '@material-ui/core/styles/extended-styles/animated';
 
-export const rootStyles = {
-  root: {
-    justifyContent: 'center',
-    display: 'flex',
-    flexGrow: 1,
-  },
-};
-
-function FadeStack({ classes, style, ...props }) {
-  return <RNView style={styleNames(classes.root, style)} {...props} />;
-}
-
-export const itemStyles = theme => ({
+export const styles = theme => ({
   item: {
     opacity: 0,
     zIndex: 0,
@@ -49,6 +36,4 @@ function FadeStackItem(props) {
   );
 }
 
-const _FadeStack = withStyles(rootStyles, { name: 'MuiFadeStack' })(FadeStack);
-const _FadeStackItem = withStyles(itemStyles, { name: 'MuiFadeStackItem' })(FadeStackItem);
-export { _FadeStack as FadeStack, _FadeStackItem as FadeStackItem };
+export default withStyles(styles, { name: 'MuiFadeStackItem' })(FadeStackItem);
