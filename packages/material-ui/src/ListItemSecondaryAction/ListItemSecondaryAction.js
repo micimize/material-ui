@@ -10,7 +10,7 @@ export const styles = {
     position: 'absolute',
     right: 4,
     top: '50%',
-    transform: 'translateY(-50%)',
+    transform: [{ translateY: '-50%' }],
   },
 };
 

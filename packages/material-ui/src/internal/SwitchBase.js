@@ -16,6 +16,9 @@ export const styles = {
       backgroundColor: 'transparent',
     },
   },
+  icon: {
+    zIndex: 1,
+  },
   checked: {},
   disabled: {},
 };
@@ -102,7 +105,7 @@ class SwitchBase extends React.Component {
     const checked = this.isControlled ? value : this.state.checked;
 
     const style = styleNames(
-      classes.root,
+      classes.icon,
       {
         [classes.checked]: checked,
         [classes.disabled]: disabled,
@@ -112,7 +115,7 @@ class SwitchBase extends React.Component {
 
     return (
       <IconButton
-        style={style}
+        style={classes.root}
         disabled={disabled}
         tabIndex={null}
         role={undefined}
@@ -145,7 +148,7 @@ SwitchBase.propTypes = {
   /**
    * The icon to display when the component is checked.
    */
-  checkedIcon: PropTypes.node.isRequired,
+  checkedIcon: PropTypes.node,
   /**
    * Override or extend the styles applied to the component.
    * See [CSS API](#css-api) below for more details.
@@ -170,7 +173,7 @@ SwitchBase.propTypes = {
   /**
    * The icon to display when the component is unchecked.
    */
-  icon: PropTypes.node.isRequired,
+  icon: PropTypes.node,
   /**
    * The id of the `input` element.
    */

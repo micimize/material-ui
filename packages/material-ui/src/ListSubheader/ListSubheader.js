@@ -8,12 +8,11 @@ import { capitalize } from '../utils/helpers';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: theme.mixins.gutters({
-    boxSizing: 'border-box',
-    lineHeight: '48px',
-    color: theme.palette.text.secondary,
     fontFamily: theme.typography.fontFamily,
     fontWeight: theme.typography.fontWeightMedium,
-    fontSize: theme.typography.pxToRem(14),
+    lineHeight: 48,
+    color: theme.palette.text.secondary,
+    fontSize: 14,
   }),
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {
@@ -101,7 +100,7 @@ ListSubheader.propTypes = {
 
 ListSubheader.defaultProps = {
   color: 'default',
-  component: View,
+  component: Text,
   disableSticky: false,
   inset: false,
 };

@@ -22,7 +22,7 @@ function SimpleList(props) {
   const { classes } = props;
   return (
     <View style={classes.root}>
-      <List component="nav">
+      <List>
         <ListItem button>
           <ListItemIcon>
             <InboxIcon />
@@ -37,11 +37,11 @@ function SimpleList(props) {
         </ListItem>
       </List>
       <Divider />
-      <List component="nav">
+      <List>
         <ListItem button>
           <ListItemText primary="Trash" />
         </ListItem>
-        <ListItem button component="a" href="#simple-list">
+        <ListItem button>
           <ListItemText primary="Spam" />
         </ListItem>
       </List>

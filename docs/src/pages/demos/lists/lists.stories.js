@@ -24,7 +24,7 @@ storiesOf('Lists', module).addWithChapters('Demos', {
         { title: 'Checkbox List', sectionFn: () => <CheckboxList /> },
         { title: 'Checkbox List Secondary', sectionFn: () => <CheckboxListSecondary /> },
         { title: 'Switch List Secondary', sectionFn: () => <SwitchListSecondary /> },
-        { title: 'Interactive List', sectionFn: () => <InteractiveList /> },
+        //{ title: 'Interactive List', sectionFn: () => <InteractiveList /> },
       ],
     },
   ],

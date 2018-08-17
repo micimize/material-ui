@@ -10,7 +10,8 @@ import withStyles from '../styles/withStyles';
 
 export const styles = theme => ({
   /* Styles applied to the root element. */
-  root: {
+  root: {},
+  icon: {
     color: theme.palette.text.secondary,
     fill: theme.palette.text.secondary,
   },

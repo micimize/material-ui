@@ -17,7 +17,7 @@ const styles = theme => ({
     maxHeight: 300,
   },
   listSection: {
-    backgroundColor: 'inherit',
+    backgroundColor: theme.palette.background.paper,
   },
   ul: {
     backgroundColor: 'inherit',
@@ -29,7 +29,7 @@ function PinnedSubheaderList(props) {
   const { classes } = props;
 
   return (
-    <List style={classes.root} subheader={<View />}>
+    <List style={classes.root} subheader={<Text />}>
       {[0, 1, 2, 3, 4].map(sectionId => (
         <View key={`section-${sectionId}`} style={classes.listSection}>
           <View style={classes.ul}>

@@ -19,14 +19,14 @@ export const styles = theme => ({
     overflow: 'hidden',
     userSelect: 'none',
   },
-  /* Styles applied to the root element if there are children and not `src` or `srcSet` */
+  /* Styles applied to the root element if there are children and not `source` */
   /* Styles applied to the root element if `color="default"`. */
   colorDefault: {
     // color: theme.palette.background.default,
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[600],
   },
-  /* Styles applied to the img element if either `src` or `srcSet` is defined. */
+  /* Styles applied to the img element if either `source` is defined. */
   img: {
     width: '100%',
     height: '100%',
@@ -43,15 +43,14 @@ function Avatar(props) {
     component: Component,
     imgProps,
     sizes,
-    src,
-    srcSet,
+    source,
     ...other
   } = props;
 
   const className = styleNames(
     classes.root,
     {
-      [classes.colorDefault]: childrenProp && !src && !srcSet,
+      [classes.colorDefault]: childrenProp && !source,
     },
     styleProp,
   );
@@ -68,10 +67,8 @@ function Avatar(props) {
     } else {
       children = childrenProp;
     }
-  } else if (src || srcSet) {
-    children = (
-      <Image alt={alt} src={src} srcSet={srcSet} sizes={sizes} style={classes.img} {...imgProps} />
-    );
+  } else if (source) {
+    children = <Image alt={alt} source={source} sizes={sizes} style={classes.img} {...imgProps} />;
   }
 
   return (

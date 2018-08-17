@@ -23,7 +23,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the root element if `context.dense` is `true`. */
   dense: {
-    fontSize: theme.typography.pxToRem(13),
+    // fontSize: theme.typography.pxToRem(13),
   },
   /* Styles applied to the primary `Typography` component. */
   primary: {
