@@ -12,7 +12,6 @@ import unsupportedProp from '../utils/unsupportedProp';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    ...theme.typography.button,
     maxWidth: 264,
     position: 'relative',
     minWidth: 72,
@@ -71,7 +70,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the `icon` and `label`'s wrapper element. */
   wrapper: {
-    display: 'inline-flex',
+    // display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
@@ -90,16 +89,17 @@ export const styles = theme => ({
   },
   /* Styles applied to the label wrapper element if `label` is provided. */
   label: {
-    fontSize: theme.typography.pxToRem(14),
+    ...theme.typography.button,
+    fontSize: 14,
     whiteSpace: 'normal',
     [theme.breakpoints.up('md')]: {
-      fontSize: theme.typography.pxToRem(13),
+      fontSize: 13,
     },
   },
   /* Styles applied to the label wrapper element if `label` is provided and the text is wrapped. */
   labelWrapped: {
     [theme.breakpoints.down('sm')]: {
-      fontSize: theme.typography.pxToRem(12),
+      fontSize: 12,
     },
   },
 });
@@ -186,7 +186,6 @@ class Tab extends React.Component {
 
     const className = styleNames(
       classes.root,
-      classes[`textColor${capitalize(textColor)}`],
       {
         [classes.disabled]: disabled,
         [classes.selected]: selected,
@@ -195,6 +194,8 @@ class Tab extends React.Component {
       },
       styleProp,
     );
+
+    const textClassName = styleNames(classes.wrapper, classes[`textColor${capitalize(textColor)}`]);
 
     return (
       <ButtonBase
@@ -206,7 +207,7 @@ class Tab extends React.Component {
         {...other}
         onClick={this.handleChange}
       >
-        <Text style={classes.wrapper}>
+        <Text style={textClassName}>
           {icon}
           {label}
         </Text>

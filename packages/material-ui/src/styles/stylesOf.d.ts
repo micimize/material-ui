@@ -10,7 +10,7 @@ type StyleSelectors<Sheet extends { [K: string]: any }> = Partial<
 
 declare function stylesOf<T>(
   styleMap: Sheet<T>,
-  selectors: StyleSelectors<Sheet<T>>,
-): Array<StyleProp<T>>;
+  ...selectors: StyleSelectors<Sheet<T>>[]
+): Array<StyleProp<T>>[];
 
 export default stylesOf;

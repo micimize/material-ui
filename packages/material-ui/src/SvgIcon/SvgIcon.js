@@ -12,7 +12,6 @@ export const styles = theme => ({
     userSelect: 'none',
     width: 24,
     height: 24,
-    fontSize: 24,
     // fill: 'currentColor',
     flexShrink: 0,
     /* TODO is a context-based em and color inheritence system worth it
@@ -23,6 +22,11 @@ export const styles = theme => ({
       duration: theme.transitions.duration.shorter,
     }),
   },
+  /*
+  icon: {
+    fontSize: 24,
+  },
+  */
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {
     color: theme.palette.primary.main,
@@ -94,8 +98,7 @@ function SvgIcon(props) {
   const style = styleNames(
     classes.root,
     {
-      // [classes.fontSizeInherit]: fontSize === 'inherit',
-      [classes[`color${capitalize(color)}`]]: color !== 'inherit',
+      [classes[`color${capitalize(color)}`]]: color !== 'default',
     },
     styleProp,
   );
@@ -134,7 +137,7 @@ SvgIcon.propTypes = {
    * You can use the `nativeColor` property to apply a color attribute to the SVG element.
    */
   color: PropTypes.oneOf([
-    'inherit',
+    'default',
     'primary',
     'onPrimary',
     'secondary',

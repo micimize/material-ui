@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
 import SwipeableViews from 'react-swipeable-views';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -43,8 +42,10 @@ const styles = theme => ({
     right: theme.spacing.unit * 2,
   },
   fabGreen: {
-    color: theme.palette.common.white,
     backgroundColor: green[500],
+  },
+  fabGreenText: {
+    fill: theme.palette.common.white,
   },
 });
 
@@ -72,17 +73,16 @@ class FloatingActionButtonZoom extends React.Component {
       {
         color: 'primary',
         style: classes.fab,
-        icon: <AddIcon />,
+        children: <AddIcon color="onPrimary" />,
       },
       {
         color: 'secondary',
         style: classes.fab,
-        icon: <EditIcon />,
+        children: <EditIcon color="onSecondary" />,
       },
       {
-        color: 'inherit',
-        style: styleNames(classes.fab, classes.fabGreen),
-        icon: <UpIcon />,
+        style: [classes.fab, classes.fabGreen],
+        children: <UpIcon style={classes.fabGreenText} />,
       },
     ];
 
@@ -123,12 +123,8 @@ class FloatingActionButtonZoom extends React.Component {
             unmountOnExit
           >
           */
-            this.state.value === index && (
-              <Button variant="fab" style={fab.className} color={fab.color}>
-                {fab.icon}
-              </Button>
-            ),
-            /*</Zoom>*/
+            this.state.value === index && <Button variant="fab" key={index} {...fab} />,
+          /*</Zoom>*/
         )}
       </View>
     );

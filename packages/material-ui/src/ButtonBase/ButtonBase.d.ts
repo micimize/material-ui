@@ -1,12 +1,9 @@
 import * as React from 'react';
+import { TouchableOpacityProps } from 'react-native';
 import { StandardProps } from '..';
 import { TouchRippleProps } from './TouchRipple';
 
-export interface ButtonBaseProps
-  extends StandardProps<
-      React.AnchorHTMLAttributes<HTMLElement> & React.ButtonHTMLAttributes<HTMLElement>,
-      ButtonBaseClassKey
-    > {
+export interface ButtonBaseProps extends StandardProps<TouchableOpacityProps, ButtonBaseClassKey> {
   action?: (actions: ButtonBaseActions) => void;
   buttonRef?: React.Ref<any> | React.RefObject<any>;
   centerRipple?: boolean;

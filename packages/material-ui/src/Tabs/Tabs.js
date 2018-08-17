@@ -24,7 +24,6 @@ export const styles = theme => ({
   /* Styles applied to the flex container element. */
   flexContainer: {
     flexDirection: 'row',
-    flexDirection: 'row',
   },
   /* Styles applied to the flex container element if `centered={true}` & `scrollable={false}`. */
   centered: {
@@ -33,9 +32,7 @@ export const styles = theme => ({
   /* Styles applied to the tablist element. */
   scroller: {
     position: 'relative',
-    display: 'inline-block',
     flex: '1 1 auto',
-    whiteSpace: 'nowrap',
   },
   /* Styles applied to the tablist element if `scrollable={false}`. */
   fixed: {
@@ -49,11 +46,7 @@ export const styles = theme => ({
   /* Styles applied to the `ScrollButtonComponent` component. */
   scrollButtons: {},
   /* Styles applied to the `ScrollButtonComponent` component if `sscrollButtons="auto"`. */
-  scrollButtonsAuto: {
-    [theme.breakpoints.down('xs')]: {
-      display: 'none',
-    },
-  },
+  scrollButtonsAuto: {},
   /* Styles applied to the `TabIndicator` component. */
   indicator: {},
 });

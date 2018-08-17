@@ -13,8 +13,8 @@ export type StandardProps<C, ClassKey extends string, Removals extends keyof C =
 > &
   StyledComponentProps<ClassKey> & {
     className?: string;
-    style?: React.CSSProperties;
-  } & any;
+    style?: any; // React.CSSProperties;
+  };
 
 export type PaletteType = 'light' | 'dark';
 export interface Color {

@@ -17,7 +17,6 @@ export const styles = theme => {
     root: {
       flexDirection: 'column',
       width: '100%',
-      boxSizing: 'border-box', // Prevent padding issue with the Modal and fixed positioned AppBar.
       zIndex: theme.zIndex.appBar,
       flexShrink: 0,
     },
@@ -49,17 +48,17 @@ export const styles = theme => {
     /* Styles applied to the root element if `color="default"`. */
     colorDefault: {
       backgroundColor: backgroundColorDefault,
-      color: theme.palette.getContrastText(backgroundColorDefault),
+      // color: theme.palette.getContrastText(backgroundColorDefault),
     },
     /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       backgroundColor: theme.palette.primary.main,
-      color: theme.palette.primary.contrastText,
+      // color: theme.palette.primary.contrastText,
     },
     /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       backgroundColor: theme.palette.secondary.main,
-      color: theme.palette.secondary.contrastText,
+      // color: theme.palette.secondary.contrastText,
     },
   };
 };
@@ -71,7 +70,7 @@ function AppBar(props) {
     classes.root,
     classes[`position${capitalize(position)}`],
     {
-      [classes[`color${capitalize(color)}`]]: color !== 'inherit',
+      [classes[`color${capitalize(color)}`]]: color !== 'default',
       // 'mui-fixed': position === 'fixed', // Useful for the Dialog
     },
     styleProp,

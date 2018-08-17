@@ -7,6 +7,7 @@ import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import NavigationIcon from '@material-ui/icons/Navigation';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   row: {
@@ -32,7 +33,7 @@ function FloatingActionButtons(props) {
       </Button>
       <Button variant="extendedFab" aria-label="Delete" style={classes.button}>
         <NavigationIcon style={classes.extendedIcon} />
-        <Text>Extended</Text>
+        <Typography variant="button">Extended</Typography>
       </Button>
       <Button variant="fab" disabled aria-label="Delete" style={classes.button}>
         <DeleteIcon color="disabled" />

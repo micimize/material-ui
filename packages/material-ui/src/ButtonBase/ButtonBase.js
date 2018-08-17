@@ -16,7 +16,7 @@ const DefaultButton = Animated.createComponent(TouchableOpacity);
 export const styles = {
   /* Styles applied to the root element. */
   root: {
-    display: 'inline-flex',
+    // display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
@@ -31,12 +31,12 @@ export const styles = {
     padding: 0, // Remove the padding in Firefox
     cursor: 'pointer',
     userSelect: 'none',
-    textAlignVertical: 'middle',
+    // textAlignVertical: 'middle',
     // '-moz-appearance': 'none', // Reset
 
     // textDecorationLine: 'none',
     // So we take precedent over the style of a native <a /> element.
-    color: 'inherit',
+    // color: 'inherit',
     /*
     '&::-moz-focus-inner': {
       borderStyle: 'none', // Remove Firefox dotted outline.
