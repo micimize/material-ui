@@ -4,7 +4,7 @@ import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import styleNames from '../styles/react-native-style-names';
 
-import NativeIcon from 'react-native-vector-icons/dist/MaterialIcons';
+import NativeIcon from 'react-native-vector-icons/MaterialIcons';
 
 export const styles = theme => ({
   /* Styles applied to the root element. */
@@ -49,7 +49,7 @@ function Icon(props) {
 
   return (
     <NativeIcon
-      name={children.replace('_', '-', 'g')}
+      name={children.replace(/_/g, '-')}
       style={styleNames(
         classes.root,
         {

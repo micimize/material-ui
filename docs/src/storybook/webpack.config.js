@@ -54,8 +54,10 @@ module.exports = storybookBaseConfig => {
 
   storybookBaseConfig.resolve.alias = {
     'react-native': 'react-native-web',
+    'react-native-vector-icons/MaterialIcons': 'react-native-vector-icons/dist/MaterialIcons',
     // 'react-native-animatable': '@micimize/react-native-animatable',
-    '@material-ui/core': path.resolve(__dirname, '../src'),
+    '@material-ui/core': path.resolve(process.cwd(), './packages/material-ui/src'),
+    '@micimize/material-ui': path.resolve(process.cwd(), './packages/material-ui/src'),
   };
 
   return storybookBaseConfig;
