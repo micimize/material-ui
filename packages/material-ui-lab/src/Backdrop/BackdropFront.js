@@ -26,7 +26,6 @@ export const styles = theme => {
       flexShrink: 1,
       flexBasis: 'auto',
       backgroundColor: theme.palette.background.paper,
-      color: theme.palette.getContrastText(theme.palette.background.paper),
 
       paddingLeft: 15,
       paddingRight: 15,
@@ -34,7 +33,7 @@ export const styles = theme => {
       display: 'flex',
       flexDirection: 'column',
 
-      transition: theme.transitions.create(['flex-grow'], transition),
+      transition: theme.transitions.create(['flexGrow'], transition),
     },
     scrim: {
       zIndex: -1,
@@ -105,10 +104,6 @@ BackdropFront.propTypes = {
    * See [CSS API](#css-api) below for more details.
    */
   classes: PropTypes.object.isRequired,
-  /**
-   * @ignore
-   */
-  style: PropTypes.string,
   /**
    * If `true`, the panel will be displayed in a disabled state,
    * with a scrim overlay

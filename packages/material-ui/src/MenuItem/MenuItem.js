@@ -10,21 +10,20 @@ import ListItem from '../ListItem';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    ...theme.typography.subheading,
     height: 24,
-    boxSizing: 'content-box',
-    width: 'auto',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
     paddingLeft: 16,
     paddingRight: 16,
-    '[selected="true"]': {
-      backgroundColor: theme.palette.action.selected,
-    },
+  },
+  text: {
+    ...theme.typography.subheading,
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
   },
   /* Styles applied to the root element if `selected={true}`. */
-  selected: {},
+  selected: {
+    backgroundColor: theme.palette.action.selected,
+  },
+  selectedText: {},
 });
 
 function MenuItem(props) {
@@ -36,6 +35,7 @@ function MenuItem(props) {
       role={role}
       tabIndex={-1}
       style={styleNames(classes.root, { [classes.selected]: selected }, style)}
+      classes={{ text: styleNames(classes.text, { [classes.selectedText]: selected }) }}
       component={component}
       {...other}
     />

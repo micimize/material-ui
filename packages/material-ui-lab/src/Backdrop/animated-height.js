@@ -305,7 +305,6 @@ AnimateHeight.propTypes = {
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onAnimationEnd: PropTypes.func,
   onAnimationStart: PropTypes.func,
-  style: PropTypes.object,
 };
 
 AnimateHeight.defaultProps = {

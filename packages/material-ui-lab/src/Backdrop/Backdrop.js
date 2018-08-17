@@ -19,11 +19,11 @@ export const styles = theme => {
     },
     colorPrimary: {
       backgroundColor: theme.palette.primary.main,
-      color: theme.palette.primary.contrastText,
+      // color: theme.palette.primary.contrastText,
     },
     colorSecondary: {
       backgroundColor: theme.palette.secondary.main,
-      color: theme.palette.secondary.contrastText,
+      // color: theme.palette.secondary.contrastText,
     },
   };
 };
@@ -34,7 +34,7 @@ function Backdrop(props) {
   const style = styleNames(
     classes.root,
     {
-      [classes[`color${capitalize(color)}`]]: color !== 'inherit',
+      [classes[`color${capitalize(color)}`]]: color !== 'default',
     },
     styleProp,
   );
@@ -57,13 +57,9 @@ Backdrop.propTypes = {
    */
   classes: PropTypes.object.isRequired,
   /**
-   * @ignore
-   */
-  style: PropTypes.string,
-  /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */
-  color: PropTypes.oneOf(['inherit', 'primary', 'secondary']),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary']),
 };
 
 Backdrop.defaultProps = {

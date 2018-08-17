@@ -60,10 +60,6 @@ BackdropFrontSubheader.propTypes = {
    */
   classes: PropTypes.object.isRequired,
   /**
-   * @ignore
-   */
-  style: PropTypes.string,
-  /**
    * If `true`, a thin dividing border is included in the header.
    */
   divided: PropTypes.bool,

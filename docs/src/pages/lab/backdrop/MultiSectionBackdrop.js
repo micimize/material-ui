@@ -126,7 +126,6 @@ class MultiSectionBackdrop extends React.Component {
               <Toolbar>
                 <IconButton
                   style={classes.menuButton}
-                  color="inherit"
                   aria-label="Menu"
                   onClick={() => this.setState({ expanded: expanded ? false : 'nav' })}
                 >
@@ -143,7 +142,6 @@ class MultiSectionBackdrop extends React.Component {
                     <Title style={styleNames(classes.flex, classes.withFilter)}>
                       <Text>Nature's Nobility</Text>
                       <IconButton
-                        color="inherit"
                         aria-label="Filters"
                         style={classes.filter}
                         onClick={() => this.setState({ expanded: 'filters' })}

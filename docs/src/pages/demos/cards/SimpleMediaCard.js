@@ -30,10 +30,10 @@ function SimpleMediaCard(props) {
         image={require('/static/images/cards/contemplative-reptile.jpg')}
       />
       <CardContent>
-        <Typography gutterBottom variant="headline" component="h2">
+        <Typography gutterBottom variant="headline">
           Lizard
         </Typography>
-        <Typography component="p">
+        <Typography>
           Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
           across all continents except Antarctica
         </Typography>

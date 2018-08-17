@@ -63,10 +63,6 @@ BackdropBackSection.propTypes = {
    */
   classes: PropTypes.object.isRequired,
   /**
-   * @ignore
-   */
-  style: PropTypes.string,
-  /**
    * If `true`, expand to reveal section.
    */
   expanded: PropTypes.bool,

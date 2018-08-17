@@ -14,37 +14,47 @@ const styles = theme => {
 
   return {
     root: {
-      ...theme.typography.body2,
       padding: 7.5,
       borderRadius: 3,
       backgroundColor: 'transparent',
       transition,
     },
-    colorPrimary: {
+    text: {
+      ...theme.typography.body2,
+    },
+    colorPrimary: {},
+    colorSecondary: {},
+    textPrimary: {
       color: theme.palette.primary.contrastText,
-      '&$selected': {
-        backgroundColor: theme.palette.primary[300],
-      },
     },
-    colorSecondary: {
+    textSecondary: {
       color: theme.palette.secondary.contrastText,
-      '&$selected': {
-        backgroundColor: theme.palette.secondary[300],
-      },
     },
-    selected: {},
+    select: {},
+    selectedPrimary: {
+      backgroundColor: theme.palette.primary[300],
+    },
+    selectedSecondary: {
+      backgroundColor: theme.palette.secondary[300],
+    },
   };
 };
 
 function BackdropMenuItem(props) {
-  const { classes, style: styleProp, color, selected, ...other } = props;
+  const { classes: classesProp, style: styleProp, color, selected, ...other } = props;
   const style = styleNames(
-    classes.root,
-    classes[`color${capitalize(color)}`],
-    { [classes.selected]: selected },
+    classesProp.root,
+    classesProp[`color${capitalize(color)}`],
+    {
+      [classesProp.selected]: selected,
+      [classesProp[`selected${capitalize(color)}`]]: selected,
+    },
     styleProp,
   );
-  return <MenuItem style={style} selected={selected} {...other} />;
+  const classes = {
+    text: styleNames(classesProp.text, classesProp[`text${capitalize(color)}`]),
+  };
+  return <MenuItem style={style} classes={classes} selected={selected} {...other} />;
 }
 
 BackdropMenuItem.propTypes = {

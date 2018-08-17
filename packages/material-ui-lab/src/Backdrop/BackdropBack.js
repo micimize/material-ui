@@ -34,10 +34,6 @@ BackdropBack.propTypes = {
    * See [CSS API](#css-api) below for more details.
    */
   classes: PropTypes.object.isRequired,
-  /**
-   * @ignore
-   */
-  style: PropTypes.string,
 };
 
 export default withStyles(styles, { name: 'MuiBackdropBack' })(BackdropBack);

@@ -10,15 +10,14 @@ export const styles = theme => ({
   /* Styles applied to the (normally root) `component` element. May be wrapped by a `container`. */
   root: {
     flexDirection: 'row',
-    flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
     position: 'relative',
     width: '100%',
-    boxSizing: 'border-box',
     paddingTop: 12,
     paddingBottom: 12,
   },
+  text: {},
   /* Styles applied to the `container` element if `children` includes `ListItemSecondaryAction`. */
   container: {
     position: 'relative',
@@ -142,17 +141,40 @@ class ListItem extends React.Component {
           style={styleNames(classes.container, containerStyle)}
           {...ContainerProps}
         >
+          {/* TODO we dont' need to map over all children for sugar */}
           <Component {...componentProps}>
-            {children.map(e => (typeof e === 'string' ? <Text>{e}</Text> : e))}
+            {children.map(
+              (e, i) =>
+                typeof e === 'string' ? (
+                  <Text style={classes.text} key={i}>
+                    {e}
+                  </Text>
+                ) : (
+                  e
+                ),
+            )}
           </Component>
-          {typeof lastChild === 'string' ? <Text>{lastChild}</Text> : lastChild}
+          {typeof lastChild === 'string' ? (
+            <Text style={classes.text}>{lastChild}</Text>
+          ) : (
+            lastChild
+          )}
         </ContainerComponent>
       );
     }
 
     return (
       <Component {...componentProps}>
-        {children.map(e => (typeof e === 'string' ? <Text>{e}</Text> : e))}
+        {children.map(
+          (e, i) =>
+            typeof e === 'string' ? (
+              <Text style={classes.text} key={i}>
+                {e}
+              </Text>
+            ) : (
+              e
+            ),
+        )}
       </Component>
     );
   }

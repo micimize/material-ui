@@ -49,10 +49,6 @@ BackdropFrontContent.propTypes = {
   classes: PropTypes.object.isRequired,
   /**
    * @ignore
-   */
-  style: PropTypes.string,
-  /**
-   * @ignore
    * If `true`, parent panel is expanded.
    */
   expanded: PropTypes.bool,

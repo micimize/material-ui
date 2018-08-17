@@ -187,7 +187,6 @@ class TouchRipple extends React.PureComponent {
   };
 
   onAnimationEnd = () => {
-    console.log('jahsjkdhajkshd', this.mounted);
     if (this.mounted) {
       this.setState(state => ({ ...state, ripples: state.ripples.slice(1) }));
     }

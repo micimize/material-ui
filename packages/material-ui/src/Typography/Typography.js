@@ -63,10 +63,6 @@ export const styles = theme => ({
   paragraph: {
     marginBottom: 16,
   },
-  /* Styles applied to the root element if `color="inherit"`. */
-  colorInherit: {
-    color: 'inherit',
-  },
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {
     color: theme.palette.primary.main,
@@ -159,6 +155,8 @@ Typography.propTypes = {
     'secondary',
     'textPrimary',
     'textSecondary',
+    'onPrimary',
+    'onSecondary',
   ]),
   /**
    * The component used for the root node.

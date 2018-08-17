@@ -26,7 +26,6 @@ export const styles = theme => {
       height,
       backgroundColor,
       borderRadius: height / 2,
-      whiteSpace: 'nowrap',
       transition: theme.transitions.create(['backgroundColor', 'elevation']),
       /*
       // label will inherit this from root, then `clickable` class overrides this for both
@@ -100,7 +99,7 @@ export const styles = theme => {
  * Chips represent complex entities in small blocks, such as a contact.
  */
 class Chip extends React.Component {
-  chipRef = null;
+  // chipRef = null;
 
   handleDeleteIconPress = event => {
     // Stop the event from bubbling up to the `Chip`
@@ -128,9 +127,11 @@ class Chip extends React.Component {
       onDelete(event);
     } else if (key === 'esc') {
       event.preventDefault();
+      /*
       if (this.chipRef) {
         this.chipRef.blur();
       }
+      */
     }
 
     if (onKeyDown) {
@@ -195,9 +196,11 @@ class Chip extends React.Component {
         tabIndex={tabIndex}
         onPress={onPress}
         onKeyDown={this.handleKeyDown}
+        /*
         ref={ref => {
           this.chipRef = ref;
         }}
+        */
         {...other}
       >
         {avatar}
