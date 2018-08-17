@@ -15,7 +15,6 @@ export const styles = theme => ({
     width: 40,
     height: 40,
     fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.pxToRem(20),
     borderRadius: '50%',
     overflow: 'hidden',
     userSelect: 'none',
@@ -23,7 +22,7 @@ export const styles = theme => ({
   /* Styles applied to the root element if there are children and not `src` or `srcSet` */
   /* Styles applied to the root element if `color="default"`. */
   colorDefault: {
-    color: theme.palette.background.default,
+    // color: theme.palette.background.default,
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[600],
   },
@@ -31,9 +30,6 @@ export const styles = theme => ({
   img: {
     width: '100%',
     height: '100%',
-    textAlign: 'center',
-    // Handle non-square image. The property isn't supported by IE11.
-    objectFit: 'cover',
   },
 });
 

@@ -7,12 +7,7 @@ import withStyles from '../styles/withStyles';
 
 export const styles = {
   /* Styles applied to the root element. */
-  root: {
-    display: 'block',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-  },
+  root: {},
   /* Styles applied to the root element if `component="video, audio, picture, iframe, or img"`. */
   media: {
     width: '100%',
@@ -72,10 +67,6 @@ CardMedia.propTypes = {
    * Media components: `video`, `audio`, `picture`, `iframe`, `img`.
    */
   source: PropTypes.string,
-  /**
-   * @ignore
-   */
-  style: PropTypes.object,
 };
 
 CardMedia.defaultProps = {

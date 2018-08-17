@@ -12,17 +12,15 @@ import { capitalize } from '../utils/helpers';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
     flex: '0 0 auto',
-    fontSize: theme.typography.pxToRem(24),
     width: 48,
     height: 48,
     padding: 0,
     borderRadius: '50%',
-    color: theme.palette.action.active,
-    transition: theme.transitions.create('background-color', {
+    // color: theme.palette.action.active,
+    transition: theme.transitions.create('backgroundColor', {
       duration: theme.transitions.duration.shortest,
     }),
     '&:hover': {
@@ -36,16 +34,12 @@ export const styles = theme => ({
       },
     },
     '[disabled="true"]': {
-      color: theme.palette.action.disabled,
+      // color: theme.palette.action.disabled,
     },
-  },
-  /* Styles applied to the root element if `color="inherit"`. */
-  colorInherit: {
-    color: 'inherit',
   },
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {
-    color: theme.palette.primary.main,
+    // color: theme.palette.primary.main,
     '&:hover': {
       backgroundColor: fade(theme.palette.primary.main, theme.palette.action.hoverOpacity),
       // Reset on touch devices, it doesn't add specificity
@@ -56,7 +50,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the root element if `color="secondary"`. */
   colorSecondary: {
-    color: theme.palette.secondary.main,
+    // color: theme.palette.secondary.main,
     '&:hover': {
       backgroundColor: fade(theme.palette.secondary.main, theme.palette.action.hoverOpacity),
       // Reset on touch devices, it doesn't add specificity
@@ -119,7 +113,7 @@ IconButton.propTypes = {
   /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */
-  color: PropTypes.oneOf(['default', 'inherit', 'primary', 'secondary']),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary']),
   /**
    * If `true`, the button will be disabled.
    */

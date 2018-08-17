@@ -41,7 +41,7 @@ export const styles = theme => {
         content: '""',
         opacity: 1,
         backgroundColor: theme.palette.divider,
-        transition: theme.transitions.create(['opacity', 'background-color'], transition),
+        transition: theme.transitions.create(['opacity', 'backgroundColor'], transition),
       },
       '&:first-child': {
         borderTopLeftRadius: 2,

@@ -48,7 +48,7 @@ export const styles = theme => ({
   gutters: theme.mixins.gutters(),
   /* Styles applied to the inner `component` element if `button={true}`. */
   button: {
-    transition: theme.transitions.create('background-color', {
+    transition: theme.transitions.create('backgroundColor', {
       duration: theme.transitions.duration.shortest,
     }),
     '&:hover': {
@@ -149,8 +149,12 @@ class ListItem extends React.Component {
         </ContainerComponent>
       );
     }
-    
-    return <Component {...componentProps}>{children.map(e => (typeof e === 'string' ? <Text>{e}</Text> : e))}</Component>;
+
+    return (
+      <Component {...componentProps}>
+        {children.map(e => (typeof e === 'string' ? <Text>{e}</Text> : e))}
+      </Component>
+    );
   }
 }
 
