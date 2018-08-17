@@ -3,7 +3,10 @@ import { WithTheme } from '../styles/withTheme';
 import { ConsistentWith, Overwrite } from '..';
 import { Theme } from './createMuiTheme';
 import * as CSS from 'csstype';
-import * as JSS from 'jss';
+
+declare namespace JSS {
+  export type CreateStyleSheetOptions<A> = any
+}
 
 export interface CSSProperties extends CSS.Properties<number | string> {
   // Allow pseudo selectors and media queries

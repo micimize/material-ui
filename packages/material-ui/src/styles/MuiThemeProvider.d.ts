@@ -1,11 +1,10 @@
-import { StyleSheet } from 'jss';
 import * as React from 'react';
 import { Theme } from './createMuiTheme';
 import { StyleRules, StylesCreator } from './withStyles';
 
 interface SheetManagerTheme {
   refs: number;
-  sheet: StyleSheet<string>;
+  sheet: any;
 }
 
 export interface MuiThemeProviderProps {

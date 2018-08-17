@@ -5,13 +5,10 @@ import { assert } from 'chai';
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { SheetsRegistry } from 'jss';
-import JssProvider from 'react-jss/lib/JssProvider';
 import { renderToString } from 'react-dom/server';
 import { createMount } from '../test-utils';
 import createMuiTheme from './createMuiTheme';
 import Button from '../Button';
-import createGenerateClassName from './createGenerateClassName';
 import withTheme from './withTheme';
 import MuiThemeProvider from './MuiThemeProvider';
 
@@ -73,15 +70,15 @@ describe('<MuiThemeProvider />', () => {
 
     it('should be able to extract the styles', () => {
       const theme = createMuiTheme();
-      const sheetsRegistry = new SheetsRegistry();
-      const generateClassName = createGenerateClassName();
+      const sheetsRegistry = {}
+      const generateClassName = () => {};
 
       const markup = renderToString(
-        <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
+        <View registry={sheetsRegistry} generateClassName={generateClassName}>
           <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
             <Button>Hello World</Button>
           </MuiThemeProvider>
-        </JssProvider>,
+        </View>,
       );
 
       assert.notStrictEqual(markup.match('Hello World'), null);
