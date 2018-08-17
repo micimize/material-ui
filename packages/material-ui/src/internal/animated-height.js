@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
-import { View } from 'react-native-animatable';
+import { View } from '@micimize/react-native-animatable';
 
 const styles = {
   animating: {},

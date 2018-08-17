@@ -1,7 +1,7 @@
 import React from 'react';
 import { get as getExtensions } from './extensions';
 import { View as RNView, Text as RNText, StyleSheet } from 'react-native';
-import { createAnimatableComponent } from 'react-native-animatable';
+import { createAnimatableComponent } from '@micimize/react-native-animatable';
 
 function createComponent(Component) {
   const AnimatableComponent = createAnimatableComponent(Component);

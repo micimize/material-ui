@@ -22,10 +22,11 @@ module.exports = storybookBaseConfig => {
   */
   storybookBaseConfig.devtool = 'source-map'
 
+  /*
   storybookBaseConfig.module.rules[0].include.push(
     //nodeModule('react-native-vector-icons')
-    nodeModule("react-native-material-ripple") 
   )
+  */
 
   storybookBaseConfig.module.rules.push({
     test: /\.(gif|jpe?g|png|svg)$/,
@@ -53,7 +54,7 @@ module.exports = storybookBaseConfig => {
 
   storybookBaseConfig.resolve.alias = {
     'react-native': 'react-native-web',
-    'react-native-animatable': '@micimize/react-native-animatable',
+    // 'react-native-animatable': '@micimize/react-native-animatable',
     '@material-ui/core': path.resolve(__dirname, '../src'),
   };
 

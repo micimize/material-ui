@@ -10,7 +10,6 @@ import { listenForFocusKeys, detectFocusVisible } from './focusVisible';
 import TouchRipple from './TouchRipple';
 import createRippleHandler from './createRippleHandler';
 import { Animated } from '../styles/extended-styles';
-import Ripple from 'react-native-material-ripple';
 const DefaultButton = Animated.createComponent(TouchableOpacity);
 
 export const styles = {
@@ -105,8 +104,8 @@ class ButtonBase extends React.Component {
     }
   });
 
-  handlePressIn = createRippleHandler(this, 'PressIn', 'start');
-  handlePressOut = createRippleHandler(this, 'PressOut', 'stop');
+  handlePressIn = createRippleHandler(this, 'PressIn', 'start', () => this.setState({ active: true }));
+  handlePressOut = createRippleHandler(this, 'PressOut', 'stop', () => this.setState({ active: false }));
 
   state = {};
 
@@ -174,58 +173,6 @@ class ButtonBase extends React.Component {
       lastDisabled: nextProps.disabled,
     };
   }
-
-  /*
-  handleKeyDown = event => {
-    const { component, focusRipple, onKeyDown, onClick } = this.props;
-    const key = keycode(event);
-
-    // Check if key is already down to avoid repeats being counted as multiple activations
-    if (focusRipple && !this.keyDown && this.state.focusVisible && this.ripple && key === 'space') {
-      this.keyDown = true;
-      event.persist();
-      this.ripple.stop(event, () => {
-        this.ripple.start(event);
-      });
-    }
-
-    if (onKeyDown) {
-      onKeyDown(event);
-    }
-
-    // Keyboard accessibility for non interactive elements
-    if (
-      event.target === event.currentTarget &&
-      component &&
-      component !== ReactNativeButton &&
-      (key === 'space' || key === 'enter') &&
-      !(this.button.tagName === 'A' && this.button.href)
-    ) {
-      event.preventDefault();
-      if (onClick) {
-        onClick(event);
-      }
-    }
-  };
-
-  handleKeyUp = event => {
-    if (
-      this.props.focusRipple &&
-      keycode(event) === 'space' &&
-      this.ripple &&
-      this.state.focusVisible
-    ) {
-      this.keyDown = false;
-      event.persist();
-      this.ripple.stop(event, () => {
-        this.ripple.pulsate(event);
-      });
-    }
-    if (this.props.onKeyUp) {
-      this.props.onKeyUp(event);
-    }
-  };
-  */
 
   handleFocus = event => {
     if (this.props.disabled) {
@@ -302,54 +249,27 @@ class ButtonBase extends React.Component {
       buttonProps.role = 'button';
     }
 
-    // return (
-    //   <Ripple disabled={disableRipple || disabled}>
-    //   <ComponentProp
-    //     disabled={disabled}
-    //     onBlur={this.handleBlur}
-    //     onFocus={this.handleFocus}
-    //     onMouseDown={this.handleMouseDown}
-    //     onMouseLeave={this.handleMouseLeave}
-    //     onMouseUp={this.handleMouseUp}
-    //     onTouchEnd={this.handleTouchEnd}
-    //     onTouchMove={this.handleTouchMove}
-    //     onTouchStart={this.handleTouchStart}
-    //     onPressIn={() => this.setState({ active: true })}
-    //     onPressOut={() => this.setState({ active: false })}
-    //     tabIndex={disabled ? '-1' : tabIndex}
-    //     style={className}
-    //     ref={buttonRef}
-    //     {...buttonProps}
-    //     {...other}
-    //   >
-    //     {typeof children === 'string' ? <Text>{children}</Text> : children}
-    //     {/* <Ripple disabled={disableRipple || disabled} /> */}
-    //   </ComponentProp>
-    //   </Ripple>
-    // );
-    // debugger
     return (
       <ComponentProp
-    disabled={disabled}
-    onBlur={this.handleBlur}
-    onFocus={this.handleFocus}
-    // onMouseDown={this.handleMouseDown}
-    // onMouseLeave={this.handleMouseLeave}
-    // onMouseUp={this.handleMouseUp}
-    // onTouchEnd={this.handleTouchEnd}
-    // onTouchMove={this.handleTouchMove}
-    // onTouchStart={this.handleTouchStart}
-    onPressIn={this.handlePressIn}
-    onPressOut={this.handlePressOut}
-    tabIndex={disabled ? '-1' : tabIndex}
-    style={className}
-    ref={buttonRef}
-    {...buttonProps}
-    {...other}
+        disabled={disabled}
+        onBlur={this.handleBlur}
+        onFocus={this.handleFocus}
+        // onMouseDown={this.handleMouseDown}
+        // onMouseLeave={this.handleMouseLeave}
+        // onMouseUp={this.handleMouseUp}
+        // onTouchEnd={this.handleTouchEnd}
+        // onTouchMove={this.handleTouchMove}
+        // onTouchStart={this.handleTouchStart}
+        onPressIn={this.handlePressIn}
+        onPressOut={this.handlePressOut}
+        tabIndex={disabled ? '-1' : tabIndex}
+        style={className}
+        ref={buttonRef}
+        {...buttonProps}
+        {...other}
       >
         {typeof children === 'string' ? <Text>{children}</Text> : children}
         {!disableRipple && !disabled ? (
-          // <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
           <TouchRipple innerRef={this.onRippleRef} center={centerRipple} {...TouchRippleProps} />
         ) : null}
       </ComponentProp>
