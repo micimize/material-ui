@@ -5,11 +5,11 @@ import { SwitchBaseProps, SwitchBaseClassKey } from '../internal/SwitchBase';
 export interface CheckboxProps
   extends StandardProps<SwitchBaseProps, CheckboxClassKey, 'checkedIcon' | 'color' | 'icon'> {
   checkedIcon?: React.ReactNode;
-  color?: 'primary' | 'secondary' | 'default';
+  color?: 'primary' | 'secondary' | 'onPrimary' | 'onSecondary' | 'default';
   icon?: React.ReactNode;
 }
 
-export type CheckboxClassKey = SwitchBaseClassKey | 'colorPrimary' | 'colorSecondary';
+export type CheckboxClassKey = SwitchBaseClassKey | 'colorPrimary' | 'colorSecondary' | 'colorOnPrimary' | 'colorOnSecondary';
 
 declare const Checkbox: React.ComponentType<CheckboxProps>;
 

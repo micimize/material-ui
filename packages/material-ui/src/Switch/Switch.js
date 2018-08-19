@@ -30,7 +30,7 @@ export const styles = theme => ({
     elevation: 1,
     width: 20,
     height: 20,
-    borderRadius: '50%',
+    borderRadius: 20 / 2,
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[400],
     transition: theme.transitions.create(['left', 'backgroundColor'], {
@@ -153,7 +153,7 @@ Switch.propTypes = {
   /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */
-  color: PropTypes.oneOf(['primary', 'secondary', 'default']),
+  color: PropTypes.oneOf(['primary', 'secondary', 'onPrimary', 'onSecondary',  'default']),
   /**
    * @ignore
    */

@@ -17,16 +17,17 @@ const radius = 10;
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    display: 'block',
     position: 'absolute',
-    overflow: 'hidden',
-    borderRadius: 'inherit',
     width: '100%',
     height: '100%',
     left: 0,
     top: 0,
-    pointerEvents: 'none',
     zIndex: 0,
+    /*
+    overflow: 'hidden',
+    borderRadius: 'inherit',
+    pointerEvents: 'none',
+    */
   },
 
   container: {
@@ -34,16 +35,20 @@ export const styles = theme => ({
     width: '100%',
     height: '100%',
     position: 'absolute',
+    /*
     overflow: 'hidden',
     borderRadius: 'inherit',
+    */
   },
 
   ripple: {
     width: radius * 2,
     height: radius * 2,
     borderRadius: radius,
-    overflow: 'hidden',
     position: 'absolute',
+    /*
+    overflow: 'hidden',
+    */
   },
   /* Styles applied to the internal `Ripple` components `ripple` class. */
   // ripple: {
@@ -475,10 +480,9 @@ class TouchRipple extends React.PureComponent {
           width: '100%',
           height: '100%',
           position: 'absolute',
-          overflow: 'hidden',
-          borderRadius: 'inherit',
+          // overflow: 'hidden',
+          // borderRadius: 'inherit',
         }}
-        pointerEvents="box-only"
       >
         <View style={[classes.container, containerStyle]}>{ripples.map(this.renderRipple)}</View>
       </Animated.View>

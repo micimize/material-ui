@@ -15,7 +15,6 @@ export const styles = {
     width: '100%',
     padding: '24px 16px',
     margin: '-24px -16px',
-    boxSizing: 'content-box',
   },
   /* Styles applied to the root element if `orientation="horizontal"`. */
   horizontal: {},

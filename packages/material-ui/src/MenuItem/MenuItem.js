@@ -16,8 +16,8 @@ export const styles = theme => ({
   },
   text: {
     ...theme.typography.subheading,
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
+    // textOverflow: 'ellipsis',
+    // whiteSpace: 'nowrap',
   },
   /* Styles applied to the root element if `selected={true}`. */
   selected: {

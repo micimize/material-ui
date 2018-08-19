@@ -18,7 +18,7 @@ export const styles = theme => ({
     padding: 0,
     minHeight: 48,
     flexShrink: 0,
-    overflow: 'hidden',
+    // overflow: 'hidden',
     [theme.breakpoints.up('md')]: {
       minWidth: 160,
     },
@@ -269,7 +269,7 @@ Tab.propTypes = {
   /**
    * @ignore
    */
-  textColor: PropTypes.oneOf(['secondary', 'primary', 'inherit']),
+  textColor: PropTypes.oneOf(['secondary', 'primary', 'onSecondary', 'onPrimary']),
   /**
    * You can provide your own value. Otherwise, we fallback to the child position index.
    */

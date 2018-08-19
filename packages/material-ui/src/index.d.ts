@@ -67,7 +67,6 @@ import * as colors from './colors';
 
 export { colors };
 export {
-  createGenerateClassName,
   createMuiTheme,
   MuiThemeProvider,
   StyleRulesCallback,

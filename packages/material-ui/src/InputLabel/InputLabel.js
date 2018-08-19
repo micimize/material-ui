@@ -13,7 +13,7 @@ const Label = createComponent(FormLabel);
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    transformOrigin: 'top left',
+    // transformOrigin: 'top left',
     lineHeight: 16,
   },
   /* Styles applied to the root element if the component is a descendant of `FormControl`. */
@@ -32,7 +32,7 @@ export const styles = theme => ({
   /* Styles applied to the `input` element if `shrink={true}`. */
   shrink: {
     transform: [{ translateY: 1.5 }, { scale: 0.75 }],
-    transformOrigin: 'top left',
+    // transformOrigin: 'top left',
   },
   /* Styles applied to the `input` element if `disableAnimation={false}`. */
   animated: {

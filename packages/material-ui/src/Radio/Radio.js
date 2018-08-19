@@ -69,7 +69,7 @@ Radio.propTypes = {
   /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */
-  color: PropTypes.oneOf(['primary', 'secondary', 'default']),
+  color: PropTypes.oneOf(['primary', 'secondary', 'onPrimary', 'onSecondary', 'default']),
   /**
    * If `true`, the switch will be disabled.
    */

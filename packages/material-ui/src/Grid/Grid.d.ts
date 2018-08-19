@@ -24,7 +24,7 @@ export type GridJustification =
   | 'space-around'
   | 'space-evenly';
 
-export type GridWrap = 'nowrap' | 'wrap' | 'wrap-reverse';
+export type GridWrap = 'nowrap' | 'wrap';
 
 export type GridSize = 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
@@ -53,7 +53,6 @@ export type GridClassKey =
   | 'direction-xs-column-reverse'
   | 'direction-xs-row-reverse'
   | 'wrap-xs-nowrap'
-  | 'wrap-xs-wrap-reverse'
   | 'align-items-xs-center'
   | 'align-items-xs-flex-start'
   | 'align-items-xs-flex-end'

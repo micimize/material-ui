@@ -103,7 +103,7 @@ const styles = theme => {
       color: theme.palette.primary.contrastText,
     },
     content: {
-      overflowY: 'hidden',
+      // overflowY: 'hidden',
     },
   };
 };

@@ -40,7 +40,9 @@ export const styles = theme => ({
     transition: theme.transitions.create(['opacity', 'transform'], {
       duration: theme.transitions.duration.shorter,
     }),
+    /*
     userSelect: 'none',
+    */
     width: 16,
   },
   /* Styles applied to the icon component if `direction="desc"`. */

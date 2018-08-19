@@ -29,7 +29,7 @@ export const styles = theme => {
 
       paddingLeft: 15,
       paddingRight: 15,
-      overflow: 'auto',
+      // overflow: 'auto',
       display: 'flex',
       flexDirection: 'column',
 

@@ -14,7 +14,7 @@ const globals = {
   'react-dom': 'ReactDOM',
 };
 const babelOptions = {
-  exclude: /node_modules\/(?!(react-native-vector-icons))/,
+  exclude: /node_modules/, //\/(?!(react-native-vector-icons))/,
   // We are using @babel/plugin-transform-runtime
   runtimeHelpers: true,
 };

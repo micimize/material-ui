@@ -7,17 +7,16 @@ import withStyles from '../styles/withStyles';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    position: 'relative',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
     width: 40,
     height: 40,
-    fontFamily: theme.typography.fontFamily,
-    borderRadius: '50%',
-    overflow: 'hidden',
-    userSelect: 'none',
+    borderRadius: 40 / 2,
+    // overflow: 'hidden',
+    // userSelect: 'none',
+    // fontFamily: theme.typography.fontFamily,
   },
   /* Styles applied to the root element if there are children and not `source` */
   /* Styles applied to the root element if `color="default"`. */

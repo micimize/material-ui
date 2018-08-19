@@ -2,7 +2,7 @@
   "name": "@micimize/material-ui",
   "private": false,
   "author": "Material-UI Team",
-  "version": "2.0.0-rn-alpha.13",
+  "version": "2.0.0-rn-alpha.19",
   "description": "React components that implement Google's Material Design.",
   "keywords": [
     "react",
@@ -26,7 +26,7 @@
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel ./src --out-dir ./build/es --ignore *.test.js",
     "build:umd": "cross-env BABEL_ENV=production-umd rollup -c scripts/rollup.config.js",
     "build:copy-files": "babel-node ./scripts/copy-files.js",
-    "build": "yarn build:es2015 && yarn build:es2015modules && yarn build:es && yarn build:copy-files",
+    "build": "yarn build:es2015 && yarn build:es2015modules && yarn build:es && yarn build:umd && yarn build:copy-files",
     "release": "yarn build && npm publish build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

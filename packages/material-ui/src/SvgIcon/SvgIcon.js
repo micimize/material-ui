@@ -9,7 +9,6 @@ import { capitalize } from '../utils/helpers';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    userSelect: 'none',
     width: 24,
     height: 24,
     // fill: 'currentColor',

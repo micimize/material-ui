@@ -115,19 +115,17 @@ export const styles = theme => {
     input: {
       lineHeight: 19, // '1.1875em', // Reset (19px), match the native input line-height
       fontFamily: theme.typography.fontFamily,
-      fontSize: theme.typography.pxToRem(16),
+      fontSize: 16,
       color: light ? 'rgba(0, 0, 0, 0.87)' : theme.palette.common.white,
       paddingTop: 8 - 2,
       paddingLeft: 0,
       paddingRight: 0,
       paddingBottom: 8 - 2,
       borderWidth: 0,
-      boxSizing: 'content-box',
-      textAlignVertical: 'middle',
+      // textAlignVertical: 'middle',
       margin: 0, // Reset for Safari
       // Remove grey highlight
       // WebkitTapHighlightColor: 'transparent',
-      display: 'block',
       // Make the flex item shrink with Firefox
       minWidth: 0,
       flexGrow: 1,
@@ -138,7 +136,6 @@ export const styles = theme => {
       // '&::-ms-input-placeholder': placeholder, // Edge
       // Reset Firefox invalid required input style
       '&:invalid': {
-        boxShadow: 'none',
       },
       /*
       '&::-webkit-search-decoration': {
@@ -167,7 +164,7 @@ export const styles = theme => {
     },
     /* Styles applied to the `input` element if `multiline={true}`. */
     inputMultiline: {
-      resize: 'none',
+      // resize: 'none',
       padding: `${8 - 2}px 0 ${8 - 2}px`,
     },
     /* Styles applied to the `input` element if `type` is not "text"`. */

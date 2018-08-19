@@ -64,7 +64,7 @@ export const styles = theme => {
       width: height,
       height,
       color: theme.palette.type === 'light' ? theme.palette.grey[700] : theme.palette.grey[300],
-      fontSize: theme.typography.pxToRem(16),
+      fontSize: 16
     },
     /* Styles applied to the `avartar` elements children. */
     avatarChildren: {
@@ -77,8 +77,10 @@ export const styles = theme => {
       alignItems: 'center',
       paddingLeft: 12,
       paddingRight: 12,
+      /*
       userSelect: 'none',
       whiteSpace: 'nowrap',
+      */
       color: theme.palette.getContrastText(backgroundColor),
     },
     /* Styles applied to the `deleteIcon` element. */

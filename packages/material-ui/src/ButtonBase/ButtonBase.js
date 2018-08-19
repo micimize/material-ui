@@ -1,12 +1,10 @@
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import styleNames from '../styles/react-native-style-names';
 import keycode from 'keycode';
-import ownerWindow from '../utils/ownerWindow';
 import withStyles from '../styles/withStyles';
-import { listenForFocusKeys, detectFocusVisible } from './focusVisible';
+// import { listenForFocusKeys, detectFocusVisible } from './focusVisible';
 import TouchRipple from './TouchRipple';
 import createRippleHandler from './createRippleHandler';
 import { Animated } from '../styles/extended-styles';
@@ -18,16 +16,15 @@ export const styles = {
     // display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'relative',
     // Remove grey highlight
 
     backgroundColor: 'transparent', // Reset default value
     // We disable the focus ring for mouse, touch and keyboard users.
-    outline: 'none',
     borderWidth: 0,
     margin: 0, // Remove the margin in Safari
     borderRadius: 0,
     padding: 0, // Remove the padding in Firefox
+    /*
     cursor: 'pointer',
     userSelect: 'none',
     // textAlignVertical: 'middle',
@@ -40,11 +37,11 @@ export const styles = {
     '&::-moz-focus-inner': {
       borderStyle: 'none', // Remove Firefox dotted outline.
     },
-    */
     '[disabled="true"]': {
       pointerEvents: 'none', // Disable link interactions
       cursor: 'default',
     },
+    */
   },
   active: {},
   /* Styles applied to the root element if `disabled={true}`. */
@@ -110,14 +107,16 @@ class ButtonBase extends React.Component {
   state = {};
 
   componentDidMount() {
+    /*
     this.button = ReactDOM.findDOMNode(this);
     listenForFocusKeys(ownerWindow(this.button));
+    */
 
     if (this.props.action) {
       this.props.action({
         focusVisible: () => {
           this.setState({ focusVisible: true });
-          this.button.focus();
+          // this.button.focus();
         },
       });
     }
@@ -185,9 +184,11 @@ class ButtonBase extends React.Component {
     }
 
     event.persist();
+    /*
     detectFocusVisible(this, this.button, () => {
       this.onFocusVisibleHandler(event);
     });
+    */
 
     if (this.props.onFocus) {
       this.props.onFocus(event);

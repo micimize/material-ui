@@ -7,9 +7,9 @@ import withStyles from '../styles/withStyles';
 
 export const styles = theme => {
   const elevations = {};
-  theme.shadows.forEach((shadow, index) => {
+  Array(25).fill().map((_, index) => {
     elevations[`elevation${index}`] = {
-      boxShadow: shadow,
+      elevation: index
     };
   });
 

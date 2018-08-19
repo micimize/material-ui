@@ -46,15 +46,17 @@ export const styles = theme => ({
   },
   /* Styles applied to the title container element. */
   title: {
-    fontSize: theme.typography.pxToRem(16),
-    lineHeight: '24px',
-    textOverflow: 'ellipsis',
+    fontSize: 16,
+    lineHeight: 24,
     overflow: 'hidden',
+    /*
+    textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    */
   },
   /* Styles applied to the subtitle container element. */
   subtitle: {
-    fontSize: theme.typography.pxToRem(12),
+    fontSize: 12,
     lineHeight: 1,
     textOverflow: 'ellipsis',
     overflow: 'hidden',

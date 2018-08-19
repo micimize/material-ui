@@ -99,7 +99,7 @@ export const styles = theme => ({
     backgroundColor: theme.palette.grey[300],
     elevation: 2,
     '[focusVisible="true"]': {
-      boxShadow: theme.shadows[6],
+      elevation: 6
     },
     '&:hover': {
       backgroundColor: theme.palette.grey.A100,
@@ -116,7 +116,6 @@ export const styles = theme => ({
     elevation: 8,
   },
   containedDisabled: {
-    boxShadow: theme.shadows[0],
     backgroundColor: theme.palette.action.disabledBackground,
     elevation: 0,
   },
@@ -159,7 +158,7 @@ export const styles = theme => ({
   raisedSecondary: {}, // legacy
   /* Styles applied to the root element if `variant="[fab | extendedFab]"`. */
   fab: {
-    borderRadius: '50%',
+    borderRadius: 56 / 2,
     padding: 0,
     minWidth: 0,
     width: 56,
@@ -318,7 +317,7 @@ Button.propTypes = {
   /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */
-  color: PropTypes.oneOf(['default', 'inherit', 'primary', 'secondary']),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'onPrimary', 'onSecondary']),
   /**
    * The component used for the root node.
    * Either a string to use a DOM element or a component.

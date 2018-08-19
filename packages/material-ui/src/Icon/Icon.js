@@ -9,13 +9,8 @@ import NativeIcon from 'react-native-vector-icons/MaterialIcons';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    userSelect: 'none',
-    fontSize: 24,
-    width: '1em',
-    height: '1em',
-    // Chrome fix for https://bugs.chromium.org/p/chromium/issues/detail?id=820541
-    // To remove at some point.
-    overflow: 'hidden',
+    width: 24,
+    height: 24,
     flexShrink: 0,
   },
   /* Styles applied to the root element if `color="primary"`. */
@@ -37,10 +32,7 @@ export const styles = theme => ({
   /* Styles applied to the root element if `color="disabled"`. */
   colorDisabled: {
     color: theme.palette.action.disabled,
-  },
-  fontSizeInherit: {
-    fontSize: 'inherit',
-  },
+  }
 });
 
 /* TODO doesn't work right now, maybe use react-native-vector-icons */

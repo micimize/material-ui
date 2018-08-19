@@ -14,25 +14,23 @@ export const styles = theme => {
     root: {
       zIndex: theme.zIndex.appBar - 2,
       backgroundColor: theme.palette.background.paper,
-      position: 'sticky',
+      // position: 'sticky',
       top: 0,
       flexGrow: 0,
       flexShrink: 0,
       flexBasis: 56,
       width: '100%',
-      display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
     },
     divided: {
-      borderBottomStyle: 'solid',
       borderBottomWidth: 1,
       borderBottomColor: theme.palette.divider,
-      transition: theme.transitions.create(['border-bottom-color'], transition),
+      transition: theme.transitions.create(['borderBottomColor'], transition),
     },
     minimized: {
-      cursor: 'pointer',
+      // cursor: 'pointer',
       borderBottomColor: 'transparent',
     },
   };

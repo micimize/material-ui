@@ -6,7 +6,7 @@ import AnimatedHeight from '../internal/animated-height';
 
 export const styles = {
   root: {
-    overflow: 'auto',
+    // overflow: 'auto',
   },
   content: {
     width: '100%',

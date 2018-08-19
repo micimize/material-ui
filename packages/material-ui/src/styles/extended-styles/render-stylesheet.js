@@ -71,11 +71,13 @@ function sheetResolver(...sheetRules) {
     );
 }
 
+
 const borders = ['top', 'right', 'bottom', 'left'].reduce(
   (bs, side) => {
     const pre = `border${capitalize(side)}`;
     bs[pre] = expandShorthand(`border-${side}`, {
       [`${pre}Width`]: cast.toNumber,
+      [`${pre}Style`]: cast.discard,
     });
     return bs;
   },
@@ -89,6 +91,7 @@ const borders = ['top', 'right', 'bottom', 'left'].reduce(
 const customStyles = CustomStyleRule({
   customProperties: {
     transform: transform => (typeof transform === 'string' ? {} : { transform }),
+    fill: () => ({}),
     willChange: () => ({}),
     pointerEvents: () => ({}),
     fontFamily: () => ({}),

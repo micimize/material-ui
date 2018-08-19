@@ -20,11 +20,13 @@ export const styles = theme => ({
 
     // When interacting quickly, the text can end up selected.
     // Native select can't be selected either.
+    /*
     userSelect: 'none',
     paddingRight: 32,
     width: 'calc(100% - 32px)',
-    minWidth: 16, // So it doesn't collapse.
     cursor: 'pointer',
+    */
+    minWidth: 16, // So it doesn't collapse.
     '&:focus': {
       // Show that it's not an text input
       background:
@@ -46,11 +48,13 @@ export const styles = theme => ({
   },
   /* Styles applied to the `Input` component `selectMenu` class. */
   selectMenu: {
+    /*
     width: 'auto', // Fix Safari textOverflow
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
-    minHeight: '1.1875em', // Reset (19px), match the native input line-height
+    */
+    minHeight: 19
   },
   /* Styles applied to the `Input` component `disabled` class. */
   disabled: {},
@@ -60,9 +64,9 @@ export const styles = theme => ({
     // to the input.
     position: 'absolute',
     right: 0,
-    top: 'calc(50% - 12px)', // Center vertically
+    //top: 'calc(50% - 12px)', // Center vertically
     color: theme.palette.action.active,
-    'pointer-events': 'none', // Don't block pointer events on the select under the icon.
+    //'pointer-events': 'none', // Don't block pointer events on the select under the icon.
   },
 });
 

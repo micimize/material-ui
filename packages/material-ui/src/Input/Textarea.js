@@ -19,15 +19,15 @@ export const styles = {
   textarea: {
     width: '100%',
     height: '100%',
-    resize: 'none',
     padding: 0,
     lineHeight: ROW_HEIGHT,
-    outline: 'none',
+    // outline: 'none',
+    // resize: 'none',
     background: 'transparent',
   },
   textareaPosition: {
-    boxSizing: 'border-box',
-    position: 'absolute',
+    //boxSizing: 'border-box',
+    //position: 'absolute',
   },
 };
 

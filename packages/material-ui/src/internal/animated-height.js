@@ -260,7 +260,7 @@ const AnimateHeight = class extends React.Component {
 
     const wrapperStyle = styleNames(
       animationStateClasses,
-      { overflow },
+      // { overflow },
       height === 'auto' ? { height: contentHeight } : { height },
       style,
     );

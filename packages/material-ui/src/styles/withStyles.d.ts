@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { StyleProp } from 'react-native'
 import { WithTheme } from '../styles/withTheme';
 import { ConsistentWith, Overwrite } from '..';
 import { Theme } from './createMuiTheme';
@@ -39,7 +40,7 @@ export interface WithStylesOptions<ClassKey extends string = string>
   name?: string;
 }
 
-export type ClassNameMap<ClassKey extends string = string> = Record<ClassKey, string>;
+export type ClassNameMap<ClassKey extends string = string> = Record<ClassKey, StyleProp<any>>;
 
 export type WithStyles<T extends string | StyleRules | StyleRulesCallback = string> = Partial<
   WithTheme

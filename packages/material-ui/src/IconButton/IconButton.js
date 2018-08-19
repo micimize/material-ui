@@ -18,7 +18,7 @@ export const styles = theme => ({
     width: 48,
     height: 48,
     padding: 0,
-    borderRadius: '50%',
+    borderRadius: 48 / 2,
     // color: theme.palette.action.active,
     transition: theme.transitions.create('backgroundColor', {
       duration: theme.transitions.duration.shortest,
@@ -113,7 +113,7 @@ IconButton.propTypes = {
   /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */
-  color: PropTypes.oneOf(['default', 'primary', 'secondary']),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'onPrimary', 'onSecondary']),
   /**
    * If `true`, the button will be disabled.
    */

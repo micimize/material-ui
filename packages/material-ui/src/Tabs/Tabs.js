@@ -453,7 +453,7 @@ Tabs.propTypes = {
   /**
    * Determines the color of the `Tab`.
    */
-  textColor: PropTypes.oneOf(['secondary', 'primary', 'inherit']),
+  textColor: PropTypes.oneOf(['secondary', 'primary', 'onPrimary', 'onSecondary', 'default']),
   /**
    * @ignore
    */
@@ -473,7 +473,7 @@ Tabs.defaultProps = {
   scrollable: false,
   ScrollButtonComponent: TabScrollButton,
   scrollButtons: 'auto',
-  textColor: 'inherit',
+  textColor: 'default',
 };
 
 export default withStyles(styles, { name: 'MuiTabs', withTheme: true })(Tabs);

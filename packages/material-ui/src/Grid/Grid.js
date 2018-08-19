@@ -95,15 +95,12 @@ function generateGutter(theme, breakpoint) {
 export const styles = theme => ({
   /* Styles applied to the root element if `container={true}`. */
   container: {
-    boxSizing: 'border-box',
     flexDirection: 'row',
     flexWrap: 'wrap',
     width: '100%',
-    flexDirection: 'row',
   },
   /* Styles applied to the root element if `item={true}`. */
   item: {
-    boxSizing: 'border-box',
     margin: '0', // For instance, it's useful when used with a `figure` element.
   },
   /* Styles applied to the root element if `zeroMinWidth={true}`. */
@@ -127,9 +124,6 @@ export const styles = theme => ({
     flexWrap: 'nowrap',
   },
   /* Styles applied to the root element if `wrap="reverse"`. */
-  'wrap-xs-wrap-reverse': {
-    flexWrap: 'wrap-reverse',
-  },
   /* Styles applied to the root element if `alignItems="center"`. */
   'align-items-xs-center': {
     alignItems: 'center',
@@ -344,7 +338,7 @@ Grid.propTypes = {
    * Defines the `flex-wrap` style property.
    * It's applied for all screen sizes.
    */
-  wrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
+  wrap: PropTypes.oneOf(['nowrap', 'wrap']),
   /**
    * Defines the number of grids the component is going to use.
    * It's applied for the `xl` breakpoint and wider screens.

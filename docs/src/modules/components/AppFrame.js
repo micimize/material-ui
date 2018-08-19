@@ -53,7 +53,7 @@ const styles = theme => ({
     transition: theme.transitions.create('width'),
   },
   appBarHome: {
-    boxShadow: 'none',
+    elevation: 0,
   },
   appBarShift: {
     [theme.breakpoints.up('lg')]: {

@@ -8,7 +8,6 @@ import { capitalize } from '../utils/helpers';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    display: 'block',
     margin: 0,
   },
   /* Styles applied to the root element if `variant="display4"`. */
@@ -51,13 +50,13 @@ export const styles = theme => ({
   },
   /* Styles applied to the root element if `align="nowrap"`. */
   noWrap: {
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
+    // overflow: 'hidden',
+    // textOverflow: 'ellipsis',
+    // whiteSpace: 'nowrap',
   },
   /* Styles applied to the root element if `gutterBottom={true}`. */
   gutterBottom: {
-    marginBottom: '0.35em',
+    marginBottom: 0.35 * 14,
   },
   /* Styles applied to the root element if `paragraph={true}`. */
   paragraph: {

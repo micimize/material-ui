@@ -10,14 +10,14 @@ export const styles = theme => ({
   root: {
     width: 36,
     height: 36,
-    fontSize: theme.typography.pxToRem(18),
+    fontSize: 18,
     marginRight: 4,
   },
   /* Styles applied to the children – typically the `Avatar` component. */
   icon: {
     width: 20,
     height: 20,
-    fontSize: theme.typography.pxToRem(20),
+    fontSize: 20,
   },
 });
 

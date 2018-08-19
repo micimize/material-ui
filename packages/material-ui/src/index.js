@@ -4,7 +4,6 @@ import * as colors from './colors';
 
 export { colors };
 export {
-  createGenerateClassName,
   createMuiTheme,
   createStyles,
   MuiThemeProvider,
