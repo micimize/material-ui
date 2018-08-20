@@ -1,11 +1,20 @@
 import { expandShorthandProperty } from 'css-property-parser';
 import camelcase from 'camelcase';
 
+const discard = Symbol('DISCARD_PROPERTY')
+
 function toNumber(value) {
   return Number(value.replace('px', ''));
 }
 
-const discard = Symbol('DISCARD_PROPERTY')
+function toNumberOrPercent(value){
+  return value.includes('%') ? value : toNumber(value)
+}
+
+function discardOr({ discard: match, or }){
+  return value => value === match ? discard : or(value)
+}
+
 
 // property in dash-case
 // cast map in camelCase
@@ -22,7 +31,9 @@ function expander(shorthand, castMap = {}) {
       if (castMap[cameled]) {
         propValue = castMap[cameled](propValue);
       }
-      resolved[camelcase(prop)] = propValue;
+      if (propValue !== discard){
+        resolved[camelcase(prop)] = propValue;
+      }
       return resolved;
     }, {});
   };
@@ -33,7 +44,7 @@ function conditionalExpander(shorthand, condition, castMap = {}) {
   return value => (condition(value) ? expand(value) : { [shorthand]: value });
 }
 
-const cast = { toNumber, discard };
+const cast = { toNumber, toNumberOrPercent, discard, discardOr };
 
 export { cast, conditionalExpander };
 

@@ -88,6 +88,21 @@ const borders = ['top', 'right', 'bottom', 'left'].reduce(
   },
 );
 
+const dimensions = kind => ({
+  [kind + 'Top']: cast.toNumberOrPercent,
+  [kind + 'Right']: cast.toNumberOrPercent,
+  [kind + 'Bottom']: cast.toNumberOrPercent,
+  [kind + 'Left']: cast.toNumberOrPercent,
+})
+
+const log = fn => (...args) => {
+  console.log('in', ...args)
+  let result = fn(...args)
+  console.log('result', result)
+  Object.assign(window, {result})
+  return result
+}
+
 const customStyles = CustomStyleRule({
   customProperties: {
     transform: transform => (typeof transform === 'string' ? {} : { transform }),
@@ -103,7 +118,6 @@ const customStyles = CustomStyleRule({
       };
     },
     ...borders,
-    margin: conditionalExpander('margin', margin => typeof margin !== 'number'),
     elevation: elevation => {
       return Platform.OS === 'android'
         ? { elevation }
@@ -115,48 +129,18 @@ const customStyles = CustomStyleRule({
             },
             shadowRadius: (elevation * 3) / 2,
             shadowOpacity: floor(2.25)(0.25 * elevation),
-          };
+        };
     },
-    padding: conditionalExpander('padding', margin => typeof margin !== 'number'),
-    flex(prop) {
-      // TODO custom property
-      if (typeof prop !== 'string') {
-        return { flex: prop };
-      }
-      const [flexGrow, flexShrink = undefined, _flexBasis = undefined] = prop.split(/\s+/);
-      let flexBasis = _flexBasis;
-      let expandedStyles = {};
-
-      // handle flexGrow
-      if (!(flexGrow && validNumber(flexGrow))) {
-        warning(
-          true,
-          [
-            `Material-UI: invalid flex shorthand "${prop}",`,
-            'must be <grow number> <shrink number>? <basis>?',
-          ].join('\n'),
-        );
-        return {};
-      }
-      expandedStyles.flexGrow = Number(flexGrow);
-
-      // handle flexShrink
-      if (flexShrink) {
-        if (validNumber(flexShrink)) {
-          // flexShrink is valid number
-          expandedStyles.flexShrink = Number(flexShrink);
-        } else if (flexShrink && !flexBasis) {
-          // flexShrink position might be valid flexBasis
-          flexBasis = flexShrink;
-        }
-      }
-
-      // handle flexBasis. TODO valid string values unknown
-      if (flexBasis && flexBasis !== 'auto') {
-        expandedStyles = validNumber(flexShrink) ? Number(flexShrink) : flexShrink;
-      }
-      return expandedStyles;
-    },
+    margin: conditionalExpander('margin', margin => typeof margin !== 'number', dimensions('margin')),
+    padding: conditionalExpander('padding', padding => typeof padding !== 'number', dimensions('padding')),
+    flex: conditionalExpander('flex', flex => typeof flex !== 'number', {
+      flexBasis: cast.discardOr({
+        discard: 'auto',
+        or: cast.transform
+      }),
+      flexGrow: cast.toNumber,
+      flexShrink: cast.toNumber
+    }),
   },
   ignorePrefixes: ['[', '#', '@global', '@keyframes', '&'],
 });
