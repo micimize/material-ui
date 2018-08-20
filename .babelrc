@@ -1,10 +1,11 @@
 {
-  "presets": [["@babel/preset-stage-1", { "loose": true }], "react-native", "@babel/flow"],
+  "presets": ["babel-preset-stage-1", "react-native", "babel-preset-flow"],
   "plugins": [
     [
       "module-resolver",
       {
         "alias": {
+          "@micimize/material-ui": "./packages/material-ui/src",
           "@material-ui/core": "./packages/material-ui/src",
           "@material-ui/docs": "./packages/material-ui-docs/src",
           "@material-ui/icons": "./packages/material-ui-icons/src",
@@ -13,15 +14,12 @@
           "/static": "./static",
           "modules": "./modules",
           "pages": "./pages",
-          "react-native$": "react-native-web"
         }
       }
     ],
-    "@babel/plugin-transform-object-assign",
-    ["@babel/plugin-transform-runtime", { "polyfill": false, "useBuiltIns": true }],
-    "@babel/plugin-syntax-class-properties",
-    "@babel/plugin-proposal-class-properties",
-    "transform-class-properties"
+    "babel-plugin-transform-object-assign",
+    ["babel-plugin-transform-runtime", { "polyfill": false, "useBuiltIns": true }],
+    "babel-plugin-transform-class-properties"
   ],
   "env": {
     "coverage": {
@@ -46,7 +44,6 @@
           {
             "alias": {
               "modules": "./modules",
-              "react-native$": "react-native-web"
             }
           }
         ]
@@ -129,7 +126,6 @@
             "alias": {
               "@material-ui/core": "./packages/material-ui/src",
               "@material-ui/icons": "./packages/material-ui-icons/src",
-              "react-native$": "react-native-web"
             }
           }
         ]

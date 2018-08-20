@@ -5,14 +5,16 @@ import TextButtons from './TextButtons';
 import OutlinedButtons from './OutlinedButtons';
 import ContainedButtons from './ContainedButtons';
 import FloatingActionButtons from './FloatingActionButtons';
-import FloatingActionButtonZoom from './FloatingActionButtonZoom';
+//import FloatingActionButtonZoom from './FloatingActionButtonZoom';
 import ButtonSizes from './ButtonSizes';
 import IconButtons from './IconButtons';
 import IconLabelButtons from './IconLabelButtons';
 import CustomizedButtons from './CustomizedButtons';
 import ButtonBases from './ButtonBases';
 
-storiesOf('Buttons', module).addWithChapters('Demos', {
+import Chapters from '../Chapters'
+
+storiesOf('Buttons', module).add('Demos', Chapters({
   subtitle: 'Buttons allow users to take actions, and make choices, with a single tap.',
   chapters: [
     {
@@ -21,7 +23,7 @@ storiesOf('Buttons', module).addWithChapters('Demos', {
         { title: 'Outlined Buttons', sectionFn: () => <OutlinedButtons /> },
         { title: 'Contained Buttons', sectionFn: () => <ContainedButtons /> },
         { title: 'Floating Action Buttons', sectionFn: () => <FloatingActionButtons /> },
-        { title: 'Floating Action Button Zoom', sectionFn: () => <FloatingActionButtonZoom /> },
+        //{ title: 'Floating Action Button Zoom', sectionFn: () => <FloatingActionButtonZoom /> },
         // { title: 'Button Sizes', sectionFn: () => <ButtonSizes /> },
         // { title: 'Icon Buttons', sectionFn: () => <IconButtons /> },
         // { title: 'Icon Label Buttons', sectionFn: () => <IconLabelButtons /> },
@@ -30,4 +32,4 @@ storiesOf('Buttons', module).addWithChapters('Demos', {
       ],
     },
   ],
-});
+}));

@@ -11,7 +11,9 @@ import CheckboxListSecondary from './CheckboxListSecondary';
 import SwitchListSecondary from './SwitchListSecondary';
 import InteractiveList from './InteractiveList';
 
-storiesOf('Lists', module).addWithChapters('Demos', {
+import Chapters from '../Chapters'
+
+storiesOf('Lists', module).add('Demos', Chapters({
   subtitle: 'Lists are continuous, vertical indexes of text or images.',
   chapters: [
     {
@@ -28,4 +30,4 @@ storiesOf('Lists', module).addWithChapters('Demos', {
       ],
     },
   ],
-});
+}));

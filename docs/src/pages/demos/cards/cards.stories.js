@@ -6,7 +6,9 @@ import RecipeReviewCard from './RecipeReviewCard';
 import SimpleCard from './SimpleCard';
 import SimpleMediaCard from './SimpleMediaCard';
 
-storiesOf('Cards', module).addWithChapters('Demos', {
+import Chapters from '../Chapters'
+
+storiesOf('Cards', module).add('Demos', Chapters({
   subtitle: 'Cards contain content and actions about a single subject.',
   chapters: [
     {
@@ -18,4 +20,4 @@ storiesOf('Cards', module).addWithChapters('Demos', {
       ],
     },
   ],
-});
+}));
