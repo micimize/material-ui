@@ -21,19 +21,19 @@ function OutlinedButtons(props) {
   return (
     <View style={classes.row}>
       <Button variant="outlined" style={classes.button}>
-        Default
+        DEFAULT
       </Button>
       <Button variant="outlined" color="primary" style={classes.button}>
-        Primary
+        PRIMARY
       </Button>
       <Button variant="outlined" color="secondary" style={classes.button}>
-        Secondary
+        SECONDARY
       </Button>
       <Button variant="outlined" disabled style={classes.button}>
-        Disabled
+        DISABLED
       </Button>
       <Button variant="outlined" href="#outlined-buttons" style={classes.button}>
-        Link
+        LINK
       </Button>
       <TextInput
         accept="image/*"
@@ -45,7 +45,7 @@ function OutlinedButtons(props) {
       {/* TODO htmlFor doesn't make sense  */}
       <Text htmlFor="outlined-button-file">
         <Button variant="outlined" style={classes.button}>
-          Upload
+          UPLOAD
         </Button>
       </Text>
     </View>

@@ -73,11 +73,11 @@ function CustomizedInputs(props) {
         color="primary"
         style={styleNames(classes.margin, classes.cssRoot)}
       >
-        Custom CSS
+        CUSTOM CSS
       </Button>
       <MuiThemeProvider theme={theme}>
         <Button variant="contained" color="primary" style={classes.margin}>
-          MuiThemeProvider
+          MUITHEMEPROVIDER
         </Button>
       </MuiThemeProvider>
       <Button

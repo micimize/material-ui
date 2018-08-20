@@ -21,19 +21,19 @@ function ContainedButtons(props) {
   return (
     <View style={classes.row}>
       <Button variant="contained" style={classes.button}>
-        Default
+        DEFAULT
       </Button>
       <Button variant="contained" color="primary" style={classes.button}>
-        Primary
+        PRIMARY
       </Button>
       <Button variant="contained" color="secondary" style={classes.button}>
-        Secondary
+        SECONDARY
       </Button>
       <Button variant="contained" color="secondary" disabled style={classes.button}>
-        Disabled
+        DISABLED
       </Button>
       <Button variant="contained" href="#contained-buttons" style={classes.button}>
-        Link
+        LINK
       </Button>
       <TextInput
         accept="image/*"
@@ -44,7 +44,7 @@ function ContainedButtons(props) {
       />
       <Text htmlFor="contained-button-file">
         <Button variant="contained" style={classes.button}>
-          Upload
+          UPLOAD
         </Button>
       </Text>
     </View>

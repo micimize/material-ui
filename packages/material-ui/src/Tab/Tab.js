@@ -18,7 +18,7 @@ export const styles = theme => ({
     padding: 0,
     minHeight: 48,
     flexShrink: 0,
-    // overflow: 'hidden',
+    overflow: 'hidden',
     [theme.breakpoints.up('md')]: {
       minWidth: 160,
     },

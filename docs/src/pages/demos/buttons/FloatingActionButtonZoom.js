@@ -18,7 +18,7 @@ function TabContainer(props) {
   const { children, dir } = props;
 
   return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+    <Typography dir={dir} style={{ padding: 8 * 3 }}>
       {children}
     </Typography>
   );
@@ -96,9 +96,9 @@ class FloatingActionButtonZoom extends React.Component {
             textColor="primary"
             fullWidth
           >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
+            <Tab label="ITEM ONE" />
+            <Tab label="ITEM TWO" />
+            <Tab label="ITEM THREE" />
           </Tabs>
         </AppBar>
         <SwipeableViews
@@ -106,9 +106,9 @@ class FloatingActionButtonZoom extends React.Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
-          <TabContainer dir={theme.direction}>Item One</TabContainer>
-          <TabContainer dir={theme.direction}>Item Two</TabContainer>
-          <TabContainer dir={theme.direction}>Item Three</TabContainer>
+          <TabContainer dir={theme.direction}>Item one</TabContainer>
+          <TabContainer dir={theme.direction}>Item two</TabContainer>
+          <TabContainer dir={theme.direction}>Item three</TabContainer>
         </SwipeableViews>
         {fabs.map(
           (fab, index) =>

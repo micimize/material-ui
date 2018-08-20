@@ -33,7 +33,7 @@ function FloatingActionButtons(props) {
       </Button>
       <Button variant="extendedFab" aria-label="Delete" style={classes.button}>
         <NavigationIcon style={classes.extendedIcon} />
-        <Typography variant="button">Extended</Typography>
+        <Typography variant="button">EXTENDED</Typography>
       </Button>
       <Button variant="fab" disabled aria-label="Delete" style={classes.button}>
         <DeleteIcon color="disabled" />

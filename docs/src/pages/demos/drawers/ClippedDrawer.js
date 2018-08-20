@@ -17,7 +17,7 @@ const styles = theme => ({
     flexGrow: 1,
     height: 430,
     zIndex: 1,
-    // overflow: 'hidden',
+    overflow: 'hidden',
     position: 'relative',
     flexDirection: 'row',
   },

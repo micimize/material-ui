@@ -14,7 +14,7 @@ export const styles = theme => ({
     width: 40,
     height: 40,
     borderRadius: 40 / 2,
-    // overflow: 'hidden',
+    overflow: 'hidden',
     // userSelect: 'none',
     // fontFamily: theme.typography.fontFamily,
   },

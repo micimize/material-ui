@@ -20,35 +20,35 @@ function ButtonSizes(props) {
     <View>
       <View style={classes.row}>
         <Button size="small" style={classes.button}>
-          Small
+          SMALL
         </Button>
         <Button size="medium" style={classes.button}>
-          Medium
+          MEDIUM
         </Button>
         <Button size="large" style={classes.button}>
-          Large
+          LARGE
         </Button>
       </View>
       <View style={classes.row}>
         <Button variant="outlined" size="small" color="primary" style={classes.button}>
-          Small
+          SMALL
         </Button>
         <Button variant="outlined" size="medium" color="primary" style={classes.button}>
-          Medium
+          MEDIUM
         </Button>
         <Button variant="outlined" size="large" color="primary" style={classes.button}>
-          Large
+          LARGE
         </Button>
       </View>
       <View style={classes.row}>
         <Button variant="contained" size="small" color="primary" style={classes.button}>
-          Small
+          SMALL
         </Button>
         <Button variant="contained" size="medium" color="primary" style={classes.button}>
-          Medium
+          MEDIUM
         </Button>
         <Button variant="contained" size="large" color="primary" style={classes.button}>
-          Large
+          LARGE
         </Button>
       </View>
       <View style={classes.row}>

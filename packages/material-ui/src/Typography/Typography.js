@@ -50,7 +50,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the root element if `align="nowrap"`. */
   noWrap: {
-    // overflow: 'hidden',
+    overflow: 'hidden',
     // textOverflow: 'ellipsis',
     // whiteSpace: 'nowrap',
   },
