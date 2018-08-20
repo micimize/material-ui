@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import Svg from 'svgs';
+import { Svg } from '../styles/extended-styles/svg';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
@@ -29,27 +29,37 @@ export const styles = theme => ({
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {
     color: theme.palette.primary.main,
-    fill: theme.palette.primary.main,
+    svg: {
+      fill: theme.palette.primary.main,
+    }
   },
   /* Styles applied to the root element if `color="secondary"`. */
   colorSecondary: {
     color: theme.palette.secondary.main,
-    fill: theme.palette.secondary.main,
+    svg: {
+      fill: theme.palette.secondary.main,
+    }
   },
   /* Styles applied to the root element if `color="saction"`. */
   colorAction: {
     color: theme.palette.action.active,
-    fill: theme.palette.action.active,
+    svg: {
+      fill: theme.palette.action.active,
+    }
   },
   /* Styles applied to the root element if `color="error"`. */
   colorError: {
     color: theme.palette.error.main,
-    fill: theme.palette.error.main,
+    svg: {
+      fill: theme.palette.error.main,
+    }
   },
   /* Styles applied to the root element if `color="disabled"`. */
   colorDisabled: {
     color: theme.palette.action.disabled,
-    fill: theme.palette.action.disabled,
+    svg: {
+      fill: theme.palette.action.disabled,
+    }
   },
 
   /* Styles applied to the root element if `color="onDefault"`. */
@@ -57,19 +67,25 @@ export const styles = theme => ({
     color: theme.palette.getContrastText(
       theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
     ),
-    fill: theme.palette.getContrastText(
-      theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
-    ),
+    svg: {
+      fill: theme.palette.getContrastText(
+        theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
+      ),
+    }
   },
   /* Styles applied to the root element if `color="onPrimary"`. */
   colorOnPrimary: {
     color: theme.palette.primary.contrastText,
-    fill: theme.palette.primary.contrastText,
+    svg: {
+      fill: theme.palette.primary.contrastText,
+    }
   },
   /* Styles applied to the root element if `color="onSecondary"`. */
   colorOnSecondary: {
     color: theme.palette.secondary.contrastText,
-    fill: theme.palette.secondary.contrastText,
+    svg: {
+      fill: theme.palette.secondary.contrastText,
+    }
   },
   /* Styles applied to the root element if `fontSize="inherit"`. */
   /*
@@ -104,7 +120,7 @@ function SvgIcon(props) {
 
   return (
     <Component
-      style={StyleSheet.flatten(style)}
+      style={style}
       focusable="false"
       viewBox={viewBox}
       color={nativeColor}
