@@ -33,16 +33,6 @@ function TextButtons(props) {
       <Button href="#text-buttons" style={classes.button}>
         Link
       </Button>
-      <TextInput
-        accept="image/*"
-        style={classes.input}
-        id="flat-button-file"
-        multiple
-        type="file"
-      />
-      <Text htmlFor="flat-button-file">
-        <Button style={classes.button}>Upload</Button>
-      </Text>
     </View>
   );
 }

@@ -2,15 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
 import TextButtons from './TextButtons';
+/*
 import OutlinedButtons from './OutlinedButtons';
 import ContainedButtons from './ContainedButtons';
 import FloatingActionButtons from './FloatingActionButtons';
-//import FloatingActionButtonZoom from './FloatingActionButtonZoom';
+import FloatingActionButtonZoom from './FloatingActionButtonZoom';
 import ButtonSizes from './ButtonSizes';
 import IconButtons from './IconButtons';
 import IconLabelButtons from './IconLabelButtons';
 import CustomizedButtons from './CustomizedButtons';
 import ButtonBases from './ButtonBases';
+*/
 
 import Chapters from '../Chapters'
 
@@ -20,9 +22,9 @@ storiesOf('Buttons').add('Demos', Chapters({
     {
       sections: [
         { title: 'Text Buttons', sectionFn: () => <TextButtons /> },
-        { title: 'Outlined Buttons', sectionFn: () => <OutlinedButtons /> },
-        { title: 'Contained Buttons', sectionFn: () => <ContainedButtons /> },
-        { title: 'Floating Action Buttons', sectionFn: () => <FloatingActionButtons /> },
+        // { title: 'Outlined Buttons', sectionFn: () => <OutlinedButtons /> },
+        // { title: 'Contained Buttons', sectionFn: () => <ContainedButtons /> },
+        // { title: 'Floating Action Buttons', sectionFn: () => <FloatingActionButtons /> },
         //{ title: 'Floating Action Button Zoom', sectionFn: () => <FloatingActionButtonZoom /> },
         // { title: 'Button Sizes', sectionFn: () => <ButtonSizes /> },
         // { title: 'Icon Buttons', sectionFn: () => <IconButtons /> },

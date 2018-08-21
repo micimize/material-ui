@@ -4,7 +4,7 @@ import { getStorybookUI, configure } from '@storybook/react-native';
 import {name as appName} from './app.json';
 
 // const context = require.context('../', true, /Screen\.js$/);
-const context = require.context('./docs/src/pages', true, /.stories.js$/);
+const context = require.context('./docs/src/pages', true, /buttons.stories.js$/);
 
 //import centered from './decorator-centered';
 //addDecorator(centered);
