@@ -30,8 +30,8 @@ configure(loadStories, module);
 
 
 const StorybookUI = getStorybookUI({
-    port: 7007,
-    host: 'localhost',
+  port: 7007,
+  host: 'localhost',
 });
 
 AppRegistry.registerComponent(appName, () => StorybookUI);
