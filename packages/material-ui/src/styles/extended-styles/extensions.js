@@ -31,7 +31,7 @@ function normalize(transitionProps) {
 const styleExtensions = new Map();
 
 // TODO implementing :focus might have been premature
-function addExtensions(id, { transition, ':focus': focus }) {
+function addExtensions(id, { transition, ':focus': focus, svg }) {
   let extensions = styleExtensions.get(id);
   if (transition) {
     extensions = {
@@ -47,12 +47,19 @@ function addExtensions(id, { transition, ':focus': focus }) {
       focus: [...((extensions || {}).focus || []), StyleSheet.create({ focus }).focus],
     };
   }
+  if (svg) {
+    console.log(svg)
+    extensions = {
+      ...(extensions || {}),
+      svg
+    }
+  }
   if (extensions) {
     styleExtensions.set(id, extensions);
   }
 }
 
-const extensionsKeys = ['transition', ':focus'];
+const extensionsKeys = ['transition', ':focus', 'svg'];
 
 const excludeExtensions = objectFilterer(key => !extensionsKeys.includes(key));
 const pickExtensions = objectFilterer(key => extensionsKeys.includes(key));

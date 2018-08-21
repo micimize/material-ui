@@ -45,7 +45,9 @@ const styles = theme => ({
     backgroundColor: green[500],
   },
   fabGreenText: {
-    fill: theme.palette.common.white,
+    svg: {
+      fill: theme.palette.common.white,
+    }
   },
 });
 

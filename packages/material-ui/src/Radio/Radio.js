@@ -12,26 +12,34 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   icon: {
     color: theme.palette.text.secondary,
-    fill: theme.palette.text.secondary,
+    svg: {
+      fill: theme.palette.text.secondary,
+    }
   },
   /* Styles applied to the root element if `checked={true}`. */
   checked: {},
   /* Styles applied to the root element if `disabled={true}`. */
   disabled: {
     color: theme.palette.action.disabled,
-    fill: theme.palette.action.disabled,
+    svg: {
+      fill: theme.palette.action.disabled,
+    }
   },
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {},
   colorPrimaryChecked: {
     color: theme.palette.primary.main,
-    fill: theme.palette.primary.main,
+    svg: {
+      fill: theme.palette.primary.main,
+    }
   },
   /* Styles applied to the root element if `color="secondary"`. */
   colorSecondary: {},
   colorSecondaryChecked: {
     color: theme.palette.secondary.main,
-    fill: theme.palette.secondary.main,
+    svg: {
+      fill: theme.palette.secondary.main,
+    }
   },
 });
 

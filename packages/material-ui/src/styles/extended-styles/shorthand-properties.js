@@ -1,14 +1,21 @@
 import { expandShorthandProperty } from 'css-property-parser';
 import camelcase from 'camelcase';
 
-function toNumber(value) {
-  return Number(value.replace('px', ''));
-}
-
 // FIXME use Symbol
 // TODO open bug with haul
 // also open bug about their console.logs not working unless you add a console.log in their module above the fork
 const discard = 'DISCARD_PROPERTY'
+function toNumber(value) {
+  return Number(value.replace('px', ''));
+}
+
+function toNumberOrPercent(value){
+  return value.includes('%') ? value : toNumber(value)
+}
+
+function discardOr({ discard: match, or }){
+  return value => value === match ? discard : or(value)
+}
 
 // property in dash-case
 // cast map in camelCase
@@ -25,7 +32,9 @@ function expander(shorthand, castMap = {}) {
       if (castMap[cameled]) {
         propValue = castMap[cameled](propValue);
       }
-      resolved[camelcase(prop)] = propValue;
+      if (propValue !== discard){
+        resolved[camelcase(prop)] = propValue;
+      }
       return resolved;
     }, {});
   };
@@ -36,7 +45,7 @@ function conditionalExpander(shorthand, condition, castMap = {}) {
   return value => (condition(value) ? expand(value) : { [shorthand]: value });
 }
 
-const cast = { toNumber, discard };
+const cast = { toNumber, toNumberOrPercent, discard, discardOr };
 
 export { cast, conditionalExpander };
 

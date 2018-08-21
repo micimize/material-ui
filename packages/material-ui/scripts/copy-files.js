@@ -51,8 +51,6 @@ async function addLicense(packageData) {
     [
       '../build/index.js',
       '../build/index.es.js',
-      '../build/umd/material-ui.development.js',
-      '../build/umd/material-ui.production.min.js',
     ].map(file => prepend(path.resolve(__dirname, file), license)),
   );
 }
