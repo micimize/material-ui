@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/react-native';
 
 import SimpleList from './SimpleList';
 import FolderList from './FolderList';
@@ -13,7 +13,7 @@ import InteractiveList from './InteractiveList';
 
 import Chapters from '../Chapters'
 
-storiesOf('Lists', module).add('Demos', Chapters({
+storiesOf('Lists').add('Demos', Chapters({
   subtitle: 'Lists are continuous, vertical indexes of text or images.',
   chapters: [
     {

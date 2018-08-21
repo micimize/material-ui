@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/react-native';
 
 import MediaControlCard from './MediaControlCard';
 import RecipeReviewCard from './RecipeReviewCard';
@@ -8,7 +8,7 @@ import SimpleMediaCard from './SimpleMediaCard';
 
 import Chapters from '../Chapters'
 
-storiesOf('Cards', module).add('Demos', Chapters({
+storiesOf('Cards').add('Demos', Chapters({
   subtitle: 'Cards contain content and actions about a single subject.',
   chapters: [
     {

@@ -103,19 +103,6 @@
       ],
       "ignore": ["**/*.test*"]
     },
-    "production-umd": {
-      "plugins": [
-        "transform-react-constant-elements",
-        "transform-dev-warning",
-        ["react-remove-properties", { "properties": ["data-mui-test"] }],
-        [
-          "transform-react-remove-prop-types",
-          {
-            "mode": "wrap"
-          }
-        ]
-      ]
-    },
     "test": {
       "sourceMaps": "both",
       "plugins": [

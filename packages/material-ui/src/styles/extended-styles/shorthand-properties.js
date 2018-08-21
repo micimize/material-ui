@@ -5,7 +5,10 @@ function toNumber(value) {
   return Number(value.replace('px', ''));
 }
 
-const discard = Symbol('DISCARD_PROPERTY')
+// FIXME use Symbol
+// TODO open bug with haul
+// also open bug about their console.logs not working unless you add a console.log in their module above the fork
+const discard = 'DISCARD_PROPERTY'
 
 // property in dash-case
 // cast map in camelCase

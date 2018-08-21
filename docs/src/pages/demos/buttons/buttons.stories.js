@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/react-native';
 
 import TextButtons from './TextButtons';
 import OutlinedButtons from './OutlinedButtons';
@@ -14,7 +14,7 @@ import ButtonBases from './ButtonBases';
 
 import Chapters from '../Chapters'
 
-storiesOf('Buttons', module).add('Demos', Chapters({
+storiesOf('Buttons').add('Demos', Chapters({
   subtitle: 'Buttons allow users to take actions, and make choices, with a single tap.',
   chapters: [
     {
