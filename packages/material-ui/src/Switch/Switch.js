@@ -110,7 +110,7 @@ function Switch(props) {
           disabled: styleNames(classes.disabled, classes.switchBaseDisabled),
         }}
         renderIcon={({ checked, style }) => (
-          <>
+          <React.Fragment>
             <Animated.View
               style={styleNames(classes.icon, style, {
                 [classes.iconChecked]: checked,
@@ -125,7 +125,7 @@ function Switch(props) {
                 [classes.barDisabled]: other.disabled,
               })}
             />
-          </>
+          </React.Fragment>
         )}
       />
     </View>

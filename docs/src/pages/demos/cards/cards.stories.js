@@ -1,12 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/react-native';
 
 import MediaControlCard from './MediaControlCard';
 import RecipeReviewCard from './RecipeReviewCard';
 import SimpleCard from './SimpleCard';
 import SimpleMediaCard from './SimpleMediaCard';
 
-storiesOf('Cards', module).addWithChapters('Demos', {
+import Chapters from '../Chapters'
+
+storiesOf('Cards').add('Demos', Chapters({
   subtitle: 'Cards contain content and actions about a single subject.',
   chapters: [
     {
@@ -18,4 +20,4 @@ storiesOf('Cards', module).addWithChapters('Demos', {
       ],
     },
   ],
-});
+}));

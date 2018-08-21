@@ -1,8 +1,10 @@
 import { expandShorthandProperty } from 'css-property-parser';
 import camelcase from 'camelcase';
 
-const discard = Symbol('DISCARD_PROPERTY')
-
+// FIXME use Symbol
+// TODO open bug with haul
+// also open bug about their console.logs not working unless you add a console.log in their module above the fork
+const discard = 'DISCARD_PROPERTY'
 function toNumber(value) {
   return Number(value.replace('px', ''));
 }
@@ -14,7 +16,6 @@ function toNumberOrPercent(value){
 function discardOr({ discard: match, or }){
   return value => value === match ? discard : or(value)
 }
-
 
 // property in dash-case
 // cast map in camelCase

@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/react-native';
 
 import TextField from './TextFields'
 import ComposedTextFields from './ComposedTextField'
@@ -10,7 +10,9 @@ import FormattedInputs from './FormattedInputs'
 import CustomizedInputs from './CustomizedInputs'
 import InputWithIcon from './InputWithIcon'
 
-storiesOf('Text Fields', module).addWithChapters('Demos', {
+import Chapters from '../Chapters'
+
+storiesOf('Text Fields').add('Demos', Chapters({
   subtitle: 'Text Fields allow users to enter text into a UI. They typically appear in forms and dialogs.',
   chapters: [
     {
@@ -26,4 +28,4 @@ storiesOf('Text Fields', module).addWithChapters('Demos', {
       ],
     },
   ],
-});
+}));

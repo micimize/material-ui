@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/react-native';
 
 import Checkboxes from './Checkboxes';
 import CheckboxLabels from './CheckboxLabels';
@@ -11,7 +11,9 @@ import SwitchLabels from './SwitchLabels';
 import SwitchesGroup from './SwitchesGroup';
 import CustomizedSwitches from './CustomizedSwitches';
 
-storiesOf('Selection Controls', module).addWithChapters('Demos', {
+import Chapters from '../Chapters'
+
+storiesOf('Selection Controls').add('Demos', Chapters({
   subtitle: 'Selection controls allow the user to select options.',
   chapters: [
     {
@@ -55,4 +57,4 @@ storiesOf('Selection Controls', module).addWithChapters('Demos', {
       ],
     },
   ],
-});
+}));
