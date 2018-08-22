@@ -23,7 +23,7 @@ export const styles = {
     lineHeight: ROW_HEIGHT,
     // outline: 'none',
     // resize: 'none',
-    background: 'transparent',
+    backgroundColor: 'transparent',
   },
   textareaPosition: {
     //boxSizing: 'border-box',

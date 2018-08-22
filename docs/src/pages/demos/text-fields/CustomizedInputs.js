@@ -40,7 +40,7 @@ const styles = theme => ({
     border: '1px solid #ced4da',
     fontSize: 16,
     padding: '10px 12px',
-    width: 'calc(100% - 24px)',
+    width: '100%', // 'calc(100% - 24px)',
     transition: theme.transitions.create(['border-color', 'box-shadow']),
     fontFamily: [
       '-apple-system',

@@ -59,7 +59,6 @@ class TextFields extends React.Component {
     return (
       <View style={classes.container} noValidate autoComplete="off">
         <TextField
-          id="name"
           label="Name"
           style={classes.textField}
           value={this.state.name}
@@ -67,7 +66,6 @@ class TextFields extends React.Component {
           margin="normal"
         />
         <TextField
-          id="uncontrolled"
           label="Uncontrolled"
           defaultValue="foo"
           style={classes.textField}
@@ -75,7 +73,6 @@ class TextFields extends React.Component {
         />
         <TextField
           required
-          id="required"
           label="Required"
           defaultValue="Hello World"
           style={classes.textField}
@@ -83,14 +80,12 @@ class TextFields extends React.Component {
         />
         <TextField
           error
-          id="error"
           label="Error"
           defaultValue="Hello World"
           style={classes.textField}
           margin="normal"
         />
         <TextField
-          id="password-input"
           label="Password"
           style={classes.textField}
           type="password"
@@ -98,7 +93,6 @@ class TextFields extends React.Component {
           margin="normal"
         />
         <TextField
-          id="read-only-input"
           label="Read Only"
           defaultValue="Hello World"
           style={classes.textField}
@@ -108,7 +102,6 @@ class TextFields extends React.Component {
           }}
         />
         <TextField
-          id="multiline-flexible"
           label="Multiline"
           multiline
           rowsMax={4}
@@ -118,7 +111,6 @@ class TextFields extends React.Component {
           margin="normal"
         />
         <TextField
-          id="multiline-static"
           label="Multiline"
           multiline
           rows={4}
@@ -127,7 +119,6 @@ class TextFields extends React.Component {
           margin="normal"
         />
         <TextField
-          id="helperText"
           label="Helper text"
           defaultValue="Default Value"
           style={classes.textField}
@@ -135,7 +126,6 @@ class TextFields extends React.Component {
           margin="normal"
         />
         <TextField
-          id="with-placeholder"
           label="With placeholder"
           placeholder="Placeholder"
           style={classes.textField}
@@ -149,7 +139,6 @@ class TextFields extends React.Component {
           margin="normal"
         />
         <TextField
-          id="number"
           label="Number"
           value={this.state.age}
           onChange={this.handleChange('age')}
@@ -161,20 +150,20 @@ class TextFields extends React.Component {
           margin="normal"
         />
         <TextField
-          id="search"
           label="Search field"
           type="search"
           style={classes.textField}
           margin="normal"
         />
+        {/*
         <TextField
-          id="select-currency"
           select
           label="Select"
           style={classes.textField}
           value={this.state.currency}
           onChange={this.handleChange('currency')}
           SelectProps={{
+            native: true,
             MenuProps: {
               style: classes.menu,
             },
@@ -183,13 +172,12 @@ class TextFields extends React.Component {
           margin="normal"
         >
           {currencies.map(option => (
-            <MenuItem key={option.value} value={option.value}>
+            <Picker.Item key={option.value} value={option.value}>
               <Text>{option.label}</Text>
-            </MenuItem>
+            </Picker.Item>
           ))}
         </TextField>
         <TextField
-          id="select-currency-native"
           select
           label="Native select"
           style={classes.textField}
@@ -210,8 +198,8 @@ class TextFields extends React.Component {
             </Picker.Item>
           ))}
         </TextField>
+        */}
         <TextField
-          id="full-width"
           label="Label"
           InputLabelProps={{
             shrink: true,

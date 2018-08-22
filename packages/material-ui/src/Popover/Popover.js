@@ -71,16 +71,16 @@ export const styles = {
   /* Styles applied to the `Paper` component. */
   paper: {
     position: 'absolute',
-    overflowY: 'auto',
-    overflowX: 'hidden',
     // So we see the popover when it's empty.
     // It's most likely on issue on userland.
     minWidth: 16,
     minHeight: 16,
+    /*
+    overflowY: 'auto',
+    overflowX: 'hidden',
     maxWidth: 'calc(100% - 32px)',
     maxHeight: 'calc(100% - 32px)',
-    // We disable the focus ring for mouse, touch and keyboard users.
-    outline: 'none',
+    */
   },
 };
 

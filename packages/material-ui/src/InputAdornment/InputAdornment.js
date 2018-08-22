@@ -9,7 +9,7 @@ export const styles = {
   /* Styles applied to the root element. */
   root: {
     flexDirection: 'row',
-    maxHeight: '2em',
+    maxHeight: 16 * 2,
     alignItems: 'center',
   },
   /* Styles applied to the root element if `position="start"`. */

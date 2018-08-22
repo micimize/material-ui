@@ -91,7 +91,6 @@ function TextField(props) {
       rowsMax={rowsMax}
       type={type}
       value={value}
-      id={id}
       inputRef={inputRef}
       onBlur={onBlur}
       onChange={onChange}
