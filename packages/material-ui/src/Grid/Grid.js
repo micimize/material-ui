@@ -75,8 +75,12 @@ function generateGutter(theme, breakpoint) {
       return;
     }
     styles[`spacing-${breakpoint}-${spacing}`] = {
-      margin: -spacing / 2,
-      width: `calc(100% + ${spacing}px)`,
+      // TODO idk how this should really be done in react-native
+      // margin: -spacing / 2,
+      // maybe just ignore the first item padding
+      marginTop: -spacing / 2,
+      marginBottom: -spacing / 2,
+      width: '100%' // '`calc(100% + ${spacing}px)`,
     };
     styles[`spacing-${breakpoint}-${spacing}-item`] = {
       padding: spacing / 2,

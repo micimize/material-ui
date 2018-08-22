@@ -12,7 +12,6 @@ export const styles = theme => ({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    position: 'relative',
     width: '100%',
     paddingTop: 12,
     paddingBottom: 12,
@@ -20,7 +19,6 @@ export const styles = theme => ({
   text: {},
   /* Styles applied to the `container` element if `children` includes `ListItemSecondaryAction`. */
   container: {
-    position: 'relative',
   },
   // TODO: Sanity check this - why is focusVisibleClassName prop apparently applied to a div?
   /* Styles applied to the `component`'s `focusVisibleClassName` property if `button={true}`. */
@@ -63,7 +61,7 @@ export const styles = theme => ({
   secondaryAction: {
     // Add some space to avoid collision as `ListItemSecondaryAction`
     // is absolutely positionned.
-    paddingRight: 32,
+    // paddingRight: 32,
   },
 });
 
@@ -125,25 +123,16 @@ class ListItem extends React.Component {
       Component = ButtonBase;
     }
 
+    /* TODO idk what the point of all this is 
     if (hasSecondaryAction) {
-      // Use div by default.
       Component = !componentProps.component && !componentProp ? View : Component;
 
-      // Avoid nesting of li > li.
-      if (ContainerComponent === View) {
-        if (Component === View) {
-          Component = View;
-        } else if (componentProps.component === View) {
-          componentProps.component = View;
-        }
-      }
       let lastChild = children.pop();
       return (
         <ContainerComponent
           style={styleNames(classes.container, containerStyle)}
           {...ContainerProps}
         >
-          {/* TODO we dont' need to map over all children for sugar */}
           <Component {...componentProps}>
             {children.map(
               (e, i) =>
@@ -164,9 +153,11 @@ class ListItem extends React.Component {
         </ContainerComponent>
       );
     }
+    */
 
     return (
       <Component {...componentProps}>
+        {/* TODO we dont' need to map over all children for sugar */}
         {children.map(
           (e, i) =>
             typeof e === 'string' ? (

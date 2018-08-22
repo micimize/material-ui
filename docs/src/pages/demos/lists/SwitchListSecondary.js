@@ -15,7 +15,6 @@ import BluetoothIcon from '@material-ui/icons/Bluetooth';
 const styles = theme => ({
   root: {
     width: '100%',
-    maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
 });

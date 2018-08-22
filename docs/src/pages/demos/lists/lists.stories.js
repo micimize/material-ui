@@ -5,7 +5,7 @@ import SimpleList from './SimpleList';
 import FolderList from './FolderList';
 import InsetList from './InsetList';
 import NestedList from './NestedList';
-import PinnedSubheaderList from './PinnedSubheaderList';
+// import PinnedSubheaderList from './PinnedSubheaderList';
 import CheckboxList from './CheckboxList';
 import CheckboxListSecondary from './CheckboxListSecondary';
 import SwitchListSecondary from './SwitchListSecondary';
@@ -29,7 +29,7 @@ storiesOf('Lists', module).add('Demos', Chapters({
         { title: 'Checkbox List', sectionFn: () => <CheckboxList /> },
         { title: 'Checkbox List Secondary', sectionFn: () => <CheckboxListSecondary /> },
         { title: 'Switch List Secondary', sectionFn: () => <SwitchListSecondary /> },
-        //{ title: 'Interactive List', sectionFn: () => <InteractiveList /> },
+        { title: 'Interactive List', sectionFn: () => <InteractiveList /> },
       ],
     },
   ],

@@ -55,9 +55,8 @@ class InteractiveList extends React.Component {
           <FormControlLabel
             control={
               <Checkbox
-                checked={dense}
-                onChange={(event, checked) => this.setState({ dense: checked })}
-                value="dense"
+                value={dense}
+                onValueChange={(checked) => this.setState({ dense: checked })}
               />
             }
             label="Enable dense"
@@ -65,9 +64,8 @@ class InteractiveList extends React.Component {
           <FormControlLabel
             control={
               <Checkbox
-                checked={secondary}
-                onChange={(event, checked) => this.setState({ secondary: checked })}
-                value="secondary"
+                value={secondary}
+                onValueChange={(checked) => this.setState({ secondary: checked })}
               />
             }
             label="Enable secondary text"
@@ -153,7 +151,7 @@ class InteractiveList extends React.Component {
                       secondary={secondary ? 'Secondary text' : null}
                     />
                     <ListItemSecondaryAction>
-                      <IconButton aria-label="Delete">
+                      <IconButton accessibilityLabel="Delete">
                         <DeleteIcon />
                       </IconButton>
                     </ListItemSecondaryAction>

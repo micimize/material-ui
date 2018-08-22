@@ -1,3 +1,4 @@
+// TODO does this component & it's logic in ListItem make any sense in native?
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
@@ -7,9 +8,7 @@ import withStyles from '../styles/withStyles';
 export const styles = {
   /* Styles applied to the root element. */
   root: {
-    height: '100%',
-    alignSelf: 'flex-end',
-    justifyContent: 'center'
+    zIndex: 2
   },
 };
 

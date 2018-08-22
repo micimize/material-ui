@@ -9,6 +9,7 @@ export const styles = {
   root: {
     margin: 0,
     padding: 0,
+    width: '100%'
   },
   /* Styles applied to the root element if `disablePddding={false}`. */
   padding: {
