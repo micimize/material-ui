@@ -22,7 +22,7 @@
   "scripts": {
     "start": "yarn docs:dev",
     "docs:dev": "rimraf node_modules/.cache/babel-loader && cross-env BABEL_ENV=docs-development next dev",
-    "docs:stories": "cross-env BABEL_ENV=docs-development start-storybook -p 6006 --config-dir docs/src/storybook",
+    "docs:stories": "yarn storybook start -p 7007 --haul haul.config.js --platform android",
     "docs:api": "yarn docs:api:core && yarn docs:api:lab",
     "docs:api:core": "rimraf ./pages/api && cross-env BABEL_ENV=docs-development babel-node ./docs/scripts/buildApi.js ./packages/material-ui/src ./pages/api",
     "docs:api:lab": "rimraf ./pages/lab/api && cross-env BABEL_ENV=docs-development babel-node ./docs/scripts/buildApi.js ./packages/material-ui-lab/src ./pages/lab/api",
