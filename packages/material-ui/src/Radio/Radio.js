@@ -11,7 +11,6 @@ import withStyles from '../styles/withStyles';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   icon: {
-    color: theme.palette.text.secondary,
     svg: {
       fill: theme.palette.text.secondary,
     }
@@ -20,7 +19,6 @@ export const styles = theme => ({
   checked: {},
   /* Styles applied to the root element if `disabled={true}`. */
   disabled: {
-    color: theme.palette.action.disabled,
     svg: {
       fill: theme.palette.action.disabled,
     }
@@ -28,7 +26,6 @@ export const styles = theme => ({
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {},
   colorPrimaryChecked: {
-    color: theme.palette.primary.main,
     svg: {
       fill: theme.palette.primary.main,
     }
@@ -36,7 +33,6 @@ export const styles = theme => ({
   /* Styles applied to the root element if `color="secondary"`. */
   colorSecondary: {},
   colorSecondaryChecked: {
-    color: theme.palette.secondary.main,
     svg: {
       fill: theme.palette.secondary.main,
     }

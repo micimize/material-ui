@@ -13,13 +13,11 @@ import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 
 const styles = {
   icon: {
-    color: green[600],
     svg: {
       fill: green[600],
     }
   },
   checked: {
-    color: green[500],
     svg: {
       fill: green[500],
     },
@@ -29,7 +27,8 @@ const styles = {
     height: 40,
   },
   sizeIcon: {
-    fontSize: 20,
+    width: 20,
+    height: 20,
   },
 };
 
