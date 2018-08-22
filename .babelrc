@@ -1,10 +1,14 @@
 {
   "presets": ["babel-preset-stage-1", "react-native", "babel-preset-flow"],
   "plugins": [
+    ["transform-define", {
+      "__dirname": "./"
+    }],
     [
       "module-resolver",
       {
         "alias": {
+          "path": "path-browserify",
           "@micimize/material-ui": "./packages/material-ui/src",
           "@material-ui/core": "./packages/material-ui/src",
           "@material-ui/docs": "./packages/material-ui-docs/src",
@@ -13,7 +17,7 @@
           "docs": "./docs",
           "/static": "./static",
           "modules": "./modules",
-          "pages": "./pages",
+          "pages": "./pages"
         }
       }
     ],

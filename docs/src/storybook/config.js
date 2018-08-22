@@ -1,9 +1,6 @@
 //import { setOptions } from '@storybook/addon-options';
 import { getStorybookUI, configure } from '@storybook/react-native';
 
-// const context = require.context('../', true, /Screen\.js$/);
-const context = require.context('../pages', true, /.stories.js$/);
-
 //import centered from './decorator-centered';
 //addDecorator(centered);
 
@@ -20,13 +17,19 @@ setOptions({
 */
 
 function loadStories() {
-  context.keys().forEach(context);
+  require('../pages/demos/buttons/buttons.stories')
+  require('../pages/demos/lists/lists.stories')
+  require('../pages/demos/cards/cards.stories')
+  require('../pages/demos/selection-controls/selection-controls.stories')
+  require('../pages/demos/text-fields/text-fields.stories')
+  // context.keys().forEach(context);
 }
 
 configure(loadStories, module);
 
 
 const StorybookUI = getStorybookUI({
+  onDeviceUI: true,
   port: 7007,
   host: 'localhost',
 });

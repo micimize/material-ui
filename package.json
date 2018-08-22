@@ -22,7 +22,7 @@
   "scripts": {
     "start": "yarn docs:dev",
     "docs:dev": "rimraf node_modules/.cache/babel-loader && cross-env BABEL_ENV=docs-development next dev",
-    "docs:stories": "yarn storybook start -p 7007 --haul haul.config.js --platform android",
+    "docs:stories": "yarn storybook start -p 7007 --platform android -c docs/src/storybook",
     "docs:api": "yarn docs:api:core && yarn docs:api:lab",
     "docs:api:core": "rimraf ./pages/api && cross-env BABEL_ENV=docs-development babel-node ./docs/scripts/buildApi.js ./packages/material-ui/src ./pages/api",
     "docs:api:lab": "rimraf ./pages/lab/api && cross-env BABEL_ENV=docs-development babel-node ./docs/scripts/buildApi.js ./packages/material-ui-lab/src ./pages/lab/api",
@@ -82,6 +82,7 @@
     "babel-plugin-react-native-web": "^0.8.9",
     "babel-plugin-react-remove-properties": "^0.2.5",
     "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-define": "^1.3.0",
     "babel-plugin-transform-dev-warning": "^0.1.0",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-react-constant-elements": "^6.23.0",

@@ -3,10 +3,10 @@ const webpack = require('webpack');
 
 const nodeModule = mod => path.dirname(require.resolve(mod))
 
-const babelOptions = require('./.babelrc.js')
+// const babelOptions = require('./.babelrc.js')
 
 module.exports = storybookBaseConfig => {
-  storybookBaseConfig.module.rules[0].query = babelOptions
+  delete storybookBaseConfig.module.rules[0].query
 
   /*
   storybookBaseConfig.resolve = Object.assign(
@@ -26,7 +26,7 @@ module.exports = storybookBaseConfig => {
   storybookBaseConfig.module.rules[0].include.push(
     //nodeModule('react-native-vector-icons')
   )
-  */
+  i*/
 
   storybookBaseConfig.module.rules.push({
     test: /\.(gif|jpe?g|png|svg)$/,
@@ -50,7 +50,7 @@ module.exports = storybookBaseConfig => {
     // See "Other node core libraries" for additional options.
   }
 
-  storybookBaseConfig.resolve.extensions = ['.web.js', '.js', '.json', '.web.jsx', '.jsx'];
+  storybookBaseConfig.resolve = Object.assign(storybookBaseConfig.resolve || {}, { extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'] });
 
   storybookBaseConfig.resolve.alias = {
     'react-native': 'react-native-web',
