@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from '@material-ui/core/styles/react-native-style-names';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
@@ -13,6 +14,7 @@ import SendIcon from '@material-ui/icons/Send';
 const styles = theme => ({
   row: {
     flexDirection: 'row',
+    flexWrap: 'wrap'
   },
   button: {
     margin: theme.spacing.unit,
@@ -24,7 +26,8 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit,
   },
   iconSmall: {
-    fontSize: 20,
+    width: 20,
+    height: 20,
   },
 });
 
@@ -33,24 +36,24 @@ function IconLabelButtons(props) {
   return (
     <View style={classes.row}>
       <Button variant="contained" color="secondary" style={classes.button}>
-        <Text>Delete</Text>
-        <DeleteIcon style={classes.rightIcon} />
+        <Typography variant="button" color="onSecondary">DELETE</Typography>
+        <DeleteIcon color="onPrimary" style={classes.rightIcon} />
       </Button>
       <Button variant="contained" color="primary" style={classes.button}>
-        <Text>Send</Text>
-        <SendIcon style={classes.rightIcon} />
+        <Typography variant="button" color="onPrimary">SEND</Typography>
+        <SendIcon color="onPrimary" style={classes.rightIcon} />
       </Button>
       <Button variant="contained" color="default" style={classes.button}>
-        <Text>Upload</Text>
+        <Typography variant="button">UPLOAD</Typography>
         <CloudUploadIcon style={classes.rightIcon} />
       </Button>
       <Button variant="contained" disabled color="secondary" style={classes.button}>
-        <KeyboardVoiceICon style={classes.leftIcon} />
-        <Text>Talk</Text>
+        <KeyboardVoiceICon color="disabled" style={classes.leftIcon} />
+        <Typography variant="button" color="disabled">TALK</Typography>
       </Button>
       <Button variant="contained" size="small" style={classes.button}>
         <SaveIcon style={styleNames(classes.leftIcon, classes.iconSmall)} />
-        <Text>Save</Text>
+        <Typography variant="button" >SAVE</Typography>
       </Button>
     </View>
   );

@@ -24,29 +24,23 @@ function IconButtons(props) {
   const { classes } = props;
   return (
     <View style={classes.row}>
-      <IconButton style={classes.button} aria-label="Delete">
+      <IconButton style={classes.button} accessibilityLabel="Delete">
         <DeleteIcon />
       </IconButton>
-      <IconButton style={classes.button} aria-label="Delete" disabled color="primary">
-        <DeleteIcon />
+      <IconButton style={classes.button} accessibilityLabel="Delete" disabled color="primary">
+        <DeleteIcon color="disabled"/>
       </IconButton>
-      <IconButton color="secondary" style={classes.button} aria-label="Add an alarm">
-        <AlarmIcon />
+      <IconButton color="secondary" style={classes.button} accessibilityLabel="Add to shopping cart">
+        <AddShoppingCartIcon color="secondary" />
       </IconButton>
-      <IconButton color="primary" style={classes.button} aria-label="Add to shopping cart">
-        <AddShoppingCartIcon />
+      {/*
+      <IconButton color="primary" style={classes.button} accessibilityLabel="Add an alarm">
+        <Icon color="secondary" >alarm</Icon>
       </IconButton>
-      <IconButton color="primary" style={classes.button}>
-        <PhotoCamera />
-      </IconButton>
-      {/* TODO idk if these input examples makes sense in native
-        <TextInput accept="image/*" style={classes.input} id="icon-button-file" type="file" />
-        <Text htmlFor="icon-button-file">
-          <IconButton color="primary" style={classes.button} component="span">
-            <PhotoCamera />
-          </IconButton>
-        </Text>
       */}
+      <IconButton color="primary" style={classes.button}>
+        <PhotoCamera color="primary" />
+      </IconButton>
     </View>
   );
 }

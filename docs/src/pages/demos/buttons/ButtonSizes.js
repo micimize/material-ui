@@ -8,6 +8,7 @@ import AddIcon from '@material-ui/icons/Add';
 const styles = theme => ({
   row: {
     flexDirection: 'row',
+    flexWrap: 'wrap'
   },
   button: {
     margin: theme.spacing.unit,

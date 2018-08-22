@@ -12,7 +12,7 @@ import InputWithIcon from './InputWithIcon'
 
 import Chapters from '../Chapters'
 
-storiesOf('Text Fields').add('Demos', Chapters({
+storiesOf('Text Fields', module).add('Demos', Chapters({
   subtitle: 'Text Fields allow users to enter text into a UI. They typically appear in forms and dialogs.',
   chapters: [
     {

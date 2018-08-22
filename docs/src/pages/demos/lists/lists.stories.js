@@ -13,7 +13,7 @@ import InteractiveList from './InteractiveList';
 
 import Chapters from '../Chapters'
 
-storiesOf('Lists').add('Demos', Chapters({
+storiesOf('Lists', module).add('Demos', Chapters({
   subtitle: 'Lists are continuous, vertical indexes of text or images.',
   chapters: [
     {

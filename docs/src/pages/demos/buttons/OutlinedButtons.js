@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   row: {
     flexDirection: 'row',
+    flexWrap: 'wrap'
   },
   button: {
     margin: theme.spacing.unit,
@@ -32,22 +33,6 @@ function OutlinedButtons(props) {
       <Button variant="outlined" disabled style={classes.button}>
         DISABLED
       </Button>
-      <Button variant="outlined" href="#outlined-buttons" style={classes.button}>
-        LINK
-      </Button>
-      <TextInput
-        accept="image/*"
-        style={classes.input}
-        id="outlined-button-file"
-        multiple
-        type="file"
-      />
-      {/* TODO htmlFor doesn't make sense  */}
-      <Text htmlFor="outlined-button-file">
-        <Button variant="outlined" style={classes.button}>
-          UPLOAD
-        </Button>
-      </Text>
     </View>
   );
 }

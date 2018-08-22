@@ -8,7 +8,7 @@ import SimpleMediaCard from './SimpleMediaCard';
 
 import Chapters from '../Chapters'
 
-storiesOf('Cards').add('Demos', Chapters({
+storiesOf('Cards', module).add('Demos', Chapters({
   subtitle: 'Cards contain content and actions about a single subject.',
   chapters: [
     {

@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   row: {
     flexDirection: 'row',
+    flexWrap: 'wrap'
   },
   button: {
     margin: theme.spacing.unit,
@@ -20,18 +21,15 @@ function TextButtons(props) {
   const { classes } = props;
   return (
     <View style={classes.row}>
-      <Button style={classes.button}>Default</Button>
+      <Button style={classes.button}>DEFAULT</Button>
       <Button color="primary" style={classes.button}>
-        Primary
+        PRIMARY
       </Button>
       <Button color="secondary" style={classes.button}>
-        Secondary
+        SECONDARY
       </Button>
       <Button disabled style={classes.button}>
-        Disabled
-      </Button>
-      <Button href="#text-buttons" style={classes.button}>
-        Link
+        DISABLED
       </Button>
     </View>
   );

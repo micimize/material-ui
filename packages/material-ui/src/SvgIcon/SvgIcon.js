@@ -28,35 +28,35 @@ export const styles = theme => ({
   */
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {
-    color: theme.palette.primary.main,
+    // color: theme.palette.primary.main,
     svg: {
       fill: theme.palette.primary.main,
     }
   },
   /* Styles applied to the root element if `color="secondary"`. */
   colorSecondary: {
-    color: theme.palette.secondary.main,
+    // color: theme.palette.secondary.main,
     svg: {
       fill: theme.palette.secondary.main,
     }
   },
   /* Styles applied to the root element if `color="saction"`. */
   colorAction: {
-    color: theme.palette.action.active,
+    // color: theme.palette.action.active,
     svg: {
       fill: theme.palette.action.active,
     }
   },
   /* Styles applied to the root element if `color="error"`. */
   colorError: {
-    color: theme.palette.error.main,
+    // color: theme.palette.error.main,
     svg: {
       fill: theme.palette.error.main,
     }
   },
   /* Styles applied to the root element if `color="disabled"`. */
   colorDisabled: {
-    color: theme.palette.action.disabled,
+    // color: theme.palette.action.disabled,
     svg: {
       fill: theme.palette.action.disabled,
     }
@@ -64,9 +64,6 @@ export const styles = theme => ({
 
   /* Styles applied to the root element if `color="onDefault"`. */
   colorOnDefault: {
-    color: theme.palette.getContrastText(
-      theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
-    ),
     svg: {
       fill: theme.palette.getContrastText(
         theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
@@ -75,14 +72,12 @@ export const styles = theme => ({
   },
   /* Styles applied to the root element if `color="onPrimary"`. */
   colorOnPrimary: {
-    color: theme.palette.primary.contrastText,
     svg: {
       fill: theme.palette.primary.contrastText,
     }
   },
   /* Styles applied to the root element if `color="onSecondary"`. */
   colorOnSecondary: {
-    color: theme.palette.secondary.contrastText,
     svg: {
       fill: theme.palette.secondary.contrastText,
     }
@@ -121,14 +116,11 @@ function SvgIcon(props) {
   return (
     <Component
       style={style}
-      focusable="false"
+      accessible={false}
       viewBox={viewBox}
-      color={nativeColor}
-      aria-hidden={titleAccess ? 'false' : 'true'}
       {...other}
     >
       {children}
-      {titleAccess ? <title>{titleAccess}</title> : null}
     </Component>
   );
 }
@@ -166,19 +158,6 @@ SvgIcon.propTypes = {
    * Either a string to use a DOM element or a component.
    */
   component: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
-  /**
-   * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
-   */
-  // fontSize: PropTypes.oneOf(['inherit', 'default']),
-  /**
-   * Applies a color attribute to the SVG element.
-   */
-  nativeColor: PropTypes.string,
-  /**
-   * Provides a human-readable title for the element that contains it.
-   * https://www.w3.org/TR/SVG-access/#Equivalent
-   */
-  titleAccess: PropTypes.string,
   /**
    * Allows you to redefine what the coordinates without units mean inside an SVG element.
    * For example, if the SVG element is 500 (width) by 200 (height),

@@ -32,6 +32,7 @@ export const styles = theme => ({
       },
     },
   },
+  active: {},
   disabled: {},
   /* Styles applied to the root element if `disabled={true}`. */
   disabledText: {
@@ -274,19 +275,15 @@ function Button(props) {
     },
   );
 
+  const passthroughClasses = {
+    active: fab ? styleNames(classes.fabActive, classes.active) :
+      contained ? styleNames(classes.containedActive, classes.active) :
+      classes.active
+  }
+
   return (
     <ButtonBase
-      classes={
-        fab
-          ? {
-              active: classes.fabActive,
-            }
-          : contained
-            ? {
-                active: classes.containedActive,
-              }
-            : {}
-      }
+      classes={passthroughClasses}
       style={style}
       disabled={disabled}
       focusRipple={!disableFocusRipple}

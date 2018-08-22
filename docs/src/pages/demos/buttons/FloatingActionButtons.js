@@ -12,12 +12,16 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
   row: {
     flexDirection: 'row',
+    flexWrap: 'wrap'
   },
   button: {
     margin: theme.spacing.unit,
   },
   extendedIcon: {
     marginRight: theme.spacing.unit,
+    svg: {
+
+    }
   },
 });
 
@@ -25,17 +29,17 @@ function FloatingActionButtons(props) {
   const { classes } = props;
   return (
     <View style={classes.row}>
-      <Button variant="fab" color="primary" aria-label="Add" style={classes.button}>
+      <Button variant="fab" color="primary" accessibilityLabel="Add" style={classes.button}>
         <AddIcon color="onPrimary" />
       </Button>
-      <Button variant="fab" color="secondary" aria-label="Edit" style={classes.button}>
+      <Button variant="fab" color="secondary" accessibilityLabel="Edit" style={classes.button}>
         <EditIcon color="onSecondary" />
       </Button>
-      <Button variant="extendedFab" aria-label="Delete" style={classes.button}>
+      <Button variant="extendedFab" accessibilityLabel="Delete" style={classes.button}>
         <NavigationIcon style={classes.extendedIcon} />
         <Typography variant="button">EXTENDED</Typography>
       </Button>
-      <Button variant="fab" disabled aria-label="Delete" style={classes.button}>
+      <Button variant="fab" disabled accessibilityLabel="Delete" style={classes.button}>
         <DeleteIcon color="disabled" />
       </Button>
     </View>

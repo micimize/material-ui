@@ -1,4 +1,5 @@
 import { Platform, StyleSheet } from 'react-native';
+import deepmerge from 'deepmerge'
 
 function objectFilterer(filter) {
   return raw =>
@@ -48,7 +49,6 @@ function addExtensions(id, { transition, ':focus': focus, svg }) {
     };
   }
   if (svg) {
-    console.log(svg)
     extensions = {
       ...(extensions || {}),
       svg
@@ -61,14 +61,22 @@ function addExtensions(id, { transition, ':focus': focus, svg }) {
 
 const extensionsKeys = ['transition', ':focus', 'svg'];
 
-const excludeExtensions = objectFilterer(key => !extensionsKeys.includes(key));
+const exclude = objectFilterer(key => !extensionsKeys.includes(key));
+const excludeExtensions = raw => {
+  const stripped = exclude(raw)
+  // empty stylesheets don't result in ids, so we have an "empty" style to track the extensions
+  return Object.keys(stripped).length === 0 && Object.keys(raw).length ?
+      { backgroundColor: 'transparent' } : stripped;
+}
 const pickExtensions = objectFilterer(key => extensionsKeys.includes(key));
+
+const arrayMerge = (destination, source) => source
 
 function getExtensions(style) {
   return typeof style === 'number'
     ? styleExtensions.get(style) || {}
     : Array.isArray(style)
-      ? style.reduce((ex, s) => Object.assign(ex, getExtensions(s)), {})
+      ? style.reduce((ex, s) => deepmerge(ex, getExtensions(s), { arrayMerge }), {})
       : typeof style === 'object'
         ? pickExtensions(style)
         : {};

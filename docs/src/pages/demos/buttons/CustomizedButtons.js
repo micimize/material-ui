@@ -15,19 +15,16 @@ const styles = theme => ({
   margin: {
     margin: theme.spacing.unit,
   },
-  cssRoot: {
-    color: theme.palette.getContrastText(purple[500]),
+  purpleRoot: {
     backgroundColor: purple[500],
-    '&:hover': {
-      backgroundColor: purple[700],
-    },
+  },
+  purpleText: {
+    color: theme.palette.getContrastText(purple[500]),
   },
   bootstrapRoot: {
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: 16,
+    elevation: 0,
     padding: '6px 12px',
-    border: '1px solid',
+    border: '1px',
     backgroundColor: '#007bff',
     borderColor: '#007bff',
     fontFamily: [
@@ -42,18 +39,11 @@ const styles = theme => ({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
-    '&:hover': {
-      backgroundColor: '#0069d9',
-      borderColor: '#0062cc',
-    },
-    '&:active': {
-      boxShadow: 'none',
-      backgroundColor: '#0062cc',
-      borderColor: '#005cbf',
-    },
-    '&:focus': {
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-    },
+  },
+  bootstrapActive: {
+    elevation: 0,
+    backgroundColor: '#0062cc',
+    borderColor: '#005cbf',
   },
 });
 
@@ -71,7 +61,10 @@ function CustomizedInputs(props) {
       <Button
         variant="contained"
         color="primary"
-        style={styleNames(classes.margin, classes.cssRoot)}
+        classes={{
+          containedPrimary: styleNames(classes.margin, classes.purpleRoot),
+          text: classes.purpleText,
+        }}
       >
         CUSTOM CSS
       </Button>
@@ -84,7 +77,10 @@ function CustomizedInputs(props) {
         variant="contained"
         color="primary"
         disableRipple
-        style={styleNames(classes.margin, classes.bootstrapRoot)}
+        classes={{
+          containedPrimary: styleNames(classes.margin, classes.bootstrapRoot),
+          active: classes.bootstrapActive
+        }}
       >
         Bootstrap
       </Button>

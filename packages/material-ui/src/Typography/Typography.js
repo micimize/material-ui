@@ -90,6 +90,9 @@ export const styles = theme => ({
   colorError: {
     color: theme.palette.error.main,
   },
+  colorDisabled: {
+    color: theme.palette.action.disabled,
+  },
 });
 
 function Typography(props) {
@@ -149,7 +152,7 @@ Typography.propTypes = {
   color: PropTypes.oneOf([
     'default',
     'error',
-    'inherit',
+    'disabled',
     'primary',
     'secondary',
     'textPrimary',

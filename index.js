@@ -1,38 +1,8 @@
+import 'haul/hot';
 //import { setOptions } from '@storybook/addon-options';
 import {AppRegistry} from 'react-native';
-import { getStorybookUI, configure } from '@storybook/react-native';
 import {name as appName} from './app.json';
+import Storybook from './docs/src/storybook/config'
 
-// const context = require.context('../', true, /Screen\.js$/);
-const context = require.context('./docs/src/pages', true, /buttons.stories.js$/);
-
-//import centered from './decorator-centered';
-//addDecorator(centered);
-
-/*
-setOptions({
-  name: 'Material UI',
-  url: 'https://material-ui.com',
-  goFullScreen: false,
-  addonPanelInRight: false,
-  showSearchBox: false,
-  showAddonPanel: false,
-  showStoriesPanel: true,
-});
-*/
-
-function loadStories() {
-  context.keys().forEach(context);
-}
-
-configure(loadStories, module);
-
-
-
-const StorybookUI = getStorybookUI({
-  port: 7007,
-  host: 'localhost',
-});
-
-AppRegistry.registerComponent(appName, () => StorybookUI);
+AppRegistry.registerComponent(appName, () => Storybook);
 

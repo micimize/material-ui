@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   row: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   button: {
     margin: theme.spacing.unit,
@@ -32,21 +33,6 @@ function ContainedButtons(props) {
       <Button variant="contained" color="secondary" disabled style={classes.button}>
         DISABLED
       </Button>
-      <Button variant="contained" href="#contained-buttons" style={classes.button}>
-        LINK
-      </Button>
-      <TextInput
-        accept="image/*"
-        style={classes.input}
-        id="contained-button-file"
-        multiple
-        type="file"
-      />
-      <Text htmlFor="contained-button-file">
-        <Button variant="contained" style={classes.button}>
-          UPLOAD
-        </Button>
-      </Text>
     </View>
   );
 }

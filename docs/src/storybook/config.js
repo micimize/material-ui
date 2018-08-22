@@ -1,29 +1,13 @@
-import { setOptions } from '@storybook/addon-options';
-import centered from './decorator-centered';
-import { configure, addDecorator, setAddon } from '@storybook/react-native';
-// import chaptersAddon, { setDefaults } from 'react-storybook-addon-chapters';
-// import { withConsole } from '@storybook/addon-console';
-
-// addDecorator((storyFn, context) => withConsole()(storyFn)(context));
-
-/* optionally override defaults
-setDefaults({
-  sectionOptions: {
-    showSource: false,
-    allowSourceToggling: false,
-    showPropTables: false,
-    allowPropTablesToggling: false,
-  },
-});
-*/
-
-// setAddon(chaptersAddon);
+//import { setOptions } from '@storybook/addon-options';
+import { getStorybookUI, configure } from '@storybook/react-native';
 
 // const context = require.context('../', true, /Screen\.js$/);
-const context = require.context('../pages/', true, /.stories.js$/);
+const context = require.context('../pages', true, /buttons.stories.js$/);
 
-addDecorator(centered);
+//import centered from './decorator-centered';
+//addDecorator(centered);
 
+/*
 setOptions({
   name: 'Material UI',
   url: 'https://material-ui.com',
@@ -33,9 +17,19 @@ setOptions({
   showAddonPanel: false,
   showStoriesPanel: true,
 });
+*/
 
 function loadStories() {
   context.keys().forEach(context);
 }
 
 configure(loadStories, module);
+
+
+const StorybookUI = getStorybookUI({
+  port: 7007,
+  host: 'localhost',
+});
+
+export default StorybookUI
+

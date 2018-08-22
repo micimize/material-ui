@@ -1,15 +1,27 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { get as getExtensions } from './extensions';
-import Svgs from 'svgs';
+import Svgs, { G } from 'svgs';
 
 function withSvgStyle(Component) {
-  return ({ style, ...props }) => {
+  return ({ style, children, ...props }) => {
     let svgProps = getExtensions(style).svg || {}
-    return <Component {...svgProps} {...props} style={StyleSheet.flatten(style)} />
+    return (
+      <Component {...svgProps} {...props} style={StyleSheet.flatten(style)}>
+        {children}
+      </Component>
+    )
   }
 }
 
-export const Svg = withSvgStyle(Svgs)
+// Need to wrap children in G with the same styles for things to work
+export function Svg({ style, children, ...props }) {
+  let svgProps = getExtensions(style).svg || {}
+  return (
+    <Svgs {...svgProps} {...props} style={style}>
+      <G {...svgProps}>{children}</G>
+    </Svgs>
+  )
+}
 
 export default withSvgStyle;
