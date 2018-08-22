@@ -1,4 +1,5 @@
 import React from 'react';
+import { Path } from 'svgs';
 import { View, Text } from 'react-native';
 import pure from 'recompose/pure';
 import SvgIcon from '../../SvgIcon';
@@ -8,7 +9,7 @@ import SvgIcon from '../../SvgIcon';
  */
 let ArrowDropDown = props => (
   <SvgIcon {...props}>
-    <path d="M7 10l5 5 5-5z" />
+    <Path d="M7 10l5 5 5-5z" />
   </SvgIcon>
 );
 

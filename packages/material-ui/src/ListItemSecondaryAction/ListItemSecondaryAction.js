@@ -7,10 +7,9 @@ import withStyles from '../styles/withStyles';
 export const styles = {
   /* Styles applied to the root element. */
   root: {
-    position: 'absolute',
-    right: 4,
-    top: '50%',
-    transform: [{ translateY: '-50%' }],
+    height: '100%',
+    alignSelf: 'flex-end',
+    justifyContent: 'center'
   },
 };
 

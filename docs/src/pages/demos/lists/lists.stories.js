@@ -22,7 +22,10 @@ storiesOf('Lists', module).add('Demos', Chapters({
         { title: 'Folder List', sectionFn: () => <FolderList /> },
         { title: 'Inset List', sectionFn: () => <InsetList /> },
         { title: 'Nested List', sectionFn: () => <NestedList /> },
+        /* todo: this is done differently for native, see subheader component
+           && https://facebook.github.io/react-native/docs/scrollview#stickyheaderindices
         { title: 'Pinned Subheader List', sectionFn: () => <PinnedSubheaderList /> },
+        */
         { title: 'Checkbox List', sectionFn: () => <CheckboxList /> },
         { title: 'Checkbox List Secondary', sectionFn: () => <CheckboxListSecondary /> },
         { title: 'Switch List Secondary', sectionFn: () => <SwitchListSecondary /> },

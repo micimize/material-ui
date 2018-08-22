@@ -20,7 +20,7 @@ function InsetList(props) {
   const { classes } = props;
   return (
     <View style={classes.root}>
-      <List component="nav">
+      <List>
         <ListItem button>
           <ListItemIcon>
             <StarIcon />

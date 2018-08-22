@@ -18,21 +18,19 @@ export const styles = theme => ({
   colorPrimary: {
     color: theme.palette.primary.main,
   },
-  /* Styles applied to the root element if `color="inherit"`. */
-  colorInherit: {
-    color: 'inherit',
-  },
   /* Styles applied to the root element if `inset={true}`. */
   inset: {
     paddingLeft: 72,
   },
   /* Styles applied to the root element if `disableSticky={false}`. */
+  /* TODO sticky https://facebook.github.io/react-native/docs/scrollview#stickyheaderindices
   sticky: {
     position: 'sticky',
     top: 0,
     zIndex: 1,
     backgroundColor: 'inherit',
   },
+  */
 });
 
 function ListSubheader(props) {
@@ -42,7 +40,7 @@ function ListSubheader(props) {
     style,
     color,
     component: Component,
-    disableSticky,
+    // disableSticky,
     inset,
     ...other
   } = props;
@@ -54,7 +52,7 @@ function ListSubheader(props) {
         {
           [classes[`color${capitalize(color)}`]]: color !== 'default',
           [classes.inset]: inset,
-          [classes.sticky]: !disableSticky,
+          // [classes.sticky]: !disableSticky,
         },
         style,
       )}
@@ -91,7 +89,7 @@ ListSubheader.propTypes = {
   /**
    * If `true`, the List Subheader will not stick to the top during scroll.
    */
-  disableSticky: PropTypes.bool,
+  // disableSticky: PropTypes.bool,
   /**
    * If `true`, the List Subheader will be indented.
    */
@@ -101,7 +99,7 @@ ListSubheader.propTypes = {
 ListSubheader.defaultProps = {
   color: 'default',
   component: Text,
-  disableSticky: false,
+  // disableSticky: false,
   inset: false,
 };
 

@@ -115,7 +115,9 @@ class ListItem extends React.Component {
     let Component = componentProp || View;
 
     if (button) {
-      componentProps.component = componentProp || View;
+      if (componentProp){
+        componentProps.component = componentProp;
+      }
       componentProps.focusVisibleClassName = styleNames(
         classes.focusVisible,
         focusVisibleClassName,

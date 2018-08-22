@@ -8,8 +8,10 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     marginRight: 16,
-    color: theme.palette.action.active,
     flexShrink: 0,
+    svg: {
+      fill: theme.palette.action.active,
+    }
   },
 });
 

@@ -83,7 +83,7 @@ Divider.propTypes = {
 
 Divider.defaultProps = {
   absolute: false,
-  component: 'hr',
+  component: View,
   inset: false,
   light: false,
 };

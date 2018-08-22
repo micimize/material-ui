@@ -29,7 +29,7 @@ const styles = theme => ({
 class NestedList extends React.Component {
   state = { open: true };
 
-  handleClick = () => {
+  toggleNested = () => {
     this.setState(state => ({ open: !state.open }));
   };
 
@@ -38,10 +38,7 @@ class NestedList extends React.Component {
 
     return (
       <View style={classes.root}>
-        <List
-          component="nav"
-          subheader={<ListSubheader component="div">Nested List Items</ListSubheader>}
-        >
+        <List subheader={<ListSubheader>Nested List Items</ListSubheader>}>
           <ListItem button>
             <ListItemIcon>
               <SendIcon />
@@ -54,7 +51,7 @@ class NestedList extends React.Component {
             </ListItemIcon>
             <ListItemText inset primary="Drafts" />
           </ListItem>
-          <ListItem button onClick={this.handleClick}>
+          <ListItem button onPress={this.toggleNested}>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
@@ -62,7 +59,7 @@ class NestedList extends React.Component {
             {this.state.open ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
+            <List disablePadding>
               <ListItem button style={classes.nested}>
                 <ListItemIcon>
                   <StarBorder />
