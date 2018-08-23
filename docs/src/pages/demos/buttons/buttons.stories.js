@@ -8,11 +8,11 @@ import FloatingActionButtons from './FloatingActionButtons';
 // /*
 // import FloatingActionButtonZoom from './FloatingActionButtonZoom';
 // */
-// import ButtonSizes from './ButtonSizes';
-// import IconButtons from './IconButtons';
-// import IconLabelButtons from './IconLabelButtons';
-// import CustomizedButtons from './CustomizedButtons';
-// import ButtonBases from './ButtonBases';
+import ButtonSizes from './ButtonSizes';
+import IconButtons from './IconButtons';
+import IconLabelButtons from './IconLabelButtons';
+import CustomizedButtons from './CustomizedButtons';
+import ButtonBases from './ButtonBases';
 
 import Chapters from '../Chapters'
 
@@ -26,11 +26,11 @@ storiesOf('Buttons', module).add('Demos', Chapters({
         { title: 'Contained Buttons', sectionFn: () => <ContainedButtons /> },
         { title: 'Floating Action Buttons', sectionFn: () => <FloatingActionButtons /> },
         // //{ title: 'Floating Action Button Zoom', sectionFn: () => <FloatingActionButtonZoom /> },
-        // { title: 'Button Sizes', sectionFn: () => <ButtonSizes /> },
-        // { title: 'Icon Buttons', sectionFn: () => <IconButtons /> },
-        // { title: 'Icon Label Buttons', sectionFn: () => <IconLabelButtons /> },
-        // { title: 'Customized Buttons', sectionFn: () => <CustomizedButtons /> },
-        // { title: 'Button Bases', sectionFn: () => <ButtonBases /> },
+        { title: 'Button Sizes', sectionFn: () => <ButtonSizes /> },
+        { title: 'Icon Buttons', sectionFn: () => <IconButtons /> },
+        { title: 'Icon Label Buttons', sectionFn: () => <IconLabelButtons /> },
+        { title: 'Customized Buttons', sectionFn: () => <CustomizedButtons /> },
+        { title: 'Button Bases', sectionFn: () => <ButtonBases /> },
       ],
     },
   ],

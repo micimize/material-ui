@@ -12,23 +12,23 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 const tutorialSteps = [
   {
     label: 'How to be happy :)',
-    imgPath: 'static/images/steppers/1-happy.jpg',
+    imgPath: '../static/images/steppers/1-happy.jpg',
   },
   {
     label: '1. Work with something that you like, like…',
-    imgPath: 'static/images/steppers/2-work.jpg',
+    imgPath: '../static/images/steppers/2-work.jpg',
   },
   {
     label: '2. Keep your friends close to you and hangout with them',
-    imgPath: 'static/images/steppers/3-friends.jpg',
+    imgPath: '../static/images/steppers/3-friends.jpg',
   },
   {
     label: '3. Travel everytime that you have a chance',
-    imgPath: 'static/images/steppers/4-travel.jpg',
+    imgPath: '../static/images/steppers/4-travel.jpg',
   },
   {
     label: '4. And contribute to Material-UI :D',
-    imgPath: 'static/images/steppers/5-mui.png',
+    imgPath: '../static/images/steppers/5-mui.png',
   },
 ];
 

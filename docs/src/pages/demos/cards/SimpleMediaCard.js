@@ -27,7 +27,7 @@ function SimpleMediaCard(props) {
     <Card style={styleNames(classes.card, style)}>
       <CardMedia
         style={classes.media}
-        image={require('static/images/cards/contemplative-reptile.jpg')}
+        image={require('../static/images/cards/contemplative-reptile.jpg')}
       />
       <CardContent>
         <Typography gutterBottom variant="headline">

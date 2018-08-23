@@ -38,7 +38,7 @@ function Chips(props) {
         style={classes.chip}
       />
       <Chip
-        avatar={<Avatar src="static/images/uxceo-128.jpg" />}
+        avatar={<Avatar src="../static/images/uxceo-128.jpg" />}
         label="Deletable Chip"
         onDelete={handleDelete}
         style={classes.chip}

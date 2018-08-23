@@ -23,10 +23,10 @@ function ImageAvatars(props) {
   const { classes } = props;
   return (
     <View style={classes.row}>
-      <Avatar alt="Remy Sharp" src="static/images/remy.jpg" style={classes.avatar} />
+      <Avatar alt="Remy Sharp" src="../static/images/remy.jpg" style={classes.avatar} />
       <Avatar
         alt="Adelle Charles"
-        src="static/images/uxceo-128.jpg"
+        src="../static/images/uxceo-128.jpg"
         style={styleNames(classes.avatar, classes.bigAvatar)}
       />
     </View>

@@ -67,7 +67,7 @@ function MediaControlCard(props) {
         </View>
         <CardMedia
           style={classes.cover}
-          image={require('static/images/cards/live-from-space.jpg')}
+          image={require('../static/images/cards/live-from-space.jpg')}
           title="Live from space album cover"
         />
       </Card>
