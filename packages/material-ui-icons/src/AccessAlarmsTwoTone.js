@@ -1,5 +1,5 @@
 import React from 'react';
-import { G, Path } from 'svgs';
+import { G, Path } from './utils/svgCompatibility';
 import createSvgIcon from './utils/createSvgIcon';
 
 export default createSvgIcon(
