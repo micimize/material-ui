@@ -1,13 +1,17 @@
 {
-  "presets": ["babel-preset-stage-1", "react-native", "babel-preset-flow"],
+  "presets": ["react-native", "babel-preset-flow"],
   "plugins": [
-    ["transform-define", {
-      "__dirname": "./"
-    }],
+    [
+      "transform-define",
+      {
+        "__dirname": "./"
+      }
+    ],
     [
       "module-resolver",
       {
         "alias": {
+          "react-native-vector-icons": "@expo/vector-icons",
           "path": "path-browserify",
           "@micimize/material-ui": "./packages/material-ui/src",
           "@material-ui/core": "./packages/material-ui/src",
@@ -21,106 +25,8 @@
         }
       }
     ],
-    "babel-plugin-transform-object-assign",
-    ["babel-plugin-transform-runtime", { "polyfill": false, "useBuiltIns": true }],
-    "babel-plugin-transform-class-properties"
-  ],
-  "env": {
-    "coverage": {
-      "plugins": [
-        "istanbul",
-        [
-          "module-resolver",
-          {
-            "root": ["./"],
-            "alias": {
-              "@material-ui/core": "./packages/material-ui/src",
-              "@material-ui/icons": "./packages/material-ui-icons/src"
-            }
-          }
-        ]
-      ]
-    },
-    "development": {
-      "plugins": [
-        [
-          "module-resolver",
-          {
-            "alias": {
-              "modules": "./modules",
-            }
-          }
-        ]
-      ]
-    },
-    "docs-development": {
-      "plugins": ["babel-plugin-preval"]
-    },
-    "docs-production": {
-      "plugins": [
-        "babel-plugin-preval",
-        [
-          "module-resolver",
-          {
-            "alias": {
-              "@material-ui/core": "./packages/material-ui/src",
-              "@material-ui/docs": "./packages/material-ui-docs/src",
-              "@material-ui/icons": "./packages/material-ui-icons/src",
-              "@material-ui/lab": "./packages/material-ui-lab/src",
-              "docs": "./docs",
-              "modules": "./modules",
-              "pages": "./pages"
-            }
-          }
-        ],
-        "transform-react-constant-elements",
-        "transform-dev-warning",
-        ["react-remove-properties", { "properties": ["data-mui-test"] }],
-        ["transform-react-remove-prop-types", { "mode": "remove" }]
-      ]
-    },
-    "es": {
-      "plugins": [
-        "transform-react-constant-elements",
-        "transform-dev-warning",
-        ["react-remove-properties", { "properties": ["data-mui-test"] }],
-        [
-          "transform-react-remove-prop-types",
-          {
-            "mode": "wrap"
-          }
-        ]
-      ],
-      "ignore": ["**/*.test*"]
-    },
-    "production": {
-      "plugins": [
-        "transform-react-constant-elements",
-        "transform-dev-warning",
-        ["react-remove-properties", { "properties": ["data-mui-test"] }],
-        [
-          "transform-react-remove-prop-types",
-          {
-            "mode": "wrap"
-          }
-        ]
-      ],
-      "ignore": ["**/*.test*"]
-    },
-    "test": {
-      "sourceMaps": "both",
-      "plugins": [
-        [
-          "module-resolver",
-          {
-            "root": ["./"],
-            "alias": {
-              "@material-ui/core": "./packages/material-ui/src",
-              "@material-ui/icons": "./packages/material-ui-icons/src",
-            }
-          }
-        ]
-      ]
-    }
-  }
+    "transform-decorators-legacy",
+    "transform-exponentiation-operator",
+    "transform-export-extensions"
+  ]
 }

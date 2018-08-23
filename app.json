@@ -1,4 +1,8 @@
 {
   "name": "MaterialUI",
-  "displayName": "MaterialUI"
+  "displayName": "MaterialUI",
+  "expo": {
+    "sdkVersion": "27.0.0",
+    "slug": "material-ui-react-native"
+  }
 }

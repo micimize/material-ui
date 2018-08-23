@@ -1,5 +1,5 @@
 import React from 'react';
-import { Path } from 'svgs';
+import { Path } from '@material-ui/core/utils/svgCompatibility';
 import { View, Text } from 'react-native';
 import pure from 'recompose/pure';
 import SvgIcon from '../../SvgIcon';

@@ -18,10 +18,10 @@ setOptions({
 
 function loadStories() {
   require('../pages/demos/buttons/buttons.stories')
-  require('../pages/demos/lists/lists.stories')
-  require('../pages/demos/cards/cards.stories')
-  require('../pages/demos/selection-controls/selection-controls.stories')
-  require('../pages/demos/text-fields/text-fields.stories')
+  // require('../pages/demos/lists/lists.stories')
+  // require('../pages/demos/cards/cards.stories')
+  // require('../pages/demos/selection-controls/selection-controls.stories')
+  // require('../pages/demos/text-fields/text-fields.stories')
   // context.keys().forEach(context);
 }
 

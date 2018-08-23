@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { get as getExtensions } from './extensions';
-import Svgs, { G } from 'svgs';
+import Svgs, { G } from '@material-ui/core/utils/svgCompatibility';
 
 function withSvgStyle(Component) {
   return ({ style, children, ...props }) => {

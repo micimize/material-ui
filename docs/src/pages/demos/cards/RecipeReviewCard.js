@@ -76,7 +76,7 @@ class RecipeReviewCard extends React.Component {
           />
           <CardMedia
             style={classes.media}
-            image={require('/static/images/cards/paella.jpg')}
+            image={require('static/images/cards/paella.jpg')}
             title="Contemplative Reptile"
           />
           <CardContent>
