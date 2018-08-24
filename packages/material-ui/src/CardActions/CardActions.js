@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
-import { cloneChildrenWithClassName } from '../utils/reactHelpers';
+import { cloneChildrenWithStyle } from '../utils/reactHelpers';
 import '../Button'; // So we don't have any override priority issue.
 
 export const styles = theme => ({
@@ -27,7 +27,7 @@ function CardActions(props) {
 
   return (
     <View style={styleNames(classes.root, style)} {...other}>
-      {disableActionSpacing ? children : cloneChildrenWithClassName(children, classes.action)}
+      {disableActionSpacing ? children : cloneChildrenWithStyle(children, classes.action)}
     </View>
   );
 }

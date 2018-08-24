@@ -1,13 +1,12 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
-import keycode from 'keycode';
 import withStyles from '../styles/withStyles';
-// import { listenForFocusKeys, detectFocusVisible } from './focusVisible';
 import TouchRipple from './TouchRipple';
 import createRippleHandler from './createRippleHandler';
 import { Animated } from '../styles/extended-styles';
+
 const DefaultButton = Animated.createComponent(TouchableOpacity);
 
 export const styles = {
@@ -24,24 +23,6 @@ export const styles = {
     margin: 0, // Remove the margin in Safari
     borderRadius: 0,
     padding: 0, // Remove the padding in Firefox
-    /*
-    cursor: 'pointer',
-    userSelect: 'none',
-    // textAlignVertical: 'middle',
-    // '-moz-appearance': 'none', // Reset
-
-    // textDecorationLine: 'none',
-    // So we take precedent over the style of a native <a /> element.
-    // color: 'inherit',
-    /*
-    '&::-moz-focus-inner': {
-      borderStyle: 'none', // Remove Firefox dotted outline.
-    },
-    '[disabled="true"]': {
-      pointerEvents: 'none', // Disable link interactions
-      cursor: 'default',
-    },
-    */
   },
   active: {},
   /* Styles applied to the root element if `disabled={true}`. */
@@ -63,8 +44,6 @@ if (process.env.NODE_ENV !== 'production' && !React.createContext) {
 class ButtonBase extends React.Component {
   ripple = null;
 
-  keyDown = false; // Used to help track keyboard activation keyDown
-
   button = null;
 
   focusVisibleTimeout = null;
@@ -72,34 +51,6 @@ class ButtonBase extends React.Component {
   focusVisibleCheckTime = 50;
 
   focusVisibleMaxCheckTimes = 5;
-
-  handleMouseDown = createRippleHandler(this, 'MouseDown', 'start', () => {
-    clearTimeout(this.focusVisibleTimeout);
-    if (this.state.focusVisible) {
-      this.setState({ focusVisible: false });
-    }
-  });
-
-  handleMouseUp = createRippleHandler(this, 'MouseUp', 'stop');
-
-  handleMouseLeave = createRippleHandler(this, 'MouseLeave', 'stop', event => {
-    if (this.state.focusVisible) {
-      event.preventDefault();
-    }
-  });
-
-  handleTouchStart = createRippleHandler(this, 'TouchStart', 'start');
-
-  handleTouchEnd = createRippleHandler(this, 'TouchEnd', 'stop');
-
-  handleTouchMove = createRippleHandler(this, 'TouchMove', 'stop');
-
-  handleBlur = createRippleHandler(this, 'Blur', 'stop', () => {
-    clearTimeout(this.focusVisibleTimeout);
-    if (this.state.focusVisible) {
-      this.setState({ focusVisible: false });
-    }
-  });
 
   handlePressIn = createRippleHandler(this, 'PressIn', 'start', () => this.setState({ active: true }));
   handlePressOut = createRippleHandler(this, 'PressOut', 'stop', () => this.setState({ active: false }));
@@ -173,28 +124,6 @@ class ButtonBase extends React.Component {
     };
   }
 
-  handleFocus = event => {
-    if (this.props.disabled) {
-      return;
-    }
-
-    // Fix for https://github.com/facebook/react/issues/7769
-    if (!this.button) {
-      this.button = event.currentTarget;
-    }
-
-    event.persist();
-    /*
-    detectFocusVisible(this, this.button, () => {
-      this.onFocusVisibleHandler(event);
-    });
-    */
-
-    if (this.props.onFocus) {
-      this.props.onFocus(event);
-    }
-  };
-
   render() {
     const {
       action,
@@ -208,22 +137,16 @@ class ButtonBase extends React.Component {
       disableRipple,
       disableTouchRipple,
       focusRipple,
-      onBlur,
-      onFocus,
       onFocusVisible,
-      onMouseDown,
-      onMouseLeave,
       onMouseUp,
-      onTouchEnd,
-      onTouchMove,
-      onTouchStart,
-      tabIndex,
+      onPressIn,
+      onPressOut,
       TouchRippleProps,
       type,
       ...other
     } = this.props;
 
-    const className = styleNames(
+    const style = styleNames(
       classes.root,
       {
         [classes.disabled]: disabled,
@@ -253,18 +176,9 @@ class ButtonBase extends React.Component {
     return (
       <ComponentProp
         disabled={disabled}
-        onBlur={this.handleBlur}
-        onFocus={this.handleFocus}
-        // onMouseDown={this.handleMouseDown}
-        // onMouseLeave={this.handleMouseLeave}
-        // onMouseUp={this.handleMouseUp}
-        // onTouchEnd={this.handleTouchEnd}
-        // onTouchMove={this.handleTouchMove}
-        // onTouchStart={this.handleTouchStart}
         onPressIn={this.handlePressIn}
         onPressOut={this.handlePressOut}
-        tabIndex={disabled ? '-1' : tabIndex}
-        style={className}
+        style={style}
         ref={buttonRef}
         {...buttonProps}
         {...other}
@@ -306,10 +220,6 @@ ButtonBase.propTypes = {
    * See [CSS API](#css-api) below for more details.
    */
   classes: PropTypes.object.isRequired,
-  /**
-   * @ignore
-   */
-  className: PropTypes.string,
   /**
    * The component used for the root node.
    * Either a string to use a DOM element or a component.
@@ -394,10 +304,6 @@ ButtonBase.propTypes = {
    */
   role: PropTypes.string,
   /**
-   * @ignore
-   */
-  tabIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  /**
    * Properties applied to the `TouchRipple` element.
    */
   TouchRippleProps: PropTypes.object,
@@ -417,7 +323,6 @@ ButtonBase.defaultProps = {
   disableRipple: false,
   disableTouchRipple: false,
   focusRipple: false,
-  tabIndex: '0',
   type: 'button',
   activeOpacity: 0.6,
 };

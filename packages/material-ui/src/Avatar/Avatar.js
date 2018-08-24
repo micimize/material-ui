@@ -36,7 +36,7 @@ function Avatar(props) {
   const {
     alt,
     children: childrenProp,
-    childrenClassName: childrenstyleProp,
+    childrenClassName: childrenStyleProp,
     classes,
     style: styleProp,
     component: Component,
@@ -57,11 +57,11 @@ function Avatar(props) {
 
   if (childrenProp) {
     if (
-      childrenstyleProp &&
+      childrenStyleProp &&
       typeof childrenProp !== 'string' &&
       React.isValidElement(childrenProp)
     ) {
-      const childrenClassName = styleNames(childrenstyleProp, childrenProp.props.style);
+      const childrenClassName = styleNames(childrenStyleProp, childrenProp.props.style);
       children = React.cloneElement(childrenProp, { style: childrenClassName });
     } else {
       children = childrenProp;
@@ -96,7 +96,7 @@ Avatar.propTypes = {
    * The className of the child element.
    * Used by Chip and ListItemIcon to style the Avatar icon.
    */
-  childrenClassName: PropTypes.string,
+  childrenClassName: PropTypes.any,
   /**
    * Override or extend the styles applied to the component.
    * See [CSS API](#css-api) below for more details.

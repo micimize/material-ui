@@ -41,6 +41,7 @@ function CardMedia(props) {
 }
 
 CardMedia.propTypes = {
+  ...Image.propTypes,
   /**
    * Override or extend the styles applied to the component.
    * See [CSS API](#css-api) below for more details.
@@ -60,13 +61,7 @@ CardMedia.propTypes = {
    * Either `image` or `source` prop must be specified.
    * Note that caller must specify height otherwise the image will not be visible.
    */
-  image: PropTypes.string,
-  /**
-   * An alias for `image` property.
-   * Available only with media components.
-   * Media components: `video`, `audio`, `picture`, `iframe`, `img`.
-   */
-  source: PropTypes.string,
+  image: Image.propTypes.source,
 };
 
 CardMedia.defaultProps = {

@@ -118,7 +118,7 @@ function Typography(props) {
       [classes.noWrap]: noWrap,
       [classes.gutterBottom]: gutterBottom,
       [classes.paragraph]: paragraph,
-      [classes[`align${capitalize(align)}`]]: align !== 'inherit',
+      [classes[`align${capitalize(align)}`]]: align !== 'default',
     },
     styleProp,
   );
@@ -132,7 +132,7 @@ Typography.propTypes = {
   /**
    * Set the text-align on the component.
    */
-  align: PropTypes.oneOf(['inherit', 'left', 'center', 'right', 'justify']),
+  align: PropTypes.oneOf(['default', 'left', 'center', 'right', 'justify']),
   /**
    * The content of the component.
    */
@@ -203,7 +203,7 @@ Typography.propTypes = {
 };
 
 Typography.defaultProps = {
-  align: 'inherit',
+  align: 'default',
   color: 'default',
   gutterBottom: false,
   headlineMapping: {

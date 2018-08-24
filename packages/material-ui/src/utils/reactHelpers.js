@@ -1,17 +1,16 @@
 /* eslint-disable import/prefer-default-export */
 
 import React from 'react';
-import styleNames from '../styles/react-native-style-names';
 
-export function cloneElementWithClassName(child, style) {
+export function cloneElementWithStyle(child, style) {
   return React.cloneElement(child, {
-    style: styleNames(child.props.className, style),
+    style: [child.props.style, style],
   });
 }
 
-export function cloneChildrenWithClassName(children, style) {
+export function cloneChildrenWithStyle(children, style) {
   return React.Children.map(children, child => {
-    return React.isValidElement(child) && cloneElementWithClassName(child, style);
+    return React.isValidElement(child) && cloneElementWithStyle(child, style);
   });
 }
 

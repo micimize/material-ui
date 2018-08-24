@@ -57,9 +57,9 @@ function CardHeader(props) {
   if (title != null && title.type !== Typography && !disableTypography) {
     title = (
       <Typography
+        component={Text}
         variant={avatar ? 'body2' : 'headline'}
         style={classes.title}
-        component="span"
         {...titleTypographyProps}
       >
         {title}
@@ -71,10 +71,10 @@ function CardHeader(props) {
   if (subheader != null && subheader.type !== Typography && !disableTypography) {
     subheader = (
       <Typography
+        component={Text}
         variant={avatar ? 'body2' : 'body1'}
         style={classes.subheader}
         color="textSecondary"
-        component="span"
         {...subheaderTypographyProps}
       >
         {subheader}

@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 // TODO might be unnecessary
-import { TextInput } from '../styles/extended-styles/focusable';
+// import { TextInput } from '../styles/extended-styles/focusable';
 import { View as Underline } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
@@ -130,33 +130,6 @@ export const styles = theme => {
       minWidth: 0,
       flexGrow: 1,
       borderBottom: `1px solid ${bottomLineColor}`,
-      // '&::-webkit-input-placeholder': placeholder,
-      // '&::-moz-placeholder': placeholder, // Firefox 19+
-      // '&:-ms-input-placeholder': placeholder, // IE 11
-      // '&::-ms-input-placeholder': placeholder, // Edge
-      // Reset Firefox invalid required input style
-      '&:invalid': {
-      },
-      /*
-      '&::-webkit-search-decoration': {
-        // Remove the padding when type=search.
-        '-webkit-appearance': 'none',
-      },
-      // Show and hide the placeholder logic
-      'label[data-shrink=false] + $formControl &': {
-        '&::-webkit-input-placeholder': placeholderHidden,
-        '&::-moz-placeholder': placeholderHidden, // Firefox 19+
-        '&:-ms-input-placeholder': placeholderHidden, // IE 11
-        '&::-ms-input-placeholder': placeholderHidden, // Edge
-        '&:focus::-webkit-input-placeholder': placeholderVisible,
-        '&:focus::-moz-placeholder': placeholderVisible, // Firefox 19+
-        '&:focus:-ms-input-placeholder': placeholderVisible, // IE 11
-        '&:focus::-ms-input-placeholder': placeholderVisible, // Edge
-      },
-      */
-      '[disabled="true"]': {
-        opacity: 1, // Reset iOS opacity
-      },
     },
     /* Styles applied to the `input` element if `margin="dense"`. */
     inputMarginDense: {
@@ -226,42 +199,21 @@ class Input extends React.Component {
       this.checkDirty();
     }
 
-    const componentWillReceiveProps = (nextProps, nextContext) => {
-      // The blur won't fire when the disabled state is set on a focused input.
-      // We need to book keep the focused state manually.
-      if (
-        !formControlState(this.props, this.context).disabled &&
-        formControlState(nextProps, nextContext).disabled
-      ) {
-        this.setState({
-          focused: false,
-        });
-      }
-    };
-
-    const componentWillUpdate = (nextProps, nextState, nextContext) => {
-      // Book keep the focused state.
-      if (
-        !formControlState(this.props, this.context).disabled &&
-        formControlState(nextProps, nextContext).disabled
-      ) {
-        const { muiFormControl } = this.context;
-        if (muiFormControl && muiFormControl.onBlur) {
-          muiFormControl.onBlur();
-        }
-      }
-    };
-
-    // Support for react >= 16.3.0 && < 17.0.0
-    /* istanbul ignore else */
-    if (React.createContext) {
-      this.UNSAFE_componentWillReceiveProps = componentWillReceiveProps;
-      this.UNSAFE_componentWillUpdate = componentWillUpdate;
-    } else {
-      this.componentWillReceiveProps = componentWillReceiveProps;
-      this.componentWillUpdate = componentWillUpdate;
-    }
   }
+
+  componentWillUpdate(nextProps, nextState, nextContext) {
+    // Book keep the focused state.
+    if (
+      !formControlState(this.props, this.context).disabled &&
+      formControlState(nextProps, nextContext).disabled
+    ) {
+      const { muiFormControl } = this.context;
+      if (muiFormControl && muiFormControl.onBlur) {
+        muiFormControl.onBlur();
+      }
+    }
+  };
+
 
   state = {
     focused: false,
@@ -289,12 +241,6 @@ class Input extends React.Component {
   }
 
   handleFocus = event => {
-    // Fix a bug with IE11 where the focus/blur events are triggered
-    // while the input is disabled.
-    if (formControlState(this.props, this.context).disabled) {
-      event.stopPropagation();
-      return;
-    }
 
     this.setState({ focused: true });
     if (this.props.onFocus) {
@@ -372,7 +318,6 @@ class Input extends React.Component {
       endAdornment,
       error: errorProp,
       fullWidth,
-      id,
       inputComponent,
       inputProps: { style: inputPropsClassName, ...inputPropsProp } = {},
       margin: marginProp,
@@ -383,8 +328,6 @@ class Input extends React.Component {
       onEmpty,
       onFilled,
       onFocus,
-      onKeyDown,
-      onKeyUp,
       placeholder,
       readOnly,
       rows,
@@ -438,20 +381,18 @@ class Input extends React.Component {
       <View style={className} {...other}>
         {typeof startAdornment === 'string' ? <Text>{startAdornment}</Text> : startAdornment}
         <InputComponent
-          aria-invalid={error}
+          // aria-invalid={error}
+          underlineColorAndroid='rgba(0,0,0,0)'
           autoComplete={autoComplete}
           placeholderTextColor={this.state.focused ? undefined : 'rgba(0,0,0,0)'}
           autoFocus={autoFocus}
           style={inputClassName}
           defaultValue={defaultValue}
           disabled={disabled}
-          id={id}
           name={name}
           onBlur={this.handleBlur}
           onChange={this.handleChange}
           onFocus={this.handleFocus}
-          onKeyDown={onKeyDown}
-          onKeyUp={onKeyUp}
           placeholder={placeholder}
           readOnly={readOnly}
           required={required}
@@ -520,10 +461,6 @@ Input.propTypes = {
    */
   fullWidth: PropTypes.bool,
   /**
-   * The id of the `input` element.
-   */
-  id: PropTypes.string,
-  /**
    * The component used for the native input.
    * Either a string to use a DOM element or a component.
    */
@@ -568,14 +505,6 @@ Input.propTypes = {
    * @ignore
    */
   onFocus: PropTypes.func,
-  /**
-   * @ignore
-   */
-  onKeyDown: PropTypes.func,
-  /**
-   * @ignore
-   */
-  onKeyUp: PropTypes.func,
   /**
    * The short hint displayed in the input before the user enters a value.
    */

@@ -78,14 +78,12 @@ function IconButton(props) {
 
   return (
     <ButtonBase
-      style={styleNames(
+      style={[
         classes.root,
-        {
-          [classes[`color${capitalize(color)}`]]: color !== 'default',
-          [classes.disabled]: disabled,
-        },
+        color !== 'default' && classes[`color${capitalize(color)}`],
+        disabled && classes.disabled,
         style,
-      )}
+      ]}
       centerRipple
       focusRipple
       disabled={disabled}
