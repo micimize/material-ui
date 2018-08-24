@@ -4,22 +4,6 @@ import { storiesOf } from '@storybook/react-native';
 import SimpleBackdrop from './SimpleBackdrop';
 import MultiSectionBackdrop from './MultiSectionBackdrop';
 
-import Chapters from '../Chapters'
-
-storiesOf('Backdrop', module).add('Simple BackDrop',
-  () => <SimpleBackdrop/>,
-)
-/*
-Chapters({
-  subtitle:
-    'A backdrop appears behind all other surfaces in an app, displaying contextual and actionable content.',
-  chapters: [
-    {
-      sections: [
-        { title: 'Simple Backdrop', sectionFn: () => <SimpleBackdrop /> },
-        // { title: 'Multisection Backdrop', sectionFn: () => <MultiSectionBackdrop /> },
-      ],
-    },
-  ],
-}));
-*/
+storiesOf('Backdrop', module)
+  .add('Simple BackDrop', () => <SimpleBackdrop/>)
+  .add('MultiSection BackDrop', () => <MultiSectionBackdrop/>)

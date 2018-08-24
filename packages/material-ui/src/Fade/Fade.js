@@ -1,119 +1,53 @@
-// @inheritedComponent Transition
-
 import React from 'react';
-import styleNames from '../styles/react-native-style-names';
-import { View, Text } from 'react-native';
+import { View } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
-import Transition from 'react-transition-group/Transition';
-import { duration } from '../styles/transitions';
-import withTheme from '../styles/withTheme';
-import { reflow, getTransitionProps } from '../transitions/utils';
+import styleNames from '../styles/react-native-style-names';
+import withStyles from '../styles/withStyles';
+import AnimatedHeight from '../internal/animated-height';
 
-const styles = {
-  entering: {
+export const styles = theme => ({
+  root: {
+    zIndex: 0,
+    opacity: 0,
+    zIndex: -1,
+    transition: theme.transitions.create(['opacity', 'zIndex'], {
+      easing: 'ease-in-out',
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  in: {
+    zIndex: 1,
     opacity: 1,
   },
-  entered: {
-    opacity: 1,
-  },
-};
+});
 
-/**
- * The Fade transition is used by the [Modal](/utils/modal) component.
- * It uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.
- */
-class Fade extends React.Component {
-  handleEnter = node => {
-    const { theme } = this.props;
-    reflow(node); // So the animation always start from the start.
+function Fade(props) {
+  const { children, classes, style: styleProp, in: inProp, ...other } = props;
 
-    const transitionProps = getTransitionProps(this.props, {
-      mode: 'enter',
-    });
-    node.style.webkitTransition = theme.transitions.create('opacity', transitionProps);
-    node.style.transition = theme.transitions.create('opacity', transitionProps);
-
-    if (this.props.onEnter) {
-      this.props.onEnter(node);
-    }
-  };
-
-  handleExit = node => {
-    const { theme } = this.props;
-    const transitionProps = getTransitionProps(this.props, {
-      mode: 'exit',
-    });
-    node.style.webkitTransition = theme.transitions.create('opacity', transitionProps);
-    node.style.transition = theme.transitions.create('opacity', transitionProps);
-
-    if (this.props.onExit) {
-      this.props.onExit(node);
-    }
-  };
-
-  render() {
-    const { children, onEnter, onExit, style: styleProp, theme, ...other } = this.props;
-
-    return (
-      <Transition appear onEnter={this.handleEnter} onExit={this.handleExit} {...other}>
-        {(state, childProps) => {
-          return React.cloneElement(children, {
-            style: styleNames(
-              {
-                opacity: 0,
-              },
-              styles[state],
-              styleProp,
-              React.isValidElement(children) ? children.props.style : {},
-            ),
-            ...childProps,
-          });
-        }}
-      </Transition>
-    );
-  }
+  const style = [classes.root, inProp && classes.in, styleProp]
+  return (
+    <View style={style} {...other}>{children}</View>
+  );
 }
 
 Fade.propTypes = {
   /**
-   * A single child content element.
+   * The content of the component.
    */
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  children: PropTypes.node.isRequired,
   /**
-   * If `true`, the component will transition in.
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css-api) below for more details.
+   */
+  classes: PropTypes.object.isRequired,
+  /**
+   * If `true`, expand to reveal section.
    */
   in: PropTypes.bool,
-  /**
-   * @ignore
-   */
-  onEnter: PropTypes.func,
-  /**
-   * @ignore
-   */
-  onExit: PropTypes.func,
-  /**
-   * @ignore
-   */
-  style: PropTypes.object,
-  /**
-   * @ignore
-   */
-  theme: PropTypes.object.isRequired,
-  /**
-   * The duration for the transition, in milliseconds.
-   * You may specify a single timeout for all transitions, or individually with an object.
-   */
-  timeout: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.shape({ enter: PropTypes.number, exit: PropTypes.number }),
-  ]),
 };
 
 Fade.defaultProps = {
-  timeout: {
-    enter: duration.enteringScreen,
-    exit: duration.leavingScreen,
-  },
+  in: false,
 };
 
-export default withTheme()(Fade);
+export default withStyles(styles, { name: 'MuiFade' })(Fade);

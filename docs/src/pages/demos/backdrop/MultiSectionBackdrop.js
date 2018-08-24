@@ -61,11 +61,15 @@ const tags = [
 const styles = theme => {
   return {
     root: {
-      width: 360 + 20,
-      height: 616 + 20,
-      position: 'relative',
-      border: '10px solid lightgrey',
-      borderRadius: 5,
+      width: '100%',
+      height: '100%',
+      web: {
+        width: 360 + 20,
+        height: 616 + 20,
+        position: 'relative',
+        border: '10px solid lightgrey',
+        borderRadius: 5,
+      }
     },
     flex: {
       flex: 1,
@@ -127,8 +131,7 @@ class MultiSectionBackdrop extends React.Component {
               <Toolbar>
                 <IconButton
                   style={classes.menuButton}
-                  aria-label="Menu"
-                  onClick={() => this.setState({ expanded: expanded ? false : 'nav' })}
+                  onPress={() => this.setState({ expanded: expanded ? false : 'nav' })}
                 >
                   <MenuIcon color="onPrimary" />
                 </IconButton>
@@ -140,16 +143,14 @@ class MultiSectionBackdrop extends React.Component {
                     selected={expanded === 'nav'}
                     style={styleNames(classes.flex, classes.withFilter)}
                   >
-                    <Title style={styleNames(classes.flex, classes.withFilter)}>
-                      <Text>Nature's Nobility</Text>
+                  {/* TODO ugly jank and hella slow */}
+                    <Title style={styleNames(classes.flex, classes.withFilter)}>Nature's Nobility</Title>
                       <IconButton
-                        aria-label="Filters"
                         style={classes.filter}
-                        onClick={() => this.setState({ expanded: 'filters' })}
+                        onPress={() => this.setState({ expanded: 'filters' })}
                       >
                         <FilterIcon color="onPrimary" />
                       </IconButton>
-                    </Title>
                   </FadeStackItem>
                   <FadeStackItem selected={expanded === 'filters'}>
                     <Title> Filter by tags </Title>
@@ -183,7 +184,7 @@ class MultiSectionBackdrop extends React.Component {
             <Subheader divider>
               <Typography variant="subheading">Incredible Iguanas</Typography>
               <Fade in={expanded === 'filters'}>
-                <ExpandIcon />
+                <ExpandIcon/>
               </Fade>
             </Subheader>
             <FrontContent classes={{ root: classes.content }}>
