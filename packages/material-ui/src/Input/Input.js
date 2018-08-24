@@ -241,7 +241,6 @@ class Input extends React.Component {
   }
 
   handleFocus = event => {
-
     this.setState({ focused: true });
     if (this.props.onFocus) {
       this.props.onFocus(event);

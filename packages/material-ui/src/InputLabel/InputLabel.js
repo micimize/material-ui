@@ -10,38 +10,47 @@ import { createComponent } from '../styles/extended-styles/animated';
 
 const Label = createComponent(FormLabel);
 
-export const styles = theme => ({
-  /* Styles applied to the root element. */
-  root: {
-    // transformOrigin: 'top left',
-    lineHeight: 16,
-  },
-  /* Styles applied to the root element if the component is a descendant of `FormControl`. */
-  formControl: {
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    // slight alteration to spec spacing to match visual spec result
-    transform: [{ translateY: 24 }, { scale: 1 }],
-  },
-  /* Styles applied to the root element if `margin="dense"`. */
-  marginDense: {
-    // Compensation for the `Input.inputDense` style.
-    transform: [{ translateY: 21 }, { scale: 1 }],
-  },
-  /* Styles applied to the `input` element if `shrink={true}`. */
-  shrink: {
-    transform: [{ translateY: 1.5 }, { scale: 0.75 }],
-    // transformOrigin: 'top left',
-  },
-  /* Styles applied to the `input` element if `disableAnimation={false}`. */
-  animated: {
-    transition: theme.transitions.create(['translateY', 'scale'], {
-      duration: theme.transitions.duration.shorter,
-      easing: theme.transitions.easing.easeOut,
-    }),
-  },
-});
+export const styles = theme => {
+  // TODO this is probably suboptimal, unfortunately react-native doesn't have transform-origin,
+  // fontSize can't use native drivers,
+  // and matrix transforms are deprecated
+  const width = 400
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      // transformOrigin: 'top left',
+      lineHeight: 16,
+    },
+    /* Styles applied to the root element if the component is a descendant of `FormControl`. */
+    formControl: {
+      position: 'absolute',
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      left: 0,
+      top: 0,
+      width,
+      // slight alteration to spec spacing to match visual spec result
+      transform: [{ translateY: 24 }, { scale: 1 }],
+    },
+    /* Styles applied to the root element if `margin="dense"`. */
+    marginDense: {
+      // Compensation for the `Input.inputDense` style.
+      transform: [{ translateY: 21 }, { scale: 1 }],
+    },
+    /* Styles applied to the `input` element if `shrink={true}`. */
+    shrink: {
+      transform: [{ translateX: -width / 2* 0.25 }, { translateY: 1.5 }, { scale: 0.75 }],
+      // transformOrigin: 'top left',
+    },
+    /* Styles applied to the `input` element if `disableAnimation={false}`. */
+    animated: {
+      transition: theme.transitions.create(['translateX', 'translateY', 'scale'], {
+        duration: theme.transitions.duration.shorter,
+        easing: theme.transitions.easing.easeOut,
+      }),
+    },
+  }
+};
 
 function InputLabel(props, context) {
   const {
@@ -79,7 +88,7 @@ function InputLabel(props, context) {
   );
 
   return (
-    <Label data-shrink={shrink} style={className} classes={FormLabelClasses} {...other}>
+    <Label useNativeDriver style={className} classes={FormLabelClasses} {...other}>
       {children}
     </Label>
   );
