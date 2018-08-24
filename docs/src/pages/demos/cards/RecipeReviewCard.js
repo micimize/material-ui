@@ -8,7 +8,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
+import Collapsible from 'react-native-collapsible';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
@@ -35,9 +35,11 @@ const styles = theme => ({
       duration: theme.transitions.duration.shortest,
     }),
     marginLeft: 'auto',
+    /*
     [theme.breakpoints.up('sm')]: {
       marginRight: -8,
     },
+    */
   },
   expandOpen: {
     transform: [{ rotate: '180deg' }],
@@ -50,8 +52,8 @@ const styles = theme => ({
 class RecipeReviewCard extends React.Component {
   state = { expanded: false };
 
-  handleExpandClick = () => {
-    this.setState(state => ({ expanded: !state.expanded }));
+  handleExpand = () => {
+    this.setState({ expanded: !this.state.expanded });
   };
 
   render() {
@@ -62,7 +64,7 @@ class RecipeReviewCard extends React.Component {
         <Card style={classes.card}>
           <CardHeader
             avatar={
-              <Avatar aria-label="Recipe" style={classes.avatar}>
+              <Avatar accessibilityLabel="Recipe" style={classes.avatar}>
                 <Text>R</Text>
               </Avatar>
             }
@@ -76,34 +78,31 @@ class RecipeReviewCard extends React.Component {
           />
           <CardMedia
             style={classes.media}
-            image={require('../static/images/cards/paella.jpg')}
+            image={require('/static/images/cards/paella.jpg')}
             title="Contemplative Reptile"
           />
           <CardContent>
-            <Typography component="p">
+            <Typography>
               This impressive paella is a perfect party dish and a fun meal to cook together with
               your guests. Add 1 cup of frozen peas along with the mussels, if you like.
             </Typography>
           </CardContent>
           <CardActions style={classes.actions} disableActionSpacing>
-            <IconButton aria-label="Add to favorites">
+            <IconButton accessibilityLabel="Add to favorites">
               <FavoriteIcon />
             </IconButton>
-            <IconButton aria-label="Share">
+            <IconButton accessibilityLabel="Share">
               <ShareIcon />
             </IconButton>
             <IconButton
-              style={styleNames(classes.expand, {
-                [classes.expandOpen]: this.state.expanded,
-              })}
-              onPress={this.handleExpandClick}
-              aria-expanded={this.state.expanded}
-              aria-label="Show more"
+              style={[classes.expand, this.state.expanded && classes.expandOpen]}
+              onPress={this.handleExpand}
+              accessibilityLabel="Show more"
             >
               <ExpandMoreIcon />
             </IconButton>
           </CardActions>
-          <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+          <Collapsible collapsed={!this.state.expanded}>
             <CardContent>
               <Typography paragraph variant="body2">
                 Method:
@@ -131,7 +130,7 @@ class RecipeReviewCard extends React.Component {
                 Set aside off of the heat to let rest for 10 minutes, and then serve.
               </Typography>
             </CardContent>
-          </Collapse>
+          </Collapsible>
         </Card>
       </View>
     );

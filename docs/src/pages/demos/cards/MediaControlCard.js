@@ -54,13 +54,13 @@ function MediaControlCard(props) {
             </Typography>
           </CardContent>
           <View style={classes.controls}>
-            <IconButton aria-label="Previous">
+            <IconButton accessibilityLabel="Previous">
               {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
             </IconButton>
-            <IconButton aria-label="Play/pause">
+            <IconButton accessibilityLabel="Play/pause">
               <PlayArrowIcon style={classes.playIcon} />
             </IconButton>
-            <IconButton aria-label="Next">
+            <IconButton accessibilityLabel="Next">
               {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
             </IconButton>
           </View>
