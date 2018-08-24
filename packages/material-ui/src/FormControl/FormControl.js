@@ -11,7 +11,6 @@ export const styles = {
   /* Styles applied to the root element. */
   root: {
     flexDirection: 'column',
-    position: 'relative',
     // Reset fieldset default style
     minWidth: 0,
     padding: 0,

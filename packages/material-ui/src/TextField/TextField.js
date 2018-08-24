@@ -58,7 +58,7 @@ function TextField(props) {
     multiline,
     name,
     onBlur,
-    onChange,
+    onChangeText,
     onFocus,
     placeholder,
     required,
@@ -66,6 +66,7 @@ function TextField(props) {
     select,
     SelectProps,
     type,
+    keyboardType,
     value,
     ...other
   } = props;
@@ -87,10 +88,11 @@ function TextField(props) {
       name={name}
       numberOfLines={numberOfLines}
       type={type}
+      keyboardType={keyboardType}
       value={value}
       inputRef={inputRef}
       onBlur={onBlur}
-      onChange={onChange}
+      onChangeText={onChangeText}
       onFocus={onFocus}
       placeholder={placeholder}
       inputProps={inputProps}
@@ -120,7 +122,7 @@ function TextField(props) {
       )}
       {helperText && (
         <FormHelperText {...FormHelperTextProps}>
-          <Text>{helperText}</Text>
+          {helperText}
         </FormHelperText>
       )}
     </FormControl>
@@ -213,7 +215,7 @@ TextField.propTypes = {
    * @param {object} event The event source of the callback.
    * You can pull out the new value by accessing `event.target.value`.
    */
-  onChange: PropTypes.func,
+  onChangeText: PropTypes.func,
   /**
    * @ignore
    */

@@ -82,16 +82,14 @@ function InputLabel(props, context) {
     margin = muiFormControl.margin;
   }
 
-  const className = styleNames(
+  const className = [
     classes.root,
-    {
-      [classes.formControl]: muiFormControl,
-      [classes.animated]: !disableAnimation,
-      [classes.shrink]: shrink,
-      [classes.marginDense]: margin === 'dense',
-    },
+    muiFormControl && classes.formControl,
+    !disableAnimation && classes.animated,
+    shrink && classes.shrink,
+    margin === 'dense' && classes.marginDense,
     styleProp,
-  );
+  ];
 
   return (
     <Label useNativeDriver style={className} classes={FormLabelClasses} {...other}>

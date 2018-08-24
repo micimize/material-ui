@@ -4,7 +4,6 @@ import { View, Text, TextInput } from 'react-native';
 // import { TextInput } from '../styles/extended-styles/focusable';
 import { View as Underline } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
-import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 
 // Supports determination of isControlled().
@@ -44,23 +43,6 @@ export function isAdornedStart(obj) {
 
 export const styles = theme => {
   const light = theme.palette.type === 'light';
-  /*
-  const placeholder = {
-    color: 'currentColor',
-    opacity: light ? 0.42 : 0.5,
-    transition: theme.transitions.create('opacity', {
-      duration: theme.transitions.duration.shorter,
-    }),
-  };
-  */
-  /*
-  const placeholderHidden = {
-    opacity: 0,
-  };
-  const placeholderVisible = {
-    opacity: light ? 0.42 : 0.5,
-  };
-  */
   const bottomLineColor = light ? 'rgba(0, 0, 0, 0.42)' : 'rgba(255, 255, 255, 0.7)';
 
   return {
@@ -71,6 +53,7 @@ export const styles = theme => {
       '[disabled="true"]': {
         color: theme.palette.text.disabled,
       },
+      borderBottom: `1px solid ${bottomLineColor}`,
     },
     /* Styles applied to the root element if the component is a descendant of `FormControl`. */
     formControl: {
@@ -83,9 +66,9 @@ export const styles = theme => {
     /* Styles applied to the root element if `disabledUnderline={false}`. */
     underline: {
       borderBottom: `2px solid ${theme.palette.primary[light ? 'dark' : 'light']}`,
-      left: 0,
-      bottom: 0,
       position: 'absolute',
+      left: 0,
+      bottom: -1,
       right: 0,
       transform: [{ scaleX: 0 }],
       transition: theme.transitions.create('scaleX', {
@@ -109,7 +92,6 @@ export const styles = theme => {
     /* Styles applied to the `input` element. */
     input: {
       // TODO multiline inputs wiggle on added rows
-      textAlignVertical: 'top',
       height: 'auto',
       lineHeight: 19, // '1.1875em', // Reset (19px), match the native input line-height
       fontFamily: theme.typography.fontFamily,
@@ -127,7 +109,6 @@ export const styles = theme => {
       // Make the flex item shrink with Firefox
       minWidth: 0,
       flexGrow: 1,
-      borderBottom: `1px solid ${bottomLineColor}`,
     },
     /* Styles applied to the `input` element if `margin="dense"`. */
     inputMarginDense: {
@@ -138,6 +119,9 @@ export const styles = theme => {
       // type="date" or type="time", etc. have specific styles we need to reset.
       // height: '1.1875em', // Reset (19px), match the native input line-height
     },
+    multiline: {
+      textAlignVertical: 'top',
+    }
     /* Styles applied to the `input` element if `type="search"`. */
     /*
     inputTypeSearch: {
@@ -234,7 +218,6 @@ class Input extends React.Component {
   }
 
   handleFocus = event => {
-    console.log('wtf')
     this.setState({ focused: true });
     if (this.props.onFocus) {
       this.props.onFocus(event);
@@ -258,9 +241,9 @@ class Input extends React.Component {
     }
   };
 
-  handleChange = event => {
+  handleChange = text => {
     if (!this.isControlled) {
-      this.setState({ dirty: true, value: event.target.value }, () => {
+      this.setState({ dirty: true, value: text }, () => {
         this.checkDirty();
       });
     } else {
@@ -268,8 +251,8 @@ class Input extends React.Component {
     }
 
     // Perform in the willUpdate
-    if (this.props.onChange) {
-      this.props.onChange(event);
+    if (this.props.onChangeText) {
+      this.props.onChangeText(text);
     }
   };
 
@@ -312,17 +295,18 @@ class Input extends React.Component {
       error: errorProp,
       fullWidth,
       inputComponent: InputComponent,
-      inputProps: { style: inputPropsClassName, ...inputPropsProp } = {},
+      inputProps: { style: inputPropsClassName, ...inputProps } = {},
       margin: marginProp,
       name,
       onBlur,
-      onChange,
+      onChangeText,
       onEmpty,
       onFilled,
       onFocus,
       placeholder,
       startAdornment,
       type,
+      keyboardType,
       value,
       multiline,
       numberOfLines,
@@ -332,30 +316,25 @@ class Input extends React.Component {
     const { muiFormControl } = this.context;
     const { disabled, error, margin, required } = formControlState(this.props, this.context);
 
-    const className = styleNames(
+    const className = [
       classes.root,
-      {
-        [classes.disabled]: disabled,
-        [classes.error]: error,
-        [classes.fullWidth]: fullWidth,
-        [classes.focused]: this.state.focused,
-        [classes.formControl]: muiFormControl,
-      },
+      fullWidth && classes.fullWidth,
+      this.state.focused && classes.focused,
+      muiFormControl && classes.formControl,
+      disabled && classes.disabled,
+      error && classes.error,
       styleProp,
-    );
+    ];
 
-    const inputClassName = styleNames(
+    const inputClassName = [
       classes.input,
-      {
-        [classes.disabled]: disabled,
-        [classes.inputType]: type !== 'text',
-        [classes.inputTypeSearch]: type === 'search',
-        [classes.inputMarginDense]: margin === 'dense',
-      },
+      disabled && classes.disabled,
+      type !== 'text' && classes.inputType,
+      type === 'search' && classes.inputTypeSearch,
+      margin === 'dense' && classes.inputMarginDense,
+      multiline && classes.multiline,
       inputPropsClassName,
-    );
-
-    let inputProps = inputPropsProp;
+    ];
 
     return (
       <View style={className} {...other}>
@@ -374,22 +353,25 @@ class Input extends React.Component {
           required={required}
           textContentType={type}
           secureTextEntry={type === 'password'}
-          onChange={this.handleChange}
+          keyboardType={keyboardType}
+          onChangeText={this.handleChange}
           defaultValue={defaultValue}
           value={value}
           multiline={multiline}
           numberOfLines={numberOfLines}
           {...inputProps}
         />
-        <Underline
-          useNativeDriver
-          style={[
-            classes.underline,
-            disabled && classes.underlineDisabled,
-            error && classes.underlineError,
-            this.state.focused && classes.underlineFocused,
-          ]}
-        />
+        { !disableUnderline && 
+          <Underline
+            useNativeDriver
+            style={[
+              classes.underline,
+              this.state.focused && classes.underlineFocused,
+              disabled && classes.underlineDisabled,
+              error && classes.underlineError,
+            ]}
+          />
+        }
         {typeof endAdornment === 'string' ? <Text>{endAdornment}</Text> : endAdornment}
       </View>
     );
@@ -471,7 +453,7 @@ Input.propTypes = {
    * @param {object} event The event source of the callback.
    * You can pull out the new value by accessing `event.target.value`.
    */
-  onChange: PropTypes.func,
+  onChangeText: PropTypes.func,
   /**
    * @ignore
    */

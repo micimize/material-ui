@@ -11,6 +11,7 @@ export const styles = {
     flexDirection: 'row',
     maxHeight: 16 * 2,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   /* Styles applied to the root element if `position="start"`. */
   positionStart: {

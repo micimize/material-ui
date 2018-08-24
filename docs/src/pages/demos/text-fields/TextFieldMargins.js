@@ -23,14 +23,12 @@ const TextFieldMargins = props => {
     <View style={classes.container}>
       <TextField
         label="None"
-        id="margin-none"
         defaultValue="Default Value"
         style={classes.textField}
         helperText="Some important text"
       />
       <TextField
         label="Dense"
-        id="margin-dense"
         defaultValue="Default Value"
         style={classes.textField}
         helperText="Some important text"
@@ -38,7 +36,6 @@ const TextFieldMargins = props => {
       />
       <TextField
         label="Normal"
-        id="margin-normal"
         defaultValue="Default Value"
         style={classes.textField}
         helperText="Some important text"

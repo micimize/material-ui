@@ -18,16 +18,16 @@ storiesOf('Text Fields', module).add('Demos', Chapters({
     {
       sections: [
         { title: 'Text Field', sectionFn: () => <TextFields /> },
-        /*
         { title: 'Composed Text Field', sectionFn: () => <ComposedTextFields /> },
         { title: 'Text Field Margins', sectionFn: () => <TextFieldMargins /> },
         { title: 'Input Adornments', sectionFn: () => <InputAdornments /> },
+        /*
         { title: 'Inputs', sectionFn: () => <Inputs /> },
         // TODO I implemeted masked text mask for react native in grounded
         // { title: 'Formatted Inputs', sectionFn: () => <FormattedInputs /> },
         { title: 'Customized Inputs', sectionFn: () => <CustomizedInputs /> },
-        { title: 'Unput With Icon', sectionFn: () => <InputWithIcon /> },
         */
+        { title: 'Input With Icon', sectionFn: () => <InputWithIcon /> },
       ],
     },
   ],

@@ -47,10 +47,8 @@ class TextFields extends React.Component {
     currency: 'EUR',
   };
 
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
+  handleChange = name => text => {
+    this.setState({ [name]: text });
   };
 
   render() {
@@ -62,7 +60,7 @@ class TextFields extends React.Component {
           label="Name"
           style={classes.textField}
           value={this.state.name}
-          onChange={this.handleChange('name')}
+          onChangeText={this.handleChange('name')}
           margin="normal"
         />
         <TextField
@@ -96,7 +94,7 @@ class TextFields extends React.Component {
           label="Multiline"
           multiline
           value={this.state.multiline}
-          onChange={this.handleChange('multiline')}
+          onChangeText={this.handleChange('multiline')}
           style={classes.textField}
           margin="normal"
         />
@@ -131,14 +129,15 @@ class TextFields extends React.Component {
         <TextField
           label="Number"
           value={this.state.age}
-          onChange={this.handleChange('age')}
-          type="number"
+          onChangeText={this.handleChange('age')}
+          keyboardType="numeric"
           style={classes.textField}
           InputLabelProps={{
             shrink: true,
           }}
           margin="normal"
         />
+        {/* TODO many "type" like fields in RN */}
         <TextField
           label="Search field"
           type="search"
@@ -151,7 +150,7 @@ class TextFields extends React.Component {
           label="Select"
           style={classes.textField}
           value={this.state.currency}
-          onChange={this.handleChange('currency')}
+          onChangeText={this.handleChange('currency')}
           SelectProps={{
             native: true,
             MenuProps: {
@@ -172,7 +171,7 @@ class TextFields extends React.Component {
           label="Native select"
           style={classes.textField}
           value={this.state.currency}
-          onChange={this.handleChange('currency')}
+          onChangeText={this.handleChange('currency')}
           SelectProps={{
             native: true,
             MenuProps: {

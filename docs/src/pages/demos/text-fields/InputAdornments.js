@@ -73,12 +73,13 @@ class InputAdornments extends React.Component {
       <View style={classes.root}>
         <TextField
           label="With normal TextField"
-          id="simple-start-adornment"
+          
           style={styleNames(classes.margin, classes.textField)}
           InputProps={{
             startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
           }}
         />
+        {/*
         <TextField
           select
           label="With Select"
@@ -95,21 +96,19 @@ class InputAdornments extends React.Component {
             </MenuItem>
           ))}
         </TextField>
+        */}
         <FormControl fullWidth style={classes.margin}>
-          <InputLabel htmlFor="adornment-amount">Amount</InputLabel>
+          <InputLabel >Amount</InputLabel>
           <Input
-            id="adornment-amount"
+            
             value={this.state.amount}
             onChange={this.handleChange('amount')}
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
           />
         </FormControl>
-        <FormControl
-          style={styleNames(classes.margin, classes.withoutLabel, classes.textField)}
-          aria-describedby="weight-helper-text"
-        >
+        <FormControl style={styleNames(classes.margin, classes.withoutLabel, classes.textField)} >
           <Input
-            id="adornment-weight"
+            
             value={this.state.weight}
             onChange={this.handleChange('weight')}
             endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
@@ -117,12 +116,11 @@ class InputAdornments extends React.Component {
               'aria-label': 'Weight',
             }}
           />
-          <FormHelperText id="weight-helper-text">Weight</FormHelperText>
+          <FormHelperText >Weight</FormHelperText>
         </FormControl>
         <FormControl style={styleNames(classes.margin, classes.textField)}>
-          <InputLabel htmlFor="adornment-password">Password</InputLabel>
+          <InputLabel >Password</InputLabel>
           <Input
-            id="adornment-password"
             type={this.state.showPassword ? 'text' : 'password'}
             value={this.state.password}
             onChange={this.handleChange('password')}
