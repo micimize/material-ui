@@ -77,7 +77,6 @@ function TextField(props) {
     'Material-UI: `children` must be passed when using the `TextField` component with `select`.',
   );
 
-  const helperTextId = helperText && id ? `${id}-helper-text` : undefined;
   const InputElement = (
     <Input
       autoComplete={autoComplete}
@@ -103,7 +102,6 @@ function TextField(props) {
 
   return (
     <FormControl
-      aria-describedby={helperTextId}
       style={style}
       error={error}
       fullWidth={fullWidth}
@@ -123,7 +121,7 @@ function TextField(props) {
         InputElement
       )}
       {helperText && (
-        <FormHelperText id={helperTextId} {...FormHelperTextProps}>
+        <FormHelperText {...FormHelperTextProps}>
           <Text>{helperText}</Text>
         </FormHelperText>
       )}

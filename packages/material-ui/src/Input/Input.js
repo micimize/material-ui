@@ -6,7 +6,6 @@ import { View as Underline } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
-import Textarea from './Textarea';
 
 // Supports determination of isControlled().
 // Controlled input accepts its current value as a prop.
@@ -103,10 +102,6 @@ export const styles = theme => {
     },
     /* Styles applied to the root element if `error={true}`. */
     error: {},
-    /* Styles applied to the root element if `multiline={true}`. */
-    multiline: {
-      padding: 0, //`${8 - 2}px 0 ${8 - 1}px`,
-    },
     /* Styles applied to the root element if `fullWidth={true}`. */
     fullWidth: {
       width: '100%',
@@ -134,11 +129,6 @@ export const styles = theme => {
     /* Styles applied to the `input` element if `margin="dense"`. */
     inputMarginDense: {
       paddingTop: 4 - 1,
-    },
-    /* Styles applied to the `input` element if `multiline={true}`. */
-    inputMultiline: {
-      // resize: 'none',
-      padding: `${8 - 2}px 0 ${8 - 2}px`,
     },
     /* Styles applied to the `input` element if `type` is not "text"`. */
     inputType: {
@@ -317,10 +307,9 @@ class Input extends React.Component {
       endAdornment,
       error: errorProp,
       fullWidth,
-      inputComponent,
+      inputComponent: InputComponent,
       inputProps: { style: inputPropsClassName, ...inputPropsProp } = {},
       margin: marginProp,
-      multiline,
       name,
       onBlur,
       onChange,
@@ -329,7 +318,6 @@ class Input extends React.Component {
       onFocus,
       placeholder,
       readOnly,
-      rows,
       startAdornment,
       type,
       value,
@@ -347,7 +335,6 @@ class Input extends React.Component {
         [classes.fullWidth]: fullWidth,
         [classes.focused]: this.state.focused,
         [classes.formControl]: muiFormControl,
-        [classes.multiline]: multiline,
       },
       styleProp,
     );
@@ -358,45 +345,32 @@ class Input extends React.Component {
         [classes.disabled]: disabled,
         [classes.inputType]: type !== 'text',
         [classes.inputTypeSearch]: type === 'search',
-        [classes.inputMultiline]: multiline,
         [classes.inputMarginDense]: margin === 'dense',
       },
       inputPropsClassName,
     );
 
-    let InputComponent = TextInput;
     let inputProps = inputPropsProp;
-
-    if (inputComponent) {
-      InputComponent = inputComponent;
-    } else if (multiline) {
-      InputComponent = Textarea;
-      if (rows) {
-        inputProps.numberOfLines = rows;
-      }
-    }
 
     return (
       <View style={className} {...other}>
         {typeof startAdornment === 'string' ? <Text>{startAdornment}</Text> : startAdornment}
         <InputComponent
-          // aria-invalid={error}
           underlineColorAndroid='rgba(0,0,0,0)'
-          autoComplete={autoComplete}
           placeholderTextColor={this.state.focused ? undefined : 'rgba(0,0,0,0)'}
+          autoComplete={autoComplete}
           autoFocus={autoFocus}
           style={inputClassName}
-          defaultValue={defaultValue}
           disabled={disabled}
           name={name}
           onBlur={this.handleBlur}
-          onChange={this.handleChange}
           onFocus={this.handleFocus}
           placeholder={placeholder}
           readOnly={readOnly}
           required={required}
-          rows={rows}
           type={type}
+          onChange={this.handleChange}
+          defaultValue={defaultValue}
           value={value}
           {...inputProps}
         />
@@ -414,6 +388,7 @@ class Input extends React.Component {
 }
 
 Input.propTypes = {
+  ...TextInput.propTypes,
   /**
    * This property helps users to fill forms faster, especially on mobile devices.
    * The name can be confusing, as it's more like an autofill.
@@ -474,10 +449,6 @@ Input.propTypes = {
    */
   margin: PropTypes.oneOf(['dense', 'none']),
   /**
-   * If `true`, a textarea element will be rendered.
-   */
-  multiline: PropTypes.bool,
-  /**
    * Name attribute of the `input` element.
    */
   name: PropTypes.string,
@@ -518,10 +489,6 @@ Input.propTypes = {
    */
   required: PropTypes.bool,
   /**
-   * Number of rows to display when multiline option is set to true.
-   */
-  rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /**
    * Start `InputAdornment` for this component.
    */
   startAdornment: PropTypes.node,
@@ -542,6 +509,7 @@ Input.propTypes = {
 Input.muiName = 'Input';
 
 Input.defaultProps = {
+  inputComponent: TextInput,
   disableUnderline: false,
   fullWidth: false,
   multiline: false,

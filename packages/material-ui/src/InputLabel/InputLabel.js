@@ -10,6 +10,11 @@ import { createComponent } from '../styles/extended-styles/animated';
 
 const Label = createComponent(FormLabel);
 
+// 57, 16, 
+// 40
+// 24
+// 6 
+
 export const styles = theme => {
   // TODO this is probably suboptimal, unfortunately react-native doesn't have transform-origin,
   // fontSize can't use native drivers,
@@ -19,7 +24,8 @@ export const styles = theme => {
     /* Styles applied to the root element. */
     root: {
       // transformOrigin: 'top left',
-      lineHeight: 16,
+      lineHeight: 19,
+      fontSize: 16,
     },
     /* Styles applied to the root element if the component is a descendant of `FormControl`. */
     formControl: {
