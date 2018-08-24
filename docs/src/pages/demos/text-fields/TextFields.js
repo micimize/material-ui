@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Picker } from 'react-native';
+import { View, Text, Picker, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -93,18 +93,9 @@ class TextFields extends React.Component {
           margin="normal"
         />
         <TextField
-          label="Read Only"
-          defaultValue="Hello World"
-          style={classes.textField}
-          margin="normal"
-          InputProps={{
-            readOnly: true,
-          }}
-        />
-        <TextField
           label="Multiline"
           multiline
-          rowsMax={4}
+          rows={4}
           value={this.state.multiline}
           onChange={this.handleChange('multiline')}
           style={classes.textField}

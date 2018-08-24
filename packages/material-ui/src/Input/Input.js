@@ -231,6 +231,7 @@ class Input extends React.Component {
   }
 
   handleFocus = event => {
+    console.log('wtf')
     this.setState({ focused: true });
     if (this.props.onFocus) {
       this.props.onFocus(event);
@@ -317,7 +318,6 @@ class Input extends React.Component {
       onFilled,
       onFocus,
       placeholder,
-      readOnly,
       startAdornment,
       type,
       value,
@@ -366,20 +366,22 @@ class Input extends React.Component {
           onBlur={this.handleBlur}
           onFocus={this.handleFocus}
           placeholder={placeholder}
-          readOnly={readOnly}
           required={required}
-          type={type}
+          textContentType={type}
+          secureTextEntry={type === 'password'}
           onChange={this.handleChange}
           defaultValue={defaultValue}
           value={value}
           {...inputProps}
         />
         <Underline
-          style={styleNames(classes.underline, {
-            [classes.underlineDisabled]: disabled,
-            [classes.underlineError]: error,
-            [classes.underlineFocused]: this.state.focused,
-          })}
+          useNativeDriver
+          style={[
+            classes.underline,
+            disabled && classes.underlineDisabled,
+            error && classes.underlineError,
+            this.state.focused && classes.underlineFocused,
+          ]}
         />
         {typeof endAdornment === 'string' ? <Text>{endAdornment}</Text> : endAdornment}
       </View>
@@ -479,11 +481,6 @@ Input.propTypes = {
    * The short hint displayed in the input before the user enters a value.
    */
   placeholder: PropTypes.string,
-  /**
-   * It prevents the user from changing the value of the field
-   * (not from interacting with the field).
-   */
-  readOnly: PropTypes.bool,
   /**
    * If `true`, the input will be required.
    */
