@@ -4,7 +4,7 @@ import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 import styleNames from '../styles/react-native-style-names';
 
-import NativeIcon from 'react-native-vector-icons/MaterialIcons';
+import NativeIcon from '@expo/vector-icons/MaterialIcons';
 
 export const styles = theme => ({
   /* Styles applied to the root element. */

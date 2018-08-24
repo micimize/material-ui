@@ -22,7 +22,7 @@
   "homepage": "http://material-ui.com/",
   "scripts": {
     "docs:dev": "rimraf node_modules/.cache/babel-loader && cross-env BABEL_ENV=docs-development next dev",
-    "docs:stories": "yarn storybook start -p 7007 --platform android -c docs/src/storybook",
+    "docs:stories": "BABEL_ENV=docs yarn storybook start -p 7007 --platform android -c docs/src/storybook",
     "docs:api": "yarn docs:api:core && yarn docs:api:lab",
     "docs:api:core": "rimraf ./pages/api && cross-env BABEL_ENV=docs-development babel-node ./docs/scripts/buildApi.js ./packages/material-ui/src ./pages/api",
     "docs:api:lab": "rimraf ./pages/lab/api && cross-env BABEL_ENV=docs-development babel-node ./docs/scripts/buildApi.js ./packages/material-ui-lab/src ./pages/lab/api",
@@ -53,7 +53,12 @@
     "eject": "react-native-scripts eject",
     "android": "REACT_NATIVE_PACKAGER_HOSTNAME='localhost' react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "test": "jest",
+    "prebuild": "rimraf packages/material-ui/build",
+    "build:babel": "babel packages/material-ui/src/ --out-dir packages/material-ui/build/ --source-maps",
+    "build:copy-files": "babel-node ./packages/material-ui/scripts/copy-files.js" ,
+    "build": "yarn build:babel && yarn:build:copy-files",
+    "release": "yarn build && npm publish packages/material-ui/build"
   },
   "peerDependencies": {
     "react": "*"
