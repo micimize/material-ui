@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import Svg, { Circle } from '@material-ui/core/utils/svgCompatibility';
+import Svg, { Circle } from '../utils/svgCompatibility';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
