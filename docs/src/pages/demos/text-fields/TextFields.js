@@ -95,7 +95,6 @@ class TextFields extends React.Component {
         <TextField
           label="Multiline"
           multiline
-          rows={4}
           value={this.state.multiline}
           onChange={this.handleChange('multiline')}
           style={classes.textField}
@@ -104,7 +103,7 @@ class TextFields extends React.Component {
         <TextField
           label="Multiline"
           multiline
-          rows={4}
+          numberOfLines={4}
           defaultValue="Default Value"
           style={classes.textField}
           margin="normal"

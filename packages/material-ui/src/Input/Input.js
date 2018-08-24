@@ -108,6 +108,9 @@ export const styles = theme => {
     },
     /* Styles applied to the `input` element. */
     input: {
+      // TODO multiline inputs wiggle on added rows
+      textAlignVertical: 'top',
+      height: 'auto',
       lineHeight: 19, // '1.1875em', // Reset (19px), match the native input line-height
       fontFamily: theme.typography.fontFamily,
       fontSize: 16,
@@ -321,6 +324,8 @@ class Input extends React.Component {
       startAdornment,
       type,
       value,
+      multiline,
+      numberOfLines,
       ...other
     } = this.props;
 
@@ -372,6 +377,8 @@ class Input extends React.Component {
           onChange={this.handleChange}
           defaultValue={defaultValue}
           value={value}
+          multiline={multiline}
+          numberOfLines={numberOfLines}
           {...inputProps}
         />
         <Underline

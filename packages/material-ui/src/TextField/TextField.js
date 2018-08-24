@@ -50,7 +50,6 @@ function TextField(props) {
     FormHelperTextProps,
     fullWidth,
     helperText,
-    id,
     InputLabelProps,
     inputProps,
     InputProps,
@@ -63,8 +62,7 @@ function TextField(props) {
     onFocus,
     placeholder,
     required,
-    rows,
-    rowsMax,
+    numberOfLines,
     select,
     SelectProps,
     type,
@@ -77,6 +75,7 @@ function TextField(props) {
     'Material-UI: `children` must be passed when using the `TextField` component with `select`.',
   );
 
+  // TODO kinda weird how most of the props are passed to Input, but FormControl gets other
   const InputElement = (
     <Input
       autoComplete={autoComplete}
@@ -86,8 +85,7 @@ function TextField(props) {
       fullWidth={fullWidth}
       multiline={multiline}
       name={name}
-      rows={rows}
-      rowsMax={rowsMax}
+      numberOfLines={numberOfLines}
       type={type}
       value={value}
       inputRef={inputRef}
@@ -174,11 +172,6 @@ TextField.propTypes = {
    */
   helperText: PropTypes.node,
   /**
-   * The id of the `input` element.
-   * Use that property to make `label` and `helperText` accessible for screen readers.
-   */
-  id: PropTypes.string,
-  /**
    * Properties applied to the [`InputLabel`](/api/input-label) element.
    */
   InputLabelProps: PropTypes.object,
@@ -236,11 +229,7 @@ TextField.propTypes = {
   /**
    * Number of rows to display when multiline option is set to true.
    */
-  rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /**
-   * Maximum number of rows to display when multiline option is set to true.
-   */
-  rowsMax: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  numberOfLines: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * Render a `Select` element while passing the `Input` element to `Select` as `input` parameter.
    * If this option is set you must pass the options of the select as children.
