@@ -57,7 +57,7 @@
     "prebuild": "rimraf packages/material-ui/build",
     "build:babel": "babel packages/material-ui/src/ --out-dir packages/material-ui/build/ --source-maps",
     "build:copy-files": "babel-node ./packages/material-ui/scripts/copy-files.js" ,
-    "build": "yarn build:babel && yarn:build:copy-files",
+    "build": "yarn build:babel && yarn build:copy-files",
     "release": "yarn build && npm publish packages/material-ui/build"
   },
   "peerDependencies": {

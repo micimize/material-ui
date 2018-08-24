@@ -1,9 +1,6 @@
 {
   "presets": ["react-native", "babel-preset-flow"],
   "plugins": [
-    [
-      "transform-define", { "__dirname": "./" }
-    ],
     "transform-decorators-legacy",
     "transform-exponentiation-operator",
     "transform-export-extensions"
@@ -11,6 +8,9 @@
   "env": {
     "docs": {
       "plugins": [
+        [
+          "transform-define", { "__dirname": "./" }
+        ],
         "module-resolver",
         {
           "alias": {

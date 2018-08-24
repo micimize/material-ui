@@ -6,7 +6,7 @@ import glob from 'glob';
 
 async function copyFile(file) {
   const buildPath = path.resolve(__dirname, '../build/', path.basename(file));
-  await fse.copy(file, buildPath);
+  await fse.copy(path.resolve(__dirname, file), buildPath);
   console.log(`Copied ${file} to ${buildPath}`);
 }
 
@@ -53,10 +53,12 @@ async function addLicense(packageData) {
   );
 }
 
+const inRoot = filename => `../../../${filename}`
+
 async function run() {
-  await Promise.all(
-    ['../../README.md', '../../CHANGELOG.md', '../../LICENSE'].map(file => copyFile(file)),
-  );
+  await Promise.all([
+    'README.md', 'CHANGELOG.md', 'LICENSE'
+  ].map(file => copyFile(inRoot(file))));
   const packageData = await createPackageFile();
   await addLicense(packageData);
 
