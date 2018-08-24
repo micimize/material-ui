@@ -7,12 +7,11 @@ function createComponent(Component) {
   const AnimatableComponent = createAnimatableComponent(Component);
   return props => {
     let transitionProps = getExtensions(props.style).transition;
-    //console.log(transitionProps);
     return transitionProps ? (
       <AnimatableComponent
         {...transitionProps}
         {...props}
-        style={StyleSheet.flatten(props.style)}
+        style={props.style}
       />
     ) : (
       <Component {...props} />

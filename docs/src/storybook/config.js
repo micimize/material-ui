@@ -1,4 +1,5 @@
-//import { setOptions } from '@storybook/addon-options';
+import React, { Component } from 'react';
+import { AppRegistry } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
 
 //import centered from './decorator-centered';
@@ -28,11 +29,20 @@ function loadStories() {
 configure(loadStories, module);
 
 
-const StorybookUI = getStorybookUI({
+const StorybookUIRoot = getStorybookUI({
   onDeviceUI: true,
   port: 7007,
   host: 'localhost',
 });
 
-export default StorybookUI
+// react-native hot module loader must take in a Class - https://github.com/facebook/react-native/issues/10991
+// https://github.com/storybooks/storybook/issues/2081
+// eslint-disable-next-line react/prefer-stateless-function
+class StorybookUIHMRRoot extends Component {
+  render() {
+    return <StorybookUIRoot />;
+  }
+}
 
+AppRegistry.registerComponent('%APP_NAME%', () => StorybookUIHMRRoot);
+export default StorybookUIHMRRoot;

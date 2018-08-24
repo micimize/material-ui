@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import styleNames from '@material-ui/core/styles/react-native-style-names';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -15,8 +14,11 @@ import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import _ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Animated } from '@material-ui/core/styles/extended-styles'
+
+const ExpandMoreIcon = Animated.createComponent(_ExpandMoreIcon)
 
 const styles = theme => ({
   card: {
@@ -30,18 +32,18 @@ const styles = theme => ({
     flexDirection: 'row',
   },
   expand: {
+    marginLeft: 'auto',
+    [theme.breakpoints.up('sm')]: {
+      marginRight: -8,
+    },
+  },
+  expandIcon: {
     transform: [{ rotate: '0deg' }],
     transition: theme.transitions.create('rotate', {
       duration: theme.transitions.duration.shortest,
     }),
-    marginLeft: 'auto',
-    /*
-    [theme.breakpoints.up('sm')]: {
-      marginRight: -8,
-    },
-    */
   },
-  expandOpen: {
+  expandIconOpen: {
     transform: [{ rotate: '180deg' }],
   },
   avatar: {
@@ -53,7 +55,7 @@ class RecipeReviewCard extends React.Component {
   state = { expanded: false };
 
   handleExpand = () => {
-    this.setState({ expanded: !this.state.expanded });
+    this.setState({ expanded: !this.state.expanded })
   };
 
   render() {
@@ -88,18 +90,18 @@ class RecipeReviewCard extends React.Component {
             </Typography>
           </CardContent>
           <CardActions style={classes.actions} disableActionSpacing>
-            <IconButton accessibilityLabel="Add to favorites">
+            <IconButton accessibilityLabel="Add to favorites"
+            >
               <FavoriteIcon />
             </IconButton>
             <IconButton accessibilityLabel="Share">
               <ShareIcon />
             </IconButton>
-            <IconButton
-              style={[classes.expand, this.state.expanded && classes.expandOpen]}
-              onPress={this.handleExpand}
-              accessibilityLabel="Show more"
-            >
-              <ExpandMoreIcon />
+            <IconButton style={classes.expand} onPress={this.handleExpand} accessibilityLabel="Show more">
+              <ExpandMoreIcon 
+                style={[classes.expandIcon, this.state.expanded && classes.expandIconOpen]}
+                useNativeDriver
+              />
             </IconButton>
           </CardActions>
           <Collapsible collapsed={!this.state.expanded}>

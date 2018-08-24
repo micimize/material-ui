@@ -17,10 +17,6 @@ export default function createTypography(palette, typography) {
     ...other
   } = typeof typography === 'function' ? typography(palette) : typography;
 
-  function emToPx(em){
-    return em * fontSize
-  }
-
   return deepmerge(
     {
       round,
@@ -31,86 +27,86 @@ export default function createTypography(palette, typography) {
       fontWeightMedium,
       display4: {
         fontSize: 112,
+        lineHeight: 128,
+        letterSpacing: -.04 * 112,
+        marginLeft: -.04 * 112,
         fontWeight: fontWeightLight,
         fontFamily,
-        letterSpacing: emToPx(-.04),
-        lineHeight: emToPx(round(128 / 112)),
-        marginLeft: emToPx(-.04),
         color: palette.text.secondary,
         ...allVariants,
       },
       display3: {
         fontSize: 56,
+        lineHeight: 73,
+        letterSpacing: -.02 * 56,
+        marginLeft: -.02 * 56,
         fontWeight: fontWeightRegular,
         fontFamily,
-        letterSpacing: emToPx(-.02),
-        lineHeight: emToPx(round(73 / 56)),
-        marginLeft: emToPx(-.02),
         color: palette.text.secondary,
         ...allVariants,
       },
       display2: {
         fontSize: 45,
+        lineHeight: 51,
+        marginLeft: -.02 * 45,
         fontWeight: fontWeightRegular,
         fontFamily,
-        lineHeight: emToPx(round(51 / 45)),
-        marginLeft: emToPx(-.02),
         color: palette.text.secondary,
         ...allVariants,
       },
       display1: {
         fontSize: 34,
+        lineHeight: 41,
         fontWeight: fontWeightRegular,
         fontFamily,
-        lineHeight: emToPx(round(41 / 34)),
         color: palette.text.secondary,
         ...allVariants,
       },
       headline: {
         fontSize: 24,
+        lineHeight: 32.5,
         fontWeight: fontWeightRegular,
         fontFamily,
-        lineHeight: emToPx(round(32.5 / 24)),
         color: palette.text.primary,
         ...allVariants,
       },
       title: {
         fontSize: 21,
+        lineHeight: 24.5,
         fontWeight: fontWeightMedium,
         fontFamily,
-        lineHeight: emToPx(round(24.5 / 21)),
         color: palette.text.primary,
         ...allVariants,
       },
       subheading: {
         fontSize: 16,
+        lineHeight: 24,
         fontWeight: fontWeightRegular,
         fontFamily,
-        lineHeight: emToPx(round(24 / 16)),
         color: palette.text.primary,
         ...allVariants,
       },
       body2: {
         fontSize: 14,
+        lineHeight: 24,
         fontWeight: fontWeightMedium,
         fontFamily,
-        lineHeight: emToPx(round(24 / 14)),
         color: palette.text.primary,
         ...allVariants,
       },
       body1: {
         fontSize: 14,
+        lineHeight: 20.5,
         fontWeight: fontWeightRegular,
         fontFamily,
-        lineHeight: emToPx(round(20.5 / 14)),
         color: palette.text.primary,
         ...allVariants,
       },
       caption: {
         fontSize: 12,
+        lineHeight: 16.5,
         fontWeight: fontWeightRegular,
         fontFamily,
-        lineHeight: emToPx(round(16.5 / 12)),
         color: palette.text.secondary,
         ...allVariants
       },

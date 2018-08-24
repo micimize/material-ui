@@ -95,20 +95,10 @@ const dimensions = kind => ({
   [kind + 'Left']: cast.toNumberOrPercent,
 })
 
-const log = fn => (...args) => {
-  console.log('in', ...args)
-  let result = fn(...args)
-  console.log('result', result)
-  Object.assign(window, {result})
-  return result
-}
-
 const customStyles = CustomStyleRule({
   customProperties: {
-    transform: transform => (typeof transform === 'string' ? {} : { transform }),
     fill: () => ({}),
     willChange: () => ({}),
-    pointerEvents: () => ({}),
     fontFamily: () => ({}),
     animation: () => ({}),
     flip: () => ({}),
