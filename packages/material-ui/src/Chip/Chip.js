@@ -41,7 +41,7 @@ export const styles = theme => {
     clickable: {
       // Remove grey highlight
 
-      cursor: 'pointer',
+      // cursor: 'pointer',
       /*
       '&:hover, &:focus': {
         backgroundColor: emphasize(backgroundColor, 0.08),
@@ -87,7 +87,7 @@ export const styles = theme => {
     deleteIcon: {
       // Remove grey highlight
       color: deleteIconColor,
-      cursor: 'pointer',
+      // cursor: 'pointer',
       height: 'auto',
       margin: '0 4px 0 -8px',
       '&:hover': {

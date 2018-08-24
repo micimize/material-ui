@@ -61,7 +61,6 @@ class Fade extends React.Component {
             style: styleNames(
               {
                 opacity: 0,
-                willChange: 'opacity',
               },
               styles[state],
               styleProp,

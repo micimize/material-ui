@@ -19,15 +19,19 @@ import ListItem from '@material-ui/core/ListItem';
 import SimpleMediaCard from '../../demos/cards/SimpleMediaCard';
 
 import styleNames from '@material-ui/core/styles/react-native-style-names';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 
 const styles = {
   root: {
-    width: 360 + 20,
-    height: 616 + 20,
-    position: 'relative',
-    border: '10px solid lightgrey',
-    borderRadius: 5,
+    width: '100%',
+    height: '100%',
+    web: {
+      width: 360 + 20,
+      height: 616 + 20,
+      position: 'relative',
+      border: '10px solid lightgrey',
+      borderRadius: 5,
+    }
   },
   flex: {
     flex: 1,
@@ -60,7 +64,7 @@ class SimpleBackdrop extends React.Component {
               <Toolbar>
                 <IconButton
                   style={classes.menuButton}
-                  onClick={() => this.setState({ expanded: !expanded })}
+                  onPress={() => this.setState({ expanded: !expanded })}
                 >
                   <MenuIcon color="onPrimary" />
                 </IconButton>
@@ -86,25 +90,25 @@ class SimpleBackdrop extends React.Component {
             <Subheader divider>
               <Typography variant="subheading">Incredible Iguanas</Typography>
             </Subheader>
-            <FrontContent classes={{ root: classes.content }}>
-              <List>
-                <ListItem>
-                  <SimpleMediaCard />
-                </ListItem>
-                <ListItem>
-                  <SimpleMediaCard />
-                </ListItem>
-                <ListItem>
-                  <SimpleMediaCard />
-                </ListItem>
-                <ListItem>
-                  <SimpleMediaCard />
-                </ListItem>
-                <ListItem>
-                  <SimpleMediaCard />
-                </ListItem>
-              </List>
-            </FrontContent>
+              <ScrollView style={{ flex: 1 }}>
+                <List>
+                  <ListItem>
+                    <SimpleMediaCard />
+                  </ListItem>
+                  <ListItem>
+                    <SimpleMediaCard />
+                  </ListItem>
+                  <ListItem>
+                    <SimpleMediaCard />
+                  </ListItem>
+                  <ListItem>
+                    <SimpleMediaCard />
+                  </ListItem>
+                  <ListItem>
+                    <SimpleMediaCard />
+                  </ListItem>
+                </List>
+              </ScrollView>
           </Front>
         </Backdrop>
       </View>

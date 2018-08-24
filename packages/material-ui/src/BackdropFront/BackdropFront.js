@@ -7,7 +7,7 @@ import Paper from '../Paper';
 import withStyles from '../styles/withStyles';
 import Fade from '../Fade';
 import { isMuiElement } from '../utils/reactHelpers';
-import { View, Text } from 'react-native';
+import { View } from '../styles/extended-styles/animated';
 
 export const styles = theme => {
   const transition = {
@@ -36,6 +36,7 @@ export const styles = theme => {
       transition: theme.transitions.create(['flexGrow'], transition),
     },
     scrim: {
+      opacity: 0,
       zIndex: -1,
       position: 'absolute',
       left: 0,
@@ -45,8 +46,11 @@ export const styles = theme => {
       borderTopLeftRadius: 16,
       borderTopRightRadius: 16,
       backgroundColor: 'rgba(255,255,255,0.5)',
+
+      transition: theme.transitions.create('opacity', { duration: transition.duration }),
     },
     scrimActive: {
+      opacity: 1,
       zIndex: theme.zIndex.appBar - 1,
     },
     minimized: {
@@ -86,9 +90,7 @@ function BackdropFront(props) {
 
   return (
     <Paper style={style} onClick={onClick} elevation={0} square {...other}>
-      <Fade in={disabled}>
-        <View style={styleNames(classes.scrim, { [classes.scrimActive]: disabled })} />
-      </Fade>
+      <View useNativeDriver style={styleNames(classes.scrim, { [classes.scrimActive]: disabled })} />
       {children}
     </Paper>
   );

@@ -1,28 +1,38 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
-import Fade from '../Fade';
 import AnimatedHeight from '../internal/animated-height';
 
 const FADE_OUT = 150;
 const EXPAND = 150;
-const FADE_IN = 150;
 
-export const styles = {
+export const styles = theme => ({
   root: {
     width: '100%',
     paddingLeft: 7.5,
     paddingRight: 7.5,
-    //opacity: 0,
+
     zIndex: 0,
+    opacity: 0,
+    zIndex: 0,
+    transition: theme.transitions.create(['opacity', 'zIndex'], {
+      easing: 'ease-in-out',
+      duration: theme.transitions.duration.shortest,
+    }),
   },
   expanded: {
     zIndex: 1,
-    //opacity: 0,
+    opacity: 1,
+    zIndex: 1,
+    transition: theme.transitions.create(['opacity', 'zIndex'], {
+      duration: theme.transitions.duration.shortest,
+      easing: 'ease-in-out',
+      delay: 150,
+    }),
   },
-};
+});
 
 function BackdropBackSection(props) {
   const { children, classes, style: styleProp, expanded, ...other } = props;
@@ -35,20 +45,10 @@ function BackdropBackSection(props) {
     height: expanded ? 'auto' : 0,
   };
 
-  const fadeProps = {
-    in: expanded,
-    timeout: expanded ? FADE_IN : FADE_OUT,
-    style: {
-      delay: expanded ? EXPAND + FADE_OUT : 0,
-    },
-  };
-
   return (
-    <AnimatedHeight {...animationProps} {...other}>
-      {/*<Fade {...fadeProps}>*/}
-      <View style={style}>{children}</View>
-      {/* </Fade> */}
-    </AnimatedHeight>
+      <AnimatedHeight {...animationProps} {...other}>
+        <View style={style}>{children}</View>
+      </AnimatedHeight>
   );
 }
 

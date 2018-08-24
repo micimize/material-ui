@@ -85,7 +85,7 @@ const AnimateHeight = class extends React.Component {
 
     // Check if 'height' prop has changed
     if (height !== prevProps.height) {
-      const contentHeight = this.state.contentHeight || 0;
+      const contentHeight = this.state.contentHeight;
 
       // Remove hidden state if it was hidden to prevent tabbing into it
       this.showContent(prevState.height);
@@ -281,6 +281,7 @@ const AnimateHeight = class extends React.Component {
     return (
       <View {...props} style={wrapperStyle} {...transitionProps}>
         <View
+          useNativeDriver
           style={contentStyle}
           onLayout={event => {
             const contentHeight = event.nativeEvent.layout.height;

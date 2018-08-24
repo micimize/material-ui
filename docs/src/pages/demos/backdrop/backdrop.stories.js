@@ -6,15 +6,20 @@ import MultiSectionBackdrop from './MultiSectionBackdrop';
 
 import Chapters from '../Chapters'
 
-storiesOf('Backdrop', module).add('Demos', Chapters({
+storiesOf('Backdrop', module).add('Simple BackDrop',
+  () => <SimpleBackdrop/>,
+)
+/*
+Chapters({
   subtitle:
     'A backdrop appears behind all other surfaces in an app, displaying contextual and actionable content.',
   chapters: [
     {
       sections: [
         { title: 'Simple Backdrop', sectionFn: () => <SimpleBackdrop /> },
-        { title: 'Multisection Backdrop', sectionFn: () => <MultiSectionBackdrop /> },
+        // { title: 'Multisection Backdrop', sectionFn: () => <MultiSectionBackdrop /> },
       ],
     },
   ],
 }));
+*/

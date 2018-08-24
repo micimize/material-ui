@@ -23,6 +23,7 @@ function loadStories() {
   require('../pages/demos/cards/cards.stories')
   require('../pages/demos/selection-controls/selection-controls.stories')
   require('../pages/demos/text-fields/text-fields.stories')
+  require('../pages/demos/backdrop/backdrop.stories')
   // context.keys().forEach(context);
 }
 

@@ -6,7 +6,6 @@ import styleNames from '../styles/react-native-style-names';
 export const styles = {
   root: {
     justifyContent: 'center',
-    display: 'flex',
     flexGrow: 1,
   },
 };

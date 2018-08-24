@@ -107,6 +107,9 @@ const customStyles = CustomStyleRule({
         fontWeight: typeof prop === 'number' ? prop.toString() : prop,
       };
     },
+    ios:         ios => Platform.select({ ios,     android: {}, web: {} }),
+    android: android => Platform.select({ ios: {}, android,     web: {} }),
+    web:         web => Platform.select({ ios: {}, android: {}, web     }),
     ...borders,
     elevation: elevation => {
       return Platform.OS === 'android'
