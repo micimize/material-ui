@@ -11,6 +11,7 @@ export const styles = theme => ({
   root: {
     width: 24,
     height: 24,
+    fontSize: 24,
     flexShrink: 0,
   },
   /* Styles applied to the root element if `color="primary"`. */
@@ -20,6 +21,14 @@ export const styles = theme => ({
   /* Styles applied to the root element if `color="secondary"`. */
   colorSecondary: {
     color: theme.palette.secondary.main,
+  },
+  /* Styles applied to the root element if `color="onPrimary"`. */
+  colorOnPrimary: {
+    color: theme.palette.primary.contrastText,
+  },
+  /* Styles applied to the root element if `color="onSecondary"`. */
+  colorOnSecondary: {
+    color: theme.palette.secondary.contrastText,
   },
   /* Styles applied to the root element if `color="action"`. */
   colorAction: {
@@ -37,7 +46,7 @@ export const styles = theme => ({
 
 /* TODO doesn't work right now, maybe use react-native-vector-icons */
 function Icon(props) {
-  const { children, classes, style, color, fontSize, ...other } = props;
+  const { children, classes, style, color, ...other } = props;
 
   return (
     <NativeIcon
@@ -45,8 +54,7 @@ function Icon(props) {
       style={styleNames(
         classes.root,
         {
-          [classes[`color${capitalize(color)}`]]: color !== 'inherit',
-          [classes[`fontSize${capitalize(fontSize)}`]]: fontSize !== 'default',
+          [classes[`color${capitalize(color)}`]]: color !== 'default',
         },
         style,
       )}
@@ -72,16 +80,11 @@ Icon.propTypes = {
   /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */
-  color: PropTypes.oneOf(['inherit', 'primary', 'secondary', 'action', 'error', 'disabled']),
-  /**
-   * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
-   */
-  fontSize: PropTypes.oneOf(['inherit', 'default']),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'onPrimary', 'onSecondary', 'action', 'error', 'disabled']),
 };
 
 Icon.defaultProps = {
-  color: 'inherit',
-  fontSize: 'default',
+  color: 'default',
 };
 
 Icon.muiName = 'Icon';
