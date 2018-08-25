@@ -14,6 +14,9 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     minWidth: 64,
+    flex: 0,
+    flexGrow: 0,
+    flexShrink: 1,
     minHeight: 36,
     padding: '8px 16px',
     borderRadius: theme.shape.borderRadius,
@@ -40,15 +43,10 @@ export const styles = theme => ({
   },
   /* Styles applied to the span element that wraps the children. */
   label: {
-    width: '100%', // assure the correct width for iOS Safari
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    /*
-    display: 'inherit',
-    alignItems: 'inherit',
-    justifyContent: 'inherit',
-    */
+    flex: 1,
   },
   labelText: {
     ...theme.typography.button,
