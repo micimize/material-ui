@@ -10,7 +10,6 @@ export const styles = theme => ({
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.secondary,
     fontSize: 16,
-    lineHeight: 1,
     padding: 0,
   },
   /* Styles applied to the root element if `focused={true}`. */

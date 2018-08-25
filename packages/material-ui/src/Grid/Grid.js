@@ -78,8 +78,7 @@ function generateGutter(theme, breakpoint) {
       // TODO idk how this should really be done in react-native
       // margin: -spacing / 2,
       // maybe just ignore the first item padding
-      marginTop: -spacing / 2,
-      marginBottom: -spacing / 2,
+      margin: -spacing / 2,
       width: '100%' // '`calc(100% + ${spacing}px)`,
     };
     styles[`spacing-${breakpoint}-${spacing}-item`] = {
@@ -102,6 +101,7 @@ export const styles = theme => ({
     flexDirection: 'row',
     flexWrap: 'wrap',
     width: '100%',
+    overflow: 'visible',
   },
   /* Styles applied to the root element if `item={true}`. */
   item: {
@@ -248,11 +248,17 @@ function Grid(props) {
         : child,
   );
 
-  return (
+  const gridElement = (
     <Component style={style} {...other}>
       {children}
     </Component>
   );
+
+  return container === 'padded' ? (
+    <View style={classes[`spacing-xs-${spacing}-item`]}>
+      {gridElement}
+    </View>
+  ) : gridElement;
 }
 
 Grid.propTypes = {
@@ -295,14 +301,13 @@ Grid.propTypes = {
    * If `true`, the component will have the flex *container* behavior.
    * You should be wrapping *items* with a *container*.
    */
-  container: PropTypes.bool,
+  container:  PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['padded']) ]),
   /**
    * Defines the `flex-direction` style property.
    * It is applied for all screen sizes.
    */
   direction: PropTypes.oneOf(['row', 'row-reverse', 'column', 'column-reverse']),
-  /**
-   * If `true`, the component will have the flex *item* behavior.
+  /** * If `true`, the component will have the flex *item* behavior.
    * You should be wrapping *items* with a *container*.
    */
   item: PropTypes.bool,

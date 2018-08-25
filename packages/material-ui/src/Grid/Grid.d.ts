@@ -37,7 +37,7 @@ export interface GridProps
   alignContent?: GridContentAlignment;
   alignItems?: GridItemsAlignment;
   component?: string | React.ComponentType<Omit<GridProps, StrippedProps>>;
-  container?: boolean;
+  container?: boolean | 'padded';
   direction?: GridDirection;
   item?: boolean;
   justify?: GridJustification;
