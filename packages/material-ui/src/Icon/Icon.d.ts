@@ -2,7 +2,8 @@ import * as React from 'react';
 import { StandardProps, PropTypes } from '..';
 
 export interface IconProps
-  extends StandardProps<React.HTMLAttributes<HTMLSpanElement>, IconClassKey> {
+  extends StandardProps<React.HTMLAttributes<HTMLSpanElement>, IconClassKey, 'children'> {
+  children: string;
   color?: PropTypes.Color | 'action' | 'disabled' | 'error';
   fontSize?: 'inherit' | 'default';
 }

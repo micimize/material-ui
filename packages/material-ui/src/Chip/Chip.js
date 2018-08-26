@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { View } from '../styles/extended-styles/animated';
+import Button from '../Button';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import keycode from 'keycode';
@@ -271,7 +271,8 @@ Chip.propTypes = {
 
 Chip.defaultProps = {
   clickable: false,
-  component: View,
+  size: "small",
+  component: Button,
 };
 
 export default withStyles(styles, { name: 'MuiChip' })(Chip);

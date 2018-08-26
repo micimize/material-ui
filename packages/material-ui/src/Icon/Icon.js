@@ -67,7 +67,7 @@ Icon.propTypes = {
   /**
    * The name of the icon font ligature.
    */
-  children: PropTypes.node,
+  children: PropTypes.string,
   /**
    * Override or extend the styles applied to the component.
    * See [CSS API](#css-api) below for more details.
