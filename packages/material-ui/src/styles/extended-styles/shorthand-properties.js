@@ -6,7 +6,11 @@ import camelcase from 'camelcase';
 // also open bug about their console.logs not working unless you add a console.log in their module above the fork
 const discard = 'DISCARD_PROPERTY'
 function toNumber(value) {
-  return Number(value.replace('px', ''));
+  const cast = Number(value.replace('px', ''));
+  if (!Number.isFinite(cast)){
+    return discard
+  }
+  return cast
 }
 
 function toNumberOrPercent(value){

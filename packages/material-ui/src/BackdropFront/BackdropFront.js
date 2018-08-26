@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import Paper from '../Paper';
 import withStyles from '../styles/withStyles';
-import Fade from '../Fade';
 import { isMuiElement } from '../utils/reactHelpers';
 import { View } from '../styles/extended-styles/animated';
 

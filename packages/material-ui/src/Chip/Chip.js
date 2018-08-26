@@ -64,7 +64,6 @@ export const styles = theme => {
       width: height,
       height,
       color: theme.palette.type === 'light' ? theme.palette.grey[700] : theme.palette.grey[300],
-      fontSize: 16
     },
     /* Styles applied to the `avartar` elements children. */
     avatarChildren: {

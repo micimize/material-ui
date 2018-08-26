@@ -1,9 +1,7 @@
 import React from 'react';
 import { View } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
-import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
-import AnimatedHeight from '../internal/animated-height';
 
 export const styles = theme => ({
   root: {
