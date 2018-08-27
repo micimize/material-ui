@@ -11,9 +11,7 @@ export const styles = {
   root: {
     flexShrink: 0,
   },
-  /* Styles applied to the `div` element that wraps the children. */
   tile: {
-    display: 'block', // In case it's not rendered with a div.
     height: '100%',
     overflow: 'hidden',
   },

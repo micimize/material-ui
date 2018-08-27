@@ -10,7 +10,6 @@ export const styles = {
   root: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    overflowY: 'auto',
     padding: 0,
   },
 };
