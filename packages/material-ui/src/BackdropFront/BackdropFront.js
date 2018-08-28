@@ -58,6 +58,10 @@ export const styles = theme => {
   };
 };
 
+function Scrim(props) {
+  return <View useNativeDriver {...props} />;
+}
+
 function BackdropFront(props) {
   const {
     classes,
@@ -89,7 +93,7 @@ function BackdropFront(props) {
 
   return (
     <Paper style={style} onClick={onClick} elevation={0} square {...other}>
-      <View useNativeDriver style={styleNames(classes.scrim, { [classes.scrimActive]: disabled })} />
+      <Scrim style={styleNames(classes.scrim, { [classes.scrimActive]: disabled })} />
       {children}
     </Paper>
   );
