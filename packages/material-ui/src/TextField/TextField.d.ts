@@ -6,9 +6,11 @@ import { InputProps } from '../Input';
 import { InputLabelProps } from '../InputLabel';
 import { FormControlClassKey } from '../FormControl';
 import { SelectProps } from '../Select';
+import { TextInputProperties } from 'react-native';
 
 export interface TextFieldProps
   extends StandardProps<FormControlProps, TextFieldClassKey, 'onChange' | 'defaultValue'> {
+  onChangeText?: (text: string) => void;
   autoComplete?: string;
   autoFocus?: boolean;
   children?: React.ReactNode;

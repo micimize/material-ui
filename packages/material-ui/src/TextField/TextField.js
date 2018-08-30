@@ -56,7 +56,6 @@ function TextField(props) {
     inputRef,
     label,
     multiline,
-    name,
     onBlur,
     onChangeText,
     onFocus,
@@ -85,7 +84,6 @@ function TextField(props) {
       disabled={disabled}
       fullWidth={fullWidth}
       multiline={multiline}
-      name={name}
       numberOfLines={numberOfLines}
       type={type}
       keyboardType={keyboardType}
@@ -101,18 +99,12 @@ function TextField(props) {
   );
 
   return (
-    <FormControl
-      style={style}
-      error={error}
-      fullWidth={fullWidth}
-      required={required}
-      {...other}
-    >
-      {label && (
+    <FormControl style={style} error={error} fullWidth={fullWidth} required={required} {...other}>
+      {/*label && (
         <InputLabel {...InputLabelProps}>
           <Text>{label}</Text>
         </InputLabel>
-      )}
+      )*/}
       {select ? (
         <Select value={value} input={InputElement} {...SelectProps}>
           {children}
@@ -120,11 +112,7 @@ function TextField(props) {
       ) : (
         InputElement
       )}
-      {helperText && (
-        <FormHelperText {...FormHelperTextProps}>
-          {helperText}
-        </FormHelperText>
-      )}
+      {helperText && <FormHelperText {...FormHelperTextProps}>{helperText}</FormHelperText>}
     </FormControl>
   );
 }
@@ -145,10 +133,6 @@ TextField.propTypes = {
    * @ignore
    */
   children: PropTypes.node,
-  /**
-   * @ignore
-   */
-  className: PropTypes.string,
   /**
    * The default value of the `Input` element.
    */
@@ -201,10 +185,6 @@ TextField.propTypes = {
    * If `true`, a textarea element will be rendered instead of an input.
    */
   multiline: PropTypes.bool,
-  /**
-   * Name attribute of the `input` element.
-   */
-  name: PropTypes.string,
   /**
    * @ignore
    */

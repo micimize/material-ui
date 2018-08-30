@@ -121,7 +121,7 @@ export const styles = theme => {
     },
     multiline: {
       textAlignVertical: 'top',
-    }
+    },
     /* Styles applied to the `input` element if `type="search"`. */
     /*
     inputTypeSearch: {
@@ -175,7 +175,6 @@ class Input extends React.Component {
     if (this.isControlled) {
       this.checkDirty();
     }
-
   }
 
   componentWillUpdate(nextProps, nextState, nextContext) {
@@ -189,8 +188,7 @@ class Input extends React.Component {
         muiFormControl.onBlur();
       }
     }
-  };
-
+  }
 
   state = {
     focused: false,
@@ -242,6 +240,7 @@ class Input extends React.Component {
   };
 
   handleChange = text => {
+    return this.props.onChangeText(text);
     if (!this.isControlled) {
       this.setState({ dirty: true, value: text }, () => {
         this.checkDirty();
@@ -289,6 +288,7 @@ class Input extends React.Component {
       classes,
       style: styleProp,
       defaultValue,
+      required: requiredProp,
       disabled: disabledProp,
       disableUnderline,
       endAdornment,
@@ -297,7 +297,6 @@ class Input extends React.Component {
       inputComponent: InputComponent,
       inputProps: { style: inputPropsClassName, ...inputProps } = {},
       margin: marginProp,
-      name,
       onBlur,
       onChangeText,
       onEmpty,
@@ -314,9 +313,9 @@ class Input extends React.Component {
     } = this.props;
 
     const { muiFormControl } = this.context;
-    const { disabled, error, margin, required } = formControlState(this.props, this.context);
+    const { disabled, error, margin } = formControlState(this.props, this.context);
 
-    const className = [
+    const containerStyle = [
       classes.root,
       fullWidth && classes.fullWidth,
       this.state.focused && classes.focused,
@@ -326,7 +325,7 @@ class Input extends React.Component {
       styleProp,
     ];
 
-    const inputClassName = [
+    const inputStyle = [
       classes.input,
       disabled && classes.disabled,
       type !== 'text' && classes.inputType,
@@ -337,20 +336,19 @@ class Input extends React.Component {
     ];
 
     return (
-      <View style={className} {...other}>
+      <View style={containerStyle} {...other}>
         {typeof startAdornment === 'string' ? <Text>{startAdornment}</Text> : startAdornment}
         <InputComponent
-          underlineColorAndroid='rgba(0,0,0,0)'
+          ref={input => (this.input = input)}
+          underlineColorAndroid="rgba(0,0,0,0)"
           placeholderTextColor={this.state.focused ? undefined : 'rgba(0,0,0,0)'}
           autoComplete={autoComplete}
           autoFocus={autoFocus}
-          style={inputClassName}
+          style={inputStyle}
           disabled={disabled}
-          name={name}
           onBlur={this.handleBlur}
           onFocus={this.handleFocus}
           placeholder={placeholder}
-          required={required}
           textContentType={type}
           secureTextEntry={type === 'password'}
           keyboardType={keyboardType}
@@ -361,7 +359,7 @@ class Input extends React.Component {
           numberOfLines={numberOfLines}
           {...inputProps}
         />
-        { !disableUnderline && 
+        {!disableUnderline && (
           <Underline
             useNativeDriver
             style={[
@@ -371,7 +369,7 @@ class Input extends React.Component {
               error && classes.underlineError,
             ]}
           />
-        }
+        )}
         {typeof endAdornment === 'string' ? <Text>{endAdornment}</Text> : endAdornment}
       </View>
     );
@@ -396,10 +394,6 @@ Input.propTypes = {
    * See [CSS API](#css-api) below for more details.
    */
   classes: PropTypes.object.isRequired,
-  /**
-   * The CSS class name of the wrapper element.
-   */
-  className: PropTypes.string,
   /**
    * The default input value, useful when not controlling the component.
    */
@@ -439,10 +433,6 @@ Input.propTypes = {
    * FormControl.
    */
   margin: PropTypes.oneOf(['dense', 'none']),
-  /**
-   * Name attribute of the `input` element.
-   */
-  name: PropTypes.string,
   /**
    * @ignore
    */
