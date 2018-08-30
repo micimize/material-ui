@@ -10,9 +10,6 @@ function createComponent(Component) {
   const AnimatableComponent = createAnimatableComponent(Component);
   return props => {
     const transitionProps = getExtensions(props.style).transition;
-    if (props.wow) {
-      console.log(transitionProps);
-    }
     return transitionProps ? (
       <AnimatableComponent {...transitionProps} {...props} style={props.style} />
     ) : (

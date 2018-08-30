@@ -1,5 +1,4 @@
 import React from 'react';
-import { toClass } from 'recompose';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import Paper from '../Paper';
@@ -9,9 +8,8 @@ import { View } from '../styles/extended-styles/animated';
 
 export const styles = theme => {
   const transition = {
-    duration: 100, // theme.transitions.duration.shortest,
+    duration: theme.transitions.duration.shortest,
     easing: 'ease-out-expo',
-    // delay: theme.transitions.duration.shortest,
   };
 
   return {
