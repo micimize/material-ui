@@ -100,11 +100,11 @@ function TextField(props) {
 
   return (
     <FormControl style={style} error={error} fullWidth={fullWidth} required={required} {...other}>
-      {/*label && (
+      {label && (
         <InputLabel {...InputLabelProps}>
           <Text>{label}</Text>
         </InputLabel>
-      )*/}
+      )}
       {select ? (
         <Select value={value} input={InputElement} {...SelectProps}>
           {children}
