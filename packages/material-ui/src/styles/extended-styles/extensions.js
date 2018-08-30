@@ -1,5 +1,5 @@
 import { Platform, StyleSheet } from 'react-native';
-import deepmerge from 'deepmerge'
+import deepmerge from 'deepmerge';
 
 function objectFilterer(filter) {
   return raw =>
@@ -16,17 +16,17 @@ const normalizedElevation =
     ? ['elevation']
     : ['shadowOffset', 'shadowRadius', 'shadowColor', 'shadowOpacity'];
 
-function normalize(transitionProps) {
-  if (Array.isArray(transitionProps)) {
-    return transitionProps.reduce(
+function normalize(transitionProp) {
+  if (Array.isArray(transitionProp)) {
+    return transitionProp.reduce(
       (props, prop) =>
         prop === 'elevation' ? [...props, ...normalizedElevation] : [...props, prop],
       [],
     );
-  } else if (transitionProps === 'elevation') {
+  } else if (transitionProp === 'elevation') {
     return normalizedElevation;
   }
-  return transitionProps;
+  return transitionProp;
 }
 
 const styleExtensions = new Map();
@@ -38,6 +38,8 @@ function addExtensions(id, { transition, ':focus': focus, svg }) {
     extensions = {
       ...(extensions || {}),
       // overwrite existing transitions
+      // note that this basically doesn't do anything.
+      // It's merging styles per styleId which is... rare at least
       transition: { ...transition, transition: normalize(transition.transition) },
     };
   }
@@ -51,8 +53,8 @@ function addExtensions(id, { transition, ':focus': focus, svg }) {
   if (svg) {
     extensions = {
       ...(extensions || {}),
-      svg
-    }
+      svg,
+    };
   }
   if (extensions) {
     styleExtensions.set(id, extensions);
@@ -63,14 +65,15 @@ const extensionsKeys = ['transition', ':focus', 'svg'];
 
 const exclude = objectFilterer(key => !extensionsKeys.includes(key));
 const excludeExtensions = raw => {
-  const stripped = exclude(raw)
+  const stripped = exclude(raw);
   // empty stylesheets don't result in ids, so we have an "empty" style to track the extensions
-  return Object.keys(stripped).length === 0 && Object.keys(raw).length ?
-      { backgroundColor: 'transparent' } : stripped;
-}
+  return Object.keys(stripped).length === 0 && Object.keys(raw).length
+    ? { backgroundColor: 'transparent' }
+    : stripped;
+};
 const pickExtensions = objectFilterer(key => extensionsKeys.includes(key));
 
-const arrayMerge = (destination, source) => source
+const arrayMerge = (destination, source) => source;
 
 function getExtensions(style) {
   return typeof style === 'number'

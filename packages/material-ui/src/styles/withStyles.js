@@ -204,6 +204,9 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
   }
 
   hoistNonReactStatics(WithStyles, Component);
+  if (Component.muiName) {
+    WithStyles.muiName = Component.muiName;
+  }
 
   if (process.env.NODE_ENV !== 'production') {
     // Exposed for test purposes.

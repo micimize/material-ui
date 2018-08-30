@@ -1,4 +1,5 @@
 // TODO this might only be useful in the web if at all
+// TODO totally useless lol
 import React from 'react';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';

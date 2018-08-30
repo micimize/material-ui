@@ -3,26 +3,30 @@ import withStyles from '../styles/withStyles';
 import styleNames from '../styles/react-native-style-names';
 import { View } from '../styles/extended-styles/animated';
 
-export const styles = theme => ({
-  item: {
-    opacity: 0,
-    zIndex: 0,
-    position: 'absolute',
-    transition: theme.transitions.create(['opacity', 'zIndex'], {
-      easing: 'ease-in-out',
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  selected: {
-    opacity: 1,
-    zIndex: 1,
-    transition: theme.transitions.create(['opacity', 'zIndex'], {
-      duration: theme.transitions.duration.shortest,
-      easing: 'ease-in-out',
-      delay: 150,
-    }),
-  },
-});
+export const styles = theme => {
+  const duration = theme.transitions.duration.short;
+  return {
+    item: {
+      opacity: 0,
+      zIndex: 0,
+      position: 'absolute',
+      transition: {
+        easing: 'ease-in-out',
+        duration: duration,
+        animation: 'stackedFadeOut',
+      },
+    },
+    selected: {
+      opacity: 1,
+      zIndex: 1,
+      transition: {
+        easing: 'ease-in-out',
+        duration: duration,
+        animation: 'stackedFadeIn',
+      },
+    },
+  };
+};
 
 function FadeStackItem(props) {
   const { classes, style: styleProp, children, selected, ...other } = props;
@@ -30,7 +34,7 @@ function FadeStackItem(props) {
     [classes.selected]: selected,
   });
   return (
-    <View style={style} {...other}>
+    <View useNativeDriver style={style} {...other} wow>
       {children}
     </View>
   );

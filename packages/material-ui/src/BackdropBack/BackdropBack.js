@@ -7,21 +7,26 @@ import withStyles from '../styles/withStyles';
 export const styles = {
   root: {
     // fit to content
+    position: 'absolute',
+    width: '100%',
     flexGrow: 0,
     flexShrink: 0,
   },
 };
 
-function BackdropBack(props) {
-  const { children, classes, style: styleProp, ...other } = props;
+class BackdropBack extends React.Component {
+  static muiName = 'BackdropBack';
+  render() {
+    const { children, classes, style: styleProp, ...other } = this.props;
 
-  const style = styleNames(classes.root, styleProp);
+    const style = styleNames(classes.root, styleProp);
 
-  return (
-    <View style={style} {...other}>
-      {children}
-    </View>
-  );
+    return (
+      <View style={style} {...other}>
+        {children}
+      </View>
+    );
+  }
 }
 
 BackdropBack.propTypes = {

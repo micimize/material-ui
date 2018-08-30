@@ -3,53 +3,79 @@ import { View } from '../styles/extended-styles/animated';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
-import AnimatedHeight from '../internal/animated-height';
 
-const FADE_OUT = 150;
-const EXPAND = 150;
-
-export const styles = theme => ({
-  root: {
-    width: '100%',
-    paddingLeft: 7.5,
-    paddingRight: 7.5,
-
-    zIndex: 0,
-    opacity: 0,
-    zIndex: 0,
-    transition: theme.transitions.create(['opacity', 'zIndex'], {
-      easing: 'ease-in-out',
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expanded: {
-    zIndex: 1,
-    opacity: 1,
-    zIndex: 1,
-    transition: theme.transitions.create(['opacity', 'zIndex'], {
-      duration: theme.transitions.duration.shortest,
-      easing: 'ease-in-out',
-      delay: 150,
-    }),
-  },
-});
-
-function BackdropBackSection(props) {
-  const { children, classes, style: styleProp, expanded, ...other } = props;
-
-  const style = styleNames(classes.root, styleProp, { [classes.expanded]: expanded });
-
-  const animationProps = {
-    delay: FADE_OUT,
-    duration: EXPAND,
-    height: expanded ? 'auto' : 0,
+export const styles = theme => {
+  const duration = theme.transitions.duration.shortest;
+  return {
+    root: {
+      overflow: 'visible',
+      width: '100%',
+      paddingLeft: 7.5,
+      paddingRight: 7.5,
+      opacity: 0,
+      transition: {
+        easing: 'ease-in-out',
+        duration: duration,
+        animation: 'stackedFadeOut',
+      },
+    },
+    collapsed: {
+      zIndex: 0,
+      height: 0,
+    },
+    expanded: {
+      position: 'relative',
+      zIndex: 1,
+      opacity: 1,
+      transition: {
+        easing: 'ease-in-out',
+        animation: 'stackedFadeIn',
+        duration: duration,
+      },
+    },
   };
+};
 
-  return (
-      <AnimatedHeight {...animationProps} {...other}>
-        <View style={style}>{children}</View>
-      </AnimatedHeight>
-  );
+class BackdropBackSection extends React.Component {
+  state = { position: {} };
+
+  /*
+  onLayout = event => {
+    const {
+      nativeEvent: {
+        layout: { x, y },
+      },
+    } = event;
+    // TODO holding out for
+    // the fix in https://github.com/facebook/react-native/commit/b81c8b51fc6fe3c2dece72e3fe500e175613c5d4
+    // might even be unneeded with height: 0 overflow: visible
+    if (this.props.expanded) {
+      this.setState({ position: { left: x, top: y } });
+    }
+  };
+  */
+
+  componentDidReceiv;
+
+  render() {
+    const { children, classes, style: styleProp, expanded, ...other } = this.props;
+
+    const style = styleNames(
+      classes.root,
+      styleProp,
+      {
+        [classes.collapsed]: !expanded,
+        [classes.expanded]: expanded,
+      },
+      // !expanded && this.state.position,
+    );
+
+    return (
+      <View useNativeDriver style={style} {...other} onLayout={this.onLayout}>
+        {children}
+      </View>
+    );
+  }
 }
 
 BackdropBackSection.propTypes = {

@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
+import { isMuiElement } from '../utils/reactHelpers';
 import { capitalize } from '../utils/helpers';
 import Paper from '../Paper';
 
@@ -19,31 +20,52 @@ export const styles = theme => {
     },
     colorPrimary: {
       backgroundColor: theme.palette.primary.main,
-      // color: theme.palette.primary.contrastText,
     },
     colorSecondary: {
       backgroundColor: theme.palette.secondary.main,
-      // color: theme.palette.secondary.contrastText,
     },
   };
 };
 
-function Backdrop(props) {
-  const { children, classes, style: styleProp, color, ...other } = props;
+class Backdrop extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      backHeight: props.initialHeight || 0,
+    };
+  }
 
-  const style = styleNames(
-    classes.root,
-    {
-      [classes[`color${capitalize(color)}`]]: color !== 'default',
-    },
-    styleProp,
-  );
+  onLayoutBack = event => this.setState({ backHeight: event.nativeEvent.layout.height });
 
-  return (
-    <Paper square elevation={0} style={style} {...other}>
-      {children}
-    </Paper>
-  );
+  translateFront = () => ({ transform: [{ translateY: this.state.backHeight }] });
+
+  render() {
+    const { children: childrenProp, classes, style: styleProp, color, ...other } = this.props;
+
+    const style = styleNames(
+      classes.root,
+      {
+        [classes[`color${capitalize(color)}`]]: color !== 'default',
+      },
+      styleProp,
+    );
+
+    const children = React.Children.map(
+      childrenProp,
+      child =>
+        isMuiElement(child, ['BackdropBack'])
+          ? React.cloneElement(child, { onLayout: this.onLayoutBack })
+          : isMuiElement(child, ['BackdropFront'])
+            ? React.cloneElement(child, { style: [child.props.style, this.translateFront()] })
+            : child,
+    );
+
+    return (
+      <Paper square elevation={0} style={style} {...other}>
+        {children}
+      </Paper>
+    );
+  }
 }
 
 Backdrop.propTypes = {
@@ -51,6 +73,10 @@ Backdrop.propTypes = {
    * The content of the component.
    */
   children: PropTypes.node.isRequired,
+  /**
+   * Initial height before onLayout is called
+   */
+  initialHeight: PropTypes.number,
   /**
    * Override or extend the styles applied to the component.
    * See [CSS API](#css-api) below for more details.
@@ -64,6 +90,7 @@ Backdrop.propTypes = {
 
 Backdrop.defaultProps = {
   color: 'primary',
+  initialHeight: 56,
 };
 
 export default withStyles(styles, { name: 'MuiBackdrop' })(Backdrop);

@@ -1,6 +1,5 @@
-// @inheritedComponent Paper
-
 import React from 'react';
+import { toClass } from 'recompose';
 import PropTypes from 'prop-types';
 import styleNames from '../styles/react-native-style-names';
 import Paper from '../Paper';
@@ -10,29 +9,31 @@ import { View } from '../styles/extended-styles/animated';
 
 export const styles = theme => {
   const transition = {
-    duration: theme.transitions.duration.shortest,
-    delay: theme.transitions.duration.shortest,
+    duration: 100, // theme.transitions.duration.shortest,
+    easing: 'ease-out-expo',
+    // delay: theme.transitions.duration.shortest,
   };
 
   return {
     root: {
-      position: 'relative',
-      borderTopLeftRadius: 16,
-      borderTopRightRadius: 16,
-
       // fill remaining space not taken by back layer content
       flexGrow: 1,
       flexShrink: 1,
       flexBasis: 'auto',
-      backgroundColor: theme.palette.background.paper,
 
-      paddingLeft: 15,
-      paddingRight: 15,
-      // overflow: 'auto',
-      display: 'flex',
       flexDirection: 'column',
 
-      transition: theme.transitions.create(['flexGrow'], transition),
+      transform: [{ translateY: 0 }],
+      transition: theme.transitions.create(['translateY' /*, 'flexGrow'*/], transition),
+    },
+    paper: {
+      borderTopLeftRadius: 16,
+      borderTopRightRadius: 16,
+      backgroundColor: theme.palette.background.paper,
+      width: '100%',
+      height: '100%',
+      paddingLeft: 15,
+      paddingRight: 15,
     },
     scrim: {
       opacity: 0,
@@ -45,7 +46,6 @@ export const styles = theme => {
       borderTopLeftRadius: 16,
       borderTopRightRadius: 16,
       backgroundColor: 'rgba(255,255,255,0.5)',
-
       transition: theme.transitions.create('opacity', { duration: transition.duration }),
     },
     scrimActive: {
@@ -62,41 +62,45 @@ function Scrim(props) {
   return <View useNativeDriver {...props} />;
 }
 
-function BackdropFront(props) {
-  const {
-    classes,
-    style: styleProp,
-    disabled,
-    expanded,
-    onExpand,
-    children: childrenProp,
-    ...other
-  } = props;
+class BackdropFront extends React.Component {
+  render() {
+    const {
+      classes,
+      style: styleProp,
+      disabled,
+      expanded,
+      onExpand,
+      children: childrenProp,
+      ...other
+    } = this.props;
 
-  const style = styleNames(
-    classes.root,
-    {
-      [classes.minimized]: !expanded,
-    },
-    styleProp,
-  );
+    const style = styleNames(
+      classes.root,
+      {
+        [classes.minimized]: !expanded,
+      },
+      styleProp,
+    );
 
-  const onClick = !expanded && !disabled ? onExpand : null;
+    const onPress = !expanded && !disabled ? onExpand : null;
 
-  const children = React.Children.map(
-    childrenProp,
-    child =>
-      isMuiElement(child, ['BackdropFrontSubheader', 'BackdropFrontContent'])
-        ? React.cloneElement(child, { expanded })
-        : child,
-  );
+    const children = React.Children.map(
+      childrenProp,
+      child =>
+        isMuiElement(child, ['BackdropFrontSubheader', 'BackdropFrontContent'])
+          ? React.cloneElement(child, { expanded })
+          : child,
+    );
 
-  return (
-    <Paper style={style} onClick={onClick} elevation={0} square {...other}>
-      <Scrim style={styleNames(classes.scrim, { [classes.scrimActive]: disabled })} />
-      {children}
-    </Paper>
-  );
+    return (
+      <View useNativeDriver style={style} onPress={onPress} {...other}>
+        <Paper elevation={0} square style={classes.paper}>
+          {/*<Scrim style={styleNames(classes.scrim, { [classes.scrimActive]: disabled })} />*/}
+          {children}
+        </Paper>
+      </View>
+    );
+  }
 }
 
 BackdropFront.propTypes = {
@@ -129,5 +133,7 @@ BackdropFront.propTypes = {
 BackdropFront.defaultProps = {
   expanded: true,
 };
+
+BackdropFront.muiName = 'BackdropFront';
 
 export default withStyles(styles, { name: 'MuiBackdropFront' })(BackdropFront);
