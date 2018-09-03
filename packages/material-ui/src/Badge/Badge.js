@@ -11,9 +11,9 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     position: 'relative',
-    display: 'inline-flex',
+    // display: 'inline-flex',
     // For correct alignment with the text.
-    textAlignVertical: 'middle',
+    // textAlignVertical: 'middle',
   },
   /* Styles applied to the badge `span` element. */
   badge: {
@@ -30,7 +30,7 @@ export const styles = theme => ({
     fontSize: 12,
     width: RADIUS * 2,
     height: RADIUS * 2,
-    borderRadius: '50%',
+    borderRadius: RADIUS,
     backgroundColor: theme.palette.color,
     color: theme.palette.textColor,
     zIndex: 1, // Render the badge on top of potential ripples.

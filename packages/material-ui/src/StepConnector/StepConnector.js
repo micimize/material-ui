@@ -25,7 +25,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the line element. */
   line: {
-    display: 'block',
+    // display: 'block',
     borderColor: theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[600],
   },
   /* Styles applied to the root element if `orientation="horizontal"`. */

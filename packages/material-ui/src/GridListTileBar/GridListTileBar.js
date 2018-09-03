@@ -58,15 +58,15 @@ export const styles = theme => ({
   subtitle: {
     fontSize: 12,
     lineHeight: 1,
-    textOverflow: 'ellipsis',
+    // textOverflow: 'ellipsis',
     overflow: 'hidden',
-    whiteSpace: 'nowrap',
+    // whiteSpace: 'nowrap',
   },
   /* Styles applied to the actionIcon if supplied. */
   actionIcon: {},
   /* Styles applied to the actionIcon if `actionPosition="left". */
   actionIconActionPosLeft: {
-    order: -1,
+    // order: -1,
   },
 });
 

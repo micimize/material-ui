@@ -29,7 +29,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the root element if `variant="query"`. */
   query: {
-    transform: 'rotate(180deg)',
+    // transform: 'rotate(180deg)',
   },
   /* Styles applied to the additional bar element if `variant="buffer"`. */
   dashed: {
@@ -37,25 +37,25 @@ export const styles = theme => ({
     marginTop: 0,
     height: '100%',
     width: '100%',
-    animation: 'buffer 3s infinite linear',
+    // animation: 'buffer 3s infinite linear',
   },
   /* Styles applied to the additional bar element if `variant="buffer"` & `color="primary"`. */
   dashedColorPrimary: {
-    backgroundImage: `radial-gradient(${lighten(theme.palette.primary.light, 0.6)} 0%, ${lighten(
-      theme.palette.primary.light,
-      0.6,
-    )} 16%, transparent 42%)`,
-    backgroundSize: '10px 10px',
-    backgroundPosition: '0px -23px',
+    // backgroundImage: `radial-gradient(${lighten(theme.palette.primary.light, 0.6)} 0%, ${lighten(
+    //   theme.palette.primary.light,
+    //   0.6,
+    // )} 16%, transparent 42%)`,
+    // backgroundSize: '10px 10px',
+    // backgroundPosition: '0px -23px',
   },
   /* Styles applied to the additional bar element if `variant="buffer"` & `color="secondary"`. */
   dashedColorSecondary: {
-    backgroundImage: `radial-gradient(${lighten(theme.palette.secondary.light, 0.4)} 0%, ${lighten(
-      theme.palette.secondary.light,
-      0.6,
-    )} 16%, transparent 42%)`,
-    backgroundSize: '10px 10px',
-    backgroundPosition: '0px -23px',
+    // backgroundImage: `radial-gradient(${lighten(theme.palette.secondary.light, 0.4)} 0%, ${lighten(
+    //   theme.palette.secondary.light,
+    //   0.6,
+    // )} 16%, transparent 42%)`,
+    // backgroundSize: '10px 10px',
+    // backgroundPosition: '0px -23px',
   },
   /* Styles applied to the layered bar1 & bar2 elements. */
   bar: {
@@ -64,8 +64,8 @@ export const styles = theme => ({
     left: 0,
     bottom: 0,
     top: 0,
-    transition: 'transform 0.2s linear',
-    transformOrigin: 'left',
+    // transition: 'transform 0.2s linear',
+    // transformOrigin: 'left',
   },
   /* Styles applied to the bar elements if `color="primary"`; bar2 if `variant` not "buffer". */
   barColorPrimary: {
@@ -94,9 +94,9 @@ export const styles = theme => ({
   /* Styles applied to the bar2 element if `variant="indeterminate or query"`. */
   bar2Indeterminate: {
     width: 'auto',
-    willChange: 'left, right',
-    animation: 'mui-indeterminate2 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite',
-    animationDelay: '1.15s',
+    // willChange: 'left, right',
+    // animation: 'mui-indeterminate2 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite',
+    // animationDelay: '1.15s',
   },
   /* Styles applied to the bar2 element if `variant="determinate"`. */
   bar2Determinate: {},
@@ -227,9 +227,7 @@ function LinearProgress(props) {
     <View style={className} role="progressbar" {...rootProps} {...other}>
       {variant === 'buffer' ? <View style={dashedClass} /> : null}
       <View style={bar1ClassName} style={inlineStyles.bar1} />
-      {variant === 'determinate' ? null : (
-        <View style={bar2ClassName} style={inlineStyles.bar2} />
-      )}
+      {variant === 'determinate' ? null : <View style={bar2ClassName} style={inlineStyles.bar2} />}
     </View>
   );
 }

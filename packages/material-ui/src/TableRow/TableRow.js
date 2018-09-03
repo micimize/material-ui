@@ -7,12 +7,12 @@ import withStyles from '../styles/withStyles';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    color: 'inherit',
-    display: 'table-row',
+    // color: 'inherit',
+    // display: 'table-row',
     height: 48,
-    textAlignVertical: 'middle',
+    // textAlignVertical: 'middle',
     // We disable the focus ring for mouse, touch and keyboard users.
-    outline: 'none',
+    // outline: 'none',
     '[selected="true"]': {
       backgroundColor:
         theme.palette.type === 'light'

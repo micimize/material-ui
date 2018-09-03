@@ -8,7 +8,7 @@ import IconButton from '../IconButton';
 
 export const styles = {
   root: {
-    // display: 'inline-flex',
+    // // display: 'inline-flex',
     alignItems: 'center',
     // transition: 'none',
     '&:hover': {

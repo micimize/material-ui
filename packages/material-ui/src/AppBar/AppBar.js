@@ -22,7 +22,7 @@ export const styles = theme => {
     },
     /* Styles applied to the root element if `position="fixed"`. */
     positionFixed: {
-      position: 'fixed',
+      // position: 'fixed',
       top: 0,
       left: 'auto',
       right: 0,
@@ -36,14 +36,14 @@ export const styles = theme => {
     },
     /* Styles applied to the root element if `position="sticky"`. */
     positionSticky: {
-      position: 'sticky',
+      // position: 'sticky',
       top: 0,
       left: 'auto',
       right: 0,
     },
     /* Styles applied to the root element if `position="static"`. */
     positionStatic: {
-      position: 'static',
+      // position: 'static',
     },
     /* Styles applied to the root element if `color="default"`. */
     colorDefault: {

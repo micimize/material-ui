@@ -8,7 +8,7 @@ export const styles = {
   /* Styles applied to the root element. */
   root: {
     flex: '1 1 auto',
-    overflowY: 'auto',
+    // overflowY: 'auto',
 
     padding: '0 24px 24px',
     '&:first-child': {

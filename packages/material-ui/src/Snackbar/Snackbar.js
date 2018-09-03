@@ -30,7 +30,7 @@ export const styles = theme => {
     /* Styles applied to the root element. */
     root: {
       zIndex: theme.zIndex.snackbar,
-      position: 'fixed',
+      // position: 'fixed',
       flexDirection: 'row',
       left: 0,
       right: 0,

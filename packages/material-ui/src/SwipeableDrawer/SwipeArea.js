@@ -9,7 +9,7 @@ import { isHorizontal } from '../Drawer/Drawer';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    position: 'fixed',
+    // position: 'fixed',
     top: 0,
     left: 0,
     bottom: 0,

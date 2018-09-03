@@ -22,17 +22,17 @@ export const styles = theme => ({
   },
   /* Styles applied to the root element if `scroll="bodyr"`. */
   scrollBody: {
-    overflowY: 'auto',
-    overflowX: 'hidden',
+    // overflowY: 'auto',
+    // overflowX: 'hidden',
   },
   /* Styles applied to the `Paper` component. */
   paper: {
     flexDirection: 'column',
     margin: 48,
     position: 'relative',
-    overflowY: 'auto', // Fix IE11 issue, to remove at some point.
+    // overflowY: 'auto', // Fix IE11 issue, to remove at some point.
     // We disable the focus ring for mouse, touch and keyboard users.
-    outline: 'none',
+    // outline: 'none',
   },
   /* Styles applied to the `Paper` component if `scroll="paper"`. */
   paperScrollPaper: {

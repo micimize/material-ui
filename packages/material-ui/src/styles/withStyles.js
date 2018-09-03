@@ -33,6 +33,8 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
   const stylesCreator = getStylesCreator(stylesOrCreator);
   const listenToTheme = stylesCreator.themingEnabled || withTheme || typeof name === 'string';
 
+  let { styles, meta } = renderStyleSheet(stylesCreator.create(getDefaultTheme(), name));
+
   class WithStyles extends React.Component {
     extensions = { mediaQuery: false, mediaQueryListener: false };
 
@@ -65,6 +67,8 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       this.theme = listenToTheme ? themeListener.initial(context) || getDefaultTheme() : noopTheme;
 
       this.computeClasses(this.theme);
+      this.classSheet = styles;
+      this.extensions.mediaQuery = meta.containsMediaQueries;
 
       this.cacheClasses = {
         // Cache for the finalized classes value.
@@ -74,6 +78,9 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
         // Cache for the last used rendered classes pointer.
         lastStyleSheet: {},
       };
+
+      this.classSheet = styles;
+      this.extensions.mediaQuery = meta.containsMediaQueries;
 
       if (this.extensions.mediaQuery) {
         this.extensions.mediaQueryListener =

@@ -13,7 +13,7 @@ export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
     cursor: 'pointer',
-    display: 'inline-flex',
+    // display: 'inline-flex',
     justifyContent: 'flex-start',
     flexDirection: 'inherit',
     alignItems: 'center',

@@ -102,7 +102,7 @@ export const styles = theme => {
       paddingRight: 0,
       paddingBottom: 8 - 2,
       borderWidth: 0,
-      // textAlignVertical: 'middle',
+      textAlignVertical: 'center',
       margin: 0, // Reset for Safari
       // Remove grey highlight
       // WebkitTapHighlightColor: 'transparent',

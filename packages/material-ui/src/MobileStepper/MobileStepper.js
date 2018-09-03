@@ -16,12 +16,12 @@ export const styles = theme => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    background: theme.palette.background.default,
+    backgroundColor: theme.palette.background.default,
     padding: 8,
   },
   /* Styles applied to the root element if `position="bottom"`. */
   positionBottom: {
-    position: 'fixed',
+    // position: 'fixed',
     bottom: 0,
     left: 0,
     right: 0,
@@ -29,7 +29,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the root element if `position="top"`. */
   positionTop: {
-    position: 'fixed',
+    // position: 'fixed',
     top: 0,
     left: 0,
     right: 0,
@@ -45,7 +45,7 @@ export const styles = theme => ({
   /* Styles applied to each dot if `variant="dots"`. */
   dot: {
     backgroundColor: theme.palette.action.disabled,
-    borderRadius: '50%',
+    borderRadius: 4,
     width: 8,
     height: 8,
     margin: '0 2px',
@@ -73,11 +73,7 @@ function MobileStepper(props) {
     ...other
   } = props;
 
-  const className = styleNames(
-    classes.root,
-    classes[`position${capitalize(position)}`],
-    styleProp,
-  );
+  const className = styleNames(classes.root, classes[`position${capitalize(position)}`], styleProp);
 
   return (
     <Paper square elevation={0} style={className} {...other}>

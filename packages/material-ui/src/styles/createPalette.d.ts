@@ -61,7 +61,7 @@ export interface Palette {
   text: TypeText;
   divider: TypeDivider;
   action: TypeAction;
-  background: TypeBackground;
+  backgroundColor: TypeBackground;
   getContrastText: (background: string) => string;
   augmentColor: (
     color: SimplePaletteColorOptions,

@@ -33,19 +33,19 @@ export const styles = theme => ({
   },
   /* Styles applied to the `Paper` component. */
   paper: {
-    overflowY: 'auto',
+    // overflowY: 'auto',
     flexDirection: 'column',
     height: '100vh',
     flex: '1 0 auto',
     zIndex: theme.zIndex.drawer,
 
     // temporary style
-    position: 'fixed',
+    // position: 'fixed',
     top: 0,
     // We disable the focus ring for mouse, touch and keyboard users.
     // At some point, it would be better to keep it for keyboard users.
     // :focus-ring CSS pseudo-class will help.
-    outline: 'none',
+    // outline: 'none',
   },
   /* Styles applied to the `Paper` component if `anchor="left"`. */
   paperAnchorLeft: {

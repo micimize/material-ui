@@ -36,7 +36,7 @@ export const styles = theme => ({
   iconOnly: {},
   /* Styles applied to the span element that wraps the icon and label. */
   wrapper: {
-    display: 'inline-flex',
+    // display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
@@ -45,16 +45,16 @@ export const styles = theme => ({
   /* Styles applied to the label's span element. */
   label: {
     fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.pxToRem(12),
+    fontSize: 12,
     opacity: 1,
     transition: 'font-size 0.2s, opacity 0.2s',
-    transitionDelay: '0.1s',
+    // transitionDelay: '0.1s',
     '[iconOnly="true"]': {
       opacity: 0,
       transitionDelay: '0s',
     },
     '[selected="true"]': {
-      fontSize: theme.typography.pxToRem(14),
+      fontSize: 14,
     },
   },
 });

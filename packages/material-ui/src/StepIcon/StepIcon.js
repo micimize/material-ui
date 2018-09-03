@@ -10,7 +10,7 @@ import SvgIcon from '../SvgIcon';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    display: 'block',
+    // display: 'block',
     color: theme.palette.text.disabled,
     '[active="true"]': {
       color: theme.palette.primary.main,

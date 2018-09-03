@@ -71,7 +71,6 @@ function sheetResolver(...sheetRules) {
     );
 }
 
-
 const borders = ['top', 'right', 'bottom', 'left'].reduce(
   (bs, side) => {
     const pre = `border${capitalize(side)}`;
@@ -93,7 +92,7 @@ const dimensions = kind => ({
   [kind + 'Right']: cast.toNumberOrPercent,
   [kind + 'Bottom']: cast.toNumberOrPercent,
   [kind + 'Left']: cast.toNumberOrPercent,
-})
+});
 
 const customStyles = CustomStyleRule({
   customProperties: {
@@ -107,9 +106,9 @@ const customStyles = CustomStyleRule({
         fontWeight: typeof prop === 'number' ? prop.toString() : prop,
       };
     },
-    ios:         ios => Platform.select({ ios,     android: {}, web: {} }),
-    android: android => Platform.select({ ios: {}, android,     web: {} }),
-    web:         web => Platform.select({ ios: {}, android: {}, web     }),
+    ios: ios => Platform.select({ ios, android: {}, web: {} }),
+    android: android => Platform.select({ ios: {}, android, web: {} }),
+    web: web => Platform.select({ ios: {}, android: {}, web }),
     ...borders,
     elevation: elevation => {
       return Platform.OS === 'android'
@@ -122,17 +121,25 @@ const customStyles = CustomStyleRule({
             },
             shadowRadius: (elevation * 3) / 2,
             shadowOpacity: floor(2.25)(0.25 * elevation),
-        };
+          };
     },
-    margin: conditionalExpander('margin', margin => typeof margin !== 'number', dimensions('margin')),
-    padding: conditionalExpander('padding', padding => typeof padding !== 'number', dimensions('padding')),
+    margin: conditionalExpander(
+      'margin',
+      margin => typeof margin !== 'number',
+      dimensions('margin'),
+    ),
+    padding: conditionalExpander(
+      'padding',
+      padding => typeof padding !== 'number',
+      dimensions('padding'),
+    ),
     flex: conditionalExpander('flex', flex => typeof flex !== 'number', {
       flexBasis: cast.discardOr({
         discard: 'auto',
-        or: cast.transform
+        or: cast.toNumber,
       }),
       flexGrow: cast.toNumber,
-      flexShrink: cast.toNumber
+      flexShrink: cast.toNumber,
     }),
   },
   ignorePrefixes: ['[', '#', '@global', '@keyframes', '&'],

@@ -10,7 +10,7 @@ import ButtonBase from '../ButtonBase';
 export const styles = {
   /* Styles applied to the root element. */
   root: {
-    color: 'inherit',
+    // color: 'inherit',
     flex: '0 0 56px',
   },
 };

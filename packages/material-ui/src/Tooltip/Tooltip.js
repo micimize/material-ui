@@ -23,14 +23,14 @@ export const styles = theme => ({
     color: theme.palette.common.white,
     fontFamily: theme.typography.fontFamily,
     padding: '4px 8px',
-    fontSize: theme.typography.pxToRem(10),
+    fontSize: 10,
     lineHeight: `${theme.typography.round(14 / 10)}em`,
     maxWidth: 300,
   },
   /* Styles applied to the tooltip (label wrapper) element if the tooltip is opened by touch. */
   touch: {
     padding: '8px 16px',
-    fontSize: theme.typography.pxToRem(14),
+    fontSize: 14,
     lineHeight: `${theme.typography.round(16 / 14)}em`,
   },
   /* Styles applied to the tooltip (label wrapper) element if `placement` contains "left". */

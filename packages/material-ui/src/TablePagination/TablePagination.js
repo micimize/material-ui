@@ -15,7 +15,7 @@ import TablePaginationActions from '../TablePaginationActions';
 export const styles = theme => ({
   /* Styles applied to the root element. */
   root: {
-    fontSize: theme.typography.pxToRem(12),
+    fontSize: 12,
     // Increase the specificity to override TableCell.
     '&:last-child': {
       padding: 0,

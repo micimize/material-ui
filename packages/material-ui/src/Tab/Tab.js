@@ -29,7 +29,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the root element if `textColor="inherit"`. */
   textColorInherit: {
-    color: 'inherit',
+    // color: 'inherit',
     opacity: 0.7,
     '[selected="true"]': {
       opacity: 1,
@@ -70,7 +70,7 @@ export const styles = theme => ({
   },
   /* Styles applied to the `icon` and `label`'s wrapper element. */
   wrapper: {
-    // display: 'inline-flex',
+    // // display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
@@ -91,7 +91,7 @@ export const styles = theme => ({
   label: {
     ...theme.typography.button,
     fontSize: 14,
-    whiteSpace: 'normal',
+    // whiteSpace: 'normal',
     [theme.breakpoints.up('md')]: {
       fontSize: 13,
     },

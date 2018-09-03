@@ -27,20 +27,20 @@ export const styles = theme => ({
   /* Styles applied to the root element if `variant="head"` or `context.table.head`. */
   head: {
     color: theme.palette.text.secondary,
-    fontSize: theme.typography.pxToRem(12),
+    fontSize: 12,
     fontWeight: theme.typography.fontWeightMedium,
   },
   /* Styles applied to the root element if `variant="body"` or `context.table.body`. */
   body: {
     color: theme.palette.text.primary,
-    fontSize: theme.typography.pxToRem(13),
+    fontSize: 13,
     fontWeight: theme.typography.fontWeightRegular,
   },
   /* Styles applied to the root element if `variant="footer"` or `context.table.footer`. */
   footer: {
     borderBottom: 0,
     color: theme.palette.text.secondary,
-    fontSize: theme.typography.pxToRem(12),
+    fontSize: 12,
   },
   /* Styles applied to the root element if `numeric={true}`. */
   numeric: {

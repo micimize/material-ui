@@ -36,12 +36,12 @@ export const styles = theme => ({
   },
   /* Styles applied to the tablist element if `scrollable={false}`. */
   fixed: {
-    overflowX: 'hidden',
+    // overflowX: 'hidden',
     width: '100%',
   },
   /* Styles applied to the tablist element if `scrollable={true}`. */
   scrollable: {
-    overflowX: 'scroll',
+    // overflowX: 'scroll',
   },
   /* Styles applied to the `ScrollButtonComponent` component. */
   scrollButtons: {},
