@@ -163,16 +163,16 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
     }
 
     computeClasses(theme) {
-      if (this.disableStylesGeneration) {
-        return;
-      }
+      // if (this.disableStylesGeneration) {
+      //   return;
+      // }
 
-      const stylesCreatorSaved = this.stylesCreatorSaved;
-      const { styles, meta } = renderStyleSheet(stylesCreatorSaved.create(theme, name));
-      this.classSheet = styles;
+      // const stylesCreatorSaved = this.stylesCreatorSaved;
+      // const { styles, meta } = renderStyleSheet(stylesCreatorSaved.create(theme, name));
+      // this.classSheet = styles;
 
-      // look for media queries
-      this.extensions.mediaQuery = meta.containsMediaQueries;
+      // // look for media queries
+      // this.extensions.mediaQuery = meta.containsMediaQueries;
     }
 
     render() {
