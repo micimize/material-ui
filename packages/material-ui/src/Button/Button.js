@@ -3,7 +3,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 import stylesOf from '../styles/stylesOf';
 import { fade } from '../styles/colorManipulator';
@@ -98,7 +97,7 @@ export const styles = theme => ({
     backgroundColor: theme.palette.grey[300],
     elevation: 2,
     '[focusVisible="true"]': {
-      elevation: 6
+      elevation: 6,
     },
     '&:hover': {
       backgroundColor: theme.palette.grey.A100,
@@ -274,10 +273,12 @@ function Button(props) {
   );
 
   const passthroughClasses = {
-    active: fab ? styleNames(classes.fabActive, classes.active) :
-      contained ? styleNames(classes.containedActive, classes.active) :
-      classes.active
-  }
+    active: fab
+      ? [classes.fabActive, classes.active]
+      : contained
+        ? [classes.containedActive, classes.active]
+        : classes.active,
+  };
 
   return (
     <ButtonBase
@@ -285,7 +286,7 @@ function Button(props) {
       style={style}
       disabled={disabled}
       focusRipple={!disableFocusRipple}
-      focusVisibleStyle={styleNames(classes.focusVisible, focusVisibleStyle)}
+      focusVisibleStyle={[classes.focusVisible, focusVisibleStyle]}
       {...other}
     >
       <View style={classes.label}>

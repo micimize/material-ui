@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 import TouchRipple from './TouchRipple';
 import createRippleHandler from './createRippleHandler';

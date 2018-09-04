@@ -2,7 +2,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 import IconButton from '../IconButton';
 
@@ -104,14 +103,12 @@ class SwitchBase extends React.Component {
 
     const checked = this.isControlled ? value : this.state.checked;
 
-    const style = styleNames(
+    const style = [
       classes.icon,
-      {
-        [classes.checked]: checked,
-        [classes.disabled]: disabled,
-      },
+      checked && classes.checked,
+      disabled && classes.disabled,
       styleProp,
-    );
+    ];
 
     return (
       <IconButton

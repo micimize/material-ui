@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Svg } from '../styles/extended-styles/svg';
 import PropTypes from 'prop-types';
-import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
 
@@ -31,35 +30,35 @@ export const styles = theme => ({
     // color: theme.palette.primary.main,
     svg: {
       fill: theme.palette.primary.main,
-    }
+    },
   },
   /* Styles applied to the root element if `color="secondary"`. */
   colorSecondary: {
     // color: theme.palette.secondary.main,
     svg: {
       fill: theme.palette.secondary.main,
-    }
+    },
   },
   /* Styles applied to the root element if `color="saction"`. */
   colorAction: {
     // color: theme.palette.action.active,
     svg: {
       fill: theme.palette.action.active,
-    }
+    },
   },
   /* Styles applied to the root element if `color="error"`. */
   colorError: {
     // color: theme.palette.error.main,
     svg: {
       fill: theme.palette.error.main,
-    }
+    },
   },
   /* Styles applied to the root element if `color="disabled"`. */
   colorDisabled: {
     // color: theme.palette.action.disabled,
     svg: {
       fill: theme.palette.action.disabled,
-    }
+    },
   },
 
   /* Styles applied to the root element if `color="onDefault"`. */
@@ -68,19 +67,19 @@ export const styles = theme => ({
       fill: theme.palette.getContrastText(
         theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900],
       ),
-    }
+    },
   },
   /* Styles applied to the root element if `color="onPrimary"`. */
   colorOnPrimary: {
     svg: {
       fill: theme.palette.primary.contrastText,
-    }
+    },
   },
   /* Styles applied to the root element if `color="onSecondary"`. */
   colorOnSecondary: {
     svg: {
       fill: theme.palette.secondary.contrastText,
-    }
+    },
   },
   /* Styles applied to the root element if `fontSize="inherit"`. */
   /*
@@ -105,21 +104,14 @@ function SvgIcon(props) {
   } = props;
 
   // TODO optimize styles, svgs doesn't support native styles
-  const style = styleNames(
+  const style = [
     classes.root,
-    {
-      [classes[`color${capitalize(color)}`]]: color !== 'default',
-    },
+    color !== 'default' && classes[`color${capitalize(color)}`],
     styleProp,
-  );
+  ];
 
   return (
-    <Component
-      style={style}
-      accessible={false}
-      viewBox={viewBox}
-      {...other}
-    >
+    <Component style={style} accessible={false} viewBox={viewBox} {...other}>
       {children}
     </Component>
   );

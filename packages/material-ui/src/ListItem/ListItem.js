@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 import ButtonBase from '../ButtonBase';
 import { isMuiElement } from '../utils/reactHelpers';
@@ -80,19 +79,17 @@ class ListItem extends React.Component {
     const hasSecondaryAction =
       children.length && isMuiElement(children[children.length - 1], ['ListItemSecondaryAction']);
 
-    const style = styleNames(
+    const style = [
       classes.root,
       classes.default,
-      {
-        [classes.dense]: isDense || hasAvatar,
-        [classes.gutters]: !disableGutters,
-        [classes.divider]: divider,
-        [classes.disabled]: disabled,
-        [classes.button]: button,
-        [classes.secondaryAction]: hasSecondaryAction,
-      },
+      (isDense || hasAvatar) && classes.dense,
+      !disableGutters && classes.gutters,
+      divider && classes.divider,
+      disabled && classes.disabled,
+      button && classes.button,
+      hasSecondaryAction && classes.secondaryAction,
       styleProp,
-    );
+    ];
 
     const componentProps = { style, disabled, ...other };
     let Component = componentProp || View;

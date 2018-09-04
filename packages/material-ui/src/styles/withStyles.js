@@ -53,7 +53,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
     constructor(props, context) {
       super(props, context);
 
-      this.renderer = this.context.renderer || renderStyleSheet;
+      // this.renderer = this.context.renderer || renderStyleSheet;
 
       /*
       const { muiThemeProviderOptions } = this.context;
@@ -68,11 +68,11 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       this.stylesCreatorSaved = stylesCreator;
 
       // We use || as the function call is lazy evaluated.
-      this.theme = getDefaultTheme(); // listenToTheme ? themeListener.initial(context) || getDefaultTheme() : noopTheme;
+      //this.theme = getDefaultTheme(); // listenToTheme ? themeListener.initial(context) || getDefaultTheme() : noopTheme;
 
-      this.computeClasses(this.theme);
-      this.classSheet = styles;
-      this.extensions.mediaQuery = meta.containsMediaQueries;
+      // this.computeClasses(this.theme);
+      // this.classSheet = styles;
+      // this.extensions.mediaQuery = meta.containsMediaQueries;
 
       this.cacheClasses = {
         // Cache for the finalized classes value.
@@ -94,10 +94,10 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
     state = { mounted: false };
 
+    /*
     componentDidMount() {
       this.setState({ mounted: true });
 
-      /*
       if (!listenToTheme) {
         return;
       }
@@ -107,7 +107,6 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
         this.computeClasses(this.theme);
         this.forceUpdate();
       });
-      */
     }
 
     componentDidUpdate() {
@@ -120,6 +119,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       this.computeClasses(this.theme);
       this.forceUpdate();
     }
+    */
 
     componentWillUnmount() {
       /*

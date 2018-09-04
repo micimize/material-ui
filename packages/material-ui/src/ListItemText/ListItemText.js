@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import styleNames from '../styles/react-native-style-names';
 import withStyles from '../styles/withStyles';
 import Typography from '../Typography';
 
@@ -61,7 +60,7 @@ function ListItemText(props, context) {
     primary = (
       <Typography
         variant="subheading"
-        style={styleNames(classes.primary, { [classes.textDense]: dense })}
+        style={[classes.primary, dense && classes.textDense]}
         {...primaryTypographyProps}
       >
         {primary}
@@ -74,9 +73,7 @@ function ListItemText(props, context) {
     secondary = (
       <Typography
         variant="body1"
-        style={styleNames(classes.secondary, {
-          [classes.textDense]: dense,
-        })}
+        style={[classes.secondary, dense && classes.textDense]}
         color="textSecondary"
         {...secondaryTypographyProps}
       >
@@ -87,14 +84,7 @@ function ListItemText(props, context) {
 
   return (
     <View
-      style={styleNames(
-        classes.root,
-        {
-          [classes.dense]: dense,
-          [classes.inset]: inset,
-        },
-        styleProp,
-      )}
+      style={[classes.root, dense && classes.dense, inset && classes.inset, styleProp]}
       {...other}
     >
       {primary}

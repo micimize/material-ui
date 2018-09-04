@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styleNames from '../styles/react-native-style-names';
 import SwitchBase from '../internal/SwitchBase';
 import CheckBoxOutlineBlankIcon from '../internal/svg-icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '../internal/svg-icons/CheckBox';
@@ -8,12 +7,13 @@ import IndeterminateCheckBoxIcon from '../internal/svg-icons/IndeterminateCheckB
 import { capitalize } from '../utils/helpers';
 import withStyles from '../styles/withStyles';
 
-export const styles = theme => ({ /* Styles applied to the root element. */
+export const styles = theme => ({
+  /* Styles applied to the root element. */
   root: {},
   icon: {
     svg: {
       fill: theme.palette.text.secondary,
-    }
+    },
   },
   /* Styles applied to the root element if `checked={true}`. */
   checked: {},
@@ -21,21 +21,21 @@ export const styles = theme => ({ /* Styles applied to the root element. */
   disabled: {
     svg: {
       fill: theme.palette.action.disabled,
-    }
+    },
   },
   /* Styles applied to the root element if `color="primary"`. */
   colorPrimary: {},
   colorPrimaryChecked: {
     svg: {
       fill: theme.palette.primary.main,
-    }
+    },
   },
   /* Styles applied to the root element if `color="secondary"`. */
   colorSecondary: {},
   colorSecondaryChecked: {
     svg: {
       fill: theme.palette.secondary.main,
-    }
+    },
   },
 });
 
@@ -45,8 +45,8 @@ function Checkbox(props) {
     <SwitchBase
       checkedIcon={indeterminate ? indeterminateIcon : checkedIcon}
       classes={{
-        root: styleNames(classes.root, classes[`color${capitalize(color)}`]),
-        checked: styleNames(classes[`color${capitalize(color)}Checked`], classes.checked),
+        root: [classes.root, classes[`color${capitalize(color)}`]],
+        checked: [classes[`color${capitalize(color)}Checked`], classes.checked],
         disabled: classes.disabled,
       }}
       icon={indeterminate ? indeterminateIcon : icon}

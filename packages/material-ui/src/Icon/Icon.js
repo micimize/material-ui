@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from '../styles/withStyles';
 import { capitalize } from '../utils/helpers';
-import styleNames from '../styles/react-native-style-names';
 
 import NativeIcon from '@expo/vector-icons/MaterialIcons';
 
@@ -41,7 +40,7 @@ export const styles = theme => ({
   /* Styles applied to the root element if `color="disabled"`. */
   colorDisabled: {
     color: theme.palette.action.disabled,
-  }
+  },
 });
 
 /* TODO doesn't work right now, maybe use react-native-vector-icons */
@@ -51,13 +50,7 @@ function Icon(props) {
   return (
     <NativeIcon
       name={children.replace(/_/g, '-')}
-      style={styleNames(
-        classes.root,
-        {
-          [classes[`color${capitalize(color)}`]]: color !== 'default',
-        },
-        style,
-      )}
+      style={[classes.root, color !== 'default' && classes[`color${capitalize(color)}`], style]}
       {...other}
     />
   );
@@ -80,7 +73,16 @@ Icon.propTypes = {
   /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */
-  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'onPrimary', 'onSecondary', 'action', 'error', 'disabled']),
+  color: PropTypes.oneOf([
+    'default',
+    'primary',
+    'secondary',
+    'onPrimary',
+    'onSecondary',
+    'action',
+    'error',
+    'disabled',
+  ]),
 };
 
 Icon.defaultProps = {

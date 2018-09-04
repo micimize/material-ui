@@ -1,6 +1,5 @@
 import warning from 'warning';
 import getDisplayName from 'recompose/getDisplayName';
-import styleNames from '../styles/react-native-style-names';
 
 function mergeClasses(options = {}) {
   const { baseClasses, newClasses, Component, noBase = false } = options;
@@ -34,7 +33,7 @@ function mergeClasses(options = {}) {
       );
 
       if (style) {
-        accumulator[key] = styleNames(baseClasses[key], style);
+        accumulator[key] = [baseClasses[key], style];
       }
 
       return accumulator;
