@@ -31,28 +31,18 @@ export const styles = {
 class ButtonBase extends React.Component {
   ripple = null;
 
-  handlePressIn = createRippleHandler(this, 'PressIn', 'start', () => this.setState({ active: true }));
-  handlePressOut = createRippleHandler(this, 'PressOut', 'stop', () => this.setState({ active: false }));
+  handlePressIn = createRippleHandler(this, 'PressIn', 'start', () =>
+    this.setState({ active: true }),
+  );
+  handlePressOut = createRippleHandler(this, 'PressOut', 'stop', () =>
+    this.setState({ active: false }),
+  );
 
   state = {};
 
   onRippleRef = node => {
     this.ripple = node;
   };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    // The blur won't fire when the disabled state is set on a focused input.
-    // We need to book keep the focused state manually.
-    if (!prevState.prevState && nextProps.disabled) {
-      return {
-        lastDisabled: nextProps.disabled,
-      };
-    }
-
-    return {
-      lastDisabled: nextProps.disabled,
-    };
-  }
 
   render() {
     const {
@@ -72,24 +62,16 @@ class ButtonBase extends React.Component {
       ...other
     } = this.props;
 
-    const style = styleNames(
+    const style = [
       classes.root,
-      {
-        [classes.disabled]: disabled,
-      },
+      disabled && classes.disabled,
       styleProp,
-      { [classes.active]: this.state.active },
-    );
+      this.state.active && classes.active,
+    ];
 
     const buttonProps = {};
 
     let ComponentProp = component;
-
-    /*
-    if (ComponentProp === ReactNativeButton && other.href) {
-      ComponentProp = Text;
-    }
-    */
 
     if (ComponentProp === DefaultButton) {
       buttonProps.disabled = disabled;

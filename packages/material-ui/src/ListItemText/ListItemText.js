@@ -21,9 +21,9 @@ export const styles = theme => ({
       paddingLeft: 56,
     },
   },
-  /* Styles applied to the root element if `context.dense` is `true`. */
+  /* Styles applied to the root element if `props.dense` is `true`. */
   dense: {
-    // fontSize: theme.typography.pxToRem(13),
+    fontSize: 13,
   },
   /* Styles applied to the primary `Typography` component. */
   primary: {
@@ -52,9 +52,9 @@ function ListItemText(props, context) {
     primaryTypographyProps,
     secondary: secondaryProp,
     secondaryTypographyProps,
+    dense,
     ...other
   } = props;
-  const { dense } = context;
 
   let primary = primaryProp != null ? primaryProp : children;
   if (primary != null && primary.type !== Typography && !disableTypography) {
@@ -147,15 +147,16 @@ ListItemText.propTypes = {
    * (as long as disableTypography is not `true`).
    */
   secondaryTypographyProps: PropTypes.object,
+  /**
+   * If `true`, compact vertical padding designed for keyboard and mouse input will be used.
+   */
+  dense: PropTypes.bool,
 };
 
 ListItemText.defaultProps = {
   disableTypography: false,
   inset: false,
-};
-
-ListItemText.contextTypes = {
-  dense: PropTypes.bool,
+  dense: false,
 };
 
 export default withStyles(styles, { name: 'MuiListItemText' })(ListItemText);

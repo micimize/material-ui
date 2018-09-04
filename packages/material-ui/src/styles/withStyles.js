@@ -5,7 +5,7 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import wrapDisplayName from 'recompose/wrapDisplayName';
 import mergeClasses from './mergeClasses';
 import createMuiTheme from './createMuiTheme';
-import themeListener from './themeListener';
+// import themeListener from './themeListener';
 import getStylesCreator from './getStylesCreator';
 import getThemeProps from './getThemeProps';
 import { render as renderStyleSheet } from './extended-styles';
@@ -15,6 +15,8 @@ const noopTheme = {};
 
 // In order to have self-supporting components, we rely on default theme when not provided.
 let defaultTheme;
+
+export const setTheme = theme => (defaultTheme = theme);
 
 function getDefaultTheme() {
   if (defaultTheme) {
@@ -38,7 +40,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
   class WithStyles extends React.Component {
     extensions = { mediaQuery: false, mediaQueryListener: false };
 
-    disableStylesGeneration = false;
+    // disableStylesGeneration = false;
 
     renderer = null;
 
@@ -46,17 +48,19 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
 
     theme = null;
 
-    unsubscribeId = null;
+    // unsubscribeId = null;
 
     constructor(props, context) {
       super(props, context);
 
       this.renderer = this.context.renderer || renderStyleSheet;
 
+      /*
       const { muiThemeProviderOptions } = this.context;
       if (muiThemeProviderOptions) {
         this.disableStylesGeneration = muiThemeProviderOptions.disableStylesGeneration;
       }
+      */
 
       // Attach the stylesCreator to the instance of the component as in the context
       // of react-hot-loader the hooks can be executed in a different closure context:
@@ -64,7 +68,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       this.stylesCreatorSaved = stylesCreator;
 
       // We use || as the function call is lazy evaluated.
-      this.theme = listenToTheme ? themeListener.initial(context) || getDefaultTheme() : noopTheme;
+      this.theme = getDefaultTheme(); // listenToTheme ? themeListener.initial(context) || getDefaultTheme() : noopTheme;
 
       this.computeClasses(this.theme);
       this.classSheet = styles;
@@ -93,6 +97,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
     componentDidMount() {
       this.setState({ mounted: true });
 
+      /*
       if (!listenToTheme) {
         return;
       }
@@ -102,6 +107,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
         this.computeClasses(this.theme);
         this.forceUpdate();
       });
+      */
     }
 
     componentDidUpdate() {
@@ -116,9 +122,11 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
     }
 
     componentWillUnmount() {
+      /*
       if (this.unsubscribeId !== null) {
         themeListener.unsubscribe(this.context, this.unsubscribeId);
       }
+      */
 
       if (this.extensions.mediaQueryListener) {
         Dimensions.removeEventListener('change', this.forceComputeClasses.bind(this));
@@ -131,11 +139,9 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       // requiring the generation of a new finalized classes object.
       let generate = false;
 
-      if (!this.disableStylesGeneration) {
-        if (this.classSheet !== this.cacheClasses.lastStyleSheet) {
-          this.cacheClasses.lastStyleSheet = this.classSheet;
-          generate = true;
-        }
+      if (this.classSheet !== this.cacheClasses.lastStyleSheet) {
+        this.cacheClasses.lastStyleSheet = this.classSheet;
+        generate = true;
       }
 
       if (this.props.classes !== this.cacheClasses.lastProp) {
@@ -148,7 +154,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
           baseClasses: this.cacheClasses.lastStyleSheet,
           newClasses: this.props.classes,
           Component,
-          noBase: this.disableStylesGeneration,
+          noBase: false,
         });
       }
 
@@ -166,11 +172,9 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       // if (this.disableStylesGeneration) {
       //   return;
       // }
-
       // const stylesCreatorSaved = this.stylesCreatorSaved;
       // const { styles, meta } = renderStyleSheet(stylesCreatorSaved.create(theme, name));
       // this.classSheet = styles;
-
       // // look for media queries
       // this.extensions.mediaQuery = meta.containsMediaQueries;
     }
@@ -178,6 +182,7 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
     render() {
       const { classes, innerRef, ...other } = this.props;
 
+      /*
       const more = getThemeProps({ theme: this.theme, name });
 
       // Provide the theme to the wrapped component.
@@ -185,8 +190,9 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
       if (withTheme) {
         more.theme = this.theme;
       }
+      */
 
-      return <Component {...more} classes={this.getClasses()} ref={innerRef} {...other} />;
+      return <Component /*{...more}*/ classes={this.getClasses()} ref={innerRef} {...other} />;
     }
   }
 
@@ -201,10 +207,12 @@ const withStyles = (stylesOrCreator, options = {}) => Component => {
     innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   };
 
+  /*
   WithStyles.contextTypes = {
     muiThemeProviderOptions: PropTypes.object,
     ...(listenToTheme ? themeListener.contextTypes : {}),
   };
+  */
 
   if (process.env.NODE_ENV !== 'production') {
     WithStyles.displayName = wrapDisplayName(Component, 'WithStyles');

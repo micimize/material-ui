@@ -32,29 +32,23 @@ const styles = theme => {
     },
     select: {},
     selectedPrimary: {
-      backgroundColor: theme.palette.primary[300],
+      backgroundColor: 'pink',
+      backgroundColor: theme.palette.primary.light,
     },
     selectedSecondary: {
-      backgroundColor: theme.palette.secondary[300],
+      backgroundColor: theme.palette.secondary.light,
     },
   };
 };
 
 function BackdropMenuItem(props) {
-  const { classes: classesProp, style: styleProp, color, selected, ...other } = props;
-  const style = styleNames(
-    classesProp.root,
-    classesProp[`color${capitalize(color)}`],
-    {
-      [classesProp.selected]: selected,
-      [classesProp[`selected${capitalize(color)}`]]: selected,
-    },
-    styleProp,
-  );
+  const { classes: classesProp, color, ...other } = props;
   const classes = {
+    root: [classesProp.root, classesProp[`color${capitalize(color)}`]],
     text: styleNames(classesProp.text, classesProp[`text${capitalize(color)}`]),
+    selected: [classesProp.selected, classesProp[`selected${capitalize(color)}`]],
   };
-  return <MenuItem style={style} classes={classes} selected={selected} {...other} />;
+  return <MenuItem classes={classes} {...other} />;
 }
 
 BackdropMenuItem.propTypes = {
@@ -71,6 +65,7 @@ BackdropMenuItem.propTypes = {
 
 BackdropMenuItem.defaultProps = {
   color: 'primary',
+  disableRipple: true,
   selected: false,
 };
 

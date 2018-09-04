@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { StyleProp } from 'react-native'
+import { StyleProp } from 'react-native';
 import { WithTheme } from '../styles/withTheme';
 import { ConsistentWith, Overwrite } from '..';
 import { Theme } from './createMuiTheme';
 import * as CSS from 'csstype';
 
 declare namespace JSS {
-  export type CreateStyleSheetOptions<A> = any
+  export type CreateStyleSheetOptions<A> = any;
 }
 
 export interface CSSProperties extends CSS.Properties<number | string> {
@@ -65,3 +65,5 @@ export default function withStyles<ClassKey extends string>(
     component: React.ComponentType<P & WithStyles<ClassKey>>,
   ): React.ComponentType<Overwrite<P, StyledComponentProps<ClassKey>>>;
 };
+
+export const setTheme = (theme: Theme) => {};

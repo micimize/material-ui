@@ -22,42 +22,12 @@ export const styles = theme => ({
     transition: theme.transitions.create('backgroundColor', {
       duration: theme.transitions.duration.shortest,
     }),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.action.active, theme.palette.action.hoverOpacity),
-      // Reset on touch devices, it doesn't add specificity
-      '@media (hover: none)': {
-        backgroundColor: 'transparent',
-      },
-      '[disabled="true"]': {
-        backgroundColor: 'transparent',
-      },
-    },
-    '[disabled="true"]': {
-      // color: theme.palette.action.disabled,
-    },
   },
   /* Styles applied to the root element if `color="primary"`. */
-  colorPrimary: {
-    // color: theme.palette.primary.main,
-    '&:hover': {
-      backgroundColor: fade(theme.palette.primary.main, theme.palette.action.hoverOpacity),
-      // Reset on touch devices, it doesn't add specificity
-      '@media (hover: none)': {
-        backgroundColor: 'transparent',
-      },
-    },
-  },
+  // TODO these should control ripple colors
+  colorPrimary: {},
   /* Styles applied to the root element if `color="secondary"`. */
-  colorSecondary: {
-    // color: theme.palette.secondary.main,
-    '&:hover': {
-      backgroundColor: fade(theme.palette.secondary.main, theme.palette.action.hoverOpacity),
-      // Reset on touch devices, it doesn't add specificity
-      '@media (hover: none)': {
-        backgroundColor: 'transparent',
-      },
-    },
-  },
+  colorSecondary: {},
   /* Styles applied to the root element if `disabled={true}`. */
   disabled: {},
   /* Styles applied to the children container element. */

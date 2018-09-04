@@ -24,28 +24,12 @@ export const styles = theme => ({
 /**
  * This is a simple wrapper to apply the `dense` mode styles to `Avatar`.
  */
-function ListItemAvatar(props, context) {
-  const { children, classes, style: styleProp, ...other } = props;
-
-  if (context.dense === undefined) {
-    warning(
-      false,
-      `Material-UI: <ListItemAvatar> is a simple wrapper to apply the dense styles
-      to <Avatar>. You do not need it unless you are controlling the <List> dense property.`,
-    );
-    return props.children;
-  }
+function ListItemAvatar(props) {
+  const { children, classes, style: styleProp, dense, ...other } = props;
 
   return React.cloneElement(children, {
-    style: styleNames(
-      { [classes.root]: context.dense },
-      styleProp,
-      children.props.className,
-    ),
-    childrenClassName: styleNames(
-      { [classes.icon]: context.dense },
-      children.props.childrenClassName,
-    ),
+    style: styleNames({ [classes.root]: dense }, styleProp, children.props.className),
+    childrenClassName: styleNames({ [classes.icon]: dense }, children.props.childrenClassName),
     ...other,
   });
 }
@@ -64,9 +48,9 @@ ListItemAvatar.propTypes = {
    * @ignore
    */
   className: PropTypes.string,
-};
-
-ListItemAvatar.contextTypes = {
+  /**
+   * If `true`, compact vertical padding designed for keyboard and mouse input will be used.
+   */
   dense: PropTypes.bool,
 };
 

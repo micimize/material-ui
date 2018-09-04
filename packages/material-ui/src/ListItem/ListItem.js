@@ -18,13 +18,7 @@ export const styles = theme => ({
   },
   text: {},
   /* Styles applied to the `container` element if `children` includes `ListItemSecondaryAction`. */
-  container: {
-  },
-  // TODO: Sanity check this - why is focusVisibleClassName prop apparently applied to a div?
-  /* Styles applied to the `component`'s `focusVisibleClassName` property if `button={true}`. */
-  focusVisible: {
-    backgroundColor: theme.palette.action.hover,
-  },
+  container: {},
   /* Legacy styles applied to the root element. Use `root` instead. */
   default: {},
   /* Styles applied to the `component` element if `dense={true}` or `children` includes `Avatar`. */
@@ -48,14 +42,6 @@ export const styles = theme => ({
     transition: theme.transitions.create('backgroundColor', {
       duration: theme.transitions.duration.shortest,
     }),
-    '&:hover': {
-      // textDecorationLine: 'none',
-      backgroundColor: theme.palette.action.hover,
-      // Reset on touch devices, it doesn't add specificity
-      '@media (hover: none)': {
-        backgroundColor: 'transparent',
-      },
-    },
   },
   /* Styles applied to the `component` element if `children` includes `ListItemSecondaryAction`. */
   secondaryAction: {
@@ -85,7 +71,6 @@ class ListItem extends React.Component {
       disabled,
       disableGutters,
       divider,
-      focusVisibleClassName,
       ...other
     } = this.props;
 
@@ -113,13 +98,9 @@ class ListItem extends React.Component {
     let Component = componentProp || View;
 
     if (button) {
-      if (componentProp){
+      if (componentProp) {
         componentProps.component = componentProp;
       }
-      componentProps.focusVisibleClassName = styleNames(
-        classes.focusVisible,
-        focusVisibleClassName,
-      );
       Component = ButtonBase;
     }
 
@@ -158,7 +139,8 @@ class ListItem extends React.Component {
     return (
       <Component {...componentProps}>
         {/* TODO we dont' need to map over all children for sugar */}
-        {children.map(
+        {React.Children.map(
+          children,
           (e, i) =>
             typeof e === 'string' ? (
               <Text style={classes.text} key={i}>
@@ -222,10 +204,6 @@ ListItem.propTypes = {
    * If `true`, a 1px light border is added to the bottom of the list item.
    */
   divider: PropTypes.bool,
-  /**
-   * @ignore
-   */
-  focusVisibleClassName: PropTypes.string,
 };
 
 ListItem.defaultProps = {

@@ -27,16 +27,15 @@ export const styles = theme => ({
 });
 
 function MenuItem(props) {
-  const { classes, style, component, selected, role, ...other } = props;
+  const { classes, style, selected, role, ...other } = props;
 
   return (
     <ListItem
       button
-      role={role}
-      tabIndex={-1}
-      style={styleNames(classes.root, { [classes.selected]: selected }, style)}
-      classes={{ text: styleNames(classes.text, { [classes.selectedText]: selected }) }}
-      component={component}
+      //role={role}
+      //tabIndex={-1}
+      style={[classes.root, selected && classes.selected, style]}
+      classes={{ text: [classes.text, selected && classes.selectedText] }}
       {...other}
     />
   );
@@ -72,7 +71,6 @@ MenuItem.propTypes = {
 };
 
 MenuItem.defaultProps = {
-  component: View,
   role: 'menuitem',
   selected: false,
 };

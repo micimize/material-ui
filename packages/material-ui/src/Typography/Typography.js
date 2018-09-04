@@ -110,22 +110,20 @@ function Typography(props) {
     ...other
   } = props;
 
-  const className = styleNames(
+  const style = [
     classes.root,
     classes[variant],
-    {
-      [classes[`color${capitalize(color)}`]]: color !== 'default',
-      [classes.noWrap]: noWrap,
-      [classes.gutterBottom]: gutterBottom,
-      [classes.paragraph]: paragraph,
-      [classes[`align${capitalize(align)}`]]: align !== 'default',
-    },
+    color !== 'default' && classes[`color${capitalize(color)}`],
+    noWrap && classes.noWrap,
+    gutterBottom && classes.gutterBottom,
+    paragraph && classes.paragraph,
+    align !== 'default' && classes[`align${capitalize(align)}`],
     styleProp,
-  );
+  ];
 
   const Component = componentProp || (paragraph ? Text : headlineMapping[variant]) || Text;
 
-  return <Component style={className} {...other} />;
+  return <Component style={style} {...other} />;
 }
 
 Typography.propTypes = {
