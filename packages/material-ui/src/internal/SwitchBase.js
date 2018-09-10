@@ -61,8 +61,8 @@ class SwitchBase extends React.Component {
   };
 
   changeHandler = value => () => {
-    if (this.props.onValueChange) {
-      this.props.onValueChange(!value);
+    if (this.props.onChangeValue) {
+      this.props.onChangeValue(!value);
     }
     if (!this.isControlled) {
       this.setState({ checked: !value });
@@ -84,7 +84,7 @@ class SwitchBase extends React.Component {
       inputRef,
       name,
       onBlur,
-      onValueChange,
+      onChangeValue,
       onFocus,
       readOnly,
       required,
@@ -204,7 +204,7 @@ SwitchBase.propTypes = {
    *
    * @param {boolean} checked The `checked` value of the switch
    */
-  onValueChange: PropTypes.func,
+  onChangeValue: PropTypes.func,
   /**
    * @ignore
    */

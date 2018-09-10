@@ -65,7 +65,8 @@ export const styles = theme => {
     disabled: {},
     /* Styles applied to the root element if `disabledUnderline={false}`. */
     underline: {
-      borderBottom: `2px solid ${theme.palette.primary[light ? 'dark' : 'light']}`,
+      borderColor: theme.palette.primary[light ? 'dark' : 'light'],
+      borderWidth: 0,
       position: 'absolute',
       left: 0,
       bottom: -1,
@@ -77,6 +78,7 @@ export const styles = theme => {
       }),
     },
     underlineFocused: {
+      borderWidth: 1,
       transform: [{ scaleX: 1 }],
     },
     underlineError: {
@@ -111,9 +113,7 @@ export const styles = theme => {
       flexGrow: 1,
     },
     /* Styles applied to the `input` element if `margin="dense"`. */
-    inputMarginDense: {
-      paddingTop: 4 - 1,
-    },
+    inputMarginDense: { paddingTop: 4 - 1 },
     /* Styles applied to the `input` element if `type` is not "text"`. */
     inputType: {
       // type="date" or type="time", etc. have specific styles we need to reset.
@@ -240,7 +240,6 @@ class Input extends React.Component {
   };
 
   handleChange = text => {
-    return this.props.onChangeText(text);
     if (!this.isControlled) {
       this.setState({ dirty: true, value: text }, () => {
         this.checkDirty();
@@ -249,7 +248,6 @@ class Input extends React.Component {
       this.setState({ dirty: true });
     }
 
-    // Perform in the willUpdate
     if (this.props.onChangeText) {
       this.props.onChangeText(text);
     }
@@ -354,7 +352,7 @@ class Input extends React.Component {
           keyboardType={keyboardType}
           onChangeText={this.handleChange}
           defaultValue={defaultValue}
-          value={value}
+          value={this.isControlled ? value : this.state.value}
           multiline={multiline}
           numberOfLines={numberOfLines}
           {...inputProps}

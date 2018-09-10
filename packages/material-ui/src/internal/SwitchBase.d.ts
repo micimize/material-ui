@@ -17,6 +17,7 @@ export interface SwitchBaseProps
   inputRef?: React.Ref<any>;
   name?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => void;
+  onChangeValue?: (checked: boolean) => void;
   readOnly?: boolean;
   required?: boolean;
   tabIndex?: number;

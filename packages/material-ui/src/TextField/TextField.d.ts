@@ -37,6 +37,7 @@ export interface TextFieldProps
   select?: boolean;
   SelectProps?: Partial<SelectProps>;
   type?: string;
+  keyboardType?: string;
   value?: Array<string | number> | string | number;
 }
 

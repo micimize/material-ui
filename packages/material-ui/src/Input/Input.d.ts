@@ -28,6 +28,7 @@ export interface InputProps
   rowsMax?: string | number;
   startAdornment?: React.ReactNode;
   type?: string;
+  keyboardType?: string;
   value?: Array<string | number> | string | number;
   /**
    * `onChange`, `onKeyUp` + `onKeyDown` are applied to the inner `InputComponent`,
